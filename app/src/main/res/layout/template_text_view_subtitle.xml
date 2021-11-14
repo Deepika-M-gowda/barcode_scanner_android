@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/template_text_view_subtitle_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/standard_margin"
+    android:textColor="?android:textColorSecondary"
+    android:textSize="@dimen/sub_title_text_size"
+    android:fontFamily="@font/roboto_medium"/>

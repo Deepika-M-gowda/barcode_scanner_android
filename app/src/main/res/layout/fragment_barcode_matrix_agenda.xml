@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixAgendaFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_agenda_name_event_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_name_event_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_agenda_name_event_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_name_event_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_label"
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_agenda_start_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_start_date_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_agenda_start_date_event_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_start_date_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_agenda_end_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_end_date_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_agenda_end_date_event_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_end_date_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_agenda_place_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_place_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_agenda_place_event_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_place_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_agenda_place_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_agenda_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_place_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_description_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_agenda_description_event_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_agenda_description_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_agenda_description_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.activities.VeggieActivity">
+
+    <include
+        layout="@layout/template_toolbar"
+        android:id="@+id/activity_veggie_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:layout_below="@id/activity_veggie_toolbar">
+
+        <TextView
+            android:id="@+id/activity_veggie_no_ingredients_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:text="@string/ingredients_no_information_found_label"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/sub_title_text_size"
+            android:fontFamily="@font/roboto_medium"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/activity_veggie_ingredients_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:id="@+id/activity_veggie_ingredients_list_entitled_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/template_text_view_subtitle"
+                    android:id="@+id/activity_veggie_ingredients_list_entitled_text_view_template"
+                    />
+
+            </FrameLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/activity_veggie_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activity_veggie_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

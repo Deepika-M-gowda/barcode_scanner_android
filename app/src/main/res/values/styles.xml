@@ -1,0 +1,454 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="LightTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/lightColorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorBlueAccent</item>
+        <item name="themeColor">@color/colorBlueAccent</item>
+        <item name="icon_color">@color/light_icon_color</item>
+
+        <item name="colorPositive">@color/light_color_positive</item>
+        <item name="colorMedium">@color/light_color_medium</item>
+        <item name="colorNegative">@color/light_color_negative</item>
+        <item name="colorUnknown">@color/color_unknown</item>
+
+        <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
+        <item name="android:windowBackground">@color/lightColorBackground</item>
+        <item name="cardViewBackgroundColorReference">@color/lightColorCardViewBackground</item>
+        <item name="activityBackgroundColorReference">@color/lightColorBackground</item>
+
+        <item name="background_entitled_row">?themeColor</item>
+        <item name="background_primary_row">@color/light_nutrition_background_primary_color</item>
+        <item name="background_secondary_row">@color/light_nutrition_background_secondary_color</item>
+
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">@color/lightColorTextPrimary</item>
+        <item name="android:textColor">@color/lightColorTextPrimary</item>
+        <item name="textColor">@color/lightColorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="cardViewStyle">@style/CardViewLightStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewLightStyle</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+
+
+        <item name="chipStyle">@style/MaterialChipLight</item>
+
+        <item name="android:fontFamily">@font/roboto_medium</item>
+
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerLightTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerLightTheme</item>
+
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+        <item name="alertDialogTheme">@style/AlertDialogLightStyle</item>
+
+        <item name="colorControlNormal">?textColor</item>
+
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/darkColorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorBlueAccent</item>
+        <item name="themeColor">@color/colorBlueAccent</item>
+        <item name="icon_color">@color/dark_icon_color</item>
+
+        <item name="colorPositive">@color/dark_color_positive</item>
+        <item name="colorMedium">@color/dark_color_medium</item>
+        <item name="colorNegative">@color/dark_color_negative</item>
+        <item name="colorUnknown">@color/color_unknown</item>
+
+        <!--<item name="backgroundColor">@color/darkColorBackground</item>-->
+        <item name="android:windowBackground">@color/darkColorBackground</item>
+        <item name="cardViewBackgroundColorReference">@color/darkColorCardViewBackground</item>
+        <item name="activityBackgroundColorReference">@color/darkColorBackground</item>
+
+        <item name="background_entitled_row">?themeColor</item>
+        <item name="background_primary_row">@color/dark_nutrition_background_primary_color</item>
+        <item name="background_secondary_row">@color/dark_nutrition_background_secondary_color</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
+        <item name="android:textColor">@color/darkColorTextPrimary</item>
+        <item name="textColor">@color/darkColorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
+
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="cardViewStyle">@style/CardViewDarkStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewDarkStyle</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+
+        <item name="chipStyle">@style/MaterialChipDark</item>
+
+        <item name="android:fontFamily">@font/roboto_medium</item>
+
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerDarkTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerDarkTheme</item>
+
+        <!--<item name="textAppearanceListItemSecondary">@style/textAppearanceListItemSecondaryCustom</item>
+        <item name="textAppearanceListItem">@style/textAppearanceListItemSecondaryCustom</item>
+        <item name="android:textColorAlertDialogListItem">@color/color_red</item>-->
+        <!--<item name="alertDialogStyle">@style/AlertDialogStyle</item>-->
+        <item name="alertDialogTheme">@style/AlertDialogDarkStyle</item>
+        
+        <item name="colorControlNormal">?textColor</item>
+
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="OrangeLightTheme" parent="LightTheme">
+        <item name="colorAccent">@color/colorOrangeAccent</item>
+        <item name="themeColor">@color/colorOrangeAccent</item>
+    </style>
+
+    <style name="OrangeDarkTheme" parent="DarkTheme">
+        <item name="colorAccent">@color/colorOrangeAccent</item>
+        <item name="themeColor">@color/colorOrangeAccent</item>
+    </style>
+
+    <style name="BlueLightTheme" parent="LightTheme">
+        <item name="colorAccent">@color/colorBlueAccent</item>
+        <item name="themeColor">@color/colorBlueAccent</item>
+    </style>
+
+    <style name="BlueDarkTheme" parent="DarkTheme">
+        <item name="colorAccent">@color/colorBlueAccent</item>
+        <item name="themeColor">@color/colorBlueAccent</item>
+    </style>
+
+    <style name="GreenLightTheme" parent="LightTheme">
+        <item name="colorAccent">@color/colorGreenAccent</item>
+        <item name="themeColor">@color/colorGreenAccent</item>
+    </style>
+
+    <style name="GreenDarkTheme" parent="DarkTheme">
+        <item name="colorAccent">@color/colorGreenAccent</item>
+        <item name="themeColor">@color/colorGreenAccent</item>
+    </style>
+
+    <style name="RedLightTheme" parent="LightTheme">
+        <item name="colorAccent">@color/colorRedAccent</item>
+        <item name="themeColor">@color/colorRedAccent</item>
+    </style>
+
+    <style name="RedDarkTheme" parent="DarkTheme">
+        <item name="colorAccent">@color/colorRedAccent</item>
+        <item name="themeColor">@color/colorRedAccent</item>
+    </style>
+
+    <style name="PurpleLightTheme" parent="LightTheme">
+        <item name="colorAccent">@color/colorPurpleAccent</item>
+        <item name="themeColor">@color/colorPurpleAccent</item>
+    </style>
+
+    <style name="PurpleDarkTheme" parent="DarkTheme">
+        <item name="colorAccent">@color/colorPurpleAccent</item>
+        <item name="themeColor">@color/colorPurpleAccent</item>
+    </style>
+
+    <!-- ListPreference -->
+    <style name="textAppearanceListItemSecondaryCustom">
+        <item name="android:textSize">14sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+    
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4.0dp</item>
+    </style>
+
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="backgroundTint">?colorAccent</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
+
+
+    <style name="MaterialChipLight" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/darkColorPrimary</item>
+    </style>
+
+    <style name="MaterialChipDark" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/darkColorPrimary</item>
+    </style>
+
+    <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <!--<item name="android:layout_marginStart">@dimen/standard_margin</item>
+        <item name="android:layout_marginEnd">@dimen/standard_margin</item>
+        <item name="paddingStart">@dimen/standard_margin</item>
+        <item name="paddingEnd">@dimen/standard_margin</item>-->
+    </style>
+
+    <!-- CardViewStyle -->
+
+    <style name="CardViewStyle" parent="CardView">
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+    <style name="CardViewLightStyle" parent="CardViewStyle">
+        <item name="cardBackgroundColor">@color/lightColorCardViewBackground</item>
+        <item name="android:background">@color/lightColorCardViewBackground</item>
+    </style>
+
+    <style name="CardViewDarkStyle" parent="CardViewStyle">
+        <item name="cardBackgroundColor">@color/darkColorCardViewBackground</item>
+        <item name="android:background">@color/darkColorCardViewBackground</item>
+    </style>
+    <!--  -->
+
+    <style name="MaterialCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="strokeWidth">@dimen/stroke_width</item>
+    </style>
+
+    <style name="MaterialCardViewLightStyle" parent="MaterialCardViewStyle">
+        <item name="cardBackgroundColor">@color/lightColorCardViewBackground</item>
+        <item name="cardForegroundColor">@android:color/transparent</item>
+        <item name="strokeColor">@android:color/transparent</item>
+    </style>
+
+    <style name="MaterialCardViewDarkStyle" parent="MaterialCardViewStyle">
+        <item name="cardBackgroundColor">@color/darkColorCardViewBackground</item>
+        <item name="cardForegroundColor">@android:color/transparent</item>
+        <!--<item name="strokeColor">@color/darkMaterialCardViewStrokeColor</item>-->
+        <item name="strokeColor">@android:color/transparent</item>
+    </style>
+    <!--  -->
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- AlertDialog -->
+    <style name="AlertDialogLightStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
+
+        <item name="colorAccent">?themeColor</item>
+        <item name="android:textColorPrimary">@color/lightColorTextSecondary</item>
+        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>
+        <item name="fontFamily">@font/roboto_black</item>
+        <item name="textColorAlertDialogListItem">@color/lightColorTextPrimary</item>
+        <item name="colorControlNormal">@color/lightColorTextPrimary</item>
+
+        <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="android:background">@color/lightColorCardViewBackground</item>
+    </style>
+
+    <style name="AlertDialogDarkStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
+
+        <item name="colorAccent">?themeColor</item>
+        <item name="android:textColorPrimary">@color/darkColorTextSecondary</item>
+        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>
+        <item name="fontFamily">@font/roboto_black</item>
+        <item name="textColorAlertDialogListItem">@color/darkColorTextPrimary</item>
+        <item name="colorControlNormal">@color/darkColorTextPrimary</item>
+
+        <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/AlertDialogButtonTextStyle</item>
+        <item name="android:background">@color/darkColorCardViewBackground</item>
+    </style>
+
+    <style name="AlertDialogTitleTextStyle">
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textColor">?themeColor</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
+
+    <style name="AlertDialogButtonTextStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textColor">?themeColor</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
+
+    <!-- TextInputLayout -->
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--<item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="android:fontFamily">@font/roboto_black</item>-->
+        <!--<item name="boxStrokeColor">@color/text_input_box_stroke</item>-->
+
+        <item name="startIconTint" >?android:textColorSecondary</item>
+
+        <!--<item name="startIconTint" >@android:color/white</item>-->
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+
+        <!-- Activated -->
+        <item name="colorPrimary">?colorAccent</item>
+
+        <!-- Normal -->
+        <item name="colorOnSurface">?android:textColorSecondary</item>
+
+        <!-- Error -->
+        <item name="colorError">?colorNegative</item>
+
+        <!--<item name="colorControlActivated">@color/colorAccent</item>
+        <item name="icon_color">@color/colorAccent</item>
+        <item name="iconTint">@color/colorAccent</item>
+        <item name="startIconDrawable">@color/colorAccent</item>
+        <item name="android:colorActivatedHighlight">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:actionModeSelectAllDrawable">@color/colorAccent</item>
+        <item name="drawableTint">@color/colorAccent</item>
+        <item name="startIconTint">@color/colorAccent</item>-->
+
+        <!-- Text Appearance styles -->
+        <item name="textAppearanceSubtitle1">@style/InputEditTextSubTitleFont</item>
+        <item name="textAppearanceCaption">@style/InputEditTextCaptionFont</item>
+
+        <!--Note: When setting a materialThemeOverlay on a custom TextInputLayout style, don’t forget to set editTextStyle to either a @style/Widget.MaterialComponents.TextInputEditText.* style or to a custom one that inherits from that.
+        The TextInputLayout styles set materialThemeOverlay that overrides editTextStyle with the specific TextInputEditText style needed. Therefore, you don’t need to specify a style tag on the edit text.-->
+        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox</item>
+    </style>
+
+    <style name="InputEditTextCaptionFont">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="textSize">@dimen/min_text_size</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
+    </style>
+
+    <style name="InputEditTextSubTitleFont">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="textSize">@dimen/sub_title_text_size</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearance">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="textSize">@dimen/min_text_size</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="textSize">@dimen/title_text_size</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
+    <style name="ToolBarTextAppearance">
+        <item name="fontFamily">@font/roboto_black</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="textSize">@dimen/toolbar_text_size</item>
+        <item name="android:textSize">@dimen/toolbar_text_size</item>
+    </style>
+
+    <style name="ErrorTextViewTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="DateTimePickerLightTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/lightColorCardViewBackground</item>
+        <item name="android:timePickerStyle">@style/TimePickerLightTheme</item>
+
+        <item name="android:textColor">@color/lightColorTextPrimary</item>
+        <item name="android:textColorPrimary">@color/lightColorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+
+        <item name="colorAccent">?themeColor</item>
+        <item name="android:colorAccent">?themeColor</item>
+        <item name="android:colorPrimary">?themeColor</item>
+        <item name="android:colorPrimaryDark">?themeColor</item>
+
+        <item name="android:buttonBarPositiveButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+    </style>
+
+    <style name="DateTimePickerDarkTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/darkColorCardViewBackground</item>
+        <item name="android:timePickerStyle">@style/TimePickerDarkTheme</item>
+
+        <item name="android:textColor">@color/darkColorTextPrimary</item>
+        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
+
+        <item name="colorAccent">?themeColor</item>
+        <item name="android:colorAccent">?themeColor</item>
+        <item name="android:colorPrimary">?themeColor</item>
+        <item name="android:colorPrimaryDark">?themeColor</item>
+
+        <item name="android:buttonBarPositiveButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+    </style>
+
+    <style name="TimePickerLightTheme" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersBackgroundColor">@color/lightColorBackground</item>
+        <item name="android:numbersSelectorColor">?themeColor</item>
+    </style>
+
+    <style name="TimePickerDarkTheme" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersBackgroundColor">@color/darkColorBackground</item>
+        <item name="android:numbersSelectorColor">?themeColor</item>
+    </style>
+
+    <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?themeColor</item>
+    </style>
+
+    <style name="AppCompatAlertDialogButtonTextStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textColor">?themeColor</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
+
+
+    <!--<style name="TextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>-->
+
+    <!--<style name="AlertDialogMessageTextStyle">
+        <item name="android:textColor">@color/darkColorTextPrimary</item>
+        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
+        <item name="android:fontFamily">@font/roboto_medium_italic</item>
+    </style>-->
+
+
+
+</resources>

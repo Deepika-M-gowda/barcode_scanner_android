@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.activities.BarcodeDetailsActivity">
+
+    <include
+        layout="@layout/template_toolbar"
+        android:id="@+id/activity_barcode_image_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_barcode_image_toolbar"
+        android:layout_margin="@dimen/standard_margin">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_barcode_image_image_rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/activity_barcode_image_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image_view_description_bar_code" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/activity_barcode_image_image_rounded">
+
+            <RelativeLayout
+                android:id="@+id/activity_barcode_image_outer_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- About Barcode -->
+
+                <FrameLayout
+                    android:id="@+id/activity_barcode_image_about_barcode_entitled_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        layout="@layout/template_text_view_subtitle"
+                        android:id="@+id/activity_barcode_image_about_barcode_entitled_text_view_template"
+                        />
+
+                </FrameLayout>
+
+                <!-- Barcode Contents -->
+                <FrameLayout
+                    android:id="@+id/activity_barcode_image_barcode_contents_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/activity_barcode_image_about_barcode_entitled_layout"/>
+
+                <!-- Barcode Information -->
+                <FrameLayout
+                    android:id="@+id/activity_barcode_image_about_barcode_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/activity_barcode_image_barcode_contents_frame_layout"/>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

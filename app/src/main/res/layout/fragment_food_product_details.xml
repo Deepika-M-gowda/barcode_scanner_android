@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodProductDetailsFragment">
+
+    <!-- Origins Countries -->
+    <FrameLayout
+        android:id="@+id/fragment_food_product_origins_countries_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Categories -->
+    <FrameLayout
+        android:id="@+id/fragment_food_product_categories_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_food_product_origins_countries_frame_layout"/>
+
+    <!-- Packaging -->
+    <FrameLayout
+        android:id="@+id/fragment_food_product_packaging_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_food_product_categories_frame_layout"/>
+
+    <!-- Stores -->
+    <FrameLayout
+        android:id="@+id/fragment_food_product_stores_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_food_product_packaging_frame_layout"/>
+
+    <!-- Sales Countries -->
+    <FrameLayout
+        android:id="@+id/fragment_food_product_sales_countries_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_food_product_stores_frame_layout"/>
+
+</RelativeLayout>

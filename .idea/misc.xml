@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_about_bdd.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/activity_barcode_analysis.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/fragment_barcode_actions.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/fragment_expandable_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/fragment_food_product_additives.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/fragment_food_product_details.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/fragment_food_product_ingredients.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/fragment_food_product_veggie_analysis.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_barcode.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_barcode_header.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_agenda.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_contact.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_localisation.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_mail.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_phone.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_sms.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_text.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_url.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_form_create_qr_code_wifi.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_main_barcode_creator_list.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/fragment_main_history.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/template_expandable_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_horizontal_graph_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_nutrient_level.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_product_labels.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_product_quality.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_quote_open_beauty_facts_layout.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_quote_open_food_facts_layout.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_quote_open_library_layout.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_quote_open_pet_food_facts_layout.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_recycler_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_spinner_item.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_text_view_contents.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_text_view_subtitle.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_text_view_title.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_toolbar.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_warning_view.xml" value="0.3338541666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

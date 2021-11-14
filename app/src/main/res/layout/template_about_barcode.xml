@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/template_about_barcode_format_origin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Format -->
+        <TextView
+            android:id="@+id/template_about_barcode_format_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/template_about_barcode_origin_layout"
+
+            android:text="@string/about_barcode_format_label"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="@dimen/standard_text_size"/>
+
+        <!-- Barcode origin -->
+        <RelativeLayout
+            android:id="@+id/template_about_barcode_origin_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/template_about_barcode_origin_country_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+
+                android:text="@string/about_barcode_origin_label"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/standard_text_size" />
+
+            <ImageView
+                android:id="@+id/template_about_barcode_origin_flag_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/standard_margin"
+                android:layout_marginEnd="@dimen/standard_margin"
+
+                android:layout_toEndOf="@id/template_about_barcode_origin_country_label"
+                android:layout_centerVertical="true"
+
+                android:contentDescription="@string/image_view_description_flag" />
+
+            <TextView
+                android:id="@+id/template_about_barcode_origin_country_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_toEndOf="@id/template_about_barcode_origin_flag_image_view"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/standard_text_size" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Description -->
+    <FrameLayout
+        android:id="@+id/template_about_barcode_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_below="@id/template_about_barcode_format_origin_layout">
+
+        <TextView
+            android:id="@+id/fragment_about_barcode_description_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size"
+            android:fontFamily="@font/roboto_medium_italic"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.journeyapps.barcodescanner.DecoratedBarcodeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_main_scanner_zxing_barcode_scanner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:zxing_use_texture_view="true"
+    app:zxing_scanner_layout="@layout/template_custom_barcode_scanner"/>

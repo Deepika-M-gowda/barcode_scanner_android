@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Commons -->
+    <color name="colorPrimaryDark">#ff000000</color>
+
+    <color name="colorOrangeAccent">#f9a826</color>
+    <color name="colorBlueAccent">#0078D7</color>
+    <color name="colorGreenAccent">#49a942</color>
+    <color name="colorRedAccent">#e4002b</color>
+    <color name="colorPurpleAccent">#6633cc</color>
+
+    <color name="color_unknown">#808080</color>
+
+    <!-- Light -->
+
+    <!-- Main Color -->
+    <color name="lightColorPrimary">#f7f7f7</color>
+
+    <!-- Texts -->
+    <color name="lightColorTextPrimary">#ff333333</color>
+    <color name="lightColorTextSecondary">#bf333333</color>
+
+    <!-- Icons -->
+    <color name="light_icon_color">@color/lightColorTextPrimary</color>
+
+    <!-- Backgrounds -->
+    <color name="lightColorBackground">@color/lightColorPrimary</color>
+    <color name="lightColorCardViewBackground">#ffffff</color>
+
+    <!-- Table -->
+    <color name="light_nutrition_background_primary_color">@color/lightColorCardViewBackground</color>
+    <color name="light_nutrition_background_secondary_color">@color/lightColorBackground</color>
+
+    <!-- Indicative Color -->
+    <color name="light_color_positive">#46c705</color>
+    <color name="light_color_medium">#e4be00</color>
+    <color name="light_color_negative">#e40000</color>
+
+    <!-- Dark -->
+
+    <!-- Main Color -->
+    <color name="darkColorPrimary">#ff121212</color>
+
+    <!-- Texts -->
+    <color name="darkColorTextPrimary">#ffcccccc</color>
+    <color name="darkColorTextSecondary">#bfcccccc</color>
+
+    <!-- Icons -->
+    <color name="dark_icon_color">@color/darkColorTextPrimary</color>
+
+    <!-- Backgrounds -->
+    <color name="darkColorBackground">@color/darkColorPrimary</color>
+    <color name="darkColorCardViewBackground">#ff1e1e1e</color>
+    <!--<color name="darkColorCardViewBackground">#ff1a1a1a</color>-->
+
+    <!-- Table -->
+    <color name="dark_nutrition_background_primary_color">@color/darkColorCardViewBackground</color>
+    <color name="dark_nutrition_background_secondary_color">@color/darkColorBackground</color>
+
+    <!-- Indicative Color -->
+    <color name="dark_color_positive">#62a740</color>
+    <color name="dark_color_medium">#bfaa40</color>
+    <color name="dark_color_negative">#bf4040</color>
+
+    <!-- MaterialCardView -->
+    <color name="darkMaterialCardViewStrokeColor">#303030</color>
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="themeColor" format="reference|color"/>
+
+    <attr name="colorPositive" format="color"/>
+    <attr name="colorMedium" format="color"/>
+    <attr name="colorNegative" format="color"/>
+    <attr name="colorUnknown" format="color"/>
+
+    <declare-styleable name="CardViewBackgroundColor">
+        <attr format="reference" name="cardViewBackgroundColorReference" />
+    </declare-styleable>
+
+    <declare-styleable name="ActivityBackgroundColor">
+        <attr format="reference" name="activityBackgroundColorReference" />
+    </declare-styleable>
+
+    <declare-styleable name="NutritionFactsTableColor">
+        <attr format="color" name="background_entitled_row" />
+        <attr format="color" name="background_primary_row" />
+        <attr format="color" name="background_secondary_row" />
+    </declare-styleable>
+
+    <declare-styleable name="IconDrawable">
+        <attr format="color" name="icon_color" />
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalGraphView">
+        <attr name="barHeight" format="dimension" />
+        <attr name="lowBarColor" format="color" />
+        <attr name="mediumBarColor" format="color" />
+        <attr name="highBarColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="graphTextFontResource" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableView">
+        <attr name="iconHeaderId" format="reference" />
+        <attr name="open" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionMenu">
+        <attr name="icon_root_fab" format="reference" />
+        <attr name="icon_fab_tint" format="color" />
+        <attr name="fab_tint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="startIconTintFocused" format="color" />
+        <attr name="startIconTint" format="color" />
+    </declare-styleable>
+</resources>

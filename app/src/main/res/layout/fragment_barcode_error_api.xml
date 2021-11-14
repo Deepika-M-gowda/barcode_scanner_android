@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/warning_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeErrorApiFragment">
+
+    <!-- Warning -->
+    <include
+        layout="@layout/template_expandable_view"
+        android:id="@+id/warning_expandable_view_template"/>
+
+</com.google.android.material.card.MaterialCardView>

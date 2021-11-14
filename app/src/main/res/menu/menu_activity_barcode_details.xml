@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_activity_barcode_details_save"
+        android:icon="@drawable/baseline_save_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/save_label">
+    </item>
+
+    <item
+        android:id="@+id/menu_activity_barcode_details_share"
+        android:icon="@drawable/baseline_share_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/share_label">
+
+        <menu>
+            <item
+                android:id="@+id/menu_activity_barcode_details_share_image"
+                app:showAsAction="ifRoom|withText"
+                android:title="@string/share_image_label"/>
+
+            <item
+                android:id="@+id/menu_activity_barcode_details_share_text"
+                app:showAsAction="ifRoom|withText"
+                android:title="@string/share_text_label"/>
+        </menu>
+    </item>
+
+</menu>

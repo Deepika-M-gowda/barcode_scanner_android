@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixLocalisationFragment">
+
+    <!-- Latitude -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_localisation_latitude_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_latitude_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="@string/matrix_localisation_latitude_label"
+            android:fontFamily="@font/roboto_black"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_latitude_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_localisation_latitude_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+    </RelativeLayout>
+
+    <!--- Longitude -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_localisation_longitude_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_localisation_latitude_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_longitude_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="@string/matrix_localisation_longitude_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size"
+            android:fontFamily="@font/roboto_black" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_longitude_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_localisation_longitude_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <!--- Altitude -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_localisation_altitude_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_localisation_longitude_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_altitude_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="@string/matrix_localisation_altitude_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size"
+            android:fontFamily="@font/roboto_black" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_altitude_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_localisation_altitude_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <!--- Query -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_localisation_query_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_localisation_altitude_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_query_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:text="@string/matrix_localisation_query_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size"
+            android:fontFamily="@font/roboto_black" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_localisation_query_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_localisation_query_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

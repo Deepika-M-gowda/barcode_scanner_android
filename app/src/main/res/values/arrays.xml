@@ -1,0 +1,49 @@
+<resources>
+
+    <string-array name="preference_color_entries">
+        <item>@string/preferences_color_blue</item>
+        <item>@string/preferences_color_orange</item>
+        <item>@string/preferences_color_green</item>
+        <item>@string/preferences_color_red</item>
+        <item>@string/preferences_color_purple</item>
+    </string-array>
+
+    <string-array name="preference_color_values" translatable="false">
+        <item>blue</item>
+        <item>orange</item>
+        <item>green</item>
+        <item>red</item>
+        <item>purple</item>
+    </string-array>
+
+    <string-array name="preference_theme_entries">
+        <item>@string/preferences_switch_system_theme_label</item>
+        <item>@string/preferences_switch_light_theme_label</item>
+        <item>@string/preferences_switch_dark_theme_label</item>
+    </string-array>
+
+    <string-array name="preference_theme_values" translatable="false">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="preference_search_engine_entries">
+        <item>@string/google_label</item>
+        <item>@string/bing_label</item>
+        <item>@string/duckduckgo_label</item>
+        <item>@string/qwant_label</item>
+        <item>@string/ecosia_label</item>
+        <item>@string/lilo_label</item>
+    </string-array>
+
+    <string-array name="preference_search_engine_values" translatable="false">
+        <item>google</item>
+        <item>bing</item>
+        <item>duckduckgo</item>
+        <item>qwant</item>
+        <item>ecosia</item>
+        <item>lilo</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixEmailFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_email_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_address_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_email_recipient_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_address_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_email_address_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_email_cc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_email_address_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_cc_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_email_cc_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_cc_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_email_cc_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_email_bcc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_email_cc_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_bcc_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_email_bcc_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_bcc_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_email_bcc_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_email_subject_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_email_bcc_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_subject_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_subject_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_subject_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_email_subject_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_email_body_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_email_subject_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_body_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/matrix_body_label"
+            android:textColor="?colorAccent"
+            android:textSize="@dimen/sub_title_text_size" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_email_body_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/fragment_barcode_matrix_email_body_label"
+
+            android:fontFamily="@font/roboto_medium_italic"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/standard_text_size" />
+    </RelativeLayout>
+
+</RelativeLayout>

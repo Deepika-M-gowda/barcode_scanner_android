@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nutrition_facts_table_wrap_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.nutritionFacts.FoodProductNutritionFactsTableFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Entitled -->
+        <LinearLayout
+            android:id="@+id/nutrition_facts_table_entitled_row_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/light_margin"
+            android:paddingBottom="@dimen/light_margin"
+            android:paddingStart="@dimen/standard_margin"
+            android:paddingEnd="@dimen/standard_margin"
+            android:background="?attr/background_entitled_row"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:textAlignment="textStart"
+                android:text="@string/nutrition_facts_table_label"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_title_text_size"
+                android:fontFamily="@font/roboto_black"/>
+            <TextView
+                android:id="@+id/nutrition_facts_table_entitled_100_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:textAlignment="textEnd"
+                android:text="@string/off_per_100_label"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_title_text_size"
+                android:fontFamily="@font/roboto_black" />
+            <TextView
+                android:id="@+id/nutrition_facts_table_entitled_serving_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:textAlignment="textEnd"
+                android:text="@string/off_per_serving_label"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sub_title_text_size"
+                android:fontFamily="@font/roboto_black" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nutrition_facts_table_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nutrition_facts_table_entitled_row_layout"/>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

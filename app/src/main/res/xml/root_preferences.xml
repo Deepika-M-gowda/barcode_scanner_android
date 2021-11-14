@@ -1,0 +1,84 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_appearance_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
+            app:key="@string/preferences_color_key"
+            app:title="@string/preferences_color"
+            android:summary="%s"
+            android:entries="@array/preference_color_entries"
+            android:entryValues="@array/preference_color_values"
+            app:defaultValue="blue" />
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
+            app:key="@string/preferences_theme_key"
+            app:title="@string/preferences_theme_label"
+            android:summary="%s"
+            android:entries="@array/preference_theme_entries"
+            android:entryValues="@array/preference_theme_values"
+            app:defaultValue="system" />
+
+        <!--<com.atharokstudio.atharokscanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_dark_theme_key"
+            android:title="@string/preferences_switch_dark_theme_label"/>-->
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_scan_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_search_on_api_key"
+            android:title="@string/preferences_switch_scan_search_on_api_label"
+            android:defaultValue="true"
+            app:singleLineTitle="false"/>
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_vibrate_key"
+            android:title="@string/preferences_switch_scan_vibrate_label"
+            android:defaultValue="false"
+            app:singleLineTitle="false"/>
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_bip_key"
+            android:title="@string/preferences_switch_scan_bip_label"
+            android:defaultValue="false"
+            app:singleLineTitle="false"/>
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_search_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
+            android:key="@string/preferences_search_engine_key"
+            android:title="@string/preferences_search_engine"
+            android:summary="%s"
+            android:entries="@array/preference_search_engine_entries"
+            android:entryValues="@array/preference_search_engine_values"
+            app:defaultValue="google"/>
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_about_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
+            app:key="@string/preferences_about_permissions_key"
+            app:title="@string/preferences_about_permissions_label" />
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
+            app:key="@string/preferences_about_library_third_key"
+            app:title="@string/preferences_about_library_third_label" />
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
+            app:key="@string/preferences_about_bdd_key"
+            app:title="@string/preferences_about_bdd_label" />
+
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+</PreferenceScreen>

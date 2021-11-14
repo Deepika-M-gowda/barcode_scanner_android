@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_navigation_bottom_view_scan"
+        android:enabled="true"
+        android:icon="@drawable/baseline_qr_code_scanner_24"
+        android:title="@string/title_scan" />
+
+    <item
+        android:id="@+id/menu_navigation_bottom_view_history"
+        android:enabled="true"
+        android:icon="@drawable/baseline_history_24"
+        android:title="@string/title_history"/>
+
+    <item
+        android:id="@+id/menu_navigation_bottom_view_create"
+        android:enabled="true"
+        android:icon="@drawable/baseline_create_24"
+        android:title="@string/title_generate"/>
+
+    <item
+        android:id="@+id/menu_navigation_bottom_view_settings"
+        android:enabled="true"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="@string/title_settings" />
+</menu>
