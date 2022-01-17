@@ -53,7 +53,7 @@ abstract class BaseActivity: AppCompatActivity() {
             .commit()
     }
 
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
+    /*override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
     }
@@ -69,7 +69,7 @@ abstract class BaseActivity: AppCompatActivity() {
     private fun showSystemUI() {
         WindowCompat.setDecorFitsSystemWindows(window, true)
         WindowInsetsControllerCompat(window, window.decorView).show(WindowInsetsCompat.Type.systemBars())
-    }
+    }*/
 
     // -------------------------------
     // ------ Activity Override ------
