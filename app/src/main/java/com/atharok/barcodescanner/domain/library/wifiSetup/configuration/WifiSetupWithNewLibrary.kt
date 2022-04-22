@@ -85,9 +85,15 @@ open class WifiSetupWithNewLibrary: WifiSetup<WifiNetworkSuggestion> {
         setSsid(name)
         setWpa3Passphrase(password)
         setIsHiddenSsid(isHidden)
-        setWpa3EnterpriseConfig(
-            getWifiEnterpriseConfig(password, anonymousIdentity, identity, eapMethod, phase2Method)
-        )
+
+        val wifiEnterpriseConfig = getWifiEnterpriseConfig(password, anonymousIdentity, identity, eapMethod, phase2Method)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            setWpa3EnterpriseStandardModeConfig(wifiEnterpriseConfig)
+        }else {
+            @Suppress("DEPRECATION")
+            setWpa3EnterpriseConfig(wifiEnterpriseConfig)
+        }
     }.build()
 
     override fun configureWepNetwork(

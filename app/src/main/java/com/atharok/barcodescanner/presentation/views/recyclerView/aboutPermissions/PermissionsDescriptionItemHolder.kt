@@ -31,6 +31,7 @@ class PermissionsDescriptionItemHolder(private val viewBinding: RecyclerViewItem
 
     fun updateItem(permissionsDescription: PermissionsDescription) {
         viewBinding.recyclerViewItemAboutTitleTextView.text = context.getString(permissionsDescription.nameResource)
+        viewBinding.recyclerViewItemAboutLicenseTextView.visibility = View.GONE
         viewBinding.recyclerViewItemAboutAuthorTextView.visibility = View.GONE
         viewBinding.recyclerViewItemAboutDescriptionTextView.text = context.getString(permissionsDescription.descriptionResource)
     }

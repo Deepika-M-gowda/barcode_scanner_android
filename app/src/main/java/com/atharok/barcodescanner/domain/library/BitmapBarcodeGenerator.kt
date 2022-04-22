@@ -30,7 +30,7 @@ import com.google.zxing.common.BitMatrix
 import com.journeyapps.barcodescanner.BarcodeEncoder
 
 /**
- * Génère l'image d'un code-barres à partir d'un texte .
+ * Génère l'image d'un code-barres à partir d'un texte.
  */
 class BitmapBarcodeGenerator(private val multiFormatWriter: MultiFormatWriter,
                              private val barcodeEncoder: BarcodeEncoder) {

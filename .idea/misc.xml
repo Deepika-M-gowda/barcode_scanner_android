@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.3458333333333333" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_shortcut_create.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_shortcut_history.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/bottom_navigation_view_color.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/circle.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_aztec_code_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_bar_code_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_barcode_scanner_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_book_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_data_matrix_code_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_pdf_417_code_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_scan_icon_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_shortcut_create.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_shortcut_history.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_shortcut_scan.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_shortcut_scan_from_image.xml" value="0.282" />
         <entry key="app/src/main/res/layout/activity_about_bdd.xml" value="0.3328125" />
         <entry key="app/src/main/res/layout/activity_barcode_analysis.xml" value="0.3328125" />
         <entry key="app/src/main/res/layout/fragment_barcode_actions.xml" value="0.3328125" />
@@ -10,6 +28,8 @@
         <entry key="app/src/main/res/layout/fragment_food_product_additives.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/fragment_food_product_details.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/fragment_food_product_ingredients.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/fragment_food_product_quality.xml" value="0.3171875" />
+        <entry key="app/src/main/res/layout/fragment_food_product_root_overview.xml" value="0.31614583333333335" />
         <entry key="app/src/main/res/layout/fragment_food_product_veggie_analysis.xml" value="0.334375" />
         <entry key="app/src/main/res/layout/fragment_form_create_barcode.xml" value="0.334375" />
         <entry key="app/src/main/res/layout/fragment_form_create_barcode_header.xml" value="0.334375" />
@@ -24,8 +44,11 @@
         <entry key="app/src/main/res/layout/fragment_form_create_qr_code_wifi.xml" value="0.334375" />
         <entry key="app/src/main/res/layout/fragment_main_barcode_creator_list.xml" value="0.334375" />
         <entry key="app/src/main/res/layout/fragment_main_history.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/recycler_view_item_about.xml" value="0.3171875" />
+        <entry key="app/src/main/res/layout/recycler_view_item_qr_creator.xml" value="0.31614583333333335" />
         <entry key="app/src/main/res/layout/template_expandable_view.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_horizontal_graph_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/template_item_barcode_creator.xml" value="0.31614583333333335" />
         <entry key="app/src/main/res/layout/template_nutrient_level.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_product_labels.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_product_quality.xml" value="0.3338541666666667" />
@@ -40,6 +63,7 @@
         <entry key="app/src/main/res/layout/template_text_view_title.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_toolbar.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_warning_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/xml/shortcuts.xml" value="0.315625" />
       </map>
     </option>
   </component>

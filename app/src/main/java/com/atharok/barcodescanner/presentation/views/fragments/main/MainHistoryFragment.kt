@@ -71,19 +71,19 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
         configureRecyclerView()
 
-        databaseViewModel.barcodeList.observe(viewLifecycleOwner, {
+        databaseViewModel.barcodeList.observe(viewLifecycleOwner) {
 
             adapter?.updateData(it)
 
-            if(it.isEmpty()) {
+            if (it.isEmpty()) {
                 viewBinding.fragmentMainHistoryEmptyTextView.visibility = View.VISIBLE
                 viewBinding.fragmentMainHistoryRecyclerView.visibility = View.GONE
-            }else {
+            } else {
                 viewBinding.fragmentMainHistoryEmptyTextView.visibility = View.GONE
                 viewBinding.fragmentMainHistoryRecyclerView.visibility = View.VISIBLE
             }
 
-        })
+        }
 
         setHasOptionsMenu(true)
     }

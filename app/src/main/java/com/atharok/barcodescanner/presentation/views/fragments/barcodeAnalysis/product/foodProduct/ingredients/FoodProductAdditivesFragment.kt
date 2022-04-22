@@ -89,13 +89,11 @@ class FoodProductAdditivesFragment: ProductBarcodeFragment<FoodProduct>() {
 
     private fun observeAdditives(additivesTagsList: List<String>) {
 
-        viewModel.obtainAdditivesList(additivesTagsList).observe(
-            viewLifecycleOwner, {
-                additivesAdapter?.update(it)
-                viewBinding.additivesProgressBar.visibility = View.GONE
-                viewBinding.additivesCardView.visibility = View.VISIBLE
-            }
-        )
+        viewModel.obtainAdditivesList(additivesTagsList).observe(viewLifecycleOwner) {
+            additivesAdapter?.update(it)
+            viewBinding.additivesProgressBar.visibility = View.GONE
+            viewBinding.additivesCardView.visibility = View.VISIBLE
+        }
     }
 
     private fun configureEntitledView() {

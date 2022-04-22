@@ -15,7 +15,6 @@
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            app:cardBackgroundColor="@color/lightColorCardViewBackground"
             app:cardUseCompatPadding="false"
             app:cardElevation="0dp">
 
@@ -24,7 +23,6 @@
                 android:layout_width="178dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:background="@color/lightColorCardViewBackground"
                 android:src="@drawable/open_beauty_facts_logo_en_356x300"
                 android:contentDescription="@string/image_view_description_logo" />
 

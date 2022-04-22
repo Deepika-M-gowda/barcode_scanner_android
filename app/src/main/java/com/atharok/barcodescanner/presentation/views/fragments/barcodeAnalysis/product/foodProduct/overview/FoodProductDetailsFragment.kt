@@ -100,21 +100,23 @@ class FoodProductDetailsFragment: ProductBarcodeFragment<FoodProduct>() {
 
         if(countriesTags != null && countriesTags.isNotEmpty()) {
 
-            viewModel.obtainCountriesList(countriesTags).observe(viewLifecycleOwner, {
+            viewModel.obtainCountriesList(countriesTags).observe(viewLifecycleOwner) {
 
                 val salesCountriesStr: String?
                 val originsCountriesStr: String?
-                if(it.isNotEmpty()) {
-                    salesCountriesStr = obtainCountriesString(foodProduct.salesCountriesTagsList, it)
-                    originsCountriesStr = obtainCountriesString(foodProduct.originsCountriesTagsList, it)
-                }else{
+                if (it.isNotEmpty()) {
+                    salesCountriesStr =
+                        obtainCountriesString(foodProduct.salesCountriesTagsList, it)
+                    originsCountriesStr =
+                        obtainCountriesString(foodProduct.originsCountriesTagsList, it)
+                } else {
                     salesCountriesStr = foodProduct.salesCountriesTagsList?.convertToString()
                     originsCountriesStr = foodProduct.originsCountriesTagsList?.convertToString()
                 }
 
                 configureSalesCountries(salesCountriesStr)
                 configureOriginsCountries(originsCountriesStr)
-            })
+            }
         }else{
             viewBinding.fragmentFoodProductOriginsCountriesFrameLayout.visibility = View.GONE
             viewBinding.fragmentFoodProductSalesCountriesFrameLayout.visibility = View.GONE

@@ -21,7 +21,7 @@
 package com.atharok.barcodescanner
 
 import android.app.Application
-import com.atharok.barcodescanner.common.appModules
+import com.atharok.barcodescanner.common.injections.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

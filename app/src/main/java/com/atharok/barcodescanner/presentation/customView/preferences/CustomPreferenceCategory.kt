@@ -32,14 +32,14 @@ import com.atharok.barcodescanner.R
 
 class CustomPreferenceCategory: PreferenceCategory {
 
-    constructor(context: Context?) : super(context)
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
             : super(context, attrs, defStyleAttr, defStyleRes)
 
-    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+    override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
 
         val font: Typeface? = ResourcesCompat.getFont(context, R.font.roboto_black)
@@ -49,7 +49,7 @@ class CustomPreferenceCategory: PreferenceCategory {
         theme.resolveAttribute(R.attr.colorAccent, typedValue, true)
         val color = typedValue.data
 
-        val titleView: TextView? = holder?.itemView?.findViewById(android.R.id.title)
+        val titleView: TextView? = holder.itemView.findViewById(android.R.id.title)
         titleView?.typeface = font
         titleView?.textSize = textSizeInDP
         titleView?.setTextColor(color)

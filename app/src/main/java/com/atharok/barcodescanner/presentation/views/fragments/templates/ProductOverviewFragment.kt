@@ -22,7 +22,6 @@ package com.atharok.barcodescanner.presentation.views.fragments.templates
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -127,18 +126,24 @@ class ProductOverviewFragment : BaseFragment() {
 
         val options = generateTransitionAnimation(viewBinding.fragmentProductOverviewImageView)
 
-        startActivity(intent, options?.toBundle())
+        startActivity(intent, options.toBundle())
     }
 
-    private fun generateTransitionAnimation(view: View?): ActivityOptions? {
+    private fun generateTransitionAnimation(view: View?): ActivityOptions {
 
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        /*return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ActivityOptions.makeSceneTransitionAnimation(
                 requireActivity(),
                 view,
                 getString(R.string.animation_activity_transition)
             )
-        } else null
+        } else null*/
+
+        return ActivityOptions.makeSceneTransitionAnimation(
+            requireActivity(),
+            view,
+            getString(R.string.animation_activity_transition)
+        )
     }
 
     companion object {

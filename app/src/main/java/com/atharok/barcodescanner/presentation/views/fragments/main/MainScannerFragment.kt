@@ -54,19 +54,6 @@ class MainScannerFragment : Fragment() {
 
     private val databaseViewModel: DatabaseViewModel by sharedViewModel()
 
-    // ---- Camera Permission ----
-
-    /**
-     * Gère le resultat de la demande de permission d'accès à la caméra.
-     */
-    private val requestPermission: ActivityResultLauncher<String> =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-            if(it)
-                configureScanner()
-            else
-                showSnackbar(getString(R.string.snack_bar_message_permission_refused))
-        }
-
     // ---- View ----
     private var _binding: FragmentMainScannerBinding? = null
     private val viewBinding get() = _binding!!
@@ -83,6 +70,15 @@ class MainScannerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Gère le resultat de la demande de permission d'accès à la caméra.
+        val requestPermission: ActivityResultLauncher<String> =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+                if(it)
+                    configureScanner()
+                else
+                    showSnackbar(getString(R.string.snack_bar_message_permission_refused))
+            }
 
         requestPermission.launch(Manifest.permission.CAMERA)
 

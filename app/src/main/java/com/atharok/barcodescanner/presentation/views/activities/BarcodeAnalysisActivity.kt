@@ -91,8 +91,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         setSupportActionBar(viewBinding.activityBarcodeInformationToolbar.toolbar)
 
-        val barcode: Barcode? =
-            intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
+        val barcode: Barcode? = intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
 
         if(barcode!=null){
             configureAllViews(barcode)
@@ -176,28 +175,30 @@ class BarcodeAnalysisActivity: BaseActivity() {
     // ---- OpenFoodFacts ----
     private fun observeOnAPI(barcode: Barcode, defaultBarcodeType: BarcodeType){
 
-        retrofitViewModel.getProduct(barcode).observe(
-            this, {
+        retrofitViewModel.getProduct(barcode).observe(this) {
 
-                when(it) {
+            when (it) {
 
-                    is Resource.Progress -> {}
+                is Resource.Progress -> {}
 
-                    is Resource.Failure -> configureDefaultView(NoneProduct(barcode), defaultBarcodeType, it.throwable.localizedMessage)//configureErrorSearchingProductView(barcodeInformation)
+                is Resource.Failure -> configureDefaultView(
+                    NoneProduct(barcode),
+                    defaultBarcodeType,
+                    it.throwable.localizedMessage
+                )//configureErrorSearchingProductView(barcodeInformation)
 
-                    is Resource.Success -> {
-                        when (it.data) {
-                            is BookProduct, is FoodProduct -> configureProductView(it.data)
-                            is NoneProduct -> configureDefaultView(it.data, defaultBarcodeType)
-                            else -> configureDefaultView(NoneProduct(barcode), defaultBarcodeType)
-                        }
+                is Resource.Success -> {
+                    when (it.data) {
+                        is BookProduct, is FoodProduct -> configureProductView(it.data)
+                        is NoneProduct -> configureDefaultView(it.data, defaultBarcodeType)
+                        else -> configureDefaultView(NoneProduct(barcode), defaultBarcodeType)
                     }
-
-                    // Si le code-barres n'a été trouvé sur aucun des services distants
-                    else -> configureDefaultView(NoneProduct(barcode), defaultBarcodeType)
                 }
+
+                // Si le code-barres n'a été trouvé sur aucun des services distants
+                else -> configureDefaultView(NoneProduct(barcode), defaultBarcodeType)
             }
-        )
+        }
     }
 
     // ---- Configuration de la vue principale en fonction du type de code-barres / produits ----
@@ -338,7 +339,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     // ---- Action Fragment ----
     private fun configureActionFragment(dateTimestamp: Long){
 
-        databaseViewModel.getBarcodeByDate(dateTimestamp).observe(this, { barcode ->
+        databaseViewModel.getBarcodeByDate(dateTimestamp).observe(this) { barcode ->
 
             val actionsFragment = barcodeAnalysisScope.get<KClass<out ActionsFragment>> {
                 parametersOf(barcode.getBarcodeType())
@@ -354,7 +355,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 args
             ) // Le fragment est placé dans le FrameLayout prévue à cet effet
 
-        })
+        }
     }
 
     // ---- Activity ----

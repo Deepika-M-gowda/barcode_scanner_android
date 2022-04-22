@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="themeColor" format="reference|color"/>
+    <attr name="appMainColor" format="reference|color"/>
+    <attr name="appColorPrimaryDark" format="reference|color"/>
+    <attr name="appBackgroundColorPrimary" format="reference|color"/>
+    <attr name="appBackgroundColorSecondary" format="reference|color"/>
+    <attr name="appFrontColorPrimary" format="reference|color"/>
+    <attr name="appFrontColorSecondary" format="reference|color"/>
 
     <attr name="colorPositive" format="color"/>
     <attr name="colorMedium" format="color"/>

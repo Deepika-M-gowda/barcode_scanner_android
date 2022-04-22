@@ -20,18 +20,19 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
-import android.Manifest
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.DocumentsContract
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
@@ -58,6 +59,7 @@ import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
+import java.text.SimpleDateFormat
 import java.util.*
 
 class BarcodeDetailsActivity : BaseActivity() {
@@ -197,7 +199,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.menu_activity_barcode_details_save -> confirmSaveImage()
+            R.id.menu_activity_barcode_details_save -> createFile()//confirmSaveImage()
             R.id.menu_activity_barcode_details_share_image -> shareImage()
             R.id.menu_activity_barcode_details_share_text -> shareText()
         }
@@ -205,7 +207,56 @@ class BarcodeDetailsActivity : BaseActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun askWriteExternalPermission() {
+    private val result: ActivityResultLauncher<Intent> =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            val uri = it.data?.data
+            if(uri != null) {
+                saveImage(uri)
+            }
+        }
+
+    private fun saveImage(uri: Uri) {
+        val mBitmap = bitmap
+        if(mBitmap!=null) {
+
+            lifecycleScope.launch(Dispatchers.IO) {
+                val successful = bitmapRecorder.recordImage(mBitmap, uri)
+                val stringRes: Int = if(successful)
+                    R.string.snack_bar_message_save_bitmap_ok
+                else
+                    R.string.snack_bar_message_save_bitmap_error
+
+                show(stringRes)
+            }
+        }
+    }
+
+    private fun createFile(/*pickerInitialUri: Uri*/) {
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "image/png"
+
+            val date = Date()
+            val dateNameStr = SimpleDateFormat("yyyy-MM-dd-hh-mm-ss", Locale.getDefault()).format(date)
+            val name = "barcode_$dateNameStr"
+
+            putExtra(Intent.EXTRA_TITLE, name)
+
+            // Optionally, specify a URI for the directory that should be opened in
+            // the system file picker before your app creates the document.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                putExtra(DocumentsContract.EXTRA_INITIAL_URI, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            }
+        }
+
+
+
+        result.launch(intent)
+
+        //startActivityForResult(intent, CREATE_FILE)
+    }
+
+    /*private fun askWriteExternalPermission() {
         //permissionsManager.requestPermissionsFromActivity(this, this)
         //resultPermissions.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         requestWriteExternalStoragePermission()
@@ -248,7 +299,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 show(stringRes)
             }*/
         }
-    }
+    }*/
 
     // ---- Share ----
 
@@ -261,9 +312,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 if(uri == null)
                     show(R.string.snack_bar_message_share_bitmap_error)
                 else{
-                    val intent: Intent = get(named(ActionEnum.SHARE_IMAGE)) {
-                        parametersOf(uri)
-                    }
+                    val intent: Intent = get(named(ActionEnum.SHARE_IMAGE)) { parametersOf(uri) }
                     startActivity(intent)
                 }
             }
@@ -271,10 +320,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     }
 
     private fun shareText(){
-        val intent: Intent = get(named(ActionEnum.SHARE_TEXT)) {
-            parametersOf(contents)
-        }
-
+        val intent: Intent = get(named(ActionEnum.SHARE_TEXT)) { parametersOf(contents) }
         startActivity(intent)
     }
 
@@ -283,7 +329,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     /**
      * Gère le resultat de la demande de permission d'écrire des données (image) sur l'appareil.
      */
-    private val requestPermission: ActivityResultLauncher<String> =
+    /*private val requestPermission: ActivityResultLauncher<String> =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
             if(it) saveImage() else managePermissionsDenied()
         }
@@ -299,7 +345,7 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun managePermissionsDenied() {
         show(R.string.snack_bar_message_permission_refused)
-    }
+    }*/
 
     // ---- Snackbar ----
 

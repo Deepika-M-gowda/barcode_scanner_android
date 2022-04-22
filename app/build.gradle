@@ -39,8 +39,8 @@ dependencies {
 
     // Android
     implementation 'androidx.activity:activity-ktx:1.4.0'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
 
     // Test
     testImplementation 'junit:junit:4.13.2'
@@ -48,7 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // UI
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.github.CanHub:Android-Image-Cropper:3.3.5'
 
     // Glide permet d'afficher des images via des URL web dans des ImageView
@@ -63,8 +63,8 @@ dependencies {
     implementation 'io.insert-koin:koin-android:3.1.5'
 
     // Room - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:2.4.1"
-    kapt "androidx.room:room-compiler:2.4.1"
+    implementation "androidx.room:room-ktx:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
 
     // Gère la sérialisation et la désérialisation des fichiers JSON
     implementation 'com.google.code.gson:gson:2.8.9'

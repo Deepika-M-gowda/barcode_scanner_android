@@ -96,29 +96,29 @@ class FoodProductIngredientsFragment : ProductBarcodeFragment<FoodProduct>() {
                                           allergensTagsList: List<String>?,
                                           tracesTagsList: List<String>?) {
 
-        viewModel.obtainAllergensList(allergensAndTracesTagsList).observe(viewLifecycleOwner, {
+        viewModel.obtainAllergensList(allergensAndTracesTagsList).observe(viewLifecycleOwner) {
             if (it.isNotEmpty()) {
                 val allergensList = mutableListOf<Allergen>()
                 val tracesList = mutableListOf<Allergen>()
 
                 // On sépare les allergens des traces
-                for(allergenSchema in it){
+                for (allergenSchema in it) {
 
-                    if(allergensTagsList?.contains(allergenSchema.tag) == true)
+                    if (allergensTagsList?.contains(allergenSchema.tag) == true)
                         allergensList.add(allergenSchema)
 
-                    if(tracesTagsList?.contains(allergenSchema.tag) == true)
+                    if (tracesTagsList?.contains(allergenSchema.tag) == true)
                         tracesList.add(allergenSchema)
                 }
 
                 // Allergens
-                if(allergensList.isNotEmpty()) {
+                if (allergensList.isNotEmpty()) {
                     val allergens: String = convertAllergensListToString(allergensList)
                     configureAllergensFragment(allergens)
                 }
 
                 // Traces
-                if(tracesList.isNotEmpty()) {
+                if (tracesList.isNotEmpty()) {
                     val traces: String = convertAllergensListToString(tracesList)
                     configureTracesFragment(traces)
                 }
@@ -127,7 +127,7 @@ class FoodProductIngredientsFragment : ProductBarcodeFragment<FoodProduct>() {
                 configureAllergensFragment(allergensTagsList?.convertToString())
                 configureTracesFragment(tracesTagsList?.convertToString())
             }
-        })
+        }
     }
 
     private fun convertAllergensListToString(list: List<Allergen>): String {

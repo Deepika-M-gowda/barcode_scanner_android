@@ -22,9 +22,6 @@ package com.atharok.barcodescanner.presentation.views.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import org.koin.android.ext.android.inject

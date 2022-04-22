@@ -2,161 +2,166 @@
 
     <!-- Base application theme. -->
     <style name="LightTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="appMainColor">@color/colorBlueAccent</item>
+        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="appBackgroundColorPrimary">@color/lightBackgroundColorPrimary</item>
+        <item name="appBackgroundColorSecondary">@color/lightBackgroundColorSecondary</item>
+        <item name="appFrontColorPrimary">@color/lightFrontColorPrimary</item>
+        <item name="appFrontColorSecondary">@color/lightFrontColorSecondary</item>
+
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/lightColorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorBlueAccent</item>
-        <item name="themeColor">@color/colorBlueAccent</item>
-        <item name="icon_color">@color/light_icon_color</item>
+        <item name="colorPrimary">?appBackgroundColorPrimary</item>
+        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
+        <item name="colorAccent">?appMainColor</item>
+
+        <item name="icon_color">?appFrontColorPrimary</item>
 
         <item name="colorPositive">@color/light_color_positive</item>
         <item name="colorMedium">@color/light_color_medium</item>
         <item name="colorNegative">@color/light_color_negative</item>
-        <item name="colorUnknown">@color/color_unknown</item>
+        <item name="colorUnknown">@color/light_color_unknown</item>
 
         <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
-        <item name="android:windowBackground">@color/lightColorBackground</item>
-        <item name="cardViewBackgroundColorReference">@color/lightColorCardViewBackground</item>
-        <item name="activityBackgroundColorReference">@color/lightColorBackground</item>
+        <item name="android:windowBackground">?appBackgroundColorPrimary</item>
+        <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
+        <item name="activityBackgroundColorReference">?appBackgroundColorPrimary</item>
 
-        <item name="background_entitled_row">?themeColor</item>
-        <item name="background_primary_row">@color/light_nutrition_background_primary_color</item>
-        <item name="background_secondary_row">@color/light_nutrition_background_secondary_color</item>
+        <item name="background_entitled_row">?appMainColor</item>
+        <item name="background_primary_row">?appBackgroundColorSecondary</item>
+        <item name="background_secondary_row">?appBackgroundColorPrimary</item>
 
 
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/lightColorTextPrimary</item>
-        <item name="android:textColor">@color/lightColorTextPrimary</item>
-        <item name="textColor">@color/lightColorTextPrimary</item>
-        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
+        <item name="android:textColor">?appFrontColorPrimary</item>
+        <item name="textColor">?appFrontColorPrimary</item>
+        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
 
         <item name="materialButtonStyle">@style/MaterialButton</item>
-        <item name="cardViewStyle">@style/CardViewLightStyle</item>
-        <item name="materialCardViewStyle">@style/MaterialCardViewLightStyle</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
 
 
-        <item name="chipStyle">@style/MaterialChipLight</item>
+        <item name="chipStyle">@style/MaterialChip</item>
 
         <item name="android:fontFamily">@font/roboto_medium</item>
 
-        <item name="android:datePickerDialogTheme">@style/DateTimePickerLightTheme</item>
-        <item name="android:timePickerDialogTheme">@style/DateTimePickerLightTheme</item>
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
 
         <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
-        <item name="alertDialogTheme">@style/AlertDialogLightStyle</item>
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
 
         <item name="colorControlNormal">?textColor</item>
 
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">?appColorPrimaryDark</item>
+        <item name="android:navigationBarColor">?appColorPrimaryDark</item>
     </style>
 
     <!-- Base application theme. -->
     <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
 
+        <item name="appMainColor">@color/colorBlueAccent</item>
+        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="appBackgroundColorPrimary">@color/darkBackgroundColorPrimary</item>
+        <item name="appBackgroundColorSecondary">@color/darkBackgroundColorSecondary</item>
+        <item name="appFrontColorPrimary">@color/darkFrontColorPrimary</item>
+        <item name="appFrontColorSecondary">@color/darkFrontColorSecondary</item>
+
+
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/darkColorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorBlueAccent</item>
-        <item name="themeColor">@color/colorBlueAccent</item>
-        <item name="icon_color">@color/dark_icon_color</item>
+        <item name="colorPrimary">?appBackgroundColorPrimary</item>
+        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
+        <item name="colorAccent">?appMainColor</item>
+        <item name="icon_color">?appFrontColorPrimary</item>
 
         <item name="colorPositive">@color/dark_color_positive</item>
         <item name="colorMedium">@color/dark_color_medium</item>
         <item name="colorNegative">@color/dark_color_negative</item>
-        <item name="colorUnknown">@color/color_unknown</item>
+        <item name="colorUnknown">@color/dark_color_unknown</item>
 
         <!--<item name="backgroundColor">@color/darkColorBackground</item>-->
-        <item name="android:windowBackground">@color/darkColorBackground</item>
-        <item name="cardViewBackgroundColorReference">@color/darkColorCardViewBackground</item>
-        <item name="activityBackgroundColorReference">@color/darkColorBackground</item>
+        <item name="android:windowBackground">?appBackgroundColorPrimary</item>
+        <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
+        <item name="activityBackgroundColorReference">?appBackgroundColorPrimary</item>
 
-        <item name="background_entitled_row">?themeColor</item>
-        <item name="background_primary_row">@color/dark_nutrition_background_primary_color</item>
-        <item name="background_secondary_row">@color/dark_nutrition_background_secondary_color</item>
+        <item name="background_entitled_row">?appMainColor</item>
+        <item name="background_primary_row">?appBackgroundColorSecondary</item>
+        <item name="background_secondary_row">?appBackgroundColorPrimary</item>
 
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
-        <item name="android:textColor">@color/darkColorTextPrimary</item>
-        <item name="textColor">@color/darkColorTextPrimary</item>
-        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
+        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
+        <item name="android:textColor">?appFrontColorPrimary</item>
+        <item name="textColor">?appFrontColorPrimary</item>
+        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
 
         <item name="materialButtonStyle">@style/MaterialButton</item>
-        <item name="cardViewStyle">@style/CardViewDarkStyle</item>
-        <item name="materialCardViewStyle">@style/MaterialCardViewDarkStyle</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
         <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
 
-        <item name="chipStyle">@style/MaterialChipDark</item>
+        <item name="chipStyle">@style/MaterialChip</item>
 
         <item name="android:fontFamily">@font/roboto_medium</item>
 
-        <item name="android:datePickerDialogTheme">@style/DateTimePickerDarkTheme</item>
-        <item name="android:timePickerDialogTheme">@style/DateTimePickerDarkTheme</item>
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
 
         <!--<item name="textAppearanceListItemSecondary">@style/textAppearanceListItemSecondaryCustom</item>
         <item name="textAppearanceListItem">@style/textAppearanceListItemSecondaryCustom</item>
         <item name="android:textColorAlertDialogListItem">@color/color_red</item>-->
         <!--<item name="alertDialogStyle">@style/AlertDialogStyle</item>-->
-        <item name="alertDialogTheme">@style/AlertDialogDarkStyle</item>
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
         
         <item name="colorControlNormal">?textColor</item>
 
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">?appColorPrimaryDark</item>
+        <item name="android:navigationBarColor">?appColorPrimaryDark</item>
     </style>
 
     <style name="OrangeLightTheme" parent="LightTheme">
-        <item name="colorAccent">@color/colorOrangeAccent</item>
-        <item name="themeColor">@color/colorOrangeAccent</item>
+        <item name="appMainColor">@color/colorOrangeAccent</item>
     </style>
 
     <style name="OrangeDarkTheme" parent="DarkTheme">
-        <item name="colorAccent">@color/colorOrangeAccent</item>
-        <item name="themeColor">@color/colorOrangeAccent</item>
+        <item name="appMainColor">@color/colorOrangeAccent</item>
     </style>
 
     <style name="BlueLightTheme" parent="LightTheme">
-        <item name="colorAccent">@color/colorBlueAccent</item>
-        <item name="themeColor">@color/colorBlueAccent</item>
+        <item name="appMainColor">@color/colorBlueAccent</item>
     </style>
 
     <style name="BlueDarkTheme" parent="DarkTheme">
-        <item name="colorAccent">@color/colorBlueAccent</item>
-        <item name="themeColor">@color/colorBlueAccent</item>
+        <item name="appMainColor">@color/colorBlueAccent</item>
     </style>
 
     <style name="GreenLightTheme" parent="LightTheme">
-        <item name="colorAccent">@color/colorGreenAccent</item>
-        <item name="themeColor">@color/colorGreenAccent</item>
+        <item name="appMainColor">@color/colorGreenAccent</item>
     </style>
 
     <style name="GreenDarkTheme" parent="DarkTheme">
-        <item name="colorAccent">@color/colorGreenAccent</item>
-        <item name="themeColor">@color/colorGreenAccent</item>
+        <item name="appMainColor">@color/colorGreenAccent</item>
     </style>
 
     <style name="RedLightTheme" parent="LightTheme">
-        <item name="colorAccent">@color/colorRedAccent</item>
-        <item name="themeColor">@color/colorRedAccent</item>
+        <item name="appMainColor">@color/colorRedAccent</item>
     </style>
 
     <style name="RedDarkTheme" parent="DarkTheme">
-        <item name="colorAccent">@color/colorRedAccent</item>
-        <item name="themeColor">@color/colorRedAccent</item>
+        <item name="appMainColor">@color/colorRedAccent</item>
     </style>
 
     <style name="PurpleLightTheme" parent="LightTheme">
-        <item name="colorAccent">@color/colorPurpleAccent</item>
-        <item name="themeColor">@color/colorPurpleAccent</item>
+        <item name="appMainColor">@color/colorPurpleAccent</item>
     </style>
 
     <style name="PurpleDarkTheme" parent="DarkTheme">
-        <item name="colorAccent">@color/colorPurpleAccent</item>
-        <item name="themeColor">@color/colorPurpleAccent</item>
+        <item name="appMainColor">@color/colorPurpleAccent</item>
     </style>
 
     <!-- ListPreference -->
@@ -177,17 +182,12 @@
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
 
-
-    <style name="MaterialChipLight" parent="@style/Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">@color/darkColorPrimary</item>
-    </style>
-
-    <style name="MaterialChipDark" parent="@style/Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">@color/darkColorPrimary</item>
+    <style name="MaterialChip" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">?appBackgroundColorPrimary</item>
     </style>
 
     <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">?appFrontColorPrimary</item>
         <item name="android:textSize">@dimen/min_text_size</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <!--<item name="android:layout_marginStart">@dimen/standard_margin</item>
@@ -202,16 +202,8 @@
         <item name="cardUseCompatPadding">true</item>
         <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
         <item name="cardElevation">@dimen/card_elevation</item>
-    </style>
-
-    <style name="CardViewLightStyle" parent="CardViewStyle">
-        <item name="cardBackgroundColor">@color/lightColorCardViewBackground</item>
-        <item name="android:background">@color/lightColorCardViewBackground</item>
-    </style>
-
-    <style name="CardViewDarkStyle" parent="CardViewStyle">
-        <item name="cardBackgroundColor">@color/darkColorCardViewBackground</item>
-        <item name="android:background">@color/darkColorCardViewBackground</item>
+        <item name="cardBackgroundColor">?appBackgroundColorSecondary</item>
+        <item name="android:background">?appBackgroundColorSecondary</item>
     </style>
     <!--  -->
 
@@ -220,16 +212,8 @@
         <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
         <item name="cardElevation">@dimen/card_elevation</item>
         <item name="strokeWidth">@dimen/stroke_width</item>
-    </style>
 
-    <style name="MaterialCardViewLightStyle" parent="MaterialCardViewStyle">
-        <item name="cardBackgroundColor">@color/lightColorCardViewBackground</item>
-        <item name="cardForegroundColor">@android:color/transparent</item>
-        <item name="strokeColor">@android:color/transparent</item>
-    </style>
-
-    <style name="MaterialCardViewDarkStyle" parent="MaterialCardViewStyle">
-        <item name="cardBackgroundColor">@color/darkColorCardViewBackground</item>
+        <item name="cardBackgroundColor">?appBackgroundColorSecondary</item>
         <item name="cardForegroundColor">@android:color/transparent</item>
         <!--<item name="strokeColor">@color/darkMaterialCardViewStrokeColor</item>-->
         <item name="strokeColor">@android:color/transparent</item>
@@ -242,51 +226,33 @@
     </style>
 
     <!-- AlertDialog -->
-    <style name="AlertDialogLightStyle" parent="Theme.AppCompat.Light.Dialog">
+    <style name="AlertDialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
         <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
 
-        <item name="colorAccent">?themeColor</item>
-        <item name="android:textColorPrimary">@color/lightColorTextSecondary</item>
-        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+        <item name="colorAccent">?appMainColor</item>
+        <item name="android:textColorPrimary">?appFrontColorSecondary</item>
+        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
         <item name="android:textSize">@dimen/sub_title_text_size</item>
         <item name="fontFamily">@font/roboto_black</item>
-        <item name="textColorAlertDialogListItem">@color/lightColorTextPrimary</item>
-        <item name="colorControlNormal">@color/lightColorTextPrimary</item>
+        <item name="textColorAlertDialogListItem">?appFrontColorPrimary</item>
+        <item name="colorControlNormal">?appFrontColorPrimary</item>
 
         <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
         <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonTextStyle</item>
         <item name="buttonBarNegativeButtonStyle">@style/AlertDialogButtonTextStyle</item>
         <item name="buttonBarNeutralButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="android:background">@color/lightColorCardViewBackground</item>
-    </style>
-
-    <style name="AlertDialogDarkStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
-
-        <item name="colorAccent">?themeColor</item>
-        <item name="android:textColorPrimary">@color/darkColorTextSecondary</item>
-        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
-        <item name="android:textSize">@dimen/sub_title_text_size</item>
-        <item name="fontFamily">@font/roboto_black</item>
-        <item name="textColorAlertDialogListItem">@color/darkColorTextPrimary</item>
-        <item name="colorControlNormal">@color/darkColorTextPrimary</item>
-
-        <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
-        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="buttonBarNeutralButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="android:background">@color/darkColorCardViewBackground</item>
+        <item name="android:background">?appBackgroundColorSecondary</item>
     </style>
 
     <style name="AlertDialogTitleTextStyle">
         <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">?themeColor</item>
+        <item name="android:textColor">?appMainColor</item>
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
 
     <style name="AlertDialogButtonTextStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:textColor">?themeColor</item>
+        <item name="android:textColor">?appMainColor</item>
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
 
@@ -376,59 +342,36 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
-    <style name="DateTimePickerLightTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@color/lightColorCardViewBackground</item>
-        <item name="android:timePickerStyle">@style/TimePickerLightTheme</item>
+    <style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">?appBackgroundColorSecondary</item>
+        <item name="android:timePickerStyle">@style/TimePickerTheme</item>
 
-        <item name="android:textColor">@color/lightColorTextPrimary</item>
-        <item name="android:textColorPrimary">@color/lightColorTextPrimary</item>
-        <item name="android:textColorSecondary">@color/lightColorTextSecondary</item>
+        <item name="android:textColor">?appFrontColorPrimary</item>
+        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
+        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
 
-        <item name="colorAccent">?themeColor</item>
-        <item name="android:colorAccent">?themeColor</item>
-        <item name="android:colorPrimary">?themeColor</item>
-        <item name="android:colorPrimaryDark">?themeColor</item>
-
-        <item name="android:buttonBarPositiveButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
-        <item name="android:buttonBarNeutralButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
-    </style>
-
-    <style name="DateTimePickerDarkTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@color/darkColorCardViewBackground</item>
-        <item name="android:timePickerStyle">@style/TimePickerDarkTheme</item>
-
-        <item name="android:textColor">@color/darkColorTextPrimary</item>
-        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
-        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
-
-        <item name="colorAccent">?themeColor</item>
-        <item name="android:colorAccent">?themeColor</item>
-        <item name="android:colorPrimary">?themeColor</item>
-        <item name="android:colorPrimaryDark">?themeColor</item>
+        <item name="colorAccent">?appMainColor</item>
+        <item name="android:colorAccent">?appMainColor</item>
+        <item name="android:colorPrimary">?appMainColor</item>
+        <item name="android:colorPrimaryDark">?appMainColor</item>
 
         <item name="android:buttonBarPositiveButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
         <item name="android:buttonBarNeutralButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
     </style>
 
-    <style name="TimePickerLightTheme" parent="@android:style/Widget.Material.Light.TimePicker">
-        <item name="android:numbersBackgroundColor">@color/lightColorBackground</item>
-        <item name="android:numbersSelectorColor">?themeColor</item>
-    </style>
-
-    <style name="TimePickerDarkTheme" parent="@android:style/Widget.Material.Light.TimePicker">
-        <item name="android:numbersBackgroundColor">@color/darkColorBackground</item>
-        <item name="android:numbersSelectorColor">?themeColor</item>
+    <style name="TimePickerTheme" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersBackgroundColor">?appBackgroundColorPrimary</item>
+        <item name="android:numbersSelectorColor">?appMainColor</item>
     </style>
 
     <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">?themeColor</item>
+        <item name="android:textColor">?appMainColor</item>
     </style>
 
     <style name="AppCompatAlertDialogButtonTextStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:textColor">?themeColor</item>
+        <item name="android:textColor">?appMainColor</item>
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
 

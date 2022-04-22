@@ -40,7 +40,7 @@ import java.util.*
  */
 class BitmapRecorder(private val context: Context) {
 
-    fun recordImage(bitmap: Bitmap): Boolean {
+    /*fun recordImage(bitmap: Bitmap): Boolean {
 
         val date = Date()
         val dateNameStr = SimpleDateFormat("yyyy-MM-dd-hh-mm-ss", Locale.getDefault()).format(date)
@@ -57,9 +57,28 @@ class BitmapRecorder(private val context: Context) {
         outputStream?.close()
 
         return successful
+    }*/
+
+    fun recordImage(bitmap: Bitmap, uri: Uri): Boolean {
+
+        var successful = false
+
+        try {
+
+            val outputStream: OutputStream? = context.contentResolver.openOutputStream(uri)
+
+            successful = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+
+            outputStream?.flush()
+            outputStream?.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return successful
     }
 
-    @RequiresApi(Build.VERSION_CODES.Q)
+    /*@RequiresApi(Build.VERSION_CODES.Q)
     private fun generateOutputStreamForAndroidQAndHigher(name: String, date: Date): OutputStream? {
         val resolver: ContentResolver = context.contentResolver
         val contentValues = ContentValues()
@@ -79,5 +98,5 @@ class BitmapRecorder(private val context: Context) {
         val imagesFolder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
         val image = File(imagesFolder, "$name.png")
         return FileOutputStream(image)
-    }
+    }*/
 }

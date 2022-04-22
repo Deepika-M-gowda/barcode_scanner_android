@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common
+package com.atharok.barcodescanner.common.injections
 
 import android.app.Activity
 import android.content.ClipboardManager
@@ -58,6 +58,7 @@ import com.atharok.barcodescanner.data.database.createDatabase
 import com.atharok.barcodescanner.data.file.FileFetcher
 import com.atharok.barcodescanner.data.network.createApiClient
 import com.atharok.barcodescanner.data.repositories.*
+import com.atharok.barcodescanner.data.sensor.createVibrator
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
@@ -85,6 +86,10 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.LocalisationActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.UrlActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.forms.*
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.android.material.chip.Chip
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
@@ -112,19 +117,13 @@ val appModules by lazy {
         repositoryModule,
         dataModule,
         scopesModule,
+        fragmentsModule,
         viewsModule
     )
 }
 
 val androidModule: Module = module {
-    single<Vibrator> {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager = androidApplication().applicationContext.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            androidApplication().applicationContext.getSystemService(VIBRATOR_SERVICE) as Vibrator
-        }
-    }
+    single<Vibrator> { createVibrator(androidApplication()) }
     single<ConnectivityManager> { androidApplication().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager }
     single<ClipboardManager> { androidApplication().applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager }
     single<InputMethodManager> { androidApplication().applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
@@ -309,6 +308,14 @@ val dataModule: Module = module {
     }
 
     single<FileFetcher> { FileFetcher(androidContext()) }
+}
+
+val fragmentsModule = module {
+
+    single { MainScannerFragment() }
+    single { MainHistoryFragment() }
+    single { MainBarcodeCreatorListFragment() }
+    single { MainSettingsFragment() }
 }
 
 val viewsModule = module {

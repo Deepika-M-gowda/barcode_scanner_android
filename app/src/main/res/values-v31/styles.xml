@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MaterialYouLightTheme" parent="LightTheme">
+        <item name="appMainColor">@android:color/system_accent1_600</item>
+        <item name="appColorPrimaryDark">@android:color/system_neutral1_1000</item>
+        <item name="appBackgroundColorPrimary">@android:color/system_neutral1_50</item>
+        <item name="appBackgroundColorSecondary">@android:color/system_neutral1_10</item>
+        <item name="appFrontColorPrimary">@android:color/system_neutral1_900</item>
+        <item name="appFrontColorSecondary">@android:color/system_neutral1_700</item>
+    </style>
+
+    <style name="MaterialYouDarkTheme" parent="DarkTheme">
+        <item name="appMainColor">@android:color/system_accent1_300</item>
+        <item name="appColorPrimaryDark">@android:color/system_neutral1_1000</item>
+        <item name="appBackgroundColorPrimary">@android:color/system_neutral1_900</item>
+        <item name="appBackgroundColorSecondary">@android:color/system_neutral1_800</item>
+        <item name="appFrontColorPrimary">@android:color/system_neutral1_100</item>
+        <item name="appFrontColorSecondary">@android:color/system_neutral1_300</item>
+    </style>
+</resources>

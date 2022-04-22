@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -92,30 +93,32 @@ class FoodProductLabelsFragment : ProductBarcodeFragment<FoodProduct>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun observeLabels(foodProduct: FoodProduct){
 
         val labelsTags = foodProduct.labelsTagList
 
         if(labelsTags != null && labelsTags.isNotEmpty()) {
 
-            viewModel.obtainLabelsList(labelsTags).observe(viewLifecycleOwner, {
+            viewModel.obtainLabelsList(labelsTags).observe(viewLifecycleOwner) {
 
                 uriList.clear()
-                for(label in it){
-                    if(label.imageUrl != null){
+                for (label in it) {
+                    if (label.imageUrl != null) {
                         uriList.add(label.imageUrl)
                     }
                 }
 
                 imageAdapter.notifyDataSetChanged()
 
-                val labelsRecyclerViewLayout = templateLabelsProductBinding.foodProductLabelsImageRecyclerViewLayout
+                val labelsRecyclerViewLayout =
+                    templateLabelsProductBinding.foodProductLabelsImageRecyclerViewLayout
 
-                if(uriList.isNullOrEmpty())
+                if (uriList.isNullOrEmpty())
                     labelsRecyclerViewLayout.visibility = View.GONE
                 else
                     labelsRecyclerViewLayout.visibility = View.VISIBLE
-            })
+            }
         }
     }
 

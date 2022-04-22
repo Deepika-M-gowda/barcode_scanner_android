@@ -24,6 +24,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.os.Build
 import androidx.preference.PreferenceManager
 import com.atharok.barcodescanner.R
 
@@ -34,7 +35,7 @@ class SettingsManager(private val context: Context) {
     // Appearance
     private val colorKey = context.getString(R.string.preferences_color_key)
     private val themeKey = context.getString(R.string.preferences_theme_key)
-    private var color = prefs.getString(colorKey, "blue")
+    private var color = prefs.getString(colorKey, getDefaultColorKey())
     private var theme = prefs.getString(themeKey, "system")
 
     // Scan
@@ -55,7 +56,7 @@ class SettingsManager(private val context: Context) {
     fun reload() {
         prefs = PreferenceManager.getDefaultSharedPreferences(context)
 
-        color = prefs.getString(colorKey, "blue")
+        color = prefs.getString(colorKey, getDefaultColorKey())
         theme = prefs.getString(themeKey, "system")
         useSearchOnApiKey = prefs.getBoolean(searchOnApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
@@ -67,6 +68,7 @@ class SettingsManager(private val context: Context) {
         return if(useDarkTheme()) {
             //R.style.DarkTheme
             when(color){
+                "material_you" -> R.style.MaterialYouDarkTheme
                 "blue" -> R.style.BlueDarkTheme
                 "orange" -> R.style.OrangeDarkTheme
                 "green" -> R.style.GreenDarkTheme
@@ -77,6 +79,7 @@ class SettingsManager(private val context: Context) {
         } else {
             //R.style.LightTheme
             when(color){
+                "material_you" -> R.style.MaterialYouLightTheme
                 "blue" -> R.style.BlueLightTheme
                 "orange" -> R.style.OrangeLightTheme
                 "green" -> R.style.GreenLightTheme
@@ -107,4 +110,8 @@ class SettingsManager(private val context: Context) {
     private fun isDarkThemeSystemOn(): Boolean =
         context.resources.configuration.uiMode and
                 Configuration.UI_MODE_NIGHT_MASK == UI_MODE_NIGHT_YES
+
+    private fun getDefaultColorKey(): String = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        "material_you"
+    } else "blue"
 }

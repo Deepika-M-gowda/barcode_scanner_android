@@ -68,7 +68,7 @@
     <string name="scan_error_exception_label">Une erreur est survenue: %1$s</string>
     <string name="flash_label">Flash</string>
     <string name="scan_from_image_label">Image</string>
-    <string name="intent_filter_scan_by_image">Scanner l\'image</string>
+    <string name="intent_filter_scan_by_image">Scanner une image</string>
     <string name="scan_information_label">Vise le code-barres à scanner</string>
 
     <!-- BarcodeAnalysisActivity -->
@@ -451,6 +451,7 @@
     <string name="preferences_switch_light_theme_label">Thème Clair</string>
     <string name="preferences_switch_dark_theme_label">Thème Sombre</string>
     <string name="preferences_color">Couleur principale</string>
+    <string name="preferences_color_material_you">Système (Material You)</string>
     <string name="preferences_color_blue">Bleu</string>
     <string name="preferences_color_orange">Orange</string>
     <string name="preferences_color_green">Vert</string>

@@ -29,6 +29,7 @@ import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -68,19 +69,20 @@ class BitmapSharer(private val context: Context) {
      */
     private fun writeBitmap(file: File, bitmap: Bitmap): Boolean {
 
-        val outputStream: FileOutputStream? = try {
-            FileOutputStream(file)
-        } catch (e: FileNotFoundException) {
-            null
-        }
+        var successful = false
 
-        if (outputStream != null) {
-            val successful: Boolean = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        try {
+
+            val outputStream: OutputStream = FileOutputStream(file)
+
+            successful = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+
             outputStream.flush()
             outputStream.close()
-            return successful
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
 
-        return false
+        return successful
     }
 }

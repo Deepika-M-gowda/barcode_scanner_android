@@ -27,12 +27,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
+import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extentions.*
 import com.atharok.barcodescanner.databinding.FragmentFoodProductVeggieAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
-import com.atharok.barcodescanner.common.extentions.firstCharacterIntoCapital
-import com.atharok.barcodescanner.common.extentions.setChipIconTintFromAttrRes
-import com.atharok.barcodescanner.common.extentions.setChipStrokeColorFromAttrRes
-import com.atharok.barcodescanner.common.extentions.setChipTextColorFromAttrRes
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.ProductBarcodeFragment
@@ -91,7 +89,7 @@ class FoodProductVeggieAnalysisFragment: ProductBarcodeFragment<FoodProduct>() {
         chipView.text = getString(stringResource).firstCharacterIntoCapital()
 
         chipView.setChipTextColorFromAttrRes(colorResource)
-        chipView.setChipBackgroundColorResource(android.R.color.transparent)
+        chipView.setChipBackgroundColorFromAttrRes(R.attr.appBackgroundColorSecondary)
         chipView.setChipStrokeColorFromAttrRes(colorResource)
         chipView.setChipIconTintFromAttrRes(colorResource)
         chipView.setChipIconResource(drawableResource)
