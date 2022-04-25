@@ -24,12 +24,12 @@ import android.net.wifi.WifiEnterpriseConfig
 import android.os.Build
 
 internal fun String.toEapMethod(): Int? = when (this) {
-    "AKA" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) WifiEnterpriseConfig.Eap.AKA else null
+    "AKA" -> WifiEnterpriseConfig.Eap.AKA
     "AKA_PRIME" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) WifiEnterpriseConfig.Eap.AKA_PRIME else null
     "NONE" -> WifiEnterpriseConfig.Eap.NONE
     "PEAP" -> WifiEnterpriseConfig.Eap.PEAP
     "PWD" -> WifiEnterpriseConfig.Eap.PWD
-    "SIM" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) WifiEnterpriseConfig.Eap.SIM else null
+    "SIM" -> WifiEnterpriseConfig.Eap.SIM
     "TLS" -> WifiEnterpriseConfig.Eap.TLS
     "TTLS" -> WifiEnterpriseConfig.Eap.TTLS
     "UNAUTH_TLS" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) WifiEnterpriseConfig.Eap.UNAUTH_TLS else null

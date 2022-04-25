@@ -50,6 +50,7 @@
         <item>@string/google_label</item>
         <item>@string/bing_label</item>
         <item>@string/duckduckgo_label</item>
+        <item>@string/startpage_label</item>
         <item>@string/qwant_label</item>
         <item>@string/ecosia_label</item>
         <item>@string/lilo_label</item>
@@ -59,6 +60,7 @@
         <item>google</item>
         <item>bing</item>
         <item>duckduckgo</item>
+        <item>startpage</item>
         <item>qwant</item>
         <item>ecosia</item>
         <item>lilo</item>

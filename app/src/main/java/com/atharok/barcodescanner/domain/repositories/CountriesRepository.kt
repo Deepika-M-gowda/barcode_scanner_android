@@ -24,6 +24,11 @@ import com.atharok.barcodescanner.domain.entity.dependencies.Country
 
 interface CountriesRepository {
 
-    suspend fun getCountriesList(fileNameWithExtension: String, fileUrlName: String, tagList: List<String>): List<Country>
-    suspend fun getCountries(fileNameWithExtension: String, fileUrlName: String, tagList: List<String>): String
+    suspend fun getCountriesList(fileNameWithExtension: String,
+                                 fileUrlName: String,
+                                 tagList: List<String>): List<Country>
+
+    suspend fun getCountries(fileNameWithExtension: String,
+                             fileUrlName: String,
+                             tagList: List<String>): String
 }

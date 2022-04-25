@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeCreatorForms.forms.FormCreateQrCodeWifiFragment">
+    tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateQrCodeWifiFragment">
 
     <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
         android:id="@+id/fragment_form_create_qr_code_wifi_ssid_input_layout"

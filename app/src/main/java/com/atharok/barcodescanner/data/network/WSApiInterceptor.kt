@@ -36,7 +36,7 @@ class WSApiInterceptor: Interceptor {
 
         try {
             response = chain.proceed(requestBuilder.build())
-        }catch (e: Exception){
+        } catch (e: Exception) {
             throw when(e){
                 is ExecutionException -> NoInternetConnectionException()
                 is IOException -> NoInternetConnectionException()

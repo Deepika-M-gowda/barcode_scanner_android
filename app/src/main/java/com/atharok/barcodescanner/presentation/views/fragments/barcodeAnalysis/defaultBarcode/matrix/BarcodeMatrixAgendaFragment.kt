@@ -30,17 +30,16 @@ import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
 import com.google.zxing.client.result.CalendarParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class BarcodeMatrixAgendaFragment : AbstractBarcodeMatrixFragment() {
 
-    private val simpleDateFormat: SimpleDateFormat by lazy {
-        SimpleDateFormat("E dd MMM yyyy HH:mm", Locale.getDefault())
-    }
+    private val simpleDateFormat: SimpleDateFormat by inject { parametersOf("E dd MMM yyyy HH:mm") }
 
     private var _binding: FragmentBarcodeMatrixAgendaBinding? = null
     private val viewBinding get() = _binding!!

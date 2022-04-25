@@ -30,20 +30,16 @@ import com.atharok.barcodescanner.data.file.JsonManager
 import java.io.File
 
 class AdditiveClassRepositoryImpl(private val context: Context,
-                                  private val fileFetcher: FileFetcher
-): AdditiveClassRepository {
+                                  private val fileFetcher: FileFetcher): AdditiveClassRepository {
 
 
-    override suspend fun getAdditiveClassList(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): List<AdditiveClass> {
+    override suspend fun getAdditiveClassList(fileNameWithExtension: String,
+                                              fileUrlName: String,
+                                              tagList: List<String>): List<AdditiveClass> {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getAdditiveClassList(tagList, file)
-        } else listOf()
+        return if(file.exists()) getAdditiveClassList(tagList, file) else listOf()
     }
 
     /**

@@ -31,16 +31,18 @@ class AdditivesRepositoryImpl(private val additiveResponseRepository: AdditiveRe
                               private val additiveClassRepository: AdditiveClassRepository): AdditivesRepository {
 
 
-    override suspend fun getAdditivesList(
-        additiveFileNameWithExtension: String,
-        additiveFileUrlName: String,
-        tagList: List<String>,
-        additiveClassFileNameWithExtension: String,
-        additiveClassFileUrlName: String
-    ): List<Additive> {
+    override suspend fun getAdditivesList(additiveFileNameWithExtension: String,
+                                          additiveFileUrlName: String,
+                                          tagList: List<String>,
+                                          additiveClassFileNameWithExtension: String,
+                                          additiveClassFileUrlName: String): List<Additive> {
 
-        val additiveResponseList: List<AdditiveResponse> = additiveResponseRepository.getAdditiveResponseList(
-            additiveFileNameWithExtension, additiveFileUrlName, tagList)
+        val additiveResponseList: List<AdditiveResponse> =
+            additiveResponseRepository.getAdditiveResponseList(
+                fileNameWithExtension = additiveFileNameWithExtension,
+                fileUrlName = additiveFileUrlName,
+                tagList = tagList
+            )
 
         val additiveClassTagList: List<String> = generateAdditivesClassesTagsList(additiveResponseList)
 
@@ -67,7 +69,8 @@ class AdditivesRepositoryImpl(private val additiveResponseRepository: AdditiveRe
         return allAdditivesClassesTagsList
     }
 
-    private fun generateAdditivesList(additivesResponseList: List<AdditiveResponse>, additiveClassList: List<AdditiveClass>): List<Additive> {
+    private fun generateAdditivesList(additivesResponseList: List<AdditiveResponse>,
+                                      additiveClassList: List<AdditiveClass>): List<Additive> {
 
         val additivesList: MutableList<Additive> = mutableListOf()
 

@@ -27,16 +27,13 @@ import java.io.File
 
 class AdditiveResponseRepository(private val fileFetcher: FileFetcher) {
 
-    suspend fun getAdditiveResponseList(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): List<AdditiveResponse> {
+    fun getAdditiveResponseList(fileNameWithExtension: String,
+                                        fileUrlName: String,
+                                        tagList: List<String>): List<AdditiveResponse> {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getAdditiveResponseList(tagList, file)
-        } else listOf()
+        return if(file.exists()) getAdditiveResponseList(tagList, file) else listOf()
     }
 
     private fun getAdditiveResponseList(tagList: List<String>, jsonFile: File): List<AdditiveResponse> {

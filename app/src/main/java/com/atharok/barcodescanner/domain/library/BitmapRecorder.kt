@@ -20,51 +20,21 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import android.content.ContentResolver
-import android.content.ContentValues
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
-import android.os.Environment
-import android.provider.MediaStore
-import androidx.annotation.RequiresApi
-import java.io.File
-import java.io.FileOutputStream
 import java.io.OutputStream
-import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * Enregistre une image dans la mémoire interne de l'appareil.
  */
 class BitmapRecorder(private val context: Context) {
 
-    /*fun recordImage(bitmap: Bitmap): Boolean {
-
-        val date = Date()
-        val dateNameStr = SimpleDateFormat("yyyy-MM-dd-hh-mm-ss", Locale.getDefault()).format(date)
-        val name = "barcode_$dateNameStr"
-
-        val outputStream: OutputStream? = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-            generateOutputStreamForAndroidQAndHigher(name, date)
-        else
-            generateOutputStreamForAndroidPAndLower(name)
-
-        val successful = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-
-        outputStream?.flush()
-        outputStream?.close()
-
-        return successful
-    }*/
-
     fun recordImage(bitmap: Bitmap, uri: Uri): Boolean {
 
         var successful = false
 
         try {
-
             val outputStream: OutputStream? = context.contentResolver.openOutputStream(uri)
 
             successful = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
@@ -77,26 +47,4 @@ class BitmapRecorder(private val context: Context) {
 
         return successful
     }
-
-    /*@RequiresApi(Build.VERSION_CODES.Q)
-    private fun generateOutputStreamForAndroidQAndHigher(name: String, date: Date): OutputStream? {
-        val resolver: ContentResolver = context.contentResolver
-        val contentValues = ContentValues()
-        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, "$name.png")
-        contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-        contentValues.put(MediaStore.MediaColumns.DATE_ADDED, date.time / 1000)
-        contentValues.put(MediaStore.MediaColumns.DATE_MODIFIED, date.time / 1000)
-        contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
-        val imageUri: Uri? = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-
-        return if(imageUri != null) resolver.openOutputStream(imageUri) else null
-
-    }
-
-    @Suppress("DEPRECATION")
-    private fun generateOutputStreamForAndroidPAndLower(name: String): OutputStream {
-        val imagesFolder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
-        val image = File(imagesFolder, "$name.png")
-        return FileOutputStream(image)
-    }*/
 }

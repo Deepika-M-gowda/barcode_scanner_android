@@ -34,13 +34,17 @@ import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.databinding.FragmentMainHistoryBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
 import com.google.android.material.snackbar.Snackbar
+import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -103,7 +107,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     // ---- HistoryItemAdapter.OnItemClickListener Implementation ----
     override fun onItemClick(view: View?, barcode: Barcode) {
-        startResultActivity(barcode)
+        startBarcodeAnalysisActivity(barcode)
     }
 
     // ---- HistoryItemTouchHelperListener Implementation ----
@@ -149,11 +153,15 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     }
 
-    private fun startResultActivity(barcode: Barcode){
-        val intent = Intent(requireContext(), BarcodeAnalysisActivity::class.java)
-        intent.putExtra(BARCODE_KEY, barcode)
+    private fun startBarcodeAnalysisActivity(barcode: Barcode){
+        val intent = getBarcodeAnalysisActivityIntent().apply {
+            putExtra(BARCODE_KEY, barcode)
+        }
         startActivity(intent)
     }
+
+    private fun getBarcodeAnalysisActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 
     private fun showDeleteConfirmationDialog(){
         AlertDialog.Builder(requireContext())

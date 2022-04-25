@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeCreatorForms.forms.FormCreateQrCodeContactFragment">
+    tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateQrCodeContactFragment">
 
     <Button
         android:id="@+id/fragment_form_create_qr_code_contact_importation_button"
@@ -180,7 +180,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_mail_1_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -220,7 +220,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_mail_2_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -260,7 +260,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_mail_3_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -300,7 +300,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_phone_1_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -340,7 +340,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_phone_2_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -380,7 +380,7 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <Spinner
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/fragment_form_create_qr_code_contact_phone_3_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

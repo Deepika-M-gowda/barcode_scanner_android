@@ -23,6 +23,7 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import org.koin.android.ext.android.inject
 import kotlin.reflect.KClass
@@ -36,37 +37,24 @@ abstract class BaseActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    protected fun applyFragment(containerViewId: Int, fragment: Fragment){
-        supportFragmentManager
-            .beginTransaction()
-            .replace(containerViewId, fragment)
-            .commit()
+    protected fun replaceFragment(containerViewId: Int, fragment: Fragment){
+        supportFragmentManager.commit {
+            replace(containerViewId, fragment)
+        }
     }
 
-    protected fun applyFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null){
+    protected fun replaceFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null){
         supportFragmentManager
             .beginTransaction()
             .replace(containerViewId, fragmentClass.java, args, tag)
             .commit()
     }
 
-    /*override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) hideSystemUI()
-    }
-
-    private fun hideSystemUI() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window, window.decorView).let { controller ->
-            controller.hide(WindowInsetsCompat.Type.systemBars())
-            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+    protected fun removeFragment(fragment: Fragment){
+        supportFragmentManager.commit {
+            remove(fragment)
         }
     }
-
-    private fun showSystemUI() {
-        WindowCompat.setDecorFitsSystemWindows(window, true)
-        WindowInsetsControllerCompat(window, window.decorView).show(WindowInsetsCompat.Type.systemBars())
-    }*/
 
     // -------------------------------
     // ------ Activity Override ------

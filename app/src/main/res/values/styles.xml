@@ -1,5 +1,9 @@
 <resources>
 
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar">
+
+    </style>
+
     <!-- Base application theme. -->
     <style name="LightTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
@@ -10,7 +14,6 @@
         <item name="appFrontColorPrimary">@color/lightFrontColorPrimary</item>
         <item name="appFrontColorSecondary">@color/lightFrontColorSecondary</item>
 
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">?appBackgroundColorPrimary</item>
         <item name="colorPrimaryDark">?appColorPrimaryDark</item>
         <item name="colorAccent">?appMainColor</item>
@@ -22,6 +25,7 @@
         <item name="colorNegative">@color/light_color_negative</item>
         <item name="colorUnknown">@color/light_color_unknown</item>
 
+        <!-- Background Color -->
         <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
         <item name="android:windowBackground">?appBackgroundColorPrimary</item>
         <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
@@ -30,7 +34,6 @@
         <item name="background_entitled_row">?appMainColor</item>
         <item name="background_primary_row">?appBackgroundColorSecondary</item>
         <item name="background_secondary_row">?appBackgroundColorPrimary</item>
-
 
         <!-- Text Color -->
         <item name="android:textColorPrimary">?appFrontColorPrimary</item>
@@ -59,6 +62,8 @@
 
         <item name="android:statusBarColor">?appColorPrimaryDark</item>
         <item name="android:navigationBarColor">?appColorPrimaryDark</item>
+
+        <item name="android:windowFullscreen">false</item>
     </style>
 
     <!-- Base application theme. -->
@@ -71,8 +76,6 @@
         <item name="appFrontColorPrimary">@color/darkFrontColorPrimary</item>
         <item name="appFrontColorSecondary">@color/darkFrontColorSecondary</item>
 
-
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">?appBackgroundColorPrimary</item>
         <item name="colorPrimaryDark">?appColorPrimaryDark</item>
         <item name="colorAccent">?appMainColor</item>
@@ -83,6 +86,7 @@
         <item name="colorNegative">@color/dark_color_negative</item>
         <item name="colorUnknown">@color/dark_color_unknown</item>
 
+        <!-- Background Color -->
         <!--<item name="backgroundColor">@color/darkColorBackground</item>-->
         <item name="android:windowBackground">?appBackgroundColorPrimary</item>
         <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
@@ -103,7 +107,7 @@
         <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
-        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+
 
         <item name="chipStyle">@style/MaterialChip</item>
 
@@ -112,16 +116,15 @@
         <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
 
-        <!--<item name="textAppearanceListItemSecondary">@style/textAppearanceListItemSecondaryCustom</item>
-        <item name="textAppearanceListItem">@style/textAppearanceListItemSecondaryCustom</item>
-        <item name="android:textColorAlertDialogListItem">@color/color_red</item>-->
-        <!--<item name="alertDialogStyle">@style/AlertDialogStyle</item>-->
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
         <item name="alertDialogTheme">@style/AlertDialogStyle</item>
         
         <item name="colorControlNormal">?textColor</item>
 
         <item name="android:statusBarColor">?appColorPrimaryDark</item>
         <item name="android:navigationBarColor">?appColorPrimaryDark</item>
+
+        <item name="android:windowFullscreen">false</item>
     </style>
 
     <style name="OrangeLightTheme" parent="LightTheme">

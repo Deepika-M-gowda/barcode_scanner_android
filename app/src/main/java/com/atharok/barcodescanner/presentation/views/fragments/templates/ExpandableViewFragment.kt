@@ -28,6 +28,7 @@ import android.view.ViewGroup
 import com.atharok.barcodescanner.databinding.FragmentExpandableViewBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.databinding.TemplateTextViewContentsBinding
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -104,7 +105,7 @@ class ExpandableViewFragment : Fragment() {
         @JvmStatic
         fun newInstance(title: String, contents: CharSequence, drawableResource: Int? = null) =
             ExpandableViewFragment().apply {
-                arguments = Bundle().apply {
+                arguments = get<Bundle>().apply {
                     putString(ENTITLED_KEY, title)
                     putCharSequence(CONTENTS_KEY, contents)
                     if(drawableResource != null)

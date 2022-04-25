@@ -23,19 +23,12 @@ package com.atharok.barcodescanner.common.injections
 import android.app.Activity
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.Context.VIBRATOR_SERVICE
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.content.pm.ResolveInfo
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
-import android.os.Vibrator
-import android.os.VibratorManager
-import android.provider.CalendarContract
-import android.provider.ContactsContract
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -58,7 +51,6 @@ import com.atharok.barcodescanner.data.database.createDatabase
 import com.atharok.barcodescanner.data.file.FileFetcher
 import com.atharok.barcodescanner.data.network.createApiClient
 import com.atharok.barcodescanner.data.repositories.*
-import com.atharok.barcodescanner.data.sensor.createVibrator
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
@@ -71,6 +63,7 @@ import com.atharok.barcodescanner.domain.repositories.*
 import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
+import com.atharok.barcodescanner.presentation.intent.*
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
@@ -85,7 +78,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.ContactActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.LocalisationActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.UrlActionsFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.forms.*
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
@@ -97,6 +90,7 @@ import com.google.zxing.Result
 import com.google.zxing.client.android.BeepManager
 import com.google.zxing.client.result.*
 import com.journeyapps.barcodescanner.BarcodeEncoder
+import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -104,6 +98,7 @@ import org.koin.core.module.Module
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.reflect.KClass
 
@@ -123,7 +118,6 @@ val appModules by lazy {
 }
 
 val androidModule: Module = module {
-    single<Vibrator> { createVibrator(androidApplication()) }
     single<ConnectivityManager> { androidApplication().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager }
     single<ClipboardManager> { androidApplication().applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager }
     single<InputMethodManager> { androidApplication().applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
@@ -133,36 +127,100 @@ val androidModule: Module = module {
         Barcode(contents, formatName, System.currentTimeMillis())
     }
 
-    // ---- Share Text ----
-    factory<Intent>(named(ActionEnum.SHARE_TEXT)) { (contents: String) ->
+    factory { Bundle() }
 
-        val intent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, contents)
-        }
+    // ---- Intent ----
 
-        Intent.createChooser(intent, androidContext().getString(R.string.intent_chooser_share_title))
+    factory<Intent>(named(INTENT_START_ACTIVITY)) { (kClass: KClass<*>) ->
+        createStartActivityIntent(androidContext(), kClass)
     }
 
-    // ---- Share Image ----
-    factory<Intent>(named(ActionEnum.SHARE_IMAGE)) { (uri: Uri) ->
+    factory<Intent>(named(INTENT_PICK_IMAGE)) {
+        createPickImageIntent()
+    }
 
-        val intent: Intent = Intent(Intent.ACTION_SEND).apply {
-            type = "image/png"
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // -> For call startActivity() from outside of an Activity context
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            putExtra(Intent.EXTRA_STREAM, uri)
+    factory<Intent>(named(INTENT_PICK_CONTACT)) {
+        createPickContactIntent()
+    }
+
+    factory<Intent>(named(INTENT_PICK_WIFI_NETWORK)) {
+        createPickWifiNetworkIntent()
+    }
+
+    factory<Intent>(named(INTENT_WIFI_ADD_NETWORKS)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            createWifiAddNetworksIntent()
+        } else {
+            Intent()
         }
+    }
 
-        val chooser = Intent.createChooser(intent, androidContext().getString(R.string.intent_chooser_share_title))
+    factory<Intent>(named(INTENT_ACTION_CREATE_IMAGE)) {
+        val date = get<Date>()
+        val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
+        val dateNameStr = simpleDateFormat.format(date)
+        val name = "barcode_$dateNameStr"
+        createActionCreateImageIntent(name)
+    }
 
-        val resInfoList: List<ResolveInfo> = androidContext().packageManager.queryIntentActivities(chooser, PackageManager.MATCH_DEFAULT_ONLY)
-        for (resolveInfo in resInfoList) {
-            val packageName = resolveInfo.activityInfo.packageName
-            androidContext().grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        }
+    factory<Intent>(named(INTENT_SHARE_TEXT)) { (text: String) ->
+        createShareTextIntent(androidContext(), text)
+    }
 
-        chooser
+    factory<Intent>(named(INTENT_SHARE_IMAGE)) { (uri: Uri) ->
+        createShareImageIntent(androidContext(), uri)
+    }
+
+    factory<Intent>(named(INTENT_ADD_AGENDA)) { (parsedResult: CalendarParsedResult) ->
+        createAddAgendaIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_ADD_CONTACT)) { (parsedResult: AddressBookParsedResult) ->
+        createAddContactIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_ADD_EMAIL)) { (parsedResult: EmailAddressParsedResult) ->
+        createAddEmailIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_ADD_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
+        createAddPhoneNumberIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_ADD_SMS_NUMBER)) { (parsedResult: SMSParsedResult) ->
+        createAddSmsNumberIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_SEND_EMAIL)) { (parsedResult: EmailAddressParsedResult) ->
+        createSendEmailIntent(androidContext(), parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_CALL_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
+        createCallPhoneNumberIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_CALL_SMS_NUMBER)) { (parsedResult: SMSParsedResult) ->
+        createCallSmsNumberIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_SEND_SMS_TO_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
+        createSendSmsToPhoneNumberIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_SEND_SMS_TO_SMS_NUMBER)) { (parsedResult: SMSParsedResult) ->
+        createSendSmsToSmsNumberIntent(parsedResult)
+    }
+
+    /*factory<Intent>(named(INTENT_SEARCH_LOCALISATION)) { (parsedResult: GeoParsedResult) ->
+        createSearchLocalisationIntent(parsedResult)
+    }
+
+    factory<Intent>(named(INTENT_SEARCH_URL)) { (parsedResult: URIParsedResult) ->
+        createSearchUrlIntent(parsedResult)
+    }*/
+
+    factory<Intent>(named(INTENT_SEARCH_URL)) { (url: String) ->
+        createSearchUrlIntent(url)
     }
 }
 
@@ -185,6 +243,9 @@ val libraryModule: Module = module {
             isVibrateEnabled = settingsManager.useVibrateScan
         }
     }
+
+    factory { Date() }
+    factory { (pattern: String) -> SimpleDateFormat(pattern, Locale.getDefault()) }
 }
 
 @RequiresApi(Build.VERSION_CODES.Q)
@@ -316,6 +377,63 @@ val fragmentsModule = module {
     single { MainHistoryFragment() }
     single { MainBarcodeCreatorListFragment() }
     single { MainSettingsFragment() }
+
+    factory { FormCreateQrCodeTextFragment() }
+    factory { FormCreateQrCodeUrlFragment() }
+    factory { FormCreateQrCodeContactFragment() }
+    factory { FormCreateQrCodeMailFragment() }
+    factory { FormCreateQrCodeSmsFragment() }
+    factory { FormCreateQrCodePhoneFragment() }
+    factory { FormCreateQrCodeLocalisationFragment() }
+    factory { FormCreateQrCodeAgendaFragment() }
+    factory { FormCreateQrCodeWifiFragment() }
+    factory { FormCreateBarcodeFragment() }
+
+    factory<AbstractFormCreateBarcodeFragment> { (type: BarcodeFormatDetails) ->
+
+        when(type){
+            BarcodeFormatDetails.QR_TEXT -> get<FormCreateQrCodeTextFragment>()
+            BarcodeFormatDetails.QR_URL -> get<FormCreateQrCodeUrlFragment>()
+            BarcodeFormatDetails.QR_CONTACT -> get<FormCreateQrCodeContactFragment>()
+            BarcodeFormatDetails.QR_MAIL -> get<FormCreateQrCodeMailFragment>()
+            BarcodeFormatDetails.QR_SMS -> get<FormCreateQrCodeSmsFragment>()
+            BarcodeFormatDetails.QR_PHONE -> get<FormCreateQrCodePhoneFragment>()
+            BarcodeFormatDetails.QR_LOCALISATION -> get<FormCreateQrCodeLocalisationFragment>()
+            BarcodeFormatDetails.QR_AGENDA -> get<FormCreateQrCodeAgendaFragment>()
+            BarcodeFormatDetails.QR_WIFI -> get<FormCreateQrCodeWifiFragment>()
+            else -> {
+
+                get<FormCreateBarcodeFragment>().apply {
+                    arguments = get<Bundle>().apply {
+                        putSerializable(BARCODE_FORMAT_KEY, type.format)
+                    }
+                }
+            }
+        }
+    }
+
+    factory<KClass<out ActionsFragment>> { (barcodeType: BarcodeType) ->
+
+        when(barcodeType){
+            BarcodeType.AGENDA -> AgendaActionsFragment::class
+            BarcodeType.CONTACT -> ContactActionsFragment::class
+            BarcodeType.LOCALISATION -> LocalisationActionsFragment::class
+            BarcodeType.MAIL -> EmailActionsFragment::class
+            BarcodeType.PHONE -> PhoneActionsFragment::class
+            BarcodeType.SMS -> SmsActionsFragment::class
+            BarcodeType.TEXT -> SimpleActionsFragment::class
+            BarcodeType.URL -> UrlActionsFragment::class
+            BarcodeType.WIFI -> WifiActionsFragment::class
+            BarcodeType.FOOD -> FoodActionsFragment::class
+            BarcodeType.PET_FOOD -> PetFoodActionsFragment::class
+            BarcodeType.BEAUTY -> BeautyActionsFragment::class
+            BarcodeType.BOOK -> BookActionsFragment::class
+            BarcodeType.INDUSTRIAL -> SimpleActionsFragment::class
+            BarcodeType.MATRIX -> SimpleActionsFragment::class
+            BarcodeType.UNKNOWN -> SimpleActionsFragment::class
+            BarcodeType.UNKNOWN_PRODUCT -> ProductActionsFragment::class
+        }
+    }
 }
 
 val viewsModule = module {
@@ -331,8 +449,7 @@ val viewsModule = module {
         }
     }
 
-    factory<FrameLayout> {
-            (activity: Activity, view: View) ->
+    factory<FrameLayout> { (activity: Activity, view: View) ->
 
         FrameLayout(activity).apply {
             id = View.NO_ID
@@ -346,8 +463,7 @@ val viewsModule = module {
         }
     }
 
-    factory<TextView> {
-            (activity: Activity, message: String) ->
+    factory<TextView> { (activity: Activity, message: String) ->
 
         TextView(activity).apply {
             id = View.NO_ID
@@ -360,8 +476,7 @@ val viewsModule = module {
         }
     }
 
-    factory<AlertDialog>(named(DIALOG_SIMPLE_VIEW_KOIN_NAMED)) {
-            (activity: Activity, title: String, message: String) ->
+    factory<AlertDialog>(named(DIALOG_SIMPLE_VIEW_KOIN_NAMED)) { (activity: Activity, title: String, message: String) ->
 
         val textView = get<TextView> { parametersOf(activity, message) }
         val frameLayout = get<FrameLayout> { parametersOf(activity, textView) }
@@ -384,19 +499,16 @@ val viewsModule = module {
 
 val scopesModule: Module = module {
 
-    // Scope utilisé par BarcodeAnalysisActivity et ses sous fragments
     scope(named(BARCODE_ANALYSIS_SCOPE_SESSION)) {
 
-        scoped<ParsedResult> { (contents: String, format: BarcodeFormat) ->
+        scoped { (contents: String, format: BarcodeFormat) ->
             val result = Result(contents, null, null, format)
             ResultParser.parseResult(result)
         }
 
         scoped<BarcodeType> { (contents: String, format: BarcodeFormat) ->
 
-            val parsedResult = get<ParsedResult>{
-                parametersOf(contents, format)
-            }
+            val parsedResult: ParsedResult = this@scoped.get { parametersOf(contents, format) }
 
             when(parsedResult.type){
                 ParsedResultType.ADDRESSBOOK -> BarcodeType.CONTACT
@@ -413,30 +525,6 @@ val scopesModule: Module = module {
                 ParsedResultType.VIN -> BarcodeType.TEXT
                 else -> BarcodeType.UNKNOWN
             }
-        }
-
-        scoped<KClass<out ActionsFragment>> { (barcodeType: BarcodeType) ->
-
-            when(barcodeType){
-                BarcodeType.AGENDA -> AgendaActionsFragment::class
-                BarcodeType.CONTACT -> ContactActionsFragment::class
-                BarcodeType.LOCALISATION -> LocalisationActionsFragment::class
-                BarcodeType.MAIL -> EmailActionsFragment::class
-                BarcodeType.PHONE -> PhoneActionsFragment::class
-                BarcodeType.SMS -> SmsActionsFragment::class
-                BarcodeType.TEXT -> SimpleActionsFragment::class
-                BarcodeType.URL -> UrlActionsFragment::class
-                BarcodeType.WIFI -> WifiActionsFragment::class
-                BarcodeType.FOOD -> FoodActionsFragment::class
-                BarcodeType.PET_FOOD -> PetFoodActionsFragment::class
-                BarcodeType.BEAUTY -> BeautyActionsFragment::class
-                BarcodeType.BOOK -> BookActionsFragment::class
-                BarcodeType.INDUSTRIAL -> SimpleActionsFragment::class
-                BarcodeType.MATRIX -> SimpleActionsFragment::class
-                BarcodeType.UNKNOWN -> SimpleActionsFragment::class
-                BarcodeType.UNKNOWN_PRODUCT -> ProductActionsFragment::class
-            }
-
         }
     }
 
@@ -464,204 +552,78 @@ val scopesModule: Module = module {
 
         // ---- Agenda ----
         scoped<Intent>(named(ActionEnum.ADD_AGENDA)) { (parsedResult: CalendarParsedResult) ->
-
-            Intent(Intent.ACTION_EDIT).apply {
-                type = "vnd.android.cursor.item/event"
-                putExtra(CalendarContract.Events.ALL_DAY, parsedResult.isStartAllDay && parsedResult.isEndAllDay)
-                putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, parsedResult.startTimestamp + TimeZone.getTimeZone("GMT").rawOffset - TimeZone.getDefault().rawOffset)
-                putExtra(CalendarContract.EXTRA_EVENT_END_TIME, parsedResult.endTimestamp + TimeZone.getTimeZone("GMT").rawOffset - TimeZone.getDefault().rawOffset)
-                putExtra(CalendarContract.Events.TITLE, parsedResult.summary ?: "")
-                putExtra(CalendarContract.Events.EVENT_LOCATION, parsedResult.location ?: "")
-                putExtra(CalendarContract.Events.DESCRIPTION, parsedResult.description ?: "")
-                putExtra(CalendarContract.Events.ORGANIZER, parsedResult.organizer ?: "")
-            }
+            get(named(INTENT_ADD_AGENDA)) { parametersOf(parsedResult) }
         }
 
         // ------------------------------------ ADD INTO CONTACT -----------------------------------
 
         // ---- Add VCard Into Contact ----
         scoped<Intent>(named(ActionEnum.ADD_CONTACT)) { (parsedResult: AddressBookParsedResult) ->
-
-            Intent(ContactsContract.Intents.Insert.ACTION).apply {
-
-                type = ContactsContract.RawContacts.CONTENT_TYPE
-
-                if(parsedResult.names?.isNotEmpty() == true)
-                    putExtra(ContactsContract.Intents.Insert.NAME, parsedResult.names?.get(0) ?: "")
-
-                putExtra(ContactsContract.Intents.Insert.COMPANY, parsedResult.org ?: "")
-                putExtra(ContactsContract.Intents.Insert.JOB_TITLE, parsedResult.title ?: "")
-
-                if(parsedResult.addresses?.isNotEmpty() == true)
-                    putExtra(ContactsContract.Intents.Insert.POSTAL, parsedResult.addresses?.get(0) ?: "")
-
-                if(parsedResult.phoneNumbers != null) {
-                    if (parsedResult.phoneNumbers.isNotEmpty())
-                        putExtra(ContactsContract.Intents.Insert.PHONE, parsedResult.phoneNumbers?.get(0) ?: "")
-
-                    if (parsedResult.phoneNumbers.size > 1)
-                        putExtra(ContactsContract.Intents.Insert.SECONDARY_PHONE, parsedResult.phoneNumbers?.get(1) ?: "")
-
-                    if (parsedResult.phoneNumbers.size > 2)
-                        putExtra(ContactsContract.Intents.Insert.TERTIARY_PHONE, parsedResult.phoneNumbers?.get(2) ?: "")
-                }
-
-                if(parsedResult.phoneTypes != null) {
-                    if(parsedResult.phoneTypes.isNotEmpty())
-                        putExtra(ContactsContract.Intents.Insert.PHONE_TYPE, parsedResult.phoneTypes?.get(0) ?: "")
-
-                    if(parsedResult.phoneTypes.size > 1)
-                        putExtra(ContactsContract.Intents.Insert.SECONDARY_PHONE_TYPE, parsedResult.phoneTypes?.get(1) ?: "")
-
-                    if(parsedResult.phoneTypes.size > 2)
-                        putExtra(ContactsContract.Intents.Insert.TERTIARY_PHONE_TYPE, parsedResult.phoneTypes?.get(2) ?: "")
-                }
-
-                if(parsedResult.emails != null) {
-                    if (parsedResult.emails.isNotEmpty())
-                        putExtra(ContactsContract.Intents.Insert.EMAIL, parsedResult.emails?.get(0) ?: "")
-
-                    if (parsedResult.emails.size > 1)
-                        putExtra(ContactsContract.Intents.Insert.SECONDARY_EMAIL, parsedResult.emails?.get(1) ?: "")
-
-                    if (parsedResult.emails.size > 2)
-                        putExtra(ContactsContract.Intents.Insert.TERTIARY_EMAIL, parsedResult.emails?.get(2) ?: "")
-                }
-
-                if(parsedResult.emailTypes != null) {
-                    if (parsedResult.emailTypes.isNotEmpty())
-                        putExtra(ContactsContract.Intents.Insert.EMAIL_TYPE, parsedResult.emailTypes?.get(0) ?: "")
-
-                    if (parsedResult.emailTypes.size > 1)
-                        putExtra(ContactsContract.Intents.Insert.SECONDARY_EMAIL_TYPE, parsedResult.emailTypes?.get(1) ?: "")
-
-                    if (parsedResult.emailTypes.size > 2)
-                        putExtra(ContactsContract.Intents.Insert.TERTIARY_EMAIL_TYPE, parsedResult.emailTypes?.get(2) ?: "")
-                }
-
-                putExtra(ContactsContract.Intents.Insert.NOTES, parsedResult.note ?: "")
-            }
+            get(named(INTENT_ADD_CONTACT)) { parametersOf(parsedResult) }
         }
 
         // ---- Add Email Into Contact ----
         scoped<Intent>(named(ActionEnum.ADD_MAIL)) { (parsedResult: EmailAddressParsedResult) ->
-
-            val email: String = if(parsedResult.tos?.isNotEmpty() == true) parsedResult.tos.first() else ""
-
-            Intent(ContactsContract.Intents.Insert.ACTION).apply {
-                type = ContactsContract.RawContacts.CONTENT_TYPE
-                putExtra(ContactsContract.Intents.Insert.EMAIL, email)
-            }
+            get(named(INTENT_ADD_EMAIL)) { parametersOf(parsedResult) }
         }
 
         // ---- Add Phone Into Contact from TelParsedResult ----
         scoped<Intent>(named(ActionEnum.ADD_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
-
-            Intent(ContactsContract.Intents.Insert.ACTION).apply {
-                type = ContactsContract.RawContacts.CONTENT_TYPE
-                putExtra(ContactsContract.Intents.Insert.PHONE, parsedResult.number)
-            }
+            get(named(INTENT_ADD_PHONE_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // ---- Add Phone Into Contact from SMSParsedResult ----
         scoped<Intent>(named(ActionEnum.ADD_SMS_NUMBER)) { (parsedResult: SMSParsedResult) ->
-
-            Intent(ContactsContract.Intents.Insert.ACTION).apply {
-                type = ContactsContract.RawContacts.CONTENT_TYPE
-                if(parsedResult.numbers?.isNotEmpty() == true) putExtra(
-                    ContactsContract.Intents.Insert.PHONE,
-                    parsedResult.numbers.first()
-                )
-            }
+            get(named(INTENT_ADD_SMS_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // -----------------------------------------------------------------------------------------
 
         // ---- Send Email ----
         scoped<Intent>(named(ActionEnum.SEND_MAIL)) { (parsedResult: EmailAddressParsedResult) ->
-
-            val email: String = if(parsedResult.tos?.isNotEmpty() == true) parsedResult.tos.first() else ""
-            val uri = Uri.parse("mailto:$email")
-
-            val intent = Intent(Intent.ACTION_SENDTO, uri).apply {
-                putExtra(Intent.EXTRA_SUBJECT, parsedResult.subject ?: "")
-                putExtra(Intent.EXTRA_TEXT, parsedResult.body ?: "")
-            }
-
-            Intent.createChooser(intent, androidContext().getString(R.string.intent_chooser_mail_title))
+            get(named(INTENT_SEND_EMAIL)) { parametersOf(parsedResult) }
         }
 
         // --------------------------------- CALL --------------------------------------------------
 
         // ---- Call Phone ----
         scoped<Intent>(named(ActionEnum.CALL_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
-            Intent(Intent.ACTION_DIAL, Uri.parse(parsedResult.telURI))
+            get(named(INTENT_CALL_PHONE_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // ---- Call from SMSParsedResult ----
         scoped<Intent>(named(ActionEnum.CALL_SMS_NUMBER)) { (parsedResult: SMSParsedResult) ->
-
-            val phone = if(parsedResult.numbers?.isNotEmpty() == true) parsedResult.numbers.first() else ""
-
-            Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))
+            get(named(INTENT_CALL_SMS_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // --------------------------------- SEND SMS ----------------------------------------------
 
         // ---- Send SMS from TelParsedResult ----
         scoped<Intent>(named(ActionEnum.SEND_SMS_TO_PHONE_NUMBER)) { (parsedResult: TelParsedResult) ->
-            Intent(Intent.ACTION_VIEW, Uri.parse("smsto:${parsedResult.number}"))
+            get(named(INTENT_SEND_SMS_TO_PHONE_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // ---- Send SMS ----
         scoped<Intent>(named(ActionEnum.SEND_SMS)) { (parsedResult: SMSParsedResult) ->
-            Intent(Intent.ACTION_VIEW, Uri.parse(parsedResult.smsuri))
+            get(named(INTENT_SEND_SMS_TO_SMS_NUMBER)) { parametersOf(parsedResult) }
         }
 
         // -----------------------------------------------------------------------------------------
 
         // ---- Localisation ----
         scoped<Intent>(named(ActionEnum.SEARCH_LOCALISATION)) { (parsedResult: GeoParsedResult) ->
-            Intent(Intent.ACTION_VIEW, Uri.parse(parsedResult.geoURI))
+            //get(named(INTENT_SEARCH_LOCALISATION)) { parametersOf(parsedResult) }
+            get(named(INTENT_SEARCH_URL)) { parametersOf(parsedResult.geoURI) }
         }
 
         // ---- URL ----
         scoped<Intent>(named(ActionEnum.SEARCH_URL)) { (parsedResult: URIParsedResult) ->
-            Intent(Intent.ACTION_VIEW, Uri.parse(parsedResult.uri))
+            //get(named(INTENT_SEARCH_URL)) { parametersOf(parsedResult) }
+            get(named(INTENT_SEARCH_URL)) { parametersOf(parsedResult.uri) }
         }
 
         scoped<Intent>(named(ActionEnum.SEARCH_WITH_ENGINE)) { (url: String) ->
-            Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        }
-    }
-
-    // Scope utilisé par les FormCreateBarcodeActivity
-    scope(named(BARCODE_CREATOR_SCOPE_SESSION)) {
-
-        scoped<AbstractFormCreateBarcodeFragment> {
-                (type: BarcodeFormatDetails) ->
-
-            when(type){
-                BarcodeFormatDetails.QR_TEXT -> FormCreateQrCodeTextFragment()
-                BarcodeFormatDetails.QR_URL -> FormCreateQrCodeUrlFragment()
-                BarcodeFormatDetails.QR_CONTACT -> FormCreateQrCodeContactFragment()
-                BarcodeFormatDetails.QR_MAIL -> FormCreateQrCodeMailFragment()
-                BarcodeFormatDetails.QR_SMS -> FormCreateQrCodeSmsFragment()
-                BarcodeFormatDetails.QR_PHONE -> FormCreateQrCodePhoneFragment()
-                BarcodeFormatDetails.QR_LOCALISATION -> FormCreateQrCodeLocalisationFragment()
-                BarcodeFormatDetails.QR_AGENDA -> FormCreateQrCodeAgendaFragment()
-                BarcodeFormatDetails.QR_WIFI -> FormCreateQrCodeWifiFragment()
-                else -> {
-
-                    val bundle = Bundle().apply {
-                        putSerializable(BARCODE_FORMAT_KEY, type.format)
-                    }
-
-                    FormCreateBarcodeFragment().apply {
-                        arguments = bundle
-                    }
-                }
-            }
+            get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
         }
     }
 }

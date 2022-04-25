@@ -58,7 +58,7 @@ class JsonManager<T: Any>(file: File) {
             return gson.fromJson(str, kClass.java)
 
         }catch (e: JSONException){
-            //Log.e("Tag Not Found", e.message ?: "Le Tag $tag n'a pas été trouvé dans le fichier Json")
+            e.printStackTrace()
         }
         return null
     }

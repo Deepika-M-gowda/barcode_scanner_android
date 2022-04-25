@@ -38,7 +38,7 @@ class UrlConnector {
 
         } catch (e: Exception){
             input=null
-            //Log.e("Exception", e.toString())
+            e.printStackTrace()
         }
 
         return input

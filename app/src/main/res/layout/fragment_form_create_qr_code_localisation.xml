@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeCreatorForms.forms.FormCreateQrCodeLocalisationFragment">
+    tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateQrCodeLocalisationFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fragment_form_create_qr_code_localisation_latitude_input_layout"

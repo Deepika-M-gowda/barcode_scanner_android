@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeCreatorForms.forms.FormCreateBarcodeFragment">
+    tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateBarcodeFragment">
 
     <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
         android:id="@+id/fragment_form_create_barcode_text_input_layout"

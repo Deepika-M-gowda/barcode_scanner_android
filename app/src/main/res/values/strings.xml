@@ -426,6 +426,7 @@
     <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
@@ -477,12 +478,10 @@
     <!-- About Permissions -->
     <string name="permission_camera_label">Camera</string>
     <string name="permission_camera_description_label">Required to scan barcode.</string>
-    <string name="permission_contact_label">Contact</string>
-    <string name="permission_contact_description_label">Required to import contact to generate QR Code from this one.</string>
-    <string name="permission_storage_label">Storage</string>
-    <string name="permission_storage_description_label">Required to save generated bar code or to share it with another app.</string>
     <string name="permission_internet_label">Internet</string>
     <string name="permission_internet_description_label">Required to retrieve information from remote API</string>
+    <string name="permission_contact_label">Contact</string>
+    <string name="permission_contact_description_label">Required to import contact to generate QR Code from this one.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Required to connect to Wi-Fi by scanning a QR Code containing Wi-Fi access.</string>
     <string name="permission_vibrate_label">Vibrate</string>
@@ -659,6 +658,7 @@
     <string name="google_label" translatable="false">Google</string>
     <string name="bing_label" translatable="false">Bing</string>
     <string name="duckduckgo_label" translatable="false">DuckDuckGo</string>
+    <string name="startpage_label" translatable="false">Startpage</string>
     <string name="qwant_label" translatable="false">Qwant</string>
     <string name="ecosia_label" translatable="false">Ecosia</string>
     <string name="lilo_label" translatable="false">Lilo</string>

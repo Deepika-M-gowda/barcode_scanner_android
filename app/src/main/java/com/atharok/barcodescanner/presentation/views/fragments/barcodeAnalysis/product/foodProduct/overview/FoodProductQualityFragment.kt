@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.*
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.common.extentions.setImageFromWeb
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -108,7 +109,7 @@ class FoodProductQualityFragment : BaseFragment() {
         @JvmStatic
         fun newInstance(imageUrl: String?, title: String, subtitle: String, description: String? = null) =
             FoodProductQualityFragment().apply {
-                arguments = Bundle().apply {
+                arguments = get<Bundle>().apply {
 
                     putString(TITLE_KEY, title)
                     putString(SUBTITLE_KEY, subtitle)

@@ -100,7 +100,7 @@ abstract class ActionsFragment: BaseFragment() {
 
     private fun addShareActionFAB(contents: String){
         viewBinding.fragmentBarcodeActionsFloatingActionMenu.addItem(ActionEnum.SHARE_TEXT.drawableResource) {
-            val intent: Intent = get(named(ActionEnum.SHARE_TEXT)) { parametersOf(contents) }
+            val intent: Intent = get(named(INTENT_SHARE_TEXT)) { parametersOf(contents) }
             startActivity(intent)
         }
     }

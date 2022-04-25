@@ -29,28 +29,22 @@ import java.io.File
 
 class AllergensRepositoryImpl(private val fileFetcher: FileFetcher): AllergensRepository {
 
-    override suspend fun getAllergensList(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): List<Allergen> {
+    override suspend fun getAllergensList(fileNameWithExtension: String,
+                                          fileUrlName: String,
+                                          tagList: List<String>): List<Allergen> {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getAllergensList(tagList, file)
-        } else listOf()
+        return if(file.exists()) getAllergensList(tagList, file) else listOf()
     }
 
-    override suspend fun getAllergens(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): String {
+    override suspend fun getAllergens(fileNameWithExtension: String,
+                                      fileUrlName: String,
+                                      tagList: List<String>): String {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getAllergens(tagList, file)
-        } else ""
+        return if(file.exists()) getAllergens(tagList, file) else ""
     }
 
     /**

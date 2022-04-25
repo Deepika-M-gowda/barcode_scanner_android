@@ -126,9 +126,9 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
         val angle = if(activate) MAX_ROTATION else MIN_ROTATION
         fab.animate().rotation(angle).start()
 
-        val heightWithMargin = this.fab.height+this.fab.marginTop+this.fab.marginBottom//+this.fab.paddingTop+this.fab.paddingBottom
+        val heightWithMargin = this.fab.height+this.fab.marginTop+this.fab.marginBottom
 
-        var heightLayout = heightWithMargin//fab.height+fab.marginTop+fab.marginBottom//+fab.paddingTop+fab.paddingBottom//closeHeight// + marginTop + marginBottom + paddingTop + paddingBottom
+        var heightLayout = heightWithMargin
         for(fab in itemsList){
 
             if(!activate) {

@@ -35,7 +35,8 @@ data class Barcode(
     @ColumnInfo(name = "format_name") val formatName: String,
     @PrimaryKey @ColumnInfo(name = "scan_date") val scanDate: Long,
     @ColumnInfo(name = "type") var type: String = BarcodeType.UNKNOWN.name,
-    @ColumnInfo(name = "name") var name: String = ""): Serializable {
+    @ColumnInfo(name = "name") var name: String = ""
+): Serializable {
 
     @Ignore
     val country: CountriesEnum? = determineBarcodeCountry(contents, getBarcodeFormat())

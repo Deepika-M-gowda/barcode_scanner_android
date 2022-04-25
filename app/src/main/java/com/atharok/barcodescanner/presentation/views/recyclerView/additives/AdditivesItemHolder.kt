@@ -22,7 +22,6 @@ package com.atharok.barcodescanner.presentation.views.recyclerView.additives
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
@@ -33,8 +32,11 @@ import com.atharok.barcodescanner.domain.entity.dependencies.AdditiveClass
 import com.atharok.barcodescanner.domain.entity.dependencies.OverexposureRiskRate
 import com.atharok.barcodescanner.common.utils.DIALOG_SIMPLE_VIEW_KOIN_NAMED
 import com.atharok.barcodescanner.common.extentions.setImageColorFromAttrRes
+import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.google.android.material.chip.Chip
 import org.koin.android.ext.android.get
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
@@ -43,7 +45,7 @@ import org.koin.core.qualifier.named
  */
 class AdditivesItemHolder(private val activity: Activity,
                           private val viewBinding: RecyclerViewItemAdditivesBinding)
-    : RecyclerView.ViewHolder(viewBinding.root) {
+    : RecyclerView.ViewHolder(viewBinding.root), KoinComponent {
 
     private val context = itemView.context
 
@@ -55,7 +57,7 @@ class AdditivesItemHolder(private val activity: Activity,
         // ---- Info Image Button ----
         viewBinding.recyclerViewItemAdditivesInfoButton.setOnClickListener {
             val url = context.getString(R.string.search_engine_additive_url, additive.additiveId)
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
             activity.startActivity(intent)
         }
 

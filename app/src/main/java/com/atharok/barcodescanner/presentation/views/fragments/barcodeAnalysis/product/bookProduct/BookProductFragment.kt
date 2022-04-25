@@ -33,6 +33,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.d
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeContentsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment
 import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -143,7 +144,7 @@ class BookProductFragment : ProductBarcodeFragment<BookProduct>() {
 
     companion object {
         fun newInstance(bookProduct: BookProduct) = BookProductFragment().apply {
-            arguments = Bundle().apply {
+            arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, bookProduct)
             }
         }

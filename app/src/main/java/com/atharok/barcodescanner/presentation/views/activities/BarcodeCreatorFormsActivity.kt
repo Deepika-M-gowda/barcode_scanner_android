@@ -25,19 +25,19 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.commit
+import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.FormCreateBarcodeHeaderFragment
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
 import com.atharok.barcodescanner.domain.library.BarcodeFormatCheckerResult.CheckerResponse
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.forms.AbstractFormCreateBarcodeFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.AbstractFormCreateBarcodeFragment
 import com.google.zxing.BarcodeFormat
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.get
-import org.koin.android.ext.android.getKoin
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
@@ -48,32 +48,29 @@ import org.koin.core.qualifier.named
  */
 class BarcodeCreatorFormsActivity : BaseActivity() {
 
-    private lateinit var formCreateBarcodeFragment: AbstractFormCreateBarcodeFragment
+    private var formCreateBarcodeFragment: AbstractFormCreateBarcodeFragment? = null
 
-    private val myScope = getKoin().getOrCreateScope(
-        BARCODE_CREATOR_SCOPE_SESSION_ID,
-        named(BARCODE_CREATOR_SCOPE_SESSION)
-    )
+    private val allBarcodeFormat: BarcodeFormatDetails? by lazy {
+        intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY) as BarcodeFormatDetails?
+    }
 
     private val viewBinding: ActivityBarcodeCreatorFormsBinding by lazy { ActivityBarcodeCreatorFormsBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(viewBinding.root)
 
-        setSupportActionBar(viewBinding.activityFormCreateBarcodeToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeCreatorFormsToolbar.toolbar)
 
-        val allBarCodeCreatorType = intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY) as BarcodeFormatDetails?
+        allBarcodeFormat?.apply(::configureHeader)
 
-        if(allBarCodeCreatorType != null) {
-            configureHeaderFragment(allBarCodeCreatorType)
-            configureFormFragment(allBarCodeCreatorType)
+        lifecycleScope.launch(Dispatchers.Main) {
+
+            withContext(Dispatchers.IO) {
+                allBarcodeFormat?.apply(::configureFormFragment)
+            }
         }
-    }
 
-    override fun onDestroy() {
-        myScope.close()
-        super.onDestroy()
+        setContentView(viewBinding.root)
     }
 
     // ---- Header ----
@@ -81,16 +78,13 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
     /**
      * Configure le Fragment contenant le Header de l'Activity.
      */
-    private fun configureHeaderFragment(barcodeFormatDetails: BarcodeFormatDetails){
-        val arguments = Bundle().apply {
-            putSerializable(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
-        }
+    private fun configureHeader(barcodeFormatDetails: BarcodeFormatDetails){
 
-        applyFragment(
-            viewBinding.activityFormCreateBarcodeHeaderFrameLayout.id,
-            FormCreateBarcodeHeaderFragment::class,
-            arguments
-        ) // Le fragment est placé dans le FrameLayout prévue à cet effet
+        val imageView = viewBinding.activityBarcodeCreatorFormsHeader.recyclerViewItemQrCreatorImageView
+        val textView = viewBinding.activityBarcodeCreatorFormsHeader.recyclerViewItemQrCreatorTextView
+
+        textView.text = getString(barcodeFormatDetails.stringResource)
+        imageView.setImageResource(barcodeFormatDetails.drawableResource)
     }
 
     // ---- Formulaire ----
@@ -100,29 +94,42 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
      */
     private fun configureFormFragment(barcodeFormatDetails: BarcodeFormatDetails){
 
-        formCreateBarcodeFragment = myScope.get<AbstractFormCreateBarcodeFragment> {
+        formCreateBarcodeFragment = get<AbstractFormCreateBarcodeFragment> {
             parametersOf(barcodeFormatDetails)
         }
 
-        formCreateBarcodeFragment.allowEnterTransitionOverlap = false
-        formCreateBarcodeFragment.allowReturnTransitionOverlap = false
+        val fragment = formCreateBarcodeFragment
 
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-            //setCustomAnimations(R.anim.enter_transition, R.anim.exit_transition, R.anim.enter_transition, R.anim.exit_transition)
-            replace(viewBinding.activityFormCreateBarcodeFormFragment.id, formCreateBarcodeFragment)
+        if(fragment != null) {
+
+            //fragment.allowEnterTransitionOverlap = false
+            //fragment.allowReturnTransitionOverlap = false
+
+            /*supportFragmentManager.commit {
+                /*setReorderingAllowed(true)
+                //setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
+                replace(viewBinding.activityBarcodeCreatorFormsFragment.id, fragment)
+            }*/
+            replaceFragment(viewBinding.activityBarcodeCreatorFormsFragment.id, fragment)
         }
     }
 
     override fun onBackPressed() {
-        formCreateBarcodeFragment.closeVirtualKeyBoard(viewBinding.root)
 
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-            //setCustomAnimations(R.anim.enter_transition, R.anim.exit_transition)
-            remove(formCreateBarcodeFragment)
+        val fragment = formCreateBarcodeFragment
+
+        if(fragment != null) {
+
+            fragment.closeVirtualKeyBoard(viewBinding.root)
+
+            /*supportFragmentManager.commit {
+                /*setReorderingAllowed(true)
+                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
+                remove(fragment)
+            }*/
+            removeFragment(fragment)
         }
         super.onBackPressed()
     }
@@ -144,20 +151,18 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
     }
 
     private fun checkFormat(){
-        val content = formCreateBarcodeFragment.generateBarcodeTextFromForm()
+        val content = formCreateBarcodeFragment?.generateBarcodeTextFromForm()
 
-        if(content!="") {
+        if(!content.isNullOrBlank()) {
 
-            val allBarCodeCreatorType = intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY) as BarcodeFormatDetails?
-
-            val barCodeFormat: BarcodeFormat = allBarCodeCreatorType?.format ?: BarcodeFormat.QR_CODE
+            val barCodeFormat: BarcodeFormat = allBarcodeFormat?.format ?: BarcodeFormat.QR_CODE
 
             val checkerManager: BarcodeFormatChecker = get()
 
             val response = checkerManager.check(content, barCodeFormat)
 
             when (response.response) {
-                CheckerResponse.BAR_CODE_SUCCESSFUL -> startBarCodeGeneratorResultActivity(content, barCodeFormat)
+                CheckerResponse.BAR_CODE_SUCCESSFUL -> startBarcodeDetailsActivity(content, barCodeFormat)
                 CheckerResponse.BAR_CODE_NOT_A_NUMBER_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_not_a_number_message))
                 CheckerResponse.BAR_CODE_WRONG_LENGTH_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_wrong_length_message, response.length.toString()))
                 CheckerResponse.BAR_CODE_WRONG_KEY_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_wrong_key_message, response.length.toString(), response.key.toString()))
@@ -174,11 +179,11 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
         }
     }
 
-    private fun startBarCodeGeneratorResultActivity(content: String, barCodeFormat: BarcodeFormat){
-        viewBinding.activityFormCreateBarcodeErrorLayout.visibility = View.GONE
-        viewBinding.activityFormCreateBarcodeErrorTextView.text = ""
+    private fun startBarcodeDetailsActivity(content: String, barCodeFormat: BarcodeFormat){
+        viewBinding.activityBarcodeCreatorFormsErrorLayout.visibility = View.GONE
+        viewBinding.activityBarcodeCreatorFormsErrorTextView.text = ""
 
-        val intent = Intent(this, BarcodeDetailsActivity::class.java).apply {
+        val intent = getStartBarcodeDetailsActivityIntent().apply {
             putExtra(BARCODE_CONTENTS_KEY, content)
             putExtra(BARCODE_FORMAT_KEY, barCodeFormat.name)
         }
@@ -186,8 +191,11 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
         startActivity(intent)
     }
 
+    private fun getStartBarcodeDetailsActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeDetailsActivity::class) }
+
     private fun configureErrorMessage(message: String) {
-        viewBinding.activityFormCreateBarcodeErrorLayout.visibility = View.VISIBLE
-        viewBinding.activityFormCreateBarcodeErrorTextView.text = message
+        viewBinding.activityBarcodeCreatorFormsErrorLayout.visibility = View.VISIBLE
+        viewBinding.activityBarcodeCreatorFormsErrorTextView.text = message
     }
 }

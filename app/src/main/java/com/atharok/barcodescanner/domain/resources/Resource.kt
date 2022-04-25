@@ -34,12 +34,10 @@ sealed class Resource<T> {
 
     companion object {
         /** Get a [Resource] in loading state with provided [data]. */
-        fun <T> loading(data: T? = null, tag: String? = null): Resource<T> =
-            Progress(data, tag)
+        fun <T> loading(data: T? = null, tag: String? = null): Resource<T> = Progress(data, tag)
 
         /** Get a [Resource] in success state with provided [data]. */
-        fun <T> success(data: T, tag: String? = null): Success<T> =
-            Success(data, tag)
+        fun <T> success(data: T, tag: String? = null): Success<T> = Success(data, tag)
 
         /** Get a [Resource] in failure state with provided [throwable]. */
         fun <T> failure(throwable: Throwable, data: T? = null, tag: String? = null): Resource<T> =

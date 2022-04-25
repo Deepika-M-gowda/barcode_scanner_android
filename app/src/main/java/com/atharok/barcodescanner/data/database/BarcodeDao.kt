@@ -30,14 +30,11 @@ interface BarcodeDao {
     @Query("SELECT * FROM Barcode ORDER BY scan_date DESC")
     fun getBarcodeList(): LiveData<List<Barcode>>
 
-    /*@Query("SELECT * FROM BarcodeTable WHERE id = :id LIMIT 1")
-    fun getBarcodeById(id: Long): BarcodeTable*/
-
     @Query("SELECT * FROM Barcode WHERE scan_date = :date LIMIT 1")
     fun getBarcodeByDate(date: Long): LiveData<Barcode>
 
     @Insert
-    suspend fun insert(barcodeTable: Barcode): Long
+    suspend fun insert(barcode: Barcode): Long
 
     @Query("UPDATE Barcode SET type = :type WHERE scan_date = :date")
     suspend fun updateType(date: Long, type: String): Int
@@ -51,9 +48,6 @@ interface BarcodeDao {
     @Query("DELETE FROM Barcode")
     suspend fun deleteAll(): Int
 
-    /*@Query("DELETE FROM BarcodeTable WHERE id = :id")
-    suspend fun deleteById(id: Long): Int*/
-
     @Delete
-    suspend fun delete(barcodeTable: Barcode): Int
+    suspend fun delete(barcode: Barcode): Int
 }

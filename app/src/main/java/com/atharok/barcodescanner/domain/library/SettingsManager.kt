@@ -94,6 +94,7 @@ class SettingsManager(private val context: Context) {
         "google" -> context.getString(R.string.search_engine_google_url, contents)
         "bing" -> context.getString(R.string.search_engine_bing_url, contents)
         "duckduckgo" -> context.getString(R.string.search_engine_duck_duck_go_url, contents)
+        "startpage" -> context.getString(R.string.search_engine_startpage_url, contents)
         "qwant" -> context.getString(R.string.search_engine_qwant_url, contents)
         "ecosia" -> context.getString(R.string.search_engine_ecosia_url, contents)
         "lilo" -> context.getString(R.string.search_engine_lilo_url, contents)
@@ -111,7 +112,6 @@ class SettingsManager(private val context: Context) {
         context.resources.configuration.uiMode and
                 Configuration.UI_MODE_NIGHT_MASK == UI_MODE_NIGHT_YES
 
-    private fun getDefaultColorKey(): String = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-        "material_you"
-    } else "blue"
+    private fun getDefaultColorKey(): String =
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) "material_you" else "blue"
 }

@@ -29,12 +29,16 @@ import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extentions.*
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentFoodProductVeggieAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.ProductBarcodeFragment
 import com.google.android.material.chip.Chip
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -97,10 +101,13 @@ class FoodProductVeggieAnalysisFragment: ProductBarcodeFragment<FoodProduct>() {
     }
 
     private fun getVeggieOnClickListener(foodProduct: FoodProduct) = View.OnClickListener {
-        val intent = Intent(requireContext(), VeggieActivity::class.java).apply {
+        val intent = getVeggieActivityIntent().apply {
             putExtra(PRODUCT_KEY, foodProduct)
         }
 
         startActivity(intent)
     }
+
+    private fun getVeggieActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(VeggieActivity::class) }
 }

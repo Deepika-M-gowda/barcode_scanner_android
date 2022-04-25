@@ -34,6 +34,7 @@ import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity
@@ -46,6 +47,7 @@ import com.journeyapps.barcodescanner.ScanOptions.ALL_CODE_TYPES
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -166,7 +168,7 @@ class MainScannerFragment : Fragment() {
         if(flashIsEnabled)
             switchTorchFlash()
 
-        val intent = Intent(requireContext(), BarcodeScanFromImageActivity::class.java)
+        val intent = getBarcodeScanFromImageActivityIntent()
         startActivity(intent)
     }
 
@@ -256,8 +258,9 @@ class MainScannerFragment : Fragment() {
      * Démarre l'Activity: BarcodeAnalysisActivity.
      */
     private fun startBarcodeAnalysisActivity(barcode: Barcode){
-        val intent = Intent(requireContext(), BarcodeAnalysisActivity::class.java)
-        intent.putExtra(BARCODE_KEY, barcode)
+        val intent = getBarcodeAnalysisActivityIntent().apply {
+            putExtra(BARCODE_KEY, barcode)
+        }
         startActivity(intent)
     }
 
@@ -266,4 +269,12 @@ class MainScannerFragment : Fragment() {
     private fun showSnackbar(text: String) {
         Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
     }
+
+    // ---- Intent ----
+
+    private fun getBarcodeScanFromImageActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeScanFromImageActivity::class) }
+
+    private fun getBarcodeAnalysisActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 }

@@ -42,17 +42,14 @@ class FileFetcher(private val context: Context) {
             try {
                 // Télécharge le fichier
                 downloadFile(localFileNameWithExtension, webUrl)
-                //val successful: Boolean = downloadFile(localFileNameWithExtension, webUrl)
+
+                // On récupère le fichier qui vient d'être enregistré dans la mémoire interne de l'appareil
+                file = context.getFileStreamPath(localFileNameWithExtension)
+
             } catch (e: Exception){
+                file = context.getFileStreamPath(localFileNameWithExtension)
                 file.delete()
             }
-
-            //if(!successful)
-                //Log.e("FileFetcher","Une erreur s'est produit lors du téléchargement de la dépendance.")
-
-            // On récupère le fichier qui vient d'être enregistré dans la mémoire interne de l'appareil
-            file = context.getFileStreamPath(localFileNameWithExtension)
-
         }
 
         return file
@@ -103,7 +100,7 @@ class FileFetcher(private val context: Context) {
             successful = true
 
         } catch (e: Exception){
-            //Log.e("ERROR", e.message ?: "Erreur lors de l'écriture du fichier")
+            e.printStackTrace()
         }
 
         return successful

@@ -23,26 +23,8 @@ package com.atharok.barcodescanner.common.extentions
 import android.content.Context
 import android.net.Uri
 
-/*fun Uri.read(context: Context): String {
-
-    val text: String
-    var inputStream: InputStream? = null
-    try {
-        inputStream = context.contentResolver.openInputStream(this)
-    } catch (e: Exception) {
-        inputStream = null
-    } finally {
-        text = inputStream?.readBytes()?.toString(Charsets.UTF_8) ?: ""
-        inputStream?.close()
-    }
-
-    return text
-}*/
-
 fun Uri.read(context: Context): String {
-
     var text = ""
-
     try {
         val inputStream = context.contentResolver.openInputStream(this)
         text = inputStream?.readBytes()?.toString(Charsets.UTF_8) ?: ""
@@ -50,6 +32,5 @@ fun Uri.read(context: Context): String {
     } catch (e: Exception) {
         e.printStackTrace()
     }
-
     return text
 }

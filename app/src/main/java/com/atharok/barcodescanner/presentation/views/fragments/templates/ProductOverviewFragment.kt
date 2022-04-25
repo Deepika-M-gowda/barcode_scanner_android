@@ -33,6 +33,10 @@ import com.atharok.barcodescanner.common.utils.IMAGE_URI_KEY
 import com.atharok.barcodescanner.presentation.views.activities.ImageFullScreenActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.common.extentions.setImageFromWeb
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -120,7 +124,7 @@ class ProductOverviewFragment : BaseFragment() {
     }
 
     private fun startImageFullScreenActivity(imageFrontUrl: String){
-        val intent = Intent(requireContext(), ImageFullScreenActivity::class.java).apply {
+        val intent = getImageFullScreenActivityIntent().apply {
             putExtra(IMAGE_URI_KEY, imageFrontUrl)
         }
 
@@ -129,16 +133,10 @@ class ProductOverviewFragment : BaseFragment() {
         startActivity(intent, options.toBundle())
     }
 
+    private fun getImageFullScreenActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(ImageFullScreenActivity::class) }
+
     private fun generateTransitionAnimation(view: View?): ActivityOptions {
-
-        /*return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ActivityOptions.makeSceneTransitionAnimation(
-                requireActivity(),
-                view,
-                getString(R.string.animation_activity_transition)
-            )
-        } else null*/
-
         return ActivityOptions.makeSceneTransitionAnimation(
             requireActivity(),
             view,
@@ -156,7 +154,7 @@ class ProductOverviewFragment : BaseFragment() {
         @JvmStatic
         fun newInstance(imageUrl: String?, title: String, subtitle1: String? = null, subtitle2: String? = null, subtitle3: String? = null) =
             ProductOverviewFragment().apply {
-                arguments = Bundle().apply {
+                arguments = get<Bundle>().apply {
 
                     putString(TITLE_KEY, title)
 

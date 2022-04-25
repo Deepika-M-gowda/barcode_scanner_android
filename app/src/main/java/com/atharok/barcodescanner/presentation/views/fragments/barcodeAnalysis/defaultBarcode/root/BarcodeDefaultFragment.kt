@@ -132,7 +132,7 @@ class BarcodeDefaultFragment: ProductBarcodeFragment<BarcodeProduct>() {
 
     companion object {
         fun newInstance(noneProduct: NoneProduct, messageError: String? = null) = BarcodeDefaultFragment().apply {
-            arguments = Bundle().apply {
+            arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, noneProduct)
                 if(messageError != null)
                     putString(BARCODE_MESSAGE_ERROR_KEY, messageError)

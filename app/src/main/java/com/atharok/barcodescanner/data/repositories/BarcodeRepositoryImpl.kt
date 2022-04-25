@@ -38,10 +38,9 @@ class BarcodeRepositoryImpl(private val barcodeDao: BarcodeDao): BarcodeReposito
 
     override suspend fun updateName(date: Long, name: String): Int = barcodeDao.updateName(date, name)
 
-    override suspend fun updateTypeAndName(
-        date: Long,
-        barcodeType: BarcodeType,
-        name: String
+    override suspend fun updateTypeAndName(date: Long,
+                                           barcodeType: BarcodeType,
+                                           name: String
     ): Int = barcodeDao.updateTypeAndName(date, barcodeType.name, name)
 
     override suspend fun deleteAllBarcode(): Int = barcodeDao.deleteAll()

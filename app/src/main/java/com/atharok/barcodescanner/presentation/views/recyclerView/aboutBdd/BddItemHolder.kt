@@ -21,12 +21,17 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.aboutBdd
 
 import android.content.Intent
-import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
-class BddItemHolder(private val viewBinding: RecyclerViewItemAboutBinding): RecyclerView.ViewHolder(viewBinding.root) {
+class BddItemHolder(private val viewBinding: RecyclerViewItemAboutBinding)
+    : RecyclerView.ViewHolder(viewBinding.root), KoinComponent {
 
     private val context = itemView.context
 
@@ -39,7 +44,7 @@ class BddItemHolder(private val viewBinding: RecyclerViewItemAboutBinding): Recy
 
         itemView.setOnClickListener {
             val url = context.getString(bdd.webLinkResource)
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
             context.startActivity(intent)
         }
     }

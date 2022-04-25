@@ -29,28 +29,22 @@ import java.io.File
 
 class CountriesRepositoryImpl(private val fileFetcher: FileFetcher): CountriesRepository {
 
-    override suspend fun getCountriesList(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): List<Country> {
+    override suspend fun getCountriesList(fileNameWithExtension: String,
+                                          fileUrlName: String,
+                                          tagList: List<String>): List<Country> {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getCountriesList(tagList, file)
-        } else listOf()
+        return if(file.exists()) getCountriesList(tagList, file) else listOf()
     }
 
-    override suspend fun getCountries(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): String {
+    override suspend fun getCountries(fileNameWithExtension: String,
+                                      fileUrlName: String,
+                                      tagList: List<String>): String {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            getCountries(tagList, file)
-        } else ""
+        return if(file.exists()) getCountries(tagList, file) else ""
     }
 
     /**
@@ -103,31 +97,4 @@ class CountriesRepositoryImpl(private val fileFetcher: FileFetcher): CountriesRe
 
         return strBuilder.toString()
     }
-
-    /**
-     * Récupère une liste de valeur du fichier Json via la liste de tags présente dans JsonFileDownloaderRepositoryData.
-     */
-    /*private fun obtainList(jsonFile: File, tagList: List<String>): List<LabelResponse> {
-
-        val labelSchemas = mutableListOf<LabelResponse>()
-
-        val jsonManager = JsonManager<Array<LabelResponse>>(jsonFile)
-        val jsonLabelResponses: Array<LabelResponse>? = getFromJson(jsonManager)
-
-        if(jsonLabelResponses != null) {
-
-            for(tag in tagList){
-                for(schema in jsonLabelResponses){
-                    if(tag == schema.id){
-                        labelSchemas.add(schema)
-                        break
-                    }
-                }
-            }
-        }
-
-        return labelSchemas
-    }
-
-    private inline fun <reified T: Any> getFromJson(jsonManager: JsonManager<T>) = jsonManager.get("tags", T::class)*/
 }

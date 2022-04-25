@@ -33,6 +33,7 @@ import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.NutritionFactsEnum
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -135,7 +136,7 @@ class FoodProductRootNutritionFactsFragment : ProductBarcodeFragment<FoodProduct
 
     companion object {
         fun newInstance(foodProduct: FoodProduct) = FoodProductRootNutritionFactsFragment().apply {
-            arguments = Bundle().apply {
+            arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, foodProduct)
             }
         }

@@ -26,7 +26,6 @@ import android.content.ClipboardManager
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.wifi.WifiManager
-import android.net.wifi.WifiManager.ACTION_PICK_WIFI_NETWORK
 import android.net.wifi.WifiNetworkSuggestion
 import android.os.Build
 import android.os.Bundle
@@ -36,6 +35,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.utils.INTENT_PICK_WIFI_NETWORK
+import com.atharok.barcodescanner.common.utils.INTENT_WIFI_ADD_NETWORKS
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
@@ -48,6 +49,7 @@ import com.google.zxing.client.result.WifiParsedResult
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 class WifiActionsFragment: ActionsFragment() {
 
@@ -96,7 +98,7 @@ class WifiActionsFragment: ActionsFragment() {
         clipboard.setPrimaryClip(clip)
         showToastText(R.string.action_wifi_password_copy_label)
 
-        val intent = Intent(ACTION_PICK_WIFI_NETWORK)
+        val intent: Intent = get(named(INTENT_PICK_WIFI_NETWORK))
 
         startActivity(intent)
     }
@@ -148,11 +150,13 @@ class WifiActionsFragment: ActionsFragment() {
         val conf: WifiNetworkSuggestion? = get<WifiSetupWithNewLibrary>().configure(data)
         if(conf!=null) {
 
-            val bundle = Bundle()
-            bundle.putParcelableArrayList(Settings.EXTRA_WIFI_NETWORK_LIST, arrayListOf(conf))
+            val bundle = get<Bundle>().apply {
+                putParcelableArrayList(Settings.EXTRA_WIFI_NETWORK_LIST, arrayListOf(conf))
+            }
 
-            val intent = Intent(Settings.ACTION_WIFI_ADD_NETWORKS)
-            intent.putExtras(bundle)
+            val intent: Intent = get<Intent>(named(INTENT_WIFI_ADD_NETWORKS)).apply {
+                putExtras(bundle)
+            }
 
             previewRequest.launch(intent)
         }
@@ -210,5 +214,4 @@ class WifiActionsFragment: ActionsFragment() {
     private fun showSnackbar(text: String) {
         Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
     }
-    
 }

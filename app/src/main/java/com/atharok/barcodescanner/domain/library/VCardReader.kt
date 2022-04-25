@@ -52,7 +52,7 @@ class VCardReader(private val context: Context) {
                     vCardText = inputStream.readBytes().toString(Charsets.UTF_8)
                 }
             } catch (e: Exception){
-                //Log.e("Error", e.toString())
+                e.printStackTrace()
             }
         }
         cursor?.close()

@@ -22,11 +22,14 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import android.content.DialogInterface
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.ActionsFragment
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 abstract class AbstractSearchDialogIntentActionsFragment: ActionsFragment() {
 
@@ -40,7 +43,7 @@ abstract class AbstractSearchDialogIntentActionsFragment: ActionsFragment() {
 
     private fun createAlertDialog(labelArray: Array<String>, urlArray: Array<String>): AlertDialog {
         val onClickListener = DialogInterface.OnClickListener { _, i ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlArray[i]))
+            val intent = get<Intent>(named(INTENT_SEARCH_URL)) { parametersOf(urlArray[i]) }
             startActivity(intent)
         }
 

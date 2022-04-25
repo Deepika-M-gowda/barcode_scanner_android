@@ -108,6 +108,5 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         val ago = DateUtils.getRelativeTimeSpanString(timestamp, now, DateUtils.MINUTE_IN_MILLIS)
 
         return ago.toString()
-
     }
 }

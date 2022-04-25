@@ -23,7 +23,6 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -51,6 +50,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.p
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodProductRootOverviewFragment
 import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.BarcodeAnalysisPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -103,11 +103,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
         setContentView(viewBinding.root)
     }
 
-    override fun onPause() {
-        barcodeAnalysisScope.close()
-        super.onPause()
-    }
-
     override fun onDestroy() {
         barcodeAnalysisScope.close()
         super.onDestroy()
@@ -137,7 +132,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     }
 
     private fun configureAllViews(barcode: Barcode){
-        configureActionFragment(barcode.scanDate) // Actions (FAB)
+        //configureActionFragment(barcode.scanDate) // Actions (FAB)
         configureContentsView(barcode)
     }
 
@@ -248,6 +243,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
         val adapter = BarcodeAnalysisPagerAdapter(supportFragmentManager, lifecycle, bookProductFragment)
 
         configureViewPager(adapter, getString(R.string.overview_tab_label))
+        configureActionFragment(bookProduct.barcode)
     }
 
     private fun configureFoodProductView(foodProduct: FoodProduct){
@@ -261,6 +257,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
         val ingredients: String = getString(R.string.ingredients_label)
         val nutrition: String = getString(R.string.nutrition_facts_tab_label)
         configureViewPager(adapter, overview, ingredients, nutrition)
+        configureActionFragment(foodProduct.barcode)
     }
 
     private fun configureDefaultView(noneProduct: NoneProduct, barcodeType: BarcodeType, messageError: String? = null){
@@ -270,15 +267,13 @@ class BarcodeAnalysisActivity: BaseActivity() {
         /*if(messageError != null && !isInternetAvailable())
             registerNetworkCallback()*/
 
-        updateTypeIntoDatabase(
-            barcode = noneProduct.barcode,
-            newBarcodeType = barcodeType
-        )
+        updateTypeIntoDatabase(barcode = noneProduct.barcode, newBarcodeType = barcodeType)
 
         val defaultProductFragment = BarcodeDefaultFragment.newInstance(noneProduct, messageError)
         val adapter = BarcodeAnalysisPagerAdapter(supportFragmentManager, lifecycle, defaultProductFragment)
 
         configureViewPager(adapter, getString(R.string.information_label))
+        configureActionFragment(noneProduct.barcode)
 
         /*val format = noneProduct.barcode.formatName.replace("_", " ")
         val msg = getString(R.string.barcode_scanned_label, format)
@@ -337,36 +332,47 @@ class BarcodeAnalysisActivity: BaseActivity() {
     }
 
     // ---- Action Fragment ----
-    private fun configureActionFragment(dateTimestamp: Long){
+    /*private fun configureActionFragment(dateTimestamp: Long){
 
         databaseViewModel.getBarcodeByDate(dateTimestamp).observe(this) { barcode ->
 
-            val actionsFragment = barcodeAnalysisScope.get<KClass<out ActionsFragment>> {
+            val containerId = viewBinding.activityBarcodeInformationActionButtonFrameLayout.id
+
+            val actionsFragment: KClass<out ActionsFragment> = get {
                 parametersOf(barcode.getBarcodeType())
             }
 
-            val args: Bundle = Bundle().apply {
+            val args = get<Bundle>().apply {
                 putSerializable(BARCODE_KEY, barcode)
             }
 
-            applyFragment(
-                viewBinding.activityBarcodeInformationActionButtonFrameLayout.id,
-                actionsFragment,
-                args
-            ) // Le fragment est placé dans le FrameLayout prévue à cet effet
-
+            replaceFragment(containerId, actionsFragment, args)
         }
+    }*/
+
+    private fun configureActionFragment(barcode: Barcode){
+
+        val containerId = viewBinding.activityBarcodeInformationActionButtonFrameLayout.id
+
+        val actionsFragment: KClass<out ActionsFragment> = get {
+            parametersOf(barcode.getBarcodeType())
+        }
+
+        val args = get<Bundle>().apply {
+            putSerializable(BARCODE_KEY, barcode)
+        }
+
+        replaceFragment(containerId, actionsFragment, args)
     }
 
     // ---- Activity ----
 
     private fun startBarcodeImageActivity(){
 
-        val barcode: Barcode? =
-            intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
+        val barcode: Barcode? = intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
 
         if(barcode != null) {
-            val intent = Intent(this, BarcodeDetailsActivity::class.java).apply {
+            val intent = getStartBarcodeDetailsActivityIntent().apply {
                 putExtra(BARCODE_CONTENTS_KEY, barcode.contents)
                 putExtra(BARCODE_FORMAT_KEY, barcode.formatName)
             }
@@ -374,6 +380,9 @@ class BarcodeAnalysisActivity: BaseActivity() {
             startActivity(intent)
         }
     }
+
+    private fun getStartBarcodeDetailsActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeDetailsActivity::class) }
 
     // ---- UI ----
     /*private fun showSnackbar(text: String) {
@@ -393,7 +402,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ -> dialogInterface.cancel()
             }
             setPositiveButton(R.string.go_to_dialog_label) { _, _ ->
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(urlResource)))
+                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(getString(urlResource)) }
                 startActivity(intent)
             }
         }.create()
@@ -403,7 +412,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
         viewBinding.activityBarcodeInformationToolbar.toolbar.menu?.findItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)?.isVisible = false
         sourceApiInfoAlertDialog = null
     }
-
 
     // ---- Database Update ----
 
@@ -420,14 +428,10 @@ class BarcodeAnalysisActivity: BaseActivity() {
     private fun updateTypeAndNameIntoDatabase(barcode: Barcode, newBarcodeType: BarcodeType, newName: String?){
         if(!newName.isNullOrBlank()) {
             if (barcode.name != newName || barcode.getBarcodeType() != newBarcodeType)
-                databaseViewModel.updateTypeAndName(
-                    barcode.scanDate,
-                    newBarcodeType,
-                    newName.trim()
-                )
+                databaseViewModel.updateTypeAndName(barcode.scanDate, newBarcodeType, newName.trim())
             barcode.type = newBarcodeType.name
         }else{
-            updateTypeIntoDatabase(barcode, newBarcodeType)
+            updateTypeIntoDatabase(barcode, newBarcodeType) // -> Met juste le type de barcode à jour dans la BDD
         }
     }
 }

@@ -24,6 +24,11 @@ import com.atharok.barcodescanner.domain.entity.dependencies.Allergen
 
 interface AllergensRepository {
 
-    suspend fun getAllergensList(fileNameWithExtension: String, fileUrlName: String, tagList: List<String>): List<Allergen>
-    suspend fun getAllergens(fileNameWithExtension: String, fileUrlName: String, tagList: List<String>): String
+    suspend fun getAllergensList(fileNameWithExtension: String,
+                                 fileUrlName: String,
+                                 tagList: List<String>): List<Allergen>
+
+    suspend fun getAllergens(fileNameWithExtension: String,
+                             fileUrlName: String,
+                             tagList: List<String>): String
 }

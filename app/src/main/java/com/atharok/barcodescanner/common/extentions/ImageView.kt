@@ -55,9 +55,6 @@ private fun ImageView.setVectorImage(url: String){
         .load(uri, this)
 }
 
-
-
-
 fun ImageView.setImageColorFromAttrRes(@AttrRes attrRes: Int){
     @ColorInt val color = convertAttrResToColorInt(attrRes)
     imageTintList = ColorStateList.valueOf(color)

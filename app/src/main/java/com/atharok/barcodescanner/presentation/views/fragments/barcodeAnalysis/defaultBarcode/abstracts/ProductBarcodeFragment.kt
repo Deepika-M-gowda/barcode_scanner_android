@@ -45,7 +45,7 @@ abstract class ProductBarcodeFragment<T: BarcodeProduct>: BaseFragment() {
 
                 start(barcodeEntity)
             }catch (e: ClassCastException){
-                //Log.e("ClassCastException", "L'objet dans le Bundle n'est pas du type T attendu")
+                e.printStackTrace()
             }
         }
     }

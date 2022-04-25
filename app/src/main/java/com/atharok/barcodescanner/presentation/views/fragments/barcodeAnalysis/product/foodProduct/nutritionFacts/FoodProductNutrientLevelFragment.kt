@@ -31,6 +31,7 @@ import com.atharok.barcodescanner.databinding.TemplateHorizontalGraphViewBinding
 import com.atharok.barcodescanner.databinding.TemplateNutrientLevelBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
 import com.atharok.barcodescanner.common.extentions.setImageColorFromAttrRes
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -136,7 +137,7 @@ class FoodProductNutrientLevelFragment : Fragment() {
         @JvmStatic
         fun newInstance(nutrient: Nutrient) =
             FoodProductNutrientLevelFragment().apply {
-                arguments = Bundle().apply {
+                arguments = get<Bundle>().apply {
                     putSerializable(NUTRIENT_KEY, nutrient)
                 }
             }

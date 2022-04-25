@@ -8,27 +8,32 @@
 
     <include
         layout="@layout/template_toolbar"
-        android:id="@+id/activity_form_create_barcode_toolbar"
+        android:id="@+id/activity_barcode_creator_forms_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <FrameLayout
-        android:id="@+id/activity_form_create_barcode_header_frame_layout"
+        android:id="@+id/activity_barcode_creator_forms_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/light_margin"
         android:layout_marginStart="@dimen/light_margin"
         android:layout_marginEnd="@dimen/light_margin"
-        android:layout_below="@id/activity_form_create_barcode_toolbar"/>
+        android:layout_below="@id/activity_barcode_creator_forms_toolbar">
+        <include
+            layout="@layout/recycler_view_item_qr_creator"
+            android:id="@+id/activity_barcode_creator_forms_header" />
+    </FrameLayout>
+
 
     <FrameLayout
-        android:id="@+id/activity_form_create_barcode_body_frame_layout"
+        android:id="@+id/activity_barcode_creator_forms_body_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/light_margin"
         android:layout_marginEnd="@dimen/light_margin"
         android:layout_marginBottom="@dimen/light_margin"
-        android:layout_below="@id/activity_form_create_barcode_header_frame_layout">
+        android:layout_below="@id/activity_barcode_creator_forms_frame_layout">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -40,21 +45,21 @@
                 android:layout_height="wrap_content">
 
                 <FrameLayout
-                    android:id="@+id/activity_form_create_barcode_form_fragment"
+                    android:id="@+id/activity_barcode_creator_forms_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
                 <RelativeLayout
-                    android:id="@+id/activity_form_create_barcode_error_layout"
+                    android:id="@+id/activity_barcode_creator_forms_error_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/standard_margin"
-                    android:layout_below="@id/activity_form_create_barcode_form_fragment"
+                    android:layout_below="@id/activity_barcode_creator_forms_fragment"
                     android:visibility="gone">
 
                     <ImageView
-                        android:id="@+id/activity_form_create_barcode_error_icon_image_view"
+                        android:id="@+id/activity_barcode_creator_forms_error_icon_image_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/standard_margin"
@@ -63,11 +68,11 @@
                         android:contentDescription="@string/image_view_description_icon" />
 
                     <TextView
-                        android:id="@+id/activity_form_create_barcode_error_text_view"
+                        android:id="@+id/activity_barcode_creator_forms_error_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/activity_form_create_barcode_error_icon_image_view"
+                        android:layout_toEndOf="@id/activity_barcode_creator_forms_error_icon_image_view"
                         android:theme="@style/ErrorTextViewTheme" />
 
                 </RelativeLayout>

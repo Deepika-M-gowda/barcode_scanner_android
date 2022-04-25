@@ -12,24 +12,13 @@
 
     <!-- Light -->
 
-    <!-- Main Color -->
+    <!-- Background Color -->
     <color name="lightBackgroundColorPrimary">#f7f7f7</color>
     <color name="lightBackgroundColorSecondary">#ffffff</color>
 
-    <!-- Texts -->
+    <!-- Front Color -->
     <color name="lightFrontColorPrimary">#ff333333</color>
     <color name="lightFrontColorSecondary">#bf333333</color>
-
-    <!-- Icons -->
-    <!--<color name="light_icon_color">@color/lightColorTextPrimary</color>-->
-
-    <!-- Backgrounds -->
-    <!--<color name="lightColorBackground">@color/lightColorPrimary</color>
-    <color name="lightColorCardViewBackground">#ffffff</color>-->
-
-    <!-- Table -->
-    <!--<color name="light_nutrition_background_primary_color">@color/lightColorCardViewBackground</color>
-    <color name="light_nutrition_background_secondary_color">@color/lightColorBackground</color>-->
 
     <!-- Indicative Color -->
     <color name="light_color_positive">#46c705</color>
@@ -37,52 +26,20 @@
     <color name="light_color_negative">#e40000</color>
     <color name="light_color_unknown">#808080</color>
 
-    <!--<color name="light_color_positive">#46c705</color>
-    <color name="light_color_medium">#e1b300</color>
-    <color name="light_color_negative">#ff2911</color>
-    <color name="light_color_unknown">#808080</color>
-
-    <color name="light_color_positive">#46c705</color>
-    <color name="light_color_medium">#e4be00</color>
-    <color name="light_color_negative">#e40000</color>
-
-    <color name="dark_color_positive">#ade495</color>
-    <color name="dark_color_medium">#bfaa40</color>
-    <color name="dark_color_negative">#bf4040</color>-->
-
     <!-- Dark -->
 
-    <!-- Main Color -->
+    <!-- Background Color -->
     <color name="darkBackgroundColorPrimary">#ff121212</color>
+    <color name="darkBackgroundColorSecondary">#ff1e1e1e</color>
 
-    <!-- Texts -->
+    <!-- Front Color -->
     <color name="darkFrontColorPrimary">#ffcccccc</color>
     <color name="darkFrontColorSecondary">#bfcccccc</color>
-
-    <!-- Icons -->
-    <!--<color name="dark_icon_color">@color/darkColorTextPrimary</color>-->
-
-    <!-- Backgrounds -->
-    <!--<color name="darkColorBackground">@color/darkColorPrimary</color>-->
-    <color name="darkBackgroundColorSecondary">#ff1e1e1e</color>
-    <!--<color name="darkColorCardViewBackground">#ff1a1a1a</color>-->
-
-    <!-- Table -->
-    <!--<color name="dark_nutrition_background_primary_color">@color/darkColorCardViewBackground</color>
-    <color name="dark_nutrition_background_secondary_color">@color/darkColorBackground</color>-->
 
     <!-- Indicative Color -->
     <color name="dark_color_positive">#88d867</color>
     <color name="dark_color_medium">#e7ca3f</color>
     <color name="dark_color_negative">#ff795b</color>
     <color name="dark_color_unknown">#bfbfbf</color>
-
-    <!--<color name="dark_color_positive">#ade495</color>
-    <color name="dark_color_medium">#eed878</color>
-    <color name="dark_color_negative">#ffa08a</color>
-    <color name="dark_color_unknown">#bfbfbf</color>-->
-
-    <!-- MaterialCardView -->
-    <color name="darkMaterialCardViewStrokeColor">#303030</color>
 
 </resources>

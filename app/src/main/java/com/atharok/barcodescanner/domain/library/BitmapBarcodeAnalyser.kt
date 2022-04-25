@@ -30,7 +30,7 @@ import com.google.zxing.common.HybridBinarizer
  */
 class BitmapBarcodeAnalyser {
 
-    suspend fun findBarcodeInBitmap(bitmap: Bitmap): Result? {
+    fun findBarcodeInBitmap(bitmap: Bitmap): Result? {
 
         val width = bitmap.width
         val height = bitmap.height
@@ -48,7 +48,7 @@ class BitmapBarcodeAnalyser {
         return try {
             reader.decode(binaryBitmap)
         } catch (e: NotFoundException) {
-            Log.e("Barcode Bitmap Analyser", "Barcode not found in Bitmap")
+            Log.e("BitmapBarcodeAnalyser", "Barcode not found in Bitmap")
             null
         }
     }

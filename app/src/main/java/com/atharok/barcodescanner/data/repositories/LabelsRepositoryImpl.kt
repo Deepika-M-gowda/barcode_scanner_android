@@ -29,16 +29,13 @@ import java.io.File
 
 class LabelsRepositoryImpl(private val fileFetcher: FileFetcher): LabelsRepository {
 
-    override suspend fun getLabels(
-        fileNameWithExtension: String,
-        fileUrlName: String,
-        tagList: List<String>
-    ): List<Label> {
+    override suspend fun getLabels(fileNameWithExtension: String,
+                                   fileUrlName: String,
+                                   tagList: List<String>): List<Label> {
+
         val file = fileFetcher.fetchFile(fileNameWithExtension, fileUrlName)
 
-        return if(file.exists()) {
-            obtainList(file, tagList)
-        } else listOf()
+        return if(file.exists()) obtainList(file, tagList) else listOf()
     }
 
     /**

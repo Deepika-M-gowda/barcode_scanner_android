@@ -35,13 +35,13 @@ import com.journeyapps.barcodescanner.BarcodeEncoder
 class BitmapBarcodeGenerator(private val multiFormatWriter: MultiFormatWriter,
                              private val barcodeEncoder: BarcodeEncoder) {
 
-    suspend fun create(text: String, barcodeFormat: BarcodeFormat, width: Int, height: Int): Bitmap? {
+    fun create(text: String, barcodeFormat: BarcodeFormat, width: Int, height: Int): Bitmap? {
 
         return try {
             val bitMatrix = createBitMatrix(text, barcodeFormat, width, height)
             barcodeEncoder.createBitmap(bitMatrix)
         } catch (e: Exception) {
-            //Log.e("Error", e.toString())
+            e.printStackTrace()
             null
         }
     }

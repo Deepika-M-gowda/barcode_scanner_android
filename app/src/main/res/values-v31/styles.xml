@@ -18,4 +18,9 @@
         <item name="appFrontColorPrimary">@android:color/system_neutral1_100</item>
         <item name="appFrontColorSecondary">@android:color/system_neutral1_300</item>
     </style>
+
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowSplashScreenBackground">@color/colorBlueAccent</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/app_splash_screen_animated_icon</item>
+    </style>
 </resources>

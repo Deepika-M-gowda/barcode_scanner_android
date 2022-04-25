@@ -31,6 +31,7 @@ import com.atharok.barcodescanner.databinding.FragmentFoodProductRootIngredients
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -73,7 +74,7 @@ class FoodProductRootIngredientsFragment : ProductBarcodeFragment<FoodProduct>()
 
     companion object {
         fun newInstance(foodProduct: FoodProduct) = FoodProductRootIngredientsFragment().apply {
-            arguments = Bundle().apply {
+            arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, foodProduct)
             }
         }

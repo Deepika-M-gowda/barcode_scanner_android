@@ -28,10 +28,14 @@ import android.view.View
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 import kotlin.reflect.KClass
 
 class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -101,7 +105,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
     }*/
 
     private fun startAboutActivity(activityKClass: KClass<out Activity>): Boolean {
-        val intent = Intent(requireContext(), activityKClass.java)
+        val intent = get<Intent>(named(INTENT_START_ACTIVITY)) { parametersOf(activityKClass) }
         startActivity(intent)
         return true
     }

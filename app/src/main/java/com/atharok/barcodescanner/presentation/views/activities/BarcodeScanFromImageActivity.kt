@@ -34,14 +34,18 @@ import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBindin
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.INTENT_PICK_IMAGE
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.google.zxing.Result
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 class BarcodeScanFromImageActivity: BaseActivity() {
 
@@ -136,8 +140,7 @@ class BarcodeScanFromImageActivity: BaseActivity() {
      * Prépare et ouvre la gallery pour récupérer une image.
      */
     private fun pickImageFromGallery(){
-        val imagePickerIntent = Intent(Intent.ACTION_PICK)
-        imagePickerIntent.type = "image/*"
+        val imagePickerIntent = get<Intent>(named(INTENT_PICK_IMAGE))
         resultLauncher.launch(imagePickerIntent)
     }
 
@@ -156,12 +159,15 @@ class BarcodeScanFromImageActivity: BaseActivity() {
         // Insère l'image dans l'ImageCropView
         viewBinding.activityBarcodeScanFromImageCropImageView.setImageUriAsync(uri)
 
+        var job: Job? = null
+
         // S'active à chaque appel de la méthode "imageCropView.getCroppedImageAsync()"
         viewBinding.activityBarcodeScanFromImageCropImageView.setOnCropImageCompleteListener { _, result ->
             val bitmap = result.getBitmap(this)
 
             if(bitmap != null){
-                lifecycleScope.launch(Dispatchers.IO) {
+                job?.cancel()
+                job = lifecycleScope.launch(Dispatchers.IO) {
                     zxingResult = bitmapBarcodeAnalyser.findBarcodeInBitmap(bitmap)
                     setMenuVisibility(zxingResult != null)
                 }
@@ -192,11 +198,16 @@ class BarcodeScanFromImageActivity: BaseActivity() {
 
             databaseViewModel.insertBarcode(barcode)
 
-            val intent = Intent(this, BarcodeAnalysisActivity::class.java)
-            intent.putExtra(BARCODE_KEY, barcode)
+            val intent = getBarcodeAnalysisActivityIntent().apply {
+                putExtra(BARCODE_KEY, barcode)
+            }
+
             startActivity(intent)
 
             finish()
         }
     }
+
+    private fun getBarcodeAnalysisActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 }

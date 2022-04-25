@@ -57,22 +57,52 @@ class MainActivity: BaseActivity() {
         showInitialFragment()
 
         setContentView(viewBinding.root)
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            manageSplashScreen()
+        }*/
     }
 
+    /*@RequiresApi(Build.VERSION_CODES.S)
+    private fun manageSplashScreen() {
+
+        splashScreen.setOnExitAnimationListener { splashScreenView ->
+
+            // Create your custom animation.
+            val slideUp = ObjectAnimator.ofFloat(
+                splashScreenView.iconView,
+                View.TRANSLATION_Y,
+                0f,
+                -splashScreenView.height.toFloat()
+            )
+            slideUp.interpolator = AnticipateInterpolator()
+            slideUp.duration = 500L
+
+            // Call SplashScreenView.remove at the end of your custom animation.
+            slideUp.doOnEnd { splashScreenView.remove() }
+
+            // Run your animation.
+            slideUp.start()
+        }
+    }*/
+
     private fun showInitialFragment() {
+
+        val bottomNavigation = viewBinding.activityMainMenuBottomNavigation
+
         when (intent?.action) {
-            "${BuildConfig.APPLICATION_ID}.SCAN" -> viewBinding.activityMainMenuBottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_scan
-            "${BuildConfig.APPLICATION_ID}.HISTORY" -> viewBinding.activityMainMenuBottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_history
-            "${BuildConfig.APPLICATION_ID}.CREATE" -> viewBinding.activityMainMenuBottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_create
+            "${BuildConfig.APPLICATION_ID}.SCAN" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_scan
+            "${BuildConfig.APPLICATION_ID}.HISTORY" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_history
+            "${BuildConfig.APPLICATION_ID}.CREATE" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_create
         }
         intent?.action = null
-        val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, viewBinding.activityMainMenuBottomNavigation.selectedItemId)
+        val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, bottomNavigation.selectedItemId)
         configureFragment(itemIdSelected)
     }
 
     // ---- Menu ----
 
-    private fun configureBottomNavigationMenu(){
+    private fun configureBottomNavigationMenu() {
 
         viewBinding.activityMainMenuBottomNavigation.setOnItemSelectedListener {
             intent.putExtra(ITEM_ID_KEY, it.itemId)
@@ -80,46 +110,15 @@ class MainActivity: BaseActivity() {
         }
     }
 
-    private fun configureFragment(id: Int): Boolean{
-        /*return when(id){
-            R.id.menu_navigation_bottom_view_scan -> changeFragment(MainScannerFragment::class, R.string.title_scan)
-            R.id.menu_navigation_bottom_view_history -> changeFragment(MainHistoryFragment::class, R.string.title_history)
-            R.id.menu_navigation_bottom_view_create -> changeFragment(MainBarcodeCreatorListFragment::class, R.string.title_bar_code_creator)
-            R.id.menu_navigation_bottom_view_settings -> changeFragment(MainSettingsFragment::class, R.string.title_settings)
-            else -> false
-        }*/
-        return when(id){
-            R.id.menu_navigation_bottom_view_scan -> changeFragment(mainScannerFragment, R.string.title_scan)
-            R.id.menu_navigation_bottom_view_history -> changeFragment(mainHistoryFragment, R.string.title_history)
-            R.id.menu_navigation_bottom_view_create -> changeFragment(mainBarcodeCreatorListFragment, R.string.title_bar_code_creator)
-            R.id.menu_navigation_bottom_view_settings -> changeFragment(mainSettingsFragment, R.string.title_settings)
-            else -> false
-        }
+    private fun configureFragment(id: Int): Boolean = when(id){
+        R.id.menu_navigation_bottom_view_scan -> changeFragment(mainScannerFragment, R.string.title_scan)
+        R.id.menu_navigation_bottom_view_history -> changeFragment(mainHistoryFragment, R.string.title_history)
+        R.id.menu_navigation_bottom_view_create -> changeFragment(mainBarcodeCreatorListFragment, R.string.title_bar_code_creator)
+        R.id.menu_navigation_bottom_view_settings -> changeFragment(mainSettingsFragment, R.string.title_settings)
+        else -> false
     }
 
-    // ---- Theme ----
-    fun updateTheme(){
-        settingsManager.reload()
-        setTheme(settingsManager.getTheme())
-        intent.putExtra(ITEM_ID_KEY, viewBinding.activityMainMenuBottomNavigation.selectedItemId)
-        recreate()
-    }
-
-    /*private fun changeFragment(fragmentClass: KClass<out Fragment>, titleResource: Int) : Boolean {
-
-        supportActionBar?.setTitle(titleResource)
-
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-            replace(viewBinding.activityMainFrameLayout.id, fragmentClass.java, null)
-            //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back
-        }
-
-        return true
-    }*/
-
-    private fun changeFragment(fragment: Fragment, titleResource: Int) : Boolean {
+    private fun changeFragment(fragment: Fragment, titleResource: Int): Boolean {
 
         supportActionBar?.setTitle(titleResource)
 
@@ -131,5 +130,13 @@ class MainActivity: BaseActivity() {
         }
 
         return true
+    }
+
+    // ---- Theme ----
+    fun updateTheme() {
+        settingsManager.reload()
+        setTheme(settingsManager.getTheme())
+        intent.putExtra(ITEM_ID_KEY, viewBinding.activityMainMenuBottomNavigation.selectedItemId)
+        recreate()
     }
 }

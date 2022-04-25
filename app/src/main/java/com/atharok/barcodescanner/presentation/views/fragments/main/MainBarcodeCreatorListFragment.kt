@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.animation.LayoutTransition
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,12 +28,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.TemplateItemBarcodeCreatorBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBinding
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeCreatorFormsActivity
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -57,6 +59,7 @@ class MainBarcodeCreatorListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Permet une animation fluide lorsqu'on ouvre les sous catégories de QR-Code
         viewBinding.fragmentMainCreateBarcodeListOuterView.layoutTransition?.setAnimateParentHierarchy(false)
         viewBinding.fragmentMainCreateBarcodeListOuterView.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
 
@@ -114,20 +117,21 @@ class MainBarcodeCreatorListFragment : Fragment() {
             itemViewBinding.templateItemBarcodeCreatorImageView.setImageResource(it.drawableResource)
 
             itemViewBinding.root.setOnClickListener { _ ->
-                onClickItem(it, itemViewBinding.root)
+                onClickItem(it)
             }
 
             linearLayout.addView(itemViewBinding.root)
         }
     }
 
-    private fun onClickItem(barcodeFormatDetails: BarcodeFormatDetails, rootView: View) {
-        val intent = Intent(requireContext(), BarcodeCreatorFormsActivity::class.java)
-        intent.putExtra(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
+    private fun onClickItem(barcodeFormatDetails: BarcodeFormatDetails) {
+        val intent = getStartBarcodeCreatorFormsActivityIntent().apply {
+            putExtra(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
+        }
 
-        val options = ActivityOptions.makeSceneTransitionAnimation(
-            requireActivity(), rootView, getString(R.string.animation_activity_transition))
-
-        startActivity(intent, options?.toBundle())
+        startActivity(intent)
     }
+
+    private fun getStartBarcodeCreatorFormsActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeCreatorFormsActivity::class) }
 }

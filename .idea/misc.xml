@@ -5,15 +5,33 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.3458333333333333" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable-v26/app_adaptive_icon.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable-v26/app_icon.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable-v26/app_icon_background.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable-v26/splash_screen_animated_icon.xml" value="0.298" />
+        <entry key="app/src/main/res/drawable-xhdpi/app_icon_background.xml" value="0.3185" />
         <entry key="app/src/main/res/drawable-xhdpi/ic_shortcut_create.xml" value="0.282" />
         <entry key="app/src/main/res/drawable-xhdpi/ic_shortcut_history.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/app_adaptive_icon.xml" value="0.319" />
+        <entry key="app/src/main/res/drawable/app_icon.xml" value="0.319" />
+        <entry key="app/src/main/res/drawable/baseline_add_24.xml" value="0.3375" />
+        <entry key="app/src/main/res/drawable/baseline_arrow_back_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_call_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_check_circle_outline_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_contacts_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_content_copy_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_create_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_delete_forever_24.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/baseline_event_note_24.xml" value="0.32" />
         <entry key="app/src/main/res/drawable/bottom_navigation_view_color.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_animated.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_aztec_code_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_bar_code_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_barcode_scanner_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_book_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_data_matrix_code_24.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ic_icon.xml" value="0.319" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_pdf_417_code_24.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_scan_icon_24.xml" value="0.282" />
@@ -21,8 +39,12 @@
         <entry key="app/src/main/res/drawable/ic_shortcut_history.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_shortcut_scan.xml" value="0.282" />
         <entry key="app/src/main/res/drawable/ic_shortcut_scan_from_image.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/splash_screen_animated_icon.xml" value="0.2965" />
+        <entry key="app/src/main/res/drawable/toolbar_shadow.xml" value="0.32" />
+        <entry key="app/src/main/res/drawable/vectordrawable.xml" value="0.319" />
         <entry key="app/src/main/res/layout/activity_about_bdd.xml" value="0.3328125" />
         <entry key="app/src/main/res/layout/activity_barcode_analysis.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/activity_barcode_creator_forms.xml" value="0.31614583333333335" />
         <entry key="app/src/main/res/layout/fragment_barcode_actions.xml" value="0.3328125" />
         <entry key="app/src/main/res/layout/fragment_expandable_view.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/fragment_food_product_additives.xml" value="0.3338541666666667" />
@@ -63,6 +85,8 @@
         <entry key="app/src/main/res/layout/template_text_view_title.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_toolbar.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/template_warning_view.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/app_adaptive_icon.xml" value="0.32" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.282" />
         <entry key="app/src/main/res/xml/shortcuts.xml" value="0.315625" />
       </map>
     </option>
