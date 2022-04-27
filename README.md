@@ -1,4 +1,4 @@
-<div align="center"><img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round" width="192" /></div>
+<div align="center"><img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="192" /></div>
 
 # <div align="center">Barcode Scanner</div>
 
