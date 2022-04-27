@@ -7,6 +7,8 @@
     <attr name="appBackgroundColorSecondary" format="reference|color"/>
     <attr name="appFrontColorPrimary" format="reference|color"/>
     <attr name="appFrontColorSecondary" format="reference|color"/>
+    <attr name="appIconColorOnBackground" format="reference|color"/>
+    <attr name="appOnMainColor" format="reference|color"/>
 
     <attr name="colorPositive" format="color"/>
     <attr name="colorMedium" format="color"/>
@@ -47,9 +49,9 @@
     </declare-styleable>
 
     <declare-styleable name="FloatingActionMenu">
-        <attr name="icon_root_fab" format="reference" />
-        <attr name="icon_fab_tint" format="color" />
-        <attr name="fab_tint" format="color" />
+        <attr name="fab_icon_root" format="reference" />
+        <attr name="fab_icon_tint" format="color" />
+        <attr name="fab_background_tint" format="color" />
     </declare-styleable>
 
     <declare-styleable name="CustomTextInputLayout">

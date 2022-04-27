@@ -29,7 +29,7 @@
                 android:layout_weight=".3"
                 android:textAlignment="textStart"
                 android:text="@string/nutrition_facts_table_label"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/appOnMainColor"
                 android:textSize="@dimen/sub_title_text_size"
                 android:fontFamily="@font/roboto_black"/>
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_weight=".3"
                 android:textAlignment="textEnd"
                 android:text="@string/off_per_100_label"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/appOnMainColor"
                 android:textSize="@dimen/sub_title_text_size"
                 android:fontFamily="@font/roboto_black" />
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_weight=".3"
                 android:textAlignment="textEnd"
                 android:text="@string/off_per_serving_label"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/appOnMainColor"
                 android:textSize="@dimen/sub_title_text_size"
                 android:fontFamily="@font/roboto_black" />
         </LinearLayout>

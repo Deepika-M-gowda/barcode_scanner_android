@@ -29,15 +29,15 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
-import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.databinding.FragmentMainHistoryBinding
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.databinding.FragmentMainHistoryBinding
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
+import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
 import com.google.android.material.snackbar.Snackbar
@@ -52,7 +52,7 @@ import org.koin.core.qualifier.named
 class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListener, HistoryItemTouchHelperListener {
 
     private val databaseViewModel: DatabaseViewModel by sharedViewModel()
-    private var adapter: HistoryItemAdapter? = null
+    private val adapter: HistoryItemAdapter = HistoryItemAdapter(this)
 
     private var _binding: FragmentMainHistoryBinding? = null
     private val viewBinding get() = _binding!!
@@ -77,7 +77,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
         databaseViewModel.barcodeList.observe(viewLifecycleOwner) {
 
-            adapter?.updateData(it)
+            adapter.updateData(it)
 
             if (it.isEmpty()) {
                 viewBinding.fragmentMainHistoryEmptyTextView.visibility = View.VISIBLE
@@ -86,7 +86,6 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
                 viewBinding.fragmentMainHistoryEmptyTextView.visibility = View.GONE
                 viewBinding.fragmentMainHistoryRecyclerView.visibility = View.VISIBLE
             }
-
         }
 
         setHasOptionsMenu(true)
@@ -112,19 +111,17 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     // ---- HistoryItemTouchHelperListener Implementation ----
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
-        val barcode: Barcode? = adapter?.getItem(position)
+        val barcode: Barcode = adapter.getItem(position)
 
-        if (barcode != null) {
-            databaseViewModel.deleteBarcode(barcode)
+        databaseViewModel.deleteBarcode(barcode)
 
-            // Dans le cas de texte trop long et/ou contenant des '\n', on adapte la chaine de caractères
-            val content = if (barcode.contents.length <= 16) {
-                barcode.contents.substringBefore('\n')
-            } else
-                "${barcode.contents.substring(0, 16).substringBefore('\n')}..."
+        // Dans le cas de texte trop long et/ou contenant des '\n', on adapte la chaine de caractères
+        val content = if (barcode.contents.length <= 16) {
+            barcode.contents.substringBefore('\n')
+        } else
+            "${barcode.contents.substring(0, 16).substringBefore('\n')}..."
 
-            showSnackbar(getString(R.string.snack_bar_message_item_deleted, content))
-        }
+        showSnackbar(getString(R.string.snack_bar_message_item_deleted, content))
     }
 
     // ----
@@ -133,7 +130,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
         val recyclerView = viewBinding.fragmentMainHistoryRecyclerView
 
-        adapter = HistoryItemAdapter(this)
+        //adapter = HistoryItemAdapter(this)
         val layoutManager = LinearLayoutManager(requireContext())
         val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
 

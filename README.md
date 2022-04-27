@@ -1,4 +1,4 @@
-<div align="center"><img src="images/logo/logo.png" width="192" /></div>
+<div align="center"><img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round" width="192" /></div>
 
 # <div align="center">Barcode Scanner</div>
 
@@ -12,18 +12,18 @@ Barcode Scanner is a libre, free and ad-free barcode scanning application for An
 
 # Screenshots
 
-<img src="images/screenshots/light_qr.png" width="192" />
-<img src="images/screenshots/light_food_product_01.png" width="192" />
-<img src="images/screenshots/light_history.png" width="192" />
-<img src="images/screenshots/light_create.png" width="192" />
-<img src="images/screenshots/dark_qr.png" width="192" />
-<img src="images/screenshots/dark_food_product_01.png" width="192" />
-<img src="images/screenshots/dark_history.png" width="192" />
-<img src="images/screenshots/dark_create.png" width="192" />
+<img src="screenshots/01_qr_light.png" width="192" />
+<img src="screenshots/02_food_product_light.png" width="192" />
+<img src="screenshots/03_history_light.png" width="192" />
+<img src="screenshots/04_create_light.png" width="192" />
+<img src="screenshots/01_qr_dark.png" width="192" />
+<img src="screenshots/02_food_product_dark.png" width="192" />
+<img src="screenshots/03_history_dark.png" width="192" />
+<img src="screenshots/04_create_dark.png" width="192" />
 
 # Donate
 
-If you like Atharok Barcode Scanner you can donate via Liberapay.
+If you like Barcode Scanner you can donate via Liberapay.
 
 [![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Atharok/donate)
 
@@ -33,7 +33,7 @@ If you like Atharok Barcode Scanner you can donate via Liberapay.
 ***QR Code, Data Matrix, PDF 417, AZTEC***
 
 - 1D barcode format:
-***EAN  13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF***
+***EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF***
 
 # Services
 

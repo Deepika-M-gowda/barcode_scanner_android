@@ -19,7 +19,7 @@
  */
 
 package com.atharok.barcodescanner.presentation.views.recyclerView.barcodeGeneratorItem
-
+/*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,4 +45,4 @@ class BarcodeGeneratorItemAdapter(private val qrCodeCreatorTypeList: List<Barcod
         val barcodeFormatDetails: BarcodeFormatDetails = qrCodeCreatorTypeList[position]
         holder.update(barcodeFormatDetails)
     }
-}
+}*/

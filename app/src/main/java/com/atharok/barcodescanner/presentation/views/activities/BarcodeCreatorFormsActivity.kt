@@ -36,7 +36,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorFor
 import com.google.zxing.BarcodeFormat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
@@ -61,13 +60,9 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
 
         setSupportActionBar(viewBinding.activityBarcodeCreatorFormsToolbar.toolbar)
 
-        allBarcodeFormat?.apply(::configureHeader)
-
         lifecycleScope.launch(Dispatchers.Main) {
-
-            withContext(Dispatchers.IO) {
-                allBarcodeFormat?.apply(::configureFormFragment)
-            }
+            allBarcodeFormat?.apply(::configureHeader)
+            allBarcodeFormat?.apply(::configureFormFragment)
         }
 
         setContentView(viewBinding.root)
@@ -80,8 +75,8 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
      */
     private fun configureHeader(barcodeFormatDetails: BarcodeFormatDetails){
 
-        val imageView = viewBinding.activityBarcodeCreatorFormsHeader.recyclerViewItemQrCreatorImageView
-        val textView = viewBinding.activityBarcodeCreatorFormsHeader.recyclerViewItemQrCreatorTextView
+        val imageView = viewBinding.activityBarcodeCreatorFormsHeader.templateItemBarcodeCreatorImageView
+        val textView = viewBinding.activityBarcodeCreatorFormsHeader.templateItemBarcodeCreatorTextView
 
         textView.text = getString(barcodeFormatDetails.stringResource)
         imageView.setImageResource(barcodeFormatDetails.drawableResource)

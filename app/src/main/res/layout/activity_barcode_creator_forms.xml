@@ -21,7 +21,7 @@
         android:layout_marginEnd="@dimen/light_margin"
         android:layout_below="@id/activity_barcode_creator_forms_toolbar">
         <include
-            layout="@layout/recycler_view_item_qr_creator"
+            layout="@layout/template_item_barcode_creator"
             android:id="@+id/activity_barcode_creator_forms_header" />
     </FrameLayout>
 

@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.history
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,27 +35,27 @@ class HistoryItemAdapter(private val callback: OnItemClickListener): RecyclerVie
         fun onItemClick(view: View?, barcode: Barcode)
     }
 
-    private val barCodeInformationList = mutableListOf<Barcode>()
+    private var barcodeList = listOf<Barcode>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryItemHolder {
         val inflater = LayoutInflater.from(parent.context)
         val viewBinding = RecyclerViewItemHistoryBinding.inflate(inflater, parent, false)
-
         return HistoryItemHolder(viewBinding)
     }
 
-    override fun getItemCount(): Int = barCodeInformationList.size
+    override fun getItemCount(): Int = barcodeList.size
 
     override fun onBindViewHolder(holder: HistoryItemHolder, position: Int) {
-        holder.update(barCodeInformationList[position], callback)
+        holder.update(barcodeList[position], callback)
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(barcodeList: List<Barcode>){
-        this.barCodeInformationList.clear()
-        this.barCodeInformationList.addAll(barcodeList)
+        /*this.barcodeMutableList.clear()
+        this.barcodeMutableList.addAll(barcodeList)*/
+        this.barcodeList = barcodeList
         this.notifyDataSetChanged()
     }
 
-    fun getItem(position: Int) = this.barCodeInformationList[position]
+    fun getItem(position: Int) = this.barcodeList[position]
 }

@@ -19,7 +19,7 @@
  */
 
 package com.atharok.barcodescanner.presentation.views.recyclerView.barcodeGeneratorItem
-
+/*
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.RecyclerViewItemQrCreatorBinding
@@ -45,4 +45,4 @@ class BarcodeGeneratorItemHolder(private val viewBinding: RecyclerViewItemQrCrea
     override fun onClick(v: View?) {
         callbackWeakReference.get()?.onClickItem(v, barcodeFormatDetails)
     }
-}
+}*/

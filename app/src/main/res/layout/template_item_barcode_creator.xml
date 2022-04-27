@@ -19,7 +19,7 @@
             android:layout_width="@dimen/icon_large_size"
             android:layout_height="@dimen/icon_large_size"
             android:layout_centerVertical="true"
-            app:tint="@android:color/white"
+            app:tint="?attr/appOnMainColor"
             android:background="@drawable/circle"
             app:backgroundTint="?colorAccent"
             android:contentDescription="@string/image_view_description_icon" />

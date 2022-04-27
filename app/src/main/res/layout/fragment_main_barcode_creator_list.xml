@@ -42,7 +42,7 @@
                         android:layout_height="@dimen/icon_large_size"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        app:tint="@android:color/white"
+                        app:tint="?attr/appOnMainColor"
                         android:background="@drawable/circle"
                         app:backgroundTint="?colorAccent"
                         android:src="@drawable/baseline_qr_code_24"

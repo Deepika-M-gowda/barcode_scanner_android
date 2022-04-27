@@ -47,14 +47,14 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
 
     private val iconResource: Int
     private val iconTint: Int
-    private val fabColor: Int
+    private val backgroundTint: Int
 
     init {
         context.theme.obtainStyledAttributes(attrs, R.styleable.FloatingActionMenu, 0, 0).apply {
             try {
-                iconResource = getResourceId(R.styleable.FloatingActionMenu_icon_root_fab, -1)
-                iconTint = getColor(R.styleable.FloatingActionMenu_icon_fab_tint, Color.WHITE)
-                fabColor = getColor(R.styleable.FloatingActionMenu_fab_tint, -1)
+                iconResource = getResourceId(R.styleable.FloatingActionMenu_fab_icon_root, -1)
+                iconTint = getColor(R.styleable.FloatingActionMenu_fab_icon_tint, Color.WHITE)
+                backgroundTint = getColor(R.styleable.FloatingActionMenu_fab_background_tint, -1)
             } finally {
                 recycle()
             }
@@ -66,7 +66,7 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
 
         fab.id = View.NO_ID
         if(iconResource!=-1) fab.setImageResource(iconResource)
-        if(fabColor!=-1) fab.backgroundTintList = ColorStateList.valueOf(fabColor)
+        if(backgroundTint!=-1) fab.backgroundTintList = ColorStateList.valueOf(backgroundTint)
         fab.supportImageTintList = ColorStateList.valueOf(iconTint)
         fab.setOnClickListener { onClick() }
         fab.visibility = View.VISIBLE
@@ -86,7 +86,7 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
         val subFab = FloatingActionButton(context).apply {
             id = View.NO_ID
             if(drawable!=-1) setImageResource(drawable)
-            if(fabColor!=-1) backgroundTintList = ColorStateList.valueOf(fabColor)
+            if(backgroundTint!=-1) backgroundTintList = ColorStateList.valueOf(backgroundTint)
             supportImageTintList = ColorStateList.valueOf(iconTint)
             setOnClickListener(listener)
             this.visibility = View.GONE

@@ -42,15 +42,15 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
 
     fun update(barcode: Barcode, listener: HistoryItemAdapter.OnItemClickListener){
 
-        val barCodeType = barcode.getBarcodeType()
+        val barcodeType = barcode.getBarcodeType()
 
         // ---- Product Type Title TextView ----
-        val entitled = if(barcode.name != "") barcode.name else itemView.context.getString(barCodeType.stringResource)
+        val entitled = if(barcode.name != "") barcode.name else itemView.context.getString(barcodeType.stringResource)
         viewBinding.recyclerViewItemHistoryEntitledTextView.text = entitled
 
         // ---- Product Type Icon ----
         val drawableResource: Int = when {
-            barCodeType != BarcodeType.UNKNOWN -> barCodeType.drawableResource
+            barcodeType != BarcodeType.UNKNOWN -> barcodeType.drawableResource
             barcode.is1DProductBarcodeFormat || barcode.is1DIndustrialBarcodeFormat -> R.drawable.ic_bar_code_24
             else -> R.drawable.baseline_qr_code_24
         }
@@ -58,7 +58,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         viewBinding.recyclerViewItemHistoryImageView.setImageResource(drawableResource)
 
         // ---- Bar Code Icon ----
-        val barCodeIconDrawableResource: Int = when {
+        val barcodeIconDrawableResource: Int = when {
             barcode.is1DProductBarcodeFormat || barcode.is1DIndustrialBarcodeFormat -> R.drawable.ic_bar_code_24
             barcode.is2DBarcodeFormat -> {
                 when(barcode.getBarcodeFormat()){
@@ -70,7 +70,8 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
             }
             else -> R.drawable.baseline_qr_code_24
         }
-        viewBinding.recyclerViewItemHistoryBarCodeIconImageView.setImageResource(barCodeIconDrawableResource)
+        viewBinding.recyclerViewItemHistoryBarcodeIconImageView.setImageResource(barcodeIconDrawableResource)
+        viewBinding.recyclerViewItemHistoryBarcodeFormatTextView.text = barcode.formatName.replace('_', ' ')
 
         // ---- Content barcode TextView ----
         viewBinding.recyclerViewItemHistoryContentTextView.text = barcode.contents

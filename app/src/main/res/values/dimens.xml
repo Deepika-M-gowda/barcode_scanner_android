@@ -5,6 +5,7 @@
     <dimen name="tab_layout_height">48dp</dimen>
 
     <!-- Icon -->
+    <dimen name="icon_x_large_size">40dp</dimen>
     <dimen name="icon_large_size">32dp</dimen>
     <dimen name="icon_standard_size">24dp</dimen>
     <dimen name="icon_light_size">16dp</dimen>
@@ -20,6 +21,7 @@
     <dimen name="standard_margin">8dp</dimen>
     <dimen name="large_margin">12dp</dimen>
     <dimen name="x_large_margin">16dp</dimen>
+    <dimen name="history_item_margin">32dp</dimen>
     <dimen name="space_fab_button">80dp</dimen>
 
     <!-- Text -->

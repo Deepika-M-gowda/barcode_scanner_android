@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56sp">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/recycler_view_item_history_background_layout"
@@ -12,7 +12,7 @@
         android:layout_gravity="center_vertical">
 
         <TextView
-            android:id="@+id/recycler_view_item_history_delete_label"
+            android:id="@+id/recycler_view_item_history_delete_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -38,22 +38,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardBackgroundColor="?attr/cardViewBackgroundColorReference"
-        app:cardCornerRadius="28sp"
         app:cardUseCompatPadding="false">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/standard_margin">
+            android:layout_gravity="center_vertical"
+            android:paddingTop="@dimen/large_margin"
+            android:paddingBottom="@dimen/large_margin"
+            android:paddingStart="@dimen/large_margin"
+            android:paddingEnd="@dimen/large_margin">
 
             <ImageView
                 android:id="@+id/recycler_view_item_history_image_view"
-                android:layout_width="@dimen/icon_large_size"
-                android:layout_height="@dimen/icon_large_size"
+                android:layout_width="@dimen/icon_x_large_size"
+                android:layout_height="@dimen/icon_x_large_size"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/light_margin"
-                app:tint="@android:color/white"
+                android:layout_marginEnd="@dimen/large_margin"
+                app:tint="?attr/appOnMainColor"
                 android:background="@drawable/circle"
                 app:backgroundTint="?colorAccent"
                 android:contentDescription="@string/image_view_description_type_icon"
@@ -63,23 +66,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/recycler_view_item_history_image_view"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/standard_margin"
-                android:layout_marginEnd="@dimen/light_margin">
+                android:layout_centerVertical="true">
 
                 <RelativeLayout
-                    android:id="@+id/recycler_view_item_history_title_layout"
+                    android:id="@+id/recycler_view_item_history_entitled_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/light_margin">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/recycler_view_item_history_entitled_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/recycler_view_item_history_origin_flag_image_view"
+                        android:layout_centerVertical="true"
                         android:layout_marginEnd="@dimen/standard_margin"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/recycler_view_item_history_barcode_format_text_view"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:fontFamily="@font/roboto_black"
@@ -87,48 +88,64 @@
                         android:textColor="?android:textColorPrimary"
                         />
 
-                    <ImageView
-                        android:id="@+id/recycler_view_item_history_origin_flag_image_view"
-                        android:layout_width="@dimen/icon_light_size"
-                        android:layout_height="@dimen/icon_light_size"
+                    <TextView
+                        android:id="@+id/recycler_view_item_history_barcode_format_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/light_margin"
                         android:layout_centerVertical="true"
-                        android:layout_toStartOf="@id/recycler_view_item_history_bar_code_icon_image_view"
-                        android:layout_marginEnd="@dimen/standard_margin"
-                        android:contentDescription="@string/image_view_description_flag" />
+                        android:layout_toStartOf="@id/recycler_view_item_history_barcode_icon_image_view"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/min_text_size"
+                        android:fontFamily="@font/roboto_medium" />
 
                     <ImageView
-                        android:id="@+id/recycler_view_item_history_bar_code_icon_image_view"
+                        android:id="@+id/recycler_view_item_history_barcode_icon_image_view"
                         android:layout_width="@dimen/icon_light_size"
                         android:layout_height="@dimen/icon_light_size"
+                        android:layout_marginStart="@dimen/light_margin"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:tint="?icon_color"
+                        app:tint="?android:attr/textColorSecondary"
                         android:contentDescription="@string/image_view_description_bar_code" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/recycler_view_item_history_title_layout"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="@dimen/light_margin">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recycler_view_item_history_entitled_layout"
+                    android:layout_marginTop="@dimen/light_margin">
 
-                    <TextView
-                        android:id="@+id/recycler_view_item_history_content_text_view"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/recycler_view_item_history_date_image_view"
-                        android:layout_marginEnd="@dimen/standard_margin"
+                        android:layout_toStartOf="@id/recycler_view_item_history_date_image_view">
+                        <TextView
+                            android:id="@+id/recycler_view_item_history_content_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/standard_margin"
 
-                        android:ellipsize="end"
-                        android:maxLines="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
 
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:textSize="@dimen/standard_text_size"
-                        android:fontFamily="@font/roboto_medium_italic" />
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="@dimen/standard_text_size"
+                            android:fontFamily="@font/roboto_medium_italic" />
+
+                        <ImageView
+                            android:id="@+id/recycler_view_item_history_origin_flag_image_view"
+                            android:layout_width="@dimen/icon_light_size"
+                            android:layout_height="@dimen/icon_light_size"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/recycler_view_item_history_content_text_view"
+                            android:contentDescription="@string/image_view_description_flag" />
+                    </RelativeLayout>
 
                     <ImageView
                         android:id="@+id/recycler_view_item_history_date_image_view"
@@ -144,8 +161,8 @@
                         android:id="@+id/recycler_view_item_history_date_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/light_margin"
                         android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/light_margin"
                         android:layout_alignParentEnd="true"
                         android:textColor="?android:attr/textColorSecondary"
                         android:textSize="@dimen/standard_text_size"
@@ -154,7 +171,6 @@
                 </RelativeLayout>
 
             </RelativeLayout>
-
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
