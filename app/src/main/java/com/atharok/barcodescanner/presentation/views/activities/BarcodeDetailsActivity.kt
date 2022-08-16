@@ -42,6 +42,7 @@ import com.atharok.barcodescanner.common.extentions.read
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.AboutBarcodeFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
 import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extentions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
@@ -92,8 +93,8 @@ class BarcodeDetailsActivity : BaseActivity() {
         return if(intent?.action == Intent.ACTION_SEND){
             when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
-                "text/x-vcard" -> intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)?.read(this)
-                "text/x-vcalendar" -> intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)?.read(this)
+                "text/x-vcard" -> intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
+                "text/x-vcalendar" -> intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
         } else intent.getStringExtra(BARCODE_CONTENTS_KEY)

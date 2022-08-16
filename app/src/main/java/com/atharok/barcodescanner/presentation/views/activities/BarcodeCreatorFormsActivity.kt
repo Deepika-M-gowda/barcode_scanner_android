@@ -25,8 +25,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extentions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
@@ -50,7 +52,7 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
     private var formCreateBarcodeFragment: AbstractFormCreateBarcodeFragment? = null
 
     private val allBarcodeFormat: BarcodeFormatDetails? by lazy {
-        intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY) as BarcodeFormatDetails?
+        intent.getSerializableExtraAppCompat(BARCODE_TYPE_ENUM_KEY, BarcodeFormatDetails::class.java)
     }
 
     private val viewBinding: ActivityBarcodeCreatorFormsBinding by lazy { ActivityBarcodeCreatorFormsBinding.inflate(layoutInflater) }
@@ -64,6 +66,27 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
             allBarcodeFormat?.apply(::configureHeader)
             allBarcodeFormat?.apply(::configureFormFragment)
         }
+
+        /*onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    // Back is pressed... Finishing the activity
+                    val fragment = formCreateBarcodeFragment
+
+                    if(fragment != null) {
+
+                        fragment.closeVirtualKeyBoard(viewBinding.root)
+
+                        /*supportFragmentManager.commit {
+                            /*setReorderingAllowed(true)
+                            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
+                            remove(fragment)
+                        }*/
+                        removeFragment(fragment)
+                    }
+                    finish()
+                }
+            })*/
 
         setContentView(viewBinding.root)
     }
@@ -110,7 +133,7 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
         }
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
 
         val fragment = formCreateBarcodeFragment
 
@@ -127,7 +150,7 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
             removeFragment(fragment)
         }
         super.onBackPressed()
-    }
+    }*/
 
     // ---- Menu contenant l'item permettant de générer le QrCode ----
 

@@ -31,6 +31,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extentions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -92,7 +93,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         setSupportActionBar(viewBinding.activityBarcodeInformationToolbar.toolbar)
 
-        val barcode: Barcode? = intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
+        val barcode: Barcode? = intent?.getSerializableExtraAppCompat(BARCODE_KEY, Barcode::class.java)
 
         if(barcode!=null){
             configureAllViews(barcode)
@@ -370,7 +371,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
     private fun startBarcodeImageActivity(){
 
-        val barcode: Barcode? = intent?.getSerializableExtra(BARCODE_KEY) as Barcode?
+        val barcode: Barcode? = intent?.getSerializableExtraAppCompat(BARCODE_KEY, Barcode::class.java)
 
         if(barcode != null) {
             val intent = getStartBarcodeDetailsActivityIntent().apply {

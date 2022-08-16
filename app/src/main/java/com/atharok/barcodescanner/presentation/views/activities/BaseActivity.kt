@@ -60,7 +60,7 @@ abstract class BaseActivity: AppCompatActivity() {
     // ------ Activity Override ------
     // -------------------------------
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
     // -------------------------------

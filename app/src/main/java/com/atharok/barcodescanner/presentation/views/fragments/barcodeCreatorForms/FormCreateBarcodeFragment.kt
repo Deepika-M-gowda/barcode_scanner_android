@@ -28,6 +28,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
 import com.atharok.barcodescanner.databinding.FragmentFormCreateBarcodeBinding
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.google.zxing.BarcodeFormat
@@ -55,11 +56,12 @@ class FormCreateBarcodeFragment: AbstractFormCreateBarcodeFragment() {
 
         arguments?.takeIf {
             // Si les données OpenFoodFactsData sont bien stockées en mémoire
-            it.containsKey(BARCODE_FORMAT_KEY) && it.getSerializable(BARCODE_FORMAT_KEY) is BarcodeFormat
+            it.containsKey(BARCODE_FORMAT_KEY)
         }?.apply {
 
-            val format = getSerializable(BARCODE_FORMAT_KEY) as BarcodeFormat
-            start(format)
+            getSerializableAppCompat(BARCODE_FORMAT_KEY, BarcodeFormat::class.java)?.let {
+                start(it)
+            }
         }
     }
 

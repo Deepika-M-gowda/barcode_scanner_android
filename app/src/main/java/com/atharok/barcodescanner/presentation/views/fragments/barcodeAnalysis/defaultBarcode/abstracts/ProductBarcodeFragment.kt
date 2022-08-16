@@ -23,11 +23,13 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
+import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
 import java.lang.ClassCastException
+import kotlin.reflect.KClass
 
 abstract class ProductBarcodeFragment<T: BarcodeProduct>: BaseFragment() {
 
@@ -36,16 +38,16 @@ abstract class ProductBarcodeFragment<T: BarcodeProduct>: BaseFragment() {
 
         arguments?.takeIf {
             // Si les données ResultScanData sont bien stockées en mémoire
-            it.containsKey(PRODUCT_KEY) && it.getSerializable(PRODUCT_KEY) is BarcodeProduct
+            it.containsKey(PRODUCT_KEY)// && it.getSerializable(PRODUCT_KEY) is BarcodeProduct
         }?.apply {
 
-            try {
-                @Suppress("UNCHECKED_CAST")
-                val barcodeEntity: T = getSerializable(PRODUCT_KEY) as T
-
-                start(barcodeEntity)
-            }catch (e: ClassCastException){
-                e.printStackTrace()
+            getSerializableAppCompat(PRODUCT_KEY, BarcodeProduct::class.java)?.let { barcodeProduct ->
+                try {
+                    @Suppress("UNCHECKED_CAST")
+                    start(barcodeProduct as T)
+                }catch (e: ClassCastException){
+                    e.printStackTrace()
+                }
             }
         }
     }

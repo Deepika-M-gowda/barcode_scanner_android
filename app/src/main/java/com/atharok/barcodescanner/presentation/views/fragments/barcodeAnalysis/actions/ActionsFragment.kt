@@ -28,6 +28,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.FragmentBarcodeActionsBinding
 import com.atharok.barcodescanner.domain.library.SettingsManager
@@ -74,18 +75,18 @@ abstract class ActionsFragment: BaseFragment() {
         arguments?.takeIf {
             it.containsKey(BARCODE_KEY)
         }?.let {
-            val barcode = it.getSerializable(BARCODE_KEY) as Barcode
-
             viewBinding.fragmentBarcodeActionsFloatingActionMenu.removeAllItems()
 
-            addCopyActionFAB(barcode.contents)
-            addShareActionFAB(barcode.contents)
+            it.getSerializableAppCompat(BARCODE_KEY, Barcode::class.java)?.let { barcode ->
+                addCopyActionFAB(barcode.contents)
+                addShareActionFAB(barcode.contents)
 
-            val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
-                parametersOf(barcode.contents, barcode.getBarcodeFormat())
+                val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
+                    parametersOf(barcode.contents, barcode.getBarcodeFormat())
+                }
+
+                start(barcode, parsedResult)
             }
-
-            start(barcode, parsedResult)
         }
     }
 

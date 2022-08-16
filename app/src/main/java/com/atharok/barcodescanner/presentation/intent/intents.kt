@@ -81,7 +81,13 @@ fun createShareImageIntent(context: Context, uri: Uri): Intent {
 
     val chooser = Intent.createChooser(intent, context.getString(R.string.intent_chooser_share_title))
 
-    val resInfoList: List<ResolveInfo> = context.packageManager.queryIntentActivities(chooser, PackageManager.MATCH_DEFAULT_ONLY)
+    val resInfoList: List<ResolveInfo> = if (Build.VERSION.SDK_INT >= 33) {
+        context.packageManager.queryIntentActivities(chooser, PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY.toLong()))
+    } else {
+        @Suppress("DEPRECATION")
+        context.packageManager.queryIntentActivities(chooser, PackageManager.MATCH_DEFAULT_ONLY)
+    }
+
     for (resolveInfo in resInfoList) {
         val packageName = resolveInfo.activityInfo.packageName
         context.grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION)

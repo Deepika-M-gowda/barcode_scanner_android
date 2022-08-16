@@ -30,6 +30,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extentions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser
@@ -116,10 +117,10 @@ class BarcodeScanFromImageActivity: BaseActivity() {
      */
     private fun getImageUri(): Uri?  = when {
         // Si l'URI a déjà été chargé (utile lors de la rotation de l'écran)
-        intent.hasExtra(URI_INTENT_KEY) -> intent.getParcelableExtra<Uri>(URI_INTENT_KEY)
+        intent.hasExtra(URI_INTENT_KEY) -> intent.getParcelableExtraAppCompat(URI_INTENT_KEY, Uri::class.java)
 
         // Si on récupère l'URI via un partage d'image d'une autre application (intent-filter)
-        intent?.action == Intent.ACTION_SEND -> intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+        intent?.action == Intent.ACTION_SEND -> intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)
 
         else -> null
     }
