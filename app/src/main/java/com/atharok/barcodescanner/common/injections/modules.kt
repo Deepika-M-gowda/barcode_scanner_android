@@ -87,9 +87,7 @@ import com.google.android.material.chip.Chip
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
-import com.google.zxing.client.android.BeepManager
 import com.google.zxing.client.result.*
-import com.journeyapps.barcodescanner.BarcodeEncoder
 import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
@@ -103,21 +101,37 @@ import java.util.*
 import kotlin.reflect.KClass
 
 val appModules by lazy {
-    listOf<Module>(
-        androidModule,
-        libraryModule,
-        libraryApi29Module,
-        viewModelModule,
-        useCaseModule,
-        repositoryModule,
-        dataModule,
-        scopesModule,
-        fragmentsModule,
-        viewsModule
-    )
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        listOf<Module>(
+            androidModule,
+            libraryModule,
+            libraryApi29Module,
+            viewModelModule,
+            useCaseModule,
+            repositoryModule,
+            dataModule,
+            scopesModule,
+            fragmentsModule,
+            viewsModule
+        )
+    } else {
+        listOf<Module>(
+            androidModule,
+            libraryModule,
+            viewModelModule,
+            useCaseModule,
+            repositoryModule,
+            dataModule,
+            scopesModule,
+            fragmentsModule,
+            viewsModule
+        )
+    }
 }
 
 val androidModule: Module = module {
+    single<BeepManager> { BeepManager() }
+    single<VibratorAppCompat> { VibratorAppCompat(androidApplication().applicationContext) }
     single<ConnectivityManager> { androidApplication().applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager }
     single<ClipboardManager> { androidApplication().applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager }
     single<InputMethodManager> { androidApplication().applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
@@ -230,19 +244,19 @@ val libraryModule: Module = module {
     single<BarcodeFormatChecker> { BarcodeFormatChecker() }
     single<VCardReader> { VCardReader(androidContext()) }
     single<MultiFormatWriter> { MultiFormatWriter() }
-    single<BarcodeEncoder> { BarcodeEncoder() }
-    single<BitmapBarcodeGenerator> { BitmapBarcodeGenerator(get<MultiFormatWriter>(), get<BarcodeEncoder>()) }
+    //single<BarcodeEncoder> { BarcodeEncoder() }
+    single<BitmapBarcodeGenerator> { BitmapBarcodeGenerator(get<MultiFormatWriter>()/*, get<BarcodeEncoder>()*/) }
     single<BitmapRecorder> { BitmapRecorder(androidContext()) }
     single<BitmapSharer> { BitmapSharer(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
 
-    factory<BeepManager> { (activity: Activity) ->
-        val settingsManager = get<SettingsManager>()
-        BeepManager(activity).apply {
+    /*factory<BeepManager> { (activity: Activity) ->
+        //val settingsManager = get<SettingsManager>()
+        BeepManager(activity)/*.apply {
             isBeepEnabled = settingsManager.useBipScan
             isVibrateEnabled = settingsManager.useVibrateScan
-        }
-    }
+        }*/
+    }*/
 
     factory { Date() }
     factory { (pattern: String) -> SimpleDateFormat(pattern, Locale.getDefault()) }

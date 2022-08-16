@@ -31,6 +31,8 @@ import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeC
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.get
 
 class MainActivity: BaseActivity() {
@@ -130,6 +132,12 @@ class MainActivity: BaseActivity() {
         }
 
         return true
+    }
+
+    fun showSnackbar(text: String) {
+        val snackbar = Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT)
+        snackbar.anchorView = viewBinding.activityMainMenuBottomNavigation
+        snackbar.show()
     }
 
     // ---- Theme ----

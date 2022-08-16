@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Permission Denied -->
+    <string name="camera_permission_denied">You have denied access to the camera. You must authorize it to scan a barcode.</string>
+
     <!-- AlertDialog -->
     <string name="close_dialog_label">Close</string>
     <string name="yes_label">Yes</string>

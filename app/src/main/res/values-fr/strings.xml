@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Permission Denied -->
+    <string name="camera_permission_denied">Vous avez refusé l\'accès à la caméra. Vous devez l\'autoriser pour scanner un code-barres.</string>
+
     <!-- AlertDialog -->
     <string name="close_dialog_label">Fermer</string>
     <string name="yes_label">Oui</string>

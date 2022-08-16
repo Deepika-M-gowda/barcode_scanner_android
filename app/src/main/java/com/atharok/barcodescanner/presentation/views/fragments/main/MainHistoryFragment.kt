@@ -37,6 +37,7 @@ import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperC
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
+import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
@@ -172,6 +173,9 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     // ---- UI ----
     private fun showSnackbar(text: String) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
+        val activity = requireActivity()
+        if(activity is MainActivity) {
+            activity.showSnackbar(text)
+        }
     }
 }

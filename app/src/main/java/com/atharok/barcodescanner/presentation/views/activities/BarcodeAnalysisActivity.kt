@@ -49,6 +49,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.p
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.nutritionFacts.FoodProductRootNutritionFactsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodProductRootOverviewFragment
 import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.BarcodeAnalysisPagerAdapter
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
@@ -388,6 +389,12 @@ class BarcodeAnalysisActivity: BaseActivity() {
     /*private fun showSnackbar(text: String) {
         Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
     }*/
+
+    fun showSnackbar(text: String) {
+        val snackbar = Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT)
+        snackbar.anchorView = viewBinding.activityBarcodeInformationActionButtonFrameLayout
+        snackbar.show()
+    }
 
     private fun changeToolbarText(barcode: Barcode) {
         val tabText = getString(barcode.getBarcodeType().stringResource)

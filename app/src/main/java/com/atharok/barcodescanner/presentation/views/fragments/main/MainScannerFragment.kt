@@ -35,15 +35,15 @@ import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
+import com.atharok.barcodescanner.domain.library.BeepManager
+import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity
+import com.atharok.barcodescanner.presentation.views.activities.MainActivity
+import com.budiyev.android.codescanner.*
 import com.google.android.material.snackbar.Snackbar
-import com.google.zxing.client.android.BeepManager
-import com.journeyapps.barcodescanner.BarcodeResult
-import com.journeyapps.barcodescanner.ScanContract
-import com.journeyapps.barcodescanner.ScanOptions
-import com.journeyapps.barcodescanner.ScanOptions.ALL_CODE_TYPES
+import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.parameter.parametersOf
@@ -54,6 +54,7 @@ import org.koin.core.qualifier.named
  */
 class MainScannerFragment : Fragment() {
 
+    private var codeScanner: CodeScanner? = null
     private val databaseViewModel: DatabaseViewModel by sharedViewModel()
 
     // ---- View ----
@@ -73,16 +74,7 @@ class MainScannerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Gère le resultat de la demande de permission d'accès à la caméra.
-        val requestPermission: ActivityResultLauncher<String> =
-            registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-                if(it)
-                    configureScanner()
-                else
-                    showSnackbar(getString(R.string.snack_bar_message_permission_refused))
-            }
-
-        requestPermission.launch(Manifest.permission.CAMERA)
+        if(isCameraPermissionGranted()) configureScanner() else askCameraPermission()
 
         setHasOptionsMenu(true)
     }
@@ -90,18 +82,37 @@ class MainScannerFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        if (checkCameraPermission())
-            viewBinding.fragmentMainScannerZxingBarcodeScanner.resume()
+        if (isCameraPermissionGranted()) {
+            codeScanner?.startPreview()
+        }
+
     }
 
     override fun onPause() {
-        super.onPause()
 
-        if (checkCameraPermission())
-            viewBinding.fragmentMainScannerZxingBarcodeScanner.pause()
+        if (isCameraPermissionGranted()) {
+            codeScanner?.isFlashEnabled = false
+            codeScanner?.releaseResources()
+        }
+        super.onPause()
     }
 
-    private fun checkCameraPermission(): Boolean {
+    private fun askCameraPermission() {
+        // Gère le resultat de la demande de permission d'accès à la caméra.
+        val requestPermission: ActivityResultLauncher<String> =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+                if (it) {
+                    configureScanner()
+                    codeScanner?.startPreview()
+                } else {
+                    viewBinding.fragmentMainScannerInformationTextView.setText(R.string.camera_permission_denied)
+                }
+            }
+
+        requestPermission.launch(Manifest.permission.CAMERA)
+    }
+
+    private fun isCameraPermissionGranted(): Boolean {
         val permission: Int = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA)
         return permission == PackageManager.PERMISSION_GRANTED
     }
@@ -127,7 +138,7 @@ class MainScannerFragment : Fragment() {
         super.onPrepareOptionsMenu(menu)
 
         if(hasFlash()) {
-            if (flashIsEnabled)
+            if (codeScanner?.isFlashEnabled == true)
                 menu.getItem(0).icon =
                     ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_on_24)
             else
@@ -140,32 +151,18 @@ class MainScannerFragment : Fragment() {
 
     // ---- Flash ----
 
-    private var flashIsEnabled = false
-
     private fun hasFlash(): Boolean =
         requireContext().applicationContext.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)
 
-    private fun configureFlash(){
-        viewBinding.fragmentMainScannerZxingBarcodeScanner.setTorchOff()
-        flashIsEnabled = false
-    }
-
     private fun switchTorchFlash(){
-        flashIsEnabled = !flashIsEnabled
-
-        if(flashIsEnabled) {
-            viewBinding.fragmentMainScannerZxingBarcodeScanner.setTorchOn()
-        } else {
-            viewBinding.fragmentMainScannerZxingBarcodeScanner.setTorchOff()
-        }
-
+        codeScanner?.isFlashEnabled = codeScanner?.isFlashEnabled == false
         requireActivity().invalidateOptionsMenu()
     }
 
     // ---- Scan via Image ----
 
     private fun startBarcodeScanFromImageActivity(){
-        if(flashIsEnabled)
+        if(codeScanner?.isFlashEnabled == true)
             switchTorchFlash()
 
         val intent = getBarcodeScanFromImageActivityIntent()
@@ -174,76 +171,55 @@ class MainScannerFragment : Fragment() {
 
     // ---- Scan ----
 
-    private fun getBeepManager(): BeepManager? {
-        val settingsManager = get<SettingsManager>()
-        return if(settingsManager.useBipScan || settingsManager.useVibrateScan){
-            get<BeepManager> { parametersOf(requireActivity()) }
-        } else null
-    }
-
     private fun configureScanner(){
 
-        configureFlash()
+        codeScanner = CodeScanner(requireActivity(), viewBinding.fragmentMainScannerCodeScannerView).apply {
+            camera = CodeScanner.CAMERA_BACK
+            formats = CodeScanner.ALL_FORMATS
 
-        val beepManager: BeepManager? = getBeepManager()
+            autoFocusMode = AutoFocusMode.SAFE
+            scanMode = ScanMode.SINGLE
 
-        val options = ScanOptions().apply {
-            setDesiredBarcodeFormats(ALL_CODE_TYPES)
-            setPrompt(getString(R.string.scan_information_label))
-            setCameraId(0)
-            setBeepEnabled(false)
-            setBarcodeImageEnabled(true)
-            setOrientationLocked(true)
+            isAutoFocusEnabled = true
+            isFlashEnabled = false
+
+            decodeCallback = DecodeCallback(::onSuccessfulScan)
+            errorCallback = ErrorCallback(::onErrorScan)
         }
-        val contract = ScanContract()
 
-        val intent = contract.createIntent(requireContext(), options)
-
-        viewBinding.fragmentMainScannerZxingBarcodeScanner.initializeFromIntent(intent)
-        viewBinding.fragmentMainScannerZxingBarcodeScanner.decodeContinuous {
-            beepManager?.playBeepSoundAndVibrate()
-            doAfterScan(it)
-        }
+        viewBinding.fragmentMainScannerInformationTextView.setText(R.string.scan_information_label)
     }
 
-    /*private fun configureScanner(){
+    private fun onSuccessfulScan(result: Result) = requireActivity().runOnUiThread {
 
-        configureFlash()
+        val settingsManager = get<SettingsManager>()
 
-        val beepManager: BeepManager? = getBeepManager()
+        if(settingsManager.useBipScan)
+            get<BeepManager>().playBeepSound(requireActivity())
 
-        val scanner = IntentIntegrator.forSupportFragment(this).apply {
-            setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
-            setPrompt(getString(R.string.scan_information_label))
-            setCameraId(0)
-            setBeepEnabled(false)
-            setBarcodeImageEnabled(true)
-            setOrientationLocked(true)
-        }
+        if(settingsManager.useVibrateScan)
+            get<VibratorAppCompat>().vibrate()
 
-        viewBinding.fragmentMainScannerZxingBarcodeScanner.initializeFromIntent(scanner.createScanIntent())
-        viewBinding.fragmentMainScannerZxingBarcodeScanner.decodeContinuous {
-            beepManager?.playBeepSoundAndVibrate()
-            doAfterScan(it)
-        }
-    }*/
+        val contents = result.text
+        val formatName = result.barcodeFormat?.name
 
-    private fun doAfterScan(barcodeResult: BarcodeResult){
-        val contents = barcodeResult.text
-        val formatName = barcodeResult.barcodeFormat?.name
+        if(contents != null && formatName != null) {
 
-        if(contents != null && formatName != null){
-
-            if(flashIsEnabled)
+            if(codeScanner?.isFlashEnabled == true)
                 switchTorchFlash()
 
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
             saveIntoDatabase(barcode)
             startBarcodeAnalysisActivity(barcode)
-        }else{
+        } else {
             showSnackbar(getString(R.string.scan_cancel_label))
         }
+
+    }
+
+    private fun onErrorScan(t: Throwable) = requireActivity().runOnUiThread {
+        showSnackbar(getString(R.string.scan_error_exception_label, t.message))
     }
 
     /**
@@ -267,7 +243,10 @@ class MainScannerFragment : Fragment() {
     // ---- Snackbar ----
 
     private fun showSnackbar(text: String) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
+        val activity = requireActivity()
+        if(activity is MainActivity) {
+            activity.showSnackbar(text)
+        }
     }
 
     // ---- Intent ----
