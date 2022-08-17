@@ -26,7 +26,6 @@ import androidx.lifecycle.viewModelScope
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel() {
@@ -35,23 +34,23 @@ class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel
 
     fun getBarcodeByDate(date: Long): LiveData<Barcode> = databaseUseCase.getBarcodeByDate(date)
 
-    fun insertBarcode(barcode: Barcode) = viewModelScope.launch(Dispatchers.IO) {
+    fun insertBarcode(barcode: Barcode) = viewModelScope.launch {
         databaseUseCase.insertBarcode(barcode)
     }
 
-    fun updateType(date: Long, barcodeType: BarcodeType) = viewModelScope.launch(Dispatchers.IO) {
+    fun updateType(date: Long, barcodeType: BarcodeType) = viewModelScope.launch {
         databaseUseCase.updateType(date, barcodeType)
     }
 
-    fun updateTypeAndName(date: Long, barcodeType: BarcodeType, name: String) = viewModelScope.launch(Dispatchers.IO) {
+    fun updateTypeAndName(date: Long, barcodeType: BarcodeType, name: String) = viewModelScope.launch {
         databaseUseCase.updateTypeAndName(date, barcodeType, name)
     }
 
-    fun deleteBarcode(barcode: Barcode) = viewModelScope.launch(Dispatchers.IO) {
+    fun deleteBarcode(barcode: Barcode) = viewModelScope.launch {
         databaseUseCase.deleteBarcode(barcode)
     }
 
-    fun deleteAll() = viewModelScope.launch(Dispatchers.IO) {
+    fun deleteAll() = viewModelScope.launch {
         databaseUseCase.deleteAll()
     }
 }

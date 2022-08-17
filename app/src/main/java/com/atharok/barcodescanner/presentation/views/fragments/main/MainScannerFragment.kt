@@ -42,7 +42,6 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisA
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.budiyev.android.codescanner.*
-import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

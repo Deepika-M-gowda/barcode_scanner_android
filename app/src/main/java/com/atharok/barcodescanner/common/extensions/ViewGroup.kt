@@ -18,18 +18,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extentions
+package com.atharok.barcodescanner.common.extensions
 
-fun List<String?>.convertToString(separator: String = ", "): String {
-    val strBuilder = StringBuilder()
-    for((i, item) in this.withIndex()) {
+import android.animation.LayoutTransition
+import android.view.ViewGroup
 
-        if(!item.isNullOrBlank()) {
-            strBuilder.append(item)
-
-            if (i < this.size - 1)
-                strBuilder.append(separator)
-        }
+/**
+ * Un problème de transition se produit lors de l'ouverture et la fermeture des ExpandableViews
+ * présents dans une NestedScrollView. Pour corriger ce problème, cette méthode doit être appelé
+ * par la vue contenant les ExpandableViews.
+ */
+fun ViewGroup.fixAnimateLayoutChangesInNestedScroll(){
+    layoutTransition = LayoutTransition().apply {
+        disableTransitionType(LayoutTransition.DISAPPEARING)
+        setAnimateParentHierarchy(false)
+        enableTransitionType(LayoutTransition.CHANGING)
     }
-    return strBuilder.toString()
 }

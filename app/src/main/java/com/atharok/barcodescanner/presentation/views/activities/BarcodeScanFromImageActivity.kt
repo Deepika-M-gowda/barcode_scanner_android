@@ -30,7 +30,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.getParcelableExtraAppCompat
+import com.atharok.barcodescanner.common.extensions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser

@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.os.Bundle
 import com.atharok.barcodescanner.databinding.ActivityImageFullScreenBinding
 import com.atharok.barcodescanner.common.utils.IMAGE_URI_KEY
-import com.atharok.barcodescanner.common.extentions.setImageFromWeb
+import com.atharok.barcodescanner.common.extensions.setImageFromWeb
 
 class ImageFullScreenActivity : BaseActivity() {
 

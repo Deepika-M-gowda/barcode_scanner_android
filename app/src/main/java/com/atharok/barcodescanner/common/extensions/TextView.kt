@@ -18,15 +18,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.recyclerView.images
+package com.atharok.barcodescanner.common.extensions
 
-import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemImageBinding
-import com.atharok.barcodescanner.common.extensions.setImageFromWeb
+import android.content.res.ColorStateList
+import android.widget.TextView
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 
-class ImageHolder(private val viewBinding: RecyclerViewItemImageBinding): RecyclerView.ViewHolder(viewBinding.root) {
-
-    fun updateItem(uri: String) {
-        viewBinding.recyclerViewItemImageImageView.setImageFromWeb(uri)
-    }
+fun TextView.setTextColorFromAttrRes(@AttrRes attrRes: Int){
+    @ColorInt val color = convertAttrResToColorInt(attrRes)
+    setTextColor(ColorStateList.valueOf(color))
 }

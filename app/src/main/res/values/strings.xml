@@ -501,7 +501,7 @@
 
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_zxing_android_embedded_description_label">Barcode scanning library for Android, using ZXing for decoding.</string>
+    <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
     <string name="dependency_glide_description_label">Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.</string>
@@ -701,10 +701,10 @@
     <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
     <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
 
-    <string name="dependency_zxing_android_embedded_title_label" translatable="false">ZXing Android Embedded</string>
-    <string name="dependency_zxing_android_embedded_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_zxing_android_embedded_author_label" translatable="false">JourneyApps</string>
-    <string name="dependency_zxing_android_embedded_github_link_label" translatable="false">https://github.com/journeyapps/zxing-android-embedded</string>
+    <string name="dependency_zxing_code_scanner_title_label" translatable="false">Code Scanner</string>
+    <string name="dependency_zxing_code_scanner_license_label" translatable="false">MIT License</string>
+    <string name="dependency_zxing_code_scanner_author_label" translatable="false">Yuriy Budiyev</string>
+    <string name="dependency_zxing_code_scanner_github_link_label" translatable="false">https://github.com/yuriy-budiyev/code-scanner</string>
 
     <string name="dependency_ez_vcard_title_label" translatable="false">ez-vcard</string>
     <string name="dependency_ez_vcard_license_label" translatable="false">FreeBSD</string>

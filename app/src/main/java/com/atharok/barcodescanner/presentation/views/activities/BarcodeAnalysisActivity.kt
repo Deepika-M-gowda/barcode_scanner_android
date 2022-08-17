@@ -31,7 +31,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.getSerializableExtraAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType

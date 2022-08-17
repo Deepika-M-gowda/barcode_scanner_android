@@ -490,7 +490,6 @@
     <string name="permission_vibrate_label">Vibrate</string>
     <string name="permission_vibrate_description_label">Utile pour vibrer lors du scan.</string>
 
-
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts est une base de données libre de produits alimentaires qui répertorie les ingrédients, les allergènes, la composition nutritionnelle et toutes les informations présentes sur les étiquettes des aliments.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts est une base de données libre de produits alimentaires pour animaux de compagnie.</string>
@@ -502,7 +501,7 @@
 
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_zxing_android_embedded_description_label">Barcode scanning library for Android, using ZXing for decoding.</string>
+    <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
     <string name="dependency_glide_description_label">Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.</string>

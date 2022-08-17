@@ -18,13 +18,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extentions
+package com.atharok.barcodescanner.common.extensions
 
-import android.widget.Button
-import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
+import android.content.Intent
+import android.os.Parcelable
+import java.io.Serializable
 
-fun Button.setTextColorFromAttrRes(@AttrRes attrRes: Int){
-    @ColorInt val color = convertAttrResToColorInt(attrRes)
-    this.setTextColor(color)
+fun <T : Serializable?> Intent.getSerializableExtraAppCompat(name: String?, clazz: Class<T>): T? {
+    return this.extras?.getSerializableAppCompat(name, clazz)
+}
+
+fun <T : Parcelable?> Intent.getParcelableExtraAppCompat(name: String?, clazz: Class<T>): T? {
+    return this.extras?.getParcelableAppCompat(name, clazz)
 }

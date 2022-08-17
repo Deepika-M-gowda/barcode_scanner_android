@@ -26,7 +26,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.common.extentions.convertToString
+import com.atharok.barcodescanner.common.extensions.convertToString
 import kotlin.reflect.KClass
 
 abstract class BaseFragment: Fragment() {

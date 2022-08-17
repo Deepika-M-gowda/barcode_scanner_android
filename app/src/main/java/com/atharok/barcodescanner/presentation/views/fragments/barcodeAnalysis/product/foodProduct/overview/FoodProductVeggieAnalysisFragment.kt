@@ -28,7 +28,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.*
+import com.atharok.barcodescanner.common.extensions.*
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentFoodProductVeggieAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct

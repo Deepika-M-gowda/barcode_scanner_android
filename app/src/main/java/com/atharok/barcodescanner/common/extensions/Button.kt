@@ -18,14 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extentions
+package com.atharok.barcodescanner.common.extensions
 
-import android.content.res.ColorStateList
-import android.widget.TextView
+import android.widget.Button
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 
-fun TextView.setTextColorFromAttrRes(@AttrRes attrRes: Int){
+fun Button.setTextColorFromAttrRes(@AttrRes attrRes: Int){
     @ColorInt val color = convertAttrResToColorInt(attrRes)
-    setTextColor(ColorStateList.valueOf(color))
+    this.setTextColor(color)
 }

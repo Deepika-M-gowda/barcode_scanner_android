@@ -24,7 +24,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.PreferenceViewHolder
 import androidx.preference.SwitchPreferenceCompat
-import com.atharok.barcodescanner.common.extentions.initializeCustomResourcesValues
+import com.atharok.barcodescanner.common.extensions.initializeCustomResourcesValues
 
 class CustomSwitchPreferenceCompat: SwitchPreferenceCompat {
 

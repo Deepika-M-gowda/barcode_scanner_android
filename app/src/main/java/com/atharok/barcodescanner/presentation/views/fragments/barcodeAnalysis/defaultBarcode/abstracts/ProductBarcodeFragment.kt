@@ -23,13 +23,12 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
-import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableAppCompat
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
 import java.lang.ClassCastException
-import kotlin.reflect.KClass
 
 abstract class ProductBarcodeFragment<T: BarcodeProduct>: BaseFragment() {
 

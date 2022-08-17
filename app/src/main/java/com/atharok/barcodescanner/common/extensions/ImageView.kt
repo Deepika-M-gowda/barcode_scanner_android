@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extentions
+package com.atharok.barcodescanner.common.extensions
 
 import android.content.res.ColorStateList
 import android.net.Uri

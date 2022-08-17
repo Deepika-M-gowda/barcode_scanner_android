@@ -24,7 +24,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceViewHolder
-import com.atharok.barcodescanner.common.extentions.initializeCustomResourcesValues
+import com.atharok.barcodescanner.common.extensions.initializeCustomResourcesValues
 
 class CustomListPreference: ListPreference {
 

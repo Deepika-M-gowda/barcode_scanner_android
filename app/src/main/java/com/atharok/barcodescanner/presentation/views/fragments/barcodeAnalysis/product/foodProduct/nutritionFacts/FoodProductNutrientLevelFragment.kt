@@ -26,12 +26,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
-import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableAppCompat
 import com.atharok.barcodescanner.databinding.FragmentFoodProductNutrientLevelBinding
 import com.atharok.barcodescanner.databinding.TemplateHorizontalGraphViewBinding
 import com.atharok.barcodescanner.databinding.TemplateNutrientLevelBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
-import com.atharok.barcodescanner.common.extentions.setImageColorFromAttrRes
+import com.atharok.barcodescanner.common.extensions.setImageColorFromAttrRes
 import org.koin.android.ext.android.get
 
 /**

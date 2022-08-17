@@ -32,7 +32,7 @@ import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
 import com.atharok.barcodescanner.domain.entity.product.NoneProduct
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
-import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.AboutBarcodeFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeContentsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeErrorApiFragment

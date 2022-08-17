@@ -43,8 +43,6 @@ import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSet
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
-import com.atharok.barcodescanner.presentation.views.activities.MainActivity
-import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.WifiParsedResult

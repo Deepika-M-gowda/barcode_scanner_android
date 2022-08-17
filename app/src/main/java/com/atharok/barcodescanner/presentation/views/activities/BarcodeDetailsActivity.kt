@@ -38,11 +38,11 @@ import com.atharok.barcodescanner.domain.entity.product.NoneProduct
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
 import com.atharok.barcodescanner.domain.library.BitmapRecorder
 import com.atharok.barcodescanner.domain.library.BitmapSharer
-import com.atharok.barcodescanner.common.extentions.read
+import com.atharok.barcodescanner.common.extensions.read
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.AboutBarcodeFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
-import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.extentions.getParcelableExtraAppCompat
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat

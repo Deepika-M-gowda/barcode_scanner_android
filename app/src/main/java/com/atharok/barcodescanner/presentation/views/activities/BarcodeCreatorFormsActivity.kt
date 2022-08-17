@@ -25,10 +25,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.getSerializableExtraAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails

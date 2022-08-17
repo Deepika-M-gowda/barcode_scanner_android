@@ -27,7 +27,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.*
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.common.extentions.setImageFromWeb
+import com.atharok.barcodescanner.common.extensions.setImageFromWeb
 import org.koin.android.ext.android.get
 
 /**

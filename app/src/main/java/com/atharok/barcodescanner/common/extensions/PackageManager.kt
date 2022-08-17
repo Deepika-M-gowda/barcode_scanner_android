@@ -18,15 +18,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.recyclerView.images
+package com.atharok.barcodescanner.common.extensions
 
-import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemImageBinding
-import com.atharok.barcodescanner.common.extensions.setImageFromWeb
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
+import android.os.Build
 
-class ImageHolder(private val viewBinding: RecyclerViewItemImageBinding): RecyclerView.ViewHolder(viewBinding.root) {
-
-    fun updateItem(uri: String) {
-        viewBinding.recyclerViewItemImageImageView.setImageFromWeb(uri)
+fun PackageManager.queryIntentActivitiesAppCompat(intent: Intent, i: Int): List<ResolveInfo> {
+    return if (Build.VERSION.SDK_INT >= 33) {
+        this.queryIntentActivities(intent, PackageManager.ResolveInfoFlags.of(i.toLong()))
+    } else {
+        @Suppress("DEPRECATION")
+        this.queryIntentActivities(intent, i)
     }
 }

@@ -28,7 +28,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.getSerializableAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.FragmentBarcodeActionsBinding
 import com.atharok.barcodescanner.domain.library.SettingsManager

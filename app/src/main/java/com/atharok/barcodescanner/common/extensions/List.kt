@@ -18,9 +18,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extentions
+package com.atharok.barcodescanner.common.extensions
 
-fun Array<String?>.convertToString(separator: String = ", "): String {
+fun List<String?>.convertToString(separator: String = ", "): String {
     val strBuilder = StringBuilder()
     for((i, item) in this.withIndex()) {
 

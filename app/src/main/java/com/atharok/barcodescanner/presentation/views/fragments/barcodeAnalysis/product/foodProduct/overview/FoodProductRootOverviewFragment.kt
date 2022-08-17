@@ -35,7 +35,7 @@ import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.AboutBarcodeFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeContentsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment
-import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import org.koin.android.ext.android.get
 
 /**

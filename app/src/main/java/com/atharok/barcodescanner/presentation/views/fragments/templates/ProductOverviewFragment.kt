@@ -32,7 +32,7 @@ import com.atharok.barcodescanner.databinding.FragmentProductOverviewBinding
 import com.atharok.barcodescanner.common.utils.IMAGE_URI_KEY
 import com.atharok.barcodescanner.presentation.views.activities.ImageFullScreenActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.common.extentions.setImageFromWeb
+import com.atharok.barcodescanner.common.extensions.setImageFromWeb
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf

@@ -21,7 +21,7 @@
 package com.atharok.barcodescanner.domain.library
 
 import com.atharok.barcodescanner.domain.library.BarcodeFormatCheckerResult.CheckerResponse
-import com.atharok.barcodescanner.common.extentions.canBeConvertibleToLong
+import com.atharok.barcodescanner.common.extensions.canBeConvertibleToLong
 import com.google.zxing.BarcodeFormat
 import kotlin.math.ceil
 

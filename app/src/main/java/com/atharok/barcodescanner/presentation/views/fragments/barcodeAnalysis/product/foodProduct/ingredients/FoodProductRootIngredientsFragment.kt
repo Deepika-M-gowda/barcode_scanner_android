@@ -30,7 +30,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.d
 import com.atharok.barcodescanner.databinding.FragmentFoodProductRootIngredientsBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
-import com.atharok.barcodescanner.common.extentions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import org.koin.android.ext.android.get
 
 /**

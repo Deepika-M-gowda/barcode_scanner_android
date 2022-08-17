@@ -25,7 +25,7 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extentions.getSerializableExtraAppCompat
+import com.atharok.barcodescanner.common.extensions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.databinding.ActivityVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis

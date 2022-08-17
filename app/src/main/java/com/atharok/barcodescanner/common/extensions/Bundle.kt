@@ -18,15 +18,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.recyclerView.images
+package com.atharok.barcodescanner.common.extensions
 
-import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemImageBinding
-import com.atharok.barcodescanner.common.extensions.setImageFromWeb
+import android.os.Build
+import android.os.Bundle
+import java.io.Serializable
 
-class ImageHolder(private val viewBinding: RecyclerViewItemImageBinding): RecyclerView.ViewHolder(viewBinding.root) {
-
-    fun updateItem(uri: String) {
-        viewBinding.recyclerViewItemImageImageView.setImageFromWeb(uri)
+fun <T : Serializable?> Bundle.getSerializableAppCompat(name: String?, clazz: Class<T>): T? {
+    return if (Build.VERSION.SDK_INT >= 33) {
+        this.getSerializable(name, clazz)
+    } else {
+        @Suppress("DEPRECATION")
+        clazz.cast(this.getSerializable(name))
     }
 }

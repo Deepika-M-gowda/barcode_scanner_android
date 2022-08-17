@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.history
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
