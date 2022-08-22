@@ -97,6 +97,10 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_adaptive_icon.xml" value="0.32" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.282" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.165" />
+        <entry key="app/src/main/res/xml-v31/root_preferences.xml" value="0.1" />
+        <entry key="app/src/main/res/xml-v33/root_preferences.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/locales_config.xml" value="0.1514690982776089" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.1" />
         <entry key="app/src/main/res/xml/shortcuts.xml" value="0.315625" />
       </map>
     </option>

@@ -21,10 +21,16 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
@@ -44,6 +50,10 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         super.onViewCreated(view, savedInstanceState)
 
         setPreferencesFromResource(R.xml.root_preferences, null)
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            configureChangeLanguagePreference()
+        }
 
         //configureThemePreference()
         configureAboutPreference(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
@@ -78,6 +88,22 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             }
         }
     }
+
+    private fun configureChangeLanguagePreference(){
+        val pref = findPreference(getString(R.string.preferences_languages_key)) as Preference?
+
+        if(pref != null) {
+            pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                startActivity(createActionAppLocaleSettingsIntent())
+                true
+            }
+        }
+    }
+
+    private fun createActionAppLocaleSettingsIntent(): Intent = Intent(
+        Settings.ACTION_APP_LOCALE_SETTINGS,
+        Uri.fromParts("package", requireActivity().packageName, null)
+    )
 
     private fun configureAboutPreference(keyResource: Int, activityKClass: KClass<out Activity>){
         val pref = findPreference(getString(keyResource)) as Preference?

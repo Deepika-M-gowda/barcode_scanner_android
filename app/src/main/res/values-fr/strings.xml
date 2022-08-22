@@ -462,6 +462,10 @@
     <string name="preferences_color_red">Rouge</string>
     <string name="preferences_color_purple">Violet</string>
 
+    <!-- Languages Settings -->
+    <string name="preferences_languages_title">Langues</string>
+    <string name="preferences_languages_change">Changer la langue</string>
+
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
     <string name="preferences_switch_scan_search_on_api_label">Activer la recherche sur les API distantes</string>

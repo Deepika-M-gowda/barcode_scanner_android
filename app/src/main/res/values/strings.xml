@@ -462,6 +462,10 @@
     <string name="preferences_color_red">Red</string>
     <string name="preferences_color_purple">Purple</string>
 
+    <!-- Languages Settings -->
+    <string name="preferences_languages_title">Languages</string>
+    <string name="preferences_languages_change">Change the language</string>
+
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
     <string name="preferences_switch_scan_search_on_api_label">Activate search on distant API</string>
@@ -676,6 +680,7 @@
     <!-- Preferences Settings Keys -->
     <string name="preferences_color_key" translatable="false">preferences_color_key</string>
     <string name="preferences_theme_key" translatable="false">preferences_theme_key</string>
+    <string name="preferences_languages_key" translatable="false">preferences_languages_key</string>
     <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
     <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
     <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
