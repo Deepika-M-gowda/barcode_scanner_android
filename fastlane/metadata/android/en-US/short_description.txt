@@ -1,0 +1,1 @@
+A libre app which allow to read and generate barcodes.

@@ -481,6 +481,7 @@
     <string name="preferences_about_permissions_label">Permissions</string>
     <string name="preferences_about_library_third_label">Third-party library</string>
     <string name="preferences_about_bdd_label">Database</string>
+    <string name="preferences_source_code_label">Source code</string>
 
     <!-- About Permissions -->
     <string name="permission_camera_label">Camera</string>
@@ -688,6 +689,7 @@
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
     <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>
+    <string name="preferences_source_code_key" translatable="false">preferences_source_code_key</string>
 
     <!-- URL -->
     <string name="bdd_open_food_facts_link_label" translatable="false">@string/search_engine_open_food_facts_url</string>
@@ -762,5 +764,7 @@
     <string name="dependency_live_data_title_label" translatable="false">LiveData</string>
     <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
+
+    <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
 
 </resources>

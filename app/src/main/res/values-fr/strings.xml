@@ -481,6 +481,7 @@
     <string name="preferences_about_permissions_label">Permissions</string>
     <string name="preferences_about_library_third_label">Bibliothèques tierces</string>
     <string name="preferences_about_bdd_label">Base de données</string>
+    <string name="preferences_source_code_label">Code source</string>
 
     <!-- About Permissions -->
     <string name="permission_camera_label">Caméra</string>

@@ -1,0 +1,2 @@
+- Ajout de la possibilité de changer de langue pour Android 13.
+- Ajout d'un accès vers le code source dans les paramètres.

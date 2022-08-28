@@ -21,19 +21,17 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
@@ -59,6 +57,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         configureAboutPreference(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
         configureAboutPreference(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)
         configureAboutPreference(R.string.preferences_about_bdd_key, AboutBddActivity::class)
+        configureSourceCodePreference()
     }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
@@ -111,6 +110,19 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         if(pref != null) {
             pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 startAboutActivity(activityKClass)
+            }
+        }
+    }
+
+    private fun configureSourceCodePreference(){
+        val pref = findPreference(getString(R.string.preferences_source_code_key)) as Preference?
+
+        if(pref != null) {
+            pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                val url = requireActivity().getString(R.string.source_code_link)
+                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
+                requireActivity().startActivity(intent)
+                true
             }
         }
     }

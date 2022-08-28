@@ -1,0 +1,4 @@
+- Modification of a library allowing to scan barcodes.
+- Updates of: Kotlin version (1.7.10), SDK (API 33) and dependencies.
+- Code improvement.
+- Add of the monochrome icon for Android 13.

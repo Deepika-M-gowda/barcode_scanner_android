@@ -1,0 +1,1 @@
+Une application libre permettant de lire et générer des code-barres.
