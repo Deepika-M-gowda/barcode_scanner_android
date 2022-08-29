@@ -1,4 +1,4 @@
-Barcode scanner is a free and open source app which allow to read and generate barcodes. It can collect informations about food products, cosmetics and books thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts and OpenLibrary.
+Barcode scanner is a free and open source app which allow to read and generate barcodes. It can collect informations about food products, cosmetics and books.
 
 Different bar codes formats are managed by the app:
 • 2 dimensions bar codes: QR Code, Data Matrix, PDF 417, AZTEC

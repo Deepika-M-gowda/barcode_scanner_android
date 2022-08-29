@@ -1,4 +1,4 @@
-Barcode Scanner est une application gratuite, libre et open source permettant de lire et de générer des code-barres. Elle peut récupérer des informations sur des produits alimentaires, cosmétiques et livres grâce aux bases de données Open Food Facts, Open Beauty Facts, Open Pet Food Facts et OpenLibrary.
+Barcode Scanner est une application gratuite, libre et open source permettant de lire et de générer des code-barres. Elle peut récupérer des informations sur des produits alimentaires, cosmétiques et livres.
 
 Différents formats de code-barres sont gérées:
 • Les code-barres à 2 dimensions gérées: QR Code, Data Matrix, PDF 417, AZTEC
