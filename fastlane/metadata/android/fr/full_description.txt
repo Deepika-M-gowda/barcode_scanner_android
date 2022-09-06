@@ -10,7 +10,7 @@ Récupérez des informations sur un produit lors d'un scan:
 • Produits alimentaire pour animaux via Open Pet Food Facts
 • Livres via Open Library
 
-Fonctionnalités de l'appli :
+Fonctionnalités de l'appli:
 • Pointez simplement la caméra de votre smartphone vers un code-barres et obtenez instantanément des informations liées à celui-ci. Vous pouvez aussi scanner des code-barres via une image ou une photo présente dans votre smartphone.
 • Avec un simple scan, lisez des cartes de visite, ajoutez des contacts, ajoutez des événements à votre agenda, ouvrez des URL ou encore connectez-vous à des points d'accès Wi-Fi, etc...
 • Scannez les code-barres de produits alimentaires ou cosmétiques, pour obtenir des informations sur leurs compositions grâce aux bases de données Open Food Facts et Open Beauty Facts.
