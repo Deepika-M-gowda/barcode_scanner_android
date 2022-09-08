@@ -12,7 +12,15 @@ Barcode scanner is a free and open source app which allow to read and generate b
 
 # Download
 
-<a href="https://play.google.com/store/apps/details?id=com.atharok.barcodescanner"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="80"/></a><a href="https://f-droid.org/packages/com.atharok.barcodescanner/"><img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="80"></a><a href="https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2"><img alt="Get it on Amazon Appstore" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png" height="80"></a>
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="90">](https://f-droid.org/packages/com.atharok.barcodescanner/)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="90">](https://play.google.com/store/apps/details?id=com.atharok.barcodescanner)
+[<img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png"
+     alt="Get it on Amazon Appstore"
+     height="90">](https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2)
 
 # Screenshots
 
