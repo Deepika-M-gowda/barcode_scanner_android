@@ -9,6 +9,7 @@
     <attr name="appFrontColorSecondary" format="reference|color"/>
     <attr name="appIconColorOnBackground" format="reference|color"/>
     <attr name="appOnMainColor" format="reference|color"/>
+    <attr name="appIndicatorColor" format="reference|color"/>
 
     <attr name="colorPositive" format="color"/>
     <attr name="colorMedium" format="color"/>

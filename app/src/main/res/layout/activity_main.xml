@@ -31,13 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
             app:itemTextAppearanceActive="@style/BottomNavigationViewTextAppearance"
             app:itemTextAppearanceInactive="@style/BottomNavigationViewTextAppearance"
             app:menu="@menu/menu_bottom_navigation_view"
             app:labelVisibilityMode="labeled"
-            app:itemIconTint="@drawable/bottom_navigation_view_color"
-            app:itemTextColor="@drawable/bottom_navigation_view_color"
             app:elevation="8dp"
             />
     </RelativeLayout>

@@ -5,7 +5,7 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="LightTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
 
         <item name="appMainColor">@color/lightBlueColorAccent</item>
         <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
@@ -15,6 +15,7 @@
         <item name="appFrontColorSecondary">@color/lightFrontColorSecondary</item>
         <item name="appIconColorOnBackground">?appFrontColorPrimary</item>
         <item name="appOnMainColor">@android:color/white</item>
+        <item name="appIndicatorColor">@color/lightBlueIndicativeColor</item>
 
         <item name="colorPrimary">?appBackgroundColorPrimary</item>
         <item name="colorPrimaryDark">?appColorPrimaryDark</item>
@@ -46,6 +47,8 @@
         <item name="materialButtonStyle">@style/MaterialButton</item>
         <item name="cardViewStyle">@style/CardViewStyle</item>
         <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
 
@@ -69,9 +72,9 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="DarkTheme" parent="Theme.Material3.Dark.NoActionBar">
 
-        <item name="appMainColor">@color/lightBlueColorAccent</item>
+        <item name="appMainColor">@color/darkBlueColorAccent</item>
         <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="appBackgroundColorPrimary">@color/darkBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkBackgroundColorSecondary</item>
@@ -79,6 +82,7 @@
         <item name="appFrontColorSecondary">@color/darkFrontColorSecondary</item>
         <item name="appIconColorOnBackground">?appFrontColorPrimary</item>
         <item name="appOnMainColor">@android:color/black</item>
+        <item name="appIndicatorColor">@color/darkBlueIndicativeColor</item>
 
         <item name="colorPrimary">?appBackgroundColorPrimary</item>
         <item name="colorPrimaryDark">?appColorPrimaryDark</item>
@@ -109,6 +113,8 @@
         <item name="materialButtonStyle">@style/MaterialButton</item>
         <item name="cardViewStyle">@style/CardViewStyle</item>
         <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
 
@@ -135,60 +141,70 @@
         <item name="appMainColor">@color/lightBlueColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/lightBlueBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/lightBlueBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/lightBlueIndicativeColor</item>
     </style>
 
     <style name="BlueDarkTheme" parent="DarkTheme">
         <item name="appMainColor">@color/darkBlueColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/darkBlueBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkBlueBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/darkBlueIndicativeColor</item>
     </style>
 
     <style name="OrangeLightTheme" parent="LightTheme">
         <item name="appMainColor">@color/lightOrangeColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/lightOrangeBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/lightOrangeBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/lightOrangeIndicativeColor</item>
     </style>
 
     <style name="OrangeDarkTheme" parent="DarkTheme">
         <item name="appMainColor">@color/darkOrangeColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/darkOrangeBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkOrangeBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/darkOrangeIndicativeColor</item>
     </style>
 
     <style name="GreenLightTheme" parent="LightTheme">
         <item name="appMainColor">@color/lightGreenColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/lightGreenBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/lightGreenBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/lightGreenIndicativeColor</item>
     </style>
 
     <style name="GreenDarkTheme" parent="DarkTheme">
         <item name="appMainColor">@color/darkGreenColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/darkGreenBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkGreenBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/darkGreenIndicativeColor</item>
     </style>
 
     <style name="RedLightTheme" parent="LightTheme">
         <item name="appMainColor">@color/lightRedColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/lightRedBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/lightRedBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/lightRedIndicativeColor</item>
     </style>
 
     <style name="RedDarkTheme" parent="DarkTheme">
         <item name="appMainColor">@color/darkRedColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/darkRedBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkRedBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/darkRedIndicativeColor</item>
     </style>
 
     <style name="PurpleLightTheme" parent="LightTheme">
         <item name="appMainColor">@color/lightPurpleColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/lightPurpleBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/lightPurpleBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/lightPurpleIndicativeColor</item>
     </style>
 
     <style name="PurpleDarkTheme" parent="DarkTheme">
         <item name="appMainColor">@color/darkPurpleColorAccent</item>
         <item name="appBackgroundColorPrimary">@color/darkPurpleBackgroundColorPrimary</item>
         <item name="appBackgroundColorSecondary">@color/darkPurpleBackgroundColorSecondary</item>
+        <item name="appIndicatorColor">@color/darkPurpleIndicativeColor</item>
     </style>
 
     <!-- ListPreference -->
@@ -209,8 +225,8 @@
         <item name="android:fontFamily">@font/roboto_black</item>
     </style>
 
-    <style name="MaterialChip" parent="@style/Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">?appBackgroundColorPrimary</item>
+    <style name="MaterialChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">?appIndicatorColor</item>
     </style>
 
     <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
@@ -246,6 +262,24 @@
         <item name="strokeColor">@android:color/transparent</item>
     </style>
     <!--  -->
+
+    <!-- BottomNavigationView -->
+    <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundColor">?appBackgroundColorPrimary</item>
+        <item name="android:background">?appBackgroundColorPrimary</item>
+        <item name="itemActiveIndicatorStyle">@style/ActiveIndicatorStyle</item>
+    </style>
+
+    <style name="ActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">?appIndicatorColor</item>
+    </style>
+
+    <!-- -->
+
+    <style name="SwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+        <!--<item name="thumbTint">?appMainColor</item>
+        <item name="trackTint">?appIndicatorColor</item>-->
+    </style>
 
     <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
         <item name="cornerFamily">rounded</item>

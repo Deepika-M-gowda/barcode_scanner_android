@@ -93,7 +93,7 @@ class FoodProductVeggieAnalysisFragment: ProductBarcodeFragment<FoodProduct>() {
         chipView.text = getString(stringResource).firstCharacterIntoCapital()
 
         chipView.setChipTextColorFromAttrRes(colorResource)
-        chipView.setChipBackgroundColorFromAttrRes(R.attr.appBackgroundColorSecondary)
+        chipView.setChipBackgroundColorFromAttrRes(R.attr.appBackgroundColorPrimary)
         chipView.setChipStrokeColorFromAttrRes(colorResource)
         chipView.setChipIconTintFromAttrRes(colorResource)
         chipView.setChipIconResource(drawableResource)
