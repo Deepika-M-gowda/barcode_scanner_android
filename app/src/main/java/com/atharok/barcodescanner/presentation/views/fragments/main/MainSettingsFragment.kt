@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -33,10 +34,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
-import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
-import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
-import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
-import com.atharok.barcodescanner.presentation.views.activities.MainActivity
+import com.atharok.barcodescanner.presentation.views.activities.*
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
@@ -60,6 +58,14 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         configureSourceCodePreference()
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val activity: Activity = requireActivity()
+        if(activity is BaseActivity){
+            activity.lockDeviceRotation(false)
+        }
+    }
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
 
     override fun onResume() {
@@ -81,6 +87,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
 
                 getString(R.string.preferences_switch_scan_vibrate_key),
                 getString(R.string.preferences_switch_scan_bip_key),
+                getString(R.string.preferences_switch_scan_screen_rotation_key),
                 getString(R.string.preferences_switch_scan_search_on_api_key),
                 getString(R.string.preferences_search_engine_key)
                 -> mActivity.settingsManager.reload()

@@ -21,6 +21,8 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.animation.LayoutTransition
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,6 +36,7 @@ import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBinding
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeCreatorFormsActivity
+import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
@@ -65,6 +68,14 @@ class MainBarcodeCreatorListFragment : Fragment() {
 
         configureQrItemListView()
         configureBarcodeItemListView()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val activity: Activity = requireActivity()
+        if(activity is BaseActivity){
+            activity.lockDeviceRotation(false)
+        }
     }
 
     private fun configureQrItemListView(){

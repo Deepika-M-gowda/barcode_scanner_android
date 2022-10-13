@@ -21,6 +21,8 @@
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.Manifest
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -40,9 +42,11 @@ import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity
+import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.budiyev.android.codescanner.*
 import com.google.zxing.Result
+import com.google.zxing.ResultMetadataType
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.parameter.parametersOf
@@ -52,6 +56,10 @@ import org.koin.core.qualifier.named
  * A simple [Fragment] subclass.
  */
 class MainScannerFragment : Fragment() {
+
+    companion object {
+        private const val ZXING_SCAN_INTENT_ACTION = "com.google.zxing.client.android.SCAN"
+    }
 
     private var codeScanner: CodeScanner? = null
     private val databaseViewModel: DatabaseViewModel by sharedViewModel()
@@ -84,7 +92,6 @@ class MainScannerFragment : Fragment() {
         if (isCameraPermissionGranted()) {
             codeScanner?.startPreview()
         }
-
     }
 
     override fun onPause() {
@@ -94,6 +101,16 @@ class MainScannerFragment : Fragment() {
             codeScanner?.releaseResources()
         }
         super.onPause()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val activity: Activity = requireActivity()
+        if(activity is BaseActivity){
+            if(activity.settingsManager.isAutoScreenRotationScanDisabled) {
+                activity.lockDeviceRotation(true)
+            }
+        }
     }
 
     private fun askCameraPermission() {
@@ -210,11 +227,16 @@ class MainScannerFragment : Fragment() {
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
             saveIntoDatabase(barcode)
-            startBarcodeAnalysisActivity(barcode)
+
+            // Si l'application a été ouverte via une application tierce
+            if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
+                sendResultToAppIntent(result)
+            }else{
+                startBarcodeAnalysisActivity(barcode)
+            }
         } else {
             showSnackbar(getString(R.string.scan_cancel_label))
         }
-
     }
 
     private fun onErrorScan(t: Throwable) = requireActivity().runOnUiThread {
@@ -255,4 +277,41 @@ class MainScannerFragment : Fragment() {
 
     private fun getBarcodeAnalysisActivityIntent(): Intent =
         get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
+
+
+    private fun sendResultToAppIntent(result: Result) {
+        val intent = Intent()
+            .putExtra("SCAN_RESULT", result.text)
+            .putExtra("SCAN_RESULT_FORMAT", result.barcodeFormat.toString())
+
+        if (result.rawBytes?.isNotEmpty() == true) {
+            intent.putExtra("SCAN_RESULT_BYTES", result.rawBytes)
+        }
+
+        result.resultMetadata?.let { metadata ->
+            metadata[ResultMetadataType.UPC_EAN_EXTENSION]?.let {
+                intent.putExtra("SCAN_RESULT_ORIENTATION", it.toString())
+            }
+
+            metadata[ResultMetadataType.ERROR_CORRECTION_LEVEL]?.let {
+                intent.putExtra("SCAN_RESULT_ERROR_CORRECTION_LEVEL", it.toString())
+            }
+
+            metadata[ResultMetadataType.UPC_EAN_EXTENSION]?.let {
+                intent.putExtra("SCAN_RESULT_UPC_EAN_EXTENSION", it.toString())
+            }
+
+            metadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
+                @Suppress("UNCHECKED_CAST")
+                for ((i, seg) in (it as Iterable<ByteArray>).withIndex()) {
+                    intent.putExtra("SCAN_RESULT_BYTE_SEGMENTS_$i", seg)
+                }
+            }
+        }
+
+        requireActivity().apply {
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
+    }
 }

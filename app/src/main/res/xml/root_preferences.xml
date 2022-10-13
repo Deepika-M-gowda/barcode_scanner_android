@@ -48,6 +48,12 @@
             android:defaultValue="false"
             app:singleLineTitle="false"/>
 
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_screen_rotation_key"
+            android:title="@string/preferences_switch_scan_screen_rotation_label"
+            android:defaultValue="true"
+            app:singleLineTitle="false"/>
+
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory

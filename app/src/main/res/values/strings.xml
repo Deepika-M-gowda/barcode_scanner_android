@@ -471,6 +471,7 @@
     <string name="preferences_switch_scan_search_on_api_label">Activate search on distant API</string>
     <string name="preferences_switch_scan_vibrate_label">Vibrate during scan</string>
     <string name="preferences_switch_scan_bip_label">Emit a sound during scan</string>
+    <string name="preferences_switch_scan_screen_rotation_label">Disable automatic rotation during scan</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
@@ -685,6 +686,7 @@
     <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
     <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
     <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
+    <string name="preferences_switch_scan_screen_rotation_key" translatable="false">preferences_switch_scan_screen_rotation_key</string>
     <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>

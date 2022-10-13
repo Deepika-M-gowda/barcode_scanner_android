@@ -20,7 +20,10 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -53,6 +56,20 @@ abstract class BaseActivity: AppCompatActivity() {
     protected fun removeFragment(fragment: Fragment){
         supportFragmentManager.commit {
             remove(fragment)
+        }
+    }
+
+    fun lockDeviceRotation(value: Boolean) {
+        requestedOrientation = if (value) {
+            val currentOrientation: Int = resources.configuration.orientation
+            if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+            } else {
+                ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
+            }
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            ActivityInfo.SCREEN_ORIENTATION_FULL_USER
         }
     }
 

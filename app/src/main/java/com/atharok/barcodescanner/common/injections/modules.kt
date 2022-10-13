@@ -387,10 +387,10 @@ val dataModule: Module = module {
 
 val fragmentsModule = module {
 
-    single { MainScannerFragment() }
-    single { MainHistoryFragment() }
-    single { MainBarcodeCreatorListFragment() }
-    single { MainSettingsFragment() }
+    factory { MainScannerFragment() }
+    factory { MainHistoryFragment() }
+    factory { MainBarcodeCreatorListFragment() }
+    factory { MainSettingsFragment() }
 
     factory { FormCreateQrCodeTextFragment() }
     factory { FormCreateQrCodeUrlFragment() }

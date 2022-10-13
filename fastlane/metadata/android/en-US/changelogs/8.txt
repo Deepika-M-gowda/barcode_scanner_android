@@ -1,0 +1,3 @@
+- Added "intent-filter" which allow to scan a barcode from external app.
+- Added a toggle for disabled automatic screen rotation during scan.
+- Update dependencies.

@@ -1,0 +1,3 @@
+- Ajout d'un "intent-filter" permattant de scanner un code-barres à partir d'une application externe.
+- Ajout d'un bouton pour désactiver la rotation automatique de l'écran lors du scan.
+- Mise à jour des dépendances.

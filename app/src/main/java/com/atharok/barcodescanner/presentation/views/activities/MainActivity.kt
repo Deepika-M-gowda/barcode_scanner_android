@@ -24,14 +24,12 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.get
 
@@ -56,7 +54,8 @@ class MainActivity: BaseActivity() {
 
         configureBottomNavigationMenu()
 
-        showInitialFragment()
+        if(savedInstanceState == null)
+            showInitialFragment()
 
         setContentView(viewBinding.root)
 
@@ -89,15 +88,7 @@ class MainActivity: BaseActivity() {
     }*/
 
     private fun showInitialFragment() {
-
         val bottomNavigation = viewBinding.activityMainMenuBottomNavigation
-
-        when (intent?.action) {
-            "${BuildConfig.APPLICATION_ID}.SCAN" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_scan
-            "${BuildConfig.APPLICATION_ID}.HISTORY" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_history
-            "${BuildConfig.APPLICATION_ID}.CREATE" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_create
-        }
-        intent?.action = null
         val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, bottomNavigation.selectedItemId)
         configureFragment(itemIdSelected)
     }

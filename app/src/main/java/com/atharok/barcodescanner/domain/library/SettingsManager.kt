@@ -42,11 +42,14 @@ class SettingsManager(private val context: Context) {
     private val searchOnApiKey = context.getString(R.string.preferences_switch_scan_search_on_api_key)
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
+    private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
     var useSearchOnApiKey = prefs.getBoolean(searchOnApiKey, true)
         private set
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         private set
     var useBipScan = prefs.getBoolean(bipScanKey, false)
+        private set
+    var isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
         private set
 
     // Search
@@ -61,6 +64,7 @@ class SettingsManager(private val context: Context) {
         useSearchOnApiKey = prefs.getBoolean(searchOnApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)
+        isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 

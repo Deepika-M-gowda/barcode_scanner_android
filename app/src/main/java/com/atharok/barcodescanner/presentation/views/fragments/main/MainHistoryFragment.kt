@@ -20,6 +20,8 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.main
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -37,6 +39,7 @@ import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperC
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
+import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
@@ -89,6 +92,14 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
         }
 
         setHasOptionsMenu(true)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val activity: Activity = requireActivity()
+        if(activity is BaseActivity){
+            activity.lockDeviceRotation(false)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
