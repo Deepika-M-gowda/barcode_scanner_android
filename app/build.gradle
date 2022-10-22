@@ -52,26 +52,26 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // UI
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'com.github.CanHub:Android-Image-Cropper:3.3.5'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.vanniktech:android-image-cropper:4.3.3'
 
     // Glide permet d'afficher des images via des URL web dans des ImageView
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    implementation 'com.github.bumptech.glide:annotations:4.12.0'
-    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation 'com.github.bumptech.glide:annotations:4.14.2'
+    kapt 'com.github.bumptech.glide:compiler:4.14.2'
 
     // GlideToVectorYou en complément de Glide gère l'affichage du format SVG
     implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
 
     // Koin - Dependency Injection with AndroidX, ViewModel & Fragment features
-    implementation 'io.insert-koin:koin-android:3.1.5'
+    implementation 'io.insert-koin:koin-android:3.2.3'
 
     // Room - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
 
     // Gère la sérialisation et la désérialisation des fichiers JSON
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.code.gson:gson:2.9.1'
 
     // Retrofit est une librairie permettant de gérer les API REST
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
