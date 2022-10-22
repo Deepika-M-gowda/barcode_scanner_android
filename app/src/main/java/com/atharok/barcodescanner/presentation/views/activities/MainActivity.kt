@@ -24,6 +24,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
+import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
@@ -31,7 +32,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryF
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.android.material.snackbar.Snackbar
-import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 
 class MainActivity: BaseActivity() {
 
@@ -39,10 +40,10 @@ class MainActivity: BaseActivity() {
         private const val ITEM_ID_KEY = "itemIdKey"
     }
 
-    private val mainScannerFragment: MainScannerFragment = get()
-    private val mainHistoryFragment: MainHistoryFragment = get()
-    private val mainBarcodeCreatorListFragment: MainBarcodeCreatorListFragment = get()
-    private val mainSettingsFragment: MainSettingsFragment = get()
+    private val mainScannerFragment: MainScannerFragment by inject()
+    private val mainHistoryFragment: MainHistoryFragment by inject()
+    private val mainBarcodeCreatorListFragment: MainBarcodeCreatorListFragment by inject()
+    private val mainSettingsFragment: MainSettingsFragment by inject()
 
     private val viewBinding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
@@ -89,6 +90,14 @@ class MainActivity: BaseActivity() {
 
     private fun showInitialFragment() {
         val bottomNavigation = viewBinding.activityMainMenuBottomNavigation
+
+        // Utile lorsqu'on ouvre l'application via un shortcut
+        when (intent?.action) {
+            "${BuildConfig.APPLICATION_ID}.SCAN" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_scan
+            "${BuildConfig.APPLICATION_ID}.HISTORY" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_history
+            "${BuildConfig.APPLICATION_ID}.CREATE" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_create
+        }
+
         val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, bottomNavigation.selectedItemId)
         configureFragment(itemIdSelected)
     }
