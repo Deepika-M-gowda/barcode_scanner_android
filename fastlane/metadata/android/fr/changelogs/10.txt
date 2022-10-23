@@ -1,0 +1,1 @@
+- Correction lors du scan à partir d'une image, via un partage d'image.

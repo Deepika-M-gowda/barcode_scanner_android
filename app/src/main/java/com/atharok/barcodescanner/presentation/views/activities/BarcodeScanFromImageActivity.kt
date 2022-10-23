@@ -32,15 +32,21 @@ import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.extensions.getParcelableExtraAppCompat
+import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser
 import com.atharok.barcodescanner.common.utils.INTENT_PICK_IMAGE
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.google.zxing.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
 class BarcodeScanFromImageActivity: BaseActivity() {
@@ -49,6 +55,7 @@ class BarcodeScanFromImageActivity: BaseActivity() {
         private const val URI_INTENT_KEY = "uriIntentKey"
     }
 
+    private val databaseViewModel: DatabaseViewModel by viewModel()
     private val bitmapBarcodeAnalyser: BitmapBarcodeAnalyser by inject()
 
     private var zxingResult: Result? = null
@@ -80,7 +87,7 @@ class BarcodeScanFromImageActivity: BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.menu_activity_confirm_item -> sendResultToAppIntent()
+            R.id.menu_activity_confirm_item -> manageScanResult()
         }
 
         return super.onOptionsItemSelected(item)
@@ -180,6 +187,14 @@ class BarcodeScanFromImageActivity: BaseActivity() {
         }
     }
 
+    private fun manageScanResult(){
+        if(intent?.action == Intent.ACTION_SEND){
+            startBarcodeAnalysisActivity()
+        }else{
+            sendResultToAppIntent()
+        }
+    }
+
     /**
      * Permet de revenir à MainActivity (et MainScannerFragment) avec le résultat du scan de l'image.
      */
@@ -188,4 +203,30 @@ class BarcodeScanFromImageActivity: BaseActivity() {
         setResult(Activity.RESULT_OK, zxingResult?.toIntent())
         finish()
     }
+
+    // ---- StartActivity ----
+
+    private fun startBarcodeAnalysisActivity(){
+
+        val contents = zxingResult?.text
+        val formatName = zxingResult?.barcodeFormat?.name
+
+        if(contents != null && formatName != null){
+
+            val barcode: Barcode = get { parametersOf(contents, formatName) }
+
+            databaseViewModel.insertBarcode(barcode)
+
+            val intent = getBarcodeAnalysisActivityIntent().apply {
+                putExtra(BARCODE_KEY, barcode)
+            }
+
+            startActivity(intent)
+
+            finish()
+        }
+    }
+
+    private fun getBarcodeAnalysisActivityIntent(): Intent =
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 }
