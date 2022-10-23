@@ -1,0 +1,3 @@
+- Mise à jour des dépendances.
+- Correction de l'ouverture de l'application via les shortcuts qui ne fonctionnait plus pour "l'historique" et "générer".
+- Correction du scan à partir d'une image lors du scan à partir d'une app externe (intent-filter).

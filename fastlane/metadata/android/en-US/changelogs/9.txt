@@ -1,0 +1,3 @@
+- Update dependencies.
+- Fix the opening of the application with the shortcuts which didn't work for "history" and "generate".
+- Fix scan from image when scanning from an external app (intent-filter).
