@@ -1,0 +1,2 @@
+- Amélioration du code.
+- Correction d'un problème avec la caméra qui parfois, ne se désactive pas lors d'un scan à partir d'une image.

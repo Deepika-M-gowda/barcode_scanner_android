@@ -1,0 +1,2 @@
+- Code improvement.
+- Fix a problem with the camera that sometimes doesn't turn off when scanning from an image.

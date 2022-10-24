@@ -6,8 +6,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_shortcut_scan"
         android:shortcutShortLabel="@string/title_scan"
-        android:shortcutLongLabel="@string/title_scan"
-        >
+        android:shortcutLongLabel="@string/title_scan">
         <intent
             android:action="android.intent.action.SCAN"
             android:targetPackage="com.atharok.barcodescanner"
@@ -20,12 +19,11 @@
         android:enabled="true"
         android:icon="@drawable/ic_shortcut_scan_from_image"
         android:shortcutShortLabel="@string/intent_filter_scan_by_image"
-        android:shortcutLongLabel="@string/intent_filter_scan_by_image"
-        >
+        android:shortcutLongLabel="@string/intent_filter_scan_by_image">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.atharok.barcodescanner"
-            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity"
+            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity"
             />
     </shortcut>
 
@@ -34,8 +32,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_shortcut_history"
         android:shortcutShortLabel="@string/title_history"
-        android:shortcutLongLabel="@string/title_history"
-        >
+        android:shortcutLongLabel="@string/title_history">
         <intent
             android:action="com.atharok.barcodescanner.HISTORY"
             android:targetPackage="com.atharok.barcodescanner"
@@ -48,8 +45,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_shortcut_create"
         android:shortcutShortLabel="@string/title_bar_code_creator"
-        android:shortcutLongLabel="@string/title_bar_code_creator"
-        >
+        android:shortcutLongLabel="@string/title_bar_code_creator">
         <intent
             android:action="com.atharok.barcodescanner.CREATE"
             android:targetPackage="com.atharok.barcodescanner"

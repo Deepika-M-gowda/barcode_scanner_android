@@ -44,7 +44,7 @@ import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
-import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageActivity
+import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.budiyev.android.codescanner.*
@@ -62,6 +62,8 @@ class MainScannerFragment : Fragment() {
     companion object {
         private const val ZXING_SCAN_INTENT_ACTION = "com.google.zxing.client.android.SCAN"
     }
+
+    private var canEnableCamera = true
 
     private var codeScanner: CodeScanner? = null
     private val databaseViewModel: DatabaseViewModel by sharedViewModel()
@@ -101,16 +103,16 @@ class MainScannerFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        if (isCameraPermissionGranted()) {
+        if (isCameraPermissionGranted() && canEnableCamera) {
             codeScanner?.startPreview()
         }
     }
 
     override fun onPause() {
-
         if (isCameraPermissionGranted()) {
             codeScanner?.isFlashEnabled = false
             codeScanner?.releaseResources()
+            canEnableCamera=true
         }
         super.onPause()
     }
@@ -196,6 +198,7 @@ class MainScannerFragment : Fragment() {
             if(it.resultCode == Activity.RESULT_OK){
 
                 it.data?.let { intentResult ->
+                    canEnableCamera = false // C'est appelé avant OnResume(), on empêche donc la réactivation de la caméra car elle n'est pas nécéssaire ici.
                     onSuccessfulScan(intentResult)
                 }
             }
@@ -333,7 +336,7 @@ class MainScannerFragment : Fragment() {
     // ---- Intent ----
 
     private fun getBarcodeScanFromImageActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeScanFromImageActivity::class) }
+        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeScanFromImageGalleryActivity::class) }
 
     private fun getBarcodeAnalysisActivityIntent(): Intent =
         get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }

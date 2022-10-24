@@ -38,7 +38,6 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
         <activity
             android:name=".presentation.views.activities.BarcodeScanOnlyActivity"
             android:exported="true">
@@ -47,9 +46,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".presentation.views.activities.BarcodeScanFromImageActivity"
+            android:name=".presentation.views.activities.BarcodeScanFromImageGalleryActivity"
+            android:label="@string/title_scan"/>
+        <activity
+            android:name=".presentation.views.activities.BarcodeScanFromImageShareActivity"
             android:exported="true"
             android:label="@string/title_scan">
             <intent-filter android:label="@string/intent_filter_scan_by_image">
@@ -60,8 +61,7 @@
         </activity>
         <activity
             android:name=".presentation.views.activities.BarcodeAnalysisActivity"
-            android:label="@string/information_label"
-            android:parentActivityName=".presentation.views.activities.MainActivity" />
+            android:label="@string/information_label"/>
         <activity
             android:name=".presentation.views.activities.VeggieActivity"
             android:label="@string/veggie_label" />
