@@ -33,8 +33,7 @@ import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.core.qualifier.named
 
-
-class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActivity() {
+open class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActivity() {
 
     companion object {
         private const val URI_INTENT_KEY = "uriIntentKey"

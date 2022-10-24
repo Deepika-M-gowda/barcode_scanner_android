@@ -50,6 +50,9 @@
             android:name=".presentation.views.activities.BarcodeScanFromImageGalleryActivity"
             android:label="@string/title_scan"/>
         <activity
+            android:name=".presentation.views.activities.BarcodeScanFromImageShortcutActivity"
+            android:label="@string/title_scan"/>
+        <activity
             android:name=".presentation.views.activities.BarcodeScanFromImageShareActivity"
             android:exported="true"
             android:label="@string/title_scan">

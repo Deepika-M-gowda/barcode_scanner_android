@@ -1,0 +1,1 @@
+- Correction du shortcut "scan from image".

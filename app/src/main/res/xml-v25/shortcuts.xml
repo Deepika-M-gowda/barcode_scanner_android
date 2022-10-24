@@ -23,7 +23,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.atharok.barcodescanner"
-            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity"
+            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageShortcutActivity"
             />
     </shortcut>
 
