@@ -43,13 +43,17 @@ class SettingsManager(private val context: Context) {
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
-    var useSearchOnApiKey = prefs.getBoolean(searchOnApiKey, true)
+    private val copyBarcodeScanKey = context.getString(R.string.preferences_switch_scan_barcode_copied_key)
+
+    var useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         private set
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         private set
     var useBipScan = prefs.getBoolean(bipScanKey, false)
         private set
     var isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
+        private set
+    var shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
         private set
 
     // Search
@@ -61,10 +65,11 @@ class SettingsManager(private val context: Context) {
 
         color = prefs.getString(colorKey, getDefaultColorKey())
         theme = prefs.getString(themeKey, "system")
-        useSearchOnApiKey = prefs.getBoolean(searchOnApiKey, true)
+        useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
+        shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 

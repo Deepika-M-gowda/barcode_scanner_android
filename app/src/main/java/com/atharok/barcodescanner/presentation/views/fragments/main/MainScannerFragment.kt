@@ -47,6 +47,7 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisA
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
+import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.budiyev.android.codescanner.*
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
@@ -57,7 +58,7 @@ import org.koin.core.qualifier.named
 /**
  * A simple [Fragment] subclass.
  */
-class MainScannerFragment : Fragment() {
+class MainScannerFragment : BaseFragment() {
 
     companion object {
         private const val ZXING_SCAN_INTENT_ACTION = "com.google.zxing.client.android.SCAN"
@@ -245,6 +246,11 @@ class MainScannerFragment : Fragment() {
 
             val settingsManager = get<SettingsManager>()
 
+            if(settingsManager.shouldCopyBarcodeScan){
+                copyToClipboard("contents", contents)
+                showToastText(R.string.barcode_copied_label)
+            }
+
             if(settingsManager.useBipScan)
                 get<BeepManager>().playBeepSound(requireActivity())
 
@@ -277,6 +283,11 @@ class MainScannerFragment : Fragment() {
         if(contents != null && formatName != null) {
 
             val settingsManager = get<SettingsManager>()
+
+            if(settingsManager.shouldCopyBarcodeScan){
+                copyToClipboard("contents", contents)
+                showToastText(R.string.barcode_copied_label)
+            }
 
             if(settingsManager.useBipScan)
                 get<BeepManager>().playBeepSound(requireActivity())

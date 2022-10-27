@@ -20,6 +20,8 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -27,6 +29,7 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.common.extensions.convertToString
+import org.koin.android.ext.android.get
 import kotlin.reflect.KClass
 
 abstract class BaseFragment: Fragment() {
@@ -47,6 +50,12 @@ abstract class BaseFragment: Fragment() {
 
     protected fun showToastText(@StringRes textResource: Int){
         Toast.makeText(requireContext(), getString(textResource), Toast.LENGTH_SHORT).show()
+    }
+
+    protected fun copyToClipboard(label: String, text: String){
+        val clipboard: ClipboardManager = get()
+        val clip = ClipData.newPlainText(label, text)
+        clipboard.setPrimaryClip(clip)
     }
 
     /**

@@ -20,8 +20,6 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -92,9 +90,7 @@ abstract class ActionsFragment: BaseFragment() {
 
     private fun addCopyActionFAB(contents: String){
         viewBinding.fragmentBarcodeActionsFloatingActionMenu.addItem(ActionEnum.COPY_TEXT.drawableResource) {
-            val clipboard: ClipboardManager = get()
-            val clip = ClipData.newPlainText("contents", contents)
-            clipboard.setPrimaryClip(clip)
+            copyToClipboard("contents", contents)
             showToastText(R.string.barcode_copied_label)
         }
     }

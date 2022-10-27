@@ -472,6 +472,7 @@
     <string name="preferences_switch_scan_vibrate_label">Vibrer lors du scan</string>
     <string name="preferences_switch_scan_bip_label">Émettre un son lors du scan</string>
     <string name="preferences_switch_scan_screen_rotation_label">Désactiver la rotation automatique lors du scan</string>
+    <string name="preferences_switch_scan_barcode_copied_label">Copier le code-barres dans le presse-papier lors du scan</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Recherche</string>

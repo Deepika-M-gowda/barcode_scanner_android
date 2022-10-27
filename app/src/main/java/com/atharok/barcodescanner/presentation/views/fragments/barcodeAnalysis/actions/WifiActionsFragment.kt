@@ -21,8 +21,6 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
 import android.app.Activity.RESULT_OK
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.wifi.WifiManager
@@ -93,9 +91,7 @@ class WifiActionsFragment: ActionsFragment() {
      * Copie le mot de passe dans le presse papier et ouvre les paramètres Wifi.
      */
     private fun connectToWifiFromWifiSettings(parsedResult: WifiParsedResult){
-        val clipboard: ClipboardManager = get()
-        val clip = ClipData.newPlainText("password", parsedResult.password)
-        clipboard.setPrimaryClip(clip)
+        copyToClipboard("password", parsedResult.password)
         showToastText(R.string.action_wifi_password_copy_label)
 
         val intent: Intent = get(named(INTENT_PICK_WIFI_NETWORK))

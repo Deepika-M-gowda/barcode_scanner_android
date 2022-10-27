@@ -71,7 +71,7 @@ class BarcodeDefaultFragment: ProductBarcodeFragment<BarcodeProduct>() {
                 configureProductSearchApiEntitledLayout()
                 configureBarcodeErrorApiFragment()
             }
-            product.barcode.is1DProductBarcodeFormat && get<SettingsManager>().useSearchOnApiKey -> {
+            product.barcode.is1DProductBarcodeFormat && get<SettingsManager>().useSearchOnApi -> {
                 configureProductSearchApiEntitledLayout()
                 configureBarcodeNotFoundApi(product)
             }

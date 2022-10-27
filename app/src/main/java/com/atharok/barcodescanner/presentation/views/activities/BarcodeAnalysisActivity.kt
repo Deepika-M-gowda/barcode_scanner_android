@@ -159,7 +159,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         when {
             !checkInternetPermission() -> configureDefaultView(NoneProduct(barcode), type, getString(R.string.no_internet_permission))
-            settingsManager.useSearchOnApiKey -> observeOnAPI(barcode, type)
+            settingsManager.useSearchOnApi -> observeOnAPI(barcode, type)
             else -> configureDefaultView(NoneProduct(barcode), type)
         }
     }
