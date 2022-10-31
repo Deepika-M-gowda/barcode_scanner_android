@@ -26,7 +26,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixPhoneBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.TelParsedResult
@@ -48,7 +48,7 @@ class BarcodeMatrixPhoneFragment : AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    override fun start(product: BarcodeProduct, parsedResult: ParsedResult) {
+    override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is TelParsedResult && parsedResult.type == ParsedResultType.TEL) {
             configurePhoneNumber(parsedResult.number)

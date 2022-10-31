@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/standard_margin"
+    android:paddingEnd="@dimen/standard_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.product.bookProduct.BookAnalysisFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_book_analysis_outer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_fab_button">
+
+        <!-- Overview -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_overview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"/>
+
+        <!-- Summary -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_summary_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_overview_layout"/>
+
+        <!-- More Label -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_more_entitled_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_summary_frame_layout">
+
+            <include
+                layout="@layout/template_text_view_subtitle"
+                android:id="@+id/fragment_book_analysis_more_entitled_text_view_template"
+                />
+
+        </FrameLayout>
+
+        <!-- Categories -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_categories_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_more_entitled_layout"/>
+
+        <!-- Nb Pages -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_nb_pages_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_categories_frame_layout"/>
+
+        <!-- Contributions -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_contributions_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_nb_pages_frame_layout"/>
+
+        <!-- Publication Date -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_publication_date_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_contributions_frame_layout"/>
+
+        <!-- Original Title -->
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_original_title_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_publication_date_frame_layout"/>
+
+        <!-- About Barcode -->
+
+        <FrameLayout
+            android:id="@+id/fragment_book_analysis_about_barcode_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_book_analysis_original_title_frame_layout"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

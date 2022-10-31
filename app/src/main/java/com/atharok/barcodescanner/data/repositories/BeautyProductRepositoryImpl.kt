@@ -23,11 +23,11 @@ package com.atharok.barcodescanner.data.repositories
 import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.data.api.OpenBeautyFactsService
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 
 class BeautyProductRepositoryImpl(private val service: OpenBeautyFactsService): BeautyProductRepository {
-    override suspend fun getBeautyProduct(barcode: Barcode): FoodProduct? {
+    override suspend fun getBeautyProduct(barcode: Barcode): FoodBarcodeAnalysis? {
         val beautyProductResponse = service.getOpenBeautyFactsData(barcode.contents)
 
         if(beautyProductResponse.status == 0 || beautyProductResponse.productResponse == null)

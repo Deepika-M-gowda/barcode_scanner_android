@@ -26,7 +26,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixEmailBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.EmailAddressParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
@@ -48,7 +48,7 @@ class BarcodeMatrixEmailFragment : AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    override fun start(product: BarcodeProduct, parsedResult: ParsedResult) {
+    override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is EmailAddressParsedResult && parsedResult.type == ParsedResultType.EMAIL_ADDRESS) {
             configureAddress(parsedResult.tos)

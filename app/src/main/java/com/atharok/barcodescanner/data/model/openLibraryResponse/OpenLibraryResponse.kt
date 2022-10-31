@@ -33,7 +33,7 @@ data class OpenLibraryResponse(
     val informationSchema: InformationSchema? = null
 ) {
 
-    fun toModel(barcode: Barcode, source: ApiSource): BookProduct = BookProduct(
+    fun toModel(barcode: Barcode, source: ApiSource): BookBarcodeAnalysis = BookBarcodeAnalysis(
         barcode =  barcode,
         source = source,
         url = obtainUrl(this),

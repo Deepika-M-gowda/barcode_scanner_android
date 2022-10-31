@@ -27,7 +27,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixWifiBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.WifiParsedResult
@@ -49,7 +49,7 @@ class BarcodeMatrixWifiFragment : AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    override fun start(product: BarcodeProduct, parsedResult: ParsedResult) {
+    override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is WifiParsedResult && parsedResult.type == ParsedResultType.WIFI) {
             configureSSID(parsedResult.ssid)

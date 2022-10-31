@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_labels_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisLabelsFragment">
+
+    <!-- Labels -->
+    <include
+        layout="@layout/template_expandable_view"
+        android:id="@+id/food_analysis_labels_expandable_view_template"/>
+
+</com.google.android.material.card.MaterialCardView>

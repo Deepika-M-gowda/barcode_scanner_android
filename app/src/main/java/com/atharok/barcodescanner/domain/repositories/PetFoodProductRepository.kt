@@ -21,8 +21,8 @@
 package com.atharok.barcodescanner.domain.repositories
 
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 
 interface PetFoodProductRepository {
-    suspend fun getPetFoodProduct(barcode: Barcode): FoodProduct?
+    suspend fun getPetFoodProduct(barcode: Barcode): FoodBarcodeAnalysis?
 }

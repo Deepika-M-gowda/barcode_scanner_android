@@ -27,7 +27,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixContactBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.AddressBookParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
@@ -50,7 +50,7 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    override fun start(product: BarcodeProduct, parsedResult: ParsedResult) {
+    override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is AddressBookParsedResult && parsedResult.type == ParsedResultType.ADDRESSBOOK) {
             configureName(parsedResult.names ?: parsedResult.nicknames)

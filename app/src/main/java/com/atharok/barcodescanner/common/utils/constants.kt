@@ -67,7 +67,13 @@ const val PRODUCT_KEY = "productKey"
 // Clé du Bundle associé au type Barcode
 const val BARCODE_KEY = "barcodeKey"
 
-// Clé du Bundle associé au meesage d'erreur lors de la recherche sur une API.
+// Clé du Bundle associé au au type d'erreur lors de la recherche sur une API.
+const val API_ERROR_KEY = "apiErrorKey"
+
+// Clé de l'intent lors de la re-création de l'activity permettant de rechercher dans les APIs même lorsque désactivé dans les paramètres
+const val IGNORE_USE_SEARCH_ON_API_SETTING_KEY = "ignoreUseSearchOnApiSettingKey"
+
+// Clé du Bundle associé au message d'erreur lors de la recherche sur une API.
 const val BARCODE_MESSAGE_ERROR_KEY = "barcodeMessageErrorKey"
 
 // Clé du Bundle associé au type AllBarCodeCreatorType

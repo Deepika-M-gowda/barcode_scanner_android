@@ -33,6 +33,7 @@
     <string name="title_bar_code_creator">Générer un Code-Barres</string>
     <string name="information_label">Informations</string>
     <string name="barcode_label">Code-barres</string>
+    <string name="download_from_api_label">Télécharger à partir des APIs</string>
     <string name="menu_more">Plus</string>
 
     <!-- QR Type -->
@@ -468,7 +469,7 @@
 
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
-    <string name="preferences_switch_scan_search_on_api_label">Activer la recherche sur les API distantes</string>
+    <string name="preferences_switch_scan_search_on_api_label">Rechercher automatiquement sur les APIs distantes</string>
     <string name="preferences_switch_scan_vibrate_label">Vibrer lors du scan</string>
     <string name="preferences_switch_scan_bip_label">Émettre un son lors du scan</string>
     <string name="preferences_switch_scan_screen_rotation_label">Désactiver la rotation automatique lors du scan</string>

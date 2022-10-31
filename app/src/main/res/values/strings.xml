@@ -33,6 +33,7 @@
     <string name="title_bar_code_creator">Generate a barcode</string>
     <string name="information_label">Information</string>
     <string name="barcode_label">Barcode</string>
+    <string name="download_from_api_label">Download from APIs</string>
     <string name="menu_more">More</string>
 
     <!-- QR Type -->
@@ -770,5 +771,7 @@
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
 
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

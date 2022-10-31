@@ -23,7 +23,6 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import com.atharok.barcodescanner.common.extensions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
@@ -49,7 +48,7 @@ class BarcodeScanFromImageShareActivity: BarcodeScanFromImageAbstractActivity() 
      * Si on récupère l'URI via un partage d'image d'une autre application (intent-filter)
      */
     private fun getImageUri(): Uri?  = if(intent?.action == Intent.ACTION_SEND) {
-         intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)
+         intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
     } else null
 
     override fun onSuccessfulImageScan(result: Result?) {

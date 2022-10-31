@@ -23,9 +23,9 @@ package com.atharok.barcodescanner.domain.usecases
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
-import com.atharok.barcodescanner.domain.entity.product.NoneProduct
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
@@ -39,13 +39,13 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                      private val petFoodProductRepository: PetFoodProductRepository,
                      private val bookProductRepository: BookProductRepository) {
 
-    fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeProduct>> = liveData(Dispatchers.IO) {
+    fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
 
         emit(Resource.loading())
 
-        var barcodeProduct: BarcodeProduct? = null
+        var barcodeAnalysis: BarcodeAnalysis? = null
         try {
-            barcodeProduct = when (barcode.getBarcodeType()) {
+            barcodeAnalysis = when (barcode.getBarcodeType()) {
                 BarcodeType.FOOD -> foodProductRepository.getFoodProduct(barcode)
                 BarcodeType.BEAUTY -> beautyProductRepository.getBeautyProduct(barcode)
                 BarcodeType.PET_FOOD -> petFoodProductRepository.getPetFoodProduct(barcode)
@@ -59,19 +59,19 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                 }
             }
 
-            if (barcodeProduct == null)
-                barcodeProduct = NoneProduct(barcode)
+            if (barcodeAnalysis == null)
+                barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
 
-            emit(Resource.success(barcodeProduct))
+            emit(Resource.success(barcodeAnalysis))
 
         } catch (e: Exception) {
-            emit(Resource.failure(e, barcodeProduct))
+            emit(Resource.failure(e, barcodeAnalysis))
         }
     }
 
-    private suspend fun searchEverywhere(barcode: Barcode): FoodProduct? {
+    private suspend fun searchEverywhere(barcode: Barcode): FoodBarcodeAnalysis? {
 
-        var product: FoodProduct? = null
+        var product: FoodBarcodeAnalysis? = null
         for(i in 0..2){
 
             product = when(i){

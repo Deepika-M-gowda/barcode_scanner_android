@@ -28,7 +28,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.common.extensions.getSerializableAppCompat
 import com.atharok.barcodescanner.databinding.FragmentFormCreateBarcodeBinding
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.google.zxing.BarcodeFormat
@@ -59,7 +58,7 @@ class FormCreateBarcodeFragment: AbstractFormCreateBarcodeFragment() {
             it.containsKey(BARCODE_FORMAT_KEY)
         }?.apply {
 
-            getSerializableAppCompat(BARCODE_FORMAT_KEY, BarcodeFormat::class.java)?.let {
+            getSerializable(BARCODE_FORMAT_KEY, BarcodeFormat::class.java)?.let {
                 start(it)
             }
         }

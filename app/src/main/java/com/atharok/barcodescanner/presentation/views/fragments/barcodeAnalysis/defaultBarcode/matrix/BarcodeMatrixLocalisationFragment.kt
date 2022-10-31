@@ -26,7 +26,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixLocalisationBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.GeoParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
@@ -49,7 +49,7 @@ class BarcodeMatrixLocalisationFragment : AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    override fun start(product: BarcodeProduct, parsedResult: ParsedResult) {
+    override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is GeoParsedResult && parsedResult.type == ParsedResultType.GEO) {
             configureLatitude(parsedResult.latitude)

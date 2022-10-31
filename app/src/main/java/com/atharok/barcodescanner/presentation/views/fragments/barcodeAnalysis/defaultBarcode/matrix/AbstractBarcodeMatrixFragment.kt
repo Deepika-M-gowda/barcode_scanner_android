@@ -22,21 +22,21 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
-import com.atharok.barcodescanner.domain.entity.product.BarcodeProduct
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.ProductBarcodeFragment
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.zxing.client.result.ParsedResult
 import org.koin.android.ext.android.getKoin
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
-abstract class AbstractBarcodeMatrixFragment : ProductBarcodeFragment<BarcodeProduct>() {
+abstract class AbstractBarcodeMatrixFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() {
 
     private val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
         BARCODE_ANALYSIS_SCOPE_SESSION_ID,
         named(BARCODE_ANALYSIS_SCOPE_SESSION)
     )
 
-    override fun start(product: BarcodeProduct) {
+    override fun start(product: BarcodeAnalysis) {
         val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
             parametersOf(product.barcode.contents, product.barcode.getBarcodeFormat())
         }
@@ -44,5 +44,5 @@ abstract class AbstractBarcodeMatrixFragment : ProductBarcodeFragment<BarcodePro
         start(product, parsedResult)
     }
 
-    abstract fun start(product: BarcodeProduct, parsedResult: ParsedResult)
+    abstract fun start(product: BarcodeAnalysis, parsedResult: ParsedResult)
 }

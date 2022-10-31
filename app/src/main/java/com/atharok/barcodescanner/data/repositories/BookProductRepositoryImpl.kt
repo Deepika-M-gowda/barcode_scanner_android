@@ -23,11 +23,11 @@ package com.atharok.barcodescanner.data.repositories
 import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.data.api.OpenLibraryService
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BookProduct
+import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 
 class BookProductRepositoryImpl(private val service: OpenLibraryService): BookProductRepository {
-    override suspend fun getBookProduct(barcode: Barcode): BookProduct? {
+    override suspend fun getBookProduct(barcode: Barcode): BookBarcodeAnalysis? {
         val bookProductResponse = service.getOpenLibraryData(barcode.contents)
 
         if(bookProductResponse.informationSchema == null)

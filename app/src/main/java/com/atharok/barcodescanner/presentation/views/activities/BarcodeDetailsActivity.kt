@@ -34,15 +34,14 @@ import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.NoneProduct
+import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
 import com.atharok.barcodescanner.domain.library.BitmapRecorder
 import com.atharok.barcodescanner.domain.library.BitmapSharer
 import com.atharok.barcodescanner.common.extensions.read
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.AboutBarcodeFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.extensions.getParcelableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
@@ -93,8 +92,8 @@ class BarcodeDetailsActivity : BaseActivity() {
         return if(intent?.action == Intent.ACTION_SEND){
             when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
-                "text/x-vcard" -> intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
-                "text/x-vcalendar" -> intent.getParcelableExtraAppCompat(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
+                "text/x-vcard" -> intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
+                "text/x-vcalendar" -> intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
         } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
@@ -160,15 +159,15 @@ class BarcodeDetailsActivity : BaseActivity() {
     private fun configureAboutBarcodeFragment(contents: String, format: BarcodeFormat){
 
         val barcodeInformation = Barcode(contents, format.name, Date().time)
-        val noneProduct = NoneProduct(barcodeInformation)
+        val barcodeAnalysis = DefaultBarcodeAnalysis(barcodeInformation)
 
         val args: Bundle = get<Bundle>().apply {
-            putSerializable(PRODUCT_KEY, noneProduct)
+            putSerializable(PRODUCT_KEY, barcodeAnalysis)
         }
 
         replaceFragment(
             containerViewId = viewBinding.activityBarcodeImageAboutBarcodeFrameLayout.id,
-            fragmentClass = AboutBarcodeFragment::class,
+            fragmentClass = BarcodeAnalysisAboutFragment::class,
             args = args
         )
     }

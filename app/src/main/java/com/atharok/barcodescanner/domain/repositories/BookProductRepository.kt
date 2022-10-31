@@ -21,8 +21,8 @@
 package com.atharok.barcodescanner.domain.repositories
 
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BookProduct
+import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 
 interface BookProductRepository {
-    suspend fun getBookProduct(barcode: Barcode): BookProduct?
+    suspend fun getBookProduct(barcode: Barcode): BookBarcodeAnalysis?
 }

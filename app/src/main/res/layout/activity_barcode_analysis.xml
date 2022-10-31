@@ -18,7 +18,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"/>
 
-        <com.google.android.material.tabs.TabLayout
+        <FrameLayout
+            android:id="@+id/activity_barcode_information_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_barcode_information_toolbar"/>
+
+        <!--<com.google.android.material.tabs.TabLayout
             android:id="@+id/activity_barcode_information_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tab_layout_height"
@@ -37,7 +43,7 @@
             android:id="@+id/activity_barcode_information_view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/activity_barcode_information_tab_layout"/>
+            android:layout_below="@id/activity_barcode_information_tab_layout"/>-->
 
         <ProgressBar
             android:id="@+id/activity_barcode_information_progress_bar"

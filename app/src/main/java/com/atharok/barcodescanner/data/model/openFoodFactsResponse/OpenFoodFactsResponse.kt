@@ -43,7 +43,7 @@ data class OpenFoodFactsResponse(
     var productResponse: FoodProductResponse? = null
 ) {
 
-    fun toModel(barcode: Barcode, source: ApiSource): FoodProduct = FoodProduct(
+    fun toModel(barcode: Barcode, source: ApiSource): FoodBarcodeAnalysis = FoodBarcodeAnalysis(
         barcode = barcode,
         source = source,
         name = productResponse?.productName?.polishText(),

@@ -27,7 +27,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.getSerializableExtraAppCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
@@ -51,7 +50,7 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
     private var formCreateBarcodeFragment: AbstractFormCreateBarcodeFragment? = null
 
     private val allBarcodeFormat: BarcodeFormatDetails? by lazy {
-        intent.getSerializableExtraAppCompat(BARCODE_TYPE_ENUM_KEY, BarcodeFormatDetails::class.java)
+        intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY, BarcodeFormatDetails::class.java)
     }
 
     private val viewBinding: ActivityBarcodeCreatorFormsBinding by lazy { ActivityBarcodeCreatorFormsBinding.inflate(layoutInflater) }

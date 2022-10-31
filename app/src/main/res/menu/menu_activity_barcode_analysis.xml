@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_activity_barcode_analysis_download_from_apis"
+        android:icon="@drawable/outline_cloud_download_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/download_from_api_label">
+    </item>
+
+    <item
         android:id="@+id/menu_activity_barcode_analysis_about_barcode_item"
         android:icon="@drawable/baseline_qr_code_24"
         app:showAsAction="ifRoom"
