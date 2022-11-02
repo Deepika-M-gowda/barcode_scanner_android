@@ -85,6 +85,7 @@ class MainBarcodeCreatorListFragment : Fragment() {
             BarcodeFormatDetails.QR_TEXT,
             BarcodeFormatDetails.QR_AGENDA,
             BarcodeFormatDetails.QR_CONTACT,
+            BarcodeFormatDetails.QR_EPC,
             BarcodeFormatDetails.QR_LOCALISATION,
             BarcodeFormatDetails.QR_MAIL,
             BarcodeFormatDetails.QR_PHONE,

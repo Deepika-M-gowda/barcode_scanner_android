@@ -27,6 +27,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
@@ -50,7 +51,7 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
     private var formCreateBarcodeFragment: AbstractFormCreateBarcodeFragment? = null
 
     private val allBarcodeFormat: BarcodeFormatDetails? by lazy {
-        intent.getSerializableExtra(BARCODE_TYPE_ENUM_KEY, BarcodeFormatDetails::class.java)
+        intent.serializable(BARCODE_TYPE_ENUM_KEY, BarcodeFormatDetails::class.java)
     }
 
     private val viewBinding: ActivityBarcodeCreatorFormsBinding by lazy { ActivityBarcodeCreatorFormsBinding.inflate(layoutInflater) }
@@ -171,14 +172,14 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
 
         if(!content.isNullOrBlank()) {
 
-            val barCodeFormat: BarcodeFormat = allBarcodeFormat?.format ?: BarcodeFormat.QR_CODE
+            val barcodeFormat: BarcodeFormat = allBarcodeFormat?.format ?: BarcodeFormat.QR_CODE
 
             val checkerManager: BarcodeFormatChecker = get()
 
-            val response = checkerManager.check(content, barCodeFormat)
+            val response = checkerManager.check(content, barcodeFormat)
 
             when (response.response) {
-                CheckerResponse.BAR_CODE_SUCCESSFUL -> startBarcodeDetailsActivity(content, barCodeFormat)
+                CheckerResponse.BAR_CODE_SUCCESSFUL -> startBarcodeDetailsActivity(content, barcodeFormat)
                 CheckerResponse.BAR_CODE_NOT_A_NUMBER_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_not_a_number_message))
                 CheckerResponse.BAR_CODE_WRONG_LENGTH_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_wrong_length_message, response.length.toString()))
                 CheckerResponse.BAR_CODE_WRONG_KEY_ERROR -> configureErrorMessage(getString(R.string.error_bar_code_wrong_key_message, response.length.toString(), response.key.toString()))

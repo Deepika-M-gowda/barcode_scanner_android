@@ -29,6 +29,7 @@ enum class BarcodeFormatDetails(val stringResource: Int, val drawableResource: I
     QR_TEXT(R.string.qr_code_type_name_text, R.drawable.baseline_text_fields_24, BarcodeFormat.QR_CODE),
     QR_AGENDA(R.string.qr_code_type_name_agenda, R.drawable.baseline_event_note_24, BarcodeFormat.QR_CODE),
     QR_CONTACT(R.string.qr_code_type_name_contact, R.drawable.baseline_contacts_24, BarcodeFormat.QR_CODE),
+    QR_EPC(R.string.qr_code_type_name_epc, R.drawable.baseline_qr_code_24, BarcodeFormat.QR_CODE),
     QR_LOCALISATION(R.string.qr_code_type_name_geographic_coordinates, R.drawable.baseline_place_24, BarcodeFormat.QR_CODE),
     QR_MAIL(R.string.qr_code_type_name_mail, R.drawable.baseline_mail_24, BarcodeFormat.QR_CODE),
     QR_PHONE(R.string.qr_code_type_name_phone, R.drawable.baseline_call_24, BarcodeFormat.QR_CODE),

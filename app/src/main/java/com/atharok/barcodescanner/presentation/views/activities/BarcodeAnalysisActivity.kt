@@ -27,6 +27,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -78,7 +79,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         setSupportActionBar(viewBinding.activityBarcodeInformationToolbar.toolbar)
 
-        val barcode: Barcode? = intent?.getSerializableExtra(BARCODE_KEY, Barcode::class.java)
+        val barcode: Barcode? = intent?.serializable(BARCODE_KEY, Barcode::class.java)
 
         if(barcode!=null){
             configureContentsView(barcode)

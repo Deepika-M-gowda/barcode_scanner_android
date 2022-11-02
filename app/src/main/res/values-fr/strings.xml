@@ -40,6 +40,7 @@
     <string name="qr_code_type_name_text">Texte</string>
     <string name="qr_code_type_name_web_site">Site Web</string>
     <string name="qr_code_type_name_contact">Contact</string>
+    <string name="qr_code_type_name_epc">QR Code EPC</string>
     <string name="qr_code_type_name_mail">Mail</string>
     <string name="qr_code_type_name_sms">SMS</string>
     <string name="qr_code_type_name_phone">Téléphone</string>
@@ -295,11 +296,12 @@
     <string name="intent_chooser_mail_title">"Envoyer l\'email…"</string>
     <string name="copy_label">Copier</string>
     <string name="barcode_copied_label">Code-barres copié</string>
+    <string name="barcode_search_error_label">Url non pris en charge</string>
 
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">Vous devez entrer une valeur de code-barres dans le champs de saisie.</string>
+    <string name="error_bar_code_none_character_message">Vous devez entrer une valeur correct dans le champs de saisie.</string>
     <string name="error_bar_code_not_a_number_message">Le code-barres doit être composé uniquement de chiffres.</string>
     <string name="error_bar_code_wrong_length_message">Le code-barres doit contenir %1$s chiffres.</string>
     <string name="error_bar_code_wrong_key_message">Le %1$sème chiffre (clé de contrôle) devrait être %2$s.</string>
@@ -354,6 +356,23 @@
     <string name="spinner_type_home">Domicile</string>
     <string name="spinner_type_work">Bureau</string>
     <string name="spinner_type_other">Autre</string>
+
+    <!-- EPC Creator -->
+    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Code de service</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_version">Version</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_character_set">Jeu de caractères</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_identification">Identification</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_bic">BIC</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_name">Nom</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_amount">Montant</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_purpose">Raison</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Paiement (Reference)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Paiement (Text)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">Information</string>
+
+    <string name="qr_code_text_input_edit_text_epc_name_error">Le champs \"Nom\" est obligatoire</string>
+    <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN incorrect</string>
 
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Adresse Courriel</string>

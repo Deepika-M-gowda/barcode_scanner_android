@@ -249,6 +249,7 @@ val libraryModule: Module = module {
     single<BitmapRecorder> { BitmapRecorder(androidContext()) }
     single<BitmapSharer> { BitmapSharer(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
+    single<Iban> { Iban() }
 
     /*factory<BeepManager> { (activity: Activity) ->
         //val settingsManager = get<SettingsManager>()
@@ -395,6 +396,7 @@ val fragmentsModule = module {
     factory { FormCreateQrCodeTextFragment() }
     factory { FormCreateQrCodeUrlFragment() }
     factory { FormCreateQrCodeContactFragment() }
+    factory { FormCreateQrCodeEpcFragment() }
     factory { FormCreateQrCodeMailFragment() }
     factory { FormCreateQrCodeSmsFragment() }
     factory { FormCreateQrCodePhoneFragment() }
@@ -409,6 +411,7 @@ val fragmentsModule = module {
             BarcodeFormatDetails.QR_TEXT -> get<FormCreateQrCodeTextFragment>()
             BarcodeFormatDetails.QR_URL -> get<FormCreateQrCodeUrlFragment>()
             BarcodeFormatDetails.QR_CONTACT -> get<FormCreateQrCodeContactFragment>()
+            BarcodeFormatDetails.QR_EPC -> get<FormCreateQrCodeEpcFragment>()
             BarcodeFormatDetails.QR_MAIL -> get<FormCreateQrCodeMailFragment>()
             BarcodeFormatDetails.QR_SMS -> get<FormCreateQrCodeSmsFragment>()
             BarcodeFormatDetails.QR_PHONE -> get<FormCreateQrCodePhoneFragment>()

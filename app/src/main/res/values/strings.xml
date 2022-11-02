@@ -40,6 +40,7 @@
     <string name="qr_code_type_name_text">Text</string>
     <string name="qr_code_type_name_web_site">Website</string>
     <string name="qr_code_type_name_contact">Contact</string>
+    <string name="qr_code_type_name_epc">EPC QR Code</string>
     <string name="qr_code_type_name_mail">Mail</string>
     <string name="qr_code_type_name_sms">SMS</string>
     <string name="qr_code_type_name_phone">Phone number</string>
@@ -295,11 +296,12 @@
     <string name="intent_chooser_mail_title">"Send email…"</string>
     <string name="copy_label">Copy</string>
     <string name="barcode_copied_label">Barcode copied</string>
+    <string name="barcode_search_error_label">Url not supported</string>
 
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">You must enter a bar code value in the input field.</string>
+    <string name="error_bar_code_none_character_message">You must enter a correct value in the input field.</string>
     <string name="error_bar_code_not_a_number_message">Bar code must be composed of digits only.</string>
     <string name="error_bar_code_wrong_length_message">Bar code must contain %1$s digits.</string>
     <string name="error_bar_code_wrong_key_message">%1$sth digit (control key) should be %2$s.</string>
@@ -354,6 +356,23 @@
     <string name="spinner_type_home">Home</string>
     <string name="spinner_type_work">Work</string>
     <string name="spinner_type_other">Other</string>
+
+    <!-- EPC Creator -->
+    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Service Tag</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_version">Version</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_character_set">Character set</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_identification">Identification</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_bic">BIC</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_name">Name</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_amount">Amount</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_purpose">Purpose</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Remittance (Reference)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Remittance (Text)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">Information</string>
+
+    <string name="qr_code_text_input_edit_text_epc_name_error">\"Name\" field is mandatory</string>
+    <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN incorrect</string>
 
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>
@@ -771,7 +790,5 @@
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
 
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

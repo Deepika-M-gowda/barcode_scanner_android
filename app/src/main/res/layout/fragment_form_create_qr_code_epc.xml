@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateQrCodeEpcFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_bic_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_bic"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_bic_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_name_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_bic_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_name"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_name_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="70"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/fragment_form_create_qr_code_epc_name_error_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_name_input_layout"
+        android:layout_marginBottom="@dimen/light_margin"
+        android:text="@string/qr_code_text_input_edit_text_epc_name_error"
+        android:theme="@style/ErrorRedTextViewTheme"
+        android:visibility="gone"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_iban_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_name_error_text_view"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_iban"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_iban_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:maxLength="34"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/fragment_form_create_qr_code_epc_iban_error_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_iban_input_layout"
+        android:layout_marginBottom="@dimen/light_margin"
+        android:text="@string/qr_code_text_input_edit_text_epc_iban_error"
+        android:theme="@style/ErrorRedTextViewTheme"
+        android:visibility="gone"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_amount_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_iban_error_text_view"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_amount"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_amount_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_purpose_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_amount_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_purpose"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_purpose_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_remittance_ref_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_purpose_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_remittance_ref"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_remittance_ref_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="35"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_remittance_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_remittance_ref_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_remittance_text"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_remittance_text_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="140"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_epc_information_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_form_create_qr_code_epc_remittance_text_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_epc_information"
+        style="@style/TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_form_create_qr_code_epc_information_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="70"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</RelativeLayout>

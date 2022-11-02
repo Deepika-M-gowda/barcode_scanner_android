@@ -26,6 +26,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
+import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.databinding.TemplateHorizontalGraphViewBinding
 import com.atharok.barcodescanner.databinding.TemplateNutrientLevelBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
@@ -49,7 +50,7 @@ class FoodAnalysisNutrientLevelFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            nutrient = it.getSerializable(NUTRIENT_KEY, Nutrient::class.java)
+            nutrient = it.serializable(NUTRIENT_KEY, Nutrient::class.java)
         }
     }
 

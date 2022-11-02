@@ -24,6 +24,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
+import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
@@ -44,7 +45,7 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
             it.containsKey(PRODUCT_KEY)// && it.getSerializable(PRODUCT_KEY) is BarcodeProduct
         }?.apply {
 
-            getSerializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
+            serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
                 try {
                     @Suppress("UNCHECKED_CAST")
                     start(barcodeAnalysis as T)
@@ -75,7 +76,7 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 
     protected fun startBarcodeDetailsActivity(){
 
-        arguments?.getSerializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
+        arguments?.serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
             val intent = getStartBarcodeDetailsActivityIntent().apply {
                 putExtra(BARCODE_CONTENTS_KEY, barcodeAnalysis.barcode.contents)
                 putExtra(BARCODE_FORMAT_KEY, barcodeAnalysis.barcode.formatName)

@@ -1,0 +1,7 @@
+- Update Kotlin version (1.7.20).
+- Some improvements in strings (English).
+- Added a toggle button in the settings to automatically copy the content of the scanned barcode to the clipboard.
+- Code improvement.
+- Added the ability to query remote APIs manually.
+- Added support for EPC QR Code generation.
+- Added a search button in the toolbar for QR Codes which contain an URL.

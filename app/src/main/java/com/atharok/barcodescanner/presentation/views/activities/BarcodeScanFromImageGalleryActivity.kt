@@ -26,6 +26,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.utils.INTENT_PICK_IMAGE
 import com.google.zxing.Result
@@ -73,7 +74,7 @@ open class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActi
      * repasser par la gallery pour récupérer l'image (utile lors de la rotation de l'écran).
      */
     private fun getImageUri(): Uri? = if(intent.hasExtra(URI_INTENT_KEY)) {
-        intent.getParcelableExtra(URI_INTENT_KEY, Uri::class.java)
+        intent.parcelable(URI_INTENT_KEY, Uri::class.java)
     } else null
 
 

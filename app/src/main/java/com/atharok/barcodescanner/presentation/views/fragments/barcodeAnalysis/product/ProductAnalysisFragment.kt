@@ -25,6 +25,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.FragmentProductAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.product.ApiError
@@ -54,7 +55,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
         // On retire les menus inutile
         menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
 
-        arguments?.getSerializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
+        arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
             if(apiError == ApiError.NO_RESULT)
                 menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
         }
@@ -98,7 +99,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
 
         configureAboutBarcodeFragment()
 
-        arguments?.getSerializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
+        arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
             when(apiError){
                 ApiError.NO_INTERNET_PERMISSION, ApiError.ERROR -> {
                     configureProductSearchApiEntitledLayout()

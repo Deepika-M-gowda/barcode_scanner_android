@@ -403,6 +403,12 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <style name="ErrorRedTextViewTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">?colorNegative</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
     <style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">?appBackgroundColorSecondary</item>
         <item name="android:timePickerStyle">@style/TimePickerTheme</item>

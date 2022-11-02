@@ -1,0 +1,7 @@
+- Mise à jour de la version de Kotlin (1.7.20).
+- Quelques améliorations dans les textes anglais.
+- Ajout d'un bouton dans les paramètres permettant de copier automatiquement le contenu du code-barres scanné dans le presse-papiers.
+- Amélioration du code.
+- Ajout de la possibilité de rechercher sur les APIs distantes manuellement.
+- Ajout de la prise en charge de la génération de QR Code EPC.
+- Ajout de la possibilité de rechercher sur le web via un bouton dans la toolbar lors du scan d'un QR Code contenant une URL.
