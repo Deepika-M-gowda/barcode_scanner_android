@@ -21,10 +21,10 @@
 package com.atharok.barcodescanner.presentation.views.fragments.templates
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentExpandableViewBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.databinding.TemplateTextViewContentsBinding

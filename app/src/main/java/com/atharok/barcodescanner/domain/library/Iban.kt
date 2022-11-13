@@ -31,7 +31,7 @@ class Iban {
 
         var success = false
 
-        val step1 = text.filter { !it.isWhitespace() }
+        val step1 = text.filter { !it.isWhitespace() }.uppercase()
 
         if(step1.length in MIN_LENGTH..MAX_LENGTH){
             val step2: String = movePrefixToSuffix(step1)
@@ -86,5 +86,9 @@ class Iban {
         return if(error) null else stringBuilder.toString().toInt()
     }
 
-    private fun convertCharToDigit(char: Char): Int = (char.uppercaseChar()).code-55
+    /**
+     * On part du code ASCII (A=65, B=66, C=67, ...) et on lui retire 55 pour obtenir le chiffre
+     * voulu pour le calcul de l'IBAN (A=10, B=11, C=12, ...).
+     */
+    private fun convertCharToDigit(char: Char): Int = char.code-55
 }

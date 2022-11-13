@@ -1,0 +1,6 @@
+- Added spanish translation (Thanks to zgll2022).
+- Added Brave Search as a search engine.
+- Change the Eco-Score icon.
+- Changed the icon for the "open with a browser" action.
+- Light theme improvement.
+- Code improvements.

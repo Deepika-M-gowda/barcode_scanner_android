@@ -24,8 +24,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
 import kotlinx.coroutines.launch
 
 class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel() {

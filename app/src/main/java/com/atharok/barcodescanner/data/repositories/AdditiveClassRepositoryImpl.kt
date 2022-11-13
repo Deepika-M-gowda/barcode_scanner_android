@@ -22,11 +22,11 @@ package com.atharok.barcodescanner.data.repositories
 
 import android.content.Context
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.data.file.FileFetcher
+import com.atharok.barcodescanner.data.file.JsonManager
 import com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.AdditiveClassResponse
 import com.atharok.barcodescanner.domain.entity.dependencies.AdditiveClass
 import com.atharok.barcodescanner.domain.repositories.AdditiveClassRepository
-import com.atharok.barcodescanner.data.file.FileFetcher
-import com.atharok.barcodescanner.data.file.JsonManager
 import java.io.File
 
 class AdditiveClassRepositoryImpl(private val context: Context,

@@ -26,13 +26,13 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.setImageColorFromAttrRes
+import com.atharok.barcodescanner.common.utils.DIALOG_SIMPLE_VIEW_KOIN_NAMED
+import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAdditivesBinding
 import com.atharok.barcodescanner.domain.entity.dependencies.Additive
 import com.atharok.barcodescanner.domain.entity.dependencies.AdditiveClass
 import com.atharok.barcodescanner.domain.entity.dependencies.OverexposureRiskRate
-import com.atharok.barcodescanner.common.utils.DIALOG_SIMPLE_VIEW_KOIN_NAMED
-import com.atharok.barcodescanner.common.extensions.setImageColorFromAttrRes
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.google.android.material.chip.Chip
 import org.koin.android.ext.android.get
 import org.koin.core.component.KoinComponent

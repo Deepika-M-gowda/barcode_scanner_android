@@ -29,7 +29,7 @@ class UrlActionsFragment: AbstractIntentActionsFragment() {
 
     override fun start(barcode: Barcode, parsedResult: ParsedResult) {
         if(parsedResult.type == ParsedResultType.URI) {
-             addIntentActionFAB(ActionEnum.SEARCH_URL, parsedResult)
+             addIntentActionFAB(ActionEnum.OPEN_IN_WEB_BROWSER, parsedResult)
         }
     }
 }

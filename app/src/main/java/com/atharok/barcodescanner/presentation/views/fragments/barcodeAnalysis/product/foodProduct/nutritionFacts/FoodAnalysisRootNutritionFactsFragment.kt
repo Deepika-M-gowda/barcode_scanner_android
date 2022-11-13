@@ -26,13 +26,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisRootNutritionFactsBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.NutritionFactsEnum
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
-import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisRootNutritionFactsBinding
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import org.koin.android.ext.android.get
 
 /**

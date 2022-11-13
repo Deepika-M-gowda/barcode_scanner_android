@@ -21,8 +21,8 @@
 package com.atharok.barcodescanner.domain.entity.product.foodProduct
 
 import androidx.annotation.Keep
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 
 @Keep

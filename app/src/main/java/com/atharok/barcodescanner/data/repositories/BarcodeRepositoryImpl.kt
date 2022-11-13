@@ -21,10 +21,10 @@
 package com.atharok.barcodescanner.data.repositories
 
 import androidx.lifecycle.LiveData
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.data.database.BarcodeDao
-import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 
 class BarcodeRepositoryImpl(private val barcodeDao: BarcodeDao): BarcodeRepository {
 

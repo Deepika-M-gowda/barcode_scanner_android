@@ -23,10 +23,10 @@ package com.atharok.barcodescanner.presentation.views.recyclerView.nutritionFact
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.setBackground
 import com.atharok.barcodescanner.databinding.RecyclerViewItemNutritionFactsBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.NutritionFactsEnum
-import com.atharok.barcodescanner.common.extensions.setBackground
 
 class NutritionFactsHolder(private val viewBinding: RecyclerViewItemNutritionFactsBinding): RecyclerView.ViewHolder(viewBinding.root) {
 

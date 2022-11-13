@@ -20,8 +20,6 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import java.lang.StringBuilder
-
 class VEventBuilder {
 
     companion object{

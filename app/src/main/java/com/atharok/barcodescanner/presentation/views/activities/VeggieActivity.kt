@@ -26,11 +26,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.ActivityVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis
 import com.atharok.barcodescanner.presentation.views.recyclerView.veggie.VeggieItemAdapter
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 
 class VeggieActivity : BaseActivity() {
 

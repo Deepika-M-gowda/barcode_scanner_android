@@ -21,17 +21,19 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.bookProduct
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.extensions.convertToString
-import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBookAnalysisBinding
+import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ApiAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment
 import org.koin.android.ext.android.get
 
 /**

@@ -30,11 +30,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.databinding.TemplateItemBarcodeCreatorBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBinding
+import com.atharok.barcodescanner.databinding.TemplateItemBarcodeCreatorBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeCreatorFormsActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import org.koin.android.ext.android.get

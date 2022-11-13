@@ -18,6 +18,6 @@ App features :
 • Keep track of all your scanned barcodes with the history tool.
 • Generate your own barcodes
 • Customize the interface with different colors, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colors depending on your wallpaper.
-• Texts are entirely translated in english and in french.
+• Texts are entirely translated in english, spanish and french.
 
 This app respects your privacy. It does not contain any trackers and does not collect any data.

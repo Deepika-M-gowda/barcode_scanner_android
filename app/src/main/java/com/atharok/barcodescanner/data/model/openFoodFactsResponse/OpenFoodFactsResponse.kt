@@ -21,10 +21,10 @@
 package com.atharok.barcodescanner.data.model.openFoodFactsResponse
 
 import androidx.annotation.Keep
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.*
 import com.atharok.barcodescanner.common.extensions.polishText
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.product.ApiSource
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.*
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

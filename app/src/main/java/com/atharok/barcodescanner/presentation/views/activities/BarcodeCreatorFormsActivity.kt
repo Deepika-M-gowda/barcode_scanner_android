@@ -28,7 +28,10 @@ import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
+import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker

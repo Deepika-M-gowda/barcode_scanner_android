@@ -11,28 +11,28 @@
     <color name="lightBackgroundColorSecondary">#ffffff</color>
 
     <color name="lightBlueColorAccent">#2356c8</color>
-    <color name="lightBlueBackgroundColorPrimary">#fff7f8fd</color>
-    <color name="lightBlueBackgroundColorSecondary">#fff0f1f6</color>
+    <color name="lightBlueBackgroundColorPrimary">#fff0f1f6</color>
+    <color name="lightBlueBackgroundColorSecondary">#fff7f8fd</color>
     <color name="lightBlueIndicativeColor">#402356c8</color>
 
     <color name="lightOrangeColorAccent">#f9a826</color>
-    <color name="lightOrangeBackgroundColorPrimary">#fffffef7</color>
-    <color name="lightOrangeBackgroundColorSecondary">#fff8f7f0</color>
+    <color name="lightOrangeBackgroundColorPrimary">#fff8f7f0</color>
+    <color name="lightOrangeBackgroundColorSecondary">#fffffef7</color>
     <color name="lightOrangeIndicativeColor">#40f9a826</color>
 
     <color name="lightGreenColorAccent">#49a942</color>
-    <color name="lightGreenBackgroundColorPrimary">#fff8fcf8</color>
-    <color name="lightGreenBackgroundColorSecondary">#fff1f5f1</color>
+    <color name="lightGreenBackgroundColorPrimary">#fff1f5f1</color>
+    <color name="lightGreenBackgroundColorSecondary">#fff8fcf8</color>
     <color name="lightGreenIndicativeColor">#4049a942</color>
 
     <color name="lightRedColorAccent">#e4002b</color>
-    <color name="lightRedBackgroundColorPrimary">#fffff7f7</color>
-    <color name="lightRedBackgroundColorSecondary">#fff8f0f0</color>
+    <color name="lightRedBackgroundColorPrimary">#fff8f0f0</color>
+    <color name="lightRedBackgroundColorSecondary">#fffff7f7</color>
     <color name="lightRedIndicativeColor">#40e4002b</color>
 
     <color name="lightPurpleColorAccent">#6633cc</color>
-    <color name="lightPurpleBackgroundColorPrimary">#fff9f7fd</color>
-    <color name="lightPurpleBackgroundColorSecondary">#fff2f0f6</color>
+    <color name="lightPurpleBackgroundColorPrimary">#fff2f0f6</color>
+    <color name="lightPurpleBackgroundColorSecondary">#fff9f7fd</color>
     <color name="lightPurpleIndicativeColor">#406633cc</color>
 
     <!-- Front Color -->

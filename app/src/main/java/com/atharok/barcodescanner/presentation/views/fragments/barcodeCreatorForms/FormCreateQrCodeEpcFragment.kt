@@ -52,7 +52,7 @@ class FormCreateQrCodeEpcFragment: AbstractFormCreateBarcodeFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentFormCreateQrCodeEpcBinding.inflate(inflater, container, false)
-        a()
+        configureInputEditTexts()
         return viewBinding.root
     }
 
@@ -97,7 +97,7 @@ class FormCreateQrCodeEpcFragment: AbstractFormCreateBarcodeFragment() {
         return stringBuilder.toString().trim()
     }
 
-    private fun a() {
+    private fun configureInputEditTexts() {
 
         viewBinding.fragmentFormCreateQrCodeEpcIbanInputEditText.addTextChangedListener {
             val errorTextView = viewBinding.fragmentFormCreateQrCodeEpcIbanErrorTextView
@@ -114,12 +114,18 @@ class FormCreateQrCodeEpcFragment: AbstractFormCreateBarcodeFragment() {
             }
         }
 
+        // Si l'un des deux inputEditText suivant contient du texte, on enlève l'autre car seulement un des 2 doit contenir une valeur
+
         viewBinding.fragmentFormCreateQrCodeEpcRemittanceRefInputEditText.addTextChangedListener {
-            viewBinding.fragmentFormCreateQrCodeEpcRemittanceTextInputEditText.isEnabled = it.isNullOrEmpty()
+            viewBinding.fragmentFormCreateQrCodeEpcRemittanceTextInputEditText.apply {
+                visibility = if(it.isNullOrEmpty())View.VISIBLE else View.GONE
+            }
         }
 
         viewBinding.fragmentFormCreateQrCodeEpcRemittanceTextInputEditText.addTextChangedListener {
-            viewBinding.fragmentFormCreateQrCodeEpcRemittanceRefInputEditText.isEnabled = it.isNullOrEmpty()
+            viewBinding.fragmentFormCreateQrCodeEpcRemittanceRefInputEditText.apply {
+                visibility = if(it.isNullOrEmpty()) View.VISIBLE else View.GONE
+            }
         }
     }
 }

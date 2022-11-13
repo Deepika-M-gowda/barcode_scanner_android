@@ -35,12 +35,12 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
 import com.atharok.barcodescanner.common.extensions.toIntent
-import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
-import com.atharok.barcodescanner.domain.library.SettingsManager
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
+import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity

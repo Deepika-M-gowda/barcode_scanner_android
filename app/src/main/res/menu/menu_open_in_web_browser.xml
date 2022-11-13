@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/menu_search"
-        android:icon="@drawable/baseline_search_24"
+        android:icon="@drawable/outline_open_in_browser_24"
         app:showAsAction="ifRoom"
-        android:title="@string/search_label" />
+        android:title="@string/action_go_to_url_label" />
 </menu>

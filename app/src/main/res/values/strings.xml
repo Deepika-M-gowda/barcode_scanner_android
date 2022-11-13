@@ -450,6 +450,7 @@
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
     <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
@@ -689,6 +690,7 @@
     <string name="bing_label" translatable="false">Bing</string>
     <string name="duckduckgo_label" translatable="false">DuckDuckGo</string>
     <string name="startpage_label" translatable="false">Startpage</string>
+    <string name="brave_search_label" translatable="false">Brave Search</string>
     <string name="qwant_label" translatable="false">Qwant</string>
     <string name="ecosia_label" translatable="false">Ecosia</string>
     <string name="lilo_label" translatable="false">Lilo</string>

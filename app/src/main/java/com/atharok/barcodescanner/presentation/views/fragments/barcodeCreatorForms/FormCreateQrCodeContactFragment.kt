@@ -45,7 +45,8 @@ import ezvcard.Ezvcard
 import ezvcard.VCard
 import ezvcard.parameter.EmailType
 import ezvcard.parameter.TelephoneType
-import ezvcard.property.*
+import ezvcard.property.Email
+import ezvcard.property.Telephone
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.named

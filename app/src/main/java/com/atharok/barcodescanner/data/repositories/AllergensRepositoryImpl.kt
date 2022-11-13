@@ -20,11 +20,11 @@
 
 package com.atharok.barcodescanner.data.repositories
 
+import com.atharok.barcodescanner.data.file.FileFetcher
+import com.atharok.barcodescanner.data.file.JsonManager
 import com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.AllergenResponse
 import com.atharok.barcodescanner.domain.entity.dependencies.Allergen
 import com.atharok.barcodescanner.domain.repositories.AllergensRepository
-import com.atharok.barcodescanner.data.file.FileFetcher
-import com.atharok.barcodescanner.data.file.JsonManager
 import java.io.File
 
 class AllergensRepositoryImpl(private val fileFetcher: FileFetcher): AllergensRepository {

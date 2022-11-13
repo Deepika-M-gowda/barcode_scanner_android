@@ -23,6 +23,7 @@ package com.atharok.barcodescanner.domain.usecases
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
@@ -31,7 +32,6 @@ import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
 import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 import com.atharok.barcodescanner.domain.resources.Resource
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import kotlinx.coroutines.Dispatchers
 
 class ProductUseCase(private val foodProductRepository: FoodProductRepository,

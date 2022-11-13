@@ -22,14 +22,14 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisNutritionFactsTableBinding
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.nutritionFacts.NutritionFactsAdapter
 
 /**

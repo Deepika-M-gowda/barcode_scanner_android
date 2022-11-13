@@ -25,9 +25,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.databinding.*
-import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.common.extensions.setImageFromWeb
+import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisQualityBinding
+import com.atharok.barcodescanner.databinding.TemplateProductQualityBinding
+import com.atharok.barcodescanner.databinding.TemplateTextViewContentsBinding
+import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import org.koin.android.ext.android.get
 
 /**

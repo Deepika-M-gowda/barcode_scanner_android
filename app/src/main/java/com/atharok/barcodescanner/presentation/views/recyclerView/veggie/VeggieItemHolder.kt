@@ -22,10 +22,10 @@ package com.atharok.barcodescanner.presentation.views.recyclerView.veggie
 
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemVeggieBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis
 import com.atharok.barcodescanner.common.extensions.firstCharacterIntoCapital
 import com.atharok.barcodescanner.common.extensions.setTextColorFromAttrRes
+import com.atharok.barcodescanner.databinding.RecyclerViewItemVeggieBinding
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis
 
 class VeggieItemHolder(private val viewBinding: RecyclerViewItemVeggieBinding): RecyclerView.ViewHolder(viewBinding.root) {
 

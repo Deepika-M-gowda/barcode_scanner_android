@@ -21,8 +21,8 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.images
 
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemImageBinding
 import com.atharok.barcodescanner.common.extensions.setImageFromWeb
+import com.atharok.barcodescanner.databinding.RecyclerViewItemImageBinding
 
 class ImageHolder(private val viewBinding: RecyclerViewItemImageBinding): RecyclerView.ViewHolder(viewBinding.root) {
 

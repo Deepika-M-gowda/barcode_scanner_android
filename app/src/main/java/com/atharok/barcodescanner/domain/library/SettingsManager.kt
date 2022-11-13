@@ -104,6 +104,7 @@ class SettingsManager(private val context: Context) {
         "bing" -> context.getString(R.string.search_engine_bing_url, contents)
         "duckduckgo" -> context.getString(R.string.search_engine_duck_duck_go_url, contents)
         "startpage" -> context.getString(R.string.search_engine_startpage_url, contents)
+        "bravesearch" -> context.getString(R.string.search_engine_brave_search_url, contents)
         "qwant" -> context.getString(R.string.search_engine_qwant_url, contents)
         "ecosia" -> context.getString(R.string.search_engine_ecosia_url, contents)
         "lilo" -> context.getString(R.string.search_engine_lilo_url, contents)

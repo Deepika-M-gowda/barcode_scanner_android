@@ -21,9 +21,9 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.dialogSearchActions
 
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.library.SettingsManager
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import org.koin.android.ext.android.get

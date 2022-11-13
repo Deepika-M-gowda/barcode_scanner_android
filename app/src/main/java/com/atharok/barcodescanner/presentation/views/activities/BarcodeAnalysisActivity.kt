@@ -28,11 +28,17 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
+import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.IGNORE_USE_SEARCH_ON_API_SETTING_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.*
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.entity.product.ApiError
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
@@ -104,6 +110,18 @@ class BarcodeAnalysisActivity: BaseActivity() {
             barcode.is1DIndustrialBarcodeFormat -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode), BarcodeType.INDUSTRIAL)
             barcode.is2DBarcodeFormat -> configureMatrixCodeView(DefaultBarcodeAnalysis(barcode))
             else -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode), BarcodeType.UNKNOWN)
+        }
+    }
+
+    fun restartApiResearch() {
+        viewBinding.activityBarcodeInformationProgressBar.visibility = View.VISIBLE
+
+        val barcode: Barcode? = intent?.serializable(BARCODE_KEY, Barcode::class.java)
+
+        if(barcode!=null){
+            configureApiResearch(barcode)
+        } else {
+            viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
         }
     }
 

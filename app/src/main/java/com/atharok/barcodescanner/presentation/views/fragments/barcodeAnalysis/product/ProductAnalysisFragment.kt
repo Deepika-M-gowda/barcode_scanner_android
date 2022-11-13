@@ -26,11 +26,15 @@ import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.API_ERROR_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
+import com.atharok.barcodescanner.common.utils.IGNORE_USE_SEARCH_ON_API_SETTING_KEY
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentProductAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.product.ApiError
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisErrorApiFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
@@ -68,8 +72,10 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
 
             R.id.menu_activity_barcode_analysis_download_from_apis -> {
                 requireActivity().apply {
-                    intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
-                    recreate()
+                    if(this is BarcodeAnalysisActivity) {
+                        intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
+                        this.restartApiResearch()
+                    }
                 }
 
                 true

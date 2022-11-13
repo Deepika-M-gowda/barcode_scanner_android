@@ -1,0 +1,6 @@
+- Ajout de la langue espagnol (Merci à zgll2022).
+- Ajout de Brave Search comme moteur de recherche.
+- Changement de l'icône de l'Eco-Score.
+- Changement de l'icône pour l'action "ouvrir avec un navigateur".
+- Amélioration du thème clair.
+- Plusieurs améliorations mineures du code.

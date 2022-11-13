@@ -20,11 +20,11 @@
 
 package com.atharok.barcodescanner.data.repositories
 
+import com.atharok.barcodescanner.data.file.FileFetcher
+import com.atharok.barcodescanner.data.file.JsonManager
 import com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.CountryResponse
 import com.atharok.barcodescanner.domain.entity.dependencies.Country
 import com.atharok.barcodescanner.domain.repositories.CountriesRepository
-import com.atharok.barcodescanner.data.file.FileFetcher
-import com.atharok.barcodescanner.data.file.JsonManager
 import java.io.File
 
 class CountriesRepositoryImpl(private val fileFetcher: FileFetcher): CountriesRepository {

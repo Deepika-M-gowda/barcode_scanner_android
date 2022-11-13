@@ -45,7 +45,7 @@ enum class ActionEnum(val stringResource: Int, val drawableResource: Int): Seria
     OPEN_MAIL_DIALOG(R.string.action_title_dialog_label, R.drawable.baseline_mail_24),
     OPEN_SEARCH_DIALOG(R.string.search_label, R.drawable.baseline_search_24),
 
-    SEARCH_URL(R.string.action_go_to_url_label, R.drawable.baseline_search_24),
+    OPEN_IN_WEB_BROWSER(R.string.action_go_to_url_label, R.drawable.outline_open_in_browser_24),
     SEARCH_WITH_ENGINE(R.string.action_web_search_label, R.drawable.baseline_search_24),
 
     SHARE_TEXT(R.string.share_label, R.drawable.baseline_share_24),

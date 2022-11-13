@@ -634,7 +634,7 @@ val scopesModule: Module = module {
         }
 
         // ---- URL ----
-        scoped<Intent>(named(ActionEnum.SEARCH_URL)) { (parsedResult: URIParsedResult) ->
+        scoped<Intent>(named(ActionEnum.OPEN_IN_WEB_BROWSER)) { (parsedResult: URIParsedResult) ->
             //get(named(INTENT_SEARCH_URL)) { parametersOf(parsedResult) }
             get(named(INTENT_SEARCH_URL)) { parametersOf(parsedResult.uri) }
         }

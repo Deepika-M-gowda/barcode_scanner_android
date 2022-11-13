@@ -33,7 +33,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.templates.Expanda
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
-import java.lang.ClassCastException
 
 abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 

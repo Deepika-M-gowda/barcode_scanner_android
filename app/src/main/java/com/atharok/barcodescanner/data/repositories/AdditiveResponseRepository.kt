@@ -20,9 +20,9 @@
 
 package com.atharok.barcodescanner.data.repositories
 
-import com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.AdditiveResponse
 import com.atharok.barcodescanner.data.file.FileFetcher
 import com.atharok.barcodescanner.data.file.JsonManager
+import com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.AdditiveResponse
 import java.io.File
 
 class AdditiveResponseRepository(private val fileFetcher: FileFetcher) {

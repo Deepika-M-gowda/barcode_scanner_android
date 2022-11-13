@@ -26,12 +26,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
-import com.atharok.barcodescanner.databinding.TemplateWarningViewBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
 import com.atharok.barcodescanner.common.utils.isInternetAvailable
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisErrorApiBinding
+import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
+import com.atharok.barcodescanner.databinding.TemplateWarningViewBinding
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 
 /**

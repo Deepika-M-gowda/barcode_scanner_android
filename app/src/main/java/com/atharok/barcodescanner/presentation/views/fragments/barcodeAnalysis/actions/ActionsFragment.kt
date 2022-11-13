@@ -29,9 +29,9 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.databinding.FragmentBarcodeActionsBinding
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.google.zxing.client.result.ParsedResult
 import org.koin.android.ext.android.get

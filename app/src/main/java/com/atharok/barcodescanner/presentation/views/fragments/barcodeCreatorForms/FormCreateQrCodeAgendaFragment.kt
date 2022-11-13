@@ -27,10 +27,10 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.presentation.views.fragments.android.DatePickerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.android.TimePickerFragment
 import com.atharok.barcodescanner.databinding.FragmentFormCreateQrCodeAgendaBinding
 import com.atharok.barcodescanner.domain.library.VEventBuilder
+import com.atharok.barcodescanner.presentation.views.fragments.android.DatePickerFragment
+import com.atharok.barcodescanner.presentation.views.fragments.android.TimePickerFragment
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat

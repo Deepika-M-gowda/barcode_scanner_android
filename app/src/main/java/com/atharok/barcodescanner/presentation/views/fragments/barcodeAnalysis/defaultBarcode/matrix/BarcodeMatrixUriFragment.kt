@@ -27,12 +27,10 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.API_ERROR_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixUriBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.entity.product.ApiError
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
@@ -55,7 +53,7 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_search, menu)
+        inflater.inflate(R.menu.menu_open_in_web_browser, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
