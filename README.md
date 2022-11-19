@@ -62,10 +62,10 @@ Collect informations about a product during a scan:
 - With a simple scan, read business cards, add new contacts, add new events to your agenda, open URL or even connect to Wi-Fi.
 - Scan Food products barcodes to receive informations about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
 - Search informations about the product you scan, with a quick research on different websites such as Amazon or Fnac.
-- Keep track of all your sacnned barcodes with the history tool.
+- Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in english and in french.
+- Texts are entirely translated in english, spanish and french.
 
 # Licences
 

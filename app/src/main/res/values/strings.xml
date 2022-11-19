@@ -191,6 +191,7 @@
     <string name="nutrition_facts_table_label">Nutritional composition</string>
     <string name="off_per_100_label">For 100%1$s</string>
     <string name="off_per_serving_label">Per Serving (%1$s%2$s)</string>
+    <string name="off_per_serving_no_quantity_label">Per Serving</string>
     <string name="off_energy_kj_label">Energy (kJ)</string>
     <string name="off_energy_kcal_label">Energy (kcal)</string>
     <string name="off_fat_label">Fat</string>

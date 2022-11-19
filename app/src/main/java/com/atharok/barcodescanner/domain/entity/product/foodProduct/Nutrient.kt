@@ -34,11 +34,25 @@ class Nutrient(val entitled: NutritionFactsEnum,
 
     class NutrientValues(val value100g: Number?, val valueServing: Number?, val unit: String): Serializable {
 
-        fun getValue100gString(): String = if(value100g==null) "-" else "${round(value100g)}$unit"
-        fun getValueServingString(): String = if(valueServing==null) "-" else "${round(valueServing)}$unit"
+        fun getValue100gString(): String = getValueString(value100g)
+        fun getValueServingString(): String = getValueString(valueServing)
+
+        private fun getValueString(number: Number?): String {
+            val numberStr = number.toString()
+            return when {
+                numberStr == "null" || numberStr.isBlank() -> "-"
+                else -> {
+                    try {
+                        "${round(number?.toFloat())}$unit"
+                    } catch (e: Exception) {
+                        "$number$unit"
+                    }
+                }
+            }
+        }
 
         //On arrondie à 2 chiffres après la virgule, et on supprime le dernier caractère si il est à 0
-        private fun round(value: Number?): String = "%.2f".format(value).removeSuffix("0")
+        private fun round(value: Float?): String = "%.2f".format(value).removeSuffix("0")
     }
 
     class Quantity(private val lowQuantity: Float,
@@ -54,7 +68,6 @@ class Nutrient(val entitled: NutritionFactsEnum,
                 val div: Int = if(isBeverage) 2 else 1 // -> Pour les boissons on divise toutes les valeures par 2
 
                 when {
-
                     value100g.toFloat()>highQuantity/div -> QuantityRate.HIGH
                     value100g.toFloat()<lowQuantity/div -> QuantityRate.LOW
                     else -> QuantityRate.MODERATE

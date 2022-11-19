@@ -159,7 +159,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                     barcodeAnalysis = DefaultBarcodeAnalysis(barcode),
                     barcodeType = defaultBarcodeType,
                     apiError = ApiError.ERROR,
-                    message = it.throwable.localizedMessage
+                    message = it.throwable.toString()
                 )
 
                 is Resource.Success -> {

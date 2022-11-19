@@ -256,16 +256,22 @@ private fun createNutrient(nutritionFactsEnum: NutritionFactsEnum,
                            valueLow: Float? = null,
                            valueHigh: Float? = null,
                            isBeverage: Boolean? = null): Nutrient? {
-    if(value100g == null && valueServing == null) return null
 
-    val values = Nutrient.NutrientValues(value100g, value100g, unit ?: "")
+    // Dans NutrientsResponse, on récupère les valeurs Number au format com.google.gson.internal.LazilyParsedNumber.
+    // Si il n y a pas de valeur on obtient une valeur vide et non null. Si c'est le cas on fait en sorte de récupérer une valeur null.
+    val newValue100g = if(value100g.toString().isBlank()) null else value100g
+    val newValueServing = if(valueServing.toString().isBlank()) null else valueServing
+
+    if(newValue100g == null && newValueServing == null) return null
+
+    val values = Nutrient.NutrientValues(newValue100g, newValueServing, unit ?: "")
     val quantity = createQuantity(valueLow, valueHigh, isBeverage)
     return Nutrient(nutritionFactsEnum, values, quantity)
 }
 
 private fun createQuantity(valueLow: Float? = null,
-                   valueHigh: Float? = null,
-                   isBeverage: Boolean? = null): Nutrient.Quantity? {
+                           valueHigh: Float? = null,
+                           isBeverage: Boolean? = null): Nutrient.Quantity? {
     if(valueLow == null || valueHigh == null || isBeverage == null) return null
 
     return Nutrient.Quantity(valueLow, valueHigh, isBeverage)

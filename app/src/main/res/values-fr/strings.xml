@@ -191,6 +191,7 @@
     <string name="nutrition_facts_table_label">Composition nutritionnelle</string>
     <string name="off_per_100_label">Pour 100%1$s</string>
     <string name="off_per_serving_label">Par portion (%1$s%2$s)</string>
+    <string name="off_per_serving_no_quantity_label">Par portion</string>
     <string name="off_energy_kj_label">Energie (kJ)</string>
     <string name="off_energy_kcal_label">Energie (kcal)</string>
     <string name="off_fat_label">Matières grasses</string>

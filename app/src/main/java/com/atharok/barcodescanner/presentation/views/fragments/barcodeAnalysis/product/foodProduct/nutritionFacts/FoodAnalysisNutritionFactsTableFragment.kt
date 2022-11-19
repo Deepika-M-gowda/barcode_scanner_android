@@ -65,7 +65,10 @@ class FoodAnalysisNutritionFactsTableFragment : BarcodeAnalysisFragment<FoodBarc
         }
         else {
             viewBinding.fragmentFoodAnalysisNutritionFactsTableEntitledServingTextView.text =
-                getString(R.string.off_per_serving_label, foodProduct.servingQuantity.toString(), foodProduct.unit)
+                if(foodProduct.servingQuantity==null)
+                    getString(R.string.off_per_serving_no_quantity_label)
+                else
+                    getString(R.string.off_per_serving_label, foodProduct.servingQuantity.toString(), foodProduct.unit)
         }
 
     }
