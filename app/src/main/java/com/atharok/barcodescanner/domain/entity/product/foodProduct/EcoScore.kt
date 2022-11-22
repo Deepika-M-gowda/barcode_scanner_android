@@ -21,13 +21,12 @@
 package com.atharok.barcodescanner.domain.entity.product.foodProduct
 
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.*
 
-enum class EcoScore(val ecoScoreImageUrl: String, val descriptionStringResource: Int) {
-    A(ECO_SCORE_A_URL, R.string.eco_score_description_a),
-    B(ECO_SCORE_B_URL, R.string.eco_score_description_b),
-    C(ECO_SCORE_C_URL, R.string.eco_score_description_c),
-    D(ECO_SCORE_D_URL, R.string.eco_score_description_d),
-    E(ECO_SCORE_E_URL, R.string.eco_score_description_e),
-    UNKNOWN(ECO_SCORE_UNKNOWN_URL, R.string.eco_score_description_unknown)
+enum class EcoScore(val drawableResource: Int, val descriptionStringResource: Int) {
+    A(R.drawable.ecoscore_a, R.string.eco_score_description_a),
+    B(R.drawable.ecoscore_b, R.string.eco_score_description_b),
+    C(R.drawable.ecoscore_c, R.string.eco_score_description_c),
+    D(R.drawable.ecoscore_d, R.string.eco_score_description_d),
+    E(R.drawable.ecoscore_e, R.string.eco_score_description_e),
+    UNKNOWN(-1, R.string.eco_score_description_unknown)
 }

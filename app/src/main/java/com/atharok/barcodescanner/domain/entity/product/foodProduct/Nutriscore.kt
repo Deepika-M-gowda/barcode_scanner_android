@@ -21,13 +21,12 @@
 package com.atharok.barcodescanner.domain.entity.product.foodProduct
 
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.*
 
-enum class Nutriscore(val nutriscoreImageUrl: String, val descriptionStringResource: Int) {
-    A(NUTRISCORE_A_URL, R.string.nutriscore_description_a),
-    B(NUTRISCORE_B_URL, R.string.nutriscore_description_b),
-    C(NUTRISCORE_C_URL, R.string.nutriscore_description_c),
-    D(NUTRISCORE_D_URL, R.string.nutriscore_description_d),
-    E(NUTRISCORE_E_URL, R.string.nutriscore_description_e),
-    UNKNOWN(NUTRISCORE_UNKNOWN_URL, R.string.nutriscore_description_unknown)
+enum class Nutriscore(val drawableResource: Int, val descriptionStringResource: Int) {
+    A(R.drawable.nutriscore_a, R.string.nutriscore_description_a),
+    B(R.drawable.nutriscore_b, R.string.nutriscore_description_b),
+    C(R.drawable.nutriscore_c, R.string.nutriscore_description_c),
+    D(R.drawable.nutriscore_d, R.string.nutriscore_description_d),
+    E(R.drawable.nutriscore_e, R.string.nutriscore_description_e),
+    UNKNOWN(-1, R.string.nutriscore_description_unknown)
 }

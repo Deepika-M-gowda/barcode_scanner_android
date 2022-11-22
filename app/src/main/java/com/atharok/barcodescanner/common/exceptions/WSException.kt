@@ -25,7 +25,7 @@ import java.io.IOException
 import java.net.HttpURLConnection
 
 class WSException(val code: Int, val type: Type, message: String?): IOException(message) {
-    constructor(response: Response): this(response.code(), response.type(), response.message())
+    constructor(response: Response): this(response.code, response.type(), response.message)
 
     enum class Type {
         NOT_FOUND,
@@ -37,7 +37,7 @@ class WSException(val code: Int, val type: Type, message: String?): IOException(
 
     companion object {
         private fun Response.type(): Type {
-            return when(code()){
+            return when(code){
                 HttpURLConnection.HTTP_NOT_FOUND -> Type.NOT_FOUND
                 HttpURLConnection.HTTP_UNAUTHORIZED -> Type.UNAUTHORISED
                 426 -> Type.UPDATE_REQUIRED

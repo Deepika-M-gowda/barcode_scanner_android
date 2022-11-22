@@ -111,7 +111,7 @@ class SettingsManager(private val context: Context) {
         else -> context.getString(R.string.search_engine_google_url, contents)
     }
 
-    private fun useDarkTheme(): Boolean = when(theme){
+    fun useDarkTheme(): Boolean = when(theme){
         "system" -> isDarkThemeSystemOn()
         "light" -> false
         "dark" -> true

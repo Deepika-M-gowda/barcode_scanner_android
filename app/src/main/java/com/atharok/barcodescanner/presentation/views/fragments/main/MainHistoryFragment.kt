@@ -26,7 +26,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +48,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
 import org.koin.android.ext.android.get
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
@@ -54,7 +57,7 @@ import org.koin.core.qualifier.named
  */
 class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListener, HistoryItemTouchHelperListener {
 
-    private val databaseViewModel: DatabaseViewModel by sharedViewModel()
+    private val databaseViewModel: DatabaseViewModel by activityViewModel()
     private val adapter: HistoryItemAdapter = HistoryItemAdapter(this)
 
     private var _binding: FragmentMainHistoryBinding? = null
@@ -72,6 +75,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configureMenu()
 
         viewBinding.fragmentMainHistoryRecyclerView.visibility = View.GONE
         viewBinding.fragmentMainHistoryEmptyTextView.visibility = View.GONE
@@ -90,8 +94,6 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
                 viewBinding.fragmentMainHistoryRecyclerView.visibility = View.VISIBLE
             }
         }
-
-        setHasOptionsMenu(true)
     }
 
     override fun onAttach(context: Context) {
@@ -102,17 +104,18 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_history, menu)
+    private fun configureMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_history, menu)
+            }
 
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.menu_history_delete_all -> {showDeleteConfirmationDialog(); true}
-            else -> super.onOptionsItemSelected(item)
-        }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
+                R.id.menu_history_delete_all -> {showDeleteConfirmationDialog(); true}
+                else -> false
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     // ---- HistoryItemAdapter.OnItemClickListener Implementation ----

@@ -33,6 +33,7 @@ import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.android.material.chip.Chip
@@ -72,20 +73,22 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
             chipView = viewBinding.fragmentFoodAnalysisVeggieVeganChip,
             colorResource = foodProduct.veganStatus.colorResource,
             drawableResource = foodProduct.veganStatus.drawableResource,
-            stringResource = foodProduct.veganStatus.stringResource)
+            stringResource = foodProduct.veganStatus.stringResource
+        )
 
         configureChipWithIngredientsAnalysis(
             chipView = viewBinding.fragmentFoodAnalysisVeggieVegetarianChip,
             colorResource = foodProduct.vegetarianStatus.colorResource,
             drawableResource = foodProduct.vegetarianStatus.drawableResource,
-            stringResource = foodProduct.vegetarianStatus.stringResource)
+            stringResource = foodProduct.vegetarianStatus.stringResource
+        )
 
         configureChipWithIngredientsAnalysis(
             chipView = viewBinding.fragmentFoodAnalysisVeggiePalmOilChip,
             colorResource = foodProduct.palmOilStatus.colorResource,
             drawableResource = foodProduct.palmOilStatus.drawableResource,
-            stringResource = foodProduct.palmOilStatus.stringResource)
-
+            stringResource = foodProduct.palmOilStatus.stringResource
+        )
     }
 
     private fun configureChipWithIngredientsAnalysis(chipView: Chip, @AttrRes colorResource: Int, drawableResource: Int, stringResource: Int){
@@ -93,7 +96,8 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
         chipView.text = getString(stringResource).firstCharacterIntoCapital()
 
         chipView.setChipTextColorFromAttrRes(colorResource)
-        chipView.setChipBackgroundColorFromAttrRes(R.attr.appBackgroundColorPrimary)
+        val backgroundRes = if(get<SettingsManager>().useDarkTheme()) R.attr.appBackgroundColorPrimary else R.attr.appBackgroundColorSecondary
+        chipView.setChipBackgroundColorFromAttrRes(backgroundRes)
         chipView.setChipStrokeColorFromAttrRes(colorResource)
         chipView.setChipIconTintFromAttrRes(colorResource)
         chipView.setChipIconResource(drawableResource)

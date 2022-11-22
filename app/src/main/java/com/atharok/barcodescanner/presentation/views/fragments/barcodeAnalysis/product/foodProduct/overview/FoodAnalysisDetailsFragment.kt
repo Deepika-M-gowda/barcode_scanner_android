@@ -33,14 +33,14 @@ import com.atharok.barcodescanner.domain.entity.dependencies.Country
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class FoodAnalysisDetailsFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>() {
 
-    private val viewModel: ExternalFileViewModel by sharedViewModel()
+    private val viewModel: ExternalFileViewModel by activityViewModel()
 
     private var _binding: FragmentFoodAnalysisDetailsBinding? = null
     private val viewBinding get() = _binding!!

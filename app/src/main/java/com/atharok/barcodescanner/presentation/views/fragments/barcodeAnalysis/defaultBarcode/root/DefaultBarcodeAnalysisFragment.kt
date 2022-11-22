@@ -22,7 +22,10 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
@@ -38,32 +41,6 @@ class DefaultBarcodeAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAna
     private var _binding: FragmentDefaultBarcodeAnalysisBinding? = null
     private val viewBinding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
-
-        // On retire les menus inutiles
-        menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
-        menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-
-            R.id.menu_activity_barcode_analysis_about_barcode_item -> {
-                startBarcodeDetailsActivity()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentDefaultBarcodeAnalysisBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -72,6 +49,27 @@ class DefaultBarcodeAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAna
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+    }
+
+    override fun configureMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
+
+                // On retire les menus inutiles
+                menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
+                menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
+                R.id.menu_activity_barcode_analysis_about_barcode_item -> {
+                    startBarcodeDetailsActivity()
+                    true
+                }
+                else -> false
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun start(product: DefaultBarcodeAnalysis) {

@@ -21,11 +21,13 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
+import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
@@ -38,35 +40,6 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
 
     private lateinit var sourceApiInfoAlertDialog: AlertDialog
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
-
-        // On retire le menu pour rechercher dans les APIs, car ici la recherche à déjà été faite.
-        menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-
-            R.id.menu_activity_barcode_analysis_product_source_api_info_item -> {
-                sourceApiInfoAlertDialog.show()
-                true
-            }
-            R.id.menu_activity_barcode_analysis_about_barcode_item -> {
-                startBarcodeDetailsActivity()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     private fun configureSourceApiInfoAlertDialog(titleResource: Int, layout: Int, urlResource: Int){
         sourceApiInfoAlertDialog = AlertDialog.Builder(requireActivity()).apply {
             setTitle(getString(titleResource))
@@ -77,6 +50,30 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
                 startActivity(intent)
             }
         }.create()
+    }
+
+    override fun configureMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
+
+                // On retire le menu pour rechercher dans les APIs, car ici la recherche à déjà été faite.
+                menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId) {
+                R.id.menu_activity_barcode_analysis_product_source_api_info_item -> {
+                    sourceApiInfoAlertDialog.show()
+                    true
+                }
+                R.id.menu_activity_barcode_analysis_about_barcode_item -> {
+                    startBarcodeDetailsActivity()
+                    true
+                }
+                else -> false
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun start(product: T) {

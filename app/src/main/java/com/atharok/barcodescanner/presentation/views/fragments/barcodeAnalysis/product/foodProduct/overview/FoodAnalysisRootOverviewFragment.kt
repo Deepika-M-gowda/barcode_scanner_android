@@ -127,7 +127,7 @@ class FoodAnalysisRootOverviewFragment : BarcodeAnalysisFragment<FoodBarcodeAnal
         title = getString(R.string.nutriscore_entitled_label),
         subtitle = getString(nutriscore.descriptionStringResource),
         description = getString(R.string.nutriscore_description),
-        imageUrl = nutriscore.nutriscoreImageUrl
+        drawableRes = nutriscore.drawableResource
     )
 
     private fun configureNovaGroupFragment(noveGroup: NovaGroup) = configureQualityFragment(
@@ -135,7 +135,7 @@ class FoodAnalysisRootOverviewFragment : BarcodeAnalysisFragment<FoodBarcodeAnal
         title = getString(R.string.nova_group_entitled_label),
         subtitle = getString(noveGroup.descriptionStringResource),
         description = getString(R.string.nova_group_description),
-        imageUrl = noveGroup.novaGroupImageUrl
+        drawableRes = noveGroup.drawableResource
     )
 
     private fun configureEcoScoreFragment(ecoScore: EcoScore) = configureQualityFragment(
@@ -143,13 +143,13 @@ class FoodAnalysisRootOverviewFragment : BarcodeAnalysisFragment<FoodBarcodeAnal
         title = getString(R.string.eco_score_entitled_label),
         subtitle = getString(ecoScore.descriptionStringResource),
         description = getString(R.string.eco_score_description),
-        imageUrl = ecoScore.ecoScoreImageUrl
+        drawableRes = ecoScore.drawableResource
     )
 
-    private fun configureQualityFragment(frameLayout: FrameLayout, title: String, subtitle: String, description: String, imageUrl: String?){
+    private fun configureQualityFragment(frameLayout: FrameLayout, title: String, subtitle: String, description: String, drawableRes: Int){
 
         val fragment = FoodAnalysisQualityFragment.newInstance(
-            imageUrl = imageUrl,
+            drawableRes = drawableRes,
             title = title,
             subtitle = subtitle,
             description = description

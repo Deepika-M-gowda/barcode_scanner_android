@@ -25,7 +25,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.common.extensions.setImageFromWeb
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisQualityBinding
 import com.atharok.barcodescanner.databinding.TemplateProductQualityBinding
 import com.atharok.barcodescanner.databinding.TemplateTextViewContentsBinding
@@ -37,26 +36,11 @@ import org.koin.android.ext.android.get
  */
 class FoodAnalysisQualityFragment : BaseFragment() {
 
-    private var title: String? = null
-    private var subtitle: String? = null
-    private var description: String? = null
-    private var imageUrl: String? = null
-
     private var _binding: FragmentFoodAnalysisQualityBinding? = null
     private val viewBinding get() = _binding!!
 
     private lateinit var headerProductQualityTemplateBinding: TemplateProductQualityBinding
     private lateinit var bodyTextViewTemplateBinding: TemplateTextViewContentsBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            title = it.getString(TITLE_KEY)
-            subtitle = it.getString(SUBTITLE_KEY)
-            description = it.getString(DESCRIPTION_KEY)
-            imageUrl = it.getString(IMAGE_URL_KEY)
-        }
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentFoodAnalysisQualityBinding.inflate(inflater, container, false)
@@ -90,34 +74,39 @@ class FoodAnalysisQualityFragment : BaseFragment() {
 
         val cardView = viewBinding.root
 
-        if (!title.isNullOrBlank() || !subtitle.isNullOrBlank() || !description.isNullOrBlank() || !imageUrl.isNullOrBlank()) {
-            cardView.visibility = View.VISIBLE
+        arguments?.let {
+            val title = it.getString(TITLE_KEY)
+            val subtitle = it.getString(SUBTITLE_KEY)
+            val description = it.getString(DESCRIPTION_KEY)
+            val drawableResource = it.getInt(DRAWABLE_RESOURCE_KEY)
 
-            headerProductQualityTemplateBinding.templateProductQualityEntitled.text = title
-            headerProductQualityTemplateBinding.templateProductQualityDescription.text = subtitle
-            headerProductQualityTemplateBinding.templateProductQualityImageView.setImageFromWeb(imageUrl)
-            bodyTextViewTemplateBinding.root.text = description
-        } else {
-            cardView.visibility = View.GONE
+            if (!title.isNullOrBlank() || !subtitle.isNullOrBlank() || !description.isNullOrBlank() || drawableResource!=-1) {
+                cardView.visibility = View.VISIBLE
+
+                headerProductQualityTemplateBinding.templateProductQualityEntitled.text = title
+                headerProductQualityTemplateBinding.templateProductQualityDescription.text = subtitle
+                headerProductQualityTemplateBinding.templateProductQualityImageView.setImageResource(drawableResource)
+                bodyTextViewTemplateBinding.root.text = description
+            } else {
+                cardView.visibility = View.GONE
+            }
         }
     }
 
     companion object {
-        private const val IMAGE_URL_KEY = "imageUrlKey"
+        private const val DRAWABLE_RESOURCE_KEY = "drawableResourceKey"
         private const val TITLE_KEY = "titleKey"
         private const val SUBTITLE_KEY = "subtitleKey"
         private const val DESCRIPTION_KEY = "descriptionKey"
 
         @JvmStatic
-        fun newInstance(imageUrl: String?, title: String, subtitle: String, description: String? = null) =
+        fun newInstance(drawableRes: Int, title: String, subtitle: String, description: String? = null) =
             FoodAnalysisQualityFragment().apply {
                 arguments = get<Bundle>().apply {
 
                     putString(TITLE_KEY, title)
                     putString(SUBTITLE_KEY, subtitle)
-
-                    if(imageUrl != null)
-                        putString(IMAGE_URL_KEY, imageUrl)
+                    putInt(DRAWABLE_RESOURCE_KEY, drawableRes)
 
                     if(description != null)
                         putString(DESCRIPTION_KEY, description)

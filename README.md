@@ -77,8 +77,7 @@ Dependencies:
 - [Code Scanner](https://github.com/yuriy-budiyev/code-scanner) is licensed under [MIT License](https://mit-license.org/) by Yuriy Budiyev
 - [ez-vcard](https://github.com/mangstadt/ez-vcard) is licensed under [FreeBSD](https://www.freebsd.org/copyright/freebsd-license/) by Michael Angstadt
 - [Android Image Cropper](https://github.com/CanHub/Android-Image-Cropper) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by CanHub
-- [Glide](https://github.com/bumptech/glide) is licensed under [FreeBSD](https://www.freebsd.org/copyright/freebsd-license/) by Bump Technologies
-- [GlideToVectorYou](https://github.com/corouteam/GlideToVectorYou) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Corouteam
+- [Coil](https://github.com/coil-kt/coil) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by coil-kt
 - [Material Components for Android](https://github.com/material-components/material-components-android) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Material Components
 - [Koin](https://github.com/InsertKoinIO/koin) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by insert-koin.io
 - [Gson](https://github.com/google/gson) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google

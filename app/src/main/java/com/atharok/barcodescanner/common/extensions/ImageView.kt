@@ -21,38 +21,19 @@
 package com.atharok.barcodescanner.common.extensions
 
 import android.content.res.ColorStateList
-import android.net.Uri
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
-import com.bumptech.glide.Glide
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import coil.load
 
-fun ImageView.setImageFromWeb(url: String?, centerCrop: Boolean = false, layout: View? = null){
+fun ImageView.setImageFromWeb(url: String?, layout: View? = null){
     if(url.isNullOrBlank()){
         layout?.visibility = View.GONE
         this.visibility = View.GONE
     } else {
-        if(url.endsWith(".svg"))
-            setVectorImage(url)
-        else
-            setMatrixImage(url, centerCrop)
+        this.load(url)
     }
-}
-
-private fun ImageView.setMatrixImage(url: String, centerCrop: Boolean = false){
-    if(centerCrop)
-        Glide.with(context).load(url).centerCrop().into(this)
-    else
-        Glide.with(context).load(url).into(this)
-}
-
-private fun ImageView.setVectorImage(url: String){
-    val uri = Uri.parse(url)
-    GlideToVectorYou.init()
-        .with(context)
-        .load(uri, this)
 }
 
 fun ImageView.setImageColorFromAttrRes(@AttrRes attrRes: Int){

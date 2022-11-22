@@ -462,7 +462,11 @@ val viewsModule = module {
             this.text = text
             setEnsureMinTouchTargetSize(false)
             textAlignment = View.TEXT_ALIGNMENT_CENTER
-            setTextAppearance(R.style.ChipText)
+            if (Build.VERSION.SDK_INT < 23) {
+                setTextAppearance(context, R.style.ChipText);
+            } else {
+                setTextAppearance(R.style.ChipText);//Crash sur Android 5
+            }
         }
     }
 

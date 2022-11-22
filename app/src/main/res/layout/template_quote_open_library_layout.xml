@@ -15,6 +15,7 @@
             android:layout_width="194dp"
             android:layout_height="59dp"
             android:layout_centerHorizontal="true"
+            android:backgroundTint="@android:color/white"
             app:cardUseCompatPadding="false"
             app:cardElevation="0dp">
 
@@ -23,6 +24,7 @@
                 android:layout_width="178dp"
                 android:layout_height="43dp"
                 android:layout_gravity="center"
+                android:backgroundTint="@android:color/white"
                 android:src="@drawable/open_library_logo_356x87"
                 android:contentDescription="@string/image_view_description_logo" />
 

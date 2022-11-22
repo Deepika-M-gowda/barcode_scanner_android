@@ -1,0 +1,13 @@
+1.6.0
+
+- Beginning of the Russian translation (Thanks to s s).
+- Replacement of Glide and GlideToVectorYou dependencies by Coil.
+- Fix a crash on Android 5.
+- Code improvements.
+
+1.5.1
+
+- Fix error "java.lang.NumberFormatException: empty String" when search on OpenFoodFacts.
+- Correction of incorrect values in the nutritional table for "per serving".
+- Some improvements.
+- Dependencies update.

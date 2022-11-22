@@ -22,7 +22,10 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.extensions.serializable
@@ -48,47 +51,6 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
     private var _binding: FragmentProductAnalysisBinding? = null
     private val viewBinding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
-
-        // On retire les menus inutile
-        menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
-
-        arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
-            if(apiError == ApiError.NO_RESULT)
-                menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
-        }
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-
-            R.id.menu_activity_barcode_analysis_download_from_apis -> {
-                requireActivity().apply {
-                    if(this is BarcodeAnalysisActivity) {
-                        intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
-                        this.restartApiResearch()
-                    }
-                }
-
-                true
-            }
-
-            R.id.menu_activity_barcode_analysis_about_barcode_item -> {
-                startBarcodeDetailsActivity()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentProductAnalysisBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -97,6 +59,42 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+    }
+
+    override fun configureMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_activity_barcode_analysis, menu)
+
+                // On retire les menus inutile
+                menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
+
+                arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
+                    if(apiError == ApiError.NO_RESULT)
+                        menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
+                }
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
+
+                R.id.menu_activity_barcode_analysis_download_from_apis -> {
+                    requireActivity().apply {
+                        if(this is BarcodeAnalysisActivity) {
+                            intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
+                            this.restartApiResearch()
+                        }
+                    }
+                    true
+                }
+
+                R.id.menu_activity_barcode_analysis_about_barcode_item -> {
+                    startBarcodeDetailsActivity()
+                    true
+                }
+                else -> false
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun start(product: DefaultBarcodeAnalysis) {

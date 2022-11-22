@@ -115,7 +115,7 @@ const val INGREDIENTS_ANALYSIS_URL = "https://world.openfoodfacts.org/data/taxon
 
 // ------------------- URL des images du Nutriscore, NovaGroup et EcoScore -------------------------
 
-const val NUTRISCORE_A_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-a.svg"
+/*const val NUTRISCORE_A_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-a.svg"
 const val NUTRISCORE_B_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-b.svg"
 const val NUTRISCORE_C_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-c.svg"
 const val NUTRISCORE_D_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-d.svg"
@@ -128,19 +128,12 @@ const val NOVA_GROUP_3_URL = "https://static.openfoodfacts.org/images/misc/nova-
 const val NOVA_GROUP_4_URL = "https://static.openfoodfacts.org/images/misc/nova-group-4.svg"
 const val NOVA_GROUP_UNKNOWN_URL = "https://static.openfoodfacts.org/images/misc/nova-group-unknown.svg"
 
-/*const val ECO_SCORE_A_URL = "https://static.openfoodfacts.org/images/icons/ecoscore-a.svg"
-const val ECO_SCORE_B_URL = "https://static.openfoodfacts.org/images/icons/ecoscore-b.svg"
-const val ECO_SCORE_C_URL = "https://static.openfoodfacts.org/images/icons/ecoscore-c.svg"
-const val ECO_SCORE_D_URL = "https://static.openfoodfacts.org/images/icons/ecoscore-d.svg"
-const val ECO_SCORE_E_URL = "https://static.openfoodfacts.org/images/icons/ecoscore-e.svg"
-const val ECO_SCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-unknown.svg"*/
-
 const val ECO_SCORE_A_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-a.svg"
 const val ECO_SCORE_B_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-b.svg"
 const val ECO_SCORE_C_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-c.svg"
 const val ECO_SCORE_D_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-d.svg"
 const val ECO_SCORE_E_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-e.svg"
-const val ECO_SCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-unknown.svg"
+const val ECO_SCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-unknown.svg"*/
 
 // ----------------------------------------- Static Values -----------------------------------------
 

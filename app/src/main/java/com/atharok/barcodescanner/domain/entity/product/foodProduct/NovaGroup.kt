@@ -21,12 +21,11 @@
 package com.atharok.barcodescanner.domain.entity.product.foodProduct
 
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.*
 
-enum class NovaGroup(val novaGroupImageUrl: String?, val descriptionStringResource: Int) {
-    GROUP_1(NOVA_GROUP_1_URL, R.string.nova_group_description_1),
-    GROUP_2(NOVA_GROUP_2_URL, R.string.nova_group_description_2),
-    GROUP_3(NOVA_GROUP_3_URL, R.string.nova_group_description_3),
-    GROUP_4(NOVA_GROUP_4_URL, R.string.nova_group_description_4),
-    UNKNOWN(NOVA_GROUP_UNKNOWN_URL, R.string.nova_group_description_unknown)
+enum class NovaGroup(val drawableResource: Int, val descriptionStringResource: Int) {
+    GROUP_1(R.drawable.nova_group_1, R.string.nova_group_description_1),
+    GROUP_2(R.drawable.nova_group_2, R.string.nova_group_description_2),
+    GROUP_3(R.drawable.nova_group_3, R.string.nova_group_description_3),
+    GROUP_4(R.drawable.nova_group_4, R.string.nova_group_description_4),
+    UNKNOWN(-1, R.string.nova_group_description_unknown)
 }

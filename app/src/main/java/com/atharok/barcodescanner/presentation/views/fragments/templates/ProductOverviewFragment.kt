@@ -112,7 +112,6 @@ class ProductOverviewFragment : BaseFragment() {
     private fun configureImage(imageFrontUrl: String?){
         viewBinding.fragmentProductOverviewImageView.setImageFromWeb(
             url = imageFrontUrl,
-            centerCrop = true,
             layout = viewBinding.fragmentProductOverviewImageLayout
         )
 

@@ -30,7 +30,10 @@ import android.view.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
@@ -51,7 +54,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.budiyev.android.codescanner.*
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
@@ -67,7 +70,7 @@ class MainScannerFragment : BaseFragment() {
     private var canEnableCamera = true
 
     private var codeScanner: CodeScanner? = null
-    private val databaseViewModel: DatabaseViewModel by sharedViewModel()
+    private val databaseViewModel: DatabaseViewModel by activityViewModel()
 
     // ---- View ----
     private var _binding: FragmentMainScannerBinding? = null
@@ -95,10 +98,45 @@ class MainScannerFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configureMenu()
 
         if(isCameraPermissionGranted()) configureScanner() else askCameraPermission()
+    }
 
-        setHasOptionsMenu(true)
+    private fun configureMenu() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_scanner, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
+                R.id.menu_scanner_flash -> {
+                    switchTorchFlash()
+                    true
+                }
+                R.id.menu_scanner_scan_from_image -> {
+                    startBarcodeScanFromImageActivity()
+                    true
+                }
+                else -> false
+            }
+
+            override fun onPrepareMenu(menu: Menu) {
+                super.onPrepareMenu(menu)
+
+                if(hasFlash()) {
+                    if (codeScanner?.isFlashEnabled == true)
+                        menu.getItem(0).icon =
+                            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_on_24)
+                    else
+                        menu.getItem(0).icon =
+                            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_off_24)
+                }else{
+                    menu.getItem(0).isVisible = false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun onResume() {
@@ -146,38 +184,6 @@ class MainScannerFragment : BaseFragment() {
     private fun isCameraPermissionGranted(): Boolean {
         val permission: Int = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA)
         return permission == PackageManager.PERMISSION_GRANTED
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_scanner, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
-        R.id.menu_scanner_flash -> {
-            switchTorchFlash()
-            true
-        }
-        R.id.menu_scanner_scan_from_image -> {
-            startBarcodeScanFromImageActivity()
-            true
-        }
-        else -> super.onOptionsItemSelected(item)
-    }
-
-    override fun onPrepareOptionsMenu(menu: Menu) {
-        super.onPrepareOptionsMenu(menu)
-
-        if(hasFlash()) {
-            if (codeScanner?.isFlashEnabled == true)
-                menu.getItem(0).icon =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_on_24)
-            else
-                menu.getItem(0).icon =
-                    ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_off_24)
-        }else{
-            menu.getItem(0).isVisible = false
-        }
     }
 
     // ---- Flash ----

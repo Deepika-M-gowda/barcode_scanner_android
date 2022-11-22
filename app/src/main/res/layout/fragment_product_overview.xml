@@ -29,6 +29,7 @@
                 android:layout_width="@dimen/image_product_size"
                 android:layout_height="@dimen/image_product_size"
                 android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 android:contentDescription="@string/image_view_description_product_front" />
 
         </androidx.cardview.widget.CardView>

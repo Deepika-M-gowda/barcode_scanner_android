@@ -38,6 +38,7 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configureMenu()
 
         arguments?.takeIf {
             // Si les données ResultScanData sont bien stockées en mémoire
@@ -54,6 +55,8 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
             }
         }
     }
+
+    protected open fun configureMenu() {}
 
     abstract fun start(product: T)
 
