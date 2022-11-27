@@ -289,7 +289,7 @@
     <string name="snack_bar_message_error_email_missing">Вы должны ввести информацию хотя бы в одно из полей</string>
     <string name="snack_bar_message_error_localisation_missing">Вы должны указать широту и долготу</string>
     <string name="snack_bar_message_save_bitmap_ok">Изображение сохранено</string>
-    <string name="snack_bar_message_save_bitmap_error">Изображение не было сохранено...\nНедостаточно памяти?</string>
+    <string name="snack_bar_message_save_bitmap_error">Изображение не было сохранено…\nНедостаточно памяти?</string>
     <string name="snack_bar_message_share_bitmap_error">Произошла ошибка при настройке общего ресурса.</string>
 
     <!-- Actions -->
@@ -520,7 +520,7 @@
     <string name="permission_vibrate_description_label">Используется для включения вибрации при сканировании.</string>
 
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о продуктах питания, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов..</string>
+    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о продуктах питания, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных о кормах для домашних животных.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических продуктах.</string>
     <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг, независимо от их языка.</string>
@@ -600,7 +600,7 @@
     <string name="country_ng">Нигерия</string>
     <string name="country_ke">Кения</string>
     <string name="country_cm">Камерун</string>
-    <string name="country_ci">Кот-д'Ивуар</string>
+    <string name="country_ci">Кот-д\'Ивуар</string>
     <string name="country_tn">Тунис</string>
     <string name="country_tz">Танзания</string>
     <string name="country_sy">Сирия</string>
