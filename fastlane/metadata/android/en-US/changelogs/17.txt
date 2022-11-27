@@ -1,3 +1,3 @@
 1.6.1
 
-- Added complete russian translation.
+- Added complete russian translation (Thanks to s s).
