@@ -29,8 +29,8 @@
     <string name="title_generate">Создать</string>
     <string name="title_settings">Настройки</string>
 
-    <string name="title_qr_code_creator">Создать QR-код</string>
-    <string name="title_bar_code_creator">Создать штрих-код</string>
+    <string name="title_qr_code_creator">Создание QR-кода</string>
+    <string name="title_bar_code_creator">Создание штрих-кода</string>
     <string name="information_label">Информация</string>
     <string name="barcode_label">Штрих-код</string>
     <string name="download_from_api_label">Скачать с API</string>
@@ -82,7 +82,7 @@
     <string name="scan_error_short_information_label">Во время поиска информации произошла ошибка!</string>
     <string name="barcode_scanned_label">%1$s отсканировано!</string>
     <string name="barcode_found_on_label">Найдено в %1$s!</string>
-    <string name="barcode_not_found_on_api_label">Не найдено информации о %1$s!</string>
+    <string name="barcode_not_found_on_api_label">Не найдено информации в %1$s!</string>
     <string name="no_internet_permission">У вас нет разрешения на доступ в интернет!</string>
 
     <string name="about_barcode_information_label">Информация о штрих-коде</string>
@@ -119,10 +119,10 @@
     <string name="nutriscore_description_unknown">Nutri-Score отсутствует</string>
 
     <string name="nova_group_entitled_label">NOVA Group</string>
-    <string name="nova_group_description">NOVA Group - это классификация по 4 группам для обозначения уровня переработки продуктов питания:\n1 - Необработанные продукты или продукты с минимальной обработкой\n2 - Обработанные ингредиенты\n3 - Обработанная пища\n4 - Ультраобработанные продукты и напитки</string>
+    <string name="nova_group_description">NOVA Group - это классификация по 4 группам для обозначения уровня переработки продуктов питания:\n1 - Необработанные продукты или продукты с минимальной обработкой\n2 - Обработанные ингредиенты\n3 - Обработанные продукты\n4 - Ультраобработанные продукты и напитки</string>
     <string name="nova_group_description_1">Необработанные продукты или продукты с минимальной обработкой</string>
     <string name="nova_group_description_2">Обработанные ингредиенты</string>
-    <string name="nova_group_description_3">Обработанная пища</string>
+    <string name="nova_group_description_3">Обработанные продукты</string>
     <string name="nova_group_description_4">Ультраобработанные продукты и напитки</string>
     <string name="nova_group_description_unknown">NOVA Group отсутствует</string>
 
@@ -390,7 +390,7 @@
     <string name="qr_code_text_input_edit_text_hint_wifi_hide">Скрытая</string>
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
-    <string name="spinner_wifi_encryption_none">Без пароля</string>
+    <string name="spinner_wifi_encryption_none">Открытая</string>
 
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Название мероприятия</string>
@@ -532,7 +532,7 @@
     <string name="dependency_zxing_description_label">ZXing (" zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
     <string name="dependency_zxing_code_scanner_description_label">Библиотека сканера кодов для Android, основанная на ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard - это библиотека vCard, написанная на Java. Она может считывать и записывать vCard в различных форматах.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper - это библиотека для обрезки изображений для Android.</string>
+    <string name="dependency_android_image_cropper_description_label">Android Image Cropper - это библиотека обрезки изображений для Android.</string>
     <string name="dependency_coil_description_label">Библиотека загрузки изображений для Android, поддерживаемая Kotlin Coroutines.</string>
     <string name="dependency_material_components_description_label">Material Components для Android (MDC-Android) помогают разработчикам реализовывать Material Design. Разработанные основной командой инженеров и UX-дизайнеров Google, эти компоненты обеспечивают надежный рабочий процесс разработки для создания красивых и функциональных приложений для Android.\n\nMaterial Components для Android - это полноценная замена библиотеки Android Design Support.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Обеспечивает контекст Dispatchers.Main для приложений Android.</string>
