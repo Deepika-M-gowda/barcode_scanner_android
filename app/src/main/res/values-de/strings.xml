@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Permission Denied -->
+    <string name="camera_permission_denied">Sie haben den Zugriff auf die Kamera verweigert. Sie müssen diese Berechtigung zulassen um einen Barcode scannen zu können!</string>
+
+    <!-- AlertDialog -->
+    <string name="close_dialog_label">Schließen</string>
+    <string name="yes_label">Ja</string>
+    <string name="no_label">Nein</string>
+    <string name="go_to_dialog_label">Gehe zur Website</string>
+
+    <!-- ImageView Description -->
+    <string name="image_view_description_flag">Flagge</string>
+    <string name="image_view_description_logo">Logo</string>
+    <string name="image_view_description_type_icon">Typ</string>
+    <string name="image_view_description_bar_code">Barcode</string>
+    <string name="image_view_description_icon">Symbol</string>
+    <string name="image_view_description_product_front">Produktbild</string>
+    <string name="image_view_description_nutriscore">Nutri-Score</string>
+    <string name="image_view_description_nova_group">NOVA-Gruppe</string>
+    <string name="image_view_description_eco_score">Eco-Score</string>
+    <string name="image_view_description_background">Hintergrund</string>
+    <string name="image_view_description_image">Bild</string>
+
+    <!-- Menu Item -->
+    <string name="title_scan">Scan</string>
+    <string name="title_history">Historie</string>
+    <string name="title_generate">Erzeugen</string>
+    <string name="title_settings">Einstellungen</string>
+
+    <string name="title_qr_code_creator">Erzeuge einen QR Code</string>
+    <string name="title_bar_code_creator">Erzeuge einen Barcode</string>
+    <string name="information_label">Informationen</string>
+    <string name="barcode_label">Barcode</string>
+    <string name="download_from_api_label">Lade von APIs</string>
+    <string name="menu_more">Mehr</string>
+
+    <!-- QR Type -->
+    <string name="qr_code_type_name_text">Text</string>
+    <string name="qr_code_type_name_web_site">Webseite</string>
+    <string name="qr_code_type_name_contact">Kontakt</string>
+    <string name="qr_code_type_name_epc">EPC QR Code</string>
+    <string name="qr_code_type_name_mail">Email</string>
+    <string name="qr_code_type_name_sms">SMS</string>
+    <string name="qr_code_type_name_phone">Telefonnummer</string>
+    <string name="qr_code_type_name_geographic_coordinates">Geografische Koordinaten</string>
+    <string name="qr_code_type_name_agenda">Agenda</string>
+    <string name="qr_code_type_name_wifi">WLAN</string>
+
+    <!-- Product Type -->
+    <string name="bar_code_type_unknown_product">Produkt</string>
+    <string name="bar_code_type_food">Nahrungsmittel</string>
+    <string name="bar_code_type_pet_food">Tierfutter</string>
+    <string name="bar_code_type_beauty">Kosmetikprodukt</string>
+    <string name="bar_code_type_book">Buch</string>
+    <string name="bar_code_type_unknown_book_title">Buchtitel unbekannt</string>
+    <string name="bar_code_type_industrial">Industrieller Code</string>
+    <string name="bar_code_type_unknown_matrix">Matrix Code</string>
+    <string name="bar_code_type_name_unknown">Unbekannt</string>
+
+    <!-- History -->
+    <string name="label_history_empty">Kein Element gescannt…</string>
+    <string name="snack_bar_message_item_deleted">Das Produkt \"%1$s\" wurde aus der Historie gelöscht.</string>
+    <string name="popup_message_confirmation_delete_history">Lösche die gesammte Historie?</string>
+    <string name="menu_item_history_delete_all">Lösche Historie</string>
+    <string name="delete_label">Löschen</string>
+    <string name="cancel_label">Abbrechen</string>
+    <string name="record_label">Speichern</string>
+
+    <!-- CaptureActivity -->
+    <string name="scan_cancel_label">Scan abgebrochen!</string>
+    <string name="scan_error_exception_label">Ein Fehler ist aufgetreten: %1$s</string>
+    <string name="flash_label">Blitz</string>
+    <string name="scan_from_image_label">Bild</string>
+    <string name="intent_filter_scan_by_image">Scanne Bild</string>
+    <string name="scan_information_label">Zum scannen auf den Barcode zielen</string>
+
+    <!-- BarcodeAnalysisActivity -->
+    <string name="barcode_information_search_label">Suche…</string>
+    <string name="scan_error_label">Fehler beim scannen!</string>
+    <string name="scan_error_short_information_label">Beim suchen der Informationen ist ein Fehler aufgetreten!</string>
+    <string name="barcode_scanned_label">%1$s gescannt!</string>
+    <string name="barcode_found_on_label">Gefunden auf %1$s!</string>
+    <string name="barcode_not_found_on_api_label">Keine Informationen auf %1$s gefunden!</string>
+    <string name="no_internet_permission">Sie haben keine Berechtigung zum Internetzugriff!</string>
+
+    <string name="about_barcode_information_label">Informationen zum Barcode</string>
+    <string name="about_barcode_label">Über den Barcode</string>
+    <string name="about_barcode_format_label">Format: %1$s</string>
+    <string name="about_barcode_content_label">Barcode: %1$s</string>
+    <string name="about_barcode_origin_label">Herkunft: </string>
+
+    <!-- Product -->
+    <string name="product_search_label">Produktsuche</string>
+    <string name="no_product_found_label">Es wurde kein Produkt gefunden!</string>
+
+    <!-- Barcode Searching Error -->
+    <string name="warning_label">Warnung</string>
+    <string name="scan_error_information_label">Während der Suche nach Informationen über die externe API ist ein Fehler aufgetreten… Bitte die Internetverbindung und die Berechtigungen der App prüfen! Wenn das Problem weiterhin besteht könnte ein Serverproblem vorliegen.</string>
+    <string name="scan_error_internet_information_label">Keine Informationen zum Produkt abgerufen, Sie haben vermutlich keine Internetverbindung!</string>
+    <string name="scan_error_message_label">Fehler: </string>
+
+    <!-- Food Beauty and Pet Food Product -->
+    <string name="overview_tab_label">Übersicht</string>
+    <string name="ingredients_label">Zutaten</string>
+    <string name="nutrition_facts_tab_label">Nährwerte</string>
+
+    <!-- Overview -->
+    <string name="quality_label">Produktqualität</string>
+
+    <string name="nutriscore_entitled_label">Nutri-Score</string>
+    <string name="nutriscore_description">Der Nutri-Score ist eine Lebensmittel-Kennzeichnung welche aufzeigt wie ausgewogen ein Produkt auf einer Skala von A bis E zusammengesetzt ist. Zu den <b>positiven Aspekten</b> gehören der Gehalt an Früchten, Gemüse, Hülsenfrüchten, Nüssen, gewissen Ölen, Nahrungsfasern und Eiweiss. Umgekehrt tendiert der Score umso stärker in den <b>roten Bereich</b>, je mehr Zucker, Salz, gesättigte Fettsäuren und Energie ein Lebensmittel enthält.</string>
+    <string name="nutriscore_description_a">Sehr günstige Nährstoffzusammensetzung</string>
+    <string name="nutriscore_description_b">Günstige Nährstoffzusammensetzung</string>
+    <string name="nutriscore_description_c">Durchschnittliche Nährstoffzusammensetzung</string>
+    <string name="nutriscore_description_d">Ungünstige Nährstoffzusammensetzung</string>
+    <string name="nutriscore_description_e">Sehr ungünstige Nährstoffzusammensetzung</string>
+    <string name="nutriscore_description_unknown">Kein Nutri-Score</string>
+
+    <string name="nova_group_entitled_label">NOVA-Gruppe</string>
+    <string name="nova_group_description">NOVA-Gruppen ist eine Klassifizierung in 4 Gruppen, um den Grad der Verarbeitung von Lebensmitteln darzustellen.</string>
+    <string name="nova_group_description_1">Unverarbeitete oder minimal verarbeitete Lebensmittel</string>
+    <string name="nova_group_description_2">Verarbeitete Küchenzutaten</string>
+    <string name="nova_group_description_3">Verarbeitete Lebensmittel</string>
+    <string name="nova_group_description_4">Hochverarbeitete Nahrungsmittel und Getränke</string>
+    <string name="nova_group_description_unknown">Keine NOVA-Gruppe</string>
+
+    <string name="eco_score_entitled_label">Eco-Score</string>
+    <string name="eco_score_description">Der Eco-Score ist eine Umweltpunktzahl (ecoscore) von A bis E, welche es erleichtert, die Auswirkungen von Lebensmitteln auf die Umwelt zu vergleichen.</string>
+    <string name="eco_score_description_a">Sehr geringe Umweltauswirkungen</string>
+    <string name="eco_score_description_b">Geringe Umweltauswirkungen</string>
+    <string name="eco_score_description_c">Moderate Umweltauswirkungen</string>
+    <string name="eco_score_description_d">Hohe Umweltauswirkungen</string>
+    <string name="eco_score_description_e">Sehr hohe Umweltauswirkungen</string>
+    <string name="eco_score_description_unknown">Unbekannte Umweltauswirkungen</string>
+
+    <!-- Details -->
+    <string name="details_label">Details</string>
+    <string name="ingredients_analysis_label">Analyse der Zutaten: </string>
+    <string name="labels_label">Labels</string>
+    <string name="origins_label">Herkunft der Zutaten</string>
+    <string name="categories_label">Kategorien</string>
+    <string name="packaging_label">Verpackung</string>
+    <string name="stores_label">Geschäfte</string>
+    <string name="countries_label">Verkaufsland</string>
+
+    <!-- Ingredients -->
+    <string name="ingredients_no_information_found_label">Keine Zutatenliste für das Produkt gefunden…</string>
+    <string name="allergens_label">Allergene</string>
+    <string name="traces_label">Spurenelemente</string>
+    <string name="additives_label">Zusatzstoffe</string>
+    <string name="veggie_label">Vegetarisch</string>
+
+    <!-- Additif -->
+    <string name="off_additive_info_label">Info</string>
+    <string name="off_risk_low_label">Sicher</string>
+    <string name="off_risk_moderate_label">Zweifelhaft</string>
+    <string name="off_risk_high_label">Zu vermeiden</string>
+    <string name="off_risk_none_label">Unbekannte Risiken</string>
+
+    <string name="off_overexposure_risk_low_label">Niedrige Risikoaussetzung</string>
+    <string name="off_overexposure_risk_moderate_label">Moderate Risikoaussetzung</string>
+    <string name="off_overexposure_risk_high_label">Hohe Risikoaussetzung</string>
+    <string name="off_overexposure_risk_none_label">Unbekannte Risikoaussetzung</string>
+
+    <string name="stabilizer_label">Stabilisatoren</string>
+    <string name="stabilizer_description_label">Stabilisatoren, Verdickungsmittel und Geliermittel, welche Beschaffenheit, Handhabbarkeit, Aroma oder andere Parameter in definierter Weise erhalten.</string>
+    <string name="additive_no_information_found_label">Keine Informationen zu diesem Stabilisator gefunden!</string>
+
+    <!-- Veggie -->
+    <string name="ingredient_veggie_entitled_label">Zutaten welche bezüglich vegetarisch und vegan eine Rolle spielen.</string>
+    <string name="palm_oil_free_label">Palmölfrei</string>
+    <string name="contain_palm_oil_label">Enthält Palmöl</string>
+    <string name="may_contain_palm_oil_label">Kann Palmöl enthalten</string>
+    <string name="palm_oil_content_unknown_label">Zugabe von Palmöl unbekannt</string>
+    <string name="is_vegan_label">Vegan</string>
+    <string name="no_vegan_label">Nicht vegan</string>
+    <string name="maybe_vegan_label">Eventuell vegan</string>
+    <string name="vegan_status_unknown_label">Vegan Status unbekannt</string>
+    <string name="is_vegetarian_label">Vegetarisch</string>
+    <string name="no_vegetarian_label">Nicht vegetarisch</string>
+    <string name="maybe_vegetarian_label">Eventuell vegetarisch</string>
+    <string name="vegetarian_status_unknown_label">Vegetarisch Status unbekannt</string>
+
+    <!-- Nutrition -->
+    <string name="nutrition_facts_no_information_found_label">Keine Nährwerteigenschaften für dieses Produkt gefunden…</string>
+    <string name="nutrition_facts_entitled_label">Nährwerteigenschaften</string>
+
+    <!-- Table -->
+    <string name="nutrition_facts_table_label">Nährwerttabelle</string>
+    <string name="off_per_100_label">Pro 100%1$s</string>
+    <string name="off_per_serving_label">Pro Portion (%1$s%2$s)</string>
+    <string name="off_per_serving_no_quantity_label">Pro Portion</string>
+    <string name="off_energy_kj_label">Energie (kJ)</string>
+    <string name="off_energy_kcal_label">Energie (kcal)</string>
+    <string name="off_fat_label">Fett</string>
+    <string name="off_saturated_fat_label">Gesättigte Fettsäuren</string>
+    <string name="off_carbohydrates_label">Kohlenhydrate</string>
+    <string name="off_sugars_label">Zucker</string>
+    <string name="off_starch_label">Stärke</string>
+    <string name="off_fiber_label">Ballaststoffe</string>
+    <string name="off_proteins_label">Proteine</string>
+    <string name="off_salt_label">Salz</string>
+    <string name="off_sodium_label">Natrium</string>
+
+    <!-- For 100g -->
+    <string name="nutrient_level_entitled_label">Nährwerte pro 100g</string>
+    <string name="off_quantity_low_label">Niedrige Menge</string>
+    <string name="off_quantity_moderate_label">Moderate Menge</string>
+    <string name="off_quantity_high_label">Hohe Menge</string>
+    <string name="off_quantity_none_label">Unbekannte Menge</string>
+
+    <!-- Book -->
+    <string name="book_product_summary_label">Zusammenfassung</string>
+    <string name="book_product_more_label">Mehr</string>
+    <string name="book_product_pages_number_label">Anzahl der Seiten</string>
+    <string name="book_product_contributions_label">Mitwirkungen</string>
+    <string name="book_product_publish_date_label">Veröffentlichungsdatum</string>
+    <string name="book_product_original_title_label">Originaler Titel</string>
+    <string name="book_product_pages_number">%1$s Seiten</string>
+
+    <!-- Matrix Barcode -->
+    <string name="bar_code_content_label">Barcodeinhalt</string>
+    <string name="bar_code_analysis_label">Barcodeanalyse</string>
+
+    <!-- Matrix Barcode Contact Analysis -->
+    <string name="matrix_contact_name_label">Name:</string>
+    <string name="matrix_contact_organisation_label">Organisation:</string>
+    <string name="matrix_contact_title_label">Titel:</string>
+    <string name="matrix_contact_phone_label">Telefonnummer:</string>
+    <string name="matrix_contact_mail_label">Email:</string>
+    <string name="matrix_contact_address_label">Adresse:</string>
+    <string name="matrix_contact_notes_label">Notizen:</string>
+
+    <!-- Matrix Barcode Agenda Analysis -->
+    <string name="matrix_agenda_name_event_label">Ereignisname:</string>
+    <string name="matrix_agenda_start_date_event_label">Beginn:</string>
+    <string name="matrix_agenda_end_date_event_label">Ende:</string>
+    <string name="matrix_agenda_place_event_label">Ort:</string>
+    <string name="matrix_agenda_description_event_label">Beschreibung:</string>
+
+    <!-- Matrix Barcode Phone Analysis -->
+    <string name="matrix_phone_tel_number_label">Telefonnummer:</string>
+
+    <!-- Matrix Barcode Email Analysis -->
+    <string name="matrix_email_recipient_label">Empfänger:</string>
+    <string name="matrix_email_cc_label">CC:</string>
+    <string name="matrix_email_bcc_label">BCC:</string>
+    <string name="matrix_subject_label">Betreff:</string>
+    <string name="matrix_body_label">Nachricht:</string>
+
+    <!-- Matrix Barcode Wi-Fi Analysis -->
+    <string name="matrix_wifi_ssid_label">Netzwerkname/SSID:</string>
+    <string name="matrix_wifi_password_label">Passwort:</string>
+    <string name="matrix_wifi_encryption_label">Verschlüsselung:</string>
+    <string name="matrix_wifi_is_hidden_label">Versteckt:</string>
+    <string name="matrix_wifi_anonymous_identity_label">Anonyme Identität:</string>
+    <string name="matrix_wifi_identity_label">Identität:</string>
+    <string name="matrix_wifi_eap_method_label">Eap Methode:</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 Methode:</string>
+
+    <!-- Matrix Barcode URL Analysis -->
+    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_malicious_label">URL könnte bösartige Inhalte enthalten…</string>
+
+    <!-- Matrix Barcode URL Localisation Analysis -->
+    <string name="matrix_localisation_latitude_label">Breitengrad:</string>
+    <string name="matrix_localisation_longitude_label">Längengrad:</string>
+    <string name="matrix_localisation_altitude_label">Höhe:</string>
+    <string name="matrix_localisation_query_label">Anfrage:</string>
+
+    <!-- Barcode Description -->
+    <string name="bar_code_industrial_description_label">Dieser Barcodetyp wird häufig in der Industrie eingesetzt.</string>
+    <string name="bar_code_code_39_description_label">Code 39 ist ein Barcode welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Ausserdem wird er in militärischen Umgebungen und in der Automobilindustrie genutzt.</string>
+    <string name="bar_code_code_93_description_label">Code 93 ist ein Barcode welcher in militärischen Umgebungen und in der Automobilindustrie genutzt wird, so wie von der "Postes Canada" um spezielle Lieferinformationen zu hinterlegen.</string>
+    <string name="bar_code_code_128_description_label">Code 128 ist ein Barcode welcher häufig in der Industrie eingesetzt wird. Er wird im Transportwesen und zur Produktidentifizierung in Supply Chains verwendet, aber auch in der Automobilindustrie und zur Produktmarkierung in Apotheken. Code 128 ist weit verbreitet und findet auch in vielen weiteren Bereichen Anwendung.</string>
+    <string name="bar_code_itf_description_label">Code ITF (Interleaved 2 of 5) ist ein Barcode welcher hauptsächlich für den Warenversand Verwendung findet.</string>
+    <string name="bar_code_codabar_description_label">Codabar ist ein Barcode welcher entwickelt wurde um von Nadeldruckern gedruckt werden zu können. Findet heute seltener Anwendung, wird aber noch von vielen Bibliotheken genutzt.</string>
+    <string name="bar_code_upc_a_description_label">UPC-A (Universal Product Code) ist ein Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er besteht aus 12 Zahlen.</string>
+    <string name="bar_code_upc_e_description_label">UPC-E (Universal Product Code) ist ein gekürzter Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen UPC-A Barcode sind. Er besteht aus 8 Zahlen.</string>
+    <string name="bar_code_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
+    <string name="bar_code_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen EAN-13 Barcode sind. Er besteht aus 8 Zahlen.</string>
+
+    <!-- Snackbar Feddbacks -->
+    <string name="snack_bar_message_permission_refused">Sie müssen die Berechtigungen zulassen um diese Funktionalität nutzen zu können</string>
+    <string name="snack_bar_message_error_url_format">Eine Webadresse muss mit "http://" oder "https://" beginnen</string>
+    <string name="snack_bar_message_error_phone_number_missing">Sie müssen eine Telefonnummer eingeben</string>
+    <string name="snack_bar_message_error_email_missing">Sie müssen mindestens ein Eingabefeld ausfüllen</string>
+    <string name="snack_bar_message_error_localisation_missing">Sie müssen Längen- und Breitengrad angeben</string>
+    <string name="snack_bar_message_save_bitmap_ok">Bild wurde gespeichert</string>
+    <string name="snack_bar_message_save_bitmap_error">Bild wurde nicht gespeichert… \nZu wenig Speicherplatz?</string>
+    <string name="snack_bar_message_share_bitmap_error">Ein Fehler ist während der "Teilen" Konfiguration aufgetreten.</string>
+
+    <!-- Actions -->
+    <string name="intent_chooser_share_title">"Teilen mit…"</string>
+    <string name="intent_chooser_mail_title">"Sende Email…"</string>
+    <string name="copy_label">Kopieren</string>
+    <string name="barcode_copied_label">Barcode kopiert</string>
+    <string name="barcode_search_error_label">URL nicht unterstützt</string>
+
+    <!-- QR Code Generator -->
+
+    <!-- Barcode Generator Errors -->
+    <string name="error_bar_code_none_character_message">Sie müssen einen korrekten Wert im Eingabefeld eingeben.</string>
+    <string name="error_bar_code_not_a_number_message">Barcodes dürfen nur aus Zahlen bestehen.</string>
+    <string name="error_bar_code_wrong_length_message">Barcode muss aus %1$s Zahlen bestehen.</string>
+    <string name="error_bar_code_wrong_key_message">%1$ste Zahl (Prüfziffer) sollte %2$s sein.</string>
+    <string name="error_bar_code_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_bar_code_encoding_us_ascii_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_bar_code_93_regex_error_message">Der "Code 93" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 8 Sonderzeichen « -, ., Leerzeichen, *, $, /, +, % » codieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
+    <string name="error_bar_code_39_regex_error_message">Der "Code 39" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 7 Sonderzeichen « -, ., Leerzeichen, $, /, +, % ». Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
+    <string name="error_bar_codabar_regex_error_message">Der "Codabar" Barcode kann Zahlen (0 bis 9), so wie die 6 Sonderzeichen « -, $, :, /, ., + » codieren. Ausserdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden um den Anfang und das Ende zu definieren.</string>
+    <string name="error_bar_code_itf_error_message">Der "ITF" Barcode muss aus einer gerade Anzahl an Zeichen bestehen.</string>
+    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Der "UPC-E" Barcode muss mit einer 0 beginnen.</string>
+
+    <!-- Action Barcode Generated -->
+    <string name="barcode_creator_confirm_text_label">Generieren</string>
+    <string name="save_label">Speichern</string>
+    <string name="share_label">Teilen</string>
+    <string name="share_image_label">Teile Bild</string>
+    <string name="share_text_label">Teile Text</string>
+    <string name="popup_message_confirmation_save_image">Bild speichern?</string>
+
+    <!-- Form -->
+    <string name="qr_code_text_generator_hint_text_input_edit_text">Text eingeben…</string>
+    <string name="qr_code_text_generator_hint_phone_input_edit_text">Telefonnummer eingeben…</string>
+    <string name="qr_code_text_generator_hint_url_input_edit_text">Webadresse eingeben…</string>
+    <string name="qr_code_text_input_edit_text_hint_message">Nachricht</string>
+
+    <!-- Contact Creator -->
+    <string name="qr_code_type_name_generate_from_contact">Generiere aus Kontakt</string>
+    <string name="qr_code_text_radio_button_label_m">Herr</string>
+    <string name="qr_code_text_radio_button_label_mrs">Frau</string>
+    <string name="qr_code_text_radio_button_label_miss">Frau</string>
+    <string name="qr_code_text_radio_button_label_none">keine</string>
+    <string name="qr_code_text_input_edit_text_hint_name">Name</string>
+    <string name="qr_code_text_input_edit_text_hint_first_name">Vorname</string>
+    <string name="qr_code_text_input_edit_text_hint_organisation">Organisation</string>
+    <string name="qr_code_text_input_edit_text_hint_web_site">Webseite</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_1">Email-Adresse 1</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_2">Email-Adresse 2</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_3">Email-Adresse 3</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_1">Telefonnummer 1</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_2">Telefonnummer 2</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_3">Telefonnummer 3</string>
+    <string name="qr_code_text_input_edit_text_hint_street_address">Straße</string>
+    <string name="qr_code_text_input_edit_text_hint_postal_code">Postleitzahl</string>
+    <string name="qr_code_text_input_edit_text_hint_city">Stadt</string>
+    <string name="qr_code_text_input_edit_text_hint_country">Land</string>
+    <string name="qr_code_text_input_edit_text_hint_region">Region</string>
+    <string name="qr_code_text_input_edit_text_hint_notes">Notizen</string>
+    <string name="qr_code_spinner_prompt_none">Kein/e</string>
+
+    <string name="spinner_type_mobile">Mobil</string>
+    <string name="spinner_type_fax">Fax</string>
+    <string name="spinner_type_home">Privat</string>
+    <string name="spinner_type_work">Arbeit</string>
+    <string name="spinner_type_other">Andere</string>
+
+    <!-- EPC Creator -->
+    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Service Tag</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_version">Version</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_character_set">Zeichencodierung</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_identification">Identifikation</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_bic">BIC</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_name">Name</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_amount">Zahlungsbetrag</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_purpose">Zweck</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Referenz</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Verwendungszweck</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">Hinweis an den Nutzer</string>
+
+    <string name="qr_code_text_input_edit_text_epc_name_error">\"Name\" ist obligatorisch</string>
+    <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN nicht korrekt</string>
+
+    <!-- Mail Creator -->
+    <string name="qr_code_text_input_edit_text_hint_email">Email</string>
+    <string name="qr_code_text_input_edit_text_hint_email_subject">Betreff</string>
+
+    <!-- Geo Localisation Creator -->
+    <string name="qr_code_text_input_edit_text_hint_localisation_latitude">Breitengrad</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_longitude">Längengrad</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_request">Anfrage</string>
+
+    <!-- Wifi Creator -->
+    <string name="qr_code_text_input_edit_text_hint_wifi_ssid">Netzwerkname/SSID</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_password">Passwort</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_hide">Versteckt</string>
+    <string name="spinner_wifi_encryption_wep">WEP</string>
+    <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
+    <string name="spinner_wifi_encryption_none">Unverschlüsselt</string>
+
+    <!-- Event Creator -->
+    <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Ereignisname</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_place">Ort</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_description">Beschreibung</string>
+    <string name="check_box_event_all_of_day">Ganztägig</string>
+    <string name="begin_label">Beginn</string>
+    <string name="end_label">Ende</string>
+
+    <!-- Action -->
+    <string name="search_label">Suche</string>
+    <string name="action_title_dialog_label">Was möchten Sie tun?</string>
+    <string name="action_go_to_url_label">Gehe zu URL</string>
+    <string name="action_web_search_label">Suche im Web</string>
+    <string name="action_product_search_label">Suche auf %1$s</string>
+    <string name="action_add_contact_label">Kontakt hinzufügen</string>
+    <string name="action_send_mail_label">Sende Email</string>
+    <string name="action_send_sms_label">Sende SMS</string>
+    <string name="action_call_phone_label">Wähle Telefonnummer</string>
+
+    <!-- Wi-Fi Connection -->
+    <string name="action_wifi_connection_title_label">WLAN Verbindung</string>
+    <string name="action_wifi_connection_from_app">Verbinde zum WLAN</string>
+    <string name="action_wifi_connection_from_wifi_settings">Kopiere Passwort und gehe zu den WLAN Einstellungen</string>
+    <string name="action_wifi_connection_error_wifi_not_activated">Sie müssen WLAN auf Ihrem Gerät aktivieren!</string>
+    <string name="action_wifi_password_copy_label">Passwort kopiert!</string>
+    <string name="action_wifi_success_added_label">WLAN Verbindung hinzugefügt!</string>
+    <string name="action_wifi_failure_added_label">Fehler beim Hinzufügen der WLAN Verbindung</string>
+    <string name="action_wifi_already_added_label">WLAN Verbindung bereits vorhanden</string>
+    <string name="action_wifi_add_network_refused">Hinzufügen der WLAN Verbidung abgelehnt.</string>
+    <string name="action_wifi_add_network_successful">WLAN Verbidung hinzugefügt.</string>
+    <string name="action_wifi_add_network_failed">Fehler beim hinzufügen der WLAN Verbindung.</string>
+    <string name="action_wifi_add_network_already_exists">WLAN Verbindung bereits vorhanden.</string>
+    <string name="action_wifi_add_network_unknown_error">Unbekannter Fehler beim Hinzufügen der WLAN Verbindung.</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://de.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://de.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://de.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open Food Facts Datenbank.</string>
+    <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open Pet Food Facts Datenbank.</string>
+    <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open Beauty Facts Datenbank.</string>
+    <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open Library Datenbank.</string>
+
+    <!-- URL -->
+
+    <!-- API Base URL -->
+    <string name="base_api_open_food_facts_url">https://de.openfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_pet_food_facts_url">https://de.openpetfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_beauty_facts_url">https://de.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_open_library_url">https://openlibrary.org</string>
+
+    <!-- URL Engines -->
+    <string name="search_engine_google_url">https://www.google.de/search?q=%1$s</string>
+    <string name="search_engine_bing_url">https://www.bing.de/search?q=%1$s</string>
+    <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+
+    <!-- E-Commerce Engines -->
+    <string name="search_engine_amazon_url">https://www.amazon.de/s?k=%1$s</string>
+    <string name="search_engine_ebay_url">https://www.ebay.de/sch/i.html?_nkw=%1$s</string>
+    <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
+
+    <!-- API Product Engines -->
+    <string name="search_engine_open_food_facts_product_url">https://de.openfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_pet_food_facts_product_url">https://de.openpetfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_product_url">https://de.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
+    <string name="search_engine_additive_url">https://de.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- Preferences -->
+
+    <!-- Appearance Settings -->
+    <string name="preferences_appearance_title">Erscheinungsbild</string>
+    <string name="preferences_theme_label">Farbschema</string>
+    <string name="preferences_switch_system_theme_label">System</string>
+    <string name="preferences_switch_light_theme_label">Hell</string>
+    <string name="preferences_switch_dark_theme_label">Dunkel</string>
+    <string name="preferences_color">Hauptfarbe</string>
+    <string name="preferences_color_material_you">System (Material You)</string>
+    <string name="preferences_color_blue">Blau</string>
+    <string name="preferences_color_orange">Orange</string>
+    <string name="preferences_color_green">Grün</string>
+    <string name="preferences_color_red">Rot</string>
+    <string name="preferences_color_purple">Lila</string>
+
+    <!-- Languages Settings -->
+    <string name="preferences_languages_title">Sprache</string>
+    <string name="preferences_languages_change">Ändere die Sprache</string>
+
+    <!-- Scan Settings -->
+    <string name="preferences_scan_title">Scan</string>
+    <string name="preferences_switch_scan_search_on_api_label">Remote APIs automatisch abfragen</string>
+    <string name="preferences_switch_scan_vibrate_label">Vibriere bei erfolgreichem Scan</string>
+    <string name="preferences_switch_scan_bip_label">Ton ausgeben bei erfolgeichem Scan</string>
+    <string name="preferences_switch_scan_screen_rotation_label">Automatische Drehung während des Scans deaktivieren</string>
+    <string name="preferences_switch_scan_barcode_copied_label">Kopiere gescannten Barcode in die Zwischenablage</string>
+
+    <!-- Search Engine Settings -->
+    <string name="preferences_search_title">Suche</string>
+    <string name="preferences_search_engine">Suchmaschine</string>
+
+    <!-- About Settings -->
+    <string name="preferences_about_title">Über</string>
+    <string name="preferences_about_permissions_label">Berechtigungen</string>
+    <string name="preferences_about_library_third_label">Fremde Bibliotheken</string>
+    <string name="preferences_about_bdd_label">Datenbank</string>
+    <string name="preferences_source_code_label">Quellcode</string>
+
+    <!-- About Permissions -->
+    <string name="permission_camera_label">Kamera</string>
+    <string name="permission_camera_description_label">Benötigt um den Barcode zu scannen.</string>
+    <string name="permission_internet_label">Internet</string>
+    <string name="permission_internet_description_label">Benötigt um die Remote APIs abzufragen.</string>
+    <string name="permission_contact_label">Kontakte</string>
+    <string name="permission_contact_description_label">Benötigt um Kontake zu importieren oder Kontakt QR Codes zu generieren.</string>
+    <string name="permission_wifi_label">WLAN</string>
+    <string name="permission_wifi_description_label">Benötigt um zu einem WLAN zu verbinden dessen QR Code gescannt wurde.</string>
+    <string name="permission_vibrate_label">Vibrate</string>
+    <string name="permission_vibrate_description_label">Benötigt um beim scannen zu vibrieren.</string>
+
+    <!-- About BDD -->
+    <string name="bdd_open_food_facts_description_label">Open Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Lebensmittelprodukten aus der ganzen Welt. Sie listet alle auf dem Produktlabel gekennzeichneten Informationen wie z.B. Zutaten, Allergene und Nährwerte.</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Tierfutterprodukten.</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts ist eine freie, Online-Crowdsourcing-Datenbank von Kosmetikprodukten.</string>
+    <string name="bdd_open_library_description_label">Open Library ist eine freie, Online-Crowdsourcing-Datenbank welche zum Ziel hat alle veröffentlichten Bücher weltweit aufzulisten, egal in welcher Sprache.</string>
+
+    <!-- About Library Third -->
+    <string name="dependency_by">abhängig von %1$s</string>
+
+    <!-- About Library Third Description -->
+    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") ist eine quelloffene Bibliothek zur Verarbeitung von 1D/2D-Barcodes in verschiedenen Formaten.</string>
+    <string name="dependency_zxing_code_scanner_description_label">Code-Scanner-Bibliothek für Android, die auf ZXing basiert.</string>
+    <string name="dependency_ez_vcard_description_label">ez-vcard ist eine in Java geschriebene vCard-Bibliothek. Sie kann vCards in vielen verschiedenen Formaten lesen und schreiben.</string>
+    <string name="dependency_android_image_cropper_description_label">Android Image Cropper ist eine Bibliothek zum Zuschneiden von Bildern für Android.</string>
+    <string name="dependency_coil_description_label">Eine Bildladebibliothek für Android, die von Kotlin Coroutines unterstützt wird.</string>
+    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) unterstützen Entwickler bei der Umsetzung von Material Design. Diese Komponenten wurden von einem Kernteam von Ingenieuren und UX-Designern bei Google entwickelt und ermöglichen einen zuverlässigen Entwicklungs-Workflow, um schöne und funktionale Android-Apps zu erstellen.\n\nMaterial Components for Android ist ein Drop-in-Ersatz für die Design Support Library von Android.</string>
+    <string name="dependency_kotlinx_coroutines_description_label">Stellt den Dispatchers.Main-Kontext für Android-Anwendungen bereit.</string>
+    <string name="dependency_koin_description_label">Ein pragmatisches, leichtgewichtiges Dependency-Injection-Framework für Kotlin-Entwickler.\n\nGeschrieben in reinem Kotlin, nur mit funktionaler Auflösung: kein Proxy, keine Code-Generierung, keine Reflexion.\n\nKoin ist eine DSL, ein leichter Container und eine pragmatische API.</string>
+    <string name="dependency_room_description_label">Room bietet eine Abstraktionsschicht über SQLite, um einen flüssigen Datenbankzugriff zu ermöglichen und gleichzeitig die volle Leistungsfähigkeit von SQLite zu nutzen.</string>
+    <string name="dependency_gson_description_label">Gson ist eine Java-Bibliothek die verwendet werden kann um Java-Objekte in ihre JSON-Darstellung zu konvertieren. Sie kann auch verwendet werden um einen JSON-String in ein entsprechendes Java-Objekt zu konvertieren. Gson kann mit beliebigen Java-Objekten arbeiten, einschließlich bereits vorhandener Objekte für die Sie keinen Quellcode haben.</string>
+    <string name="dependency_retrofit_description_label">Ein typsicherer HTTP-Client für Android und Java.</string>
+    <string name="dependency_live_data_description_label">LiveData ist eine beobachtbare Datenhalterklasse. Im Gegensatz zu einem normalen Observable ist LiveData lebenszyklusorientiert, d.h. es berücksichtigt den Lebenszyklus anderer Anwendungskomponenten, wie z. B. Aktivitäten, Fragmente oder Dienste. Dadurch wird sichergestellt, dass LiveData nur Beobachter von Anwendungskomponenten aktualisiert, die sich in einem aktiven Lebenszykluszustand befinden.</string>
+
+    <!-- Countries -->
+    <string name="country_usa">Vereinigte Staaten von Amerika</string>
+    <string name="country_ca">Kanada</string>
+    <string name="country_fr">Frankreich</string>
+    <string name="country_bg">Bulgarien</string>
+    <string name="country_si">Slowenien</string>
+    <string name="country_hr">Kroatien</string>
+    <string name="country_ba">Bosnien und Herzegowina</string>
+    <string name="country_me">Montenegro</string>
+    <string name="country_kosovo">Kosovo</string>
+    <string name="country_de">Deutschland</string>
+    <string name="country_jp">Japan</string>
+    <string name="country_ru">Russland</string>
+    <string name="country_kg">Kirgisistan</string>
+    <string name="country_tw">Taiwan</string>
+    <string name="country_ee">Estland</string>
+    <string name="country_lv">Lettland</string>
+    <string name="country_az">Aserbaidschan</string>
+    <string name="country_lt">Litauen</string>
+    <string name="country_uz">Usbekistan</string>
+    <string name="country_lk">Sri Lanka</string>
+    <string name="country_ph">Philippinen</string>
+    <string name="country_by">Belarus</string>
+    <string name="country_ua">Ukraine</string>
+    <string name="country_tm">Turkmenistan</string>
+    <string name="country_md">Moldau</string>
+    <string name="country_am">Armenien</string>
+    <string name="country_ge">Georgien</string>
+    <string name="country_kz">Kasachstan</string>
+    <string name="country_tj">Tadschikistan</string>
+    <string name="country_hk">Hongkong</string>
+    <string name="country_gb">Vereinigtes Königreich</string>
+    <string name="country_gr">Griechenland</string>
+    <string name="country_lb">Libanon</string>
+    <string name="country_cy">Zypern</string>
+    <string name="country_al">Albanien</string>
+    <string name="country_mk">Nordmazedonien</string>
+    <string name="country_mt">Malta</string>
+    <string name="country_ie">Irland</string>
+    <string name="country_be">Belgien</string>
+    <string name="country_lu">Luxemburg</string>
+    <string name="country_pt">Portugal</string>
+    <string name="country_is">Island</string>
+    <string name="country_dk">Dänemark</string>
+    <string name="country_pl">Polen</string>
+    <string name="country_ro">Rumänien</string>
+    <string name="country_hu">Ungarn</string>
+    <string name="country_za">Südafrika</string>
+    <string name="country_bj">Benin</string>
+    <string name="country_gh">Ghana</string>
+    <string name="country_sn">Senegal</string>
+    <string name="country_bh">Bahrain</string>
+    <string name="country_mu">Mauritius</string>
+    <string name="country_ma">Marokko</string>
+    <string name="country_dz">Algerien</string>
+    <string name="country_ng">Nigeria</string>
+    <string name="country_ke">Kenia</string>
+    <string name="country_cm">Kamerun</string>
+    <string name="country_ci">Elfenbeinküste</string>
+    <string name="country_tn">Tunesien</string>
+    <string name="country_tz">Tansania</string>
+    <string name="country_sy">Syrien</string>
+    <string name="country_eg">Ägypten</string>
+    <string name="country_bn">Brunei</string>
+    <string name="country_ly">Libyen</string>
+    <string name="country_jo">Jordanien</string>
+    <string name="country_ir">Iran</string>
+    <string name="country_kw">Kuwait</string>
+    <string name="country_sa">Saudi-Arabien</string>
+    <string name="country_ae">Vereinigte Arabische Emirate</string>
+    <string name="country_qa">Katar</string>
+    <string name="country_fi">Finnland</string>
+    <string name="country_cn">China</string>
+    <string name="country_no">Norwegen</string>
+    <string name="country_il">Israel</string>
+    <string name="country_se">Schweden</string>
+    <string name="country_gt">Guatemala</string>
+    <string name="country_sv">El Salvador</string>
+    <string name="country_hn">Honduras</string>
+    <string name="country_ni">Nicaragua</string>
+    <string name="country_cr">Costa Rica</string>
+    <string name="country_pa">Panama</string>
+    <string name="country_do">Dominikanische Republik</string>
+    <string name="country_mx">Mexiko</string>
+    <string name="country_ve">Venezuela</string>
+    <string name="country_ch">Schweiz</string>
+    <string name="country_li">Liechtenstein</string>
+    <string name="country_co">Kolumbien</string>
+    <string name="country_uy">Uruguay</string>
+    <string name="country_pe">Peru</string>
+    <string name="country_bo">Bolivien</string>
+    <string name="country_ar">Argentinien</string>
+    <string name="country_cl">Chile</string>
+    <string name="country_py">Paraguay</string>
+    <string name="country_ec">Ecuador</string>
+    <string name="country_br">Brazilien</string>
+    <string name="country_it">Italien</string>
+    <string name="country_es">Spanien</string>
+    <string name="country_cu">Cuba</string>
+    <string name="country_sk">Slowakei</string>
+    <string name="country_cz">Tschechien</string>
+    <string name="country_rs">Serbien</string>
+    <string name="country_mn">Mongolei</string>
+    <string name="country_kp">Nordkorea</string>
+    <string name="country_tr">Türkei</string>
+    <string name="country_nl">Niederlande</string>
+    <string name="country_kr">Südkorea</string>
+    <string name="country_mm">Myanmar</string>
+    <string name="country_kh">Kambodscha</string>
+    <string name="country_th">Thailand</string>
+    <string name="country_sg">Singapur</string>
+    <string name="country_in">Indien</string>
+    <string name="country_vn">Vietnam</string>
+    <string name="country_pk">Pakistan</string>
+    <string name="country_id">Indonesien</string>
+    <string name="country_at">Österreich</string>
+    <string name="country_au">Australien</string>
+    <string name="country_nz">Neuseeland</string>
+    <string name="country_my">Malaysia</string>
+    <string name="country_mo">Macau</string>
+
+    <!-- No translatable -->
+
+    <string name="app_name" translatable="false">Barcode Scanner</string>
+
+    <!-- Animations -->
+    <string name="animation_activity_transition" translatable="false">AnimationActivityTransition</string>
+
+    <!-- Barcode Type -->
+    <string name="bar_code_qr_code_label" translatable="false">QR Code</string>
+    <string name="bar_code_data_matrix_label" translatable="false">Data Matrix</string>
+    <string name="bar_code_pdf_417_label" translatable="false">PDF 417</string>
+    <string name="bar_code_aztec_label" translatable="false">AZTEC</string>
+    <string name="bar_code_ean_13_label" translatable="false">EAN 13</string>
+    <string name="bar_code_ean_8_label" translatable="false">EAN 8</string>
+    <string name="bar_code_upc_a_label" translatable="false">UPC A</string>
+    <string name="bar_code_upc_e_label" translatable="false">UPC E</string>
+    <string name="bar_code_code_128_label" translatable="false">Code 128</string>
+    <string name="bar_code_code_93_label" translatable="false">Code 93</string>
+    <string name="bar_code_code_39_label" translatable="false">Code 39</string>
+    <string name="bar_code_codabar_label" translatable="false">Codabar</string>
+    <string name="bar_code_itf_label" translatable="false">ITF</string>
+
+    <!-- External Services Label -->
+    <string name="google_label" translatable="false">Google</string>
+    <string name="bing_label" translatable="false">Bing</string>
+    <string name="duckduckgo_label" translatable="false">DuckDuckGo</string>
+    <string name="startpage_label" translatable="false">Startpage</string>
+    <string name="brave_search_label" translatable="false">Brave Search</string>
+    <string name="qwant_label" translatable="false">Qwant</string>
+    <string name="ecosia_label" translatable="false">Ecosia</string>
+    <string name="lilo_label" translatable="false">Lilo</string>
+    <string name="amazon_label" translatable="false">Amazon</string>
+    <string name="ebay_label" translatable="false">Ebay</string>
+    <string name="fnac_label" translatable="false">Fnac</string>
+    <string name="open_food_facts_label" translatable="false">Open Food Facts</string>
+    <string name="open_pet_food_facts_label" translatable="false">Open Pet Food Facts</string>
+    <string name="open_beauty_facts_label" translatable="false">Open Beauty Facts</string>
+    <string name="open_library_label" translatable="false">Open Library</string>
+
+    <!-- Preferences Settings Keys -->
+    <string name="preferences_color_key" translatable="false">preferences_color_key</string>
+    <string name="preferences_theme_key" translatable="false">preferences_theme_key</string>
+    <string name="preferences_languages_key" translatable="false">preferences_languages_key</string>
+    <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
+    <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
+    <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
+    <string name="preferences_switch_scan_screen_rotation_key" translatable="false">preferences_switch_scan_screen_rotation_key</string>
+    <string name="preferences_switch_scan_barcode_copied_key" translatable="false">preferences_switch_scan_barcode_copied_key</string>
+    <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
+    <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
+    <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
+    <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>
+    <string name="preferences_source_code_key" translatable="false">preferences_source_code_key</string>
+
+    <!-- URL -->
+    <string name="bdd_open_food_facts_link_label" translatable="false">@string/search_engine_open_food_facts_url</string>
+    <string name="bdd_open_pet_food_facts_link_label" translatable="false">@string/search_engine_open_pet_food_facts_url</string>
+    <string name="bdd_open_beauty_facts_link_label" translatable="false">@string/search_engine_open_beauty_facts_url</string>
+    <string name="bdd_open_library_link_label" translatable="false">@string/search_engine_open_library_url</string>
+
+    <!-- About Library Third -->
+    <string name="about_title" translatable="false">Titel</string>
+    <string name="about_license" translatable="false">Lizenz</string>
+    <string name="about_author" translatable="false">Autor</string>
+    <string name="about_description" translatable="false">Beschreibung</string>
+
+    <string name="dependency_zxing_title_label" translatable="false">ZXing</string>
+    <string name="dependency_zxing_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
+    <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
+
+    <string name="dependency_zxing_code_scanner_title_label" translatable="false">Code Scanner</string>
+    <string name="dependency_zxing_code_scanner_license_label" translatable="false">MIT License</string>
+    <string name="dependency_zxing_code_scanner_author_label" translatable="false">Yuriy Budiyev</string>
+    <string name="dependency_zxing_code_scanner_github_link_label" translatable="false">https://github.com/yuriy-budiyev/code-scanner</string>
+
+    <string name="dependency_ez_vcard_title_label" translatable="false">ez-vcard</string>
+    <string name="dependency_ez_vcard_license_label" translatable="false">FreeBSD</string>
+    <string name="dependency_ez_vcard_author_label" translatable="false">Michael Angstadt</string>
+    <string name="dependency_ez_vcard_github_link_label" translatable="false">https://github.com/mangstadt/ez-vcard</string>
+
+    <string name="dependency_android_image_cropper_title_label" translatable="false">Android Image Cropper</string>
+    <string name="dependency_android_image_cropper_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_android_image_cropper_author_label" translatable="false">CanHub</string>
+    <string name="dependency_android_image_cropper_github_link_label" translatable="false">https://github.com/CanHub/Android-Image-Cropper</string>
+
+    <string name="dependency_coil_title_label" translatable="false">Coil</string>
+    <string name="dependency_coil_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_coil_author_label" translatable="false">coil-kt</string>
+    <string name="dependency_coil_github_link_label" translatable="false">https://github.com/coil-kt/coil</string>
+
+    <string name="dependency_material_components_title_label" translatable="false">Material Components for Android</string>
+    <string name="dependency_material_components_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_material_components_author_label" translatable="false">Material Components</string>
+    <string name="dependency_material_components_github_link_label" translatable="false">https://github.com/material-components/material-components-android</string>
+
+    <!--<string name="dependency_kotlinx_coroutines_title_label" translatable="false">Module kotlinx-coroutines-android</string>
+    <string name="dependency_kotlinx_coroutines_github_link_label" translatable="false">https://github.com/Kotlin/kotlinx.coroutines/tree/master/ui/kotlinx-coroutines-android</string>-->
+
+    <string name="dependency_koin_title_label" translatable="false">Koin</string>
+    <string name="dependency_koin_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_koin_author_label" translatable="false">insert-koin.io</string>
+    <string name="dependency_koin_github_link_label" translatable="false">https://github.com/InsertKoinIO/koin</string>
+
+    <string name="dependency_gson_title_label" translatable="false">Gson</string>
+    <string name="dependency_gson_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_gson_author_label" translatable="false">Google</string>
+    <string name="dependency_gson_github_link_label" translatable="false">https://github.com/google/gson</string>
+
+    <string name="dependency_retrofit_title_label" translatable="false">Retrofit</string>
+    <string name="dependency_retrofit_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_retrofit_author_label" translatable="false">Square</string>
+    <string name="dependency_retrofit_github_link_label" translatable="false">https://github.com/square/retrofit</string>
+
+    <string name="dependency_room_title_label" translatable="false">Room</string>
+    <string name="dependency_room_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_room_author_label" translatable="false">Google</string>
+    <string name="dependency_room_remote_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room</string>
+
+    <string name="dependency_live_data_title_label" translatable="false">LiveData</string>
+    <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
+
+    <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
+
+</resources>
