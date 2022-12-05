@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.commit
+import androidx.fragment.app.commitNow
 import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
@@ -59,34 +59,7 @@ class MainActivity: BaseActivity() {
             showInitialFragment()
 
         setContentView(viewBinding.root)
-
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            manageSplashScreen()
-        }*/
     }
-
-    /*@RequiresApi(Build.VERSION_CODES.S)
-    private fun manageSplashScreen() {
-
-        splashScreen.setOnExitAnimationListener { splashScreenView ->
-
-            // Create your custom animation.
-            val slideUp = ObjectAnimator.ofFloat(
-                splashScreenView.iconView,
-                View.TRANSLATION_Y,
-                0f,
-                -splashScreenView.height.toFloat()
-            )
-            slideUp.interpolator = AnticipateInterpolator()
-            slideUp.duration = 500L
-
-            // Call SplashScreenView.remove at the end of your custom animation.
-            slideUp.doOnEnd { splashScreenView.remove() }
-
-            // Run your animation.
-            slideUp.start()
-        }
-    }*/
 
     private fun showInitialFragment() {
         val bottomNavigation = viewBinding.activityMainMenuBottomNavigation
@@ -99,7 +72,7 @@ class MainActivity: BaseActivity() {
         }
 
         val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, bottomNavigation.selectedItemId)
-        configureFragment(itemIdSelected)
+        changeView(itemIdSelected)
     }
 
     // ---- Menu ----
@@ -108,11 +81,11 @@ class MainActivity: BaseActivity() {
 
         viewBinding.activityMainMenuBottomNavigation.setOnItemSelectedListener {
             intent.putExtra(ITEM_ID_KEY, it.itemId)
-            configureFragment(it.itemId)
+            changeView(it.itemId)
         }
     }
 
-    private fun configureFragment(id: Int): Boolean = when(id){
+    private fun changeView(id: Int): Boolean = when(id){
         R.id.menu_navigation_bottom_view_scan -> changeFragment(mainScannerFragment, R.string.title_scan)
         R.id.menu_navigation_bottom_view_history -> changeFragment(mainHistoryFragment, R.string.title_history)
         R.id.menu_navigation_bottom_view_create -> changeFragment(mainBarcodeCreatorListFragment, R.string.title_bar_code_creator)
@@ -124,8 +97,8 @@ class MainActivity: BaseActivity() {
 
         supportActionBar?.setTitle(titleResource)
 
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
+        supportFragmentManager.commitNow {
+            setReorderingAllowed(false)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             replace(viewBinding.activityMainFrameLayout.id, fragment)
             //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back

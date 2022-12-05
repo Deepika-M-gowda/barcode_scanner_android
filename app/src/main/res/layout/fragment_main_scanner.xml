@@ -7,35 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.fragments.main.MainScannerFragment">
 
+    <TextView
+        android:id="@+id/fragment_main_scanner_camera_permission_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/standard_margin"
+        android:text="@string/camera_permission_denied"
+        android:textAlignment="center"
+        android:textColor="?appFrontColorSecondary"
+        android:textSize="@dimen/standard_text_size"
+        android:fontFamily="@font/roboto_medium"
+        android:visibility="gone"
+        />
+
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/fragment_main_scanner_code_scanner_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:autoFocusButtonVisible="false"
         app:flashButtonVisible="false"
-        app:frameColor="@android:color/white"
+        app:frameColor="?appMainColor"
         app:frameCornersSize="50dp"
         app:frameCornersRadius="0dp"
         app:frameAspectRatioWidth="1"
         app:frameAspectRatioHeight="1"
         app:frameSize="0.75"
         app:frameThickness="2dp"
-        app:maskColor="#88000000"/>
+        app:maskColor="#88000000"
+        android:visibility="gone"/>
 
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/x_large_margin"
         android:layout_gravity="bottom|center_horizontal">
+
         <TextView
             android:id="@+id/fragment_main_scanner_information_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text=""
+            android:text="@string/scan_information_label"
             android:textColor="@android:color/white"
             android:textSize="@dimen/standard_text_size"
             android:fontFamily="@font/roboto_medium"
+            android:visibility="gone"
             />
     </FrameLayout>
 

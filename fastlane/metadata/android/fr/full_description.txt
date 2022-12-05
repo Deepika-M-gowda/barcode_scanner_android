@@ -18,6 +18,6 @@ Fonctionnalités de l'appli:
 • Conservez une trace de tous vos code-barres scannés grace à l'historique.
 • Générez vos propres code-barres.
 • Personnalisez l'interface avec différents choix de couleurs, que ce soit en thème clair ou sombre. L'application intègre en plus les dernières fonctionnalités d'Android 12, permettant d'adapter les couleurs de l'interface en fonction de votre fond d'écran.
-• Les textes sont entièrement traduits en français, anglais, espagnol et russe.
+• Les textes sont entièrement traduits en français, anglais, espagnol, allemand et russe.
 
 L'application respecte votre vie privée. Elle ne contient aucun tracker et ne collecte aucune donnée.

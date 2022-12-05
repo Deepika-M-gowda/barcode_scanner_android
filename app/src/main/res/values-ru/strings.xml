@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">Вы запретили доступ к камере. Для сканирования штрих-кода необходимо разрешить ее использование.</string>
+    <string name="camera_permission_denied">Вы запретили доступ к камере.\nДля сканирования штрих-кода необходимо разрешить ее использование.</string>
 
     <!-- AlertDialog -->
     <string name="close_dialog_label">Закрыть</string>
@@ -427,9 +427,9 @@
     <string name="action_wifi_add_network_unknown_error">Неизвестная ошибка при добавлении сети Wi-Fi.</string>
 
     <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="search_engine_open_food_facts_url">https://ru.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://ru.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://ru.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
 
     <!-- API Sources Description -->

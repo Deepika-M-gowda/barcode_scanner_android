@@ -8,7 +8,7 @@
 
 # Overview
 
-Barcode scanner is a free and open source app which allow to read and generate barcodes. It can collect informations about food products, cosmetics and books thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts and OpenLibrary.
+Barcode scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics and books thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts and OpenLibrary.
 
 # Download
 
@@ -49,7 +49,7 @@ If you like Barcode Scanner you can donate via Liberapay.
 
 # Services
 
-Collect informations about a product during a scan:
+Collect information about a product during a scan:
 
 - Food Products with [Open Food Facts](https://world.openfoodfacts.org/)
 - Cosmetic Products with [Open Beauty Facts](https://world.openbeautyfacts.org/)
@@ -58,14 +58,14 @@ Collect informations about a product during a scan:
 
 # App features
 
-- Simply point your smartphone's camera to a barcode and instantly receive informations about it. You can also scan barcodes through a picture in your smartphone.
+- Simply point your smartphone's camera to a barcode and instantly receive information about it. You can also scan barcodes through a picture in your smartphone.
 - With a simple scan, read business cards, add new contacts, add new events to your agenda, open URL or even connect to Wi-Fi.
-- Scan Food products barcodes to receive informations about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
-- Search informations about the product you scan, with a quick research on different websites such as Amazon or Fnac.
+- Scan Food products barcodes to receive information about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
+- Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
 - Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in english, spanish, french and russian.
+- Texts are entirely translated in English, Spanish, French, German and Russian.
 
 # Licences
 

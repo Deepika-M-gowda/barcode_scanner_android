@@ -79,10 +79,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.LocalisationActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions.UrlActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.*
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.*
 import com.google.android.material.chip.Chip
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
@@ -463,9 +460,9 @@ val viewsModule = module {
             setEnsureMinTouchTargetSize(false)
             textAlignment = View.TEXT_ALIGNMENT_CENTER
             if (Build.VERSION.SDK_INT < 23) {
-                setTextAppearance(context, R.style.ChipText);
+                setTextAppearance(context, R.style.ChipText)
             } else {
-                setTextAppearance(R.style.ChipText);//Crash sur Android 5
+                setTextAppearance(R.style.ChipText)//Crash sur Android 5
             }
         }
     }

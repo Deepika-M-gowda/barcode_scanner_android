@@ -48,6 +48,15 @@ abstract class BaseFragment: Fragment() {
             .commit()
     }
 
+    protected fun removeAllFragments(){
+        childFragmentManager.fragments.forEach { fragment ->
+            childFragmentManager
+                .beginTransaction()
+                .remove(fragment)
+                .commit()
+        }
+    }
+
     protected fun showToastText(@StringRes textResource: Int){
         Toast.makeText(requireContext(), getString(textResource), Toast.LENGTH_SHORT).show()
     }

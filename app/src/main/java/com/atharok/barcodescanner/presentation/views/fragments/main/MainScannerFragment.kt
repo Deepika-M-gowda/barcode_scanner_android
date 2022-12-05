@@ -99,8 +99,7 @@ class MainScannerFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureMenu()
-
-        if(isCameraPermissionGranted()) configureScanner() else askCameraPermission()
+        if(isCameraPermissionGranted()) doPermissionGranted() else askCameraPermission()
     }
 
     private fun configureMenu() {
@@ -148,11 +147,11 @@ class MainScannerFragment : BaseFragment() {
     }
 
     override fun onPause() {
-        if (isCameraPermissionGranted()) {
-            codeScanner?.isFlashEnabled = false
-            codeScanner?.releaseResources()
-            canEnableCamera=true
+        codeScanner?.let {
+            it.isFlashEnabled = false
+            it.releaseResources()
         }
+        canEnableCamera=true
         super.onPause()
     }
 
@@ -166,16 +165,16 @@ class MainScannerFragment : BaseFragment() {
         }
     }
 
+    // ---- Camera Permission ----
+
     private fun askCameraPermission() {
         // Gère le resultat de la demande de permission d'accès à la caméra.
         val requestPermission: ActivityResultLauncher<String> =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) {
                 if (it) {
-                    configureScanner()
-                    codeScanner?.startPreview()
-                } else {
-                    viewBinding.fragmentMainScannerInformationTextView.setText(R.string.camera_permission_denied)
-                }
+                    doPermissionGranted()
+                    codeScanner?.startPreview() // Uniquement lorsqu'on vient d'accepter la permission (dans les autres cas, startPreview() est appelé dans onResume()
+                } else doPermissionRefused()
             }
 
         requestPermission.launch(Manifest.permission.CAMERA)
@@ -184,6 +183,21 @@ class MainScannerFragment : BaseFragment() {
     private fun isCameraPermissionGranted(): Boolean {
         val permission: Int = ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA)
         return permission == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun doPermissionGranted() {
+        configureScanner()
+        viewBinding.fragmentMainScannerInformationTextView.visibility = View.VISIBLE
+        viewBinding.fragmentMainScannerCameraPermissionTextView.visibility = View.GONE
+        viewBinding.fragmentMainScannerCodeScannerView.visibility = View.VISIBLE
+    }
+
+    private fun doPermissionRefused() {
+        codeScanner?.releaseResources()
+        codeScanner = null
+        viewBinding.fragmentMainScannerInformationTextView.visibility = View.GONE
+        viewBinding.fragmentMainScannerCameraPermissionTextView.visibility = View.VISIBLE
+        viewBinding.fragmentMainScannerCodeScannerView.visibility = View.GONE
     }
 
     // ---- Flash ----
@@ -205,7 +219,7 @@ class MainScannerFragment : BaseFragment() {
             if(it.resultCode == Activity.RESULT_OK){
 
                 it.data?.let { intentResult ->
-                    canEnableCamera = false // C'est appelé avant OnResume(), on empêche donc la réactivation de la caméra car elle n'est pas nécéssaire ici.
+                    canEnableCamera = false // C'est appelé avant onResume(), on empêche donc la réactivation de la caméra car elle n'est pas nécéssaire ici.
                     onSuccessfulScan(intentResult)
                 }
             }
@@ -239,8 +253,6 @@ class MainScannerFragment : BaseFragment() {
             decodeCallback = DecodeCallback(::onSuccessfulScan)
             errorCallback = ErrorCallback(::onErrorScan)
         }
-
-        viewBinding.fragmentMainScannerInformationTextView.setText(R.string.scan_information_label)
     }
 
     private fun onSuccessfulScan(result: Result) = requireActivity().runOnUiThread {
@@ -327,7 +339,7 @@ class MainScannerFragment : BaseFragment() {
      * Enregistre dans la base de données, les informations du code-barres qui vient d'être scanné.
      */
     private fun saveIntoDatabase(barcode: Barcode){
-        // Insert les informations du code bar dans la base de données (de manière asynchrone)
+        // Insert les informations du code-barres dans la base de données (de manière asynchrone)
         databaseViewModel.insertBarcode(barcode)
     }
 
@@ -360,7 +372,6 @@ class MainScannerFragment : BaseFragment() {
 
 
     private fun sendResultToAppIntent(intent: Intent) {
-
         requireActivity().apply {
             setResult(Activity.RESULT_OK, intent)
             finish()

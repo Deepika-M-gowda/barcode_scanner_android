@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">Has denegado el acceso a la cámara. Debes autorizarlo para poder escanear códigos.</string>
+    <string name="camera_permission_denied">Has denegado el acceso a la cámara.\nDebes autorizarlo para poder escanear códigos.</string>
 
     <!-- AlertDialog -->
     <string name="close_dialog_label">Cerrar</string>
@@ -427,9 +427,9 @@
     <string name="action_wifi_add_network_unknown_error">Error desconocido al añadir la red Wi-Fi.</string>
 
     <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="search_engine_open_food_facts_url">https://es.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://es.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://es.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
 
     <!-- API Sources Description -->

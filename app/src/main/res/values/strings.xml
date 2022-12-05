@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">You have denied access to the camera. You must authorize it to scan a barcode.</string>
+    <string name="camera_permission_denied">You have denied access to the camera.\nYou must authorize it to scan a barcode.</string>
 
     <!-- AlertDialog -->
     <string name="close_dialog_label">Close</string>
@@ -724,11 +724,6 @@
     <string name="bdd_open_library_link_label" translatable="false">@string/search_engine_open_library_url</string>
 
     <!-- About Library Third -->
-    <string name="about_title" translatable="false">Title</string>
-    <string name="about_license" translatable="false">License</string>
-    <string name="about_author" translatable="false">Author</string>
-    <string name="about_description" translatable="false">Description</string>
-
     <string name="dependency_zxing_title_label" translatable="false">ZXing</string>
     <string name="dependency_zxing_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
@@ -787,5 +782,7 @@
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
 
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

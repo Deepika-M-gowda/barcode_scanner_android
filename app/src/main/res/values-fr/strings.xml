@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">Vous avez refusé l\'accès à la caméra. Vous devez l\'autoriser pour scanner un code-barres.</string>
+    <string name="camera_permission_denied">Vous avez refusé l\'accès à la caméra.\nVous devez l\'autoriser pour scanner un code-barres.</string>
 
     <!-- AlertDialog -->
     <string name="close_dialog_label">Fermer</string>
