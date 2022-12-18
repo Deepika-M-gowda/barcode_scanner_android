@@ -36,6 +36,21 @@
     <string name="download_from_api_label">Download from APIs</string>
     <string name="menu_more">More</string>
 
+    <!-- Barcode Type -->
+    <string name="barcode_qr_code_label">QR Code</string>
+    <string name="barcode_data_matrix_label">Data Matrix</string>
+    <string name="barcode_pdf_417_label">PDF 417</string>
+    <string name="barcode_aztec_label">AZTEC</string>
+    <string name="barcode_ean_13_label">EAN 13</string>
+    <string name="barcode_ean_8_label">EAN 8</string>
+    <string name="barcode_upc_a_label">UPC A</string>
+    <string name="barcode_upc_e_label">UPC E</string>
+    <string name="barcode_code_128_label">Code 128</string>
+    <string name="barcode_code_93_label">Code 93</string>
+    <string name="barcode_code_39_label">Code 39</string>
+    <string name="barcode_codabar_label">Codabar</string>
+    <string name="barcode_itf_label">ITF</string>
+
     <!-- QR Type -->
     <string name="qr_code_type_name_text">Text</string>
     <string name="qr_code_type_name_web_site">Website</string>
@@ -670,21 +685,6 @@
     <!-- Animations -->
     <string name="animation_activity_transition" translatable="false">AnimationActivityTransition</string>
 
-    <!-- Barcode Type -->
-    <string name="bar_code_qr_code_label" translatable="false">QR Code</string>
-    <string name="bar_code_data_matrix_label" translatable="false">Data Matrix</string>
-    <string name="bar_code_pdf_417_label" translatable="false">PDF 417</string>
-    <string name="bar_code_aztec_label" translatable="false">AZTEC</string>
-    <string name="bar_code_ean_13_label" translatable="false">EAN 13</string>
-    <string name="bar_code_ean_8_label" translatable="false">EAN 8</string>
-    <string name="bar_code_upc_a_label" translatable="false">UPC A</string>
-    <string name="bar_code_upc_e_label" translatable="false">UPC E</string>
-    <string name="bar_code_code_128_label" translatable="false">Code 128</string>
-    <string name="bar_code_code_93_label" translatable="false">Code 93</string>
-    <string name="bar_code_code_39_label" translatable="false">Code 39</string>
-    <string name="bar_code_codabar_label" translatable="false">Codabar</string>
-    <string name="bar_code_itf_label" translatable="false">ITF</string>
-
     <!-- External Services Label -->
     <string name="google_label" translatable="false">Google</string>
     <string name="bing_label" translatable="false">Bing</string>
@@ -782,7 +782,4 @@
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
 
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>

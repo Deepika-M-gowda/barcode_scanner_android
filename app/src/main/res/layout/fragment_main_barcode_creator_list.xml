@@ -56,7 +56,7 @@
                         android:layout_toEndOf="@id/fragment_main_create_barcode_list_bar_code_icon_image_view"
                         android:layout_toStartOf="@id/fragment_main_create_barcode_list_header_icon_image_view"
                         android:layout_centerVertical="true"
-                        android:text="@string/bar_code_qr_code_label"
+                        android:text="@string/barcode_qr_code_label"
                         android:textSize="@dimen/sub_title_text_size"
                         android:fontFamily="@font/roboto_black" />
 
