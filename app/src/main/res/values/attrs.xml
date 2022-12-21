@@ -34,6 +34,15 @@
         <attr format="color" name="icon_color" />
     </declare-styleable>
 
+    <declare-styleable name="ScanOverlay">
+        <attr name="viewfinder_width" format="dimension" />
+        <attr name="viewfinder_height" format="dimension" />
+        <attr name="viewfinder_radius" format="dimension" />
+        <attr name="viewfinder_corner_thickness" format="dimension" />
+        <attr name="viewfinder_corner_color" format="color" />
+        <attr name="overlay_mask_color" format="color" />
+    </declare-styleable>
+
     <declare-styleable name="HorizontalGraphView">
         <attr name="barHeight" format="dimension" />
         <attr name="lowBarColor" format="color" />

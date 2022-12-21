@@ -39,12 +39,15 @@ class SettingsManager(private val context: Context) {
     private var theme = prefs.getString(themeKey, "system")
 
     // Scan
+    private val useCameraXApiKey = context.getString(R.string.preferences_switch_scan_use_camera_x_api_key)
     private val searchOnApiKey = context.getString(R.string.preferences_switch_scan_search_on_api_key)
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
     private val copyBarcodeScanKey = context.getString(R.string.preferences_switch_scan_barcode_copied_key)
 
+    var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
+        private set
     var useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         private set
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
@@ -65,6 +68,7 @@ class SettingsManager(private val context: Context) {
 
         color = prefs.getString(colorKey, getDefaultColorKey())
         theme = prefs.getString(themeKey, "system")
+        useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)

@@ -1,0 +1,123 @@
+/*
+ * Barcode Scanner
+ * Copyright (C) 2021  Atharok
+ *
+ * This file is part of Barcode Scanner.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package com.atharok.barcodescanner.presentation.customView
+
+import android.content.Context
+import android.content.res.Resources
+import android.graphics.*
+import android.graphics.Paint.ANTI_ALIAS_FLAG
+import android.util.AttributeSet
+import android.view.View
+import androidx.core.graphics.toRect
+import com.atharok.barcodescanner.R
+
+class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) {
+
+    private val viewfinderWidth: Float
+    private val viewfinderHeight: Float
+    private val viewfinderRadius: Float
+
+    private val backgroundPaint: Paint
+
+    private val viewfinderPaint: Paint = Paint().apply {
+        style = Paint.Style.FILL
+        xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+    }
+
+    private val viewfinderCornerPaint: Paint
+
+    private val viewfinderRect: RectF = RectF()
+
+    fun getViewfinderRect(): Rect = viewfinderRect.toRect()
+
+    init{
+        setLayerType(LAYER_TYPE_SOFTWARE, null)
+        context.theme.obtainStyledAttributes(attrs, R.styleable.ScanOverlay, 0, 0).apply {
+            try {
+                viewfinderWidth = getDimension(R.styleable.ScanOverlay_viewfinder_width, getDP(200f))
+                viewfinderHeight = getDimension(R.styleable.ScanOverlay_viewfinder_height, getDP(200f))
+                viewfinderRadius = getDimension(R.styleable.ScanOverlay_viewfinder_radius, getDP(40f))
+                viewfinderCornerPaint = Paint(ANTI_ALIAS_FLAG).apply {
+                    color = getColor(R.styleable.ScanOverlay_viewfinder_corner_color, Color.WHITE)
+                    style = Paint.Style.STROKE
+                    strokeWidth = getDimension(R.styleable.ScanOverlay_viewfinder_corner_thickness, getDP(2f))
+                }
+                backgroundPaint = Paint().apply {
+                    color = getColor(R.styleable.ScanOverlay_overlay_mask_color, Color.parseColor("#80000000"))
+                    style = Paint.Style.FILL
+                }
+
+
+            } finally {
+                recycle()
+            }
+        }
+    }
+
+    private fun getDP(value: Float): Float = value * Resources.getSystem().displayMetrics.density
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        calculateRectangleDimension(measuredWidth, measuredHeight)
+    }
+
+    override fun onLayout(
+        changed: Boolean, left: Int, top: Int, right: Int,
+        bottom: Int
+    ) {
+        calculateRectangleDimension(right - left, bottom - top)
+    }
+
+    protected override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+
+        // Background
+        canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), backgroundPaint)
+
+        // Viewfinder
+        canvas.drawRoundRect(viewfinderRect, viewfinderRadius, viewfinderRadius, viewfinderPaint)
+
+        // Corner
+        val cornerSize = viewfinderRadius * 2f
+
+        // Top Left
+        canvas.drawArc(viewfinderRect.left, viewfinderRect.top, viewfinderRect.left+cornerSize, viewfinderRect.top+cornerSize, -90f, -90f, false, viewfinderCornerPaint)
+
+        //Top Right
+        canvas.drawArc(viewfinderRect.right-cornerSize, viewfinderRect.top, viewfinderRect.right, viewfinderRect.top+cornerSize, -90f, 90f, false, viewfinderCornerPaint)
+
+        // Bottom Right
+        canvas.drawArc(viewfinderRect.right-cornerSize, viewfinderRect.bottom-cornerSize, viewfinderRect.right, viewfinderRect.bottom, 90f, -90f, false, viewfinderCornerPaint)
+
+        // Bottom Left
+        canvas.drawArc(viewfinderRect.left, viewfinderRect.bottom-cornerSize, viewfinderRect.left+cornerSize, viewfinderRect.bottom, 90f, 90f, false, viewfinderCornerPaint)
+    }
+
+    private fun calculateRectangleDimension(width: Int, height: Int) {
+        if (width > 0 && height > 0) {
+            val left = (width - viewfinderWidth) / 2f
+            val right = left + viewfinderWidth
+            val top = (height - viewfinderHeight) / 2f
+            val bottom = top + viewfinderHeight
+            viewfinderRect.set(left, top, right, bottom)
+        }
+    }
+}

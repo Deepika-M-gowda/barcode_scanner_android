@@ -22,6 +22,7 @@
     <string name="image_view_description_eco_score">ECO SCORE</string>
     <string name="image_view_description_background">Фон</string>
     <string name="image_view_description_image">Изображение</string>
+    <string name="slider_description_zoom">Zoom</string>
 
     <!-- Menu Item -->
     <string name="title_scan">Сканер</string>
@@ -505,6 +506,7 @@
 
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Сканирование</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
     <string name="preferences_switch_scan_search_on_api_label">Автоматические запросы к удаленным API</string>
     <string name="preferences_switch_scan_vibrate_label">Вибросигнал при успешном сканировании</string>
     <string name="preferences_switch_scan_bip_label">Звук при успешном сканировании</string>
@@ -545,6 +547,7 @@
 
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing (" zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
+    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
     <string name="dependency_zxing_code_scanner_description_label">Библиотека сканера кодов для Android, основанная на ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard - это библиотека vCard, написанная на Java. Она может считывать и записывать vCard в различных форматах.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper - это библиотека обрезки изображений для Android.</string>

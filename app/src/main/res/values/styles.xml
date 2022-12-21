@@ -48,6 +48,8 @@
         <item name="cardViewStyle">@style/CardViewStyle</item>
         <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="navigationRailStyle">@style/RailNavigationViewStyle</item>
+        <item name="sliderStyle">@style/Slider</item>
         <item name="switchStyle">@style/SwitchStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
@@ -114,6 +116,8 @@
         <item name="cardViewStyle">@style/CardViewStyle</item>
         <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="navigationRailStyle">@style/RailNavigationViewStyle</item>
+        <item name="sliderStyle">@style/Slider</item>
         <item name="switchStyle">@style/SwitchStyle</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
@@ -131,8 +135,8 @@
         
         <item name="colorControlNormal">?appIconColorOnBackground</item>
 
-        <item name="android:statusBarColor">?appColorPrimaryDark</item>
-        <item name="android:navigationBarColor">?appColorPrimaryDark</item>
+        <item name="android:statusBarColor">?appBackgroundColorPrimary</item>
+        <item name="android:navigationBarColor">?appBackgroundColorPrimary</item>
 
         <item name="android:windowFullscreen">false</item>
     </style>
@@ -267,13 +271,30 @@
     <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
         <item name="backgroundColor">?appBackgroundColorPrimary</item>
         <item name="android:background">?appBackgroundColorPrimary</item>
-        <item name="itemActiveIndicatorStyle">@style/ActiveIndicatorStyle</item>
+        <item name="itemActiveIndicatorStyle">@style/BottomNavigationViewActiveIndicatorStyle</item>
     </style>
 
-    <style name="ActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <style name="BottomNavigationViewActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">?appIndicatorColor</item>
     </style>
 
+    <!-- NavigationRailView -->
+    <style name="RailNavigationViewStyle" parent="Widget.Material3.NavigationRailView">
+        <item name="backgroundColor">?appBackgroundColorPrimary</item>
+        <item name="android:background">?appBackgroundColorPrimary</item>
+        <item name="itemActiveIndicatorStyle">@style/NavigationRailViewActiveIndicatorStyle</item>
+    </style>
+
+    <style name="NavigationRailViewActiveIndicatorStyle" parent="Widget.Material3.NavigationRailView.ActiveIndicator">
+        <item name="android:color">?appIndicatorColor</item>
+    </style>
+
+    <!-- Slider -->
+    <style name="Slider" parent="Widget.Material3.Slider">
+        <item name="thumbColor">?appMainColor</item>
+        <item name="trackColor">?appIndicatorColor</item>
+        <item name="haloColor">?appIndicatorColor</item>
+    </style>
     <!-- -->
 
     <style name="SwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">

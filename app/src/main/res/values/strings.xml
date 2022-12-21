@@ -22,6 +22,7 @@
     <string name="image_view_description_eco_score">ECO SCORE</string>
     <string name="image_view_description_background">Background</string>
     <string name="image_view_description_image">Image</string>
+    <string name="slider_description_zoom">Zoom</string>
 
     <!-- Menu Item -->
     <string name="title_scan">Scan</string>
@@ -505,6 +506,7 @@
 
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
     <string name="preferences_switch_scan_search_on_api_label">Query remote APIs automatically</string>
     <string name="preferences_switch_scan_vibrate_label">Vibrate when scan is successful</string>
     <string name="preferences_switch_scan_bip_label">Play sound when scan is successful</string>
@@ -545,6 +547,7 @@
 
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
+    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
     <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
@@ -706,6 +709,7 @@
     <string name="preferences_color_key" translatable="false">preferences_color_key</string>
     <string name="preferences_theme_key" translatable="false">preferences_theme_key</string>
     <string name="preferences_languages_key" translatable="false">preferences_languages_key</string>
+    <string name="preferences_switch_scan_use_camera_x_api_key" translatable="false">preferences_switch_scan_use_camera_x_api_key</string>
     <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
     <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
     <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
@@ -728,6 +732,11 @@
     <string name="dependency_zxing_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
     <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
+
+    <string name="dependency_camera_x_title_label" translatable="false">CameraX</string>
+    <string name="dependency_camera_x_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_camera_x_author_label" translatable="false">Google</string>
+    <string name="dependency_camera_x_github_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/camera</string>
 
     <string name="dependency_zxing_code_scanner_title_label" translatable="false">Code Scanner</string>
     <string name="dependency_zxing_code_scanner_license_label" translatable="false">MIT License</string>

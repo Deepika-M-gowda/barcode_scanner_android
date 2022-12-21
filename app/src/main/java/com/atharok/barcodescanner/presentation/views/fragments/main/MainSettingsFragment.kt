@@ -29,6 +29,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
@@ -85,6 +86,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_color_key) -> mActivity.updateTheme()
                 getString(R.string.preferences_theme_key) -> mActivity.updateTheme()
 
+                getString(R.string.preferences_switch_scan_use_camera_x_api_key),
                 getString(R.string.preferences_switch_scan_vibrate_key),
                 getString(R.string.preferences_switch_scan_bip_key),
                 getString(R.string.preferences_switch_scan_screen_rotation_key),
@@ -96,6 +98,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun configureChangeLanguagePreference(){
         val pref = findPreference(getString(R.string.preferences_languages_key)) as Preference?
 
@@ -107,6 +110,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun createActionAppLocaleSettingsIntent(): Intent = Intent(
         Settings.ACTION_APP_LOCALE_SETTINGS,
         Uri.fromParts("package", requireActivity().packageName, null)

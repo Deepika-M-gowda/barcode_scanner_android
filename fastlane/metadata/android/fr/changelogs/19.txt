@@ -1,0 +1,5 @@
+1.8.0
+
+- Intégration de l'API CameraX pour le scan de code-barres.
+- Amélioration des vues en mode paysage.
+- Quelques améliorations dans la traduction russe (Merci à s s).

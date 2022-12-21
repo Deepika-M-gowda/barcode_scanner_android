@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.main.MainCameraXScannerFragment">
+
+    <TextView
+        android:id="@+id/fragment_main_camera_x_scanner_camera_permission_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/standard_margin"
+        android:text="@string/camera_permission_denied"
+        android:textAlignment="center"
+        android:textColor="?appFrontColorSecondary"
+        android:textSize="@dimen/standard_text_size"
+        android:fontFamily="@font/roboto_medium"
+        android:visibility="gone"
+        />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/fragment_main_camera_x_scanner_preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <com.atharok.barcodescanner.presentation.customView.ScanOverlay
+        android:id="@+id/fragment_main_camera_x_scanner_scan_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:viewfinder_width="250dp"
+        app:viewfinder_height="250dp"
+        app:viewfinder_radius="50dp"
+        app:viewfinder_corner_thickness="4dp"
+        app:viewfinder_corner_color="@android:color/white"
+        app:overlay_mask_color="@color/black_transparent"
+        android:visibility="gone"
+        />
+
+    <!--<com.google.android.material.slider.Slider
+        android:id="@+id/fragment_main_camera_x_scanner_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:value="0.5"
+        android:contentDescription="@string/slider_description_zoom"
+        android:visibility="gone"
+        />-->
+
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="275dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:orientation="vertical">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/fragment_main_camera_x_scanner_slider"
+            android:layout_width="275dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:rotation="270"
+            android:value="0.5"
+            android:valueFrom="0.0"
+            android:valueTo="1"
+            style="@style/Slider"
+            app:labelBehavior="gone"
+            android:contentDescription="@string/slider_description_zoom"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <!--<FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x_large_margin"
+        android:layout_gravity="start|center_vertical">
+
+        <TextView
+            android:id="@+id/fragment_main_camera_x_scanner_information_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scan_information_label"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/standard_text_size"
+            android:fontFamily="@font/roboto_medium"
+            android:visibility="gone"
+            />
+    </FrameLayout>-->
+
+</FrameLayout>

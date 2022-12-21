@@ -11,8 +11,8 @@ android {
         applicationId "com.atharok.barcodescanner"
         minSdk 21
         targetSdk 33
-        versionCode 18
-        versionName "1.7.0"
+        versionCode 19
+        versionName "1.8.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,7 +44,6 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // Test
     testImplementation 'junit:junit:4.13.2'
@@ -72,6 +71,13 @@ dependencies {
     // Retrofit est une librairie permettant de gérer les API REST
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // CameraX
+    def camerax_version = "1.2.0"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
 
     // Zxing permet d'avoir toutes les fonctionnalités liées aux code-barres
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'

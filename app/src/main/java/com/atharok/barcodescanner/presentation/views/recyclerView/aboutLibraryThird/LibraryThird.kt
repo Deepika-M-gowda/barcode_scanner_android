@@ -24,6 +24,7 @@ import com.atharok.barcodescanner.R
 
 enum class LibraryThird(val nameResource: Int, val licenseResource: Int, val authorResource: Int, val descriptionResource: Int, val webLinkResource: Int) {
     ZXING(R.string.dependency_zxing_title_label, R.string.dependency_zxing_license_label, R.string.dependency_zxing_author_label, R.string.dependency_zxing_description_label, R.string.dependency_zxing_github_link_label),
+    CAMERA_X(R.string.dependency_camera_x_title_label, R.string.dependency_camera_x_license_label, R.string.dependency_camera_x_author_label, R.string.dependency_camera_x_description_label, R.string.dependency_camera_x_github_link_label),
     ZXING_CODE_SCANNER(R.string.dependency_zxing_code_scanner_title_label, R.string.dependency_zxing_code_scanner_license_label, R.string.dependency_zxing_code_scanner_author_label, R.string.dependency_zxing_code_scanner_description_label, R.string.dependency_zxing_code_scanner_github_link_label),
     ANDROID_IMAGE_CROPPER(R.string.dependency_android_image_cropper_title_label, R.string.dependency_android_image_cropper_license_label, R.string.dependency_android_image_cropper_author_label, R.string.dependency_android_image_cropper_description_label, R.string.dependency_android_image_cropper_github_link_label),
     EZ_VCARD(R.string.dependency_ez_vcard_title_label, R.string.dependency_ez_vcard_license_label, R.string.dependency_ez_vcard_author_label, R.string.dependency_ez_vcard_description_label, R.string.dependency_ez_vcard_github_link_label),

@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -27,10 +28,7 @@ import androidx.fragment.app.commitNow
 import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainHistoryFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.*
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 
@@ -40,6 +38,7 @@ class MainActivity: BaseActivity() {
         private const val ITEM_ID_KEY = "itemIdKey"
     }
 
+    private val mainCameraXScannerFragment: MainCameraXScannerFragment by inject()
     private val mainScannerFragment: MainScannerFragment by inject()
     private val mainHistoryFragment: MainHistoryFragment by inject()
     private val mainBarcodeCreatorListFragment: MainBarcodeCreatorListFragment by inject()
@@ -53,40 +52,66 @@ class MainActivity: BaseActivity() {
         setSupportActionBar(viewBinding.activityMainToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)// On n'affiche pas l'icone "retour" dans la MainActivity
 
-        configureBottomNavigationMenu()
-
-        if(savedInstanceState == null)
-            showInitialFragment()
+        if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            configureNavigationRailView()
+        }else{
+            configureBottomNavigationMenu()
+        }
 
         setContentView(viewBinding.root)
     }
 
-    private fun showInitialFragment() {
-        val bottomNavigation = viewBinding.activityMainMenuBottomNavigation
-
-        // Utile lorsqu'on ouvre l'application via un shortcut
-        when (intent?.action) {
-            "${BuildConfig.APPLICATION_ID}.SCAN" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_scan
-            "${BuildConfig.APPLICATION_ID}.HISTORY" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_history
-            "${BuildConfig.APPLICATION_ID}.CREATE" -> bottomNavigation.selectedItemId = R.id.menu_navigation_bottom_view_create
-        }
-
-        val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, bottomNavigation.selectedItemId)
-        changeView(itemIdSelected)
-    }
-
-    // ---- Menu ----
+    // ---- Configuration ----
 
     private fun configureBottomNavigationMenu() {
 
-        viewBinding.activityMainMenuBottomNavigation.setOnItemSelectedListener {
-            intent.putExtra(ITEM_ID_KEY, it.itemId)
-            changeView(it.itemId)
+        viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
+
+            bottomNavigationView.setOnItemSelectedListener {
+                intent.putExtra(ITEM_ID_KEY, it.itemId)
+                changeView(it.itemId)
+            }
+
+            initializeFirstFragmentToShow {
+                bottomNavigationView.selectedItemId = it
+            }
         }
     }
 
+    private fun configureNavigationRailView() {
+
+        viewBinding.activityMainNavigationRail?.let { navigationRailView ->
+            navigationRailView.setOnItemSelectedListener {
+                intent.putExtra(ITEM_ID_KEY, it.itemId)
+                changeView(it.itemId)
+            }
+
+            initializeFirstFragmentToShow {
+                navigationRailView.selectedItemId = it
+            }
+        }
+    }
+
+    private fun initializeFirstFragmentToShow(onChangeItem: (selectedItemId: Int) -> Unit) {
+
+        // Utile lorsqu'on ouvre l'application via un shortcut
+        val selectedItemId = when (intent?.action) {
+            "${BuildConfig.APPLICATION_ID}.SCAN" -> R.id.menu_navigation_bottom_view_scan
+            "${BuildConfig.APPLICATION_ID}.HISTORY" -> R.id.menu_navigation_bottom_view_history
+            "${BuildConfig.APPLICATION_ID}.CREATE" -> R.id.menu_navigation_bottom_view_create
+            else -> intent.getIntExtra(ITEM_ID_KEY, R.id.menu_navigation_bottom_view_scan)
+        }
+
+        onChangeItem(selectedItemId)
+
+        val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, selectedItemId)
+        changeView(itemIdSelected)
+    }
+
+    // ---- Change Fragment ----
+
     private fun changeView(id: Int): Boolean = when(id){
-        R.id.menu_navigation_bottom_view_scan -> changeFragment(mainScannerFragment, R.string.title_scan)
+        R.id.menu_navigation_bottom_view_scan -> changeFragment(if(settingsManager.useCameraXApi) mainCameraXScannerFragment else mainScannerFragment, R.string.title_scan)
         R.id.menu_navigation_bottom_view_history -> changeFragment(mainHistoryFragment, R.string.title_history)
         R.id.menu_navigation_bottom_view_create -> changeFragment(mainBarcodeCreatorListFragment, R.string.title_bar_code_creator)
         R.id.menu_navigation_bottom_view_settings -> changeFragment(mainSettingsFragment, R.string.title_settings)
@@ -107,6 +132,8 @@ class MainActivity: BaseActivity() {
         return true
     }
 
+    // ---- UI ----
+
     fun showSnackbar(text: String) {
         val snackbar = Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT)
         snackbar.anchorView = viewBinding.activityMainMenuBottomNavigation
@@ -114,10 +141,19 @@ class MainActivity: BaseActivity() {
     }
 
     // ---- Theme ----
+
     fun updateTheme() {
         settingsManager.reload()
         setTheme(settingsManager.getTheme())
-        intent.putExtra(ITEM_ID_KEY, viewBinding.activityMainMenuBottomNavigation.selectedItemId)
+
+        viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
+            intent.putExtra(ITEM_ID_KEY, bottomNavigationView.selectedItemId)
+        }
+
+        viewBinding.activityMainNavigationRail?.let { navigationRailView ->
+            intent.putExtra(ITEM_ID_KEY, navigationRailView.selectedItemId)
+        }
+
         recreate()
     }
 }

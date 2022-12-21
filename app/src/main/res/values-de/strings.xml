@@ -22,6 +22,7 @@
     <string name="image_view_description_eco_score">Eco-Score</string>
     <string name="image_view_description_background">Hintergrund</string>
     <string name="image_view_description_image">Bild</string>
+    <string name="slider_description_zoom">Zoom</string>
 
     <!-- Menu Item -->
     <string name="title_scan">Scan</string>
@@ -505,6 +506,7 @@
 
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
     <string name="preferences_switch_scan_search_on_api_label">Remote APIs automatisch abfragen</string>
     <string name="preferences_switch_scan_vibrate_label">Vibriere bei erfolgreichem Scan</string>
     <string name="preferences_switch_scan_bip_label">Ton ausgeben bei erfolgeichem Scan</string>
@@ -545,6 +547,7 @@
 
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") ist eine quelloffene Bibliothek zur Verarbeitung von 1D/2D-Barcodes in verschiedenen Formaten.</string>
+    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
     <string name="dependency_zxing_code_scanner_description_label">Code-Scanner-Bibliothek für Android, die auf ZXing basiert.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard ist eine in Java geschriebene vCard-Bibliothek. Sie kann vCards in vielen verschiedenen Formaten lesen und schreiben.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper ist eine Bibliothek zum Zuschneiden von Bildern für Android.</string>

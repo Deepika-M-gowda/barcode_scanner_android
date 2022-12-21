@@ -74,6 +74,7 @@ The code is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0).
 Dependencies:
 
 - [ZXing](https://github.com/zxing/zxing) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Zxing
+- [CameraX](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/camera) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
 - [Code Scanner](https://github.com/yuriy-budiyev/code-scanner) is licensed under [MIT License](https://mit-license.org/) by Yuriy Budiyev
 - [ez-vcard](https://github.com/mangstadt/ez-vcard) is licensed under [FreeBSD](https://www.freebsd.org/copyright/freebsd-license/) by Michael Angstadt
 - [Android Image Cropper](https://github.com/CanHub/Android-Image-Cropper) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by CanHub

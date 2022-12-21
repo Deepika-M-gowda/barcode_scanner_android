@@ -385,6 +385,7 @@ val dataModule: Module = module {
 
 val fragmentsModule = module {
 
+    factory { MainCameraXScannerFragment() }
     factory { MainScannerFragment() }
     factory { MainHistoryFragment() }
     factory { MainBarcodeCreatorListFragment() }

@@ -1,0 +1,5 @@
+1.8.0
+
+- CameraX API implementation.
+- Improved views in landscape mode.
+- Some improvements in the Russian translation (Thanks to s s).
