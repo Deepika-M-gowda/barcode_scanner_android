@@ -25,7 +25,7 @@
         android:layout_height="match_parent"
         app:autoFocusButtonVisible="false"
         app:flashButtonVisible="false"
-        app:frameColor="?attr/appColorMain"
+        app:frameColor="@android:color/white"
         app:frameCornersSize="50dp"
         app:frameCornersRadius="0dp"
         app:frameAspectRatioWidth="1"

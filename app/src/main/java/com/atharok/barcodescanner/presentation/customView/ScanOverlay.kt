@@ -31,8 +31,8 @@ import com.atharok.barcodescanner.R
 
 class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) {
 
-    private val viewfinderWidth: Float
-    private val viewfinderHeight: Float
+    val viewfinderWidth: Float
+    val viewfinderHeight: Float
     private val viewfinderRadius: Float
 
     private val backgroundPaint: Paint

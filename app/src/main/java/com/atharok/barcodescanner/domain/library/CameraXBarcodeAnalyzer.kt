@@ -32,7 +32,8 @@ import kotlin.math.roundToInt
 class CameraXBarcodeAnalyzer(
     private val previewView: PreviewView,
     private val scanOverlay: ScanOverlay,
-    private val onBarcodeDetected: (result: Result) -> Unit
+    private val onBarcodeDetected: (result: Result) -> Unit,
+    private val onError: (text: String) -> Unit
 ) : ImageAnalysis.Analyzer {
 
     private val reader = MultiFormatReader().apply {
@@ -84,21 +85,25 @@ class CameraXBarcodeAnalyzer(
         val left = (values.imageWidth - sizeX) / 2f
         val top = (values.imageHeight - sizeY) / 2f
 
-        val source = PlanarYUVLuminanceSource(
-            values.byteArray,
-            values.imageWidth, values.imageHeight,
-            left.roundToInt(), top.roundToInt(),
-            sizeX.roundToInt(), sizeY.roundToInt(),
-            false
-        )
-
-        val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
-        reader.reset()
         try {
-            val result = reader.decode(binaryBitmap)
-            onBarcodeDetected(result)
-        } catch (e: ReaderException) {
-            //e.printStackTrace()
+            val source = PlanarYUVLuminanceSource(
+                values.byteArray,
+                values.imageWidth, values.imageHeight,
+                left.roundToInt(), top.roundToInt(),
+                sizeX.roundToInt(), sizeY.roundToInt(),
+                false
+            )
+
+            val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
+            reader.reset()
+            try {
+                val result = reader.decode(binaryBitmap)
+                onBarcodeDetected(result)
+            } catch (e: ReaderException) {
+                //e.printStackTrace() // Not Found
+            }
+        } catch (e: Exception) {
+            onError(e.toString())
         }
 
         image.close()

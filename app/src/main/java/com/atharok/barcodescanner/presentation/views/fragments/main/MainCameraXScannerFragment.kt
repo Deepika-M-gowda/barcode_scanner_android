@@ -203,6 +203,7 @@ class MainCameraXScannerFragment : BaseFragment() {
     }
 
     private fun doPermissionRefused() {
+        camera=null
         viewBinding.fragmentMainCameraXScannerCameraPermissionTextView.visibility = View.VISIBLE
         viewBinding.fragmentMainCameraXScannerPreviewView.visibility = View.GONE
         viewBinding.fragmentMainCameraXScannerScanOverlay.visibility = View.GONE
@@ -237,15 +238,25 @@ class MainCameraXScannerFragment : BaseFragment() {
             setTargetAspectRatio(RATIO_4_3)
         }.build()
 
+        val onBarcodeFound: (result: Result) -> Unit = {
+            previewView.post {
+                onSuccessfulScanFromCamera(it)
+            }
+        }
+
+        val onError: (msg: String) -> Unit = {
+            previewView.post {
+                cameraProvider.unbindAll()
+                viewBinding.fragmentMainCameraXScannerCameraPermissionTextView.text = getString(R.string.scan_error_exception_label, it)
+                doPermissionRefused()
+            }
+        }
+
         val imageAnalysis = ImageAnalysis.Builder().apply {
             setTargetAspectRatio(RATIO_4_3)
             setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
         }.build().also {
-            it.setAnalyzer(cameraExecutor, CameraXBarcodeAnalyzer(previewView, scanOverlay) { result ->
-                previewView.post {
-                    onSuccessfulScanFromCamera(result)
-                }
-            })
+            it.setAnalyzer(cameraExecutor, CameraXBarcodeAnalyzer(previewView, scanOverlay, onBarcodeFound, onError))
         }
 
         cameraProvider.unbindAll()
