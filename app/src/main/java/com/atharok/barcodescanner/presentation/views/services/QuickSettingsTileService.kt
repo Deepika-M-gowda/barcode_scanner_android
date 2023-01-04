@@ -22,12 +22,24 @@ package com.atharok.barcodescanner.presentation.views.services
 
 import android.content.Intent
 import android.os.Build
+import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import androidx.annotation.RequiresApi
+import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 
 @RequiresApi(Build.VERSION_CODES.N)
 class QuickSettingsTileService: TileService() {
+
+    override fun onStartListening() {
+        super.onStartListening()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            qsTile.subtitle = getString(R.string.title_scan)
+        }
+        qsTile.state = Tile.STATE_ACTIVE
+        qsTile.updateTile()
+    }
+
     override fun onClick() {
         super.onClick()
 

@@ -25,6 +25,7 @@
         android:localeConfig="@xml/locale_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hasFragileUserData="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="33">
         <activity
@@ -33,6 +34,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data
@@ -94,7 +99,18 @@
             android:label="@string/title_bar_code_creator" />
         <activity
             android:name=".presentation.views.activities.AboutPermissionsDescriptionActivity"
-            android:label="@string/preferences_about_permissions_label" />
+            android:label="@string/preferences_about_permissions_label"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".presentation.views.activities.AboutLibraryThirdActivity"
             android:label="@string/preferences_about_library_third_label" />
