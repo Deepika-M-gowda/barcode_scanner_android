@@ -16,8 +16,7 @@
             android:id="@+id/template_nutrient_level_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/title_text_size"
-            android:fontFamily="@font/roboto_black"
+            style="@style/TitlePrimaryMaxTextViewAppearance"
             />
 
         <TextView
@@ -25,9 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/template_nutrient_level_entitled_text_view"
-            android:textColor="?android:textColorSecondary"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium"
+            style="@style/StandardSecondaryTextViewAppearance"
             />
 
     </RelativeLayout>
@@ -44,8 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black"
+            style="@style/TitlePrimaryMinTextViewAppearance"
             />
 
         <ImageView

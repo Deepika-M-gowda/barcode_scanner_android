@@ -15,22 +15,15 @@
             android:id="@+id/fragment_barcode_matrix_email_address_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_email_recipient_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_address_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_email_address_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -45,22 +38,15 @@
             android:id="@+id/fragment_barcode_matrix_email_cc_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_email_cc_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_cc_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_email_cc_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -75,22 +61,15 @@
             android:id="@+id/fragment_barcode_matrix_email_bcc_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_email_bcc_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_bcc_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_email_bcc_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -104,22 +83,15 @@
             android:id="@+id/fragment_barcode_matrix_email_subject_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_subject_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_subject_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_email_subject_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -133,22 +105,15 @@
             android:id="@+id/fragment_barcode_matrix_email_body_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_body_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_body_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_email_body_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
 </RelativeLayout>

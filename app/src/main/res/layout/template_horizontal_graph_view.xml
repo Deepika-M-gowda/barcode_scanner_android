@@ -12,4 +12,4 @@
     app:lowBarColor="?colorPositive"
     app:mediumBarColor="?colorMedium"
     app:highBarColor="?colorNegative"
-    app:graphTextFontResource="@font/roboto_medium"/>
+    app:fontFamily="sans-serif-medium"/>

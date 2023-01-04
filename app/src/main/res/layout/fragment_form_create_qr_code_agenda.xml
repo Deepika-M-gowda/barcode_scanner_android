@@ -39,10 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
-
             android:text="@string/begin_label"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium" />
+            style="@style/StandardPrimaryTextViewAppearance" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -54,17 +52,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
-                android:textSize="@dimen/standard_text_size"
-                android:fontFamily="@font/roboto_black"/>
+                style="@style/TitleVariantTextViewAppearance"/>
 
             <TextView
                 android:id="@+id/fragment_form_create_qr_code_agenda_begin_time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
-                android:textSize="@dimen/standard_text_size"
                 android:layout_toEndOf="@id/fragment_form_create_qr_code_agenda_begin_date_picker"
-                android:fontFamily="@font/roboto_black" />
+                style="@style/TitleVariantTextViewAppearance" />
 
         </RelativeLayout>
 
@@ -81,10 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
-
             android:text="@string/end_label"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium" />
+            style="@style/StandardPrimaryTextViewAppearance" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -96,8 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
-                android:textSize="@dimen/standard_text_size"
-                android:fontFamily="@font/roboto_black"/>
+                style="@style/TitleVariantTextViewAppearance" />
 
             <TextView
                 android:id="@+id/fragment_form_create_qr_code_agenda_end_time_picker"
@@ -105,8 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
                 android:layout_toEndOf="@id/fragment_form_create_qr_code_agenda_end_date_picker"
-                android:textSize="@dimen/standard_text_size"
-                android:fontFamily="@font/roboto_black" />
+                style="@style/TitleVariantTextViewAppearance" />
 
         </RelativeLayout>
 
@@ -118,8 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_form_create_qr_code_agenda_end_layout"
         android:text="@string/check_box_event_all_of_day"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_medium"/>
+        style="@style/StandardPrimaryTextViewAppearance"/>
 
     <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
         android:id="@+id/fragment_form_create_qr_code_agenda_place_input_layout"

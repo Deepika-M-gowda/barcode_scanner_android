@@ -29,9 +29,8 @@
                 android:layout_weight=".3"
                 android:textAlignment="textStart"
                 android:text="@string/nutrition_facts_table_label"
-                android:textColor="?attr/appOnMainColor"
-                android:textSize="@dimen/sub_title_text_size"
-                android:fontFamily="@font/roboto_black"/>
+                android:textColor="?attr/appColorOnMain"
+                style="@style/TitleVariantTextViewAppearance"/>
             <TextView
                 android:id="@+id/fragment_food_analysis_nutrition_facts_table_entitled_100_text_view"
                 android:layout_width="0dp"
@@ -39,9 +38,8 @@
                 android:layout_weight=".3"
                 android:textAlignment="textEnd"
                 android:text="@string/off_per_100_label"
-                android:textColor="?attr/appOnMainColor"
-                android:textSize="@dimen/sub_title_text_size"
-                android:fontFamily="@font/roboto_black" />
+                android:textColor="?attr/appColorOnMain"
+                style="@style/TitleVariantTextViewAppearance" />
             <TextView
                 android:id="@+id/fragment_food_analysis_nutrition_facts_table_entitled_serving_text_view"
                 android:layout_width="0dp"
@@ -49,9 +47,8 @@
                 android:layout_weight=".3"
                 android:textAlignment="textEnd"
                 android:text="@string/off_per_serving_label"
-                android:textColor="?attr/appOnMainColor"
-                android:textSize="@dimen/sub_title_text_size"
-                android:fontFamily="@font/roboto_black" />
+                android:textColor="?attr/appColorOnMain"
+                style="@style/TitleVariantTextViewAppearance" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

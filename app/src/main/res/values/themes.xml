@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar" />
+
+    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="appColorMain">@color/lightBlueColorAccent</item>
+        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="appColorBackground">@color/lightBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightBackgroundColorSecondary</item>
+        <item name="appColorFrontPrimary">@color/lightFrontColorPrimary</item>
+        <item name="appColorFrontSecondary">@color/lightFrontColorSecondary</item>
+        <item name="appColorIcon">?attr/appColorFrontPrimary</item>
+        <item name="appColorOnMain">@android:color/white</item>
+        <item name="appColorIndicator">@color/lightBlueIndicativeColor</item>
+
+        <item name="colorPrimary">?attr/appColorBackground</item>
+        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
+        <item name="colorAccent">?attr/appColorMain</item>
+
+        <item name="icon_color">?attr/appColorFrontPrimary</item>
+
+        <item name="colorPositive">@color/lightColorPositive</item>
+        <item name="colorMedium">@color/lightColorMedium</item>
+        <item name="colorNegative">@color/lightColorNegative</item>
+        <item name="colorUnknown">@color/lightColorUnknown</item>
+
+        <!-- Background Color -->
+        <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
+        <item name="android:windowBackground">?attr/appColorBackground</item>
+        <item name="cardViewBackgroundColorReference">?attr/appColorForeground</item>
+        <item name="activityBackgroundColorReference">?attr/appColorBackground</item>
+
+        <item name="background_entitled_row">?attr/appColorMain</item>
+        <item name="background_primary_row">?attr/appColorForeground</item>
+        <item name="background_secondary_row">?attr/appColorBackground</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">?attr/appColorFrontPrimary</item>
+        <item name="android:textColor">?attr/appColorFrontPrimary</item>
+        <item name="textColor">?attr/appColorFrontPrimary</item>
+        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
+
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="chipStyle">@style/MaterialChip</item>
+
+        <item name="android:fontFamily">sans-serif-medium</item>
+
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
+
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+
+        <item name="colorControlNormal">?attr/appColorIcon</item>
+        <item name="colorControlActivated">?attr/appColorMain</item>
+
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="appColorMain">@color/darkBlueColorAccent</item>
+        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="appColorBackground">@color/darkBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkBackgroundColorSecondary</item>
+        <item name="appColorFrontPrimary">@color/darkFrontColorPrimary</item>
+        <item name="appColorFrontSecondary">@color/darkFrontColorSecondary</item>
+        <item name="appColorIcon">?attr/appColorFrontPrimary</item>
+        <item name="appColorOnMain">@android:color/black</item>
+        <item name="appColorIndicator">@color/darkBlueIndicativeColor</item>
+
+        <item name="colorPrimary">?attr/appColorBackground</item>
+        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
+        <item name="colorAccent">?attr/appColorMain</item>
+        <item name="icon_color">?attr/appColorFrontPrimary</item>
+
+        <item name="colorPositive">@color/darkColorPositive</item>
+        <item name="colorMedium">@color/darkColorMedium</item>
+        <item name="colorNegative">@color/darkColorNegative</item>
+        <item name="colorUnknown">@color/darkColorUnknown</item>
+
+        <!-- Background Color -->
+        <!--<item name="backgroundColor">@color/darkColorBackground</item>-->
+        <item name="android:windowBackground">?attr/appColorBackground</item>
+        <item name="cardViewBackgroundColorReference">?attr/appColorForeground</item>
+        <item name="activityBackgroundColorReference">?attr/appColorBackground</item>
+
+        <item name="background_entitled_row">?attr/appColorMain</item>
+        <item name="background_primary_row">?attr/appColorForeground</item>
+        <item name="background_secondary_row">?attr/appColorBackground</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">?attr/appColorFrontPrimary</item>
+        <item name="android:textColor">?attr/appColorFrontPrimary</item>
+        <item name="textColor">?attr/appColorFrontPrimary</item>
+        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
+
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="chipStyle">@style/MaterialChip</item>
+
+        <item name="android:fontFamily">sans-serif-medium</item>
+
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
+
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+
+        <item name="colorControlNormal">?attr/appColorIcon</item>
+        <item name="colorControlActivated">?attr/appColorMain</item>
+
+        <item name="android:statusBarColor">?attr/appColorBackground</item>
+        <item name="android:navigationBarColor">?attr/appColorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="BlueLightTheme" parent="LightTheme">
+        <item name="appColorMain">@color/lightBlueColorAccent</item>
+        <item name="appColorBackground">@color/lightBlueBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightBlueBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/lightBlueIndicativeColor</item>
+    </style>
+
+    <style name="BlueDarkTheme" parent="DarkTheme">
+        <item name="appColorMain">@color/darkBlueColorAccent</item>
+        <item name="appColorBackground">@color/darkBlueBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkBlueBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/darkBlueIndicativeColor</item>
+    </style>
+
+    <style name="OrangeLightTheme" parent="LightTheme">
+        <item name="appColorMain">@color/lightOrangeColorAccent</item>
+        <item name="appColorBackground">@color/lightOrangeBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightOrangeBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/lightOrangeIndicativeColor</item>
+    </style>
+
+    <style name="OrangeDarkTheme" parent="DarkTheme">
+        <item name="appColorMain">@color/darkOrangeColorAccent</item>
+        <item name="appColorBackground">@color/darkOrangeBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkOrangeBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/darkOrangeIndicativeColor</item>
+    </style>
+
+    <style name="GreenLightTheme" parent="LightTheme">
+        <item name="appColorMain">@color/lightGreenColorAccent</item>
+        <item name="appColorBackground">@color/lightGreenBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightGreenBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/lightGreenIndicativeColor</item>
+    </style>
+
+    <style name="GreenDarkTheme" parent="DarkTheme">
+        <item name="appColorMain">@color/darkGreenColorAccent</item>
+        <item name="appColorBackground">@color/darkGreenBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkGreenBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/darkGreenIndicativeColor</item>
+    </style>
+
+    <style name="RedLightTheme" parent="LightTheme">
+        <item name="appColorMain">@color/lightRedColorAccent</item>
+        <item name="appColorBackground">@color/lightRedBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightRedBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/lightRedIndicativeColor</item>
+    </style>
+
+    <style name="RedDarkTheme" parent="DarkTheme">
+        <item name="appColorMain">@color/darkRedColorAccent</item>
+        <item name="appColorBackground">@color/darkRedBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkRedBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/darkRedIndicativeColor</item>
+    </style>
+
+    <style name="PurpleLightTheme" parent="LightTheme">
+        <item name="appColorMain">@color/lightPurpleColorAccent</item>
+        <item name="appColorBackground">@color/lightPurpleBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightPurpleBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/lightPurpleIndicativeColor</item>
+    </style>
+
+    <style name="PurpleDarkTheme" parent="DarkTheme">
+        <item name="appColorMain">@color/darkPurpleColorAccent</item>
+        <item name="appColorBackground">@color/darkPurpleBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/darkPurpleBackgroundColorSecondary</item>
+        <item name="appColorIndicator">@color/darkPurpleIndicativeColor</item>
+    </style>
+</resources>

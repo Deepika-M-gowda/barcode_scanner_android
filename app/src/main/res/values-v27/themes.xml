@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="appColorMain">@color/lightBlueColorAccent</item>
+        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="appColorBackground">@color/lightBackgroundColorPrimary</item>
+        <item name="appColorForeground">@color/lightBackgroundColorSecondary</item>
+        <item name="appColorFrontPrimary">@color/lightFrontColorPrimary</item>
+        <item name="appColorFrontSecondary">@color/lightFrontColorSecondary</item>
+        <item name="appColorIcon">?attr/appColorFrontPrimary</item>
+        <item name="appColorOnMain">@android:color/white</item>
+        <item name="appColorIndicator">@color/lightBlueIndicativeColor</item>
+
+        <item name="colorPrimary">?attr/appColorBackground</item>
+        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
+        <item name="colorAccent">?attr/appColorMain</item>
+
+        <item name="icon_color">?attr/appColorFrontPrimary</item>
+
+        <item name="colorPositive">@color/lightColorPositive</item>
+        <item name="colorMedium">@color/lightColorMedium</item>
+        <item name="colorNegative">@color/lightColorNegative</item>
+        <item name="colorUnknown">@color/lightColorUnknown</item>
+
+        <!-- Background Color -->
+        <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
+        <item name="android:windowBackground">?attr/appColorBackground</item>
+        <item name="cardViewBackgroundColorReference">?attr/appColorForeground</item>
+        <item name="activityBackgroundColorReference">?attr/appColorBackground</item>
+
+        <item name="background_entitled_row">?attr/appColorMain</item>
+        <item name="background_primary_row">?attr/appColorForeground</item>
+        <item name="background_secondary_row">?attr/appColorBackground</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">?attr/appColorFrontPrimary</item>
+        <item name="android:textColor">?attr/appColorFrontPrimary</item>
+        <item name="textColor">?attr/appColorFrontPrimary</item>
+        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
+
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="cardViewStyle">@style/CardViewStyle</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="chipStyle">@style/MaterialChip</item>
+
+        <item name="android:fontFamily">sans-serif-medium</item>
+
+        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
+
+        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+
+        <item name="colorControlNormal">?attr/appColorIcon</item>
+        <item name="colorControlActivated">?attr/appColorMain</item>
+
+        <item name="android:statusBarColor">?attr/appColorBackground</item>
+        <item name="android:navigationBarColor">?attr/appColorBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <item name="android:windowFullscreen">false</item>
+    </style>
+</resources>

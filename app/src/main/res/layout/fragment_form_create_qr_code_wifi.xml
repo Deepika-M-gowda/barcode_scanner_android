@@ -64,7 +64,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_form_create_qr_code_wifi_encryption_spinner"
         android:text="@string/qr_code_text_input_edit_text_hint_wifi_hide"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_medium"/>
+        style="@style/StandardPrimaryTextViewAppearance"/>
 
 </RelativeLayout>

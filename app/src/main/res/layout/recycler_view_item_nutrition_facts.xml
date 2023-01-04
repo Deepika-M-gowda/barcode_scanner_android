@@ -17,9 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_weight=".3"
         android:textAlignment="textStart"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_black" />
+        style="@style/StandardPrimaryTextViewAppearance" />
 
     <TextView
         android:id="@+id/recycler_view_item_nutrition_facts_100g_value_text_view"
@@ -27,9 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_weight=".3"
         android:textAlignment="textEnd"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_black_italic" />
+        style="@style/StandardPrimaryItalicTextViewAppearance" />
 
     <TextView
         android:id="@+id/recycler_view_item_nutrition_facts_serving_value_text_view"
@@ -37,7 +33,5 @@
         android:layout_height="wrap_content"
         android:layout_weight=".3"
         android:textAlignment="textEnd"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_black_italic" />
+        style="@style/StandardPrimaryItalicTextViewAppearance" />
 </LinearLayout>

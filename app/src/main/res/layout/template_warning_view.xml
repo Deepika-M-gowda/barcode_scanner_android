@@ -8,9 +8,7 @@
         android:id="@+id/template_warning_view_information_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/standard_text_size"
-        android:fontFamily="@font/roboto_medium_italic"/>
+        style="@style/StandardSecondaryItalicTextViewAppearance"/>
 
     <RelativeLayout
         android:id="@+id/template_warning_view_error_message_layout"
@@ -24,9 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/scan_error_message_label"
-            android:textColor="?android:textColorSecondary"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium_italic"/>
+            style="@style/StandardPrimaryTextViewAppearance"/>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -40,9 +36,7 @@
                 android:id="@+id/template_warning_view_error_message_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="?android:textColorSecondary"
-                android:textSize="@dimen/standard_text_size"
-                android:fontFamily="@font/roboto_medium_italic"/>
+                style="@style/StandardSecondaryItalicTextViewAppearance"/>
         </FrameLayout>
 
     </RelativeLayout>

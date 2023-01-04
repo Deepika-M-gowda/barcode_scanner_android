@@ -4,6 +4,11 @@
     android:id="@+id/template_text_view_contents_text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textColor="?android:attr/textColorSecondary"
+    style="@style/StandardSecondaryItalicTextViewAppearance"
+    />
+
+<!--
+android:textColor="?android:attr/textColorSecondary"
     android:textSize="@dimen/standard_text_size"
-    android:fontFamily="@font/roboto_medium_italic" />
+    android:fontFamily="@font/roboto_medium_italic"
+-->

@@ -318,17 +318,17 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">Vous devez entrer une valeur correct dans le champs de saisie.</string>
+    <string name="error_bar_code_none_character_message">Vous devez entrer une valeur correcte dans le champ de saisie.</string>
     <string name="error_bar_code_not_a_number_message">Le code-barres doit être composé uniquement de chiffres.</string>
     <string name="error_bar_code_wrong_length_message">Le code-barres doit contenir %1$s chiffres.</string>
     <string name="error_bar_code_wrong_key_message">Le %1$sème chiffre (clé de contrôle) devrait être %2$s.</string>
     <string name="error_bar_code_encoding_iso_8859_1_error_message">Les caractères spéciaux ne sont pas supportés pour ce type de code-barres.</string>
     <string name="error_bar_code_encoding_us_ascii_error_message">Les caractères spéciaux ou contenant un accent ne sont pas supportés pour ce type de code-barres.</string>
-    <string name="error_bar_code_93_regex_error_message">Un code-barres de type "Code 93" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 8 caractères spéciaux : « -, ., espace, *, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
-    <string name="error_bar_code_39_regex_error_message">Un code-barres de type "Code 39" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 7 caractères spéciaux : « -, ., espace, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
-    <string name="error_bar_codabar_regex_error_message">Un code-barres de type "Codabar" peut codifier les 10 chiffres (0 à 9) ainsi que 6 caractères spéciaux : « -, $, :, /, ., + ». Il peut aussi contenir les caractères A, B, C ou D pour le premier et le dernier caractère du code-barres pour spécifier le début et la fin de la chaine.</string>
-    <string name="error_bar_code_itf_error_message">Un code-barres de type "ITF" doit contenir un nombre de caractère pair.</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Un code-barres de type "UPC-E" doit commencer par 0.</string>
+    <string name="error_bar_code_93_regex_error_message">Un code-barres du type "Code 93" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 8 caractères spéciaux : « -, ., espace, *, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
+    <string name="error_bar_code_39_regex_error_message">Un code-barres du type "Code 39" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 7 caractères spéciaux : « -, ., espace, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
+    <string name="error_bar_codabar_regex_error_message">Un code-barres du type "Codabar" peut codifier les 10 chiffres (0 à 9) ainsi que 6 caractères spéciaux : « -, $, :, /, ., + ». Il peut aussi contenir les caractères A, B, C ou D pour le premier et le dernier caractère du code-barres pour spécifier le début et la fin de la chaine.</string>
+    <string name="error_bar_code_itf_error_message">Un code-barres du type "ITF" doit contenir un nombre de caractère pair.</string>
+    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Un code-barres du type "UPC-E" doit commencer par 0.</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Générer</string>

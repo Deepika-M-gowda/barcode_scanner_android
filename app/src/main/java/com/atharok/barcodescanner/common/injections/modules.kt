@@ -24,6 +24,7 @@ import android.app.Activity
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.net.wifi.WifiManager
@@ -491,7 +492,7 @@ val viewsModule = module {
 
             val textSizeInDP = resources.getDimension(R.dimen.standard_text_size) / resources.displayMetrics.density
             textSize = textSizeInDP
-            typeface = ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
+            typeface = Typeface.create("sans-serif-medium", Typeface.ITALIC)//ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
         }
     }
 

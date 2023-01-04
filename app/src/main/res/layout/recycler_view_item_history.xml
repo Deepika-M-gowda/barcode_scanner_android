@@ -18,8 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_history_delete_icon_image_view"
             android:text="@string/delete_label"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black"/>
+            style="@style/TitlePrimaryMinTextViewAppearance"/>
 
         <ImageView
             android:id="@+id/recycler_view_item_history_delete_icon_image_view"
@@ -56,7 +55,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/large_margin"
-                app:tint="?attr/appOnMainColor"
+                app:tint="?attr/appColorOnMain"
                 android:background="@drawable/circle"
                 app:backgroundTint="?colorAccent"
                 android:contentDescription="@string/image_view_description_type_icon"
@@ -83,9 +82,7 @@
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_format_text_view"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:fontFamily="@font/roboto_black"
-                        android:textSize="@dimen/sub_title_text_size"
-                        android:textColor="?android:textColorPrimary"
+                        style="@style/TitlePrimaryMinTextViewAppearance"
                         />
 
                     <TextView
@@ -95,9 +92,7 @@
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_centerVertical="true"
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_icon_image_view"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:textSize="@dimen/min_text_size"
-                        android:fontFamily="@font/roboto_medium" />
+                        style="@style/StandardSecondaryTextViewAppearance" />
 
                     <ImageView
                         android:id="@+id/recycler_view_item_history_barcode_icon_image_view"
@@ -130,13 +125,9 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentStart="true"
                             android:layout_marginEnd="@dimen/standard_margin"
-
                             android:ellipsize="end"
                             android:maxLines="1"
-
-                            android:textColor="?android:attr/textColorSecondary"
-                            android:textSize="@dimen/standard_text_size"
-                            android:fontFamily="@font/roboto_medium_italic" />
+                            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
                         <ImageView
                             android:id="@+id/recycler_view_item_history_origin_flag_image_view"
@@ -164,9 +155,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_alignParentEnd="true"
-                        android:textColor="?android:attr/textColorSecondary"
-                        android:textSize="@dimen/standard_text_size"
-                        android:fontFamily="@font/roboto_medium" />
+                        style="@style/StandardSecondaryTextViewAppearance" />
 
                 </RelativeLayout>
 

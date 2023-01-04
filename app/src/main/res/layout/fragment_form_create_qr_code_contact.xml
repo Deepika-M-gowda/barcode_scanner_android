@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.fragments.barcodeCreatorForms.FormCreateQrCodeContactFragment">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/fragment_form_create_qr_code_contact_importation_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,41 +24,41 @@
         android:orientation="horizontal"
         android:checkedButton="@id/fragment_form_create_qr_code_contact_civil_radio_button_none">
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_m"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium"/>
+            app:buttonTint="?attr/appColorFrontPrimary"
+            style="@style/StandardPrimaryTextViewAppearance" />
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_mrs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_mrs"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium"/>
+            app:buttonTint="?attr/appColorFrontPrimary"
+            style="@style/StandardPrimaryTextViewAppearance" />
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_miss"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_miss"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium"/>
+            app:buttonTint="?attr/appColorFrontPrimary"
+            style="@style/StandardPrimaryTextViewAppearance" />
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_none"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_none"
-            android:textSize="@dimen/standard_text_size"
-            android:fontFamily="@font/roboto_medium"/>
+            app:buttonTint="?attr/appColorFrontPrimary"
+            style="@style/StandardPrimaryTextViewAppearance" />
 
     </RadioGroup>
 

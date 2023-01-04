@@ -10,21 +10,14 @@
         android:id="@+id/fragment_barcode_matrix_phone_number_label"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:fontFamily="@font/roboto_black"
         android:text="@string/matrix_phone_tel_number_label"
-        android:textColor="?colorAccent"
-        android:textSize="@dimen/sub_title_text_size" />
+        style="@style/TitleVariantTextViewAppearance" />
 
     <TextView
         android:id="@+id/fragment_barcode_matrix_phone_number_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_below="@id/fragment_barcode_matrix_phone_number_label"
-
-        android:fontFamily="@font/roboto_medium_italic"
-        android:textColor="?android:attr/textColorSecondary"
-        android:textSize="@dimen/standard_text_size" />
+        style="@style/StandardSecondaryItalicTextViewAppearance" />
 
 </RelativeLayout>

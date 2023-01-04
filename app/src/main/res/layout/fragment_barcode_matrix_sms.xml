@@ -16,22 +16,15 @@
             android:id="@+id/fragment_barcode_matrix_sms_number_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_phone_tel_number_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_sms_number_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_sms_number_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
     <!-- Subject -->
@@ -46,22 +39,15 @@
             android:id="@+id/fragment_barcode_matrix_sms_subject_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_subject_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_sms_subject_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_sms_subject_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
     <!-- Body -->
@@ -76,22 +62,15 @@
             android:id="@+id/fragment_barcode_matrix_sms_body_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_body_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_sms_body_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_sms_body_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
 </RelativeLayout>

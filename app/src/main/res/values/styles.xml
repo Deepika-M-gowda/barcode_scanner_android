@@ -1,258 +1,84 @@
 <resources>
 
-    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar">
-
+    <!-- Toolbar -->
+    <style name="ToolBarTextAppearance" parent="TitlePrimaryMaxTextViewAppearance">
+        <item name="textSize">@dimen/toolbar_text_size</item>
+        <item name="android:textSize">@dimen/toolbar_text_size</item>
     </style>
 
-    <!-- Base application theme. -->
-    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
-
-        <item name="appMainColor">@color/lightBlueColorAccent</item>
-        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="appBackgroundColorPrimary">@color/lightBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightBackgroundColorSecondary</item>
-        <item name="appFrontColorPrimary">@color/lightFrontColorPrimary</item>
-        <item name="appFrontColorSecondary">@color/lightFrontColorSecondary</item>
-        <item name="appIconColorOnBackground">?appFrontColorPrimary</item>
-        <item name="appOnMainColor">@android:color/white</item>
-        <item name="appIndicatorColor">@color/lightBlueIndicativeColor</item>
-
-        <item name="colorPrimary">?appBackgroundColorPrimary</item>
-        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
-        <item name="colorAccent">?appMainColor</item>
-
-        <item name="icon_color">?appFrontColorPrimary</item>
-
-        <item name="colorPositive">@color/lightColorPositive</item>
-        <item name="colorMedium">@color/lightColorMedium</item>
-        <item name="colorNegative">@color/lightColorNegative</item>
-        <item name="colorUnknown">@color/lightColorUnknown</item>
-
-        <!-- Background Color -->
-        <!--<item name="backgroundColor">@color/lightColorBackground</item>-->
-        <item name="android:windowBackground">?appBackgroundColorPrimary</item>
-        <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
-        <item name="activityBackgroundColorReference">?appBackgroundColorPrimary</item>
-
-        <item name="background_entitled_row">?appMainColor</item>
-        <item name="background_primary_row">?appBackgroundColorSecondary</item>
-        <item name="background_secondary_row">?appBackgroundColorPrimary</item>
-
-        <!-- Text Color -->
-        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
-        <item name="android:textColor">?appFrontColorPrimary</item>
-        <item name="textColor">?appFrontColorPrimary</item>
-        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
-
-        <item name="materialButtonStyle">@style/MaterialButton</item>
-        <item name="cardViewStyle">@style/CardViewStyle</item>
-        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
-        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
-        <item name="navigationRailStyle">@style/RailNavigationViewStyle</item>
-        <item name="sliderStyle">@style/Slider</item>
-        <item name="switchStyle">@style/SwitchStyle</item>
-        <item name="elevationOverlayEnabled">false</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
-
-
-        <item name="chipStyle">@style/MaterialChip</item>
-
-        <item name="android:fontFamily">@font/roboto_medium</item>
-
-        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
-        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
-
-        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
-        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
-
-        <item name="colorControlNormal">?appIconColorOnBackground</item>
-
-        <item name="android:statusBarColor">?appColorPrimaryDark</item>
-        <item name="android:navigationBarColor">?appColorPrimaryDark</item>
-
-        <item name="android:windowFullscreen">false</item>
+    <!-- TabLayout -->
+    <style name="TabLayoutTextAppearance" parent="TitlePrimaryMaxTextViewAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
-    <!-- Base application theme. -->
-    <style name="DarkTheme" parent="Theme.Material3.Dark.NoActionBar">
-
-        <item name="appMainColor">@color/darkBlueColorAccent</item>
-        <item name="appColorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="appBackgroundColorPrimary">@color/darkBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkBackgroundColorSecondary</item>
-        <item name="appFrontColorPrimary">@color/darkFrontColorPrimary</item>
-        <item name="appFrontColorSecondary">@color/darkFrontColorSecondary</item>
-        <item name="appIconColorOnBackground">?appFrontColorPrimary</item>
-        <item name="appOnMainColor">@android:color/black</item>
-        <item name="appIndicatorColor">@color/darkBlueIndicativeColor</item>
-
-        <item name="colorPrimary">?appBackgroundColorPrimary</item>
-        <item name="colorPrimaryDark">?appColorPrimaryDark</item>
-        <item name="colorAccent">?appMainColor</item>
-        <item name="icon_color">?appFrontColorPrimary</item>
-
-        <item name="colorPositive">@color/darkColorPositive</item>
-        <item name="colorMedium">@color/darkColorMedium</item>
-        <item name="colorNegative">@color/darkColorNegative</item>
-        <item name="colorUnknown">@color/darkColorUnknown</item>
-
-        <!-- Background Color -->
-        <!--<item name="backgroundColor">@color/darkColorBackground</item>-->
-        <item name="android:windowBackground">?appBackgroundColorPrimary</item>
-        <item name="cardViewBackgroundColorReference">?appBackgroundColorSecondary</item>
-        <item name="activityBackgroundColorReference">?appBackgroundColorPrimary</item>
-
-        <item name="background_entitled_row">?appMainColor</item>
-        <item name="background_primary_row">?appBackgroundColorSecondary</item>
-        <item name="background_secondary_row">?appBackgroundColorPrimary</item>
-
-        <!-- Text Color -->
-        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
-        <item name="android:textColor">?appFrontColorPrimary</item>
-        <item name="textColor">?appFrontColorPrimary</item>
-        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
-
-        <item name="materialButtonStyle">@style/MaterialButton</item>
-        <item name="cardViewStyle">@style/CardViewStyle</item>
-        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
-        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
-        <item name="navigationRailStyle">@style/RailNavigationViewStyle</item>
-        <item name="sliderStyle">@style/Slider</item>
-        <item name="switchStyle">@style/SwitchStyle</item>
-        <item name="elevationOverlayEnabled">false</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
-
-
-        <item name="chipStyle">@style/MaterialChip</item>
-
-        <item name="android:fontFamily">@font/roboto_medium</item>
-
-        <item name="android:datePickerDialogTheme">@style/DateTimePickerTheme</item>
-        <item name="android:timePickerDialogTheme">@style/DateTimePickerTheme</item>
-
-        <!--<item name="snackbarStyle">@style/snackBarStyle</item>--> <!-- Permet de changer la SnackBar -->
-        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
-        
-        <item name="colorControlNormal">?appIconColorOnBackground</item>
-
-        <item name="android:statusBarColor">?appBackgroundColorPrimary</item>
-        <item name="android:navigationBarColor">?appBackgroundColorPrimary</item>
-
-        <item name="android:windowFullscreen">false</item>
+    <!-- TextView: Title -->
+    <style name="TitlePrimaryMaxTextViewAppearance">
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="textSize">@dimen/title_text_size</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="BlueLightTheme" parent="LightTheme">
-        <item name="appMainColor">@color/lightBlueColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/lightBlueBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightBlueBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/lightBlueIndicativeColor</item>
+    <style name="TitlePrimaryMinTextViewAppearance" parent="TitlePrimaryMaxTextViewAppearance">
+        <item name="textSize">@dimen/sub_title_text_size</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>
     </style>
 
-    <style name="BlueDarkTheme" parent="DarkTheme">
-        <item name="appMainColor">@color/darkBlueColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/darkBlueBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkBlueBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/darkBlueIndicativeColor</item>
+    <style name="TitleVariantTextViewAppearance" parent="TitlePrimaryMinTextViewAppearance">
+        <item name="textColor">?attr/appColorMain</item>
+        <item name="android:textColor">?attr/appColorMain</item>
     </style>
 
-    <style name="OrangeLightTheme" parent="LightTheme">
-        <item name="appMainColor">@color/lightOrangeColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/lightOrangeBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightOrangeBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/lightOrangeIndicativeColor</item>
+    <!-- TextView: Subtitle -->
+    <style name="SubtitleSecondaryTextViewAppearance" parent="StandardSecondaryTextViewAppearance">
+        <item name="textSize">@dimen/sub_title_text_size</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>
     </style>
 
-    <style name="OrangeDarkTheme" parent="DarkTheme">
-        <item name="appMainColor">@color/darkOrangeColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/darkOrangeBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkOrangeBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/darkOrangeIndicativeColor</item>
+    <!-- TextView: Standard Text -->
+    <style name="StandardPrimaryTextViewAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="GreenLightTheme" parent="LightTheme">
-        <item name="appMainColor">@color/lightGreenColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/lightGreenBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightGreenBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/lightGreenIndicativeColor</item>
+    <style name="StandardPrimaryItalicTextViewAppearance" parent="StandardPrimaryTextViewAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="GreenDarkTheme" parent="DarkTheme">
-        <item name="appMainColor">@color/darkGreenColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/darkGreenBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkGreenBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/darkGreenIndicativeColor</item>
+    <style name="StandardSecondaryTextViewAppearance" parent="StandardPrimaryTextViewAppearance">
+        <item name="textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
 
-    <style name="RedLightTheme" parent="LightTheme">
-        <item name="appMainColor">@color/lightRedColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/lightRedBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightRedBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/lightRedIndicativeColor</item>
+    <style name="StandardSecondaryItalicTextViewAppearance" parent="StandardSecondaryTextViewAppearance">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="RedDarkTheme" parent="DarkTheme">
-        <item name="appMainColor">@color/darkRedColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/darkRedBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkRedBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/darkRedIndicativeColor</item>
+    <style name="ErrorRedTextViewTheme" parent="StandardPrimaryTextViewAppearance">
+        <item name="android:textColor">?colorNegative</item>
     </style>
 
-    <style name="PurpleLightTheme" parent="LightTheme">
-        <item name="appMainColor">@color/lightPurpleColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/lightPurpleBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/lightPurpleBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/lightPurpleIndicativeColor</item>
-    </style>
-
-    <style name="PurpleDarkTheme" parent="DarkTheme">
-        <item name="appMainColor">@color/darkPurpleColorAccent</item>
-        <item name="appBackgroundColorPrimary">@color/darkPurpleBackgroundColorPrimary</item>
-        <item name="appBackgroundColorSecondary">@color/darkPurpleBackgroundColorSecondary</item>
-        <item name="appIndicatorColor">@color/darkPurpleIndicativeColor</item>
-    </style>
-
-    <!-- ListPreference -->
-    <style name="textAppearanceListItemSecondaryCustom">
-        <item name="android:textSize">14sp</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-    
-    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:overlapAnchor">false</item>
-        <item name="android:dropDownVerticalOffset">4.0dp</item>
-    </style>
-
-    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">?attr/appOnMainColor</item>
-        <item name="backgroundTint">?colorAccent</item>
-        <item name="android:fontFamily">@font/roboto_black</item>
-    </style>
-
-    <style name="MaterialChip" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">?appIndicatorColor</item>
-    </style>
-
-    <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
-        <item name="android:textColor">?appFrontColorPrimary</item>
-        <item name="android:textSize">@dimen/min_text_size</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <!--<item name="android:layout_marginStart">@dimen/standard_margin</item>
-        <item name="android:layout_marginEnd">@dimen/standard_margin</item>
-        <item name="paddingStart">@dimen/standard_margin</item>
-        <item name="paddingEnd">@dimen/standard_margin</item>-->
-    </style>
-
-    <!-- CardViewStyle -->
-
+    <!-- CardView -->
     <style name="CardViewStyle" parent="CardView">
         <item name="cardUseCompatPadding">true</item>
         <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
         <item name="cardElevation">@dimen/card_elevation</item>
-        <item name="cardBackgroundColor">?appBackgroundColorSecondary</item>
-        <item name="android:background">?appBackgroundColorSecondary</item>
+        <item name="cardBackgroundColor">?attr/appColorForeground</item>
+        <item name="android:background">?attr/appColorForeground</item>
     </style>
-    <!--  -->
 
     <style name="MaterialCardViewStyle" parent="Widget.MaterialComponents.CardView">
         <item name="cardUseCompatPadding">true</item>
@@ -260,82 +86,56 @@
         <item name="cardElevation">@dimen/card_elevation</item>
         <item name="strokeWidth">@dimen/stroke_width</item>
 
-        <item name="cardBackgroundColor">?appBackgroundColorSecondary</item>
+        <item name="cardBackgroundColor">?attr/appColorForeground</item>
         <item name="cardForegroundColor">@android:color/transparent</item>
         <!--<item name="strokeColor">@color/darkMaterialCardViewStrokeColor</item>-->
         <item name="strokeColor">@android:color/transparent</item>
     </style>
-    <!--  -->
 
     <!-- BottomNavigationView -->
     <style name="BottomNavigationViewStyle" parent="Widget.Material3.BottomNavigationView">
-        <item name="backgroundColor">?appBackgroundColorPrimary</item>
-        <item name="android:background">?appBackgroundColorPrimary</item>
+        <item name="backgroundColor">?attr/appColorBackground</item>
+        <item name="android:background">?attr/appColorBackground</item>
         <item name="itemActiveIndicatorStyle">@style/BottomNavigationViewActiveIndicatorStyle</item>
     </style>
 
     <style name="BottomNavigationViewActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">?appIndicatorColor</item>
+        <item name="android:color">?attr/appColorIndicator</item>
     </style>
 
     <!-- NavigationRailView -->
     <style name="RailNavigationViewStyle" parent="Widget.Material3.NavigationRailView">
-        <item name="backgroundColor">?appBackgroundColorPrimary</item>
-        <item name="android:background">?appBackgroundColorPrimary</item>
+        <item name="backgroundColor">?attr/appColorBackground</item>
+        <item name="android:background">?attr/appColorBackground</item>
         <item name="itemActiveIndicatorStyle">@style/NavigationRailViewActiveIndicatorStyle</item>
     </style>
 
     <style name="NavigationRailViewActiveIndicatorStyle" parent="Widget.Material3.NavigationRailView.ActiveIndicator">
-        <item name="android:color">?appIndicatorColor</item>
+        <item name="android:color">?attr/appColorIndicator</item>
     </style>
 
     <!-- Slider -->
     <style name="Slider" parent="Widget.Material3.Slider">
-        <item name="thumbColor">?appMainColor</item>
-        <item name="trackColor">?appIndicatorColor</item>
-        <item name="haloColor">?appIndicatorColor</item>
+        <item name="thumbColor">?attr/appColorMain</item>
+        <item name="trackColor">?attr/appColorIndicator</item>
+        <item name="haloColor">?attr/appColorIndicator</item>
     </style>
-    <!-- -->
 
+    <!-- Switch -->
     <style name="SwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
         <!--<item name="thumbTint">?appMainColor</item>
         <item name="trackTint">?appIndicatorColor</item>-->
     </style>
 
-    <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+    <!-- Chip -->
+    <style name="MaterialChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">?attr/appColorIndicator</item>
     </style>
 
-    <!-- AlertDialog -->
-    <style name="AlertDialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
-
-        <item name="colorAccent">?appMainColor</item>
-        <item name="android:textColorPrimary">?appFrontColorSecondary</item>
-        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
-        <item name="android:textSize">@dimen/sub_title_text_size</item>
-        <item name="fontFamily">@font/roboto_black</item>
-        <item name="textColorAlertDialogListItem">?appFrontColorPrimary</item>
-        <item name="colorControlNormal">?appFrontColorPrimary</item>
-
-        <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
-        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="buttonBarNeutralButtonStyle">@style/AlertDialogButtonTextStyle</item>
-        <item name="android:background">?appBackgroundColorSecondary</item>
-    </style>
-
-    <style name="AlertDialogTitleTextStyle">
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">?appMainColor</item>
-        <item name="android:fontFamily">@font/roboto_black</item>
-    </style>
-
-    <style name="AlertDialogButtonTextStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:textColor">?appMainColor</item>
-        <item name="android:fontFamily">@font/roboto_black</item>
+    <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">?attr/appColorFrontPrimary</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <!-- TextInputLayout -->
@@ -375,7 +175,7 @@
         <item name="startIconTint">@color/colorAccent</item>-->
 
         <!-- Text Appearance styles -->
-        <item name="textAppearanceSubtitle1">@style/InputEditTextSubTitleFont</item>
+        <item name="textAppearanceSubtitle1">@style/SubtitleSecondaryTextViewAppearance</item>
         <item name="textAppearanceCaption">@style/InputEditTextCaptionFont</item>
 
         <!--Note: When setting a materialThemeOverlay on a custom TextInputLayout style, don’t forget to set editTextStyle to either a @style/Widget.MaterialComponents.TextInputEditText.* style or to a custom one that inherits from that.
@@ -384,102 +184,94 @@
     </style>
 
     <style name="InputEditTextCaptionFont">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="textSize">@dimen/min_text_size</item>
         <item name="android:textSize">@dimen/min_text_size</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="InputEditTextSubTitleFont">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="textSize">@dimen/sub_title_text_size</item>
+    <style name="RadioButtonTheme">
+        <item name="colorControlNormal">?attr/appColorIcon</item>
+        <item name="colorControlActivated">?attr/appColorMain</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Material Button -->
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?attr/appColorOnMain</item>
+        <item name="backgroundTint">?colorAccent</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- DialogTextButtonStyle -->
+    <style name="DialogTextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textColor">?attr/appColorMain</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- AlertDialog -->
+    <style name="AlertDialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <!-- Be careful with the android: prefix. AppCompat uses many attributes without it -->
+
+        <item name="colorAccent">?attr/appColorMain</item>
+        <item name="android:textColorPrimary">?attr/appColorFrontSecondary</item>
+        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
         <item name="android:textSize">@dimen/sub_title_text_size</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textColorAlertDialogListItem">?attr/appColorFrontPrimary</item>
+        <item name="colorControlNormal">?attr/appColorFrontPrimary</item>
+
+        <item name="android:windowTitleStyle">@style/TitleVariantTextViewAppearance</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogTextButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>
+        <item name="android:background">?attr/appColorForeground</item>
     </style>
 
-    <style name="BottomNavigationViewTextAppearance">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="textSize">@dimen/min_text_size</item>
-        <item name="android:textSize">@dimen/min_text_size</item>
-    </style>
-
-    <style name="TabLayoutTextAppearance">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="textSize">@dimen/title_text_size</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
-    </style>
-
-    <style name="ToolBarTextAppearance">
-        <item name="fontFamily">@font/roboto_black</item>
-        <item name="android:fontFamily">@font/roboto_black</item>
-        <item name="textSize">@dimen/toolbar_text_size</item>
-        <item name="android:textSize">@dimen/toolbar_text_size</item>
-    </style>
-
-    <style name="ErrorTextViewTheme" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">?android:textColorSecondary</item>
-        <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
-    <style name="ErrorRedTextViewTheme" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">?colorNegative</item>
-        <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
+    <!-- DateTimePicker -->
     <style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">?appBackgroundColorSecondary</item>
+        <item name="android:windowBackground">?attr/appColorForeground</item>
         <item name="android:timePickerStyle">@style/TimePickerTheme</item>
 
-        <item name="android:textColor">?appFrontColorPrimary</item>
-        <item name="android:textColorPrimary">?appFrontColorPrimary</item>
-        <item name="android:textColorSecondary">?appFrontColorSecondary</item>
+        <item name="android:textColor">?attr/appColorFrontPrimary</item>
+        <item name="android:textColorPrimary">?attr/appColorFrontPrimary</item>
+        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
+        <item name="android:textStyle">normal</item>
 
-        <item name="colorAccent">?appMainColor</item>
-        <item name="android:colorAccent">?appMainColor</item>
-        <item name="android:colorPrimary">?appMainColor</item>
-        <item name="android:colorPrimaryDark">?appMainColor</item>
+        <item name="colorAccent">?attr/appColorMain</item>
+        <item name="android:colorAccent">?attr/appColorMain</item>
+        <item name="android:colorPrimary">?attr/appColorMain</item>
+        <item name="android:colorPrimaryDark">?attr/appColorMain</item>
 
-        <item name="android:buttonBarPositiveButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
-        <item name="android:buttonBarNeutralButtonStyle">@style/AppCompatAlertDialogButtonTextStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DialogTextButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>
     </style>
 
     <style name="TimePickerTheme" parent="@android:style/Widget.Material.Light.TimePicker">
-        <item name="android:numbersBackgroundColor">?appBackgroundColorPrimary</item>
-        <item name="android:numbersSelectorColor">?appMainColor</item>
+        <item name="android:numbersBackgroundColor">?attr/appColorBackground</item>
+        <item name="android:numbersSelectorColor">?attr/appColorMain</item>
     </style>
 
     <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">?appMainColor</item>
+        <item name="android:textColor">?attr/appColorMain</item>
     </style>
 
-    <style name="AppCompatAlertDialogButtonTextStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
-        <item name="android:textSize">@dimen/standard_text_size</item>
-        <item name="android:textColor">?appMainColor</item>
-        <item name="android:fontFamily">@font/roboto_black</item>
+    <!-- Overflow Menu -->
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4.0dp</item>
     </style>
-
-
-    <!--<style name="TextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:textColorPrimary">@color/colorAccent</item>
-        <item name="boxStrokeColor">@color/colorAccent</item>
-        <item name="boxStrokeWidth">1dp</item>
-        <item name="boxStrokeWidthFocused">2dp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>-->
-
-    <!--<style name="AlertDialogMessageTextStyle">
-        <item name="android:textColor">@color/darkColorTextPrimary</item>
-        <item name="android:textColorPrimary">@color/darkColorTextPrimary</item>
-        <item name="android:textColorSecondary">@color/darkColorTextSecondary</item>
-        <item name="android:textSize">@dimen/min_text_size</item>
-        <item name="android:fontFamily">@font/roboto_medium_italic</item>
-    </style>-->
-
-
 
 </resources>

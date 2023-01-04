@@ -16,20 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_agenda_name_event_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance"
+            />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_agenda_name_event_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_label"
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -44,11 +40,8 @@
             android:id="@+id/fragment_barcode_matrix_agenda_start_date_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_agenda_start_date_event_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_agenda_start_date_text_view"
@@ -56,10 +49,7 @@
             android:layout_height="match_parent"
 
             android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
 
     </RelativeLayout>
@@ -76,21 +66,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_agenda_end_date_event_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_agenda_end_date_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -105,11 +89,8 @@
             android:id="@+id/fragment_barcode_matrix_agenda_place_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_agenda_place_event_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_agenda_place_text_view"
@@ -117,10 +98,7 @@
             android:layout_height="match_parent"
 
             android:layout_below="@id/fragment_barcode_matrix_agenda_place_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -135,11 +113,8 @@
             android:id="@+id/fragment_barcode_matrix_agenda_description_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_agenda_description_event_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_agenda_description_text_view"
@@ -147,10 +122,7 @@
             android:layout_height="match_parent"
 
             android:layout_below="@id/fragment_barcode_matrix_agenda_description_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 

@@ -96,7 +96,7 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
         chipView.text = getString(stringResource).firstCharacterIntoCapital()
 
         chipView.setChipTextColorFromAttrRes(colorResource)
-        val backgroundRes = if(get<SettingsManager>().useDarkTheme()) R.attr.appBackgroundColorPrimary else R.attr.appBackgroundColorSecondary
+        val backgroundRes = if(get<SettingsManager>().useDarkTheme()) R.attr.appColorBackground else R.attr.appColorForeground
         chipView.setChipBackgroundColorFromAttrRes(backgroundRes)
         chipView.setChipStrokeColorFromAttrRes(colorResource)
         chipView.setChipIconTintFromAttrRes(colorResource)

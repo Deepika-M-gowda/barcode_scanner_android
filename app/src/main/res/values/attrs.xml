@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="appMainColor" format="reference|color"/>
+    <attr name="appColorMain" format="reference|color"/>
     <attr name="appColorPrimaryDark" format="reference|color"/>
-    <attr name="appBackgroundColorPrimary" format="reference|color"/>
-    <attr name="appBackgroundColorSecondary" format="reference|color"/>
-    <attr name="appFrontColorPrimary" format="reference|color"/>
-    <attr name="appFrontColorSecondary" format="reference|color"/>
-    <attr name="appIconColorOnBackground" format="reference|color"/>
-    <attr name="appOnMainColor" format="reference|color"/>
-    <attr name="appIndicatorColor" format="reference|color"/>
+    <attr name="appColorBackground" format="reference|color"/>
+    <attr name="appColorForeground" format="reference|color"/>
+    <attr name="appColorFrontPrimary" format="reference|color"/>
+    <attr name="appColorFrontSecondary" format="reference|color"/>
+    <attr name="appColorIcon" format="reference|color"/>
+    <attr name="appColorOnMain" format="reference|color"/>
+    <attr name="appColorIndicator" format="reference|color"/>
 
     <attr name="colorPositive" format="color"/>
     <attr name="colorMedium" format="color"/>
@@ -50,7 +50,7 @@
         <attr name="highBarColor" format="color" />
         <attr name="textSize" format="dimension" />
         <attr name="textColor" format="color" />
-        <attr name="graphTextFontResource" format="reference" />
+        <attr name="fontFamily" format="string" />
     </declare-styleable>
 
     <declare-styleable name="ExpandableView">

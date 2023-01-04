@@ -42,7 +42,7 @@ class CustomPreferenceCategory: PreferenceCategory {
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
 
-        val font: Typeface? = ResourcesCompat.getFont(context, R.font.roboto_black)
+        val font: Typeface? = Typeface.create("sans-serif-black", Typeface.NORMAL)//ResourcesCompat.getFont(context, R.font.roboto_black)
         val textSizeInDP = context.resources.getDimension(R.dimen.sub_title_text_size) / context.resources.displayMetrics.density
         val typedValue = TypedValue()
         val theme = context.theme

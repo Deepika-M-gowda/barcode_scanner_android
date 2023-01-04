@@ -25,7 +25,6 @@
             android:id="@+id/activity_barcode_creator_forms_header" />
     </FrameLayout>
 
-
     <FrameLayout
         android:id="@+id/activity_barcode_creator_forms_body_frame_layout"
         android:layout_width="match_parent"
@@ -73,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@id/activity_barcode_creator_forms_error_icon_image_view"
-                        android:theme="@style/ErrorTextViewTheme" />
+                        style="@style/StandardPrimaryTextViewAppearance" />
 
                 </RelativeLayout>
 

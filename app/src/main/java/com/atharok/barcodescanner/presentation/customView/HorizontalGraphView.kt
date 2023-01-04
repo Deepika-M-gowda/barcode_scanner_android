@@ -21,11 +21,8 @@
 package com.atharok.barcodescanner.presentation.customView
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.graphics.Paint.ANTI_ALIAS_FLAG
-import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
@@ -82,7 +79,7 @@ class HorizontalGraphView(context: Context, attrs: AttributeSet?): View(context,
                 barHeight = getDimension(R.styleable.HorizontalGraphView_barHeight, 10f)
                 textSize = getDimension(R.styleable.HorizontalGraphView_textSize, 10f)
 
-                val fontResource = getResourceId(R.styleable.HorizontalGraphView_graphTextFontResource, -1)
+                val fontFamily = getString(R.styleable.HorizontalGraphView_fontFamily)
                 val textColor = getColor(R.styleable.HorizontalGraphView_textColor, Color.BLACK)
                 val lowBarColor = getColor(R.styleable.HorizontalGraphView_lowBarColor, Color.GREEN)
                 val mediumBarColor = getColor(R.styleable.HorizontalGraphView_mediumBarColor, Color.YELLOW)
@@ -91,8 +88,8 @@ class HorizontalGraphView(context: Context, attrs: AttributeSet?): View(context,
                 textPaint = Paint(ANTI_ALIAS_FLAG).apply {
                     color = textColor
                     textSize = this@HorizontalGraphView.textSize
-                    if(fontResource!=-1)
-                        typeface = ResourcesCompat.getFont(context, fontResource)
+                    if(!fontFamily.isNullOrEmpty())
+                        typeface = Typeface.create(fontFamily, Typeface.NORMAL)//ResourcesCompat.getFont(context, fontResource)
                 }
 
                 guidePaint = Paint(ANTI_ALIAS_FLAG).apply {

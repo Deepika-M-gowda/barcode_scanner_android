@@ -54,8 +54,8 @@
         android:layout_below="@id/fragment_form_create_qr_code_epc_name_input_layout"
         android:layout_marginBottom="@dimen/light_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_name_error"
-        android:theme="@style/ErrorRedTextViewTheme"
         android:visibility="gone"
+        style="@style/ErrorRedTextViewTheme"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -86,8 +86,8 @@
         android:layout_below="@id/fragment_form_create_qr_code_epc_iban_input_layout"
         android:layout_marginBottom="@dimen/light_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_iban_error"
-        android:theme="@style/ErrorRedTextViewTheme"
         android:visibility="gone"
+        style="@style/ErrorRedTextViewTheme"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -194,7 +194,4 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
 </RelativeLayout>

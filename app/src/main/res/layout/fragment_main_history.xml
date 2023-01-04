@@ -13,9 +13,8 @@
         android:layout_margin="@dimen/standard_margin"
         android:layout_gravity="start|top"
         android:text="@string/label_history_empty"
-        android:textColor="?android:textColorSecondary"
-        android:fontFamily="@font/roboto_medium"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        style="@style/SubtitleSecondaryTextViewAppearance"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_history_recycler_view"
@@ -23,7 +22,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start|top"
         android:clipToPadding="false"
-        android:clipChildren="false"
-        />
+        android:clipChildren="false" />
 
 </FrameLayout>

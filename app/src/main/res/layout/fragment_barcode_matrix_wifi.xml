@@ -16,22 +16,15 @@
             android:id="@+id/fragment_barcode_matrix_wifi_ssid_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:fontFamily="@font/roboto_black"
             android:text="@string/matrix_wifi_ssid_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_ssid_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
     </RelativeLayout>
 
     <!--- Password -->
@@ -46,22 +39,15 @@
             android:id="@+id/fragment_barcode_matrix_wifi_password_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:text="@string/matrix_wifi_password_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_password_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_wifi_password_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -77,22 +63,15 @@
             android:id="@+id/fragment_barcode_matrix_wifi_encryption_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:text="@string/matrix_wifi_encryption_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_encryption_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
 
@@ -108,146 +87,16 @@
             android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_label"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:text="@string/matrix_wifi_is_hidden_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
+            style="@style/TitleVariantTextViewAppearance" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/fragment_barcode_matrix_wifi_is_hidden_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
+            style="@style/StandardSecondaryItalicTextViewAppearance" />
 
     </RelativeLayout>
-
-    <!-- Anonymous Identity -->
-    <!--<RelativeLayout
-        android:id="@+id/fragment_barcode_matrix_wifi_anonymous_identity_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_is_hidden_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_anonymous_identity_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:text="@string/matrix_wifi_anonymous_identity_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_anonymous_identity_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_below="@id/fragment_barcode_matrix_wifi_anonymous_identity_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
-
-    </RelativeLayout>-->
-
-    <!-- Identity -->
-    <!--<RelativeLayout
-        android:id="@+id/fragment_barcode_matrix_wifi_identity_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_anonymous_identity_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_identity_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:text="@string/matrix_wifi_identity_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_identity_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_below="@id/fragment_barcode_matrix_wifi_identity_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
-    </RelativeLayout>-->
-
-    <!-- Eap Method -->
-    <!--<RelativeLayout
-        android:id="@+id/fragment_barcode_matrix_wifi_eap_method_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_identity_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_eap_method_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:text="@string/matrix_wifi_eap_method_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_eap_method_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_below="@id/fragment_barcode_matrix_wifi_eap_method_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
-
-    </RelativeLayout>-->
-
-    <!-- Phase 2 Method -->
-    <!--<RelativeLayout
-        android:id="@+id/fragment_barcode_matrix_wifi_phase_2_method_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_eap_method_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_phase_2_method_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:text="@string/matrix_wifi_phase_2_method_label"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_phase_2_method_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_below="@id/fragment_barcode_matrix_wifi_phase_2_method_label"
-
-            android:fontFamily="@font/roboto_medium_italic"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/standard_text_size" />
-
-    </RelativeLayout>-->
 
 </RelativeLayout>

@@ -19,7 +19,7 @@
             android:layout_width="@dimen/icon_large_size"
             android:layout_height="@dimen/icon_large_size"
             android:layout_centerVertical="true"
-            app:tint="?attr/appOnMainColor"
+            app:tint="?attr/appColorOnMain"
             android:background="@drawable/circle"
             app:backgroundTint="?colorAccent"
             android:contentDescription="@string/image_view_description_icon" />
@@ -31,8 +31,7 @@
             android:layout_toEndOf="@id/template_item_barcode_creator_image_view"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
-            android:textSize="@dimen/sub_title_text_size"
-            android:fontFamily="@font/roboto_black"/>
+            style="@style/TitlePrimaryMinTextViewAppearance"/>
 
     </RelativeLayout>
 
