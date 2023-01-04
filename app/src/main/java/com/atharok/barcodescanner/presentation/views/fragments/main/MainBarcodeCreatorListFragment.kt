@@ -22,6 +22,7 @@ package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.animation.LayoutTransition
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -30,6 +31,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBinding
@@ -129,19 +131,22 @@ class MainBarcodeCreatorListFragment : Fragment() {
             itemViewBinding.templateItemBarcodeCreatorImageView.setImageResource(it.drawableResource)
 
             itemViewBinding.root.setOnClickListener { _ ->
-                onClickItem(it)
+                onClickItem(itemViewBinding.root, it)
             }
 
             linearLayout.addView(itemViewBinding.root)
         }
     }
 
-    private fun onClickItem(barcodeFormatDetails: BarcodeFormatDetails) {
+    private fun onClickItem(itemView: View, barcodeFormatDetails: BarcodeFormatDetails) {
         val intent = getStartBarcodeCreatorFormsActivityIntent().apply {
             putExtra(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
         }
 
-        startActivity(intent)
+        val options = ActivityOptions.makeSceneTransitionAnimation(
+            requireActivity(), itemView, getString(R.string.animation_activity_transition))
+
+        startActivity(intent, options.toBundle())
     }
 
     private fun getStartBarcodeCreatorFormsActivityIntent(): Intent =

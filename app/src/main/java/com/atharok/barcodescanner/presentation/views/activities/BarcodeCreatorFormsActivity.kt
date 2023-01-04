@@ -25,6 +25,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.addCallback
+import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
@@ -69,26 +71,20 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
             allBarcodeFormat?.apply(::configureFormFragment)
         }
 
-        /*onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    // Back is pressed... Finishing the activity
-                    val fragment = formCreateBarcodeFragment
+        // onBackPressed
+        onBackPressedDispatcher.addCallback(this) {
 
-                    if(fragment != null) {
-
-                        fragment.closeVirtualKeyBoard(viewBinding.root)
-
-                        /*supportFragmentManager.commit {
-                            /*setReorderingAllowed(true)
-                            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                            setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
-                            remove(fragment)
-                        }*/
-                        removeFragment(fragment)
-                    }
-                    finish()
+            formCreateBarcodeFragment?.let { fragment ->
+                fragment.closeVirtualKeyBoard(viewBinding.root)
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    setCustomAnimations(R.anim.barcode_creator_enter, R.anim.barcode_creator_exit)
+                    remove(fragment)
                 }
-            })*/
+            }
+
+            finishAfterTransition()
+        }
 
         setContentView(viewBinding.root)
     }
@@ -118,41 +114,14 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
             parametersOf(barcodeFormatDetails)
         }
 
-        val fragment = formCreateBarcodeFragment
-
-        if(fragment != null) {
-
-            //fragment.allowEnterTransitionOverlap = false
-            //fragment.allowReturnTransitionOverlap = false
-
-            /*supportFragmentManager.commit {
-                /*setReorderingAllowed(true)
-                //setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
+        formCreateBarcodeFragment?.let { fragment ->
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                setCustomAnimations(R.anim.barcode_creator_enter, R.anim.barcode_creator_exit)
                 replace(viewBinding.activityBarcodeCreatorFormsFragment.id, fragment)
-            }*/
-            replaceFragment(viewBinding.activityBarcodeCreatorFormsFragment.id, fragment)
+            }
         }
     }
-
-    /*override fun onBackPressed() {
-
-        val fragment = formCreateBarcodeFragment
-
-        if(fragment != null) {
-
-            fragment.closeVirtualKeyBoard(viewBinding.root)
-
-            /*supportFragmentManager.commit {
-                /*setReorderingAllowed(true)
-                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                setCustomAnimations(R.anim.barcode_creator_forms_enter_transition, R.anim.barcode_creator_forms_exit_transition)*/
-                remove(fragment)
-            }*/
-            removeFragment(fragment)
-        }
-        super.onBackPressed()
-    }*/
 
     // ---- Menu contenant l'item permettant de générer le QrCode ----
 

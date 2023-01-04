@@ -25,7 +25,6 @@ import android.graphics.*
 import android.graphics.Paint.ANTI_ALIAS_FLAG
 import android.util.AttributeSet
 import android.view.View
-import androidx.core.content.res.ResourcesCompat
 import com.atharok.barcodescanner.R
 
 class HorizontalGraphView(context: Context, attrs: AttributeSet?): View(context, attrs) {

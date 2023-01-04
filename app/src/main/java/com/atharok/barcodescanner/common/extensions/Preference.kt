@@ -22,7 +22,6 @@ package com.atharok.barcodescanner.common.extensions
 
 import android.graphics.Typeface
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import com.atharok.barcodescanner.R
