@@ -442,18 +442,6 @@
     <string name="action_wifi_add_network_already_exists">You already added this Wi-Fi network.</string>
     <string name="action_wifi_add_network_unknown_error">Unknown error while adding Wi-Fi network.</string>
 
-    <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
-    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
-
-    <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
-    <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
-    <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
-    <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
-
     <!-- URL -->
 
     <!-- API Base URL -->
@@ -483,6 +471,18 @@
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
+    <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
+    <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
+    <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
 
     <!-- Preferences -->
 
@@ -720,12 +720,6 @@
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
     <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>
     <string name="preferences_source_code_key" translatable="false">preferences_source_code_key</string>
-
-    <!-- URL -->
-    <string name="bdd_open_food_facts_link_label" translatable="false">@string/search_engine_open_food_facts_url</string>
-    <string name="bdd_open_pet_food_facts_link_label" translatable="false">@string/search_engine_open_pet_food_facts_url</string>
-    <string name="bdd_open_beauty_facts_link_label" translatable="false">@string/search_engine_open_beauty_facts_url</string>
-    <string name="bdd_open_library_link_label" translatable="false">@string/search_engine_open_library_url</string>
 
     <!-- About Library Third -->
     <string name="dependency_zxing_title_label" translatable="false">ZXing</string>

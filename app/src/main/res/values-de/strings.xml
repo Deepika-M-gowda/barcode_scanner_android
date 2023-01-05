@@ -442,18 +442,6 @@
     <string name="action_wifi_add_network_already_exists">WLAN Verbindung bereits vorhanden.</string>
     <string name="action_wifi_add_network_unknown_error">Unbekannter Fehler beim Hinzufügen der WLAN Verbindung.</string>
 
-    <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://de.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://de.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://de.openbeautyfacts.org/</string>
-    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
-
-    <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open Food Facts Datenbank.</string>
-    <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open Pet Food Facts Datenbank.</string>
-    <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open Beauty Facts Datenbank.</string>
-    <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open Library Datenbank.</string>
-
     <!-- URL -->
 
     <!-- API Base URL -->
@@ -483,6 +471,18 @@
     <string name="search_engine_open_beauty_facts_product_url">https://de.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://de.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://de.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://de.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://de.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open Food Facts Datenbank.</string>
+    <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open Pet Food Facts Datenbank.</string>
+    <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open Beauty Facts Datenbank.</string>
+    <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open Library Datenbank.</string>
 
     <!-- Preferences -->
 

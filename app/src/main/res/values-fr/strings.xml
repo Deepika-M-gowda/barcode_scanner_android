@@ -442,24 +442,12 @@
     <string name="action_wifi_add_network_already_exists">Vous avez déjà ajouté ce réseau Wifi.</string>
     <string name="action_wifi_add_network_unknown_error">Echec de l\'ajout du réseau Wifi.</string>
 
-    <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
-    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
-
-    <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Food Facts.</string>
-    <string name="open_pet_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Pet Food Facts.</string>
-    <string name="open_beauty_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Beauty Facts.</string>
-    <string name="open_library_source_description_label">Les informations sur le livre sont issues de la base de données libre Open Library.</string>
-
     <!-- URL -->
 
     <!-- API Base URL -->
-    <string name="base_api_open_food_facts_url">https://fr.openfoodfacts.org/api/v0/product/</string>
-    <string name="base_api_open_pet_food_facts_url">https://fr.openpetfoodfacts.org/api/v0/product/</string>
-    <string name="base_api_open_beauty_facts_url">https://fr.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
 
     <!-- URL Engines -->
@@ -483,6 +471,18 @@
     <string name="search_engine_open_beauty_facts_product_url">https://fr.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://fr.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://fr.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://fr.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://fr.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Food Facts.</string>
+    <string name="open_pet_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Pet Food Facts.</string>
+    <string name="open_beauty_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Beauty Facts.</string>
+    <string name="open_library_source_description_label">Les informations sur le livre sont issues de la base de données libre Open Library.</string>
 
     <!-- Preferences -->
 

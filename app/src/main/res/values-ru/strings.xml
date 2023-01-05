@@ -442,18 +442,6 @@
     <string name="action_wifi_add_network_already_exists">Вы уже добавили эту сеть Wi-Fi.</string>
     <string name="action_wifi_add_network_unknown_error">Неизвестная ошибка при добавлении сети Wi-Fi.</string>
 
-    <!-- API Sources Links -->
-    <string name="search_engine_open_food_facts_url">https://ru.openfoodfacts.org/</string>
-    <string name="search_engine_open_pet_food_facts_url">https://ru.openpetfoodfacts.org/</string>
-    <string name="search_engine_open_beauty_facts_url">https://ru.openbeautyfacts.org/</string>
-    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
-
-    <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Информация о продуктах взята из свободной базы данных Open Food Facts.</string>
-    <string name="open_pet_food_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Pet Food Facts.</string>
-    <string name="open_beauty_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Beauty Facts.</string>
-    <string name="open_library_source_description_label">Информация о книге взята из свободной базы данных Open Library.</string>
-
     <!-- URL -->
 
     <!-- API Base URL -->
@@ -478,11 +466,23 @@
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
 
     <!-- API Product Engines -->
-    <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
-    <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
-    <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_open_food_facts_product_url">https://ru.openfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_pet_food_facts_product_url">https://ru.openpetfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_product_url">https://ru.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
-    <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
+    <string name="search_engine_additive_url">https://ru.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://ru.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://ru.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://ru.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Информация о продуктах взята из свободной базы данных Open Food Facts.</string>
+    <string name="open_pet_food_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Pet Food Facts.</string>
+    <string name="open_beauty_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Beauty Facts.</string>
+    <string name="open_library_source_description_label">Информация о книге взята из свободной базы данных Open Library.</string>
 
     <!-- Preferences -->
 

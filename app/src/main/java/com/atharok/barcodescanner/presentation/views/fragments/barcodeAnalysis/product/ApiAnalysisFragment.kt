@@ -40,13 +40,13 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
 
     private lateinit var sourceApiInfoAlertDialog: AlertDialog
 
-    private fun configureSourceApiInfoAlertDialog(titleResource: Int, layout: Int, urlResource: Int){
+    private fun configureSourceApiInfoAlertDialog(titleResource: Int, layout: Int, urlResource: Int, barcodeContents: String){
         sourceApiInfoAlertDialog = AlertDialog.Builder(requireActivity()).apply {
             setTitle(getString(titleResource))
             setView(layout)
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ -> dialogInterface.cancel() }
             setPositiveButton(R.string.go_to_dialog_label) { _, _ ->
-                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(getString(urlResource)) }
+                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(getString(urlResource, barcodeContents)) }
                 startActivity(intent)
             }
         }.create()
@@ -77,6 +77,6 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
     }
 
     override fun start(product: T) {
-        configureSourceApiInfoAlertDialog(product.source.nameResource, product.source.layout, product.source.urlResource)
+        configureSourceApiInfoAlertDialog(product.source.nameResource, product.source.layout, product.source.urlResource, product.barcode.contents)
     }
 }
