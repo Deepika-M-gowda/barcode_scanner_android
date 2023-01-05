@@ -4,24 +4,24 @@
     <item
         android:id="@+id/menu_navigation_bottom_view_scan"
         android:enabled="true"
-        android:icon="@drawable/baseline_qr_code_scanner_24"
+        android:icon="@drawable/animated_selector_qr_code_scanner"
         android:title="@string/title_scan" />
 
     <item
         android:id="@+id/menu_navigation_bottom_view_history"
         android:enabled="true"
-        android:icon="@drawable/baseline_history_24"
+        android:icon="@drawable/animated_selector_history"
         android:title="@string/title_history"/>
 
     <item
         android:id="@+id/menu_navigation_bottom_view_create"
         android:enabled="true"
-        android:icon="@drawable/baseline_create_24"
+        android:icon="@drawable/animated_selector_create"
         android:title="@string/title_generate"/>
 
     <item
         android:id="@+id/menu_navigation_bottom_view_settings"
         android:enabled="true"
-        android:icon="@drawable/baseline_settings_24"
+        android:icon="@drawable/animated_selector_settings"
         android:title="@string/title_settings" />
 </menu>

@@ -1,0 +1,38 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:name="path"
+                android:pathData="M 9.5 6.5 L 9.5 9.5 L 6.5 9.5 L 6.5 6.5 L 9.5 6.5 M 11 5 L 5 5 L 5 11 L 11 11 L 11 5 L 11 5 Z M 9.5 14.5 L 9.5 17.5 L 6.5 17.5 L 6.5 14.5 L 9.5 14.5 M 11 13 L 5 13 L 5 19 L 11 19 L 11 13 L 11 13 Z M 17.5 6.5 L 17.5 9.5 L 14.5 9.5 L 14.5 6.5 L 17.5 6.5 M 19 5 L 13 5 L 13 11 L 19 11 L 19 5 L 19 5 Z M 13 13 L 14.5 13 L 14.5 14.5 L 13 14.5 L 13 13 Z M 14.5 14.5 L 16 14.5 L 16 16 L 14.5 16 L 14.5 14.5 Z M 16 13 L 17.5 13 L 17.5 14.5 L 16 14.5 L 16 13 Z M 13 16 L 14.5 16 L 14.5 17.5 L 13 17.5 L 13 16 Z M 14.5 17.5 L 16 17.5 L 16 19 L 14.5 19 L 14.5 17.5 Z M 16 16 L 17.5 16 L 17.5 17.5 L 16 17.5 L 16 16 Z M 17.5 14.5 L 19 14.5 L 19 16 L 17.5 16 L 17.5 14.5 Z M 17.5 17.5 L 19 17.5 L 19 19 L 17.5 19 L 17.5 17.5 Z M 22 7 L 20 7 L 20 4 L 17 4 L 17 2 L 22 2 L 22 7 Z M 22 22 L 22 17 L 20 17 L 20 20 L 17 20 L 17 22 L 22 22 Z M 2 22 L 7 22 L 7 20 L 4 20 L 4 17 L 2 17 L 2 22 Z M 2 2 L 2 7 L 4 7 L 4 4 L 7 4 L 7 2 L 2 2 Z"
+                android:fillColor="#ffffff"/>
+        </vector>
+    </aapt:attr>
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:duration="150"
+                    android:valueFrom="M 9.5 6.5 L 9.5 9.5 L 6.5 9.5 L 6.5 6.5 L 9.5 6.5 M 11 5 L 5 5 L 5 11 L 11 11 L 11 5 L 11 5 Z M 9.5 14.5 L 9.5 17.5 L 6.5 17.5 L 6.5 14.5 L 9.5 14.5 M 11 13 L 5 13 L 5 19 L 11 19 L 11 13 L 11 13 Z M 17.5 6.5 L 17.5 9.5 L 14.5 9.5 L 14.5 6.5 L 17.5 6.5 M 19 5 L 13 5 L 13 11 L 19 11 L 19 5 L 19 5 Z M 13 13 L 14.5 13 L 14.5 14.5 L 13 14.5 L 13 13 Z M 14.5 14.5 L 16 14.5 L 16 16 L 14.5 16 L 14.5 14.5 Z M 16 13 L 17.5 13 L 17.5 14.5 L 16 14.5 L 16 13 Z M 13 16 L 14.5 16 L 14.5 17.5 L 13 17.5 L 13 16 Z M 14.5 17.5 L 16 17.5 L 16 19 L 14.5 19 L 14.5 17.5 Z M 16 16 L 17.5 16 L 17.5 17.5 L 16 17.5 L 16 16 Z M 17.5 14.5 L 19 14.5 L 19 16 L 17.5 16 L 17.5 14.5 Z M 17.5 17.5 L 19 17.5 L 19 19 L 17.5 19 L 17.5 17.5 Z M 22 7 L 20 7 L 20 4 L 17 4 L 17 2 L 22 2 L 22 7 Z M 22 22 L 22 17 L 20 17 L 20 20 L 17 20 L 17 22 L 22 22 Z M 2 22 L 7 22 L 7 20 L 4 20 L 4 17 L 2 17 L 2 22 Z M 2 2 L 2 7 L 4 7 L 4 4 L 7 4 L 7 2 L 2 2 Z"
+                    android:valueTo="M 9.5 6.5 L 9.5 9.5 L 6.5 9.5 L 6.5 6.5 L 9.5 6.5 M 11 5 L 5 5 L 5 11 L 11 11 L 11 5 L 11 5 Z M 9.5 14.5 L 9.5 17.5 L 6.5 17.5 L 6.5 14.5 L 9.5 14.5 M 11 13 L 5 13 L 5 19 L 11 19 L 11 13 L 11 13 Z M 17.5 6.5 L 17.5 9.5 L 14.5 9.5 L 14.5 6.5 L 17.5 6.5 M 19 5 L 13 5 L 13 11 L 19 11 L 19 5 L 19 5 Z M 13 13 L 14.5 13 L 14.5 14.5 L 13 14.5 L 13 13 Z M 14.5 14.5 L 16 14.5 L 16 16 L 14.5 16 L 14.5 14.5 Z M 16 13 L 17.5 13 L 17.5 14.5 L 16 14.5 L 16 13 Z M 13 16 L 14.5 16 L 14.5 17.5 L 13 17.5 L 13 16 Z M 14.5 17.5 L 16 17.5 L 16 19 L 14.5 19 L 14.5 17.5 Z M 16 16 L 17.5 16 L 17.5 17.5 L 16 17.5 L 16 16 Z M 17.5 14.5 L 19 14.5 L 19 16 L 17.5 16 L 17.5 14.5 Z M 17.5 17.5 L 19 17.5 L 19 19 L 17.5 19 L 17.5 17.5 Z M 23 6 L 21 6 L 21 3 L 18 3 L 18 1 L 23 1 L 23 6 Z M 23 23 L 23 18 L 21 18 L 21 21 L 18 21 L 18 23 L 23 23 Z M 1 23 L 6 23 L 6 21 L 3 21 L 3 18 L 1 18 L 1 23 Z M 1 1 L 1 6 L 3 6 L 3 3 L 6 3 L 6 1 L 1 1 Z"
+                    android:valueType="pathType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:startOffset="150"
+                    android:duration="150"
+                    android:valueFrom="M 9.5 6.5 L 9.5 9.5 L 6.5 9.5 L 6.5 6.5 L 9.5 6.5 M 11 5 L 5 5 L 5 11 L 11 11 L 11 5 L 11 5 Z M 9.5 14.5 L 9.5 17.5 L 6.5 17.5 L 6.5 14.5 L 9.5 14.5 M 11 13 L 5 13 L 5 19 L 11 19 L 11 13 L 11 13 Z M 17.5 6.5 L 17.5 9.5 L 14.5 9.5 L 14.5 6.5 L 17.5 6.5 M 19 5 L 13 5 L 13 11 L 19 11 L 19 5 L 19 5 Z M 13 13 L 14.5 13 L 14.5 14.5 L 13 14.5 L 13 13 Z M 14.5 14.5 L 16 14.5 L 16 16 L 14.5 16 L 14.5 14.5 Z M 16 13 L 17.5 13 L 17.5 14.5 L 16 14.5 L 16 13 Z M 13 16 L 14.5 16 L 14.5 17.5 L 13 17.5 L 13 16 Z M 14.5 17.5 L 16 17.5 L 16 19 L 14.5 19 L 14.5 17.5 Z M 16 16 L 17.5 16 L 17.5 17.5 L 16 17.5 L 16 16 Z M 17.5 14.5 L 19 14.5 L 19 16 L 17.5 16 L 17.5 14.5 Z M 17.5 17.5 L 19 17.5 L 19 19 L 17.5 19 L 17.5 17.5 Z M 23 6 L 21 6 L 21 3 L 18 3 L 18 1 L 23 1 L 23 6 Z M 23 23 L 23 18 L 21 18 L 21 21 L 18 21 L 18 23 L 23 23 Z M 1 23 L 6 23 L 6 21 L 3 21 L 3 18 L 1 18 L 1 23 Z M 1 1 L 1 6 L 3 6 L 3 3 L 6 3 L 6 1 L 1 1 Z"
+                    android:valueTo="M 9.5 6.5 L 9.5 9.5 L 6.5 9.5 L 6.5 6.5 L 9.5 6.5 M 11 5 L 5 5 L 5 11 L 11 11 L 11 5 L 11 5 Z M 9.5 14.5 L 9.5 17.5 L 6.5 17.5 L 6.5 14.5 L 9.5 14.5 M 11 13 L 5 13 L 5 19 L 11 19 L 11 13 L 11 13 Z M 17.5 6.5 L 17.5 9.5 L 14.5 9.5 L 14.5 6.5 L 17.5 6.5 M 19 5 L 13 5 L 13 11 L 19 11 L 19 5 L 19 5 Z M 13 13 L 14.5 13 L 14.5 14.5 L 13 14.5 L 13 13 Z M 14.5 14.5 L 16 14.5 L 16 16 L 14.5 16 L 14.5 14.5 Z M 16 13 L 17.5 13 L 17.5 14.5 L 16 14.5 L 16 13 Z M 13 16 L 14.5 16 L 14.5 17.5 L 13 17.5 L 13 16 Z M 14.5 17.5 L 16 17.5 L 16 19 L 14.5 19 L 14.5 17.5 Z M 16 16 L 17.5 16 L 17.5 17.5 L 16 17.5 L 16 16 Z M 17.5 14.5 L 19 14.5 L 19 16 L 17.5 16 L 17.5 14.5 Z M 17.5 17.5 L 19 17.5 L 19 19 L 17.5 19 L 17.5 17.5 Z M 22 7 L 20 7 L 20 4 L 17 4 L 17 2 L 22 2 L 22 7 Z M 22 22 L 22 17 L 20 17 L 20 20 L 17 20 L 17 22 L 22 22 Z M 2 22 L 7 22 L 7 20 L 4 20 L 4 17 L 2 17 L 2 22 Z M 2 2 L 2 7 L 4 7 L 4 4 L 7 4 L 7 2 L 2 2 Z"
+                    android:valueType="pathType"
+                    android:interpolator="@android:anim/anticipate_overshoot_interpolator"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>
