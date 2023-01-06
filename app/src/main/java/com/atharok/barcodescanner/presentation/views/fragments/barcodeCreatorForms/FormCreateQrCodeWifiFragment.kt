@@ -49,35 +49,35 @@ class FormCreateQrCodeWifiFragment : AbstractFormCreateBarcodeFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        configureSpinner()
+        configureWifiEncryptionAutoCompleteTextView()
     }
 
     override fun generateBarcodeTextFromForm(): String {
         val ssid = viewBinding.fragmentFormCreateQrCodeWifiSsidInputEditText.text.toString()
         val password = viewBinding.fragmentFormCreateQrCodeWifiPasswordInputEditText.text.toString()
-        val encryption = getEncryption(viewBinding.fragmentFormCreateQrCodeWifiEncryptionSpinner.selectedItem as String)
+        val encryption = getEncryption()
         val hide = viewBinding.fragmentFormCreateQrCodeWifiHideCheckBox.isChecked
 
         return "WIFI:T:$encryption;S:$ssid;P:$password;H:$hide;"
     }
 
-    private fun configureSpinner(){
+    private fun configureWifiEncryptionAutoCompleteTextView(){
         val spinnerArray = arrayOf(
             getString(R.string.spinner_wifi_encryption_wep),
             getString(R.string.spinner_wifi_encryption_wpa),
-            getString(R.string.spinner_wifi_encryption_none))
+            getString(R.string.spinner_wifi_encryption_none)
+        )
 
         val spinnerAdapter = ArrayAdapter<String>(requireContext(), R.layout.template_spinner_item, spinnerArray)
         spinnerAdapter.setDropDownViewResource(R.layout.template_spinner_item)
-        viewBinding.fragmentFormCreateQrCodeWifiEncryptionSpinner.adapter=spinnerAdapter
+        viewBinding.fragmentFormCreateQrCodeWifiEncryptionAutoCompleteTextView.setAdapter(spinnerAdapter)
+        viewBinding.fragmentFormCreateQrCodeWifiEncryptionAutoCompleteTextView.setText(spinnerAdapter.getItem(0), false)
     }
 
-    private fun getEncryption(selectedItem: String): String {
-        return when(selectedItem) {
-            getString(R.string.spinner_wifi_encryption_wep) -> "WEP"
-            getString(R.string.spinner_wifi_encryption_wpa) -> "WPA"
-            getString(R.string.spinner_wifi_encryption_none) -> "nopass"
-            else -> "WEP"
-        }
+    private fun getEncryption(): String = when(viewBinding.fragmentFormCreateQrCodeWifiEncryptionAutoCompleteTextView.text.toString()) {
+        getString(R.string.spinner_wifi_encryption_wep) -> "WEP"
+        getString(R.string.spinner_wifi_encryption_wpa) -> "WPA"
+        getString(R.string.spinner_wifi_encryption_none) -> "nopass"
+        else -> "WEP"
     }
 }

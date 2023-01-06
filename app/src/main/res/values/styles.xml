@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Toolbar -->
     <style name="ToolBarTextAppearance" parent="TitlePrimaryMaxTextViewAppearance">
@@ -191,6 +191,23 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="AutoCompleteTextViewTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/AutoCompleteTextViewTextInputLayoutThemeOverlay</item>
+    </style>
+
+    <style name="AutoCompleteTextViewTextInputLayoutThemeOverlay" parent="">
+
+        <item name="colorPrimary">?colorAccent</item>
+
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textStyle">normal</item>
+
+        <item name="autoCompleteTextViewStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu</item>
+    </style>
+
     <style name="RadioButtonTheme">
         <item name="colorControlNormal">?attr/appColorIcon</item>
         <item name="colorControlActivated">?attr/appColorMain</item>
@@ -240,32 +257,24 @@
     </style>
 
     <!-- DateTimePicker -->
-    <style name="DateTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+    <style name="DateTimePickerTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
         <item name="android:windowBackground">?attr/appColorForeground</item>
+        <item name="android:datePickerStyle">@style/DatePickerTheme</item>
         <item name="android:timePickerStyle">@style/TimePickerTheme</item>
-
-        <item name="android:textColor">?attr/appColorFrontPrimary</item>
-        <item name="android:textColorPrimary">?attr/appColorFrontPrimary</item>
-        <item name="android:textColorSecondary">?attr/appColorFrontSecondary</item>
-        <item name="android:textStyle">normal</item>
-
-        <item name="colorAccent">?attr/appColorMain</item>
-        <item name="android:colorAccent">?attr/appColorMain</item>
-        <item name="android:colorPrimary">?attr/appColorMain</item>
-        <item name="android:colorPrimaryDark">?attr/appColorMain</item>
 
         <item name="android:buttonBarPositiveButtonStyle">@style/DialogTextButtonStyle</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>
         <item name="android:buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>
     </style>
 
-    <style name="TimePickerTheme" parent="@android:style/Widget.Material.Light.TimePicker">
+    <style name="DatePickerTheme" parent="@android:style/Widget.Material.Light.DatePicker">
         <item name="android:numbersBackgroundColor">?attr/appColorBackground</item>
         <item name="android:numbersSelectorColor">?attr/appColorMain</item>
     </style>
 
-    <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">?attr/appColorMain</item>
+    <style name="TimePickerTheme" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersBackgroundColor">?attr/appColorBackground</item>
+        <item name="android:numbersSelectorColor">?attr/appColorMain</item>
     </style>
 
     <!-- Overflow Menu -->

@@ -52,18 +52,28 @@
 
     </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-    <Spinner
-        android:id="@+id/fragment_form_create_qr_code_wifi_encryption_spinner"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_form_create_qr_code_wifi_encryption_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_form_create_qr_code_wifi_password_input_layout" />
+        android:layout_below="@id/fragment_form_create_qr_code_wifi_password_input_layout"
+        style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/fragment_form_create_qr_code_wifi_encryption_auto_complete_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/fragment_form_create_qr_code_wifi_hide_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_form_create_qr_code_wifi_encryption_spinner"
+        android:layout_below="@id/fragment_form_create_qr_code_wifi_encryption_layout"
         android:text="@string/qr_code_text_input_edit_text_hint_wifi_hide"
+        app:buttonTint="?attr/appColorFrontPrimary"
         style="@style/StandardPrimaryTextViewAppearance"/>
 
 </RelativeLayout>

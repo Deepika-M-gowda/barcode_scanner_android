@@ -155,13 +155,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_form_create_qr_code_contact_web_site_input_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_mail_1_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_1"
             app:startIconDrawable="@drawable/baseline_mail_24"
@@ -180,12 +181,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_mail_1_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_mail_1_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -195,13 +204,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_form_create_qr_code_contact_mail_1_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_mail_2_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_2"
             app:startIconDrawable="@drawable/baseline_mail_24"
@@ -220,12 +230,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_mail_2_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_mail_2_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -235,13 +253,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_form_create_qr_code_contact_mail_2_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_mail_3_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_3"
             app:startIconDrawable="@drawable/baseline_mail_24"
@@ -260,12 +279,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_mail_3_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_mail_3_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -276,13 +303,14 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_mail_3_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_phone_1_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_1"
             app:startIconDrawable="@drawable/baseline_call_24"
             app:startIconTintFocused="?colorAccent"
@@ -300,12 +328,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_phone_1_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_phone_1_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -316,13 +352,14 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_phone_1_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_phone_2_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_2"
             app:startIconDrawable="@drawable/baseline_call_24"
             app:startIconTintFocused="?colorAccent"
@@ -340,12 +377,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_phone_2_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_phone_2_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -356,13 +401,14 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_phone_2_layout"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:baselineAligned="false">
 
         <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
             android:id="@+id/fragment_form_create_qr_code_contact_phone_3_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_3"
             app:startIconDrawable="@drawable/baseline_call_24"
             app:startIconTintFocused="?colorAccent"
@@ -380,12 +426,20 @@
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/fragment_form_create_qr_code_contact_phone_3_spinner"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:prompt="@string/qr_code_spinner_prompt_none"/>
+            android:layout_height="match_parent"
+            android:layout_weight=".35"
+            android:layout_marginStart="@dimen/light_margin"
+            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/contact_phone_3_auto_complete_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 

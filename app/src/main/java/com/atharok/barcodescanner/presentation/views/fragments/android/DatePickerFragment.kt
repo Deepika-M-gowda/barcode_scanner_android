@@ -24,14 +24,12 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.DatePicker
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import java.lang.ref.WeakReference
 import java.util.*
 
 class DatePickerFragment: DialogFragment(), DatePickerDialog.OnDateSetListener {
 
-    private var weakReference: WeakReference<TextView>? = null
+    private lateinit var callback: (date: String) -> Unit
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         // Use the current date as the default date in the picker
@@ -52,13 +50,13 @@ class DatePickerFragment: DialogFragment(), DatePickerDialog.OnDateSetListener {
 
         val dateStr = "$year-$monthStr-$dayStr"
 
-        weakReference?.get()?.text = dateStr
+        callback(dateStr)
     }
 
     companion object {
-        fun newInstance(textView: TextView): DatePickerFragment {
+        fun newInstance(callback: (date: String) -> Unit): DatePickerFragment {
             return DatePickerFragment().apply {
-                this.weakReference = WeakReference(textView)
+                this.callback = callback
             }
         }
     }

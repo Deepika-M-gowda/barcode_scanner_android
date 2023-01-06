@@ -143,12 +143,16 @@ class FormCreateQrCodeAgendaFragment : AbstractFormCreateBarcodeFragment() {
     }
 
     private fun showDatePickerDialog(textView: TextView) {
-        val fragment = DatePickerFragment.newInstance(textView)
+        val fragment = DatePickerFragment.newInstance  {
+            textView.text = it
+        }
         fragment.show(requireActivity().supportFragmentManager, "dateTag")
     }
 
     private fun showTimePickerDialog(textView: TextView) {
-        val fragment = TimePickerFragment.newInstance(textView)
-        fragment.show(requireActivity().supportFragmentManager, "timeTad")
+        val fragment = TimePickerFragment.newInstance {
+            textView.text = it
+        }
+        fragment.show(requireActivity().supportFragmentManager, "timeTag")
     }
 }

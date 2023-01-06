@@ -30,7 +30,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
-import android.widget.Spinner
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -40,6 +39,7 @@ import com.atharok.barcodescanner.databinding.FragmentFormCreateQrCodeContactBin
 import com.atharok.barcodescanner.domain.library.EzvcardBuilder
 import com.atharok.barcodescanner.domain.library.VCardReader
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import ezvcard.Ezvcard
 import ezvcard.VCard
@@ -50,7 +50,6 @@ import ezvcard.property.Telephone
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.named
-
 
 /**
  * A simple [Fragment] subclass.
@@ -74,8 +73,8 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        configureSpinnerMail()
-        configureSpinnerPhone()
+        configureMailAutoCompleteTextView()
+        configurePhoneAutoCompleteTextView()
         configureOnClickImportFromContact()
     }
 
@@ -94,27 +93,27 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
             createUrl(viewBinding.fragmentFormCreateQrCodeContactWebSiteInputEditText.text.toString())
             addEmail(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactMail1InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactMail1Spinner.selectedItem as String
+                viewBinding.contactMail1AutoCompleteTextView.text.toString()
             )
             addEmail(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactMail2InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactMail2Spinner.selectedItem as String
+                viewBinding.contactMail2AutoCompleteTextView.text.toString()
             )
             addEmail(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactMail3InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactMail3Spinner.selectedItem as String
+                viewBinding.contactMail3AutoCompleteTextView.text.toString()
             )
             addPhone(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactPhone1InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactPhone1Spinner.selectedItem as String
+                viewBinding.contactPhone1AutoCompleteTextView.text.toString()
             )
             addPhone(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactPhone2InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactPhone2Spinner.selectedItem as String
+                viewBinding.contactPhone2AutoCompleteTextView.text.toString()
             )
             addPhone(requireContext(),
                 viewBinding.fragmentFormCreateQrCodeContactPhone3InputEditText.text.toString(),
-                viewBinding.fragmentFormCreateQrCodeContactPhone3Spinner.selectedItem as String
+                viewBinding.contactPhone3AutoCompleteTextView.text.toString()
             )
             createAddress(
                 mStreet = viewBinding.fragmentFormCreateQrCodeContactStreetAddressInputEditText.text.toString(),
@@ -129,42 +128,48 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
         return Ezvcard.write(vCard).prodId(false).go()
     }
 
-    private fun configureSpinnerMail(){
-        val spinnerArray = arrayOf(
-            getString(R.string.spinner_type_work),
-            getString(R.string.spinner_type_home),
-            getString(R.string.spinner_type_other)
+    private fun configureMailAutoCompleteTextView(){
+        configureAutoCompleteTextView(
+            values = arrayOf(
+                getString(R.string.spinner_type_work),
+                getString(R.string.spinner_type_home),
+                getString(R.string.spinner_type_other)
+            ),
+            autoCompleteTextView1 = viewBinding.contactMail1AutoCompleteTextView,
+            autoCompleteTextView2 = viewBinding.contactMail2AutoCompleteTextView,
+            autoCompleteTextView3 = viewBinding.contactMail3AutoCompleteTextView,
         )
-
-        val spinnerAdapter = ArrayAdapter<String>(
-            requireContext(),
-            R.layout.template_spinner_item,
-            spinnerArray
-        )
-        spinnerAdapter.setDropDownViewResource(R.layout.template_spinner_item)
-        viewBinding.fragmentFormCreateQrCodeContactMail1Spinner.adapter=spinnerAdapter
-        viewBinding.fragmentFormCreateQrCodeContactMail2Spinner.adapter=spinnerAdapter
-        viewBinding.fragmentFormCreateQrCodeContactMail3Spinner.adapter=spinnerAdapter
     }
 
-    private fun configureSpinnerPhone(){
-        val spinnerArray = arrayOf(
-            getString(R.string.spinner_type_mobile),
-            getString(R.string.spinner_type_work),
-            getString(R.string.spinner_type_home),
-            getString(R.string.spinner_type_fax),
-            getString(R.string.spinner_type_other)
+    private fun configurePhoneAutoCompleteTextView(){
+        configureAutoCompleteTextView(
+            values = arrayOf(
+                getString(R.string.spinner_type_mobile),
+                getString(R.string.spinner_type_work),
+                getString(R.string.spinner_type_home),
+                getString(R.string.spinner_type_fax),
+                getString(R.string.spinner_type_other)
+            ),
+            autoCompleteTextView1 = viewBinding.contactPhone1AutoCompleteTextView,
+            autoCompleteTextView2 = viewBinding.contactPhone2AutoCompleteTextView,
+            autoCompleteTextView3 = viewBinding.contactPhone3AutoCompleteTextView,
         )
+    }
 
-        val spinnerAdapter = ArrayAdapter<String>(
-            requireContext(),
-            R.layout.template_spinner_item,
-            spinnerArray
-        )
-        spinnerAdapter.setDropDownViewResource(R.layout.template_spinner_item)
-        viewBinding.fragmentFormCreateQrCodeContactPhone1Spinner.adapter=spinnerAdapter
-        viewBinding.fragmentFormCreateQrCodeContactPhone2Spinner.adapter=spinnerAdapter
-        viewBinding.fragmentFormCreateQrCodeContactPhone3Spinner.adapter=spinnerAdapter
+    private fun configureAutoCompleteTextView(
+        values: Array<String>,
+        autoCompleteTextView1: MaterialAutoCompleteTextView,
+        autoCompleteTextView2: MaterialAutoCompleteTextView,
+        autoCompleteTextView3: MaterialAutoCompleteTextView,
+    ){
+        val adapter = ArrayAdapter<String>(requireContext(), R.layout.template_spinner_item, values)
+        adapter.setDropDownViewResource(R.layout.template_spinner_item)
+        autoCompleteTextView1.setAdapter(adapter)
+        autoCompleteTextView1.setText(adapter.getItem(0), false)
+        autoCompleteTextView2.setAdapter(adapter)
+        autoCompleteTextView2.setText(adapter.getItem(0), false)
+        autoCompleteTextView3.setAdapter(adapter)
+        autoCompleteTextView3.setText(adapter.getItem(0), false)
     }
 
     private fun getCivil(): String {
@@ -206,42 +211,42 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
         if (vCard.emails.isNotEmpty())
             fillEmailField(
                 viewBinding.fragmentFormCreateQrCodeContactMail1InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactMail1Spinner,
+                viewBinding.contactMail1AutoCompleteTextView,
                 vCard.emails.first()
             )
 
         if (vCard.emails.size > 1)
             fillEmailField(
                 viewBinding.fragmentFormCreateQrCodeContactMail2InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactMail2Spinner,
+                viewBinding.contactMail2AutoCompleteTextView,
                 vCard.emails[1]
             )
 
         if (vCard.emails.size > 2)
             fillEmailField(
                 viewBinding.fragmentFormCreateQrCodeContactMail3InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactMail3Spinner,
+                viewBinding.contactMail3AutoCompleteTextView,
                 vCard.emails[2]
             )
 
         if (vCard.telephoneNumbers.isNotEmpty())
             fillPhoneField(
                 viewBinding.fragmentFormCreateQrCodeContactPhone1InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactPhone1Spinner,
+                viewBinding.contactPhone1AutoCompleteTextView,
                 vCard.telephoneNumbers.first()
             )
 
         if (vCard.telephoneNumbers.size > 1)
             fillPhoneField(
                 viewBinding.fragmentFormCreateQrCodeContactPhone2InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactPhone2Spinner,
+                viewBinding.contactPhone2AutoCompleteTextView,
                 vCard.telephoneNumbers[1]
             )
 
         if (vCard.telephoneNumbers.size > 2)
             fillPhoneField(
                 viewBinding.fragmentFormCreateQrCodeContactPhone3InputEditText,
-                viewBinding.fragmentFormCreateQrCodeContactPhone3Spinner,
+                viewBinding.contactPhone3AutoCompleteTextView,
                 vCard.telephoneNumbers[2]
             )
 
@@ -263,7 +268,18 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
             viewBinding.fragmentFormCreateQrCodeContactNotesInputEditText.setText(vCard.notes.first().value)
     }
 
-    private fun fillEmailField(editText: TextInputEditText, spinner: Spinner, email: Email){
+    private fun fillEmailField(editText: TextInputEditText, autoCompleteTextView: MaterialAutoCompleteTextView, email: Email){
+        editText.setText(email.value)
+
+        if(email.types.isNotEmpty()) {
+            val emailType: EmailType = email.types.first()
+            val index = getEmailTypeIndex(emailType)
+
+            autoCompleteTextView.setSelection(index)
+        } else autoCompleteTextView.setSelection(2)
+    }
+
+    /*private fun fillEmailField(editText: TextInputEditText, spinner: Spinner, email: Email){
         editText.setText(email.value)
 
         if(email.types.isNotEmpty()) {
@@ -272,17 +288,15 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
 
             spinner.setSelection(index)
         } else spinner.setSelection(2)
+    }*/
+
+    private fun getEmailTypeIndex(emailType: EmailType): Int = when (emailType) {
+        EmailType.WORK -> 0
+        EmailType.HOME -> 1
+        else -> 2
     }
 
-    private fun getEmailSpinnerIndex(emailType: EmailType): Int{
-        return when (emailType) {
-            EmailType.WORK -> 0
-            EmailType.HOME -> 1
-            else -> 2
-        }
-    }
-
-    private fun fillPhoneField(editText: TextInputEditText, spinner: Spinner, phone: Telephone){
+    /*private fun fillPhoneField(editText: TextInputEditText, spinner: Spinner, phone: Telephone){
         editText.setText(phone.text)
 
         if(phone.types.isNotEmpty()) {
@@ -291,16 +305,25 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
 
             spinner.setSelection(index)
         } else spinner.setSelection(4)
+    }*/
+
+    private fun fillPhoneField(editText: TextInputEditText, autoCompleteTextView: MaterialAutoCompleteTextView, phone: Telephone){
+        editText.setText(phone.text)
+
+        if(phone.types.isNotEmpty()) {
+            val phoneType = phone.types.first()
+            val index = getPhoneTypeIndex(phoneType)
+
+            autoCompleteTextView.setSelection(index)
+        } else autoCompleteTextView.setSelection(4)
     }
 
-    private fun getPhoneSpinnerIndex(phoneType: TelephoneType): Int{
-        return when (phoneType) {
-            TelephoneType.CELL -> 0
-            TelephoneType.WORK -> 1
-            TelephoneType.HOME -> 2
-            TelephoneType.FAX -> 3
-            else -> 4
-        }
+    private fun getPhoneTypeIndex(phoneType: TelephoneType): Int = when (phoneType) {
+        TelephoneType.CELL -> 0
+        TelephoneType.WORK -> 1
+        TelephoneType.HOME -> 2
+        TelephoneType.FAX -> 3
+        else -> 4
     }
 
     // ---- Contact Activity ----
@@ -358,18 +381,18 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
         viewBinding.fragmentFormCreateQrCodeContactWebSiteInputEditText.setText("")
 
         viewBinding.fragmentFormCreateQrCodeContactMail1InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactMail1Spinner.setSelection(0)
+        viewBinding.contactMail1AutoCompleteTextView.setSelection(0)
         viewBinding.fragmentFormCreateQrCodeContactMail2InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactMail2Spinner.setSelection(0)
+        viewBinding.contactMail2AutoCompleteTextView.setSelection(0)
         viewBinding.fragmentFormCreateQrCodeContactMail3InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactMail3Spinner.setSelection(0)
+        viewBinding.contactMail3AutoCompleteTextView.setSelection(0)
 
         viewBinding.fragmentFormCreateQrCodeContactPhone1InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactPhone1Spinner.setSelection(0)
+        viewBinding.contactPhone1AutoCompleteTextView.setSelection(0)
         viewBinding.fragmentFormCreateQrCodeContactPhone2InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactPhone2Spinner.setSelection(0)
+        viewBinding.contactPhone2AutoCompleteTextView.setSelection(0)
         viewBinding.fragmentFormCreateQrCodeContactPhone3InputEditText.setText("")
-        viewBinding.fragmentFormCreateQrCodeContactPhone3Spinner.setSelection(0)
+        viewBinding.contactPhone3AutoCompleteTextView.setSelection(0)
 
         viewBinding.fragmentFormCreateQrCodeContactStreetAddressInputEditText.setText("")
         viewBinding.fragmentFormCreateQrCodeContactPostalCodeInputEditText.setText("")

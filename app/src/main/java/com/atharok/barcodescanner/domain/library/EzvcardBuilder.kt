@@ -92,26 +92,24 @@ class EzvcardBuilder {
     }
 
     fun addEmail(context: Context, email: String, emailTypeStr: String) {
-
         if(email.isNotBlank()) {
             mEmailList.add(
                 Email(email.trim()).apply {
-                    val emailType = getEmailType(context, emailTypeStr)
-                    if(emailType != null)
+                    getEmailType(context, emailTypeStr)?.let { emailType ->
                         types.add(emailType)
+                    }
                 }
             )
         }
     }
 
     fun addPhone(context: Context, phone: String, phoneTypeStr: String) {
-
         if(phone.isNotBlank()) {
             mPhoneList.add(
                 Telephone(phone.trim()).apply {
-                    val phoneType = getPhoneType(context, phoneTypeStr)
-                    if(phoneType != null)
+                    getPhoneType(context, phoneTypeStr)?.let { phoneType ->
                         types.add(phoneType)
+                    }
                 }
             )
         }

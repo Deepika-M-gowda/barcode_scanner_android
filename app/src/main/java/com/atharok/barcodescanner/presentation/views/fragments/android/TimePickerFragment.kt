@@ -24,15 +24,13 @@ import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.text.format.DateFormat
-import android.widget.TextView
 import android.widget.TimePicker
 import androidx.fragment.app.DialogFragment
-import java.lang.ref.WeakReference
 import java.util.*
 
 class TimePickerFragment: DialogFragment(), TimePickerDialog.OnTimeSetListener {
 
-    private var weakReference: WeakReference<TextView>? = null
+    private lateinit var callback: (time: String) -> Unit
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -51,14 +49,13 @@ class TimePickerFragment: DialogFragment(), TimePickerDialog.OnTimeSetListener {
 
         val timeStr = "$hourStr:$minuteStr"
 
-        weakReference?.get()?.text = timeStr
+        callback(timeStr)
     }
 
     companion object {
-        fun newInstance(textView: TextView): TimePickerFragment {
-            return TimePickerFragment()
-                .apply {
-                this.weakReference = WeakReference(textView)
+        fun newInstance(callback: (time: String) -> Unit): TimePickerFragment {
+            return TimePickerFragment().apply {
+                this.callback = callback
             }
         }
     }

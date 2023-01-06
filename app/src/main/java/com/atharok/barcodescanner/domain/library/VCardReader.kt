@@ -44,12 +44,12 @@ class VCardReader(private val context: Context) {
             val uriWithAppendPath: Uri = Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_VCARD_URI, lookupKey)
 
             try {
-                val fd = context.contentResolver
-                    .openAssetFileDescriptor(uriWithAppendPath, "r")
+                val fd = context.contentResolver.openAssetFileDescriptor(uriWithAppendPath, "r")
 
                 if (fd != null) {
                     val inputStream: InputStream = fd.createInputStream()
                     vCardText = inputStream.readBytes().toString(Charsets.UTF_8)
+                    fd.close()
                 }
             } catch (e: Exception){
                 e.printStackTrace()
