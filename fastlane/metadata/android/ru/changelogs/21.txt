@@ -1,0 +1,10 @@
+1.9.0
+
+- New icon + animated icon in the Splash Screen.
+- Added transition animations between views in the barcode generation.
+- Added animation of icons in the BottomNavigationView.
+- Improved code and styles. Replaced Spinner components with MaterialAutoCompleteTextView.
+- Removal of Roboto fonts. Now the application uses the system font.
+- Adding system features.
+- Russian translation updated (Thanks to s s).
+

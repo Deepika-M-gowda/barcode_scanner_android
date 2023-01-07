@@ -20,12 +20,15 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ProgressBar
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.convertAttrResToColorInt
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser
 import com.google.zxing.Result
@@ -51,6 +54,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
         setSupportActionBar(viewBinding.activityBarcodeScanFromImageToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         viewBinding.activityBarcodeScanFromImageCropImageView.clearImage()
+        configureProgressBarColor()
 
         setContentView(viewBinding.root)
     }
@@ -85,6 +89,12 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
             menuVisibility=visible
             invalidateOptionsMenu()
         }
+    }
+
+    private fun configureProgressBarColor() {
+        val mProgressBar = viewBinding.activityBarcodeScanFromImageCropImageView.findViewById<ProgressBar>(R.id.CropProgressBar)
+        val color: Int = mProgressBar.convertAttrResToColorInt(R.attr.appColorMain)
+        mProgressBar.indeterminateTintList = ColorStateList.valueOf(color)
     }
 
     // ---- Configure Crop ----
