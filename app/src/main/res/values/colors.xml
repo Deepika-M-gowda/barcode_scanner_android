@@ -5,7 +5,7 @@
 
     <color name="colorPrimaryDark">#ff000000</color>
     <color name="black_transparent">#bf000000</color>
-
+    <color name="splashScreenBackgroundColor">#ff34353a</color>
     <!--______________________________________ Light ____________________________________________-->
 
     <color name="lightBackgroundColorPrimary">#f7f7f7</color>
