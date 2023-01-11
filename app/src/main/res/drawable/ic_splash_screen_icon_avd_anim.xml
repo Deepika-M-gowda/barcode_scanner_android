@@ -11,7 +11,7 @@
             <path
                 android:name="path"
                 android:pathData="M 0 0 L 192 0 L 192 192 L 0 192 Z"
-                android:fillColor="#34353a"
+                android:fillColor="@color/icon_background"
                 android:strokeWidth="1"/>
             <path
                 android:name="path_1"
@@ -27,7 +27,7 @@
                 <path
                     android:name="path_3"
                     android:pathData="M 101.786 82.5 C 91.197 82.5 82.5 91.197 82.5 101.786 C 82.5 112.375 91.197 121.071 101.786 121.071 C 104.62 121.071 107.305 120.401 109.742 119.287 L 118.228 127.772 L 118.228 127.774 C 120.826 130.371 125.174 130.371 127.772 127.774 L 127.774 127.772 C 130.371 125.174 130.371 120.826 127.774 118.228 L 127.772 118.228 L 119.287 109.742 C 120.401 107.305 121.071 104.62 121.071 101.786 C 121.071 91.197 112.375 82.5 101.786 82.5 Z"
-                    android:fillColor="#34353a"
+                    android:fillColor="@color/icon_background"
                     android:strokeWidth="1"/>
                 <path
                     android:name="path_4"

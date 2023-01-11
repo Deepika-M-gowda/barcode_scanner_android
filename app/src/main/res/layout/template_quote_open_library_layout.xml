@@ -12,20 +12,22 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/out_quote_open_library_layout_card_view"
-            android:layout_width="194dp"
-            android:layout_height="59dp"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
             android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/standard_margin"
             android:backgroundTint="@android:color/white"
             app:cardUseCompatPadding="false"
             app:cardElevation="0dp">
 
             <ImageView
                 android:id="@+id/out_quote_open_library_layout_image_view"
-                android:layout_width="178dp"
-                android:layout_height="43dp"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
+                android:layout_margin="@dimen/standard_margin"
                 android:backgroundTint="@android:color/white"
-                android:src="@drawable/open_library_logo_356x87"
+                android:src="@drawable/open_library_logo"
                 android:contentDescription="@string/image_view_description_logo" />
 
         </androidx.cardview.widget.CardView>
