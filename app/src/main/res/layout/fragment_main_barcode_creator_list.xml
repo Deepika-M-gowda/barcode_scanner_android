@@ -42,9 +42,9 @@
                         android:layout_height="@dimen/icon_large_size"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        app:tint="?attr/appColorOnMain"
                         android:background="@drawable/circle"
-                        app:backgroundTint="?colorAccent"
+                        app:tint="?colorOnPrimary"
+                        app:backgroundTint="?colorPrimary"
                         android:src="@drawable/baseline_qr_code_24"
                         android:contentDescription="@string/image_view_description_icon" />
 
@@ -57,7 +57,7 @@
                         android:layout_toStartOf="@id/fragment_main_create_barcode_list_header_icon_image_view"
                         android:layout_centerVertical="true"
                         android:text="@string/barcode_qr_code_label"
-                        style="@style/TitlePrimaryMinTextViewAppearance"/>
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
 
                     <ImageView
                         android:id="@+id/fragment_main_create_barcode_list_header_icon_image_view"

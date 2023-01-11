@@ -10,7 +10,7 @@
         android:id="@+id/fragment_barcode_analysis_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/StandardSecondaryItalicTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic"
         />
 
 </FrameLayout>

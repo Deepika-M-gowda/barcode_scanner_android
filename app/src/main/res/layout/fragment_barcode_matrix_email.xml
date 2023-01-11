@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_email_recipient_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_address_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_address_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 
@@ -39,14 +39,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_email_cc_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_cc_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_cc_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 
@@ -62,14 +62,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_email_bcc_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_bcc_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_bcc_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -84,14 +84,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_subject_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_subject_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_subject_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -106,14 +106,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_body_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_email_body_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_body_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
 </RelativeLayout>

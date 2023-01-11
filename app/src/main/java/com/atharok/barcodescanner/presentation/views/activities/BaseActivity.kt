@@ -36,7 +36,8 @@ abstract class BaseActivity: AppCompatActivity() {
     val settingsManager: SettingsManager by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        this.setTheme(settingsManager.getTheme())
+        val theme = settingsManager.getTheme()
+        this.setTheme(theme)
         super.onCreate(savedInstanceState)
     }
 

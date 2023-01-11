@@ -22,6 +22,7 @@ package com.atharok.barcodescanner.presentation.customView
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.content.res.Resources
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.Gravity
@@ -68,6 +69,7 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
         super.onAttachedToWindow()
 
         fab.id = View.NO_ID
+        fab.compatElevation = 1 * Resources.getSystem().displayMetrics.density
         if(iconResource!=-1) fab.setImageResource(iconResource)
         if(backgroundTint!=-1) fab.backgroundTintList = ColorStateList.valueOf(backgroundTint)
         fab.supportImageTintList = ColorStateList.valueOf(iconTint)
@@ -88,6 +90,7 @@ class FloatingActionMenu(context: Context, attrs: AttributeSet?): FrameLayout(co
 
         val subFab = FloatingActionButton(context).apply {
             id = View.NO_ID
+            compatElevation = 1 * Resources.getSystem().displayMetrics.density
             if(drawable!=-1) setImageResource(drawable)
             if(backgroundTint!=-1) backgroundTintList = ColorStateList.valueOf(backgroundTint)
             supportImageTintList = ColorStateList.valueOf(iconTint)

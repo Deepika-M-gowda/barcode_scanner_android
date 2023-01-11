@@ -15,7 +15,7 @@
         android:text="@string/camera_permission_denied"
         android:textAlignment="center"
         android:visibility="gone"
-        style="@style/StandardSecondaryTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
         />
 
     <androidx.camera.view.PreviewView
@@ -34,19 +34,9 @@
         app:viewfinder_radius="50dp"
         app:viewfinder_corner_thickness="4dp"
         app:viewfinder_corner_color="@android:color/white"
-        app:overlay_mask_color="@color/black_transparent"
+        app:overlay_mask_color="@color/overlay_mask"
         android:visibility="gone"
         />
-
-    <!--<com.google.android.material.slider.Slider
-        android:id="@+id/fragment_main_camera_x_scanner_slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:value="0.5"
-        android:contentDescription="@string/slider_description_zoom"
-        android:visibility="gone"
-        />-->
 
     <FrameLayout
         android:layout_width="48dp"
@@ -64,7 +54,6 @@
             android:value="0.5"
             android:valueFrom="0.0"
             android:valueTo="1"
-            style="@style/Slider"
             app:labelBehavior="gone"
             android:contentDescription="@string/slider_description_zoom"
             android:visibility="gone"/>

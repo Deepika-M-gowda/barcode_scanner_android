@@ -3,87 +3,108 @@
 
     <!--______________________________________ Commons __________________________________________-->
 
-    <color name="colorPrimaryDark">#ff000000</color>
-    <color name="black_transparent">#bf000000</color>
-    <color name="splashScreenBackgroundColor">#ff34353a</color>
+    <color name="overlay_mask">#bf000000</color>
+    <color name="splash_screen_background">#ff34353a</color>
+
     <!--______________________________________ Light ____________________________________________-->
 
-    <color name="lightBackgroundColorPrimary">#f7f7f7</color>
-    <color name="lightBackgroundColorSecondary">#ffffff</color>
+    <color name="light_blue_primary">#2356c8</color>
+    <color name="light_blue_background">#fff0f1f6</color>
+    <color name="light_blue_surface">#fff7f8fd</color>
+    <color name="light_blue_secondary_container">#402356c8</color>
+    <color name="light_blue_surface_variant">#e0e2eb</color>
+    <color name="light_blue_outline">#74777d</color>
 
-    <color name="lightBlueColorAccent">#2356c8</color>
-    <color name="lightBlueBackgroundColorPrimary">#fff0f1f6</color>
-    <color name="lightBlueBackgroundColorSecondary">#fff7f8fd</color>
-    <color name="lightBlueIndicativeColor">#402356c8</color>
+    <color name="light_orange_primary">#f9a826</color>
+    <color name="light_orange_background">#fff8f7f0</color>
+    <color name="light_orange_surface">#fffffef7</color>
+    <color name="light_orange_secondary_container">#40f9a826</color>
+    <color name="light_orange_surface_variant">#ebe7e0</color>
+    <color name="light_orange_outline">#7d7a74</color>
 
-    <color name="lightOrangeColorAccent">#f9a826</color>
-    <color name="lightOrangeBackgroundColorPrimary">#fff8f7f0</color>
-    <color name="lightOrangeBackgroundColorSecondary">#fffffef7</color>
-    <color name="lightOrangeIndicativeColor">#40f9a826</color>
+    <color name="light_green_primary">#49a942</color>
+    <color name="light_green_background">#fff1f5f1</color>
+    <color name="light_green_surface">#fff8fcf8</color>
+    <color name="light_green_secondary_container">#4049a942</color>
+    <color name="light_green_surface_variant">#e1ebe0</color>
+    <color name="light_green_outline">#757d74</color>
 
-    <color name="lightGreenColorAccent">#49a942</color>
-    <color name="lightGreenBackgroundColorPrimary">#fff1f5f1</color>
-    <color name="lightGreenBackgroundColorSecondary">#fff8fcf8</color>
-    <color name="lightGreenIndicativeColor">#4049a942</color>
+    <color name="light_red_primary">#e4002b</color>
+    <color name="light_red_background">#fff8f0f0</color>
+    <color name="light_red_surface">#fffff7f7</color>
+    <color name="light_red_secondary_container">#40e4002b</color>
+    <color name="light_red_surface_variant">#ebe0e2</color>
+    <color name="light_red_outline">#7d7476</color>
 
-    <color name="lightRedColorAccent">#e4002b</color>
-    <color name="lightRedBackgroundColorPrimary">#fff8f0f0</color>
-    <color name="lightRedBackgroundColorSecondary">#fffff7f7</color>
-    <color name="lightRedIndicativeColor">#40e4002b</color>
-
-    <color name="lightPurpleColorAccent">#6633cc</color>
-    <color name="lightPurpleBackgroundColorPrimary">#fff2f0f6</color>
-    <color name="lightPurpleBackgroundColorSecondary">#fff9f7fd</color>
-    <color name="lightPurpleIndicativeColor">#406633cc</color>
+    <color name="light_purple_primary">#6633cc</color>
+    <color name="light_purple_background">#fff2f0f6</color>
+    <color name="light_purple_surface">#fff9f7fd</color>
+    <color name="light_purple_secondary_container">#406633cc</color>
+    <color name="light_purple_surface_variant">#e4e0eb</color>
+    <color name="light_purple_outline">#77747d</color>
 
     <!-- Front Color -->
-    <color name="lightFrontColorPrimary">#ff333333</color>
-    <color name="lightFrontColorSecondary">#bf333333</color>
+    <color name="light_front_primary">#ff333333</color>
+    <color name="light_front_secondary">#d9333333</color>
 
     <!-- Indicative Color -->
-    <color name="lightColorPositive">#46c705</color>
-    <color name="lightColorMedium">#e4be00</color>
-    <color name="lightColorNegative">#e40000</color>
-    <color name="lightColorUnknown">#808080</color>
+    <color name="light_color_positive">#46c705</color>
+    <color name="light_color_medium">#e4be00</color>
+    <color name="light_color_negative">#e40000</color>
+    <color name="light_color_unknown">#808080</color>
+    <color name="light_table_row">#0d000000</color>
 
     <!--______________________________________ Dark _____________________________________________-->
 
-    <color name="darkBackgroundColorPrimary">#ff121212</color>
-    <color name="darkBackgroundColorSecondary">#ff1f1f1f</color>
+    <color name="dark_blue_primary">#9bace3</color>
+    <color name="dark_blue_background">#ff1d1e23</color>
+    <color name="dark_blue_surface">#ff28292e</color>
+    <color name="dark_blue_secondary_container">#409bace3</color>
+    <color name="dark_blue_surface_variant">#45474d</color>
+    <color name="dark_blue_outline">#8e9098</color>
+    <color name="dark_blue_on_primary">#15265c</color>
 
-    <color name="darkBlueColorAccent">#9bace3</color>
-    <color name="darkBlueBackgroundColorPrimary">#ff1d1e23</color>
-    <color name="darkBlueBackgroundColorSecondary">#ff28292e</color>
-    <color name="darkBlueIndicativeColor">#409bace3</color>
+    <color name="dark_orange_primary">#fff59d</color>
+    <color name="dark_orange_background">#ff25241d</color>
+    <color name="dark_orange_surface">#ff302f28</color>
+    <color name="dark_orange_secondary_container">#40fff59d</color>
+    <color name="dark_orange_surface_variant">#4d4c45</color>
+    <color name="dark_orange_outline">#98978e</color>
+    <color name="dark_orange_on_primary">#5c5515</color>
 
-    <color name="darkOrangeColorAccent">#fff59d</color>
-    <color name="darkOrangeBackgroundColorPrimary">#ff25241d</color>
-    <color name="darkOrangeBackgroundColorSecondary">#ff302f28</color>
-    <color name="darkOrangeIndicativeColor">#40fff59d</color>
+    <color name="dark_green_primary">#a3d3a0</color>
+    <color name="dark_green_background">#ff1e221e</color>
+    <color name="dark_green_surface">#ff292d29</color>
+    <color name="dark_green_secondary_container">#40a3d3a0</color>
+    <color name="dark_green_surface_variant">#464d45</color>
+    <color name="dark_green_outline">#8f988e</color>
+    <color name="dark_green_on_primary">#1a5c15</color>
 
-    <color name="darkGreenColorAccent">#a3d3a0</color>
-    <color name="darkGreenBackgroundColorPrimary">#ff1e221e</color>
-    <color name="darkGreenBackgroundColorSecondary">#ff292d29</color>
-    <color name="darkGreenIndicativeColor">#40a3d3a0</color>
+    <color name="dark_red_primary">#f99699</color>
+    <color name="dark_red_background">#ff251d1d</color>
+    <color name="dark_red_surface">#ff302828</color>
+    <color name="dark_red_secondary_container">#40f99699</color>
+    <color name="dark_red_surface_variant">#4d4545</color>
+    <color name="dark_red_outline">#988e8e</color>
+    <color name="dark_red_on_primary">#5c1517</color>
 
-    <color name="darkRedColorAccent">#f99699</color>
-    <color name="darkRedBackgroundColorPrimary">#ff251d1d</color>
-    <color name="darkRedBackgroundColorSecondary">#ff302828</color>
-    <color name="darkRedIndicativeColor">#40f99699</color>
-
-    <color name="darkPurpleColorAccent">#b59ce6</color>
-    <color name="darkPurpleBackgroundColorPrimary">#ff1f1d23</color>
-    <color name="darkPurpleBackgroundColorSecondary">#ff2a282e</color>
-    <color name="darkPurpleIndicativeColor">#40b59ce6</color>
+    <color name="dark_purple_primary">#b59ce6</color>
+    <color name="dark_purple_background">#ff1f1d23</color>
+    <color name="dark_purple_surface">#ff2a282e</color>
+    <color name="dark_purple_secondary_container">#40b59ce6</color>
+    <color name="dark_purple_surface_variant">#48454d</color>
+    <color name="dark_purple_outline">#918e98</color>
+    <color name="dark_purple_on_primary">#2d155c</color>
 
     <!-- Front Color -->
-    <color name="darkFrontColorPrimary">#ffcccccc</color>
-    <color name="darkFrontColorSecondary">#bfcccccc</color>
+    <color name="dark_front_primary">#ffcccccc</color>
+    <color name="dark_front_secondary">#d9cccccc</color>
 
     <!-- Indicative Color -->
-    <color name="darkColorPositive">#88d867</color>
-    <color name="darkColorMedium">#e7ca3f</color>
-    <color name="darkColorNegative">#ff795b</color>
-    <color name="darkColorUnknown">#bfbfbf</color>
+    <color name="dark_color_positive">#88d867</color>
+    <color name="dark_color_medium">#e7ca3f</color>
+    <color name="dark_color_negative">#ff795b</color>
+    <color name="dark_color_unknown">#bfbfbf</color>
+    <color name="dark_table_row">#33000000</color>
 
 </resources>

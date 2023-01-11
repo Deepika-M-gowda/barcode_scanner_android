@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_m"
-            app:buttonTint="?attr/appColorFrontPrimary"
-            style="@style/StandardPrimaryTextViewAppearance" />
+            app:buttonTint="?android:attr/textColorPrimary"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_mrs"
@@ -39,8 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_mrs"
-            app:buttonTint="?attr/appColorFrontPrimary"
-            style="@style/StandardPrimaryTextViewAppearance" />
+            app:buttonTint="?android:attr/textColorPrimary"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_miss"
@@ -48,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_miss"
-            app:buttonTint="?attr/appColorFrontPrimary"
-            style="@style/StandardPrimaryTextViewAppearance" />
+            app:buttonTint="?android:attr/textColorPrimary"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_form_create_qr_code_contact_civil_radio_button_none"
@@ -57,8 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_none"
-            app:buttonTint="?attr/appColorFrontPrimary"
-            style="@style/StandardPrimaryTextViewAppearance" />
+            app:buttonTint="?android:attr/textColorPrimary"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
     </RadioGroup>
 
@@ -69,7 +69,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_civil_radio_group"
         android:hint="@string/qr_code_text_input_edit_text_hint_name"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_name_input_edit_text"
@@ -90,7 +90,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_name_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_first_name"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_first_name_input_edit_text"
@@ -112,7 +112,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_first_name_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_organisation"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_organisation_input_edit_text"
@@ -134,8 +134,8 @@
         android:layout_below="@id/fragment_form_create_qr_code_contact_organisation_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_web_site"
         app:startIconDrawable="@drawable/baseline_web_24"
-        app:startIconTintFocused="?colorAccent"
-        style="@style/TextInputLayoutStyle">
+        app:startIconTintFocused="?colorPrimary"
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_web_site_input_edit_text"
@@ -166,8 +166,8 @@
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_1"
             app:startIconDrawable="@drawable/baseline_mail_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_mail_1_input_edit_text"
@@ -186,7 +186,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_mail_1_auto_complete_text_view"
@@ -215,8 +215,8 @@
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_2"
             app:startIconDrawable="@drawable/baseline_mail_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_mail_2_input_edit_text"
@@ -235,7 +235,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_mail_2_auto_complete_text_view"
@@ -264,8 +264,8 @@
 
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_3"
             app:startIconDrawable="@drawable/baseline_mail_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_mail_3_input_edit_text"
@@ -284,7 +284,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_mail_3_auto_complete_text_view"
@@ -313,8 +313,8 @@
             android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_1"
             app:startIconDrawable="@drawable/baseline_call_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_phone_1_input_edit_text"
@@ -333,7 +333,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_phone_1_auto_complete_text_view"
@@ -362,8 +362,8 @@
             android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_2"
             app:startIconDrawable="@drawable/baseline_call_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_phone_2_input_edit_text"
@@ -382,7 +382,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_phone_2_auto_complete_text_view"
@@ -411,8 +411,8 @@
             android:layout_weight=".65"
             android:hint="@string/qr_code_text_input_edit_text_hint_phone_3"
             app:startIconDrawable="@drawable/baseline_call_24"
-            app:startIconTintFocused="?colorAccent"
-            style="@style/TextInputLayoutStyle">
+            app:startIconTintFocused="?colorPrimary"
+            style="@style/AppTheme.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_form_create_qr_code_contact_phone_3_input_edit_text"
@@ -431,7 +431,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".35"
             android:layout_marginStart="@dimen/light_margin"
-            style="@style/AutoCompleteTextViewTextInputLayoutStyle">
+            style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/contact_phone_3_auto_complete_text_view"
@@ -450,7 +450,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_phone_3_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_street_address"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_street_address_input_edit_text"
@@ -471,7 +471,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_street_address_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_postal_code"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_postal_code_input_edit_text"
@@ -492,7 +492,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_postal_code_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_city"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_city_input_edit_text"
@@ -513,7 +513,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_city_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_country"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_country_input_edit_text"
@@ -534,7 +534,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_country_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_region"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_region_input_edit_text"
@@ -555,7 +555,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_form_create_qr_code_contact_region_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_notes"
-        style="@style/TextInputLayoutStyle">
+        style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_form_create_qr_code_contact_notes_input_edit_text"

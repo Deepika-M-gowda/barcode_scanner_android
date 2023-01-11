@@ -5,4 +5,4 @@
     android:layout_height="wrap_content"
     android:gravity="start"
     android:padding="@dimen/standard_margin"
-    style="@style/StandardPrimaryTextViewAppearance" />
+    style="@style/AppTheme.TextView.Appearance.Standard.Primary" />

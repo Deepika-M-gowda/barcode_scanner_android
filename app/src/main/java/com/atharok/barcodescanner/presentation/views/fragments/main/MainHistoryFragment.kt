@@ -25,7 +25,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -47,6 +46,7 @@ import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
@@ -144,7 +144,6 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
         val recyclerView = viewBinding.fragmentMainHistoryRecyclerView
 
-        //adapter = HistoryItemAdapter(this)
         val layoutManager = LinearLayoutManager(requireContext())
         val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
 
@@ -175,8 +174,8 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
         get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 
     private fun showDeleteConfirmationDialog(){
-        AlertDialog.Builder(requireContext())
-            .setMessage(R.string.popup_message_confirmation_delete_history)
+        MaterialAlertDialogBuilder(requireContext(), R.style.AppTheme_MaterialAlertDialog)
+            .setTitle(R.string.popup_message_confirmation_delete_history)
             .setPositiveButton(R.string.delete_label) { _, _ ->
                 databaseViewModel.deleteAll()
             }

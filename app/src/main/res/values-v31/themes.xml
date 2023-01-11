@@ -1,32 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MaterialYouLightTheme" parent="LightTheme">
-        <item name="appColorMain">@android:color/system_accent1_600</item>
-        <item name="appColorPrimaryDark">@android:color/system_neutral1_1000</item>
-        <item name="appColorBackground">@android:color/system_neutral1_50</item>
-        <item name="appColorForeground">@android:color/system_neutral1_10</item>
-        <item name="appColorFrontPrimary">@android:color/system_neutral1_900</item>
-        <item name="appColorFrontSecondary">@android:color/system_neutral1_700</item>
-        <item name="appColorIcon">?attr/appColorFrontPrimary</item>
-        <item name="appColorOnMain">@android:color/white</item>
-        <item name="appColorIndicator">@android:color/system_accent1_100</item>
+    <style name="MaterialYouLightTheme" parent="ThemeOverlay.Material3.DynamicColors.Light">
+
+        <item name="dialogBackgroundColor">@android:color/system_neutral1_10</item>
+        <item name="colorControlNormal">?android:attr/textColorPrimary</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">@color/light_front_primary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/light_front_secondary</item>
+
+        <!-- Text Font / Size / Style -->
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textStyle">normal</item>
+
+        <!-- Custom colors -->
+        <item name="colorPositive">@color/light_color_positive</item>
+        <item name="colorMedium">@color/light_color_medium</item>
+        <item name="colorNegative">@color/light_color_negative</item>
+        <item name="colorUnknown">@color/light_color_unknown</item>
+        <item name="colorRow">@color/light_table_row</item>
+
+        <!-- Components -->
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialButtonStyle">@style/AppTheme.MaterialButton</item>
+        <item name="bottomNavigationStyle">@style/AppTheme.BottomNavigationView.Style</item>
+        <item name="navigationRailStyle">@style/AppTheme.NavigationRailView.Style</item>
+        <item name="switchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="materialSwitchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="switchPreferenceCompatStyle">@style/AppTheme.SwitchPreferenceCompat.Material3</item>
+        <item name="chipStyle">@style/AppTheme.Chip</item>
+        <item name="sliderStyle">@style/AppTheme.Slider</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+
+        <!-- System -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 
-    <style name="MaterialYouDarkTheme" parent="DarkTheme">
-        <item name="appColorMain">@android:color/system_accent1_200</item>
-        <item name="appColorPrimaryDark">@android:color/system_neutral2_1000</item>
-        <item name="appColorBackground">@android:color/system_neutral2_900</item>
-        <item name="appColorForeground">@android:color/system_neutral2_800</item>
-        <item name="appColorFrontPrimary">@android:color/system_neutral2_100</item>
-        <item name="appColorFrontSecondary">@android:color/system_neutral2_300</item>
-        <item name="appColorIcon">?attr/appColorFrontPrimary</item>
-        <item name="appColorOnMain">@android:color/black</item>
-        <item name="appColorIndicator">@android:color/system_accent2_600</item>
+    <style name="MaterialYouDarkTheme" parent="ThemeOverlay.Material3.DynamicColors.Dark">
+
+        <item name="dialogBackgroundColor">@android:color/system_neutral2_800</item>
+        <item name="colorControlNormal">?android:attr/textColorPrimary</item>
+
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">@color/dark_front_primary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/dark_front_secondary</item>
+
+        <!-- Text Font / Size / Style -->
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textStyle">normal</item>
+
+        <!-- Custom colors -->
+        <item name="colorPositive">@color/dark_color_positive</item>
+        <item name="colorMedium">@color/dark_color_medium</item>
+        <item name="colorNegative">@color/dark_color_negative</item>
+        <item name="colorUnknown">@color/dark_color_unknown</item>
+        <item name="colorRow">@color/dark_table_row</item>
+
+        <!-- Components -->
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialButtonStyle">@style/AppTheme.MaterialButton</item>
+        <item name="bottomNavigationStyle">@style/AppTheme.BottomNavigationView.Style</item>
+        <item name="navigationRailStyle">@style/AppTheme.NavigationRailView.Style</item>
+        <item name="switchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="materialSwitchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="switchPreferenceCompatStyle">@style/AppTheme.SwitchPreferenceCompat.Material3</item>
+        <item name="chipStyle">@style/AppTheme.Chip</item>
+        <item name="sliderStyle">@style/AppTheme.Slider</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+
+        <!-- System -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowSplashScreenBackground">@color/splashScreenBackgroundColor</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_screen_background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen_icon_avd_anim</item>
         <item name="android:windowSplashScreenAnimationDuration">1000</item>
     </style>

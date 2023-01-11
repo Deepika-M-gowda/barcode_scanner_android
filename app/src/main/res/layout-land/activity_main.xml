@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/activityBackgroundColorReference"
     tools:context=".presentation.views.activities.MainActivity">
 
     <RelativeLayout
@@ -31,9 +30,8 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:clipToPadding="false"
-                style="@style/RailNavigationViewStyle"
-                app:itemTextAppearanceActive="@style/StandardPrimaryTextViewAppearance"
-                app:itemTextAppearanceInactive="@style/StandardPrimaryTextViewAppearance"
+                app:itemTextAppearanceActive="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                app:itemTextAppearanceInactive="@style/AppTheme.TextView.Appearance.Standard.Primary"
                 app:menu="@menu/menu_bottom_navigation_view" />
 
             <FrameLayout

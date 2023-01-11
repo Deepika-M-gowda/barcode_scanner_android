@@ -16,7 +16,7 @@
             android:id="@+id/template_nutrient_level_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TitlePrimaryMaxTextViewAppearance"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"
             />
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/template_nutrient_level_entitled_text_view"
-            style="@style/StandardSecondaryTextViewAppearance"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
             />
 
     </RelativeLayout>
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            style="@style/TitlePrimaryMinTextViewAppearance"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
             />
 
         <ImageView

@@ -11,7 +11,7 @@
         android:id="@+id/recycler_view_item_about_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TitleVariantTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Title.Variant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,7 +19,7 @@
         android:id="@+id/recycler_view_item_about_license_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/StandardPrimaryTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Primary"
         app:layout_constraintBottom_toTopOf="@+id/recycler_view_item_about_author_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/recycler_view_item_about_title_text_view" />
@@ -28,7 +28,7 @@
         android:id="@+id/recycler_view_item_about_author_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/StandardPrimaryTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Primary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_item_about_title_text_view" />
 
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/light_margin"
-        style="@style/StandardSecondaryItalicTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view_item_about_author_text_view" />
 

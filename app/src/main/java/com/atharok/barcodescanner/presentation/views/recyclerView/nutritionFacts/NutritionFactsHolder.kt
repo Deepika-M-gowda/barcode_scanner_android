@@ -40,7 +40,7 @@ class NutritionFactsHolder(private val viewBinding: RecyclerViewItemNutritionFac
             nutrient.entitled == NutritionFactsEnum.STARCH ||
             nutrient.entitled == NutritionFactsEnum.SODIUM){
 
-            viewBinding.root.setBackground(R.attr.background_secondary_row)
+            viewBinding.root.setBackground(R.attr.colorRow)
             val leftPadding = context.resources.getDimension(R.dimen.standard_margin).toInt()
             viewBinding.recyclerViewItemNutritionFactsEntitledTextView.setPadding(leftPadding,
                 viewBinding.recyclerViewItemNutritionFactsEntitledTextView.paddingTop,

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/ingredients_no_information_found_label"
-            style="@style/SubtitleSecondaryTextViewAppearance"
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
             android:visibility="gone"/>
 
         <RelativeLayout
@@ -45,19 +45,12 @@
 
             </FrameLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/activity_veggie_card_view"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/activity_veggie_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/activity_veggie_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/standard_margin"/>
-
-            </com.google.android.material.card.MaterialCardView>
+                android:layout_margin="@dimen/standard_margin"
+                android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout"/>
 
         </RelativeLayout>
 

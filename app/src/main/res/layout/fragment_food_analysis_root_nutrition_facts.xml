@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/nutrition_facts_no_information_found_label"
-            style="@style/SubtitleSecondaryTextViewAppearance"/>
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"/>
 
         <!-- Table -->
         <FrameLayout

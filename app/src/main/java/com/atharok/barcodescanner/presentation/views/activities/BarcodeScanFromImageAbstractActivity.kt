@@ -93,7 +93,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
 
     private fun configureProgressBarColor() {
         val mProgressBar = viewBinding.activityBarcodeScanFromImageCropImageView.findViewById<ProgressBar>(R.id.CropProgressBar)
-        val color: Int = mProgressBar.convertAttrResToColorInt(R.attr.appColorMain)
+        val color: Int = mProgressBar.convertAttrResToColorInt(R.attr.colorPrimary)
         mProgressBar.indeterminateTintList = ColorStateList.valueOf(color)
     }
 

@@ -4,7 +4,7 @@
     android:id="@+id/template_text_view_title_text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    style="@style/TitlePrimaryMaxTextViewAppearance" />
+    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
 <!--
 

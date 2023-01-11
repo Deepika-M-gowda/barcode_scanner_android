@@ -16,7 +16,7 @@
         android:text="@string/camera_permission_denied"
         android:textAlignment="center"
         android:visibility="gone"
-        style="@style/StandardSecondaryTextViewAppearance"
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
         />
 
     <com.budiyev.android.codescanner.CodeScannerView
@@ -48,7 +48,7 @@
             android:text="@string/scan_information_label"
             android:visibility="gone"
             android:textColor="@android:color/white"
-            style="@style/StandardPrimaryTextViewAppearance"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
             />
     </FrameLayout>
 

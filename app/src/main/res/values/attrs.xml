@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="appColorMain" format="reference|color"/>
-    <attr name="appColorPrimaryDark" format="reference|color"/>
-    <attr name="appColorBackground" format="reference|color"/>
-    <attr name="appColorForeground" format="reference|color"/>
-    <attr name="appColorFrontPrimary" format="reference|color"/>
-    <attr name="appColorFrontSecondary" format="reference|color"/>
-    <attr name="appColorIcon" format="reference|color"/>
-    <attr name="appColorOnMain" format="reference|color"/>
-    <attr name="appColorIndicator" format="reference|color"/>
+    <!--<attr name="appColorMain" format="reference|color"/>-->
+    <!--<attr name="appColorPrimaryDark" format="reference|color"/>-->
+    <!--<attr name="appColorBackground" format="reference|color"/>-->
+    <!--<attr name="appColorForeground" format="reference|color"/>-->
+    <!--<attr name="appColorFrontPrimary" format="reference|color"/>-->
+    <!--<attr name="appColorFrontSecondary" format="reference|color"/>-->
+    <!--<attr name="appColorIcon" format="reference|color"/>-->
+    <!--<attr name="appColorOnMain" format="reference|color"/>-->
+    <!--<attr name="appColorIndicator" format="reference|color"/>-->
 
     <attr name="colorPositive" format="color"/>
     <attr name="colorMedium" format="color"/>
     <attr name="colorNegative" format="color"/>
     <attr name="colorUnknown" format="color"/>
+    <!-- For Nutrition Table -->
+    <attr name="colorRow" format="color"/>
 
-    <declare-styleable name="CardViewBackgroundColor">
+    <attr name="dialogBackgroundColor" format="color"/>
+
+    <!--<declare-styleable name="CardViewBackgroundColor">
         <attr format="reference" name="cardViewBackgroundColorReference" />
-    </declare-styleable>
+    </declare-styleable>-->
 
-    <declare-styleable name="ActivityBackgroundColor">
+    <!--<declare-styleable name="ActivityBackgroundColor">
         <attr format="reference" name="activityBackgroundColorReference" />
-    </declare-styleable>
+    </declare-styleable>-->
 
-    <declare-styleable name="NutritionFactsTableColor">
+    <!--<declare-styleable name="NutritionFactsTableColor">
         <attr format="color" name="background_entitled_row" />
         <attr format="color" name="background_primary_row" />
         <attr format="color" name="background_secondary_row" />
-    </declare-styleable>
+    </declare-styleable>-->
 
-    <declare-styleable name="IconDrawable">
+    <!--<declare-styleable name="IconDrawable">
         <attr format="color" name="icon_color" />
-    </declare-styleable>
+    </declare-styleable>-->
 
     <declare-styleable name="ScanOverlay">
         <attr name="viewfinder_width" format="dimension" />

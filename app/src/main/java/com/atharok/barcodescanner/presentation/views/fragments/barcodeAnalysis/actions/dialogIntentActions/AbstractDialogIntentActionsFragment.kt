@@ -26,6 +26,7 @@ import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.ActionsFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.client.result.ParsedResult
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
@@ -50,7 +51,7 @@ abstract class AbstractDialogIntentActionsFragment: ActionsFragment() {
             itemLabelList.add(getString(it.stringResource))
         }
 
-        return AlertDialog.Builder(requireActivity()).apply {
+        return MaterialAlertDialogBuilder(requireActivity()).apply {
             setTitle(action.stringResource)
             setNegativeButton(R.string.close_dialog_label) {
                     dialogInterface, _ -> dialogInterface.cancel()

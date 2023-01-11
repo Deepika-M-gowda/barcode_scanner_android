@@ -27,13 +27,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.*
 import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.android.material.chip.Chip
@@ -96,7 +94,7 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
         chipView.text = getString(stringResource).firstCharacterIntoCapital()
 
         chipView.setChipTextColorFromAttrRes(colorResource)
-        val backgroundRes = if(get<SettingsManager>().useDarkTheme()) R.attr.appColorBackground else R.attr.appColorForeground
+        val backgroundRes = android.R.attr.colorBackground
         chipView.setChipBackgroundColorFromAttrRes(backgroundRes)
         chipView.setChipStrokeColorFromAttrRes(colorResource)
         chipView.setChipIconTintFromAttrRes(colorResource)

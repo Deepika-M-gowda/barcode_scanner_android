@@ -28,7 +28,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -43,9 +42,15 @@ import kotlin.reflect.KClass
 
 class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val activity: Activity = requireActivity()
+        if(activity is BaseActivity){
+            activity.lockDeviceRotation(false)
+        }
+    }
 
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, null)
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -58,16 +63,6 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         configureAboutPreference(R.string.preferences_about_bdd_key, AboutBddActivity::class)
         configureSourceCodePreference()
     }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        val activity: Activity = requireActivity()
-        if(activity is BaseActivity){
-            activity.lockDeviceRotation(false)
-        }
-    }
-
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
 
     override fun onResume() {
         super.onResume()

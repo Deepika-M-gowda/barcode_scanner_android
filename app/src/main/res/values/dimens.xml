@@ -32,11 +32,14 @@
     <dimen name="min_text_size">12sp</dimen>
 
     <!-- CardView -->
-    <dimen name="card_standard_corner_radius">8dp</dimen>
-    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_standard_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
 
     <dimen name="card_generator_item_height">48dp</dimen>
     <dimen name="card_generator_item_corner_radius">24dp</dimen>
+
+    <!-- Dialog -->
+    <dimen name="dialog_corner_radius">16dp</dimen>
 
     <!-- Stroke -->
     <dimen name="stroke_width">1dp</dimen>

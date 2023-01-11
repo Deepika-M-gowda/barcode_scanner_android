@@ -81,6 +81,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
 import com.google.android.material.chip.Chip
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
@@ -460,11 +461,6 @@ val viewsModule = module {
             this.text = text
             setEnsureMinTouchTargetSize(false)
             textAlignment = View.TEXT_ALIGNMENT_CENTER
-            if (Build.VERSION.SDK_INT < 23) {
-                setTextAppearance(context, R.style.ChipText)
-            } else {
-                setTextAppearance(R.style.ChipText)//Crash sur Android 5
-            }
         }
     }
 
@@ -500,18 +496,18 @@ val viewsModule = module {
         val textView = get<TextView> { parametersOf(activity, message) }
         val frameLayout = get<FrameLayout> { parametersOf(activity, textView) }
 
-        AlertDialog.Builder(activity).apply {
+        MaterialAlertDialogBuilder(activity, R.style.AppTheme_MaterialAlertDialog).apply {
             setTitle(title)
             setNegativeButton(R.string.close_dialog_label) {
                     dialogInterface, _ -> dialogInterface.cancel()
             }
             setView(frameLayout)
         }.create().apply {
-            setOnShowListener {
-                getButton(AlertDialog.BUTTON_NEGATIVE).setTextColorFromAttrRes(R.attr.colorAccent)
-                getButton(AlertDialog.BUTTON_POSITIVE).setTextColorFromAttrRes(R.attr.colorAccent)
-                getButton(AlertDialog.BUTTON_NEUTRAL).setTextColorFromAttrRes(R.attr.colorAccent)
-            }
+            /*setOnShowListener {
+                getButton(AlertDialog.BUTTON_NEGATIVE).setTextColorFromAttrRes(R.attr.colorPrimary)
+                getButton(AlertDialog.BUTTON_POSITIVE).setTextColorFromAttrRes(R.attr.colorPrimary)
+                getButton(AlertDialog.BUTTON_NEUTRAL).setTextColorFromAttrRes(R.attr.colorPrimary)
+            }*/
         }
     }
 }

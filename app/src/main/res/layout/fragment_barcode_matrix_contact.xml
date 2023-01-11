@@ -17,14 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_name_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_name_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <!-- Organization -->
@@ -40,14 +40,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_organisation_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_organization_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_organization_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <!-- Contact -->
@@ -63,14 +63,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_title_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_title_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_title_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <!-- Phone -->
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_phone_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <!-- Phone 1 -->
         <RelativeLayout
@@ -100,14 +100,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_phone_type_1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_1_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
 
@@ -123,14 +123,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_phone_type_2_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_2_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
 
@@ -146,14 +146,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_phone_type_3_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_3_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
     </RelativeLayout>
@@ -171,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_mail_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <!-- E-Mail 1 -->
         <RelativeLayout
@@ -185,14 +185,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_email_type_1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_1_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
 
@@ -208,14 +208,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_email_type_2_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_2_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
 
@@ -231,14 +231,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
                 android:id="@+id/fragment_barcode_matrix_contact_email_type_3_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_3_text_view"
-                style="@style/StandardSecondaryItalicTextViewAppearance" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -256,14 +256,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_address_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_address_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_address_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 
@@ -280,14 +280,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/matrix_contact_notes_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_notes_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_notes_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 

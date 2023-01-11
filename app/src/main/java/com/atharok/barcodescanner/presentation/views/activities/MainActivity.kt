@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -29,6 +30,8 @@ import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 
@@ -63,9 +66,23 @@ class MainActivity: BaseActivity() {
 
     // ---- Configuration ----
 
+    /**
+     * Permet de coloriser la bar de navigation (en bas) de la même couleur que la BottomNavigationView.
+     */
+    private fun configureNavigationBarColor(bottomNavigationView: BottomNavigationView) {
+        if (Build.VERSION.SDK_INT >= 24 || settingsManager.useDarkTheme()) {
+            val bottomNavigationViewBackground = bottomNavigationView.background
+            if (bottomNavigationViewBackground is MaterialShapeDrawable) {
+                this.window.navigationBarColor = bottomNavigationViewBackground.resolvedTintColor
+            }
+        }
+    }
+
     private fun configureBottomNavigationMenu() {
 
         viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
+
+            configureNavigationBarColor(bottomNavigationView)
 
             bottomNavigationView.setOnItemSelectedListener {
                 intent.putExtra(ITEM_ID_KEY, it.itemId)
@@ -145,7 +162,7 @@ class MainActivity: BaseActivity() {
 
     fun updateTheme() {
         settingsManager.reload()
-        setTheme(settingsManager.getTheme())
+        //setTheme(settingsManager.getTheme())
 
         viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
             intent.putExtra(ITEM_ID_KEY, bottomNavigationView.selectedItemId)

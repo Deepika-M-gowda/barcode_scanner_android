@@ -17,14 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_wifi_ssid_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_ssid_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
     <!--- Password -->
@@ -40,14 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_wifi_password_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_password_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_wifi_password_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 
@@ -64,14 +64,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_wifi_encryption_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_encryption_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 
@@ -88,14 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/matrix_wifi_is_hidden_label"
-            style="@style/TitleVariantTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_wifi_is_hidden_label"
-            style="@style/StandardSecondaryItalicTextViewAppearance" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
 

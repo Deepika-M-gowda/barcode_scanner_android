@@ -45,7 +45,7 @@ class CustomPreferenceCategory: PreferenceCategory {
         val textSizeInDP = context.resources.getDimension(R.dimen.sub_title_text_size) / context.resources.displayMetrics.density
         val typedValue = TypedValue()
         val theme = context.theme
-        theme.resolveAttribute(R.attr.colorAccent, typedValue, true)
+        theme.resolveAttribute(R.attr.colorPrimary, typedValue, true)
         val color = typedValue.data
 
         val titleView: TextView? = holder.itemView.findViewById(android.R.id.title)

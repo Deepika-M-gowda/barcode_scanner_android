@@ -27,6 +27,7 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.google.android.material.card.MaterialCardView
 import com.google.zxing.BarcodeFormat
 import java.lang.ref.WeakReference
 
@@ -37,7 +38,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
     private lateinit var barcode: Barcode
 
     init {
-        itemView.setOnClickListener(this)
+        itemView.findViewById<MaterialCardView>(R.id.recycler_view_item_history_foreground_layout).setOnClickListener(this)
     }
 
     fun update(barcode: Barcode, listener: HistoryItemAdapter.OnItemClickListener){

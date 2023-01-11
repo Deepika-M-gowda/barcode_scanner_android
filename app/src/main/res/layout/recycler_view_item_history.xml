@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_history_delete_icon_image_view"
             android:text="@string/delete_label"
-            style="@style/TitlePrimaryMinTextViewAppearance"/>
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
 
         <ImageView
             android:id="@+id/recycler_view_item_history_delete_icon_image_view"
@@ -36,7 +36,6 @@
         android:id="@+id/recycler_view_item_history_foreground_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="?attr/cardViewBackgroundColorReference"
         app:cardUseCompatPadding="false">
 
         <RelativeLayout
@@ -55,9 +54,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/large_margin"
-                app:tint="?attr/appColorOnMain"
                 android:background="@drawable/circle"
-                app:backgroundTint="?colorAccent"
+                app:backgroundTint="?colorPrimary"
+                app:tint="?colorOnPrimary"
                 android:contentDescription="@string/image_view_description_type_icon"
                 />
 
@@ -82,7 +81,7 @@
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_format_text_view"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        style="@style/TitlePrimaryMinTextViewAppearance"
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
                         />
 
                     <TextView
@@ -92,7 +91,7 @@
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_centerVertical="true"
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_icon_image_view"
-                        style="@style/StandardSecondaryTextViewAppearance" />
+                        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
                     <ImageView
                         android:id="@+id/recycler_view_item_history_barcode_icon_image_view"
@@ -127,7 +126,7 @@
                             android:layout_marginEnd="@dimen/standard_margin"
                             android:ellipsize="end"
                             android:maxLines="1"
-                            style="@style/StandardSecondaryItalicTextViewAppearance" />
+                            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
                         <ImageView
                             android:id="@+id/recycler_view_item_history_origin_flag_image_view"
@@ -155,7 +154,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_alignParentEnd="true"
-                        style="@style/StandardSecondaryTextViewAppearance" />
+                        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
                 </RelativeLayout>
 

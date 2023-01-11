@@ -31,7 +31,6 @@ import android.provider.Settings
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.INTENT_PICK_WIFI_NETWORK
 import com.atharok.barcodescanner.common.utils.INTENT_WIFI_ADD_NETWORKS
@@ -41,6 +40,7 @@ import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSet
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.WifiParsedResult
@@ -78,7 +78,7 @@ class WifiActionsFragment: ActionsFragment() {
             }
         }
 
-        AlertDialog.Builder(requireActivity()).apply {
+        MaterialAlertDialogBuilder(requireActivity()).apply {
             setTitle(R.string.action_wifi_connection_title_label)
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->
                 dialogInterface.cancel()
