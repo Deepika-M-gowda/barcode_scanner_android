@@ -236,18 +236,6 @@ fun createSendSmsToSmsNumberIntent(parsedResult: SMSParsedResult): Intent {
 
 // ------------------------------------------ SEARCH -----------------------------------------------
 
-/*private fun createSearchIntent(uri: String): Intent {
-    return Intent(Intent.ACTION_VIEW, Uri.parse(uri))
-}
-
-fun createSearchLocalisationIntent(parsedResult: GeoParsedResult): Intent {
-    return createSearchIntent(parsedResult.geoURI)
-}
-
-fun createSearchUrlIntent(parsedResult: URIParsedResult): Intent {
-    return createSearchIntent(parsedResult.uri)
-}*/
-
 fun createSearchUrlIntent(url: String): Intent {
     return Intent(Intent.ACTION_VIEW, Uri.parse(url))
 }

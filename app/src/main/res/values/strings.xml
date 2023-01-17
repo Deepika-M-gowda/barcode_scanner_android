@@ -309,11 +309,39 @@
     <string name="snack_bar_message_share_bitmap_error">An error occurred during share configuration.</string>
 
     <!-- Actions -->
+    <string name="actions_label">Actions</string>
     <string name="intent_chooser_share_title">"Share with…"</string>
     <string name="intent_chooser_mail_title">"Send email…"</string>
-    <string name="copy_label">Copy</string>
+    <string name="copy_label">Copy barcode</string>
     <string name="barcode_copied_label">Barcode copied</string>
     <string name="barcode_search_error_label">Url not supported</string>
+    <string name="search_label">Search</string>
+    <string name="action_title_dialog_label">What do you want to do?</string>
+    <string name="action_go_to_url_label">Go to URL</string>
+    <string name="action_web_search_label">Search on the web</string>
+    <string name="action_product_search_label">Search on %1$s</string>
+    <string name="action_send_mail_label">Send Email</string>
+    <string name="action_send_sms_label">Send SMS</string>
+    <string name="action_call_phone_label">Call phone number</string>
+    <string name="action_add_to_calendar">Add to calendar</string>
+    <string name="action_add_to_contacts">Add to contacts</string>
+    <string name="action_show_location">Show location</string>
+    <string name="action_open_link">Open link</string>
+
+    <!-- Wi-Fi Connection -->
+    <string name="action_wifi_connection_title_label">Wi-Fi connection</string>
+    <string name="action_wifi_connection_from_app">Connect to Wi-Fi</string>
+    <string name="action_wifi_connection_from_wifi_settings">Copy password and go to Wi-Fi settings</string>
+    <string name="action_wifi_connection_error_wifi_not_activated">You must activate Wi-Fi on your device!</string>
+    <string name="action_wifi_password_copy_label">Password copied!</string>
+    <string name="action_wifi_success_added_label">Wi-Fi connection added!</string>
+    <string name="action_wifi_failure_added_label">Failure while adding Wi-Fi connection</string>
+    <string name="action_wifi_already_added_label">Wi-Fi connection already added</string>
+    <string name="action_wifi_add_network_refused">Adding Wi-Fi connection refused.</string>
+    <string name="action_wifi_add_network_successful">Wi-Fi network added.</string>
+    <string name="action_wifi_add_network_failed">Failure while adding Wi-Fi network.</string>
+    <string name="action_wifi_add_network_already_exists">You already added this Wi-Fi network.</string>
+    <string name="action_wifi_add_network_unknown_error">Unknown error while adding Wi-Fi network.</string>
 
     <!-- QR Code Generator -->
 
@@ -415,32 +443,6 @@
     <string name="check_box_event_all_of_day">All day</string>
     <string name="begin_label">Begin</string>
     <string name="end_label">End</string>
-
-    <!-- Action -->
-    <string name="search_label">Search</string>
-    <string name="action_title_dialog_label">What do you want to do?</string>
-    <string name="action_go_to_url_label">Go to URL</string>
-    <string name="action_web_search_label">Search on the web</string>
-    <string name="action_product_search_label">Search on %1$s</string>
-    <string name="action_add_contact_label">Add contact</string>
-    <string name="action_send_mail_label">Send Email</string>
-    <string name="action_send_sms_label">Send SMS</string>
-    <string name="action_call_phone_label">Call phone number</string>
-
-    <!-- Wi-Fi Connection -->
-    <string name="action_wifi_connection_title_label">Wi-Fi connection</string>
-    <string name="action_wifi_connection_from_app">Connect to Wi-Fi</string>
-    <string name="action_wifi_connection_from_wifi_settings">Copy password and go to Wi-Fi settings</string>
-    <string name="action_wifi_connection_error_wifi_not_activated">You must activate Wi-Fi on your device!</string>
-    <string name="action_wifi_password_copy_label">Password copied!</string>
-    <string name="action_wifi_success_added_label">Wi-Fi connection added!</string>
-    <string name="action_wifi_failure_added_label">Failure while adding Wi-Fi connection</string>
-    <string name="action_wifi_already_added_label">Wi-Fi connection already added</string>
-    <string name="action_wifi_add_network_refused">Adding Wi-Fi connection refused.</string>
-    <string name="action_wifi_add_network_successful">Wi-Fi network added.</string>
-    <string name="action_wifi_add_network_failed">Failure while adding Wi-Fi network.</string>
-    <string name="action_wifi_add_network_already_exists">You already added this Wi-Fi network.</string>
-    <string name="action_wifi_add_network_unknown_error">Unknown error while adding Wi-Fi network.</string>
 
     <!-- URL -->
 

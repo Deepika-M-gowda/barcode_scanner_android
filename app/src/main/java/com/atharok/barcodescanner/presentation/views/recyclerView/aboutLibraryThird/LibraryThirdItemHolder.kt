@@ -23,15 +23,11 @@ package com.atharok.barcodescanner.presentation.views.recyclerView.aboutLibraryT
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 
 class LibraryThirdItemHolder(private val viewBinding: RecyclerViewItemAboutBinding)
-    : RecyclerView.ViewHolder(viewBinding.root), KoinComponent {
+    : RecyclerView.ViewHolder(viewBinding.root) {
 
     private val context = itemView.context
 
@@ -44,7 +40,7 @@ class LibraryThirdItemHolder(private val viewBinding: RecyclerViewItemAboutBindi
 
         itemView.setOnClickListener {
             val url = context.getString(libraryThird.webLinkResource)
-            val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
+            val intent: Intent = createSearchUrlIntent(url)
             context.startActivity(intent)
         }
     }

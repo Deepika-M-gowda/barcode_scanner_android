@@ -35,13 +35,19 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.extensions.read
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
 import com.atharok.barcodescanner.domain.library.BitmapRecorder
 import com.atharok.barcodescanner.domain.library.BitmapSharer
+import com.atharok.barcodescanner.presentation.intent.createActionCreateImageIntent
+import com.atharok.barcodescanner.presentation.intent.createShareImageIntent
+import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
 import com.google.android.material.snackbar.Snackbar
@@ -52,7 +58,7 @@ import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
+import java.text.SimpleDateFormat
 import java.util.*
 
 class BarcodeDetailsActivity : BaseActivity() {
@@ -203,7 +209,12 @@ class BarcodeDetailsActivity : BaseActivity() {
         }
 
     private fun createFile() {
-        val intent: Intent = get(named(INTENT_ACTION_CREATE_IMAGE))
+        val date = get<Date>()
+        val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
+        val dateNameStr = simpleDateFormat.format(date)
+        val name = "barcode_$dateNameStr"
+
+        val intent: Intent = createActionCreateImageIntent(name)
         result.launch(intent)
     }
 
@@ -234,7 +245,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 if(uri == null)
                     show(R.string.snack_bar_message_share_bitmap_error)
                 else{
-                    val intent: Intent = get(named(INTENT_SHARE_IMAGE)) { parametersOf(uri) }
+                    val intent: Intent = createShareImageIntent(applicationContext, uri)//get(named(INTENT_SHARE_IMAGE)) { parametersOf(uri) }
                     startActivity(intent)
                 }
             }
@@ -242,8 +253,10 @@ class BarcodeDetailsActivity : BaseActivity() {
     }
 
     private fun shareText(){
-        val intent: Intent = get(named(INTENT_SHARE_TEXT)) { parametersOf(contents) }
-        startActivity(intent)
+        contents?.let {
+            val intent: Intent = createShareTextIntent(applicationContext, it)//get(named(INTENT_SHARE_TEXT)) { parametersOf(contents) }
+            startActivity(intent)
+        }
     }
 
     // ---- Snackbar ----

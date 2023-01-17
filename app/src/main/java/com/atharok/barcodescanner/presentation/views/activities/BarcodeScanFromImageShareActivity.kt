@@ -25,14 +25,13 @@ import android.net.Uri
 import android.os.Bundle
 import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 class BarcodeScanFromImageShareActivity: BarcodeScanFromImageAbstractActivity() {
 
@@ -62,7 +61,7 @@ class BarcodeScanFromImageShareActivity: BarcodeScanFromImageAbstractActivity() 
 
             databaseViewModel.insertBarcode(barcode)
 
-            val intent = getBarcodeAnalysisActivityIntent().apply {
+            val intent = createStartActivityIntent(this, BarcodeAnalysisActivity::class).apply {
                 putExtra(BARCODE_KEY, barcode)
             }
 
@@ -71,7 +70,4 @@ class BarcodeScanFromImageShareActivity: BarcodeScanFromImageAbstractActivity() 
             finish()
         }
     }
-
-    private fun getBarcodeAnalysisActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
 }

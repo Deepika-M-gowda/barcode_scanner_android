@@ -28,34 +28,6 @@ const val BARCODE_ANALYSIS_SCOPE_SESSION_ID = "barcodeAnalysisSessionID"
 const val ACTION_SCOPE_SESSION = "actionScopeSession"
 const val ACTION_SCOPE_SESSION_ID = "actionScopeSessionID"
 
-// ------------------------------------------ KOIN NAMED -------------------------------------------
-
-const val DIALOG_SIMPLE_VIEW_KOIN_NAMED = "DialogSimpleViewKoinNamed"
-
-// ------------------------------------------ INTENT -----------------------------------------------
-
-const val INTENT_START_ACTIVITY = "intentStartActivity"
-const val INTENT_PICK_IMAGE = "intentPickImage"
-const val INTENT_PICK_CONTACT = "intentPickContact"
-const val INTENT_PICK_WIFI_NETWORK = "intentPickWifiNetwork"
-const val INTENT_WIFI_ADD_NETWORKS = "intentWifiAddNetworks"
-const val INTENT_ACTION_CREATE_IMAGE = "intentActionCreateImage"
-const val INTENT_SHARE_TEXT = "intentShareText"
-const val INTENT_SHARE_IMAGE = "intentShareImage"
-const val INTENT_ADD_AGENDA = "intentAddAgenda"
-const val INTENT_ADD_CONTACT = "intentAddContact"
-const val INTENT_ADD_EMAIL = "intentAddEmail"
-const val INTENT_ADD_PHONE_NUMBER = "intentAddPhoneNumber"
-const val INTENT_ADD_SMS_NUMBER = "intentAddSmsNumber"
-const val INTENT_SEND_EMAIL = "intentSendEmail"
-const val INTENT_CALL_PHONE_NUMBER = "intentCallPhoneNumber"
-const val INTENT_CALL_SMS_NUMBER = "intentCallSmsNumber"
-const val INTENT_SEND_SMS_TO_PHONE_NUMBER = "intentSendSmsToPhoneNumber"
-const val INTENT_SEND_SMS_TO_SMS_NUMBER = "intentSendSmsToSmsNumber"
-/*const val INTENT_SEARCH_LOCALISATION = "intentSearchLocalisation"
-const val INTENT_SEARCH_URL = "intentSearchUrl"*/
-const val INTENT_SEARCH_URL = "intentSearchUrl"
-
 // ------------------------------------------ BUNDLE KEY -------------------------------------------
 
 // Clé du Bundle associé à l'URI d'une image.

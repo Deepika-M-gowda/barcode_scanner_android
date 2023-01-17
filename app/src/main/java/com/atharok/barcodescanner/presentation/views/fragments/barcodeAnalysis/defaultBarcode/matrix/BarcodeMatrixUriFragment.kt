@@ -20,27 +20,16 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.os.Bundle
-import android.view.*
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixUriBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.URIParsedResult
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -64,22 +53,6 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
         _binding=null
     }
 
-    protected override fun configureMenu() {
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(object: MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.menu_open_in_web_browser, menu)
-            }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when(menuItem.itemId){
-                    R.id.menu_search -> launchWebSearch()
-                    else -> false
-                }
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-    }
-
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
 
         if(parsedResult is URIParsedResult && parsedResult.type == ParsedResultType.URI) {
@@ -100,22 +73,5 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
         if (isPossiblyMaliciousURI != true) {
             viewBinding.fragmentBarcodeMatrixUriMaliciousLayout.visibility = View.GONE
         }
-    }
-
-    private fun launchWebSearch(): Boolean {
-        arguments?.serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
-            if(barcodeAnalysis.barcode.getBarcodeType() == BarcodeType.URL) {
-                try {
-                    val intent: Intent = get(named(INTENT_SEARCH_URL)) {
-                        parametersOf(barcodeAnalysis.barcode.contents)
-                    }
-                    startActivity(intent)
-                } catch (e: ActivityNotFoundException) {
-                    showToastText(R.string.barcode_search_error_label)
-                }
-            }
-        }
-
-        return true
     }
 }

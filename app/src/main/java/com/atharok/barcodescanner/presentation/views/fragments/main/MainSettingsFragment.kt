@@ -32,12 +32,9 @@ import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.*
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 import kotlin.reflect.KClass
 
 class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -127,7 +124,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         if(pref != null) {
             pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val url = requireActivity().getString(R.string.source_code_link)
-                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
+                val intent: Intent = createSearchUrlIntent(url)
                 requireActivity().startActivity(intent)
                 true
             }
@@ -150,7 +147,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
     }*/
 
     private fun startAboutActivity(activityKClass: KClass<out Activity>): Boolean {
-        val intent = get<Intent>(named(INTENT_START_ACTIVITY)) { parametersOf(activityKClass) }
+        val intent = createStartActivityIntent(requireContext(), activityKClass)
         startActivity(intent)
         return true
     }

@@ -24,7 +24,6 @@ import android.animation.LayoutTransition
 import android.app.Activity
 import android.app.ActivityOptions
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,15 +32,12 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBinding
 import com.atharok.barcodescanner.databinding.TemplateItemBarcodeCreatorBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeCreatorFormsActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -139,7 +135,7 @@ class MainBarcodeCreatorListFragment : Fragment() {
     }
 
     private fun onClickItem(itemView: View, barcodeFormatDetails: BarcodeFormatDetails) {
-        val intent = getStartBarcodeCreatorFormsActivityIntent().apply {
+        val intent = createStartActivityIntent(requireContext(), BarcodeCreatorFormsActivity::class).apply {
             putExtra(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
         }
 
@@ -148,7 +144,4 @@ class MainBarcodeCreatorListFragment : Fragment() {
 
         startActivity(intent, options.toBundle())
     }
-
-    private fun getStartBarcodeCreatorFormsActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeCreatorFormsActivity::class) }
 }

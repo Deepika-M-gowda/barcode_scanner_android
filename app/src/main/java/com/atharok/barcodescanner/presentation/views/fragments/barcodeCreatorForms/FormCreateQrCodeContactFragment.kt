@@ -34,10 +34,10 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.INTENT_PICK_CONTACT
 import com.atharok.barcodescanner.databinding.FragmentFormCreateQrCodeContactBinding
 import com.atharok.barcodescanner.domain.library.EzvcardBuilder
 import com.atharok.barcodescanner.domain.library.VCardReader
+import com.atharok.barcodescanner.presentation.intent.createPickContactIntent
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
@@ -47,9 +47,7 @@ import ezvcard.parameter.EmailType
 import ezvcard.parameter.TelephoneType
 import ezvcard.property.Email
 import ezvcard.property.Telephone
-import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -348,7 +346,7 @@ class FormCreateQrCodeContactFragment : AbstractFormCreateBarcodeFragment() {
         }
 
     private fun openContactActivity(){
-        val intent: Intent = get(named(INTENT_PICK_CONTACT))
+        val intent: Intent = createPickContactIntent()
         resultContactActivity.launch(intent)
     }
 

@@ -61,6 +61,10 @@ abstract class BaseFragment: Fragment() {
         Toast.makeText(requireContext(), getString(textResource), Toast.LENGTH_SHORT).show()
     }
 
+    protected fun showToastText(text: String){
+        Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
+    }
+
     protected fun copyToClipboard(label: String, text: String){
         val clipboard: ClipboardManager = get()
         val clip = ClipData.newPlainText(label, text)

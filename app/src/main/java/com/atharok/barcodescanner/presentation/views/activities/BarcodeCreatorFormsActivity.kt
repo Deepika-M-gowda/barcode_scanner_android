@@ -20,7 +20,6 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -33,18 +32,17 @@ import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_TYPE_ENUM_KEY
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeCreatorFormsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
 import com.atharok.barcodescanner.domain.library.BarcodeFormatCheckerResult.CheckerResponse
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.AbstractFormCreateBarcodeFragment
 import com.google.zxing.BarcodeFormat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * Activity contenant les formulaires de créations de code-barres. Il contient un Fragment
@@ -172,16 +170,14 @@ class BarcodeCreatorFormsActivity : BaseActivity() {
         viewBinding.activityBarcodeCreatorFormsErrorLayout.visibility = View.GONE
         viewBinding.activityBarcodeCreatorFormsErrorTextView.text = ""
 
-        val intent = getStartBarcodeDetailsActivityIntent().apply {
+
+        val intent = createStartActivityIntent(this, BarcodeDetailsActivity::class).apply {
             putExtra(BARCODE_CONTENTS_KEY, content)
             putExtra(BARCODE_FORMAT_KEY, barCodeFormat.name)
         }
 
         startActivity(intent)
     }
-
-    private fun getStartBarcodeDetailsActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeDetailsActivity::class) }
 
     private fun configureErrorMessage(message: String) {
         viewBinding.activityBarcodeCreatorFormsErrorLayout.visibility = View.VISIBLE

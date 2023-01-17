@@ -20,104 +20,51 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
-import android.app.Activity.RESULT_OK
-import android.content.DialogInterface
+import android.app.Activity
 import android.content.Intent
-import android.net.wifi.WifiManager
-import android.net.wifi.WifiNetworkSuggestion
 import android.os.Build
-import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.INTENT_PICK_WIFI_NETWORK
-import com.atharok.barcodescanner.common.utils.INTENT_WIFI_ADD_NETWORKS
-import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
-import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
+import com.atharok.barcodescanner.domain.library.wifiSetup.WifiConnect
 import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
-import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.atharok.barcodescanner.presentation.intent.createPickWifiNetworkIntent
+import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.ParsedResult
-import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.WifiParsedResult
-import org.koin.android.ext.android.get
-import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
-class WifiActionsFragment: ActionsFragment() {
+class WifiActionsFragment: AbstractActionsFragment() {
 
-    private val wifiManager: WifiManager by inject()
-
-    override fun start(barcode: Barcode, parsedResult: ParsedResult) {
-
-        addSearchWithEngineActionFAB(barcode.contents)
-
-        if(parsedResult.type == ParsedResultType.WIFI && parsedResult is WifiParsedResult) {
-            viewBinding.fragmentBarcodeActionsFloatingActionMenu.addItem(ActionEnum.CONFIGURE_WIFI.drawableResource) {
-                configureAlertDialog(parsedResult)
-            }
+    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
+        return when(parsedResult){
+            is WifiParsedResult -> configureWifiActions(barcode.contents, parsedResult)
+            else -> configureDefaultActions(barcode.contents)
         }
     }
 
-    private fun configureAlertDialog(parsedResult: WifiParsedResult){
+    private fun configureWifiActions(contents: String, parsedResult: WifiParsedResult) = arrayOf(
+        ActionItem(R.string.qr_code_type_name_wifi, R.drawable.baseline_wifi_24, showWifiAlertDialog(parsedResult))
+    ) + configureDefaultActions(contents)
 
-        val labelsList = arrayOf(
-            getString(R.string.action_wifi_connection_from_app),
-            getString(R.string.action_wifi_connection_from_wifi_settings)
+    // Actions
+
+    private fun showWifiAlertDialog(parsedResult: WifiParsedResult): () -> Unit = {
+        val items = arrayOf<Pair<String, () -> Unit>>(
+            Pair(getString(R.string.action_wifi_connection_from_app), connectToWifiFromApp(parsedResult)),
+            Pair(getString(R.string.action_wifi_connection_from_wifi_settings), connectToWifiFromWifiSettings(parsedResult))
         )
 
-        val onClickListener = DialogInterface.OnClickListener { _, i ->
-            when(i){
-                0 -> connectToWifiFromApp(parsedResult)
-                1 -> connectToWifiFromWifiSettings(parsedResult)
-            }
-        }
-
-        MaterialAlertDialogBuilder(requireActivity()).apply {
-            setTitle(R.string.action_wifi_connection_title_label)
-            setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->
-                dialogInterface.cancel()
-            }
-            setItems(labelsList, onClickListener)
-        }.create().show()
+        createAlertDialog(requireContext(), getString(R.string.qr_code_type_name_wifi), items).show()
     }
-
-    /**
-     * Copie le mot de passe dans le presse papier et ouvre les paramètres Wifi.
-     */
-    private fun connectToWifiFromWifiSettings(parsedResult: WifiParsedResult){
-        copyToClipboard("password", parsedResult.password)
-        showToastText(R.string.action_wifi_password_copy_label)
-
-        val intent: Intent = get(named(INTENT_PICK_WIFI_NETWORK))
-
-        startActivity(intent)
-    }
-
-    // ---- Wifi Connection ----
-
-    private fun connectToWifiFromApp(parsedResult: WifiParsedResult){
-
-        val data: WifiSetupData = myScope.get { parametersOf(parsedResult) }
-
-        when {
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> connectWithApiR(data)
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> connectWithApiQ(data)
-            else -> connectWithApiOld(data)
-        }
-    }
-
-    // ---- API 30 ----
 
     @RequiresApi(Build.VERSION_CODES.R)
-    private val previewRequest: ActivityResultLauncher<Intent> =
+    private val wifiPreviewRequest: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if(result.resultCode == RESULT_OK){
+            if(result.resultCode == Activity.RESULT_OK){
 
                 val data = result.data
                 if (data?.hasExtra(Settings.EXTRA_WIFI_NETWORK_RESULT_LIST) == true) {
@@ -141,79 +88,31 @@ class WifiActionsFragment: ActionsFragment() {
             }
         }
 
-    @RequiresApi(Build.VERSION_CODES.R)
-    private fun connectWithApiR(data: WifiSetupData){
-        val conf: WifiNetworkSuggestion? = get<WifiSetupWithNewLibrary>().configure(data)
-        if(conf!=null) {
+    private fun connectToWifiFromApp(parsedResult: WifiParsedResult): () -> Unit = {
 
-            val bundle = get<Bundle>().apply {
-                putParcelableArrayList(Settings.EXTRA_WIFI_NETWORK_LIST, arrayListOf(conf))
+        val data: WifiSetupData = actionScope.get { parametersOf(parsedResult) }
+        val wifiConnect: WifiConnect = actionScope.get()
+
+        when {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> wifiConnect.connectWithApiR(data, wifiPreviewRequest)
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> wifiConnect.connectWithApiQ(data) {
+                showSnackbar(getString(it))
             }
-
-            val intent: Intent = get<Intent>(named(INTENT_WIFI_ADD_NETWORKS)).apply {
-                putExtras(bundle)
+            else -> wifiConnect.connectWithApiOld(data) {
+                showSnackbar(getString(it))
             }
-
-            previewRequest.launch(intent)
         }
     }
 
-    // ---- API 29 ----
+    /**
+     * Copie le mot de passe dans le presse papier et ouvre les paramètres Wifi.
+     */
+    private fun connectToWifiFromWifiSettings(parsedResult: WifiParsedResult): () -> Unit = {
+        copyToClipboard("password", parsedResult.password)
+        showToastText(R.string.action_wifi_password_copy_label)
 
-    @RequiresApi(Build.VERSION_CODES.Q)
-    private fun connectWithApiQ(data: WifiSetupData){
-        val conf: WifiNetworkSuggestion? = get<WifiSetupWithNewLibrary>().configure(data)
-        if(conf!=null) {
-            val response = wifiManager.addNetworkSuggestions(listOf(conf))
+        val intent: Intent = createPickWifiNetworkIntent()
 
-            val message = when(response){
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_SUCCESS -> getString(R.string.action_wifi_add_network_successful)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_INTERNAL -> getString(R.string.action_wifi_add_network_failed)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_APP_DISALLOWED -> getString(R.string.action_wifi_add_network_refused)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE -> getString(R.string.action_wifi_add_network_already_exists)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP -> getString(R.string.action_wifi_add_network_failed)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_REMOVE_INVALID -> getString(R.string.action_wifi_add_network_failed)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_NOT_ALLOWED -> getString(R.string.action_wifi_add_network_refused)
-                WifiManager.STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_INVALID -> getString(R.string.action_wifi_add_network_failed)
-                else -> getString(R.string.action_wifi_add_network_unknown_error)
-            }
-
-            showSnackbar(message)
-        }
+        startActivity(intent)
     }
-
-    // ---- API 28 and less ----
-    @Suppress("DEPRECATION")
-    private fun connectWithApiOld(data: WifiSetupData){
-        if(wifiManager.isWifiEnabled){
-
-            val conf: android.net.wifi.WifiConfiguration? = get<WifiSetupWithOldLibrary>().configure(data)
-            if(conf!=null) {
-                if (!wifiManager.isWifiEnabled)
-                    wifiManager.isWifiEnabled = true
-                wifiManager.disconnect()
-                wifiManager.enableNetwork(wifiManager.addNetwork(conf), true)
-
-                val message = if(wifiManager.reconnect())
-                    getString(R.string.action_wifi_add_network_successful)
-                else
-                    getString(R.string.action_wifi_add_network_failed)
-
-                showSnackbar(message)
-            }
-        }else{
-            showToastText(R.string.action_wifi_connection_error_wifi_not_activated)
-        }
-    }
-
-    // ---- Snackbar ----
-    private fun showSnackbar(text: String) {
-        val activity = requireActivity()
-        if(activity is BarcodeAnalysisActivity) {
-            activity.showSnackbar(text)
-        }
-    }
-    /*private fun showSnackbar(text: String) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
-    }*/
 }

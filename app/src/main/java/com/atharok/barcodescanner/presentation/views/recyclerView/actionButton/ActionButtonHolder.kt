@@ -18,21 +18,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions
+package com.atharok.barcodescanner.presentation.views.recyclerView.actionButton
 
-import com.atharok.barcodescanner.domain.entity.action.ActionEnum
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.google.zxing.client.result.ParsedResult
-import com.google.zxing.client.result.ParsedResultType
+import androidx.recyclerview.widget.RecyclerView
+import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
 
-class LocalisationActionsFragment: AbstractIntentActionsFragment() {
+class ActionButtonHolder(private val viewBinding: TemplateActionButtonBinding)
+    : RecyclerView.ViewHolder(viewBinding.root) {
 
-    override fun start(barcode: Barcode, parsedResult: ParsedResult) {
-
-        addSearchWithEngineActionFAB(barcode.contents)
-
-        if(parsedResult.type == ParsedResultType.GEO) {
-             addIntentActionFAB(ActionEnum.SEARCH_LOCALISATION, parsedResult)
+    fun updateItem(item: ActionItem) {
+        viewBinding.root.setOnClickListener {
+            item.action()
         }
+        viewBinding.templateActionButtonIcon.setImageResource(item.imageRes)
+        viewBinding.templateActionButtonText.setText(item.textRes)
     }
 }

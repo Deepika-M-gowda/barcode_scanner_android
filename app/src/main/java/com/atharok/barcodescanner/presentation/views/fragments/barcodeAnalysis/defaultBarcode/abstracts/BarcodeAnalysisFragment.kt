@@ -20,19 +20,16 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 
@@ -79,7 +76,7 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
     protected fun startBarcodeDetailsActivity(){
 
         arguments?.serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
-            val intent = getStartBarcodeDetailsActivityIntent().apply {
+            val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
                 putExtra(BARCODE_CONTENTS_KEY, barcodeAnalysis.barcode.contents)
                 putExtra(BARCODE_FORMAT_KEY, barcodeAnalysis.barcode.formatName)
             }
@@ -87,7 +84,4 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
             startActivity(intent)
         }
     }
-
-    private fun getStartBarcodeDetailsActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeDetailsActivity::class) }
 }

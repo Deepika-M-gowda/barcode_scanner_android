@@ -20,15 +20,23 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
+import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.ParsedResult
+import com.google.zxing.client.result.URIParsedResult
 
-/**
- * Pour les code-barres n'appartenant à aucunes catégories.
- */
-class SimpleActionsFragment: ActionsFragment() {
-
-    override fun start(barcode: Barcode, parsedResult: ParsedResult) {
-        addSearchWithEngineActionFAB(barcode.contents)
+class UrlActionsFragment: AbstractActionsFragment() {
+    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
+        return when(parsedResult){
+            is URIParsedResult -> configureUrlActions(barcode.contents)
+            else -> configureDefaultActions(barcode.contents)
+        }
     }
+
+    private fun configureUrlActions(contents: String) = arrayOf(
+        ActionItem(R.string.action_open_link, R.drawable.outline_open_in_browser_24, openUrl(contents)), //Idée text: Ouvrir le lien
+        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(contents)),
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(contents))
+    )
 }

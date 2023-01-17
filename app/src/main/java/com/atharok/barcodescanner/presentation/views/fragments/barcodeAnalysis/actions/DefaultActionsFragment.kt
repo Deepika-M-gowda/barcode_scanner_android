@@ -18,21 +18,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions
+package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
-import com.atharok.barcodescanner.domain.entity.action.ActionEnum
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.ParsedResult
-import com.google.zxing.client.result.ParsedResultType
 
-class ContactActionsFragment: AbstractIntentActionsFragment() {
-
-    override fun start(barcode: Barcode, parsedResult: ParsedResult) {
-
-        addSearchWithEngineActionFAB(barcode.contents)
-
-        if(parsedResult.type == ParsedResultType.ADDRESSBOOK) {
-             addIntentActionFAB(ActionEnum.ADD_CONTACT, parsedResult)
-        }
+class DefaultActionsFragment: AbstractActionsFragment() {
+    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
+        return configureDefaultActions(barcode.contents)
     }
 }

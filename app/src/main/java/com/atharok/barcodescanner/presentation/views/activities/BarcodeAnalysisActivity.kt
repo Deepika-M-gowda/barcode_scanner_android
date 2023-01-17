@@ -43,18 +43,15 @@ import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeA
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.ActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.DefaultBarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ProductAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.bookProduct.BookAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.FoodAnalysisFragment
 import com.google.android.material.snackbar.Snackbar
-import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
-import kotlin.reflect.KClass
 
 class BarcodeAnalysisActivity: BaseActivity() {
 
@@ -232,7 +229,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
             containerViewId = viewBinding.activityBarcodeInformationContent.id,
             fragment = fragment
         )
-        configureActionFragment(barcodeAnalysis.barcode)
 
         // Change le texte de la toolbar
         changeToolbarText(barcodeAnalysis.barcode)
@@ -240,28 +236,11 @@ class BarcodeAnalysisActivity: BaseActivity() {
         viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
     }
 
-    // ---- Actions ----
-
-    private fun configureActionFragment(barcode: Barcode){
-
-        val containerId = viewBinding.activityBarcodeInformationActionButtonFrameLayout.id
-
-        val actionsFragment: KClass<out ActionsFragment> = get {
-            parametersOf(barcode.getBarcodeType())
-        }
-
-        val args = get<Bundle>().apply {
-            putSerializable(BARCODE_KEY, barcode)
-        }
-
-        replaceFragment(containerId, actionsFragment, args)
-    }
-
     // ---- UI ----
 
     fun showSnackbar(text: String) {
         val snackbar = Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT)
-        snackbar.anchorView = viewBinding.activityBarcodeInformationActionButtonFrameLayout
+        //snackbar.anchorView = viewBinding.activityBarcodeInformationActionButtonFrameLayout
         snackbar.show()
     }
 

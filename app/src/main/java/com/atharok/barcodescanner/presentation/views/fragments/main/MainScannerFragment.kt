@@ -39,12 +39,12 @@ import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity
@@ -56,7 +56,6 @@ import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -231,7 +230,7 @@ class MainScannerFragment : BaseFragment() {
             switchTorchFlash()
 
         resultBarcodeScanFromImageActivity?.let { result ->
-            val intent = getBarcodeScanFromImageActivityIntent()
+            val intent = createStartActivityIntent(requireContext(), BarcodeScanFromImageGalleryActivity::class)
             result.launch(intent)
         }
     }
@@ -347,7 +346,7 @@ class MainScannerFragment : BaseFragment() {
      * Démarre l'Activity: BarcodeAnalysisActivity.
      */
     private fun startBarcodeAnalysisActivity(barcode: Barcode){
-        val intent = getBarcodeAnalysisActivityIntent().apply {
+        val intent = createStartActivityIntent(requireContext(), BarcodeAnalysisActivity::class).apply {
             putExtra(BARCODE_KEY, barcode)
         }
         startActivity(intent)
@@ -363,13 +362,6 @@ class MainScannerFragment : BaseFragment() {
     }
 
     // ---- Intent ----
-
-    private fun getBarcodeScanFromImageActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeScanFromImageGalleryActivity::class) }
-
-    private fun getBarcodeAnalysisActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(BarcodeAnalysisActivity::class) }
-
 
     private fun sendResultToAppIntent(intent: Intent) {
         requireActivity().apply {

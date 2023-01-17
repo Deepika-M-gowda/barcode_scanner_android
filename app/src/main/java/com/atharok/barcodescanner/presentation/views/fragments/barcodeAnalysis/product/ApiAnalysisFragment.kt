@@ -29,13 +29,10 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<T>() {
 
@@ -47,7 +44,7 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
             setView(layout)
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ -> dialogInterface.cancel() }
             setPositiveButton(R.string.go_to_dialog_label) { _, _ ->
-                val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(getString(urlResource, barcodeContents)) }
+                val intent: Intent = createSearchUrlIntent(getString(urlResource, barcodeContents))
                 startActivity(intent)
             }
         }.create()

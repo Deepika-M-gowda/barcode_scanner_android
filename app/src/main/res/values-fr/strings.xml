@@ -309,11 +309,39 @@
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
 
     <!-- Actions -->
+    <string name="actions_label">Actions</string>
     <string name="intent_chooser_share_title">"Partager avec…"</string>
     <string name="intent_chooser_mail_title">"Envoyer l\'email…"</string>
-    <string name="copy_label">Copier</string>
+    <string name="copy_label">Copier le code-barres</string>
     <string name="barcode_copied_label">Code-barres copié</string>
     <string name="barcode_search_error_label">Url non pris en charge</string>
+    <string name="search_label">Rechercher</string>
+    <string name="action_title_dialog_label">Que souhaitez-vous faire ?</string>
+    <string name="action_go_to_url_label">Aller à l\'adresse</string>
+    <string name="action_web_search_label">Rechercher sur le Web</string>
+    <string name="action_product_search_label">Rechercher sur %1$s</string>
+    <string name="action_send_mail_label">Envoyer un Email</string>
+    <string name="action_send_sms_label">Envoyer un SMS</string>
+    <string name="action_call_phone_label">Appeler le numéro</string>
+    <string name="action_add_to_calendar">Ajouter à l\'agenda</string>
+    <string name="action_add_to_contacts">Ajouter aux contacts</string>
+    <string name="action_show_location">Montrer l\'emplacement</string>
+    <string name="action_open_link">Ouvrir le lien</string>
+
+    <!-- Wi-Fi Connection -->
+    <string name="action_wifi_connection_title_label">Connexion Wi-Fi</string>
+    <string name="action_wifi_connection_from_app">Se connecter au Wi-Fi</string>
+    <string name="action_wifi_connection_from_wifi_settings">Copier le mot de passe et aller dans les paramètres Wi-Fi</string>
+    <string name="action_wifi_connection_error_wifi_not_activated">Vous devez activer le Wi-Fi sur votre appareil !</string>
+    <string name="action_wifi_password_copy_label">Mot de passe copié !</string>
+    <string name="action_wifi_success_added_label">Wi-Fi ajouté !</string>
+    <string name="action_wifi_failure_added_label">Echec de l\'ajout du Wi-Fi</string>
+    <string name="action_wifi_already_added_label">Wi-Fi déjà ajouté</string>
+    <string name="action_wifi_add_network_refused">Vous avez refusé l\'ajout du réseau Wifi.</string>
+    <string name="action_wifi_add_network_successful">Le réseau Wifi a été ajouté.</string>
+    <string name="action_wifi_add_network_failed">Echec de l\'ajout du réseau Wifi.</string>
+    <string name="action_wifi_add_network_already_exists">Vous avez déjà ajouté ce réseau Wifi.</string>
+    <string name="action_wifi_add_network_unknown_error">Echec de l\'ajout du réseau Wifi.</string>
 
     <!-- QR Code Generator -->
 
@@ -415,32 +443,6 @@
     <string name="check_box_event_all_of_day">Evénement toute une journée</string>
     <string name="begin_label">Début</string>
     <string name="end_label">Fin</string>
-
-    <!-- Action -->
-    <string name="search_label">Rechercher</string>
-    <string name="action_title_dialog_label">Que souhaitez-vous faire ?</string>
-    <string name="action_go_to_url_label">Aller à l\'adresse</string>
-    <string name="action_web_search_label">Rechercher sur le Web</string>
-    <string name="action_product_search_label">Rechercher sur %1$s</string>
-    <string name="action_add_contact_label">Ajouter un contact</string>
-    <string name="action_send_mail_label">Envoyer un Email</string>
-    <string name="action_send_sms_label">Envoyer un SMS</string>
-    <string name="action_call_phone_label">Appeler le numéro</string>
-
-    <!-- Wi-Fi Connection -->
-    <string name="action_wifi_connection_title_label">Connexion Wi-Fi</string>
-    <string name="action_wifi_connection_from_app">Se connecter au Wi-Fi</string>
-    <string name="action_wifi_connection_from_wifi_settings">Copier le mot de passe et aller dans les paramètres Wi-Fi</string>
-    <string name="action_wifi_connection_error_wifi_not_activated">Vous devez activer le Wi-Fi sur votre appareil !</string>
-    <string name="action_wifi_password_copy_label">Mot de passe copié !</string>
-    <string name="action_wifi_success_added_label">Wi-Fi ajouté !</string>
-    <string name="action_wifi_failure_added_label">Echec de l\'ajout du Wi-Fi</string>
-    <string name="action_wifi_already_added_label">Wi-Fi déjà ajouté</string>
-    <string name="action_wifi_add_network_refused">Vous avez refusé l\'ajout du réseau Wifi.</string>
-    <string name="action_wifi_add_network_successful">Le réseau Wifi a été ajouté.</string>
-    <string name="action_wifi_add_network_failed">Echec de l\'ajout du réseau Wifi.</string>
-    <string name="action_wifi_add_network_already_exists">Vous avez déjà ajouté ce réseau Wifi.</string>
-    <string name="action_wifi_add_network_unknown_error">Echec de l\'ajout du réseau Wifi.</string>
 
     <!-- URL -->
 

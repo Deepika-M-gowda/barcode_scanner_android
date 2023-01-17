@@ -28,10 +28,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.extensions.toIntent
-import com.atharok.barcodescanner.common.utils.INTENT_PICK_IMAGE
+import com.atharok.barcodescanner.presentation.intent.createPickImageIntent
 import com.google.zxing.Result
-import org.koin.android.ext.android.get
-import org.koin.core.qualifier.named
 
 open class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActivity() {
 
@@ -65,7 +63,7 @@ open class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActi
      * Prépare et ouvre la gallery pour récupérer une image.
      */
     private fun pickImageFromGallery(){
-        val imagePickerIntent = get<Intent>(named(INTENT_PICK_IMAGE))
+        val imagePickerIntent = createPickImageIntent()
         resultLauncher.launch(imagePickerIntent)
     }
 

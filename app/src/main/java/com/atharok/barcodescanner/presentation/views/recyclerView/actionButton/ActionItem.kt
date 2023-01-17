@@ -18,18 +18,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.intentActions
+package com.atharok.barcodescanner.presentation.views.recyclerView.actionButton
 
-import com.atharok.barcodescanner.domain.entity.action.ActionEnum
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.google.zxing.client.result.ParsedResult
-import com.google.zxing.client.result.ParsedResultType
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
-class UrlActionsFragment: AbstractIntentActionsFragment() {
-
-    override fun start(barcode: Barcode, parsedResult: ParsedResult) {
-        if(parsedResult.type == ParsedResultType.URI) {
-             addIntentActionFAB(ActionEnum.OPEN_IN_WEB_BROWSER, parsedResult)
-        }
-    }
-}
+class ActionItem(@StringRes val textRes: Int, @DrawableRes val imageRes: Int, val action: () -> Unit)

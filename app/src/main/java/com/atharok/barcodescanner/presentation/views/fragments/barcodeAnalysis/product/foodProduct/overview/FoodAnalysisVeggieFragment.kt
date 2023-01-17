@@ -20,7 +20,6 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,16 +27,13 @@ import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.common.extensions.*
-import com.atharok.barcodescanner.common.utils.INTENT_START_ACTIVITY
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.android.material.chip.Chip
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -103,13 +99,10 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
     }
 
     private fun getVeggieOnClickListener(foodProduct: FoodBarcodeAnalysis) = View.OnClickListener {
-        val intent = getVeggieActivityIntent().apply {
+        val intent = createStartActivityIntent(requireContext(), VeggieActivity::class).apply {
             putExtra(PRODUCT_KEY, foodProduct)
         }
 
         startActivity(intent)
     }
-
-    private fun getVeggieActivityIntent(): Intent =
-        get(named(INTENT_START_ACTIVITY)) { parametersOf(VeggieActivity::class) }
 }

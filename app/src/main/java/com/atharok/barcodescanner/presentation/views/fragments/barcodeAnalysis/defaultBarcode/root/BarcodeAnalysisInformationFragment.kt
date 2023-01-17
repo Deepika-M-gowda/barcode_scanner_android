@@ -28,12 +28,15 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisInformationBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AbstractActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisContentsFragment
 import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
+import kotlin.reflect.KClass
 
 /**
  * Fragment implémenté dans DefaultBarcodeAnalysisFragment, ProductAnalysisFragment,
@@ -60,13 +63,21 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         viewBinding.root.fixAnimateLayoutChangesInNestedScroll()
 
         configureAboutBarcodeEntitledLayout()
+        configureBarcodeActionsEntitledLayout()
+
         configureBarcodeContentsFragment()
         configureAboutBarcodeFragment()
+        configureActionsBarcodeFragment(product.barcode.getBarcodeType())
     }
 
     private fun configureAboutBarcodeEntitledLayout(){
         val entitled: String = getString(R.string.about_barcode_label)
         viewBinding.fragmentBarcodeAnalysisInformationAboutBarcodeEntitledTextViewTemplate.root.text = entitled
+    }
+
+    private fun configureBarcodeActionsEntitledLayout(){
+        val entitled: String = getString(R.string.actions_label)
+        viewBinding.fragmentBarcodeAnalysisInformationBarcodeActionsEntitledTextViewTemplate.root.text = entitled
     }
 
     private fun configureBarcodeContentsFragment() = applyFragment(
@@ -81,8 +92,14 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         args = arguments
     )
 
+    private fun configureActionsBarcodeFragment(barcodeType: BarcodeType) = applyFragment(
+        containerViewId = viewBinding.fragmentBarcodeAnalysisInformationActionsBarcodeFrameLayout.id,
+        fragmentClass = get<KClass<out AbstractActionsFragment>> { parametersOf(barcodeType) },
+        args = arguments
+    )
+
     companion object {
-        fun newInstance(barcodeAnalysis: DefaultBarcodeAnalysis) = BarcodeAnalysisInformationFragment()
+        fun newInstance(barcodeAnalysis: BarcodeAnalysis) = BarcodeAnalysisInformationFragment()
             .apply {
             arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, barcodeAnalysis)

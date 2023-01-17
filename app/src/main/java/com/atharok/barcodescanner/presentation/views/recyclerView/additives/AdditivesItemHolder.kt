@@ -27,25 +27,21 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.setImageColorFromAttrRes
-import com.atharok.barcodescanner.common.utils.DIALOG_SIMPLE_VIEW_KOIN_NAMED
-import com.atharok.barcodescanner.common.utils.INTENT_SEARCH_URL
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAdditivesBinding
 import com.atharok.barcodescanner.domain.entity.dependencies.Additive
 import com.atharok.barcodescanner.domain.entity.dependencies.AdditiveClass
 import com.atharok.barcodescanner.domain.entity.dependencies.OverexposureRiskRate
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.google.android.material.chip.Chip
 import org.koin.android.ext.android.get
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * Représente une ligne (TableRow) d'un tableau (Table) qui est gérer par un Adapter (IngredientsAdapter).
  */
 class AdditivesItemHolder(private val activity: Activity,
                           private val viewBinding: RecyclerViewItemAdditivesBinding)
-    : RecyclerView.ViewHolder(viewBinding.root), KoinComponent {
+    : RecyclerView.ViewHolder(viewBinding.root) {
 
     private val context = itemView.context
 
@@ -57,7 +53,7 @@ class AdditivesItemHolder(private val activity: Activity,
         // ---- Info Image Button ----
         viewBinding.recyclerViewItemAdditivesInfoButton.setOnClickListener {
             val url = context.getString(R.string.search_engine_additive_url, additive.additiveId)
-            val intent: Intent = get(named(INTENT_SEARCH_URL)) { parametersOf(url) }
+            val intent: Intent = createSearchUrlIntent(url)
             activity.startActivity(intent)
         }
 
@@ -96,7 +92,7 @@ class AdditivesItemHolder(private val activity: Activity,
     }
 
     private fun showAdditiveClassDescriptionDialog(title: String, message: String){
-        val dialog = activity.get<AlertDialog>(named(DIALOG_SIMPLE_VIEW_KOIN_NAMED)) {
+        val dialog = activity.get<AlertDialog> {
             parametersOf(activity, title, message)
         }
 

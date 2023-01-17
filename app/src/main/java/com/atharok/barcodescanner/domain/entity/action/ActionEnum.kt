@@ -20,10 +20,7 @@
 
 package com.atharok.barcodescanner.domain.entity.action
 
-import com.atharok.barcodescanner.R
-import java.io.Serializable
-
-enum class ActionEnum(val stringResource: Int, val drawableResource: Int): Serializable {
+/*enum class ActionEnum(val stringResource: Int, val drawableResource: Int): Serializable {
     ADD_AGENDA(R.string.qr_code_type_name_agenda, R.drawable.baseline_event_note_24),
 
     ADD_CONTACT(R.string.action_add_contact_label, R.drawable.baseline_contacts_24),
@@ -52,4 +49,4 @@ enum class ActionEnum(val stringResource: Int, val drawableResource: Int): Seria
     SHARE_IMAGE(R.string.share_image_label, R.drawable.baseline_share_24),
     COPY_TEXT(R.string.copy_label, R.drawable.baseline_content_copy_24),
     CONFIGURE_WIFI(R.string.qr_code_type_name_wifi, R.drawable.baseline_wifi_24)
-}
+}*/
