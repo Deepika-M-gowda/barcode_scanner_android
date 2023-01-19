@@ -18,30 +18,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.library
+package com.atharok.barcodescanner.domain.library.camera
 
-import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import androidx.camera.view.PreviewView
 import com.atharok.barcodescanner.common.extensions.toByteArray
 import com.atharok.barcodescanner.presentation.customView.ScanOverlay
 import com.google.zxing.*
-import com.google.zxing.common.HybridBinarizer
 import kotlin.math.roundToInt
 
-class CameraXBarcodeAnalyzer(
+class CameraXBarcodeLegacyAnalyzer(
     private val previewView: PreviewView,
     private val scanOverlay: ScanOverlay,
-    private val onBarcodeDetected: (result: Result) -> Unit,
-    private val onError: (text: String) -> Unit
-) : ImageAnalysis.Analyzer {
-
-    private val reader = MultiFormatReader().apply {
-        val map = mapOf(
-            DecodeHintType.POSSIBLE_FORMATS to BarcodeFormat.values().asList()
-        )
-        setHints(map)
-    }
+    onBarcodeDetected: (result: Result) -> Unit,
+    onError: (text: String) -> Unit
+) : AbstractCameraXBarcodeAnalyzer(onBarcodeDetected, onError) {
 
     override fun analyze(image: ImageProxy) {
         if(previewView.width == 0 || previewView.height==0)
@@ -56,55 +47,41 @@ class CameraXBarcodeAnalyzer(
                 byteArray = imageData,
                 imageWidth = image.width,
                 imageHeight = image.height,
-                previewViewWidth = previewView.width,
-                previewViewHeight = previewView.height,
-                viewfinderWidth = scanOverlay.getViewfinderRect().width(),
-                viewfinderHeight = scanOverlay.getViewfinderRect().height()
+                previewViewWidth = previewView.height,
+                previewViewHeight = previewView.width,
+                viewfinderSize = scanOverlay.viewfinderSize
             )
         } else {
             Values(
                 byteArray = rotateImageArray(imageData, image.width, image.height, rotationDegrees),
                 imageWidth = image.height,
                 imageHeight = image.width,
-                previewViewWidth = previewView.height,
-                previewViewHeight = previewView.width,
-                viewfinderWidth = scanOverlay.getViewfinderRect().height(),
-                viewfinderHeight = scanOverlay.getViewfinderRect().width()
+                previewViewWidth = previewView.width,
+                previewViewHeight = previewView.height,
+                viewfinderSize = scanOverlay.viewfinderSize
             )
         }
 
-        val scale = if (values.previewViewWidth < values.previewViewHeight) {
+        val scale = if (values.previewViewHeight < values.previewViewWidth) {
             (values.imageWidth / values.previewViewWidth.toFloat())
         }else{
             (values.imageHeight / values.previewViewHeight.toFloat())
         }
 
-        val sizeX = values.viewfinderWidth * scale
-        val sizeY = values.viewfinderHeight * scale
+        val size = values.viewfinderSize * scale
 
-        val left = (values.imageWidth - sizeX) / 2f
-        val top = (values.imageHeight - sizeY) / 2f
+        val left = (values.imageWidth - size) / 2f
+        val top = (values.imageHeight - size) / 2f
 
-        try {
-            val source = PlanarYUVLuminanceSource(
-                values.byteArray,
-                values.imageWidth, values.imageHeight,
-                left.roundToInt(), top.roundToInt(),
-                sizeX.roundToInt(), sizeY.roundToInt(),
-                false
-            )
-
-            val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
-            reader.reset()
-            try {
-                val result = reader.decode(binaryBitmap)
-                onBarcodeDetected(result)
-            } catch (e: ReaderException) {
-                //e.printStackTrace() // Not Found
-            }
-        } catch (e: Exception) {
-            onError(e.toString())
-        }
+        analyse(
+            yuvData = values.byteArray,
+            dataWidth = values.imageWidth,
+            dataHeight = values.imageHeight,
+            left = left.roundToInt(),
+            top = top.roundToInt(),
+            width = size.roundToInt(),
+            height = size.roundToInt()
+        )
 
         image.close()
     }
@@ -134,8 +111,7 @@ class CameraXBarcodeAnalyzer(
         val imageHeight: Int,
         val previewViewWidth: Int,
         val previewViewHeight: Int,
-        val viewfinderWidth: Int,
-        val viewfinderHeight: Int
+        val viewfinderSize: Float
     ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
@@ -148,8 +124,7 @@ class CameraXBarcodeAnalyzer(
             if (imageHeight != other.imageHeight) return false
             if (previewViewWidth != other.previewViewWidth) return false
             if (previewViewHeight != other.previewViewHeight) return false
-            if (viewfinderWidth != other.viewfinderWidth) return false
-            if (viewfinderHeight != other.viewfinderHeight) return false
+            if (viewfinderSize != other.viewfinderSize) return false
 
             return true
         }
@@ -160,8 +135,7 @@ class CameraXBarcodeAnalyzer(
             result = 31 * result + imageHeight
             result = 31 * result + previewViewWidth
             result = 31 * result + previewViewHeight
-            result = 31 * result + viewfinderWidth
-            result = 31 * result + viewfinderHeight
+            result = 31 * result + viewfinderSize.hashCode()
             return result
         }
     }

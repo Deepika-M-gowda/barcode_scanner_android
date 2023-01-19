@@ -25,14 +25,17 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.Size
 import android.view.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
-import androidx.camera.core.AspectRatio.RATIO_4_3
 import androidx.camera.core.FocusMeteringAction.FLAG_AF
+import androidx.camera.core.impl.utils.ContextUtil.getApplicationContext
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
@@ -48,9 +51,11 @@ import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.databinding.FragmentMainCameraXScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
-import com.atharok.barcodescanner.domain.library.CameraXBarcodeAnalyzer
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
+import com.atharok.barcodescanner.domain.library.camera.AbstractCameraXBarcodeAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeLegacyAnalyzer
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
@@ -233,10 +238,7 @@ class MainCameraXScannerFragment : BaseFragment() {
         val previewView = viewBinding.fragmentMainCameraXScannerPreviewView
         val scanOverlay = viewBinding.fragmentMainCameraXScannerScanOverlay
 
-        val preview = Preview.Builder().apply {
-            setTargetAspectRatio(RATIO_4_3)
-        }.build()
-
+        // Result Analyzer
         val onBarcodeFound: (result: Result) -> Unit = {
             previewView.post {
                 onSuccessfulScanFromCamera(it)
@@ -251,16 +253,39 @@ class MainCameraXScannerFragment : BaseFragment() {
             }
         }
 
+        // Analyzer Settings
+        val orientation: Int = requireContext().applicationContext.resources.configuration.orientation
+        val useLegacyAnalyzer: Boolean = get<SettingsManager>().useCameraXLegacyAnalyzer
+        val resolution: Size
+        val analyzer: AbstractCameraXBarcodeAnalyzer
+        if(useLegacyAnalyzer){
+            resolution = if (orientation == Configuration.ORIENTATION_PORTRAIT) Size(480, 640) else Size(640, 480)
+            analyzer = CameraXBarcodeLegacyAnalyzer(previewView, scanOverlay, onBarcodeFound, onError)
+        }else{
+            resolution = if (orientation == Configuration.ORIENTATION_PORTRAIT) Size(960, 1280) else Size(1280, 960)
+            analyzer = CameraXBarcodeAnalyzer(previewView, scanOverlay, onBarcodeFound, onError)
+        }
+
+        // Preview
+        val preview = Preview.Builder().apply {
+            setTargetResolution(resolution)
+        }.build()
+
+        // ImageAnalysis
         val imageAnalysis = ImageAnalysis.Builder().apply {
-            setTargetAspectRatio(RATIO_4_3)
+
+            setTargetResolution(resolution)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !useLegacyAnalyzer) {
+                setOutputImageRotationEnabled(true)
+            }
             setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
         }.build().also {
-            it.setAnalyzer(cameraExecutor, CameraXBarcodeAnalyzer(previewView, scanOverlay, onBarcodeFound, onError))
+            it.setAnalyzer(cameraExecutor, analyzer)
         }
 
         cameraProvider.unbindAll()
         preview.setSurfaceProvider(previewView.surfaceProvider)
-        return cameraProvider.bindToLifecycle(viewLifecycleOwner, cameraSelector, preview, imageAnalysis)
+        return cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis)
     }
 
     private fun configureAutoFocus(camera: Camera) {

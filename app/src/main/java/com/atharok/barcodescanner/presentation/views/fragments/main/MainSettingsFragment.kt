@@ -79,6 +79,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_theme_key) -> mActivity.updateTheme()
 
                 getString(R.string.preferences_switch_scan_use_camera_x_api_key),
+                getString(R.string.preferences_switch_scan_use_camera_x_legacy_analyzer_key),
                 getString(R.string.preferences_switch_scan_vibrate_key),
                 getString(R.string.preferences_switch_scan_bip_key),
                 getString(R.string.preferences_switch_scan_screen_rotation_key),

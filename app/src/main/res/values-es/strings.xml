@@ -509,6 +509,8 @@
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Escanear</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
+    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_title">Configuration for old devices</string>
+    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_summary">To be activated if the scan does not work on your device</string>
     <string name="preferences_switch_scan_search_on_api_label">Consultar automáticamente las API remotas</string>
     <string name="preferences_switch_scan_vibrate_label">Vibrar al escanear correctamente</string>
     <string name="preferences_switch_scan_bip_label">Reproducir un sonido al escanear correctamente</string>

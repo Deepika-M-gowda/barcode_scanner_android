@@ -40,6 +40,7 @@ class SettingsManager(private val context: Context) {
 
     // Scan
     private val useCameraXApiKey = context.getString(R.string.preferences_switch_scan_use_camera_x_api_key)
+    private val useCameraXLegacyAnalyzerKey = context.getString(R.string.preferences_switch_scan_use_camera_x_legacy_analyzer_key)
     private val searchOnApiKey = context.getString(R.string.preferences_switch_scan_search_on_api_key)
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
@@ -47,6 +48,8 @@ class SettingsManager(private val context: Context) {
     private val copyBarcodeScanKey = context.getString(R.string.preferences_switch_scan_barcode_copied_key)
 
     var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
+        private set
+    var useCameraXLegacyAnalyzer = prefs.getBoolean(useCameraXLegacyAnalyzerKey, Build.VERSION.SDK_INT < Build.VERSION_CODES.M) // Sur Android 5 on utilise forcément le CameraXBarcodeLegacyAnalyzer
         private set
     var useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         private set
@@ -69,6 +72,7 @@ class SettingsManager(private val context: Context) {
         color = prefs.getString(colorKey, getDefaultColorKey())
         theme = prefs.getString(themeKey, "system")
         useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
+        useCameraXLegacyAnalyzer = prefs.getBoolean(useCameraXLegacyAnalyzerKey, Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
         useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)

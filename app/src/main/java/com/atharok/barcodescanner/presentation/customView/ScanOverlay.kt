@@ -31,8 +31,12 @@ import com.atharok.barcodescanner.R
 
 class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) {
 
-    val viewfinderWidth: Float
-    val viewfinderHeight: Float
+    companion object {
+        private const val RATIO = 0.6f
+    }
+
+    //val viewfinderWidth: Float
+    //val viewfinderHeight: Float
     private val viewfinderRadius: Float
 
     private val backgroundPaint: Paint
@@ -52,8 +56,6 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
         setLayerType(LAYER_TYPE_SOFTWARE, null)
         context.theme.obtainStyledAttributes(attrs, R.styleable.ScanOverlay, 0, 0).apply {
             try {
-                viewfinderWidth = getDimension(R.styleable.ScanOverlay_viewfinder_width, getDP(200f))
-                viewfinderHeight = getDimension(R.styleable.ScanOverlay_viewfinder_height, getDP(200f))
                 viewfinderRadius = getDimension(R.styleable.ScanOverlay_viewfinder_radius, getDP(40f))
                 viewfinderCornerPaint = Paint(ANTI_ALIAS_FLAG).apply {
                     color = getColor(R.styleable.ScanOverlay_viewfinder_corner_color, Color.WHITE)
@@ -77,13 +79,6 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         calculateRectangleDimension(measuredWidth, measuredHeight)
-    }
-
-    override fun onLayout(
-        changed: Boolean, left: Int, top: Int, right: Int,
-        bottom: Int
-    ) {
-        calculateRectangleDimension(right - left, bottom - top)
     }
 
     protected override fun onDraw(canvas: Canvas) {
@@ -111,7 +106,7 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
         canvas.drawArc(viewfinderRect.left, viewfinderRect.bottom-cornerSize, viewfinderRect.left+cornerSize, viewfinderRect.bottom, 90f, 90f, false, viewfinderCornerPaint)
     }
 
-    private fun calculateRectangleDimension(width: Int, height: Int) {
+    /*private fun calculateRectangleDimension(width: Int, height: Int) {
         if (width > 0 && height > 0) {
             val left = (width - viewfinderWidth) / 2f
             val right = left + viewfinderWidth
@@ -119,5 +114,25 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
             val bottom = top + viewfinderHeight
             viewfinderRect.set(left, top, right, bottom)
         }
+    }*/
+
+    var viewfinderSize: Float = 0f
+        private set
+
+    private fun calculateRectangleDimension(width: Int, height: Int) {
+        val overlayWidth = width.toFloat()
+        val overlayHeight = height.toFloat()
+
+        viewfinderSize = overlayHeight.coerceAtMost(overlayWidth) * RATIO
+
+        val centerX = overlayWidth / 2
+        val centerY = overlayHeight / 2
+
+        val left = centerX - viewfinderSize / 2
+        val right = centerX + viewfinderSize / 2
+        val top = centerY - viewfinderSize / 2
+        val bottom = centerY + viewfinderSize / 2
+
+        viewfinderRect.set(left, top, right, bottom)
     }
 }
