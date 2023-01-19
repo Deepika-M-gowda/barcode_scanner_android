@@ -13,8 +13,7 @@
     <RelativeLayout
         android:id="@+id/fragment_food_analysis_root_ingredients_outer_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/space_fab_button">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/fragment_food_analysis_root_ingredients_no_information_text_view"

@@ -24,7 +24,7 @@ import androidx.camera.core.ImageProxy
 import androidx.camera.view.PreviewView
 import com.atharok.barcodescanner.common.extensions.toByteArray
 import com.atharok.barcodescanner.presentation.customView.ScanOverlay
-import com.google.zxing.*
+import com.google.zxing.Result
 import kotlin.math.roundToInt
 
 class CameraXBarcodeLegacyAnalyzer(

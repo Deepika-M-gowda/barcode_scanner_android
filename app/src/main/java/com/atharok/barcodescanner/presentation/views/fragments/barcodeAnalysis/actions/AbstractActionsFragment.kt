@@ -79,10 +79,11 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         val actionItems = configureActions(barcode, parsedResult)
 
         val adapter = ActionButtonAdapter(actionItems)
-        val layoutManager = GridLayoutManager(requireContext(), 3)
+        val layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.grid_layout_span_count))
 
         val recyclerView = viewBinding.fragmentBarcodeAnalysisActionRecyclerView
 
+        recyclerView.isNestedScrollingEnabled = false
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
     }
@@ -99,7 +100,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
     protected fun openUrl(url: String): () -> Unit = {
         val intent = createSearchUrlIntent(url)
-        startActivity(intent)
+        mStartActivity(intent)
     }
 
     protected fun copyContents(contents: String): () -> Unit = {

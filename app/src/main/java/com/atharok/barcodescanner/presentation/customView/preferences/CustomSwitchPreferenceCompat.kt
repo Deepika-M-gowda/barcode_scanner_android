@@ -20,8 +20,10 @@
 
 package com.atharok.barcodescanner.presentation.customView.preferences
 
+import android.R
 import android.content.Context
 import android.util.AttributeSet
+import android.widget.TextView
 import androidx.preference.PreferenceViewHolder
 import androidx.preference.SwitchPreferenceCompat
 import com.atharok.barcodescanner.common.extensions.initializeCustomResourcesValues
@@ -38,5 +40,10 @@ class CustomSwitchPreferenceCompat: SwitchPreferenceCompat {
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
         initializeCustomResourcesValues(holder)
+
+        val titleView = holder.findViewById(R.id.title) as TextView
+        titleView.setLineSpacing(0f, 1f)
+        val summaryView = holder.findViewById(R.id.summary) as TextView
+        summaryView.setLineSpacing(0f, 1f)
     }
 }

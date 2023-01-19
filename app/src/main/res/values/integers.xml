@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="standard_duration_animation">1500</integer>
+    <integer name="grid_layout_span_count">3</integer>
     <integer name="slow_duration_animation">750</integer>
     <integer name="fast_duration_animation">250</integer>
 </resources>

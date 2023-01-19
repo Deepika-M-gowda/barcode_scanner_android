@@ -21,10 +21,6 @@
             android:entryValues="@array/preference_theme_values"
             app:defaultValue="system" />
 
-        <!--<com.atharokstudio.atharokscanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
-            android:key="@string/preferences_switch_dark_theme_key"
-            android:title="@string/preferences_switch_dark_theme_label"/>-->
-
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory

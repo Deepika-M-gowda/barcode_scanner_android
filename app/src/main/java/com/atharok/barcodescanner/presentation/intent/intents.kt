@@ -237,5 +237,5 @@ fun createSendSmsToSmsNumberIntent(parsedResult: SMSParsedResult): Intent {
 // ------------------------------------------ SEARCH -----------------------------------------------
 
 fun createSearchUrlIntent(url: String): Intent {
-    return Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    return Intent(Intent.ACTION_VIEW, Uri.parse(url).normalizeScheme())
 }

@@ -36,7 +36,7 @@ class QuickSettingsTileService: TileService() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             qsTile.subtitle = getString(R.string.title_scan)
         }
-        qsTile.state = Tile.STATE_ACTIVE
+        qsTile.state = Tile.STATE_INACTIVE
         qsTile.updateTile()
     }
 

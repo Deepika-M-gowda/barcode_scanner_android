@@ -21,13 +21,8 @@
 package com.atharok.barcodescanner.domain.library.camera
 
 import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.ImageProxy
-import androidx.camera.view.PreviewView
-import com.atharok.barcodescanner.common.extensions.toByteArray
-import com.atharok.barcodescanner.presentation.customView.ScanOverlay
 import com.google.zxing.*
 import com.google.zxing.common.HybridBinarizer
-import kotlin.math.roundToInt
 
 abstract class AbstractCameraXBarcodeAnalyzer(
     private val onBarcodeDetected: (result: Result) -> Unit,

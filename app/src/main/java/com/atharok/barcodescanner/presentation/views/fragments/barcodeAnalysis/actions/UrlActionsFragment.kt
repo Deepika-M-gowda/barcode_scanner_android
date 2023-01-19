@@ -35,7 +35,7 @@ class UrlActionsFragment: AbstractActionsFragment() {
     }
 
     private fun configureUrlActions(contents: String) = arrayOf(
-        ActionItem(R.string.action_open_link, R.drawable.outline_open_in_browser_24, openUrl(contents)), //Idée text: Ouvrir le lien
+        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(contents)), //Idée text: Ouvrir le lien
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(contents)),
         ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(contents))
     )
