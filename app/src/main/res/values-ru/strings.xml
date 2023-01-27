@@ -205,7 +205,7 @@
 
     <!-- Table -->
     <string name="nutrition_facts_table_label">Пищевой состав</string>
-    <string name="off_per_100_label">Для 100%1$s</string>
+    <string name="off_per_100_label">На 100%1$s</string>
     <string name="off_per_serving_label">На порцию (%1$s%2$s)</string>
     <string name="off_per_serving_no_quantity_label">На порцию</string>
     <string name="off_energy_kj_label">Калорийность (кДж)</string>
@@ -323,10 +323,10 @@
     <string name="action_send_mail_label">Отправить email</string>
     <string name="action_send_sms_label">Отправить SMS</string>
     <string name="action_call_phone_label">Позвонить по номеру телефона</string>
-    <string name="action_add_to_calendar">Add to calendar</string>
-    <string name="action_add_to_contacts">Add to contacts</string>
-    <string name="action_show_location">Show location</string>
-    <string name="action_open_link">Open link</string>
+    <string name="action_add_to_calendar">Добавить в календарь</string>
+    <string name="action_add_to_contacts">Добавить в контакты</string>
+    <string name="action_show_location">Показать местоположение</string>
+    <string name="action_open_link">Открыть ссылку</string>
 
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Wi-Fi соединение</string>
@@ -434,7 +434,7 @@
     <string name="qr_code_text_input_edit_text_hint_wifi_hide">Скрытая</string>
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
-    <string name="spinner_wifi_encryption_none">Открытая</string>
+    <string name="spinner_wifi_encryption_none">Без шифрования</string>
 
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Название мероприятия</string>
@@ -509,8 +509,8 @@
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Сканирование</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">Использовать API CameraX</string>
-    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_title">Configuration for old devices</string>
-    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_summary">To be activated if the scan does not work on your device</string>
+    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_title">Поддержка старых устройств</string>
+    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_summary">Активируйте, если сканирование не работает на вашем устройстве</string>
     <string name="preferences_switch_scan_search_on_api_label">Автоматические запросы к удаленным API</string>
     <string name="preferences_switch_scan_vibrate_label">Вибросигнал при успешном сканировании</string>
     <string name="preferences_switch_scan_bip_label">Звук при успешном сканировании</string>

@@ -1,6 +1,6 @@
 1.9.1
 
-- Redesign of the styles for a complete integration of Material3 and a better implementation of Material You.
-- Changed the color of the shortcuts icons. 
-- Added the new OpenFoodFacts logo.
+- Переработаны стили для полной интеграции Material3 и лучшей реализации Material You.
+- Изменен цвет иконок ярлыков. 
+- Добавлен новый логотип OpenFoodFacts.
 
