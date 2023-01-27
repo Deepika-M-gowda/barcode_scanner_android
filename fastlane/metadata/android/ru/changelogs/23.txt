@@ -1,7 +1,7 @@
 1.10.0
 
-- Code improvement.
-- Simplified access to actions after scanning a barcode.
-- Improved CameraX implementation.
-- Update of dependencies.
-- Some improvements and bug fixes.
+- Улучшен код.
+- Упрощен доступ к действиям после сканирования штрих-кода.
+- Улучшена реализация CameraX.
+- Обновлены зависимости.
+- Внесены улучшения и исправления ошибок.
