@@ -30,9 +30,8 @@ import kotlin.math.roundToInt
 class CameraXBarcodeAnalyzer(
     private val previewView: PreviewView,
     private val scanOverlay: ScanOverlay,
-    onBarcodeDetected: (result: Result) -> Unit,
-    onError: (text: String) -> Unit
-) : AbstractCameraXBarcodeAnalyzer(onBarcodeDetected, onError) {
+    barcodeDetector: BarcodeDetector
+) : AbstractCameraXBarcodeAnalyzer(barcodeDetector) {
 
     override fun analyze(image: ImageProxy) {
         if(previewView.width == 0 || previewView.height==0)
@@ -66,7 +65,7 @@ class CameraXBarcodeAnalyzer(
 
         analyse(
             yuvData = imageData,
-            dataWidth = image.width,
+            dataWidth = plane.rowStride,
             dataHeight = image.height,
             left = left.roundToInt(),
             top = top.roundToInt(),

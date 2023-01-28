@@ -509,8 +509,6 @@
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
-    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_title">Configuration for old devices</string>
-    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_summary">To be activated if the scan does not work on your device</string>
     <string name="preferences_switch_scan_search_on_api_label">Query remote APIs automatically</string>
     <string name="preferences_switch_scan_vibrate_label">Vibrate when scan is successful</string>
     <string name="preferences_switch_scan_bip_label">Play sound when scan is successful</string>
@@ -714,7 +712,6 @@
     <string name="preferences_theme_key" translatable="false">preferences_theme_key</string>
     <string name="preferences_languages_key" translatable="false">preferences_languages_key</string>
     <string name="preferences_switch_scan_use_camera_x_api_key" translatable="false">preferences_switch_scan_use_camera_x_api_key</string>
-    <string name="preferences_switch_scan_use_camera_x_legacy_analyzer_key" translatable="false">preferences_switch_scan_use_camera_x_legacy_analyzer_key</string>
     <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
     <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
     <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>

@@ -42,13 +42,6 @@
             app:singleLineTitle="false"/>
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
-            android:key="@string/preferences_switch_scan_use_camera_x_legacy_analyzer_key"
-            android:title="@string/preferences_switch_scan_use_camera_x_legacy_analyzer_title"
-            android:summary="@string/preferences_switch_scan_use_camera_x_legacy_analyzer_summary"
-            android:defaultValue="false"
-            app:singleLineTitle="false"/>
-
-        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
             android:key="@string/preferences_switch_scan_search_on_api_key"
             android:title="@string/preferences_switch_scan_search_on_api_label"
             android:defaultValue="true"

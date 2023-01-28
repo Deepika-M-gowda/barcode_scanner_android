@@ -25,9 +25,13 @@ import com.google.zxing.*
 import com.google.zxing.common.HybridBinarizer
 
 abstract class AbstractCameraXBarcodeAnalyzer(
-    private val onBarcodeDetected: (result: Result) -> Unit,
-    private val onError: (text: String) -> Unit
+    private val barcodeDetector: BarcodeDetector
 ) : ImageAnalysis.Analyzer {
+
+    interface BarcodeDetector {
+        fun onBarcodeFound(result: Result)
+        fun onError(msg: String)
+    }
 
     private val reader = MultiFormatReader().apply {
         val map = mapOf(
@@ -57,20 +61,20 @@ abstract class AbstractCameraXBarcodeAnalyzer(
             reader.reset()
             try {
                 val result = reader.decode(binaryBitmap)
-                onBarcodeDetected(result)
+                barcodeDetector.onBarcodeFound(result)
             } catch (e: ReaderException) {
                 val invertedSource = source.invert()
                 val invertedBinaryBitmap = BinaryBitmap(HybridBinarizer(invertedSource))
                 reader.reset()
                 try {
                     val result = reader.decode(invertedBinaryBitmap)
-                    onBarcodeDetected(result)
+                    barcodeDetector.onBarcodeFound(result)
                 } catch (e: ReaderException) {
                     //e.printStackTrace() // Not Found
                 }
             }
         } catch (e: Exception) {
-            onError(e.toString())
+            barcodeDetector.onError(e.toString())
         }
     }
 }

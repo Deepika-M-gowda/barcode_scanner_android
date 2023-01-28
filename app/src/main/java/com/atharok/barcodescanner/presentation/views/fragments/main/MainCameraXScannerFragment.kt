@@ -25,26 +25,20 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.util.Size
 import android.view.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.camera.core.*
-import androidx.camera.core.FocusMeteringAction.FLAG_AF
-import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
-import com.atharok.barcodescanner.common.extensions.afterMeasured
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.databinding.FragmentMainCameraXScannerBinding
@@ -53,6 +47,7 @@ import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.domain.library.camera.AbstractCameraXBarcodeAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraConfig
 import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeAnalyzer
 import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeLegacyAnalyzer
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
@@ -66,24 +61,18 @@ import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 /**
  * A simple [Fragment] subclass.
  */
-class MainCameraXScannerFragment : BaseFragment() {
+class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyzer.BarcodeDetector {
 
     companion object {
         private const val ZXING_SCAN_INTENT_ACTION = "com.google.zxing.client.android.SCAN"
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
 
-    private var camera: Camera? = null
-    private val cameraExecutor = Executors.newSingleThreadExecutor()
-    private var flashEnabled = false
-    private var barcodeFound = false
-
+    private var cameraConfig: CameraConfig? = null
     private val databaseViewModel: DatabaseViewModel by activityViewModel()
 
     // ---- View ----
@@ -103,26 +92,20 @@ class MainCameraXScannerFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureMenu()
-        configurePermission()
+        askPermission()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        switchOffFlash()
-        camera=null
+        cameraConfig?.stopCamera()
         _binding=null
     }
 
     override fun onResume() {
         super.onResume()
-        if(barcodeFound) {
 
-            camera?.let {
-                configureAutoFocus(it)
-                configureZoom(it)
-            }
-
-            barcodeFound = false
+        if (allPermissionsGranted()) {
+            doPermissionGranted()
         }
     }
 
@@ -147,7 +130,8 @@ class MainCameraXScannerFragment : BaseFragment() {
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
                 R.id.menu_scanner_flash -> {
-                    switchFlash()
+                    cameraConfig?.switchFlash()
+                    requireActivity().invalidateOptionsMenu()
                     true
                 }
                 R.id.menu_scanner_scan_from_image -> {
@@ -160,8 +144,8 @@ class MainCameraXScannerFragment : BaseFragment() {
             override fun onPrepareMenu(menu: Menu) {
                 super.onPrepareMenu(menu)
 
-                if(hasFlash() && allPermissionsGranted()) {
-                    if (flashEnabled)
+                if(cameraConfig?.hasFlash()==true && allPermissionsGranted()) {
+                    if (cameraConfig?.flashEnabled == true)
                         menu.getItem(0).icon =
                             ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_on_24)
                     else
@@ -177,7 +161,7 @@ class MainCameraXScannerFragment : BaseFragment() {
 
     // ---- Camera Permission ----
 
-    private fun configurePermission() {
+    private fun askPermission() {
         if (!allPermissionsGranted()) {
             // Gère le resultat de la demande de permission d'accès à la caméra.
             val requestPermission: ActivityResultLauncher<String> =
@@ -187,12 +171,10 @@ class MainCameraXScannerFragment : BaseFragment() {
                     } else doPermissionRefused()
                 }
             requestPermission.launch(Manifest.permission.CAMERA)
-        }else{
-            doPermissionGranted()
         }
     }
 
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+    private fun allPermissionsGranted(): Boolean = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(requireActivity(), it) == PackageManager.PERMISSION_GRANTED
     }
 
@@ -206,7 +188,7 @@ class MainCameraXScannerFragment : BaseFragment() {
     }
 
     private fun doPermissionRefused() {
-        camera=null
+        cameraConfig?.stopCamera()
         viewBinding.fragmentMainCameraXScannerCameraPermissionTextView.visibility = View.VISIBLE
         viewBinding.fragmentMainCameraXScannerPreviewView.visibility = View.GONE
         viewBinding.fragmentMainCameraXScannerScanOverlay.visibility = View.GONE
@@ -217,130 +199,51 @@ class MainCameraXScannerFragment : BaseFragment() {
     // ---- Camera ----
 
     private fun configureCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireActivity())
+        cameraConfig = CameraConfig(requireContext()).apply {
 
-        cameraProviderFuture.addListener({
-            val cameraProvider = cameraProviderFuture.get()
-            camera = startCamera(cameraProvider)
-            camera?.let {
-                configureAutoFocus(it)
-                configureZoom(it)
+            val previewView = viewBinding.fragmentMainCameraXScannerPreviewView
+            val scanOverlay = viewBinding.fragmentMainCameraXScannerScanOverlay
+
+            val analyzer: AbstractCameraXBarcodeAnalyzer = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                CameraXBarcodeAnalyzer(previewView, scanOverlay, this@MainCameraXScannerFragment)
+            } else {
+                CameraXBarcodeLegacyAnalyzer(previewView, scanOverlay, this@MainCameraXScannerFragment)
             }
-        }, ContextCompat.getMainExecutor(requireActivity()))
+
+            this.setAnalyzer(analyzer)
+            this.startCamera(this@MainCameraXScannerFragment as LifecycleOwner, previewView)
+            this@MainCameraXScannerFragment.configureZoom(this)
+        }
     }
 
-    private fun startCamera(cameraProvider: ProcessCameraProvider): Camera {
-        val cameraSelector = CameraSelector.Builder()
-            .requireLensFacing(CameraSelector.LENS_FACING_BACK)
-            .build()
-
-        val previewView = viewBinding.fragmentMainCameraXScannerPreviewView
-        val scanOverlay = viewBinding.fragmentMainCameraXScannerScanOverlay
-
-        // Result Analyzer
-        val onBarcodeFound: (result: Result) -> Unit = {
-            previewView.post {
-                onSuccessfulScanFromCamera(it)
-            }
-        }
-
-        val onError: (msg: String) -> Unit = {
-            previewView.post {
-                cameraProvider.unbindAll()
-                viewBinding.fragmentMainCameraXScannerCameraPermissionTextView.text = getString(R.string.scan_error_exception_label, it)
-                doPermissionRefused()
-            }
-        }
-
-        // Analyzer Settings
-        val orientation: Int = requireContext().applicationContext.resources.configuration.orientation
-        val useLegacyAnalyzer: Boolean = get<SettingsManager>().useCameraXLegacyAnalyzer
-        val resolution: Size
-        val analyzer: AbstractCameraXBarcodeAnalyzer
-        if(useLegacyAnalyzer){
-            resolution = if (orientation == Configuration.ORIENTATION_PORTRAIT) Size(480, 640) else Size(640, 480)
-            analyzer = CameraXBarcodeLegacyAnalyzer(previewView, scanOverlay, onBarcodeFound, onError)
-        }else{
-            resolution = if (orientation == Configuration.ORIENTATION_PORTRAIT) Size(960, 1280) else Size(1280, 960)
-            analyzer = CameraXBarcodeAnalyzer(previewView, scanOverlay, onBarcodeFound, onError)
-        }
-
-        // Preview
-        val preview = Preview.Builder().apply {
-            setTargetResolution(resolution)
-        }.build()
-
-        // ImageAnalysis
-        val imageAnalysis = ImageAnalysis.Builder().apply {
-
-            setTargetResolution(resolution)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !useLegacyAnalyzer) {
-                setOutputImageRotationEnabled(true)
-            }
-            setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-        }.build().also {
-            it.setAnalyzer(cameraExecutor, analyzer)
-        }
-
-        cameraProvider.unbindAll()
-        preview.setSurfaceProvider(previewView.surfaceProvider)
-        return cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis)
-    }
-
-    private fun configureAutoFocus(camera: Camera) {
-        val previewView = viewBinding.fragmentMainCameraXScannerPreviewView
-
-        previewView.afterMeasured {
-
-            val previewViewWidth = previewView.width.toFloat()
-            val previewViewHeight = previewView.height.toFloat()
-
-            val autoFocusPoint = SurfaceOrientedMeteringPointFactory(
-                previewViewWidth, previewViewHeight
-            ).createPoint(previewViewWidth / 2.0f, previewViewHeight / 2.0f)
-
-            try {
-                camera.cameraControl.startFocusAndMetering(
-                    FocusMeteringAction
-                        .Builder(autoFocusPoint, FLAG_AF)
-                        .setAutoCancelDuration(2, TimeUnit.SECONDS)
-                        .build()
-                )
-            } catch (e: CameraInfoUnavailableException) {
-                Log.d("ERROR", "cannot access camera", e)
+    override fun onBarcodeFound(result: Result) {
+        viewBinding.fragmentMainCameraXScannerPreviewView.post {
+            if(cameraConfig?.isRunning() == true) {
+                cameraConfig?.stopCamera()
+                onSuccessfulScanFromCamera(result)
             }
         }
     }
 
-    private fun configureZoom(camera: Camera) {
+    override fun onError(msg: String) {
+        viewBinding.fragmentMainCameraXScannerPreviewView.post {
+            cameraConfig?.stopCamera()
+            viewBinding.fragmentMainCameraXScannerCameraPermissionTextView.text = getString(R.string.scan_error_exception_label, msg)
+            doPermissionRefused()
+        }
+    }
+
+    private fun configureZoom(cameraConfig: CameraConfig) {
         val slider = viewBinding.fragmentMainCameraXScannerSlider
-
-        camera.cameraControl.setLinearZoom(slider.value)
+        cameraConfig.setLinearZoom(slider.value)
         slider.addOnChangeListener { _, value, _ ->
-            camera.cameraControl.setLinearZoom(value)
-        }
-    }
-
-    private fun hasFlash(): Boolean =
-        requireContext().applicationContext.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)
-
-    private fun switchFlash(){
-        camera?.let {
-            flashEnabled = !flashEnabled
-            it.cameraControl.enableTorch(flashEnabled)
-            requireActivity().invalidateOptionsMenu()
-        }
-    }
-
-    private fun switchOffFlash(){
-        if(flashEnabled){
-            switchFlash()
+            cameraConfig.setLinearZoom(value)
         }
     }
 
     // ---- Scan successful ----
 
-    private fun onSuccessfulScan(contents: String?, formatName: String?, onResult: (barcode: Barcode) -> Unit) = requireActivity().runOnUiThread {
+    private inline fun onSuccessfulScan(contents: String?, formatName: String?, crossinline onResult: (barcode: Barcode) -> Unit) = requireActivity().runOnUiThread {
 
         if(contents != null && formatName != null) {
 
@@ -357,8 +260,6 @@ class MainCameraXScannerFragment : BaseFragment() {
             if(settingsManager.useVibrateScan)
                 get<VibratorAppCompat>().vibrate()
 
-            switchOffFlash()
-
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
             // Insert les informations du code-barres dans la base de données (de manière asynchrone)
@@ -373,19 +274,15 @@ class MainCameraXScannerFragment : BaseFragment() {
     // ---- Scan from Camera ----
 
     private fun onSuccessfulScanFromCamera(result: Result) {
-        if(!barcodeFound) {
-            barcodeFound = true
+        val contents = result.text
+        val formatName = result.barcodeFormat?.name
 
-            val contents = result.text
-            val formatName = result.barcodeFormat?.name
-
-            onSuccessfulScan(contents, formatName) { barcode ->
-                // Si l'application a été ouverte via une application tierce
-                if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
-                    sendResultToAppIntent(result.toIntent())
-                }else{
-                    startBarcodeAnalysisActivity(barcode)
-                }
+        onSuccessfulScan(contents, formatName) { barcode ->
+            // Si l'application a été ouverte via une application tierce
+            if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
+                sendResultToAppIntent(result.toIntent())
+            }else{
+                startBarcodeAnalysisActivity(barcode)
             }
         }
     }
@@ -416,25 +313,21 @@ class MainCameraXScannerFragment : BaseFragment() {
     }
 
     private fun onSuccessfulScanFromImage(intentResult: Intent) {
+        val contents = intentResult.getStringExtra(SCAN_RESULT)
+        val formatName = intentResult.getStringExtra(SCAN_RESULT_FORMAT)
 
-        if(!barcodeFound) {
-            barcodeFound = true
-            val contents = intentResult.getStringExtra(SCAN_RESULT)
-            val formatName = intentResult.getStringExtra(SCAN_RESULT_FORMAT)
-
-            onSuccessfulScan(contents, formatName) { barcode ->
-                // Si l'application a été ouverte via une application tierce
-                if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
-                    sendResultToAppIntent(intentResult)
-                } else {
-                    startBarcodeAnalysisActivity(barcode)
-                }
+        onSuccessfulScan(contents, formatName) { barcode ->
+            // Si l'application a été ouverte via une application tierce
+            if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
+                sendResultToAppIntent(intentResult)
+            } else {
+                startBarcodeAnalysisActivity(barcode)
             }
         }
     }
 
     private fun startBarcodeScanFromImageActivity(){
-        switchOffFlash()
+        cameraConfig?.stopCamera()
         resultBarcodeScanFromImageActivity?.let { result ->
             val intent = createStartActivityIntent(requireContext(), BarcodeScanFromImageGalleryActivity::class)
             result.launch(intent)

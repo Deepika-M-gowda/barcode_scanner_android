@@ -27,12 +27,14 @@ import com.atharok.barcodescanner.presentation.customView.ScanOverlay
 import com.google.zxing.Result
 import kotlin.math.roundToInt
 
+/**
+ * For API 21 and 22.
+ */
 class CameraXBarcodeLegacyAnalyzer(
     private val previewView: PreviewView,
     private val scanOverlay: ScanOverlay,
-    onBarcodeDetected: (result: Result) -> Unit,
-    onError: (text: String) -> Unit
-) : AbstractCameraXBarcodeAnalyzer(onBarcodeDetected, onError) {
+    barcodeDetector: BarcodeDetector
+) : AbstractCameraXBarcodeAnalyzer(barcodeDetector) {
 
     override fun analyze(image: ImageProxy) {
         if(previewView.width == 0 || previewView.height==0)
