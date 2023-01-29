@@ -91,7 +91,7 @@
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/x-vcalendar" />
+                <data android:mimeType="text/calendar" />
             </intent-filter>
         </activity>
         <activity

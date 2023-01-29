@@ -81,7 +81,7 @@ class SettingsManager(private val context: Context) {
         return if(useDarkTheme()) {
             //R.style.DarkTheme
             when(color){
-                "material_you" -> R.style.MaterialYouDarkTheme
+                "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouDarkTheme else R.style.BlueDarkTheme
                 "blue" -> R.style.BlueDarkTheme
                 "orange" -> R.style.OrangeDarkTheme
                 "green" -> R.style.GreenDarkTheme
@@ -92,7 +92,7 @@ class SettingsManager(private val context: Context) {
         } else {
             //R.style.LightTheme
             when(color){
-                "material_you" -> R.style.MaterialYouLightTheme
+                "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouLightTheme else R.style.BlueLightTheme
                 "blue" -> R.style.BlueLightTheme
                 "orange" -> R.style.OrangeLightTheme
                 "green" -> R.style.GreenLightTheme

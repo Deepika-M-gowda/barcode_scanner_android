@@ -100,7 +100,7 @@ class BarcodeDetailsActivity : BaseActivity() {
             when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
                 "text/x-vcard" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
-                "text/x-vcalendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
+                "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
         } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
