@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Permission Denied -->
+    <string name="camera_permission_denied">您未同意相机权限。\n您必须同意权限后才可以扫描。</string>
+
+    <!-- AlertDialog -->
+    <string name="close_dialog_label">关闭</string>
+    <string name="yes_label">是</string>
+    <string name="no_label">否</string>
+    <string name="go_to_dialog_label">打开网址</string>
+
+    <!-- ImageView Description -->
+    <string name="image_view_description_flag">标志</string>
+    <string name="image_view_description_logo">标识</string>
+    <string name="image_view_description_type_icon">类型</string>
+    <string name="image_view_description_bar_code">条码</string>
+    <string name="image_view_description_icon">图标</string>
+    <string name="image_view_description_product_front">产品图片</string>
+    <string name="image_view_description_nutriscore">NUTRI-SCORE</string>
+    <string name="image_view_description_nova_group">NOVA GROUP</string>
+    <string name="image_view_description_eco_score">ECO SCORE</string>
+    <string name="image_view_description_background">背景</string>
+    <string name="image_view_description_image">图片</string>
+    <string name="slider_description_zoom">缩放</string>
+
+    <!-- Menu Item -->
+    <string name="title_scan">扫描</string>
+    <string name="title_history">历史</string>
+    <string name="title_generate">生成</string>
+    <string name="title_settings">设置</string>
+
+    <string name="title_qr_code_creator">生成二维码</string>
+    <string name="title_bar_code_creator">生成条码</string>
+    <string name="information_label">信息</string>
+    <string name="barcode_label">条码</string>
+    <string name="download_from_api_label">下载</string>
+    <string name="menu_more">更多</string>
+
+    <!-- Barcode Type -->
+    <string name="barcode_qr_code_label">二维码</string>
+    <string name="barcode_data_matrix_label">Data Matrix</string>
+    <string name="barcode_pdf_417_label">PDF 417</string>
+    <string name="barcode_aztec_label">AZTEC</string>
+    <string name="barcode_ean_13_label">EAN 13</string>
+    <string name="barcode_ean_8_label">EAN 8</string>
+    <string name="barcode_upc_a_label">UPC A</string>
+    <string name="barcode_upc_e_label">UPC E</string>
+    <string name="barcode_code_128_label">Code 128</string>
+    <string name="barcode_code_93_label">Code 93</string>
+    <string name="barcode_code_39_label">Code 39</string>
+    <string name="barcode_codabar_label">Codabar</string>
+    <string name="barcode_itf_label">ITF</string>
+
+    <!-- QR Type -->
+    <string name="qr_code_type_name_text">文字</string>
+    <string name="qr_code_type_name_web_site">网址</string>
+    <string name="qr_code_type_name_contact">联系人</string>
+    <string name="qr_code_type_name_epc">EPC</string>
+    <string name="qr_code_type_name_mail">邮件</string>
+    <string name="qr_code_type_name_sms">短信</string>
+    <string name="qr_code_type_name_phone">电话</string>
+    <string name="qr_code_type_name_geographic_coordinates">地理坐标</string>
+    <string name="qr_code_type_name_agenda">日程</string>
+    <string name="qr_code_type_name_wifi">Wi-Fi</string>
+
+    <!-- Product Type -->
+    <string name="bar_code_type_unknown_product">产品</string>
+    <string name="bar_code_type_food">食品</string>
+    <string name="bar_code_type_pet_food">宠物食品</string>
+    <string name="bar_code_type_beauty">美容产品</string>
+    <string name="bar_code_type_book">书籍</string>
+    <string name="bar_code_type_unknown_book_title">未知书名</string>
+    <string name="bar_code_type_industrial">工业</string>
+    <string name="bar_code_type_unknown_matrix">Matrix Code</string>
+    <string name="bar_code_type_name_unknown">未知</string>
+
+    <!-- History -->
+    <string name="label_history_empty">没有扫描记录…</string>
+    <string name="snack_bar_message_item_deleted">记录 “%1$s” 已经从扫描记录中删除。</string>
+    <string name="popup_message_confirmation_delete_history">删除所有历史记录？</string>
+    <string name="menu_item_history_delete_all">删除历史记录</string>
+    <string name="delete_label">删除</string>
+    <string name="cancel_label">取消</string>
+    <string name="record_label">保存</string>
+
+    <!-- CaptureActivity -->
+    <string name="scan_cancel_label">扫描取消！</string>
+    <string name="scan_error_exception_label">发生错误：%1$s</string>
+    <string name="flash_label">闪光灯</string>
+    <string name="scan_from_image_label">图库</string>
+    <string name="intent_filter_scan_by_image">扫描图片</string>
+    <string name="scan_information_label">对准条码进行扫描</string>
+
+    <!-- BarcodeAnalysisActivity -->
+    <string name="barcode_information_search_label">搜索中…</string>
+    <string name="scan_error_label">扫描出错!</string>
+    <string name="scan_error_short_information_label">搜索信息时发生错误！</string>
+    <string name="barcode_scanned_label">%1$s 已扫描！</string>
+    <string name="barcode_found_on_label">发现 %1$s！</string>
+    <string name="barcode_not_found_on_api_label">没有发现信息 %1$s！</string>
+    <string name="no_internet_permission">您没有同意网络权限！</string>
+
+    <string name="about_barcode_information_label">条码信息</string>
+    <string name="about_barcode_label">关于条码</string>
+    <string name="about_barcode_format_label">格式：%1$s</string>
+    <string name="about_barcode_content_label">条码内容：%1$s</string>
+    <string name="about_barcode_origin_label">来源：</string>
+
+    <!-- Product -->
+    <string name="product_search_label">产品搜索</string>
+    <string name="no_product_found_label">没有发现产品！</string>
+
+    <!-- Barcode Searching Error -->
+    <string name="warning_label">警告</string>
+    <string name="scan_error_information_label">在网络API上搜索信息时发生错误…请检查您的互联网连接和应用程序的权限！如果问题仍然存在，应该是服务器问题。</string>
+    <string name="scan_error_internet_information_label">没有关于产品检索的信息，您似乎没有互联网连接！</string>
+    <string name="scan_error_message_label">错误信息：</string>
+
+    <!-- Food Beauty and Pet Food Product -->
+    <string name="overview_tab_label">概述</string>
+    <string name="ingredients_label">成分</string>
+    <string name="nutrition_facts_tab_label">营养</string>
+
+    <!-- Overview -->
+    <string name="quality_label">产品品质</string>
+
+    <string name="nutriscore_entitled_label">Nutri-Score</string>
+    <string name="nutriscore_description">Nutri-Score 是一个显示食品的营养健康状态的标志，从A到E的评级。 该评分考虑了食品的营养物质、<b>提倡食物</b>(纤维、蛋白质、水果、蔬菜、豆类、油籽)和<b>限定食物</b>(能量、饱和脂肪酸、糖、盐)。</string>
+    <string name="nutriscore_description_a">营养价值非常高</string>
+    <string name="nutriscore_description_b">营养价值良好</string>
+    <string name="nutriscore_description_c">营养价值普通</string>
+    <string name="nutriscore_description_d">营养价值低</string>
+    <string name="nutriscore_description_e">营养价值非常低</string>
+    <string name="nutriscore_description_unknown">营养价值未知</string>
+
+    <string name="nova_group_entitled_label">NOVA Group</string>
+    <string name="nova_group_description">NOVA Group 分为4组，以突出加工食品的级别：\n1 - 非加工食品或最低限度加工食品\n2 - 加工原料\n3 - 加工食品\n4 - 精加工食品和饮料</string>
+    <string name="nova_group_description_1">非加工食品或最低限度加工食品</string>
+    <string name="nova_group_description_2">加工原料</string>
+    <string name="nova_group_description_3">加工食品</string>
+    <string name="nova_group_description_4">精加工食品和饮料</string>
+    <string name="nova_group_description_unknown">NOVA Group未知</string>
+
+    <string name="eco_score_entitled_label">Eco-Score</string>
+    <string name="eco_score_description">Eco-Score 是建立在与 Nutri-Score 相似的模型上的：它的评分从A(影响非常低)到E(影响非常高)。</string>
+    <string name="eco_score_description_a">环境影响非常低</string>
+    <string name="eco_score_description_b">环境影响低</string>
+    <string name="eco_score_description_c">环境影响适中</string>
+    <string name="eco_score_description_d">环境影响高</string>
+    <string name="eco_score_description_e">环境影响非常高</string>
+    <string name="eco_score_description_unknown">环境影响未知</string>
+
+    <!-- Details -->
+    <string name="details_label">详情</string>
+    <string name="ingredients_analysis_label">成分分析：</string>
+    <string name="labels_label">标签</string>
+    <string name="origins_label">原料</string>
+    <string name="categories_label">分类</string>
+    <string name="packaging_label">包装</string>
+    <string name="stores_label">商店</string>
+    <string name="countries_label">销售国家</string>
+
+    <!-- Ingredients -->
+    <string name="ingredients_no_information_found_label">没有找到该产品的成分…</string>
+    <string name="allergens_label">过敏原</string>
+    <string name="traces_label">追溯</string>
+    <string name="additives_label">添加剂</string>
+    <string name="veggie_label">素食</string>
+
+    <!-- Additif -->
+    <string name="off_additive_info_label">信息</string>
+    <string name="off_risk_low_label">安全</string>
+    <string name="off_risk_moderate_label">不确定</string>
+    <string name="off_risk_high_label">避免</string>
+    <string name="off_risk_none_label">未知风险</string>
+
+    <string name="off_overexposure_risk_low_label">少量</string>
+    <string name="off_overexposure_risk_moderate_label">适中</string>
+    <string name="off_overexposure_risk_high_label">大量</string>
+    <string name="off_overexposure_risk_none_label">未知用量</string>
+
+    <string name="stabilizer_label">稳定剂</string>
+    <string name="stabilizer_description_label">稳定剂、增稠剂和凝胶剂，如琼脂或果胶(例如用于果酱)，可以使食物质地更坚固。虽然它们不是真正的乳化剂，但它们有助于稳定乳化剂。</string>
+    <string name="additive_no_information_found_label">没有找到关于此添加剂的信息！</string>
+
+    <!-- Veggie -->
+    <string name="ingredient_veggie_entitled_label">素食和素食主义者的状态</string>
+    <string name="palm_oil_free_label">不含棕榈油</string>
+    <string name="contain_palm_oil_label">含有棕榈油</string>
+    <string name="may_contain_palm_oil_label">可能含有棕榈油</string>
+    <string name="palm_oil_content_unknown_label">棕榈油含量未知</string>
+    <string name="is_vegan_label">素食</string>
+    <string name="no_vegan_label">没有素食</string>
+    <string name="maybe_vegan_label">可能是素食</string>
+    <string name="vegan_status_unknown_label">素食状态未知</string>
+    <string name="is_vegetarian_label">素食主义者</string>
+    <string name="no_vegetarian_label">不是素食主义者</string>
+    <string name="maybe_vegetarian_label">可能是素食主义者</string>
+    <string name="vegetarian_status_unknown_label">素食主义者状态未知</string>
+
+    <!-- Nutrition -->
+    <string name="nutrition_facts_no_information_found_label">没有找到产品的营养成分信息…</string>
+    <string name="nutrition_facts_entitled_label">营养成分表</string>
+
+    <!-- Table -->
+    <string name="nutrition_facts_table_label">项目</string>
+    <string name="off_per_100_label">每 100%1$s</string>
+    <string name="off_per_serving_label">每份 (%1$s%2$s)</string>
+    <string name="off_per_serving_no_quantity_label">每份</string>
+    <string name="off_energy_kj_label">能量 (kJ)</string>
+    <string name="off_energy_kcal_label">能量 (kcal)</string>
+    <string name="off_fat_label">脂肪</string>
+    <string name="off_saturated_fat_label">饱和脂肪</string>
+    <string name="off_carbohydrates_label">碳水化合物</string>
+    <string name="off_sugars_label">糖</string>
+    <string name="off_starch_label">淀粉</string>
+    <string name="off_fiber_label">膳食纤维</string>
+    <string name="off_proteins_label">蛋白质</string>
+    <string name="off_salt_label">盐</string>
+    <string name="off_sodium_label">钠</string>
+
+    <!-- For 100g -->
+    <string name="nutrient_level_entitled_label">营养成分每100g</string>
+    <string name="off_quantity_low_label">低</string>
+    <string name="off_quantity_moderate_label">适中</string>
+    <string name="off_quantity_high_label">高</string>
+    <string name="off_quantity_none_label">未知含量</string>
+
+    <!-- Book -->
+    <string name="book_product_summary_label">概要</string>
+    <string name="book_product_more_label">更多</string>
+    <string name="book_product_pages_number_label">页码</string>
+    <string name="book_product_contributions_label">贡献</string>
+    <string name="book_product_publish_date_label">出版日期</string>
+    <string name="book_product_original_title_label">原标题</string>
+    <string name="book_product_pages_number">%1$s 页</string>
+
+    <!-- Matrix Barcode -->
+    <string name="bar_code_content_label">条码内容</string>
+    <string name="bar_code_analysis_label">条码分析</string>
+
+    <!-- Matrix Barcode Contact Analysis -->
+    <string name="matrix_contact_name_label">名字：</string>
+    <string name="matrix_contact_organisation_label">公司：</string>
+    <string name="matrix_contact_title_label">标题：</string>
+    <string name="matrix_contact_phone_label">电话：</string>
+    <string name="matrix_contact_mail_label">电子邮件：</string>
+    <string name="matrix_contact_address_label">地址：</string>
+    <string name="matrix_contact_notes_label">备注：</string>
+
+    <!-- Matrix Barcode Agenda Analysis -->
+    <string name="matrix_agenda_name_event_label">事件名：</string>
+    <string name="matrix_agenda_start_date_event_label">开始：</string>
+    <string name="matrix_agenda_end_date_event_label">结束：</string>
+    <string name="matrix_agenda_place_event_label">地点：</string>
+    <string name="matrix_agenda_description_event_label">介绍：</string>
+
+    <!-- Matrix Barcode Phone Analysis -->
+    <string name="matrix_phone_tel_number_label">电话：</string>
+
+    <!-- Matrix Barcode Email Analysis -->
+    <string name="matrix_email_recipient_label">收件人：</string>
+    <string name="matrix_email_cc_label">抄送：</string>
+    <string name="matrix_email_bcc_label">BCC:</string>
+    <string name="matrix_subject_label">主题：</string>
+    <string name="matrix_body_label">信息：</string>
+
+    <!-- Matrix Barcode Wi-Fi Analysis -->
+    <string name="matrix_wifi_ssid_label">SSID:</string>
+    <string name="matrix_wifi_password_label">密码：</string>
+    <string name="matrix_wifi_encryption_label">加密方式：</string>
+    <string name="matrix_wifi_is_hidden_label">隐藏：</string>
+    <string name="matrix_wifi_anonymous_identity_label">匿名身份：</string>
+    <string name="matrix_wifi_identity_label">身份：</string>
+    <string name="matrix_wifi_eap_method_label">Eap 类型：</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 类型：</string>
+
+    <!-- Matrix Barcode URL Analysis -->
+    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_malicious_label">可能是恶意URL…</string>
+
+    <!-- Matrix Barcode URL Localisation Analysis -->
+    <string name="matrix_localisation_latitude_label">纬度：</string>
+    <string name="matrix_localisation_longitude_label">经度：</string>
+    <string name="matrix_localisation_altitude_label">高度：</string>
+    <string name="matrix_localisation_query_label">查询：</string>
+
+    <!-- Barcode Description -->
+    <string name="bar_code_industrial_description_label">这种条码在工业上经常使用。</string>
+    <string name="bar_code_code_39_description_label">Code 39 是一种用于纺织品标记和药店药品的条形码。它也用于军事部门和汽车工业。</string>
+    <string name="bar_code_code_93_description_label">Code 93 是一种用于军队和汽车部门的条形码，也被“Postes Canada”用于编码特殊递送信息。</string>
+    <string name="bar_code_code_128_description_label">Code 128 是行业中经常使用的条形码。它被用于运输行业和供应链中的产品识别。它也可以用于汽车行业或药店的产品标识。Code 128 被广泛使用，也可以用于许多其他结尾。</string>
+    <string name="bar_code_itf_description_label">ITF（交叉2/5码）是一种主要用于货物运输的条形码。</string>
+    <string name="bar_code_codabar_description_label">Codabar 是一种设计用于点阵打印机读取的条形码。今天，Codabar 很少用于其他类型，但仍被一些组织如图书馆使用。</string>
+    <string name="bar_code_upc_a_description_label">UPC-A（通用产品代码）是美国和加拿大广泛使用的条形码，用于识别商店和商店中销售的产品。由12位数字组成。</string>
+    <string name="bar_code_upc_e_description_label">UPC-E（通用产品代码）是 UPC-A 的压缩条形码，主要用于美国和加拿大在商店和商店中识别销售的产品。用于太小而不能使用 UPC-A 的包装。</string>
+    <string name="bar_code_ean_13_description_label">EAN-13（欧洲商品编码13）广泛用于识别在欧洲和世界各地的商店和商店销售的产品的一种条形码。由13位数字组成。</string>
+    <string name="bar_code_ean_8_description_label">EAN-8（欧洲商品编码8）是 EAN-13 的压缩条形码，用于识别在欧洲和世界各地的商店和商店销售的产品。用于太小而不能使用 EAN-13 的包装。</string>
+
+    <!-- Snackbar Feddbacks -->
+    <string name="snack_bar_message_permission_refused">您必须接受使用此功能的许可。</string>
+    <string name="snack_bar_message_error_url_format">网址的开头必须是 "http://" 或 "https://"</string>
+    <string name="snack_bar_message_error_phone_number_missing">您必须输入一个电话号码</string>
+    <string name="snack_bar_message_error_email_missing">您必须输入至少一个字段</string>
+    <string name="snack_bar_message_error_localisation_missing">你必须告知纬度和经度</string>
+    <string name="snack_bar_message_save_bitmap_ok">图片已保存</string>
+    <string name="snack_bar_message_save_bitmap_error">图片保存失败… 可能是存储空间不足？</string>
+    <string name="snack_bar_message_share_bitmap_error">配置共享时出错。</string>
+
+    <!-- Actions -->
+    <string name="actions_label">功能</string>
+    <string name="intent_chooser_share_title">分享…</string>
+    <string name="intent_chooser_mail_title">发送邮件…</string>
+    <string name="copy_label">复制内容</string>
+    <string name="barcode_copied_label">条码已复制</string>
+    <string name="barcode_search_error_label">Url不支持</string>
+    <string name="search_label">搜索</string>
+    <string name="action_title_dialog_label">你想做什么？</string>
+    <string name="action_go_to_url_label">打开URL</string>
+    <string name="action_web_search_label">在网络上搜索</string>
+    <string name="action_product_search_label">搜索 %1$s</string>
+    <string name="action_send_mail_label">发送邮件</string>
+    <string name="action_send_sms_label">发送信息</string>
+    <string name="action_call_phone_label">拨打电话号码</string>
+    <string name="action_add_to_calendar">添加到日历</string>
+    <string name="action_add_to_contacts">添加到通讯录</string>
+    <string name="action_show_location">显示位置</string>
+    <string name="action_open_link">打开链接</string>
+
+    <!-- Wi-Fi Connection -->
+    <string name="action_wifi_connection_title_label">Wi-Fi连接</string>
+    <string name="action_wifi_connection_from_app">连接Wi-F1</string>
+    <string name="action_wifi_connection_from_wifi_settings">复制密码并打开Wi-Fi设置</string>
+    <string name="action_wifi_connection_error_wifi_not_activated">您必须开启Wi-Fi !</string>
+    <string name="action_wifi_password_copy_label">密码已复制！</string>
+    <string name="action_wifi_success_added_label">Wi-Fi连接已添加！</string>
+    <string name="action_wifi_failure_added_label">添加Wi-Fi连接失败</string>
+    <string name="action_wifi_already_added_label">Wi-Fi连接已经添加了</string>
+    <string name="action_wifi_add_network_refused">取消添加Wi-Fi网络。</string>
+    <string name="action_wifi_add_network_successful">添加Wi-Fi网络成功。</string>
+    <string name="action_wifi_add_network_failed">添加Wi-Fi网络失败。</string>
+    <string name="action_wifi_add_network_already_exists">您已经添加了这个Wi-Fi网络。</string>
+    <string name="action_wifi_add_network_unknown_error">添加Wi-Fi网络时出现未知错误。</string>
+
+    <!-- QR Code Generator -->
+
+    <!-- Barcode Generator Errors -->
+    <string name="error_bar_code_none_character_message">您必须在字段中输入正确的值。</string>
+    <string name="error_bar_code_not_a_number_message">条码只能由数字组成。</string>
+    <string name="error_bar_code_wrong_length_message">条码必须是 %1$s 位数字。</string>
+    <string name="error_bar_code_wrong_key_message">第 %1$s 位（控制键）应该是 %2$s.</string>
+    <string name="error_bar_code_encoding_iso_8859_1_error_message">此条形码类型不支持特殊字符。</string>
+    <string name="error_bar_code_encoding_us_ascii_error_message">此条形码类型不支持特殊字符。</string>
+    <string name="error_bar_code_93_regex_error_message">"Code 93" 条码类型可以编码26个大写字母，10个数字(0到9)以及8个特殊字符«-，.，空格，*，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
+    <string name="error_bar_code_39_regex_error_message">"Code 39" 条码类型可以编码26个大写字母，10个数字(0到9)以及7个特殊字符«-，.，空格，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
+    <string name="error_bar_codabar_regex_error_message">"Codabar" 条码类型可以编码10位数字(0到9)以及6个特殊字符«-，$，:，/，.，+»。它还可以包含字符A、B、C或D作为第一个和最后一个字符，以指定字符串的开始和结束。</string>
+    <string name="error_bar_code_itf_error_message">"ITF" 条码必须是偶数个字符。</string>
+    <string name="error_bar_code_upc_e_not_start_with_0_error_message">"UPC-E" 条码开头必须是 0.</string>
+
+    <!-- Action Barcode Generated -->
+    <string name="barcode_creator_confirm_text_label">生成</string>
+    <string name="save_label">保存</string>
+    <string name="share_label">分享</string>
+    <string name="share_image_label">分享图片</string>
+    <string name="share_text_label">分享内容</string>
+    <string name="popup_message_confirmation_save_image">保存图片？</string>
+
+    <!-- Form -->
+    <string name="qr_code_text_generator_hint_text_input_edit_text">输入内容…</string>
+    <string name="qr_code_text_generator_hint_phone_input_edit_text">输入电话号码…</string>
+    <string name="qr_code_text_generator_hint_url_input_edit_text">输入网站地址…</string>
+    <string name="qr_code_text_input_edit_text_hint_message">信息</string>
+
+    <!-- Contact Creator -->
+    <string name="qr_code_type_name_generate_from_contact">从通讯录导入</string>
+    <string name="qr_code_text_radio_button_label_m">先生</string>
+    <string name="qr_code_text_radio_button_label_mrs">女士</string>
+    <string name="qr_code_text_radio_button_label_miss">小姐</string>
+    <string name="qr_code_text_radio_button_label_none">无</string>
+    <string name="qr_code_text_input_edit_text_hint_name">姓氏</string>
+    <string name="qr_code_text_input_edit_text_hint_first_name">名称</string>
+    <string name="qr_code_text_input_edit_text_hint_organisation">公司</string>
+    <string name="qr_code_text_input_edit_text_hint_web_site">网站</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_1">电子邮件 1</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_2">电子邮件 2</string>
+    <string name="qr_code_text_input_edit_text_hint_mail_3">电子邮件 3</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_1">电话 1</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_2">电话 2</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_3">电话 3</string>
+    <string name="qr_code_text_input_edit_text_hint_street_address">街道</string>
+    <string name="qr_code_text_input_edit_text_hint_postal_code">邮政编码</string>
+    <string name="qr_code_text_input_edit_text_hint_city">城市</string>
+    <string name="qr_code_text_input_edit_text_hint_country">国家</string>
+    <string name="qr_code_text_input_edit_text_hint_region">地区</string>
+    <string name="qr_code_text_input_edit_text_hint_notes">备注</string>
+    <string name="qr_code_spinner_prompt_none">无标签</string>
+
+    <string name="spinner_type_mobile">手机</string>
+    <string name="spinner_type_fax">传真</string>
+    <string name="spinner_type_home">家庭</string>
+    <string name="spinner_type_work">工作</string>
+    <string name="spinner_type_other">其他</string>
+
+    <!-- EPC Creator -->
+    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">服务标签</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_version">版本</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_character_set">字符集</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_identification">识别</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_bic">BIC</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_name">名称</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_amount">金额</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_purpose">目的</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">汇款（参考）</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">汇款（信息）</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">信息</string>
+
+    <string name="qr_code_text_input_edit_text_epc_name_error">“名称” 字段是必须的</string>
+    <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN 错误</string>
+
+    <!-- Mail Creator -->
+    <string name="qr_code_text_input_edit_text_hint_email">电子邮件</string>
+    <string name="qr_code_text_input_edit_text_hint_email_subject">主题</string>
+
+    <!-- Geo Localisation Creator -->
+    <string name="qr_code_text_input_edit_text_hint_localisation_latitude">纬度</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_longitude">经度</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_request">查找</string>
+
+    <!-- Wifi Creator -->
+    <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / 网络名称</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_password">密码</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_hide">隐藏</string>
+    <string name="spinner_wifi_encryption_wep">WEP</string>
+    <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
+    <string name="spinner_wifi_encryption_none">无</string>
+
+    <!-- Event Creator -->
+    <string name="qr_code_text_input_edit_text_hint_agenda_event_name">事件名</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_place">地点</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_description">说明</string>
+    <string name="check_box_event_all_of_day">全天</string>
+    <string name="begin_label">开始</string>
+    <string name="end_label">结束</string>
+
+    <!-- URL -->
+
+    <!-- API Base URL -->
+    <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_open_library_url">https://openlibrary.org</string>
+
+    <!-- URL Engines -->
+    <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
+    <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
+    <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+
+    <!-- E-Commerce Engines -->
+    <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
+    <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
+    <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
+
+    <!-- API Product Engines -->
+    <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
+    <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
+
+    <!-- API Sources Links -->
+    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+
+    <!-- API Sources Description -->
+    <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
+    <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
+    <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
+    <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
+
+    <!-- Preferences -->
+
+    <!-- Appearance Settings -->
+    <string name="preferences_appearance_title">外观</string>
+    <string name="preferences_theme_label">主题</string>
+    <string name="preferences_switch_system_theme_label">跟随系统</string>
+    <string name="preferences_switch_light_theme_label">浅色主题</string>
+    <string name="preferences_switch_dark_theme_label">深色主题</string>
+    <string name="preferences_color">主题色</string>
+    <string name="preferences_color_material_you">跟随系统 (Material You)</string>
+    <string name="preferences_color_blue">蓝色</string>
+    <string name="preferences_color_orange">橙色</string>
+    <string name="preferences_color_green">绿色</string>
+    <string name="preferences_color_red">红色</string>
+    <string name="preferences_color_purple">紫色</string>
+
+    <!-- Languages Settings -->
+    <string name="preferences_languages_title">语言</string>
+    <string name="preferences_languages_change">修改语言</string>
+
+    <!-- Scan Settings -->
+    <string name="preferences_scan_title">扫描</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">使用CameraX API</string>
+    <string name="preferences_switch_scan_search_on_api_label">自动查询远程APIs</string>
+    <string name="preferences_switch_scan_vibrate_label">扫描成功后振动</string>
+    <string name="preferences_switch_scan_bip_label">扫描成功后播放声音</string>
+    <string name="preferences_switch_scan_screen_rotation_label">扫描时禁止旋转屏幕</string>
+    <string name="preferences_switch_scan_barcode_copied_label">复制扫描结果到剪切板</string>
+
+    <!-- Search Engine Settings -->
+    <string name="preferences_search_title">搜索</string>
+    <string name="preferences_search_engine">搜索引擎</string>
+
+    <!-- About Settings -->
+    <string name="preferences_about_title">关于</string>
+    <string name="preferences_about_permissions_label">权限</string>
+    <string name="preferences_about_library_third_label">第三方库</string>
+    <string name="preferences_about_bdd_label">数据库</string>
+    <string name="preferences_source_code_label">源码</string>
+
+    <!-- About Permissions -->
+    <string name="permission_camera_label">相机</string>
+    <string name="permission_camera_description_label">用于扫描条码。</string>
+    <string name="permission_internet_label">网络</string>
+    <string name="permission_internet_description_label">用于从远程API查询信息。</string>
+    <string name="permission_contact_label">通讯录</string>
+    <string name="permission_contact_description_label">用于导入通讯录信息并生成二维码。</string>
+    <string name="permission_wifi_label">Wi-Fi</string>
+    <string name="permission_wifi_description_label">用于通过扫描Wi-Fi二维码连接到Wi-Fi时。</string>
+    <string name="permission_vibrate_label">振动</string>
+    <string name="permission_vibrate_description_label">用于扫描成功时振动提醒。</string>
+
+    <!-- About BDD -->
+    <string name="bdd_open_food_facts_description_label">Open Food Facts is a free database about food which lists ingredients, allergens, nutritional composition and all information present on the products labels.</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts is a free database about pet food.</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts is a free database about cosmetic products.</string>
+    <string name="bdd_open_library_description_label">Open Library is a free database aimed at cataloging all published books, whatever their language.</string>
+
+    <!-- About Library Third -->
+    <string name="dependency_by" translatable="false">by %1$s</string>
+
+    <!-- About Library Third Description -->
+    <string name="dependency_zxing_description_label" translatable="false">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
+    <string name="dependency_camera_x_description_label" translatable="false">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
+    <string name="dependency_zxing_code_scanner_description_label" translatable="false">Code scanner library for Android, based on ZXing.</string>
+    <string name="dependency_ez_vcard_description_label" translatable="false">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
+    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper is an image cropping library for Android.</string>
+    <string name="dependency_coil_description_label" translatable="false">An image loading library for Android backed by Kotlin Coroutines.</string>
+    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
+    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">Provides Dispatchers.Main context for Android applications.</string>
+    <string name="dependency_koin_description_label" translatable="false">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
+    <string name="dependency_room_description_label" translatable="false">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
+    <string name="dependency_gson_description_label" translatable="false">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
+    <string name="dependency_retrofit_description_label" translatable="false">A type-safe HTTP client for Android and Java.</string>
+    <string name="dependency_live_data_description_label" translatable="false">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
+
+    <!-- Countries -->
+    <string name="country_usa">美国</string>
+    <string name="country_ca">加拿大</string>
+    <string name="country_fr">法国</string>
+    <string name="country_bg">保加利亚</string>
+    <string name="country_si">斯洛文尼亚</string>
+    <string name="country_hr">克罗地亚</string>
+    <string name="country_ba">波斯尼亚-黑塞哥维那</string>
+    <string name="country_me">黑山共和国</string>
+    <string name="country_kosovo">科索沃</string>
+    <string name="country_de">德国</string>
+    <string name="country_jp">日本</string>
+    <string name="country_ru">俄罗斯</string>
+    <string name="country_kg">吉尔吉斯斯坦</string>
+    <string name="country_tw">中国台湾</string>
+    <string name="country_ee">爱沙尼亚</string>
+    <string name="country_lv">拉脱维亚</string>
+    <string name="country_az">阿塞拜疆</string>
+    <string name="country_lt">立陶宛</string>
+    <string name="country_uz">乌兹别克斯坦</string>
+    <string name="country_lk">斯里兰卡</string>
+    <string name="country_ph">菲律宾</string>
+    <string name="country_by">白俄罗斯</string>
+    <string name="country_ua">乌克兰</string>
+    <string name="country_tm">土库曼斯坦</string>
+    <string name="country_md">摩尔多瓦</string>
+    <string name="country_am">亚美尼亚</string>
+    <string name="country_ge">格鲁吉亚</string>
+    <string name="country_kz">哈萨克斯坦</string>
+    <string name="country_tj">塔吉克斯坦</string>
+    <string name="country_hk">香港</string>
+    <string name="country_gb">英国</string>
+    <string name="country_gr">希腊</string>
+    <string name="country_lb">黎巴嫩</string>
+    <string name="country_cy">塞浦路斯</string>
+    <string name="country_al">阿尔巴尼亚</string>
+    <string name="country_mk">北马其顿</string>
+    <string name="country_mt">马耳他</string>
+    <string name="country_ie">爱尔兰</string>
+    <string name="country_be">比利时</string>
+    <string name="country_lu">卢森堡</string>
+    <string name="country_pt">葡萄牙</string>
+    <string name="country_is">冰岛</string>
+    <string name="country_dk">丹麦</string>
+    <string name="country_pl">波兰</string>
+    <string name="country_ro">罗马尼亚</string>
+    <string name="country_hu">匈牙利</string>
+    <string name="country_za">南非</string>
+    <string name="country_bj">贝宁</string>
+    <string name="country_gh">加纳</string>
+    <string name="country_sn">塞内加尔</string>
+    <string name="country_bh">巴林</string>
+    <string name="country_mu">毛里求斯</string>
+    <string name="country_ma">摩洛哥</string>
+    <string name="country_dz">阿尔及利亚</string>
+    <string name="country_ng">尼日利亚</string>
+    <string name="country_ke">肯尼亚</string>
+    <string name="country_cm">喀麦隆</string>
+    <string name="country_ci">科特迪瓦</string>
+    <string name="country_tn">突尼斯</string>
+    <string name="country_tz">坦桑尼亚</string>
+    <string name="country_sy">叙利亚</string>
+    <string name="country_eg">埃及</string>
+    <string name="country_bn">文莱</string>
+    <string name="country_ly">利比亚</string>
+    <string name="country_jo">约旦</string>
+    <string name="country_ir">伊朗</string>
+    <string name="country_kw">科威特</string>
+    <string name="country_sa">沙特阿拉伯</string>
+    <string name="country_ae">阿联酋</string>
+    <string name="country_qa">卡塔尔</string>
+    <string name="country_fi">芬兰</string>
+    <string name="country_cn">中国</string>
+    <string name="country_no">挪威</string>
+    <string name="country_il">以色列</string>
+    <string name="country_se">瑞典</string>
+    <string name="country_gt">危地马拉</string>
+    <string name="country_sv">萨尔瓦多</string>
+    <string name="country_hn">洪都拉斯</string>
+    <string name="country_ni">尼加拉瓜</string>
+    <string name="country_cr">哥斯达黎加</string>
+    <string name="country_pa">巴拿马</string>
+    <string name="country_do">多米尼加</string>
+    <string name="country_mx">墨西哥</string>
+    <string name="country_ve">委内瑞拉</string>
+    <string name="country_ch">瑞士</string>
+    <string name="country_li">列支敦士登</string>
+    <string name="country_co">哥伦比亚</string>
+    <string name="country_uy">乌拉圭</string>
+    <string name="country_pe">秘鲁</string>
+    <string name="country_bo">玻利维亚</string>
+    <string name="country_ar">阿根廷</string>
+    <string name="country_cl">智利</string>
+    <string name="country_py">巴拉圭</string>
+    <string name="country_ec">厄瓜多尔</string>
+    <string name="country_br">巴西</string>
+    <string name="country_it">意大利</string>
+    <string name="country_es">西班牙</string>
+    <string name="country_cu">古巴</string>
+    <string name="country_sk">斯洛伐克</string>
+    <string name="country_cz">捷克</string>
+    <string name="country_rs">塞尔维亚</string>
+    <string name="country_mn">蒙古</string>
+    <string name="country_kp">朝鲜</string>
+    <string name="country_tr">土耳其</string>
+    <string name="country_nl">荷兰</string>
+    <string name="country_kr">韩国</string>
+    <string name="country_mm">缅甸</string>
+    <string name="country_kh">柬埔寨</string>
+    <string name="country_th">泰国</string>
+    <string name="country_sg">新加坡</string>
+    <string name="country_in">印度</string>
+    <string name="country_vn">越南</string>
+    <string name="country_pk">巴基斯坦</string>
+    <string name="country_id">印度尼西亚</string>
+    <string name="country_at">奥地利</string>
+    <string name="country_au">澳大利亚</string>
+    <string name="country_nz">新西兰</string>
+    <string name="country_my">西马来西亚</string>
+    <string name="country_mo">澳门</string>
+
+    <!-- External Services Label -->
+    <string name="google_label">谷歌</string>
+    <string name="bing_label">必应</string>
+</resources>
