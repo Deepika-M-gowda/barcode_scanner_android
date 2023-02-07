@@ -18,12 +18,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.utils
+package com.atharok.barcodescanner.domain.library
 
-private const val command = "ping -c 1 google.com"
+class InternetChecker {
 
-fun isInternetAvailable(): Boolean = try{
-    Runtime.getRuntime().exec(command).waitFor() == 0
-} catch (e: Exception) {
-    false
+    companion object {
+        private const val COMMAND = "ping -c 1 google.com"
+    }
+
+    fun isInternetAvailable(): Boolean = try{
+        Runtime.getRuntime().exec(COMMAND).waitFor() == 0
+    } catch (e: Exception) {
+        false
+    }
 }

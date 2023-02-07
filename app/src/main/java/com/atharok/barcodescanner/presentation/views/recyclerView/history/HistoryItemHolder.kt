@@ -24,6 +24,7 @@ import android.text.format.DateUtils
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -72,7 +73,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
             else -> R.drawable.baseline_qr_code_24
         }
         viewBinding.recyclerViewItemHistoryBarcodeIconImageView.setImageResource(barcodeIconDrawableResource)
-        viewBinding.recyclerViewItemHistoryBarcodeFormatTextView.text = barcode.formatName.replace('_', ' ')
+        viewBinding.recyclerViewItemHistoryBarcodeFormatTextView.text = barcode.getBarcodeFormat().getDisplayName(itemView.context)
 
         // ---- Content barcode TextView ----
         viewBinding.recyclerViewItemHistoryContentTextView.text = barcode.contents

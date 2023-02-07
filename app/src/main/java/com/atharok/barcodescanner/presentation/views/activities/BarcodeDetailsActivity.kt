@@ -20,7 +20,6 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -34,6 +33,7 @@ import androidx.annotation.StringRes
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.extensions.read
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
@@ -94,12 +94,6 @@ class BarcodeDetailsActivity : BaseActivity() {
         supportActionBar?.title = barcodeFormat.getDisplayName(this)
 
         setContentView(viewBinding.root)
-    }
-
-    private fun BarcodeFormat.getDisplayName(context: Context): String = when (this) {
-        BarcodeFormat.QR_CODE -> context.getString(R.string.barcode_qr_code_label)
-        // todo Add other Barcode name translations.
-        else -> this.name.replace("_", " ")
     }
 
     private fun getIntentStringValue(): String? {

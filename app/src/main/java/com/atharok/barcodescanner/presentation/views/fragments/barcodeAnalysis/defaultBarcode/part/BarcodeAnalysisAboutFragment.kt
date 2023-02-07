@@ -26,6 +26,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisAboutBinding
 import com.atharok.barcodescanner.databinding.TemplateAboutBarcodeBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
@@ -80,7 +81,7 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
     }
 
     private fun configureFormat(barcodeAnalysis: BarcodeAnalysis){
-        val formatName = barcodeAnalysis.barcode.formatName.replace("_", " ")
+        val formatName = barcodeAnalysis.barcode.getBarcodeFormat().getDisplayName(requireContext())
         val format = getString(R.string.about_barcode_format_label, formatName)
         bodyAboutBarcodeTemplateBinding.templateAboutBarcodeFormatTextView.text = format
     }

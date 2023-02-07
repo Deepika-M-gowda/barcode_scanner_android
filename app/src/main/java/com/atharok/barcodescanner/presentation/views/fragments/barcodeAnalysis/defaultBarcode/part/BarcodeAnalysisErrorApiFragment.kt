@@ -27,12 +27,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
-import com.atharok.barcodescanner.common.utils.isInternetAvailable
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisErrorApiBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.databinding.TemplateWarningViewBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.library.InternetChecker
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
+import org.koin.android.ext.android.inject
 
 /**
  * A simple [Fragment] subclass.
@@ -44,6 +45,8 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
 
     private lateinit var headerEntitledTemplateBinding: TemplateEntitledViewBinding
     private lateinit var bodyWarningTemplateBinding: TemplateWarningViewBinding
+
+    private val internetChecker: InternetChecker by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeAnalysisErrorApiBinding.inflate(inflater, container, false)
@@ -80,7 +83,7 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
     }
 
     private fun configureInformationTextViewError(){
-        val isConnected = isInternetAvailable()
+        val isConnected = internetChecker.isInternetAvailable()
 
         val msg = if(!isConnected)
             getString(R.string.scan_error_internet_information_label)

@@ -136,20 +136,12 @@ val libraryModule: Module = module {
     single<BarcodeFormatChecker> { BarcodeFormatChecker() }
     single<VCardReader> { VCardReader(androidContext()) }
     single<MultiFormatWriter> { MultiFormatWriter() }
-    //single<BarcodeEncoder> { BarcodeEncoder() }
-    single<BitmapBarcodeGenerator> { BitmapBarcodeGenerator(get<MultiFormatWriter>()/*, get<BarcodeEncoder>()*/) }
+    single<BitmapBarcodeGenerator> { BitmapBarcodeGenerator(get<MultiFormatWriter>()) }
     single<BitmapRecorder> { BitmapRecorder(androidContext()) }
     single<BitmapSharer> { BitmapSharer(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
     single<Iban> { Iban() }
-
-    /*factory<BeepManager> { (activity: Activity) ->
-        //val settingsManager = get<SettingsManager>()
-        BeepManager(activity)/*.apply {
-            isBeepEnabled = settingsManager.useBipScan
-            isVibrateEnabled = settingsManager.useVibrateScan
-        }*/
-    }*/
+    single<InternetChecker> { InternetChecker() }
 
     factory { Date() }
     factory { (pattern: String) -> SimpleDateFormat(pattern, Locale.getDefault()) }
