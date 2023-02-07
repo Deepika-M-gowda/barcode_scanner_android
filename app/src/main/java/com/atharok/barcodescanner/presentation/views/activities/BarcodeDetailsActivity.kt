@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -90,9 +91,15 @@ class BarcodeDetailsActivity : BaseActivity() {
             viewBinding.activityBarcodeImageAboutBarcodeEntitledLayout.visibility = View.GONE
         }
 
-        supportActionBar?.title = barcodeFormatString.replace("_", " ")
+        supportActionBar?.title = barcodeFormat.getDisplayName(this)
 
         setContentView(viewBinding.root)
+    }
+
+    private fun BarcodeFormat.getDisplayName(context: Context): String = when (this) {
+        BarcodeFormat.QR_CODE -> context.getString(R.string.barcode_qr_code_label)
+        // todo Add other Barcode name translations.
+        else -> this.name.replace("_", " ")
     }
 
     private fun getIntentStringValue(): String? {
