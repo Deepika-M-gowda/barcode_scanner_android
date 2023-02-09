@@ -125,6 +125,7 @@ class CameraConfig(private val context: Context) {
             postZoom = value
             return
         }
+        postZoom = -1f
         configureZoom(camera, value)
     }
 
