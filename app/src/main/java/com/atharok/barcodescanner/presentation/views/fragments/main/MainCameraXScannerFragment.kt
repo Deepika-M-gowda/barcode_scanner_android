@@ -236,8 +236,10 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     private fun configureZoom(cameraConfig: CameraConfig) {
         val slider = viewBinding.fragmentMainCameraXScannerSlider
         cameraConfig.setLinearZoom(slider.value)
-        slider.addOnChangeListener { _, value, _ ->
+        slider.addOnChangeListener { v, value, _ ->
             cameraConfig.setLinearZoom(value)
+            // BZZZTT!!1!
+            v.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
         }
     }
 
