@@ -46,10 +46,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
-import com.atharok.barcodescanner.domain.library.camera.AbstractCameraXBarcodeAnalyzer
-import com.atharok.barcodescanner.domain.library.camera.CameraConfig
-import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeAnalyzer
-import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeLegacyAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.*
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
@@ -241,6 +238,10 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
             // BZZZTT!!1!
             v.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
         }
+        CameraZoomGestureDetector(slider.value)
+            .attach(viewBinding.fragmentMainCameraXScannerScanOverlay) { value ->
+                slider.value = value
+            }
     }
 
     // ---- Scan successful ----

@@ -32,8 +32,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
@@ -44,6 +46,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
+import com.atharok.barcodescanner.domain.library.camera.CameraZoomGestureDetector
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
@@ -51,11 +54,14 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromI
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
+import com.atharok.barcodescanner.presentation.views.utils.getMaxZoom
 import com.budiyev.android.codescanner.*
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
+import kotlin.math.round
+import kotlin.math.roundToInt
 
 /**
  * A simple [Fragment] subclass.
@@ -251,6 +257,30 @@ class MainScannerFragment : BaseFragment() {
 
             decodeCallback = DecodeCallback(::onSuccessfulScan)
             errorCallback = ErrorCallback(::onErrorScan)
+
+            configureZoom(this)
+        }
+    }
+
+    private fun configureZoom(codeScanner: CodeScanner) {
+        lifecycleScope.launchWhenResumed {
+            val maxZoom: Int = codeScanner.getMaxZoom()
+            if (maxZoom <= 0) return@launchWhenResumed
+            val defaultZoom: Float = codeScanner.zoom.toFloat()
+            val slider = viewBinding.fragmentMainScannerCameraSlider.apply {
+                valueTo = maxZoom.toFloat()
+                value = defaultZoom
+                isVisible = true
+                addOnChangeListener { v, value, _ ->
+                    codeScanner.zoom = value.roundToInt()
+                    // BZZZTT!!1!
+                    v.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                }
+            }
+            CameraZoomGestureDetector(defaultZoom / maxZoom)
+                .attach(viewBinding.fragmentMainScannerCodeScannerView) {
+                    slider.value = round(it * maxZoom) // step = 1f
+                }
         }
     }
 
