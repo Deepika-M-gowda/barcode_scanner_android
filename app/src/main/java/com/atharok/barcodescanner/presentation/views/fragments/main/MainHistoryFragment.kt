@@ -152,7 +152,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
             CustomItemTouchHelperCallback(
                 this,
                 0,
-                ItemTouchHelper.LEFT
+                ItemTouchHelper.START// support Rtl
             )
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
