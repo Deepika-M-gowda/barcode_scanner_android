@@ -14,12 +14,15 @@ import androidx.lifecycle.LifecycleOwner
 import com.atharok.barcodescanner.common.extensions.afterMeasured
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import kotlin.math.max
+import kotlin.math.min
 
 class CameraConfig(private val context: Context) {
 
     private val cameraExecutor = Executors.newSingleThreadExecutor()
     private var cameraProvider: ProcessCameraProvider? = null
     private var camera: Camera? = null
+    private var postZoom = -1f
     var flashEnabled = false
         private set
 
@@ -65,6 +68,10 @@ class CameraConfig(private val context: Context) {
                     preview.setSurfaceProvider(previewView.surfaceProvider)
                     camera = bindToLifecycle(lifecycleOwner, cameraSelector, preview, imageAnalysis).apply {
                         configureAutoFocus(previewView, this)
+                        if (postZoom != -1f) {
+                            configureZoom(this, postZoom)
+                            postZoom = -1f
+                        }
                     }
                 } catch(exc: Exception) {
                     Log.e("TAG", "Use case binding failed", exc)
@@ -107,8 +114,19 @@ class CameraConfig(private val context: Context) {
         }
     }
 
+    private fun configureZoom(camera: Camera, value: Float) {
+        val safeZoom = max(0f, min(value, 1f))
+        camera.cameraControl.setLinearZoom(safeZoom)
+    }
+
     fun setLinearZoom(value: Float) {
-        camera?.cameraControl?.setLinearZoom(value)
+        val camera = this.camera
+        if (camera == null) {
+            postZoom = value
+            return
+        }
+        postZoom = -1f
+        configureZoom(camera, value)
     }
 
     fun hasFlash(): Boolean =
