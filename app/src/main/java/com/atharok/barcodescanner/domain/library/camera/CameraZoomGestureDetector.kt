@@ -49,8 +49,18 @@ class CameraZoomGestureDetector(@FloatRange(from = 0.0, to = 1.0) defaultZoom: F
         this.gestureDetector = GestureDetector(view.context, this).apply {
             setOnDoubleTapListener(this@CameraZoomGestureDetector)
         }
-        this.listener = listener
+        this.listener = ZoomChangeListener(listener)
         view.setOnTouchListener(this)
+    }
+
+    private class ZoomChangeListener(val delegate: OnZoomChangeListener) : OnZoomChangeListener {
+
+        private var lastZoom: Float = -1f
+        override fun invoke(zoom: Float) {
+            if (lastZoom == zoom) return
+            lastZoom = zoom
+            delegate.invoke(zoom)
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
