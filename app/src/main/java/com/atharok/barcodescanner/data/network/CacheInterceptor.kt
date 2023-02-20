@@ -31,7 +31,7 @@ class CacheInterceptor: Interceptor {
         val response = chain.proceed(request)
 
         val cacheControl = CacheControl.Builder()
-            .maxAge(72, TimeUnit.HOURS)
+            .maxAge(7, TimeUnit.DAYS)
             .build()
 
         return response.newBuilder()

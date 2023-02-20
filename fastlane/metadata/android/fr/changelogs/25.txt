@@ -1,0 +1,5 @@
+1.11.0
+
+- Ajout de la traduction Chinoise (par Hu Shenghao).
+- Ajout du zoom de la caméra par les gestes (avec 2 doigts et avec un double tap) (par Hu Shenghao).
+- Plusieurs petites améliorations diverses.
