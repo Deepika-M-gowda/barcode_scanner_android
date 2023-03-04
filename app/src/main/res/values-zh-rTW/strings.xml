@@ -352,9 +352,9 @@
     <string name="error_bar_code_wrong_key_message">第 %1$ 位 (控制鍵) 應該是 %2$s。</string>
     <string name="error_bar_code_encoding_iso_8859_1_error_message">此條碼類型不支援特殊字元。</string>
     <string name="error_bar_code_encoding_us_ascii_error_message">此條碼類型不支援特殊字元。</string>
-    <string name="error_bar_code_93_regex_error_message">"Code 93" 條碼類型可編碼 26 個大寫字母，10 個數字 (0-9) 以及8個特殊字元 « -, ., space, *, $, /, +, % »。此條碼類型不能編碼小寫字母與其他特殊字元。</string>
-    <string name="error_bar_code_39_regex_error_message">"Code 39" 條碼類型可編碼 26 大寫字母，10 個數字 (0-9) 以及7個特殊字元 « -, ., space, $, /, +, % »。此條碼類型不能編碼小寫字母與其他特殊字元。</string>
-    <string name="error_bar_codabar_regex_error_message">"Codabar" 條碼類型可編碼10個數字 (0-9) 以及6個特殊字元 « -, $, :, /, ., + »。它也可包含字元 A, B, C 或 D 作為第一個與最後一個條碼字元，以指定字串的開頭和結尾。</string>
+    <string name="error_bar_code_93_regex_error_message">"Code 93" 條碼類型可編碼 26 個大寫字母，10 個數字 (0–9) 以及8個特殊字元 « -, ., space, *, $, /, +, % »。此條碼類型不能編碼小寫字母與其他特殊字元。</string>
+    <string name="error_bar_code_39_regex_error_message">"Code 39" 條碼類型可編碼 26 大寫字母，10 個數字 (0–9) 以及7個特殊字元 « -, ., space, $, /, +, % »。此條碼類型不能編碼小寫字母與其他特殊字元。</string>
+    <string name="error_bar_codabar_regex_error_message">"Codabar" 條碼類型可編碼10個數字 (0–9) 以及6個特殊字元 « -, $, :, /, ., + »。它也可包含字元 A, B, C 或 D 作為第一個與最後一個條碼字元，以指定字串的開頭和結尾。</string>
     <string name="error_bar_code_itf_error_message">"ITF" 條碼類型必須包含偶數個字元。</string>
     <string name="error_bar_code_upc_e_not_start_with_0_error_message">"UPC-E" 條碼類型開頭必須是 0。</string>
 
@@ -682,109 +682,4 @@
     <string name="country_nz">紐西蘭</string>
     <string name="country_my">馬來西亞</string>
     <string name="country_mo">澳門</string>
-
-    <!-- No translatable -->
-
-    <string name="app_name" translatable="false">Barcode Scanner</string>
-
-    <!-- Animations -->
-    <string name="animation_activity_transition" translatable="false">AnimationActivityTransition</string>
-
-    <!-- External Services Label -->
-    <string name="google_label" translatable="false">Google</string>
-    <string name="bing_label" translatable="false">Bing</string>
-    <string name="duckduckgo_label" translatable="false">DuckDuckGo</string>
-    <string name="startpage_label" translatable="false">Startpage</string>
-    <string name="brave_search_label" translatable="false">Brave Search</string>
-    <string name="qwant_label" translatable="false">Qwant</string>
-    <string name="ecosia_label" translatable="false">Ecosia</string>
-    <string name="lilo_label" translatable="false">Lilo</string>
-    <string name="amazon_label" translatable="false">Amazon</string>
-    <string name="ebay_label" translatable="false">Ebay</string>
-    <string name="fnac_label" translatable="false">Fnac</string>
-    <string name="open_food_facts_label" translatable="false">Open Food Facts</string>
-    <string name="open_pet_food_facts_label" translatable="false">Open Pet Food Facts</string>
-    <string name="open_beauty_facts_label" translatable="false">Open Beauty Facts</string>
-    <string name="open_library_label" translatable="false">Open Library</string>
-
-    <!-- Preferences Settings Keys -->
-    <string name="preferences_color_key" translatable="false">preferences_color_key</string>
-    <string name="preferences_theme_key" translatable="false">preferences_theme_key</string>
-    <string name="preferences_languages_key" translatable="false">preferences_languages_key</string>
-    <string name="preferences_switch_scan_use_camera_x_api_key" translatable="false">preferences_switch_scan_use_camera_x_api_key</string>
-    <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
-    <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
-    <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
-    <string name="preferences_switch_scan_screen_rotation_key" translatable="false">preferences_switch_scan_screen_rotation_key</string>
-    <string name="preferences_switch_scan_barcode_copied_key" translatable="false">preferences_switch_scan_barcode_copied_key</string>
-    <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
-    <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
-    <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
-    <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>
-    <string name="preferences_source_code_key" translatable="false">preferences_source_code_key</string>
-
-    <!-- About Library Third -->
-    <string name="dependency_zxing_title_label" translatable="false">ZXing</string>
-    <string name="dependency_zxing_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
-    <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
-
-    <string name="dependency_camera_x_title_label" translatable="false">CameraX</string>
-    <string name="dependency_camera_x_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_camera_x_author_label" translatable="false">Google</string>
-    <string name="dependency_camera_x_github_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/camera</string>
-
-    <string name="dependency_zxing_code_scanner_title_label" translatable="false">Code Scanner</string>
-    <string name="dependency_zxing_code_scanner_license_label" translatable="false">MIT License</string>
-    <string name="dependency_zxing_code_scanner_author_label" translatable="false">Yuriy Budiyev</string>
-    <string name="dependency_zxing_code_scanner_github_link_label" translatable="false">https://github.com/yuriy-budiyev/code-scanner</string>
-
-    <string name="dependency_ez_vcard_title_label" translatable="false">ez-vcard</string>
-    <string name="dependency_ez_vcard_license_label" translatable="false">FreeBSD</string>
-    <string name="dependency_ez_vcard_author_label" translatable="false">Michael Angstadt</string>
-    <string name="dependency_ez_vcard_github_link_label" translatable="false">https://github.com/mangstadt/ez-vcard</string>
-
-    <string name="dependency_android_image_cropper_title_label" translatable="false">Android Image Cropper</string>
-    <string name="dependency_android_image_cropper_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_android_image_cropper_author_label" translatable="false">CanHub</string>
-    <string name="dependency_android_image_cropper_github_link_label" translatable="false">https://github.com/CanHub/Android-Image-Cropper</string>
-
-    <string name="dependency_coil_title_label" translatable="false">Coil</string>
-    <string name="dependency_coil_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_coil_author_label" translatable="false">coil-kt</string>
-    <string name="dependency_coil_github_link_label" translatable="false">https://github.com/coil-kt/coil</string>
-
-    <string name="dependency_material_components_title_label" translatable="false">Material Components for Android</string>
-    <string name="dependency_material_components_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_material_components_author_label" translatable="false">Material Components</string>
-    <string name="dependency_material_components_github_link_label" translatable="false">https://github.com/material-components/material-components-android</string>
-
-    <!--<string name="dependency_kotlinx_coroutines_title_label" translatable="false">Module kotlinx-coroutines-android</string>
-    <string name="dependency_kotlinx_coroutines_github_link_label" translatable="false">https://github.com/Kotlin/kotlinx.coroutines/tree/master/ui/kotlinx-coroutines-android</string>-->
-
-    <string name="dependency_koin_title_label" translatable="false">Koin</string>
-    <string name="dependency_koin_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_koin_author_label" translatable="false">insert-koin.io</string>
-    <string name="dependency_koin_github_link_label" translatable="false">https://github.com/InsertKoinIO/koin</string>
-
-    <string name="dependency_gson_title_label" translatable="false">Gson</string>
-    <string name="dependency_gson_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_gson_author_label" translatable="false">Google</string>
-    <string name="dependency_gson_github_link_label" translatable="false">https://github.com/google/gson</string>
-
-    <string name="dependency_retrofit_title_label" translatable="false">Retrofit</string>
-    <string name="dependency_retrofit_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_retrofit_author_label" translatable="false">Square</string>
-    <string name="dependency_retrofit_github_link_label" translatable="false">https://github.com/square/retrofit</string>
-
-    <string name="dependency_room_title_label" translatable="false">Room</string>
-    <string name="dependency_room_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_room_author_label" translatable="false">Google</string>
-    <string name="dependency_room_remote_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room</string>
-
-    <string name="dependency_live_data_title_label" translatable="false">LiveData</string>
-    <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
-
-    <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
 </resources>
