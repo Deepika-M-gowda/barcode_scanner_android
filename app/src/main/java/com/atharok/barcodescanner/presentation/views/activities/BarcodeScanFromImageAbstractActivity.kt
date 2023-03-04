@@ -36,6 +36,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+import java.io.File
 
 abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
 
@@ -136,4 +137,28 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
     }
 
     protected abstract fun onSuccessfulImageScan(result: Result?)
+
+    override fun finish() {
+        removeTemporariesFiles()
+        super.finish()
+    }
+
+    /**
+     * La librairie android-image-cropper enregistre les crops d'image dans le répertoire de l'application.
+     * Cette method permet donc de supprimer ces fichiers devenus inutiles.
+     */
+    private fun removeTemporariesFiles(){
+        val dir = File(getExternalFilesDir(null), "Pictures")
+        deleteRecursive(dir)
+        dir.delete()
+    }
+
+    private fun deleteRecursive(fileOrDirectory: File) {
+        if (fileOrDirectory.isDirectory) {
+            fileOrDirectory.listFiles()?.forEach {
+                deleteRecursive(it)
+            }
+        }
+        fileOrDirectory.delete()
+    }
 }
