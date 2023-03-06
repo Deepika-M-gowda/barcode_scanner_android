@@ -45,5 +45,7 @@ class BarcodeRepositoryImpl(private val barcodeDao: BarcodeDao): BarcodeReposito
 
     override suspend fun deleteAllBarcode(): Int = barcodeDao.deleteAll()
 
+    override suspend fun deleteBarcodes(barcodes: List<Barcode>): Int = barcodeDao.deleteBarcodes(barcodes)
+
     override suspend fun deleteBarcode(barcode: Barcode): Int = barcodeDao.delete(barcode)
 }

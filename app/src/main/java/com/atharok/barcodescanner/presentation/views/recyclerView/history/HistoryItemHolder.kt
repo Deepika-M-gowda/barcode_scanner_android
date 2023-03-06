@@ -24,6 +24,7 @@ import android.text.format.DateUtils
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.getColorStateListFromAttrRes
 import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
@@ -33,16 +34,21 @@ import com.google.zxing.BarcodeFormat
 import java.lang.ref.WeakReference
 
 class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
-    : RecyclerView.ViewHolder(viewBinding.root), View.OnClickListener {
+    : RecyclerView.ViewHolder(viewBinding.root), View.OnClickListener, View.OnLongClickListener {
 
-    private var weakRefCallback: WeakReference<HistoryItemAdapter.OnItemClickListener>? = null
-    private lateinit var barcode: Barcode
+    private var weakRefCallback: WeakReference<HistoryItemAdapter.OnBarcodeItemListener>? = null
+    private lateinit var item: HistoryItem
 
     init {
-        itemView.findViewById<MaterialCardView>(R.id.recycler_view_item_history_foreground_layout).setOnClickListener(this)
+        itemView.findViewById<MaterialCardView>(R.id.recycler_view_item_history_foreground_layout).apply {
+            setOnClickListener(this@HistoryItemHolder)
+            setOnLongClickListener(this@HistoryItemHolder)
+        }
     }
 
-    fun update(barcode: Barcode, listener: HistoryItemAdapter.OnItemClickListener){
+    fun update(item: HistoryItem, listener: HistoryItemAdapter.OnBarcodeItemListener){
+
+        val barcode: Barcode = item.barcode
 
         val barcodeType = barcode.getBarcodeType()
 
@@ -59,7 +65,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
 
         viewBinding.recyclerViewItemHistoryImageView.setImageResource(drawableResource)
 
-        // ---- Bar Code Icon ----
+        // ---- Barcode Icon ----
         val barcodeIconDrawableResource: Int = when {
             barcode.is1DProductBarcodeFormat || barcode.is1DIndustrialBarcodeFormat -> R.drawable.ic_bar_code_24
             barcode.is2DBarcodeFormat -> {
@@ -92,12 +98,13 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         val date = barcode.scanDate
         viewBinding.recyclerViewItemHistoryDateTextView.text = getDateAgo(date)
 
-        this.barcode=barcode
-        this.weakRefCallback = WeakReference(listener)
-    }
+        // ---- Item CardView Selected ----
+        viewBinding.recyclerViewItemHistoryForegroundLayout.backgroundTintList = if(item.isSelected){
+            itemView.context.getColorStateListFromAttrRes(R.attr.colorSurfaceVariant)
+        } else null
 
-    override fun onClick(v: View?) {
-        this.weakRefCallback?.get()?.onItemClick(v, barcode)
+        this.item=item
+        this.weakRefCallback = WeakReference(listener)
     }
 
     fun getForegroundLayout() = viewBinding.recyclerViewItemHistoryForegroundLayout
@@ -111,5 +118,31 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         val ago = DateUtils.getRelativeTimeSpanString(timestamp, now, DateUtils.MINUTE_IN_MILLIS)
 
         return ago.toString()
+    }
+
+    override fun onClick(v: View?) {
+        this.weakRefCallback?.get()?.let { barcodeItemListener ->
+            if(barcodeItemListener.isSelectedMode()) {
+                selectItem(v, barcodeItemListener)
+            } else {
+                barcodeItemListener.onItemClick(v, item.barcode)
+            }
+        }
+    }
+
+    override fun onLongClick(v: View?): Boolean {
+        this.weakRefCallback?.get()?.let { barcodeItemListener ->
+            selectItem(v, barcodeItemListener)
+        }
+        return true
+    }
+
+    private fun selectItem(v: View?, barcodeItemListener: HistoryItemAdapter.OnBarcodeItemListener) {
+        item.isSelected = !item.isSelected
+        barcodeItemListener.onItemSelect(v, item.barcode, item.isSelected)
+
+        viewBinding.recyclerViewItemHistoryForegroundLayout.backgroundTintList = if(item.isSelected){
+            itemView.context.getColorStateListFromAttrRes(R.attr.colorSurfaceVariant)
+        } else null
     }
 }

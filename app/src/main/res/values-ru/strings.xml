@@ -79,7 +79,8 @@
     <string name="label_history_empty">История сканирования пуста…</string>
     <string name="snack_bar_message_item_deleted">Товар \"%1$s\" был удален из истории.</string>
     <string name="popup_message_confirmation_delete_history">Удалить всю историю?</string>
-    <string name="menu_item_history_delete_all">Удалить историю</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
+    <string name="menu_item_history_delete">Удалить историю</string>
     <string name="delete_label">Удалить</string>
     <string name="cancel_label">Отмена</string>
     <string name="record_label">Сохранить</string>

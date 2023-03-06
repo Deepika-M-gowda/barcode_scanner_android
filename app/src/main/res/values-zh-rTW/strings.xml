@@ -79,7 +79,8 @@
     <string name="label_history_empty">沒有掃描紀錄…</string>
     <string name="snack_bar_message_item_deleted">\"%1$s\" 已被從歷史紀錄中移除。</string>
     <string name="popup_message_confirmation_delete_history">刪除所有歷史紀錄？</string>
-    <string name="menu_item_history_delete_all">刪除歷史紀錄</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
+    <string name="menu_item_history_delete">刪除歷史紀錄</string>
     <string name="delete_label">刪除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">儲存</string>

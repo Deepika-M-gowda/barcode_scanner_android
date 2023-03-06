@@ -49,5 +49,8 @@ interface BarcodeDao {
     suspend fun deleteAll(): Int
 
     @Delete
+    suspend fun deleteBarcodes(barcodes: List<Barcode>): Int
+
+    @Delete
     suspend fun delete(barcode: Barcode): Int
 }

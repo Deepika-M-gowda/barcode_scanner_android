@@ -13,5 +13,5 @@
         android:id="@+id/menu_scanner_scan_from_image"
         android:icon="@drawable/baseline_image_24"
         app:showAsAction="ifRoom"
-        android:title="@string/scan_from_image_label" />
+        android:title="@string/intent_filter_scan_by_image" />
 </menu>

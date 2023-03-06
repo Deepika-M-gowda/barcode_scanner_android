@@ -43,5 +43,7 @@ interface BarcodeRepository {
 
     suspend fun deleteAllBarcode(): Int
 
+    suspend fun deleteBarcodes(barcodes: List<Barcode>): Int
+
     suspend fun deleteBarcode(barcode: Barcode): Int
 }

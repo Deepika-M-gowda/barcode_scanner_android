@@ -28,6 +28,7 @@ import android.widget.TextView
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceViewHolder
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.setTextColorFromAttrRes
 
 class CustomPreferenceCategory: PreferenceCategory {
 
@@ -43,14 +44,10 @@ class CustomPreferenceCategory: PreferenceCategory {
 
         val font: Typeface? = Typeface.create("sans-serif-black", Typeface.NORMAL)//ResourcesCompat.getFont(context, R.font.roboto_black)
         val textSizeInDP = context.resources.getDimension(R.dimen.sub_title_text_size) / context.resources.displayMetrics.density
-        val typedValue = TypedValue()
-        val theme = context.theme
-        theme.resolveAttribute(R.attr.colorPrimary, typedValue, true)
-        val color = typedValue.data
 
         val titleView: TextView? = holder.itemView.findViewById(android.R.id.title)
         titleView?.typeface = font
         titleView?.textSize = textSizeInDP
-        titleView?.setTextColor(color)
+        titleView?.setTextColorFromAttrRes(R.attr.colorPrimary)
     }
 }

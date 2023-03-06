@@ -51,7 +51,7 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListener, HistoryItemTouchHelperListener {
+class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnBarcodeItemListener, HistoryItemTouchHelperListener {
 
     private val databaseViewModel: DatabaseViewModel by activityViewModel()
     private val adapter: HistoryItemAdapter = HistoryItemAdapter(this)
@@ -71,6 +71,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         configureMenu()
 
         viewBinding.fragmentMainHistoryRecyclerView.visibility = View.GONE
@@ -80,6 +81,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
 
         databaseViewModel.barcodeList.observe(viewLifecycleOwner) {
 
+            barcodeItemSelected.clear()
             adapter.updateData(it)
 
             if (it.isEmpty()) {
@@ -108,36 +110,21 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
-                R.id.menu_history_delete_all -> {showDeleteConfirmationDialog(); true}
+                R.id.menu_history_delete_all -> {
+                    if(barcodeItemSelected.isEmpty()){
+                        showDeleteAllConfirmationDialog()
+                    }else{
+                        showDeleteSelectedItemsConfirmationDialog()
+                    }
+                    true
+                }
                 else -> false
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    // ---- HistoryItemAdapter.OnItemClickListener Implementation ----
-    override fun onItemClick(view: View?, barcode: Barcode) {
-        startBarcodeAnalysisActivity(barcode)
-    }
 
-    // ---- HistoryItemTouchHelperListener Implementation ----
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
-        val barcode: Barcode = adapter.getItem(position)
-
-        databaseViewModel.deleteBarcode(barcode)
-
-        // Dans le cas de texte trop long et/ou contenant des '\n', on adapte la chaine de caractères
-        val content = if (barcode.contents.length <= 16) {
-            barcode.contents.substringBefore('\n')
-        } else
-            "${barcode.contents.substring(0, 16).substringBefore('\n')}..."
-
-        showSnackbar(getString(R.string.snack_bar_message_item_deleted, content))
-    }
-
-    // ----
-
-    private fun configureRecyclerView(){
-
+    private fun configureRecyclerView() {
         val recyclerView = viewBinding.fragmentMainHistoryRecyclerView
 
         val layoutManager = LinearLayoutManager(requireContext())
@@ -156,21 +143,68 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnItemClickListen
             )
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
-
     }
 
-    private fun startBarcodeAnalysisActivity(barcode: Barcode){
+    private fun startBarcodeAnalysisActivity(barcode: Barcode) {
         val intent = createStartActivityIntent(requireContext(), BarcodeAnalysisActivity::class).apply {
             putExtra(BARCODE_KEY, barcode)
         }
         startActivity(intent)
     }
 
-    private fun showDeleteConfirmationDialog(){
+    // ---- HistoryItemAdapter.OnItemClickListener Implementation ----
+
+    private val barcodeItemSelected by lazy { mutableListOf<Barcode>() }
+
+    override fun onItemClick(view: View?, barcode: Barcode) {
+        startBarcodeAnalysisActivity(barcode)
+    }
+
+    override fun onItemSelect(view: View?, barcode: Barcode, isSelected: Boolean) {
+        if(isSelected){
+            barcodeItemSelected.add(barcode)
+        }else{
+            barcodeItemSelected.remove(barcode)
+        }
+    }
+
+    override fun isSelectedMode(): Boolean = barcodeItemSelected.isNotEmpty()
+
+    // ---- HistoryItemTouchHelperListener Implementation ----
+    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
+        val barcode: Barcode = adapter.getBarcode(position)
+
+        databaseViewModel.deleteBarcode(barcode)
+
+        // Dans le cas de texte trop long et/ou contenant des '\n', on adapte la chaine de caractères
+        val content = if (barcode.contents.length <= 16) {
+            barcode.contents.substringBefore('\n')
+        } else
+            "${barcode.contents.substring(0, 16).substringBefore('\n')}..."
+
+        showSnackbar(getString(R.string.snack_bar_message_item_deleted, content))
+    }
+
+    // ---- Delete History ----
+
+    private fun showDeleteAllConfirmationDialog() {
+        showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_history) {
+            databaseViewModel.deleteAll()
+        }
+    }
+
+    private fun showDeleteSelectedItemsConfirmationDialog() {
+        showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
+            databaseViewModel.deleteBarcodes(barcodeItemSelected)
+        }
+    }
+
+    private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
         MaterialAlertDialogBuilder(requireContext(), R.style.AppTheme_MaterialAlertDialog)
-            .setTitle(R.string.popup_message_confirmation_delete_history)
+            .setTitle(R.string.delete_label)
+            .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->
-                databaseViewModel.deleteAll()
+                positiveAction()
             }
             .setNegativeButton(R.string.cancel_label, null)
             .show()

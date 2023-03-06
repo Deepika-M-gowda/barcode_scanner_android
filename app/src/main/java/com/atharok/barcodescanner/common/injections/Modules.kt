@@ -369,7 +369,7 @@ val viewsModule = module {
         TextView(activity).apply {
             id = View.NO_ID
             text = message
-            setTextColorFromAttrRes(android.R.attr.textColorSecondary)
+            //setTextColorFromAttrRes(android.R.attr.textColorSecondary)
 
             val textSizeInDP = resources.getDimension(R.dimen.standard_text_size) / resources.displayMetrics.density
             textSize = textSizeInDP

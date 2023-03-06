@@ -26,6 +26,6 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 
 fun TextView.setTextColorFromAttrRes(@AttrRes attrRes: Int){
-    @ColorInt val color = convertAttrResToColorInt(attrRes)
+    @ColorInt val color = context.getColorInt(attrRes)
     setTextColor(ColorStateList.valueOf(color))
 }

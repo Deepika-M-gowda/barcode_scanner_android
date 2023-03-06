@@ -28,13 +28,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
-class HistoryItemAdapter(private val callback: OnItemClickListener): RecyclerView.Adapter<HistoryItemHolder>() {
+class HistoryItemAdapter(private val callback: OnBarcodeItemListener): RecyclerView.Adapter<HistoryItemHolder>() {
 
-    interface OnItemClickListener {
+    interface OnBarcodeItemListener {
         fun onItemClick(view: View?, barcode: Barcode)
+        fun onItemSelect(view: View?, barcode: Barcode, isSelected: Boolean)
+        fun isSelectedMode(): Boolean
     }
 
-    private var barcodeList = listOf<Barcode>()
+    private var items = listOf<HistoryItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryItemHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -42,19 +44,19 @@ class HistoryItemAdapter(private val callback: OnItemClickListener): RecyclerVie
         return HistoryItemHolder(viewBinding)
     }
 
-    override fun getItemCount(): Int = barcodeList.size
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: HistoryItemHolder, position: Int) {
-        holder.update(barcodeList[position], callback)
+        holder.update(items[position], callback)
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(barcodeList: List<Barcode>){
-        /*this.barcodeMutableList.clear()
-        this.barcodeMutableList.addAll(barcodeList)*/
-        this.barcodeList = barcodeList
+        items = barcodeList.map { HistoryItem(it) }
         this.notifyDataSetChanged()
     }
 
-    fun getItem(position: Int) = this.barcodeList[position]
+    fun getItem(position: Int): HistoryItem = this.items[position]
+    
+    fun getBarcode(position: Int): Barcode = getItem(position).barcode
 }

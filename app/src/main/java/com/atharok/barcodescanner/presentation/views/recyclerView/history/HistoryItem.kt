@@ -18,13 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extensions
+package com.atharok.barcodescanner.presentation.views.recyclerView.history
 
-import android.widget.Button
-import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
-fun Button.setTextColorFromAttrRes(@AttrRes attrRes: Int){
-    @ColorInt val color = context.getColorInt(attrRes)
-    this.setTextColor(color)
-}
+data class HistoryItem(val barcode: Barcode, var isSelected: Boolean = false)

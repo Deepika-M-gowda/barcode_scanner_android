@@ -38,7 +38,7 @@ fun View.setBackground(@AttrRes attrRes: Int) {
 
     typedArray.recycle()
 }
-
+/*
 @ColorInt
 fun View.convertAttrResToColorInt(@AttrRes attrRes: Int): Int {
 
@@ -47,7 +47,7 @@ fun View.convertAttrResToColorInt(@AttrRes attrRes: Int): Int {
     theme.resolveAttribute(attrRes, typedValue, true)
 
     return typedValue.data
-}
+}*/
 
 inline fun View.afterMeasured(crossinline block: () -> Unit) {
     if (measuredWidth > 0 && measuredHeight > 0) {

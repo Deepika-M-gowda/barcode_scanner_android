@@ -144,7 +144,7 @@
         <item name="colorOnSurface">?android:textColorSecondary</item>
 
         <!-- Error -->
-        <item name="colorError">?colorNegative</item>
+        <item name="colorError">?colorError</item>
 
         <!-- Text Appearance styles -->
         <item name="textAppearanceSubtitle1">@style/AppTheme.TextView.Appearance.Subtitle.Secondary</item>

@@ -43,7 +43,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_warning_24"
             android:contentDescription="@string/image_view_description_icon"
-            app:tint="?android:textColor" />
+            app:tint="?android:textColorPrimary" />
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_uri_malicious_text_view"

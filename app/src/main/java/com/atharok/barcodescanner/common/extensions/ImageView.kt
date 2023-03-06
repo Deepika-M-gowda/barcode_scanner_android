@@ -37,6 +37,6 @@ fun ImageView.setImageFromWeb(url: String?, layout: View? = null){
 }
 
 fun ImageView.setImageColorFromAttrRes(@AttrRes attrRes: Int){
-    @ColorInt val color = convertAttrResToColorInt(attrRes)
+    @ColorInt val color = context.getColorInt(attrRes)
     imageTintList = ColorStateList.valueOf(color)
 }

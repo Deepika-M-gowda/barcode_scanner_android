@@ -79,7 +79,8 @@
     <string name="label_history_empty">Aucun éléments scannés…</string>
     <string name="snack_bar_message_item_deleted">Le produit \"%1$s\" a été supprimé de l\'historique</string>
     <string name="popup_message_confirmation_delete_history">Supprimer tout l\'historique ?</string>
-    <string name="menu_item_history_delete_all">Supprimer l\'historique</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">Supprimer les éléments sélectionnés?</string>
+    <string name="menu_item_history_delete">Supprimer l\'historique</string>
     <string name="delete_label">Supprimer</string>
     <string name="cancel_label">Annuler</string>
     <string name="record_label">Enregistrer</string>

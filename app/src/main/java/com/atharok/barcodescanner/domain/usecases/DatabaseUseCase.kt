@@ -41,5 +41,7 @@ class DatabaseUseCase(private val barcodeRepository: BarcodeRepository) {
 
     suspend fun deleteBarcode(barcode: Barcode) = barcodeRepository.deleteBarcode(barcode)
 
+    suspend fun deleteBarcodes(barcodes: List<Barcode>) = barcodeRepository.deleteBarcodes(barcodes)
+
     suspend fun deleteAll(): Int = barcodeRepository.deleteAllBarcode()
 }

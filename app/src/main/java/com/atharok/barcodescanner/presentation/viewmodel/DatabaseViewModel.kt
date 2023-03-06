@@ -50,6 +50,10 @@ class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel
         databaseUseCase.deleteBarcode(barcode)
     }
 
+    fun deleteBarcodes(barcodes: List<Barcode>) = viewModelScope.launch {
+        databaseUseCase.deleteBarcodes(barcodes)
+    }
+
     fun deleteAll() = viewModelScope.launch {
         databaseUseCase.deleteAll()
     }

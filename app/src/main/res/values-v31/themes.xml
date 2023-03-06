@@ -7,10 +7,10 @@
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
 
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/light_front_primary</item>
+        <!--<item name="android:textColorPrimary">@color/light_front_primary</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="textColor">?android:attr/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/light_front_secondary</item>
+        <item name="android:textColorSecondary">@color/light_front_secondary</item>-->
 
         <!-- Text Font / Size / Style -->
         <item name="fontFamily">sans-serif-medium</item>
@@ -58,10 +58,10 @@
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
 
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/dark_front_primary</item>
+        <!--<item name="android:textColorPrimary">@color/dark_front_primary</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="textColor">?android:attr/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/dark_front_secondary</item>
+        <item name="android:textColorSecondary">@color/dark_front_secondary</item>-->
 
         <!-- Text Font / Size / Style -->
         <item name="fontFamily">sans-serif-medium</item>

@@ -79,7 +79,8 @@
     <string name="label_history_empty">没有扫描记录…</string>
     <string name="snack_bar_message_item_deleted">记录 “%1$s” 已经从扫描记录中删除。</string>
     <string name="popup_message_confirmation_delete_history">删除所有历史记录？</string>
-    <string name="menu_item_history_delete_all">删除历史记录</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
+    <string name="menu_item_history_delete">删除历史记录</string>
     <string name="delete_label">删除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">保存</string>
