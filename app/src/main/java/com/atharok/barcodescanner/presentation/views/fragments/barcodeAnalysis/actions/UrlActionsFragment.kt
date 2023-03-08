@@ -29,14 +29,15 @@ import com.google.zxing.client.result.URIParsedResult
 class UrlActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is URIParsedResult -> configureUrlActions(barcode.contents)
-            else -> configureDefaultActions(barcode.contents)
+            is URIParsedResult -> configureUrlActions(barcode)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureUrlActions(contents: String) = arrayOf(
-        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(contents)), //Idée text: Ouvrir le lien
-        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(contents))
+    private fun configureUrlActions(barcode: Barcode) = arrayOf(
+        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(barcode.contents)), //Idée text: Ouvrir le lien
+        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
+        ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteContentsFromHistory(barcode))
     )
 }

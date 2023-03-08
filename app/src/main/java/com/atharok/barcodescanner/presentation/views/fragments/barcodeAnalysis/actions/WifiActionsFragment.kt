@@ -24,6 +24,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
+import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -41,24 +42,26 @@ class WifiActionsFragment: AbstractActionsFragment() {
 
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is WifiParsedResult -> configureWifiActions(barcode.contents, parsedResult)
-            else -> configureDefaultActions(barcode.contents)
+            is WifiParsedResult -> configureWifiActions(barcode, parsedResult)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureWifiActions(contents: String, parsedResult: WifiParsedResult) = arrayOf(
+    private fun configureWifiActions(barcode: Barcode, parsedResult: WifiParsedResult) = arrayOf(
         ActionItem(R.string.qr_code_type_name_wifi, R.drawable.baseline_wifi_24, showWifiAlertDialog(parsedResult))
-    ) + configureDefaultActions(contents)
+    ) + configureDefaultActions(barcode)
 
     // Actions
 
-    private fun showWifiAlertDialog(parsedResult: WifiParsedResult): () -> Unit = {
-        val items = arrayOf<Pair<String, () -> Unit>>(
-            Pair(getString(R.string.action_wifi_connection_from_app), connectToWifiFromApp(parsedResult)),
-            Pair(getString(R.string.action_wifi_connection_from_wifi_settings), connectToWifiFromWifiSettings(parsedResult))
-        )
+    private fun showWifiAlertDialog(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
+                Pair(getString(R.string.action_wifi_connection_from_app), connectToWifiFromApp(parsedResult)),
+                Pair(getString(R.string.action_wifi_connection_from_wifi_settings), connectToWifiFromWifiSettings(parsedResult))
+            )
 
-        createAlertDialog(requireContext(), getString(R.string.qr_code_type_name_wifi), items).show()
+            createAlertDialog(requireContext(), getString(R.string.qr_code_type_name_wifi), items).show()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -88,18 +91,19 @@ class WifiActionsFragment: AbstractActionsFragment() {
             }
         }
 
-    private fun connectToWifiFromApp(parsedResult: WifiParsedResult): () -> Unit = {
+    private fun connectToWifiFromApp(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val data: WifiSetupData = actionScope.get { parametersOf(parsedResult) }
+            val wifiConnect: WifiConnect = actionScope.get()
 
-        val data: WifiSetupData = actionScope.get { parametersOf(parsedResult) }
-        val wifiConnect: WifiConnect = actionScope.get()
-
-        when {
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> wifiConnect.connectWithApiR(data, wifiPreviewRequest)
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> wifiConnect.connectWithApiQ(data) {
-                showSnackbar(getString(it))
-            }
-            else -> wifiConnect.connectWithApiOld(data) {
-                showSnackbar(getString(it))
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> wifiConnect.connectWithApiR(data, wifiPreviewRequest)
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> wifiConnect.connectWithApiQ(data) {
+                    showSnackbar(getString(it))
+                }
+                else -> wifiConnect.connectWithApiOld(data) {
+                    showSnackbar(getString(it))
+                }
             }
         }
     }
@@ -107,12 +111,13 @@ class WifiActionsFragment: AbstractActionsFragment() {
     /**
      * Copie le mot de passe dans le presse papier et ouvre les paramètres Wifi.
      */
-    private fun connectToWifiFromWifiSettings(parsedResult: WifiParsedResult): () -> Unit = {
-        copyToClipboard("password", parsedResult.password)
-        showToastText(R.string.action_wifi_password_copy_label)
+    private fun connectToWifiFromWifiSettings(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            copyToClipboard("password", parsedResult.password)
+            showToastText(R.string.action_wifi_password_copy_label)
 
-        val intent: Intent = createPickWifiNetworkIntent()
-
-        startActivity(intent)
+            val intent: Intent = createPickWifiNetworkIntent()
+            startActivity(intent)
+        }
     }
 }

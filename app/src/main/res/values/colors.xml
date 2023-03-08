@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--______________________________________ Commons __________________________________________-->
+    <!-- Commons -->
 
     <color name="overlay_mask">#bf000000</color>
     <color name="icon_background">#ff34353a</color>
 
+    <!-- Indicative Color -->
+    <color name="light_color_positive">#46c705</color>
+    <color name="light_color_medium">#e4be00</color>
+    <color name="light_color_negative">#e40000</color>
+    <color name="light_color_unknown">#808080</color>
+    <color name="light_table_row">#0d000000</color>
+
+    <color name="dark_color_positive">#88d867</color>
+    <color name="dark_color_medium">#e7ca3f</color>
+    <color name="dark_color_negative">#ff795b</color>
+    <color name="dark_color_unknown">#bfbfbf</color>
+    <color name="dark_table_row">#33000000</color>
+
+    <!-- Error -->
     <color name="light_error">#BA1A1A</color>
     <color name="light_errorContainer">#FFDAD6</color>
     <color name="light_onError">#FFFFFF</color>
@@ -16,7 +30,7 @@
     <color name="dark_onError">#690005</color>
     <color name="dark_onErrorContainer">#FFDAD6</color>
 
-    <!--______________________________________ Light ____________________________________________-->
+    <!-- Theme Color -->
 
     <color name="blue_light_primary">#2356C8</color>
     <color name="blue_light_onPrimary">#FFFFFF</color>
@@ -297,31 +311,4 @@
     <color name="purple_dark_outlineVariant">#49454E</color>
     <color name="purple_dark_scrim">#000000</color>
     <color name="purple_dark_dialog">#2a282e</color>
-
-    <!-- Front Color -->
-    <color name="light_front_primary">#ff333333</color>
-    <color name="light_front_secondary">#d9333333</color>
-
-    <!-- Indicative Color -->
-    <color name="light_color_positive">#46c705</color>
-    <color name="light_color_medium">#e4be00</color>
-    <color name="light_color_negative">#e40000</color>
-    <color name="light_color_unknown">#808080</color>
-    <color name="light_table_row">#0d000000</color>
-
-    <!--______________________________________ Dark _____________________________________________-->
-
-    
-
-    <!-- Front Color -->
-    <color name="dark_front_primary">#ffcccccc</color>
-    <color name="dark_front_secondary">#d9cccccc</color>
-
-    <!-- Indicative Color -->
-    <color name="dark_color_positive">#88d867</color>
-    <color name="dark_color_medium">#e7ca3f</color>
-    <color name="dark_color_negative">#ff795b</color>
-    <color name="dark_color_unknown">#bfbfbf</color>
-    <color name="dark_table_row">#33000000</color>
-
 </resources>

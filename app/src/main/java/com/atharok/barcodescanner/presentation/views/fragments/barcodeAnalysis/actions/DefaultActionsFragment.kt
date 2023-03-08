@@ -26,6 +26,6 @@ import com.google.zxing.client.result.ParsedResult
 
 class DefaultActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
-        return configureDefaultActions(barcode.contents)
+        return configureDefaultActions(barcode)
     }
 }

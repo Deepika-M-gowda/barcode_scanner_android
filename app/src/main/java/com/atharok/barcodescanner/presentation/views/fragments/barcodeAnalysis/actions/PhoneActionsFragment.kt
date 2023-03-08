@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
+import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.intent.createAddPhoneNumberIntent
@@ -32,31 +33,37 @@ import com.google.zxing.client.result.TelParsedResult
 class PhoneActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is TelParsedResult -> configurePhoneActions(barcode.contents, parsedResult)
-            else -> configureDefaultActions(barcode.contents)
+            is TelParsedResult -> configurePhoneActions(barcode, parsedResult)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configurePhoneActions(contents: String, parsedResult: TelParsedResult) = arrayOf(
+    private fun configurePhoneActions(barcode: Barcode, parsedResult: TelParsedResult) = arrayOf(
         ActionItem(R.string.action_call_phone_label, R.drawable.baseline_call_24, callPhone(parsedResult)),
         ActionItem(R.string.action_send_sms_label, R.drawable.baseline_textsms_24, sendSmsToPhoneNumber(parsedResult)),
         ActionItem(R.string.action_add_to_contacts, R.drawable.baseline_contacts_24, addPhoneNumberToContact(parsedResult))
-    ) + configureDefaultActions(contents)
+    ) + configureDefaultActions(barcode)
 
     // Actions
 
-    private fun callPhone(parsedResult: TelParsedResult): () -> Unit = {
-        val intent = createCallPhoneNumberIntent(parsedResult)
-        mStartActivity(intent)
+    private fun callPhone(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createCallPhoneNumberIntent(parsedResult)
+            mStartActivity(intent)
+        }
     }
 
-    private fun sendSmsToPhoneNumber(parsedResult: TelParsedResult): () -> Unit = {
-        val intent = createSendSmsToPhoneNumberIntent(parsedResult)
-        mStartActivity(intent)
+    private fun sendSmsToPhoneNumber(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createSendSmsToPhoneNumberIntent(parsedResult)
+            mStartActivity(intent)
+        }
     }
 
-    private fun addPhoneNumberToContact(parsedResult: TelParsedResult): () -> Unit = {
-        val intent = createAddPhoneNumberIntent(parsedResult)
-        mStartActivity(intent)
+    private fun addPhoneNumberToContact(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createAddPhoneNumberIntent(parsedResult)
+            mStartActivity(intent)
+        }
     }
 }

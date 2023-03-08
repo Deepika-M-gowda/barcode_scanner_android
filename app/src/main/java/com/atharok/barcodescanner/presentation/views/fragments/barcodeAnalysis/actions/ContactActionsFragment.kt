@@ -20,9 +20,11 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
+import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.intent.createAddContactIntent
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.AddressBookParsedResult
 import com.google.zxing.client.result.ParsedResult
@@ -30,19 +32,21 @@ import com.google.zxing.client.result.ParsedResult
 class ContactActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is AddressBookParsedResult -> configureContactActions(barcode.contents, parsedResult)
-            else -> configureDefaultActions(barcode.contents)
+            is AddressBookParsedResult -> configureContactActions(barcode, parsedResult)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureContactActions(contents: String, parsedResult: AddressBookParsedResult) = arrayOf(
+    private fun configureContactActions(barcode: Barcode, parsedResult: AddressBookParsedResult) = arrayOf(
         ActionItem(R.string.action_add_to_contacts, R.drawable.baseline_contacts_24, addToContact(parsedResult))
-    ) + configureDefaultActions(contents)
+    ) + configureDefaultActions(barcode)
 
     // Actions
 
-    private fun addToContact(parsedResult: AddressBookParsedResult): () -> Unit = {
-        val intent = createAddContactIntent(parsedResult)
-        mStartActivity(intent)
+    private fun addToContact(parsedResult: AddressBookParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createAddContactIntent(parsedResult)
+            mStartActivity(intent)
+        }
     }
 }

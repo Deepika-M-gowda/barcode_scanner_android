@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
+import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -29,28 +30,31 @@ import com.google.zxing.client.result.ParsedResult
 class FoodActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(barcode.getBarcodeType()){
-            BarcodeType.FOOD -> configureFoodActions(barcode.contents)
-            else -> configureDefaultActions(barcode.contents)
+            BarcodeType.FOOD -> configureFoodActions(barcode)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureFoodActions(contents: String) = arrayOf(
-        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, showUrlsAlertDialog(contents)),
-        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(contents))
+    private fun configureFoodActions(barcode: Barcode) = arrayOf(
+        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, showUrlsAlertDialog(barcode.contents)),
+        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
+        ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteContentsFromHistory(barcode))
     )
 
     // Actions
 
-    private fun showUrlsAlertDialog(contents: String): () -> Unit = {
-        val webUrl = getSearchEngineUrl(contents)
-        val openFoodFactsUrl = getString(R.string.search_engine_open_food_facts_product_url, contents)
+    private fun showUrlsAlertDialog(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val webUrl = getSearchEngineUrl(contents)
+            val openFoodFactsUrl = getString(R.string.search_engine_open_food_facts_product_url, contents)
 
-        val items = arrayOf<Pair<String, () -> Unit>>(
-            Pair(getString(R.string.action_web_search_label), openUrl(webUrl)),
-            Pair(getString(R.string.action_product_search_label, getString(R.string.open_food_facts_label)), openUrl(openFoodFactsUrl))
-        )
+            val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
+                Pair(getString(R.string.action_web_search_label), openUrl(webUrl)),
+                Pair(getString(R.string.action_product_search_label, getString(R.string.open_food_facts_label)), openUrl(openFoodFactsUrl))
+            )
 
-        createAlertDialog(requireContext(), getString(R.string.search_label), items).show()
+            createAlertDialog(requireContext(), getString(R.string.search_label), items).show()
+        }
     }
 }

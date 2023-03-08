@@ -28,7 +28,7 @@ class ActionButtonHolder(private val viewBinding: TemplateActionButtonBinding)
 
     fun updateItem(item: ActionItem) {
         viewBinding.root.setOnClickListener {
-            item.action()
+            item.listener.onItemClick(it)
         }
         viewBinding.templateActionButtonIcon.setImageResource(item.imageRes)
         viewBinding.templateActionButtonText.setText(item.textRes)

@@ -81,6 +81,8 @@
     <string name="popup_message_confirmation_delete_history">Delete all history?</string>
     <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
     <string name="menu_item_history_delete">Delete history</string>
+    <string name="menu_item_history_delete_from_history">Delete from history</string>
+    <string name="menu_item_history_removed_from_history">Removed from history!</string>
     <string name="delete_label">Delete</string>
     <string name="cancel_label">Cancel</string>
     <string name="record_label">Save</string>

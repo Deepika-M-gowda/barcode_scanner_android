@@ -21,12 +21,13 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.actionButton
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
 class ActionButtonAdapter(private val items: Array<ActionItem>): RecyclerView.Adapter<ActionButtonHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionButtonHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val viewBinding = TemplateActionButtonBinding.inflate(layoutInflater, parent, false)

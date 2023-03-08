@@ -20,9 +20,11 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
+import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.intent.createAddAgendaIntent
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.CalendarParsedResult
 import com.google.zxing.client.result.ParsedResult
@@ -30,31 +32,21 @@ import com.google.zxing.client.result.ParsedResult
 class AgendaActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is CalendarParsedResult -> configureAgendaActions(barcode.contents, parsedResult)
-            else -> configureDefaultActions(barcode.contents)
+            is CalendarParsedResult -> configureAgendaActions(barcode, parsedResult)
+            else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureAgendaActions(contents: String, parsedResult: CalendarParsedResult) = arrayOf(
+    private fun configureAgendaActions(barcode: Barcode, parsedResult: CalendarParsedResult) = arrayOf(
         ActionItem(R.string.action_add_to_calendar, R.drawable.baseline_event_note_24, addToAgenda(parsedResult))
-    ) + configureDefaultActions(contents)
+    ) + configureDefaultActions(barcode)
 
     // Actions
 
-    private fun addToAgenda(parsedResult: CalendarParsedResult): () -> Unit = {
-        /*val pm: PackageManager = requireContext().packageManager
-        val intent = createAddAgendaIntent(parsedResult)
-        val activities = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            pm.queryIntentActivities(intent, PackageManager.ResolveInfoFlags.of(0))
-        } else {
-            pm.queryIntentActivities(intent, 0)
+    private fun addToAgenda(parsedResult: CalendarParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createAddAgendaIntent(parsedResult)
+            mStartActivity(intent)
         }
-        Log.e("info", "${activities.size}")
-        activities.forEach {
-            Log.e("info", it.resolvePackageName)
-        }*/
-
-        val intent = createAddAgendaIntent(parsedResult)
-        mStartActivity(intent)
     }
 }

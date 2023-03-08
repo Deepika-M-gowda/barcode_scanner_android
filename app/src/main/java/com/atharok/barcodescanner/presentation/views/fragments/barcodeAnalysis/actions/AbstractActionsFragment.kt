@@ -39,6 +39,7 @@ import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
@@ -47,6 +48,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.client.result.ParsedResult
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 
@@ -55,6 +57,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     protected val actionScope get() = getKoin().getOrCreateScope(
         ACTION_SCOPE_SESSION_ID, named(ACTION_SCOPE_SESSION)
     )
+    private val databaseViewModel: DatabaseViewModel by activityViewModel()
 
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
     private val viewBinding get() = _binding!!
@@ -78,6 +81,10 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
         val actionItems = configureActions(barcode, parsedResult)
 
+        configureRecyclerView(actionItems)
+    }
+
+    private fun configureRecyclerView(actionItems: Array<ActionItem>) {
         val adapter = ActionButtonAdapter(actionItems)
         val layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.grid_layout_span_count))
 
@@ -90,27 +97,42 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
     abstract fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem>
 
-    protected fun configureDefaultActions(contents: String) = arrayOf(
-        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openUrl(getSearchEngineUrl(contents))),
-        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(contents))
+    protected fun configureDefaultActions(barcode: Barcode) = arrayOf(
+        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openUrl(getSearchEngineUrl(barcode.contents))),
+        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
+        ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteContentsFromHistory(barcode))
     )
 
     // ---- Actions ----
 
-    protected fun openUrl(url: String): () -> Unit = {
-        val intent = createSearchUrlIntent(url)
-        mStartActivity(intent)
+    protected fun openUrl(url: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createSearchUrlIntent(url)
+            mStartActivity(intent)
+        }
     }
 
-    protected fun copyContents(contents: String): () -> Unit = {
-        copyToClipboard("contents", contents)
-        showToastText(R.string.barcode_copied_label)
+    protected fun copyContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            copyToClipboard("contents", contents)
+            showToastText(R.string.barcode_copied_label)
+        }
     }
 
-    protected fun shareTextContents(contents: String): () -> Unit = {
-        val intent = createShareTextIntent(requireContext(), contents)
-        startActivity(intent)
+    protected fun shareTextContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = createShareTextIntent(requireContext(), contents)
+            startActivity(intent)
+        }
+    }
+
+    protected fun deleteContentsFromHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            databaseViewModel.deleteBarcode(barcode)
+            view?.visibility = View.GONE
+            showSnackbar(getString(R.string.menu_item_history_removed_from_history))
+        }
     }
 
     // ---- Utils ----
@@ -136,9 +158,9 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         }
     }
 
-    protected fun createAlertDialog(context: Context, title: String, items: Array<Pair<String, () -> Unit>>): AlertDialog {
+    protected fun createAlertDialog(context: Context, title: String, items: Array<Pair<String, ActionItem.OnActionItemListener>>): AlertDialog {
         val onClickListener = DialogInterface.OnClickListener { _, i ->
-            items[i].second()
+            items[i].second.onItemClick(null)
         }
 
         val itemsLabel: Array<String> = items.map { it.first }.toTypedArray()
