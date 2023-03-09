@@ -135,7 +135,7 @@
     <!-- TextInputLayout -->
     <style name="AppTheme.TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="startIconTint">?android:textColorSecondary</item>
-        <item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.App.TextInputLayout</item>
+        <!--<item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.App.TextInputLayout</item>-->
     </style>
 
     <style name="AppTheme.ThemeOverlay.App.TextInputLayout" parent="">
