@@ -36,7 +36,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.setTextColorFromAttrRes
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.data.api.OpenBeautyFactsService
 import com.atharok.barcodescanner.data.api.OpenFoodFactsService

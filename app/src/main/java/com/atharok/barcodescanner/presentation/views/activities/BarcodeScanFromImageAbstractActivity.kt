@@ -20,16 +20,13 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
-import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ProgressBar
-import androidx.annotation.ColorInt
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.getColorInt
 import com.atharok.barcodescanner.common.extensions.getColorStateListFromAttrRes
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser

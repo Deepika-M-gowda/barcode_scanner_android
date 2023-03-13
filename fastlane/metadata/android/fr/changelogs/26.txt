@@ -1,0 +1,9 @@
+1.12.0
+
+- Ajout de la traduction en chinois traditionnel (par plum7x).
+- Mise à jour de Kotlin (1.8.0). Mise à jour des dépendances.
+- Ajout de la suppression des images générées par le crop view lors du scan à partir d'une image.
+- Ajout de la sélection et la suppression de plusieurs éléments de l'historique. 
+- Ajout de la suppression d'un élément à partir de la vue des résultats.
+- Amélioration des couleurs et des styles. 
+- Amélioration du code.

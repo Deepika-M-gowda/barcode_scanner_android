@@ -21,11 +21,9 @@
 package com.atharok.barcodescanner.common.extensions
 
 import android.graphics.drawable.Drawable
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewTreeObserver
 import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
 
 fun View.setBackground(@AttrRes attrRes: Int) {
     val attrs = intArrayOf(attrRes)
