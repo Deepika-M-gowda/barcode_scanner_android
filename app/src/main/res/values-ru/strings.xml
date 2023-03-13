@@ -77,12 +77,12 @@
 
     <!-- History -->
     <string name="label_history_empty">История сканирования пуста…</string>
-    <string name="snack_bar_message_item_deleted">Товар \"%1$s\" был удален из истории.</string>
+    <string name="snack_bar_message_item_deleted">Элемент \"%1$s\" был удален из истории.</string>
     <string name="popup_message_confirmation_delete_history">Удалить всю историю?</string>
-    <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">Удалить выбранный элемент?</string>
     <string name="menu_item_history_delete">Удалить историю</string>
-    <string name="menu_item_history_delete_from_history">Delete from history</string>
-    <string name="menu_item_history_removed_from_history">Removed from history!</string>
+    <string name="menu_item_history_delete_from_history">Удалить из истории</string>
+    <string name="menu_item_history_removed_from_history">Удалено из истории!</string>
     <string name="delete_label">Удалить</string>
     <string name="cancel_label">Отмена</string>
     <string name="record_label">Сохранить</string>
@@ -312,7 +312,7 @@
     <string name="snack_bar_message_share_bitmap_error">Произошла ошибка при настройке общего ресурса.</string>
 
     <!-- Actions -->
-    <string name="actions_label">Actions</string>
+    <string name="actions_label">Действия</string>
     <string name="intent_chooser_share_title">"Поделиться с…"</string>
     <string name="intent_chooser_mail_title">"Отправить email…"</string>
     <string name="copy_label">Скопировать</string>
@@ -322,7 +322,7 @@
     <string name="action_title_dialog_label">Что вы хотите сделать?</string>
     <string name="action_go_to_url_label">Перейти по URL</string>
     <string name="action_web_search_label">Поиск в интернете</string>
-    <string name="action_product_search_label">Поиск в %1$s</string>
+    <string name="action_product_search_label">Поиск на %1$s</string>
     <string name="action_send_mail_label">Отправить email</string>
     <string name="action_send_sms_label">Отправить SMS</string>
     <string name="action_call_phone_label">Позвонить по номеру телефона</string>
@@ -545,13 +545,13 @@
     <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о продуктах питания, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных о кормах для домашних животных.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических продуктах.</string>
-    <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг, независимо от их языка.</string>
+    <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг независимо от их языка.</string>
 
     <!-- About Library Third -->
     <string name="dependency_by">от %1$s</string>
 
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing (" zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
+    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
     <string name="dependency_camera_x_description_label">Библиотека поддержки CameraX от Jetpack обеспечивает удобный в использовании и многофункциональный API камеры для Android.</string>
     <string name="dependency_zxing_code_scanner_description_label">Библиотека сканера кодов для Android, основанная на ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard - это библиотека vCard, написанная на Java. Она может считывать и записывать vCard в различных форматах.</string>
