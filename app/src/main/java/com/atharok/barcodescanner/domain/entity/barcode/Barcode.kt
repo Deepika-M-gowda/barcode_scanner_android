@@ -42,50 +42,19 @@ data class Barcode(
     val country: CountriesEnum? = determineBarcodeCountry(contents, getBarcodeFormat())
 
     @Ignore
-    val is1DProductBarcodeFormat = is1DProductBarcode()
+    val is1DProductBarcodeFormat = getBarcodeFormat().is1DProductBarcode()
 
     @Ignore
-    val is1DIndustrialBarcodeFormat = is1DIndustrialBarcode()
+    val is1DIndustrialBarcodeFormat = getBarcodeFormat().is1DIndustrialBarcode()
 
     @Ignore
-    val is2DBarcodeFormat = is2DBarcode()
+    val is2DBarcodeFormat = getBarcodeFormat().is2DBarcode()
 
     @Ignore
     fun getBarcodeType(): BarcodeType = BarcodeType.valueOf(type)
 
     @Ignore
     fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.valueOf(formatName)
-
-    @Ignore
-    private fun is1DProductBarcode(): Boolean {
-        return when(getBarcodeFormat()){
-            BarcodeFormat.EAN_13, BarcodeFormat.EAN_8, BarcodeFormat.UPC_EAN_EXTENSION,
-            BarcodeFormat.UPC_A, BarcodeFormat.UPC_E -> true
-
-            else -> false
-        }
-    }
-
-    @Ignore
-    private fun is1DIndustrialBarcode(): Boolean {
-        return when(getBarcodeFormat()){
-            BarcodeFormat.CODE_128, BarcodeFormat.CODABAR,
-            BarcodeFormat.CODE_39, BarcodeFormat.CODE_93, BarcodeFormat.ITF -> true
-
-            else -> false
-        }
-    }
-
-    @Ignore
-    private fun is2DBarcode(): Boolean {
-        return when(getBarcodeFormat()){
-            BarcodeFormat.QR_CODE, BarcodeFormat.AZTEC, BarcodeFormat.DATA_MATRIX,
-            BarcodeFormat.MAXICODE, BarcodeFormat.PDF_417,
-            BarcodeFormat.RSS_14, BarcodeFormat.RSS_EXPANDED -> true
-
-            else -> false
-        }
-    }
 
     @Ignore
     fun isBookBarcode(): Boolean = getBarcodeFormat() == BarcodeFormat.EAN_13 &&

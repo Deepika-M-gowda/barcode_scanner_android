@@ -42,6 +42,7 @@ import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.is2DBarcode
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
 import com.atharok.barcodescanner.domain.library.BitmapRecorder
@@ -118,7 +119,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                     text = bitmapStr,
                     barcodeFormat = barcodeFormat,
                     width = BARCODE_IMAGE_SIZE,
-                    height = BARCODE_IMAGE_SIZE
+                    height = if(barcodeFormat.is2DBarcode()) BARCODE_IMAGE_SIZE else BARCODE_IMAGE_SIZE/2
                 )
             }
 
