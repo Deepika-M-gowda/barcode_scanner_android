@@ -517,6 +517,7 @@
     <string name="preferences_switch_scan_bip_label">Ton ausgeben bei erfolgeichem Scan</string>
     <string name="preferences_switch_scan_screen_rotation_label">Automatische Drehung während des Scans deaktivieren</string>
     <string name="preferences_switch_scan_barcode_copied_label">Kopiere gescannten Barcode in die Zwischenablage</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Suche</string>

@@ -309,7 +309,10 @@ class MainScannerFragment : BaseFragment() {
 
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
-            saveIntoDatabase(barcode)
+            if(settingsManager.shouldAddBarcodeScanToHistory) {
+                // Insert les informations du code-barres dans la base de données (de manière asynchrone)
+                databaseViewModel.insertBarcode(barcode)
+            }
 
             // Si l'application a été ouverte via une application tierce
             if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
@@ -347,7 +350,10 @@ class MainScannerFragment : BaseFragment() {
 
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
-            saveIntoDatabase(barcode)
+            if(settingsManager.shouldAddBarcodeScanToHistory) {
+                // Insert les informations du code-barres dans la base de données (de manière asynchrone)
+                databaseViewModel.insertBarcode(barcode)
+            }
 
             // Si l'application a été ouverte via une application tierce
             if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
@@ -362,14 +368,6 @@ class MainScannerFragment : BaseFragment() {
 
     private fun onErrorScan(t: Throwable) = requireActivity().runOnUiThread {
         showSnackbar(getString(R.string.scan_error_exception_label, t.message))
-    }
-
-    /**
-     * Enregistre dans la base de données, les informations du code-barres qui vient d'être scanné.
-     */
-    private fun saveIntoDatabase(barcode: Barcode){
-        // Insert les informations du code-barres dans la base de données (de manière asynchrone)
-        databaseViewModel.insertBarcode(barcode)
     }
 
     /**

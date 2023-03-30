@@ -517,6 +517,7 @@
     <string name="preferences_switch_scan_bip_label">扫描成功后播放声音</string>
     <string name="preferences_switch_scan_screen_rotation_label">扫描时禁止旋转屏幕</string>
     <string name="preferences_switch_scan_barcode_copied_label">复制扫描结果到剪切板</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">搜索</string>

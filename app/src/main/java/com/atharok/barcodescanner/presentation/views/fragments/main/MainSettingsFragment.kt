@@ -83,6 +83,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_switch_scan_bip_key),
                 getString(R.string.preferences_switch_scan_screen_rotation_key),
                 getString(R.string.preferences_switch_scan_barcode_copied_key),
+                getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key),
                 getString(R.string.preferences_switch_scan_search_on_api_key),
                 getString(R.string.preferences_search_engine_key)
                 -> mActivity.settingsManager.reload()

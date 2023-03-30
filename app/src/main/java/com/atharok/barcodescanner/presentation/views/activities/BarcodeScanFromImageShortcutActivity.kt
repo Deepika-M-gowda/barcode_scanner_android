@@ -41,7 +41,9 @@ class BarcodeScanFromImageShortcutActivity: BarcodeScanFromImageGalleryActivity(
 
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
-            databaseViewModel.insertBarcode(barcode)
+            if(settingsManager.shouldAddBarcodeScanToHistory) {
+                databaseViewModel.insertBarcode(barcode)
+            }
 
             val intent = createStartActivityIntent(this, BarcodeAnalysisActivity::class).apply {
                 putExtra(BARCODE_KEY, barcode)

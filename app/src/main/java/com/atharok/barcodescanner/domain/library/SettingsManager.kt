@@ -45,6 +45,7 @@ class SettingsManager(private val context: Context) {
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
     private val copyBarcodeScanKey = context.getString(R.string.preferences_switch_scan_barcode_copied_key)
+    private val addBarcodeToHistoryScanKey = context.getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key)
 
     var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         private set
@@ -57,6 +58,8 @@ class SettingsManager(private val context: Context) {
     var isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
         private set
     var shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
+        private set
+    var shouldAddBarcodeScanToHistory = prefs.getBoolean(addBarcodeToHistoryScanKey, true)
         private set
 
     // Search
@@ -74,6 +77,7 @@ class SettingsManager(private val context: Context) {
         useBipScan = prefs.getBoolean(bipScanKey, false)
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
         shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
+        shouldAddBarcodeScanToHistory = prefs.getBoolean(addBarcodeToHistoryScanKey, true)
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 

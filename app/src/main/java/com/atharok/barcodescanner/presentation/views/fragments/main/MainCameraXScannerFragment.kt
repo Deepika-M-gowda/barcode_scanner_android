@@ -265,8 +265,10 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
             val barcode: Barcode = get { parametersOf(contents, formatName) }
 
-            // Insert les informations du code-barres dans la base de données (de manière asynchrone)
-            databaseViewModel.insertBarcode(barcode)
+            if(settingsManager.shouldAddBarcodeScanToHistory) {
+                // Insert les informations du code-barres dans la base de données (de manière asynchrone)
+                databaseViewModel.insertBarcode(barcode)
+            }
 
             onResult(barcode)
         } else {
