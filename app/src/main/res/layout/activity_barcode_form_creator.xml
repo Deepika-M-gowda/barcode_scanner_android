@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.activities.BarcodeFormCreatorActivity">
+
+    <include
+        layout="@layout/template_toolbar"
+        android:id="@+id/activity_barcode_form_creator_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/activity_barcode_form_creator_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginStart="@dimen/light_margin"
+        android:layout_marginEnd="@dimen/light_margin"
+        android:layout_below="@id/activity_barcode_form_creator_toolbar">
+        <include
+            layout="@layout/template_item_barcode_creator"
+            android:id="@+id/activity_barcode_form_creator_header" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_barcode_form_creator_body_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/light_margin"
+        android:layout_marginEnd="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_below="@id/activity_barcode_form_creator_frame_layout">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/standard_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/activity_barcode_form_creator_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/activity_barcode_form_creator_error_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_below="@id/activity_barcode_form_creator_fragment"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/activity_barcode_form_creator_error_icon_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standard_margin"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/baseline_warning_24"
+                        android:contentDescription="@string/image_view_description_icon" />
+
+                    <TextView
+                        android:id="@+id/activity_barcode_form_creator_error_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/activity_barcode_form_creator_error_icon_image_view"
+                        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -103,15 +103,15 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
 
     private fun configureDescription(barcodeAnalysis: BarcodeAnalysis){
         val text = when(barcodeAnalysis.barcode.getBarcodeFormat()){
-            BarcodeFormat.UPC_A -> getString(R.string.bar_code_upc_a_description_label)
-            BarcodeFormat.UPC_E -> getString(R.string.bar_code_upc_e_description_label)
-            BarcodeFormat.EAN_13 -> getString(R.string.bar_code_ean_13_description_label)
-            BarcodeFormat.EAN_8 -> getString(R.string.bar_code_ean_8_description_label)
-            BarcodeFormat.CODE_39 -> getString(R.string.bar_code_code_39_description_label)
-            BarcodeFormat.CODE_93 -> getString(R.string.bar_code_code_93_description_label)
-            BarcodeFormat.CODE_128 -> getString(R.string.bar_code_code_128_description_label)
-            BarcodeFormat.CODABAR -> getString(R.string.bar_code_codabar_description_label)
-            BarcodeFormat.ITF -> getString(R.string.bar_code_itf_description_label)
+            BarcodeFormat.UPC_A -> getString(R.string.barcode_upc_a_description_label)
+            BarcodeFormat.UPC_E -> getString(R.string.barcode_upc_e_description_label)
+            BarcodeFormat.EAN_13 -> getString(R.string.barcode_ean_13_description_label)
+            BarcodeFormat.EAN_8 -> getString(R.string.barcode_ean_8_description_label)
+            BarcodeFormat.CODE_39 -> getString(R.string.barcode_code_39_description_label)
+            BarcodeFormat.CODE_93 -> getString(R.string.barcode_code_93_description_label)
+            BarcodeFormat.CODE_128 -> getString(R.string.barcode_code_128_description_label)
+            BarcodeFormat.CODABAR -> getString(R.string.barcode_codabar_description_label)
+            BarcodeFormat.ITF -> getString(R.string.barcode_itf_description_label)
             else -> null
         }
 

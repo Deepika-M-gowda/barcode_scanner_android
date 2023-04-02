@@ -36,7 +36,7 @@ import com.atharok.barcodescanner.databinding.FragmentMainBarcodeCreatorListBind
 import com.atharok.barcodescanner.databinding.TemplateItemBarcodeCreatorBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
-import com.atharok.barcodescanner.presentation.views.activities.BarcodeCreatorFormsActivity
+import com.atharok.barcodescanner.presentation.views.activities.BarcodeFormCreatorActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 
 /**
@@ -82,6 +82,7 @@ class MainBarcodeCreatorListFragment : Fragment() {
         val qrCodeFormatDetails: List<BarcodeFormatDetails> = listOf(
             BarcodeFormatDetails.QR_TEXT,
             BarcodeFormatDetails.QR_AGENDA,
+            BarcodeFormatDetails.QR_APPLICATION,
             BarcodeFormatDetails.QR_CONTACT,
             BarcodeFormatDetails.QR_EPC,
             BarcodeFormatDetails.QR_LOCALISATION,
@@ -99,9 +100,9 @@ class MainBarcodeCreatorListFragment : Fragment() {
 
         // ---- On génère un array des types de QR Code à partir de l'enumeration ----
         val barcodeFormatDetails: List<BarcodeFormatDetails> = listOf(
+            BarcodeFormatDetails.AZTEC,
             BarcodeFormatDetails.DATA_MATRIX,
             BarcodeFormatDetails.PDF_417,
-            BarcodeFormatDetails.AZTEC,
             BarcodeFormatDetails.EAN_13,
             BarcodeFormatDetails.EAN_8,
             BarcodeFormatDetails.UPC_A,
@@ -135,7 +136,7 @@ class MainBarcodeCreatorListFragment : Fragment() {
     }
 
     private fun onClickItem(itemView: View, barcodeFormatDetails: BarcodeFormatDetails) {
-        val intent = createStartActivityIntent(requireContext(), BarcodeCreatorFormsActivity::class).apply {
+        val intent = createStartActivityIntent(requireContext(), BarcodeFormCreatorActivity::class).apply {
             putExtra(BARCODE_TYPE_ENUM_KEY, barcodeFormatDetails)
         }
 

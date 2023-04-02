@@ -63,9 +63,10 @@ import com.atharok.barcodescanner.domain.usecases.ProductUseCase
 import com.atharok.barcodescanner.presentation.intent.*
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.*
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeCreatorForms.*
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -73,7 +74,6 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
 import com.google.zxing.client.result.*
-import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -163,6 +163,10 @@ val viewModelModule: Module = module {
     viewModel {
         ExternalFileViewModel(get<ExternalFoodProductDependencyUseCase>())
     }
+
+    viewModel {
+        InstalledAppsViewModel(get<InstalledAppsRepository>())
+    }
 }
 
 val useCaseModule: Module = module {
@@ -234,6 +238,10 @@ val repositoryModule: Module = module {
     single<CountriesRepository> {
         CountriesRepositoryImpl(get<FileFetcher>())
     }
+
+    single<InstalledAppsRepository> {
+        InstalledAppsRepositoryImpl(androidContext())
+    }
 }
 
 val dataModule: Module = module {
@@ -277,44 +285,59 @@ val fragmentsModule = module {
     factory { MainBarcodeCreatorListFragment() }
     factory { MainSettingsFragment() }
 
-    factory { FormCreateQrCodeTextFragment() }
-    factory { FormCreateQrCodeUrlFragment() }
-    factory { FormCreateQrCodeContactFragment() }
-    factory { FormCreateQrCodeEpcFragment() }
-    factory { FormCreateQrCodeMailFragment() }
-    factory { FormCreateQrCodeSmsFragment() }
-    factory { FormCreateQrCodePhoneFragment() }
-    factory { FormCreateQrCodeLocalisationFragment() }
-    factory { FormCreateQrCodeAgendaFragment() }
-    factory { FormCreateQrCodeWifiFragment() }
-    factory { FormCreateBarcodeFragment() }
+    factory { BarcodeFormCreatorAztecFragment() }
+    factory { BarcodeFormCreatorCodabarFragment() }
+    factory { BarcodeFormCreatorCode39Fragment() }
+    factory { BarcodeFormCreatorCode93Fragment() }
+    factory { BarcodeFormCreatorCode128Fragment() }
+    factory { BarcodeFormCreatorDataMatrixFragment() }
+    factory { BarcodeFormCreatorEAN8Fragment() }
+    factory { BarcodeFormCreatorEAN13Fragment() }
+    factory { BarcodeFormCreatorITFFragment() }
+    factory { BarcodeFormCreatorPDF417Fragment() }
+    factory { BarcodeFormCreatorQrAgendaFragment() }
+    factory { BarcodeFormCreatorQrApplicationFragment() }
+    factory { BarcodeFormCreatorQrContactFragment() }
+    factory { BarcodeFormCreatorQrEpcFragment() }
+    factory { BarcodeFormCreatorQrLocalisationFragment() }
+    factory { BarcodeFormCreatorQrMailFragment() }
+    factory { BarcodeFormCreatorQrPhoneFragment() }
+    factory { BarcodeFormCreatorQrSmsFragment() }
+    factory { BarcodeFormCreatorQrTextFragment() }
+    factory { BarcodeFormCreatorQrUrlFragment() }
+    factory { BarcodeFormCreatorQrWifiFragment() }
+    factory { BarcodeFormCreatorUPCAFragment() }
+    factory { BarcodeFormCreatorUPCEFragment() }
 
-    factory<AbstractFormCreateBarcodeFragment> { (type: BarcodeFormatDetails) ->
-
-        when(type){
-            BarcodeFormatDetails.QR_TEXT -> get<FormCreateQrCodeTextFragment>()
-            BarcodeFormatDetails.QR_URL -> get<FormCreateQrCodeUrlFragment>()
-            BarcodeFormatDetails.QR_CONTACT -> get<FormCreateQrCodeContactFragment>()
-            BarcodeFormatDetails.QR_EPC -> get<FormCreateQrCodeEpcFragment>()
-            BarcodeFormatDetails.QR_MAIL -> get<FormCreateQrCodeMailFragment>()
-            BarcodeFormatDetails.QR_SMS -> get<FormCreateQrCodeSmsFragment>()
-            BarcodeFormatDetails.QR_PHONE -> get<FormCreateQrCodePhoneFragment>()
-            BarcodeFormatDetails.QR_LOCALISATION -> get<FormCreateQrCodeLocalisationFragment>()
-            BarcodeFormatDetails.QR_AGENDA -> get<FormCreateQrCodeAgendaFragment>()
-            BarcodeFormatDetails.QR_WIFI -> get<FormCreateQrCodeWifiFragment>()
-            else -> {
-
-                get<FormCreateBarcodeFragment>().apply {
-                    arguments = get<Bundle>().apply {
-                        putSerializable(BARCODE_FORMAT_KEY, type.format)
-                    }
-                }
-            }
+    factory<AbstractBarcodeFormCreatorFragment> { (barcodeFormatDetails: BarcodeFormatDetails) ->
+        when(barcodeFormatDetails){
+            BarcodeFormatDetails.AZTEC -> get<BarcodeFormCreatorAztecFragment>()
+            BarcodeFormatDetails.CODABAR -> get<BarcodeFormCreatorCodabarFragment>()
+            BarcodeFormatDetails.CODE_39 -> get<BarcodeFormCreatorCode39Fragment>()
+            BarcodeFormatDetails.CODE_93 -> get<BarcodeFormCreatorCode93Fragment>()
+            BarcodeFormatDetails.CODE_128 -> get<BarcodeFormCreatorCode128Fragment>()
+            BarcodeFormatDetails.DATA_MATRIX -> get<BarcodeFormCreatorDataMatrixFragment>()
+            BarcodeFormatDetails.EAN_8 -> get<BarcodeFormCreatorEAN8Fragment>()
+            BarcodeFormatDetails.EAN_13 -> get<BarcodeFormCreatorEAN13Fragment>()
+            BarcodeFormatDetails.ITF -> get<BarcodeFormCreatorITFFragment>()
+            BarcodeFormatDetails.PDF_417 -> get<BarcodeFormCreatorPDF417Fragment>()
+            BarcodeFormatDetails.QR_AGENDA -> get<BarcodeFormCreatorQrAgendaFragment>()
+            BarcodeFormatDetails.QR_APPLICATION -> get<BarcodeFormCreatorQrApplicationFragment>()
+            BarcodeFormatDetails.QR_CONTACT -> get<BarcodeFormCreatorQrContactFragment>()
+            BarcodeFormatDetails.QR_EPC -> get<BarcodeFormCreatorQrEpcFragment>()
+            BarcodeFormatDetails.QR_LOCALISATION -> get<BarcodeFormCreatorQrLocalisationFragment>()
+            BarcodeFormatDetails.QR_MAIL -> get<BarcodeFormCreatorQrMailFragment>()
+            BarcodeFormatDetails.QR_PHONE -> get<BarcodeFormCreatorQrPhoneFragment>()
+            BarcodeFormatDetails.QR_SMS -> get<BarcodeFormCreatorQrSmsFragment>()
+            BarcodeFormatDetails.QR_TEXT -> get<BarcodeFormCreatorQrTextFragment>()
+            BarcodeFormatDetails.QR_URL -> get<BarcodeFormCreatorQrUrlFragment>()
+            BarcodeFormatDetails.QR_WIFI -> get<BarcodeFormCreatorQrWifiFragment>()
+            BarcodeFormatDetails.UPC_A -> get<BarcodeFormCreatorUPCAFragment>()
+            BarcodeFormatDetails.UPC_E -> get<BarcodeFormCreatorUPCEFragment>()
         }
     }
 
     factory<KClass<out AbstractActionsFragment>> { (barcodeType: BarcodeType) ->
-
         when(barcodeType){
             BarcodeType.AGENDA -> AgendaActionsFragment::class
             BarcodeType.CONTACT -> ContactActionsFragment::class

@@ -21,9 +21,9 @@
 package com.atharok.barcodescanner.domain.library
 
 import android.graphics.*
+import com.atharok.barcodescanner.common.extensions.is2DBarcode
 import com.atharok.barcodescanner.common.utils.ENCODING_ISO_8859_1
 import com.atharok.barcodescanner.common.utils.ENCODING_UTF_8
-import com.atharok.barcodescanner.domain.entity.barcode.is2DBarcode
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter

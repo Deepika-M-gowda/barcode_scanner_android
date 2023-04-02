@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeFormCreator.BarcodeFormCreatorQrSmsFragment">
+
+    <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
+        android:id="@+id/fragment_barcode_form_creator_qr_sms_phone_number_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/qr_code_text_generator_hint_phone_input_edit_text"
+        app:startIconDrawable="@drawable/baseline_call_24"
+        app:startIconTintFocused="?colorPrimary"
+        style="@style/AppTheme.TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_barcode_form_creator_qr_sms_phone_number_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_sms_message_input_edit_text"
+            />
+
+    </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
+
+    <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
+        android:id="@+id/fragment_barcode_form_creator_qr_sms_message_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_barcode_form_creator_qr_sms_phone_number_input_layout"
+        android:hint="@string/qr_code_text_input_edit_text_hint_message"
+        app:startIconDrawable="@drawable/baseline_text_fields_24"
+        app:startIconTintFocused="?colorPrimary"
+        style="@style/AppTheme.TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_barcode_form_creator_qr_sms_message_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            android:lines="8"
+            android:gravity="top|start"
+            />
+
+    </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
+
+</RelativeLayout>

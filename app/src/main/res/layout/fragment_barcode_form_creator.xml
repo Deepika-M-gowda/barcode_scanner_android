@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
+        android:id="@+id/fragment_barcode_form_creator_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/qr_code_text_generator_hint_text_input_edit_text"
+        app:startIconDrawable="@drawable/baseline_text_fields_24"
+        app:startIconTintFocused="?colorPrimary"
+        style="@style/AppTheme.TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_barcode_form_creator_text_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
+
+</RelativeLayout>

@@ -63,6 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">Coordonnées Géographiques</string>
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
+    <string name="qr_code_type_name_apps">Application</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Produit</string>
@@ -290,23 +291,19 @@
     <string name="matrix_localisation_query_label">Query :</string>
 
     <!-- Barcode Description -->
-    <string name="bar_code_industrial_description_label">Ce type de code-barres est souvent utilisé dans le milieu industriel.</string>
-    <string name="bar_code_code_39_description_label">Le Code 39 est un code-barres utilisé dans le marquage des textiles et des médicaments en pharmacie. Il est aussi utilisé dans le secteur militaire et automobile.</string>
-    <string name="bar_code_code_93_description_label">Le Code 93 est un code-barres utilisé dans les secteurs de l\'armée et de l\'automobile, ainsi que par "Postes Canada" pour coder des informations de livraison spéciales.</string>
-    <string name="bar_code_code_128_description_label">Le Code 128 est un code-barres très utilisé dans le milieu industriel. Il est très utilisé dans l\'industrie des transports et dans l\'identification de produit dans les chaînes d\'approvisionnement. Il peut aussi être utilisé dans le secteur automobile ou pour le marquage des produits en pharmacie. Le Code 128 est très largement utilisé et peut donc être utilisé à de nombreuses autres fins.</string>
-    <string name="bar_code_itf_description_label">Le Code ITF (Interleaved 2 of 5) est un code-barres principalement utilisé pour les expéditions de marchandises.</string>
-    <string name="bar_code_codabar_description_label">Le Code Codabar est un code-barres conçu pour être lu par des imprimantes à matrice de points. Le Codabar est aujourd\'hui assez peu utilisé au profit d\'autres types de code-barres, mais reste utilisé par certaines organisations comme les bibliothèques.</string>
-    <string name="bar_code_upc_a_description_label">Le code UPC-A (Universal Product Code) est un code-barres très largement utilisé aux États-Unis et au Canada pour identifier les produits vendus dans les magasins et autres commerces. Il est composé de 12 chiffres.</string>
-    <string name="bar_code_upc_e_description_label">Le code UPC-E (Universal Product Code) est un code-barres condensé du code UPC-A principalement utilisé aux États-Unis et au Canada pour identifier les produits vendus dans les magasins et autres commerces. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code UPC-A.</string>
-    <string name="bar_code_ean_13_description_label">Le code EAN-13 (European Article Numbering 13) est un code-barres très largement utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est composé de 13 chiffres.</string>
-    <string name="bar_code_ean_8_description_label">Le code EAN-8 (European Article Numbering 8) est un code-barres condensé du code EAN-13 utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code EAN-13.</string>
+    <string name="barcode_industrial_description_label">Ce type de code-barres est souvent utilisé dans le milieu industriel.</string>
+    <string name="barcode_code_39_description_label">Le Code 39 est un code-barres utilisé dans le marquage des textiles et des médicaments en pharmacie. Il est aussi utilisé dans le secteur militaire et automobile.</string>
+    <string name="barcode_code_93_description_label">Le Code 93 est un code-barres utilisé dans les secteurs de l\'armée et de l\'automobile, ainsi que par "Postes Canada" pour coder des informations de livraison spéciales.</string>
+    <string name="barcode_code_128_description_label">Le Code 128 est un code-barres très utilisé dans le milieu industriel. Il est très utilisé dans l\'industrie des transports et dans l\'identification de produit dans les chaînes d\'approvisionnement. Il peut aussi être utilisé dans le secteur automobile ou pour le marquage des produits en pharmacie. Le Code 128 est très largement utilisé et peut donc être utilisé à de nombreuses autres fins.</string>
+    <string name="barcode_itf_description_label">Le Code ITF (Interleaved 2 of 5) est un code-barres principalement utilisé pour les expéditions de marchandises.</string>
+    <string name="barcode_codabar_description_label">Le Code Codabar est un code-barres conçu pour être lu par des imprimantes à matrice de points. Le Codabar est aujourd\'hui assez peu utilisé au profit d\'autres types de code-barres, mais reste utilisé par certaines organisations comme les bibliothèques.</string>
+    <string name="barcode_upc_a_description_label">Le code UPC-A (Universal Product Code) est un code-barres très largement utilisé aux États-Unis et au Canada pour identifier les produits vendus dans les magasins et autres commerces. Il est composé de 12 chiffres.</string>
+    <string name="barcode_upc_e_description_label">Le code UPC-E (Universal Product Code) est un code-barres condensé du code UPC-A principalement utilisé aux États-Unis et au Canada pour identifier les produits vendus dans les magasins et autres commerces. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code UPC-A.</string>
+    <string name="barcode_ean_13_description_label">Le code EAN-13 (European Article Numbering 13) est un code-barres très largement utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est composé de 13 chiffres.</string>
+    <string name="barcode_ean_8_description_label">Le code EAN-8 (European Article Numbering 8) est un code-barres condensé du code EAN-13 utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code EAN-13.</string>
 
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Vous devez accepter la permission pour utiliser cette fonctionnalité.</string>
-    <string name="snack_bar_message_error_url_format">Une adresse web doit commencer par "http://" ou "https://"</string>
-    <string name="snack_bar_message_error_phone_number_missing">Vous devez entrer un numéro de téléphone</string>
-    <string name="snack_bar_message_error_email_missing">Vous devez renseigner au moins un des champs de saisies</string>
-    <string name="snack_bar_message_error_localisation_missing">Vous devez renseigner la latitude et la longitude</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'image a été enregistrée</string>
     <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante?</string>
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
@@ -349,17 +346,21 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">Vous devez entrer une valeur correcte dans le champ de saisie.</string>
-    <string name="error_bar_code_not_a_number_message">Le code-barres doit être composé uniquement de chiffres.</string>
-    <string name="error_bar_code_wrong_length_message">Le code-barres doit contenir %1$s chiffres.</string>
-    <string name="error_bar_code_wrong_key_message">Le %1$sème chiffre (clé de contrôle) devrait être %2$s.</string>
-    <string name="error_bar_code_encoding_iso_8859_1_error_message">Les caractères spéciaux ne sont pas supportés pour ce type de code-barres.</string>
-    <string name="error_bar_code_encoding_us_ascii_error_message">Les caractères spéciaux ou contenant un accent ne sont pas supportés pour ce type de code-barres.</string>
-    <string name="error_bar_code_93_regex_error_message">Un code-barres du type "Code 93" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 8 caractères spéciaux : « -, ., espace, *, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
-    <string name="error_bar_code_39_regex_error_message">Un code-barres du type "Code 39" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 7 caractères spéciaux : « -, ., espace, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
-    <string name="error_bar_codabar_regex_error_message">Un code-barres du type "Codabar" peut codifier les 10 chiffres (0 à 9) ainsi que 6 caractères spéciaux : « -, $, :, /, ., + ». Il peut aussi contenir les caractères A, B, C ou D pour le premier et le dernier caractère du code-barres pour spécifier le début et la fin de la chaine.</string>
-    <string name="error_bar_code_itf_error_message">Un code-barres du type "ITF" doit contenir un nombre de caractère pair.</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Un code-barres du type "UPC-E" doit commencer par 0.</string>
+    <string name="error_barcode_none_character_message">Vous devez entrer une valeur correcte dans le champ de saisie.</string>
+    <string name="error_barcode_not_a_number_message">Le code-barres doit être composé uniquement de chiffres.</string>
+    <string name="error_barcode_wrong_length_message">Le code-barres doit contenir %1$s chiffres.</string>
+    <string name="error_barcode_wrong_key_message">Le %1$sème chiffre (clé de contrôle) devrait être %2$s.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">Les caractères spéciaux ne sont pas supportés pour ce type de code-barres.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">Les caractères spéciaux ou contenant un accent ne sont pas supportés pour ce type de code-barres.</string>
+    <string name="error_barcode_93_regex_error_message">Un code-barres du type "Code 93" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 8 caractères spéciaux : « -, ., espace, *, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
+    <string name="error_barcode_39_regex_error_message">Un code-barres du type "Code 39" peut codifier les 26 lettres majuscules, les 10 chiffres (0 à 9) ainsi que 7 caractères spéciaux : « -, ., espace, $, /, +, % ». Les caractères minuscules ou avec accent ou autres caractères spéciaux ne permettent pas de codifier ce type de code-barres.</string>
+    <string name="error_barcode_codabar_regex_error_message">Un code-barres du type "Codabar" peut codifier les 10 chiffres (0 à 9) ainsi que 6 caractères spéciaux : « -, $, :, /, ., + ». Il peut aussi contenir les caractères A, B, C ou D pour le premier et le dernier caractère du code-barres pour spécifier le début et la fin de la chaine.</string>
+    <string name="error_barcode_itf_error_message">Un code-barres du type "ITF" doit contenir un nombre de caractère pair.</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">Un code-barres du type "UPC-E" doit commencer par 0.</string>
+    <string name="error_barcode_qr_url_format_message">Une adresse web doit commencer par "http://" ou "https://"</string>
+    <string name="error_barcode_qr_phone_number_missing_message">Vous devez entrer un numéro de téléphone</string>
+    <string name="error_barcode_qr_email_missing_message">Vous devez renseigner au moins un des champs de saisies</string>
+    <string name="error_barcode_qr_localisation_missing_message">Vous devez renseigner la latitude et la longitude</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Générer</string>

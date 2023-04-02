@@ -63,6 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">Coordenadas geográficas</string>
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
+    <string name="qr_code_type_name_apps">Application</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Producto</string>
@@ -290,23 +291,19 @@
     <string name="matrix_localisation_query_label">Consulta:</string>
 
     <!-- Barcode Description -->
-    <string name="bar_code_industrial_description_label">Este tipo de código es muy utilizado en la industria.</string>
-    <string name="bar_code_code_39_description_label">Código 39 es un código de barras que se utiliza en el marcado de textiles y de medicamentos en las farmacias. También se utiliza en el sector militar y en la industria del automóvil.</string>
-    <string name="bar_code_code_93_description_label">Código 93 es un código de barras utilizado en los sectores del ejército y la automoción, así como por "Postes Canada" para codificar la información de las entregas especiales.</string>
-    <string name="bar_code_code_128_description_label">Código 128 es un código de barras muy utilizado en la industria. Se utiliza en la industria del transporte y para la identificación de productos en las cadenas de suministro. También puede utilizarse en el sector del automóvil o para el marcado de productos en las farmacias. código 128 se utiliza ampliamente y también puede utilizarse en muchas otras terminaciones.</string>
-    <string name="bar_code_itf_description_label">Código ITF (Interleaved 2 of 5) es un código de barras utilizado principalmente para los envíos de mercancías.</string>
-    <string name="bar_code_codabar_description_label">Código Codabar es un código de barras diseñado para ser leído por impresoras de matriz de puntos. Hoy en día, Codabar se utiliza poco en beneficio de otros tipos de códigos de barras, pero sigue siendo utilizado por algunas organizaciones como las bibliotecas.</string>
-    <string name="bar_code_upc_a_description_label">Código UPC-A (Universal Product Code) es un código de barras muy utilizado en EE.UU. y Canadá para identificar los productos que se venden en tiendas y comercios. Está compuesto por 12 dígitos.</string>
-    <string name="bar_code_upc_e_description_label">Código UPC-E (Universal Product Code) es un código de barras condensado del código UPC-A que se utiliza principalmente en EE.UU. y Canadá para identificar los productos que se venden en tiendas y comercios. Se utiliza en envases demasiado pequeños para recibir el código UPC-A.</string>
-    <string name="bar_code_ean_13_description_label">Código EAN-13 (European Article Numbering 13) es un código de barras muy utilizado para identificar los productos que se venden en las tiendas y comercios de Europa y de casi todo el mundo. Se compone de 13 dígitos.</string>
-    <string name="bar_code_ean_8_description_label">Código EAN-8 (European Article Numbering 8) es un código de barras condensado del código EAN-13 que se utiliza para identificar los productos que se venden en las tiendas y comercios de Europa y de casi todo el mundo. Se utiliza en envases demasiado pequeños para recibir el código EAN-13.</string>
+    <string name="barcode_industrial_description_label">Este tipo de código es muy utilizado en la industria.</string>
+    <string name="barcode_code_39_description_label">Código 39 es un código de barras que se utiliza en el marcado de textiles y de medicamentos en las farmacias. También se utiliza en el sector militar y en la industria del automóvil.</string>
+    <string name="barcode_code_93_description_label">Código 93 es un código de barras utilizado en los sectores del ejército y la automoción, así como por "Postes Canada" para codificar la información de las entregas especiales.</string>
+    <string name="barcode_code_128_description_label">Código 128 es un código de barras muy utilizado en la industria. Se utiliza en la industria del transporte y para la identificación de productos en las cadenas de suministro. También puede utilizarse en el sector del automóvil o para el marcado de productos en las farmacias. código 128 se utiliza ampliamente y también puede utilizarse en muchas otras terminaciones.</string>
+    <string name="barcode_itf_description_label">Código ITF (Interleaved 2 of 5) es un código de barras utilizado principalmente para los envíos de mercancías.</string>
+    <string name="barcode_codabar_description_label">Código Codabar es un código de barras diseñado para ser leído por impresoras de matriz de puntos. Hoy en día, Codabar se utiliza poco en beneficio de otros tipos de códigos de barras, pero sigue siendo utilizado por algunas organizaciones como las bibliotecas.</string>
+    <string name="barcode_upc_a_description_label">Código UPC-A (Universal Product Code) es un código de barras muy utilizado en EE.UU. y Canadá para identificar los productos que se venden en tiendas y comercios. Está compuesto por 12 dígitos.</string>
+    <string name="barcode_upc_e_description_label">Código UPC-E (Universal Product Code) es un código de barras condensado del código UPC-A que se utiliza principalmente en EE.UU. y Canadá para identificar los productos que se venden en tiendas y comercios. Se utiliza en envases demasiado pequeños para recibir el código UPC-A.</string>
+    <string name="barcode_ean_13_description_label">Código EAN-13 (European Article Numbering 13) es un código de barras muy utilizado para identificar los productos que se venden en las tiendas y comercios de Europa y de casi todo el mundo. Se compone de 13 dígitos.</string>
+    <string name="barcode_ean_8_description_label">Código EAN-8 (European Article Numbering 8) es un código de barras condensado del código EAN-13 que se utiliza para identificar los productos que se venden en las tiendas y comercios de Europa y de casi todo el mundo. Se utiliza en envases demasiado pequeños para recibir el código EAN-13.</string>
 
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Debes aceptar el permiso para utilizar esta funcionalidad.</string>
-    <string name="snack_bar_message_error_url_format">La dirección de una página web debe empezar por "http://" o "https://"</string>
-    <string name="snack_bar_message_error_phone_number_missing">Debes introducir un número de teléfono</string>
-    <string name="snack_bar_message_error_email_missing">Debes introducir al menos uno de los campos</string>
-    <string name="snack_bar_message_error_localisation_missing">Debes introducir la latitud y la longitud</string>
     <string name="snack_bar_message_save_bitmap_ok">La imagen se ha guardado</string>
     <string name="snack_bar_message_save_bitmap_error">La imagen no se ha guardado… \n¿Memoria insuficiente?</string>
     <string name="snack_bar_message_share_bitmap_error">Ha ocurrido un error durante la configuración de compartir.</string>
@@ -349,17 +346,21 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">Debes introducir un valor correcto en el campo.</string>
-    <string name="error_bar_code_not_a_number_message">El código debe estar compuesto únicamente de dígitos.</string>
-    <string name="error_bar_code_wrong_length_message">El código debe contener %1$s dígitos.</string>
-    <string name="error_bar_code_wrong_key_message">El dígito número %1$s (clave de control) debería ser %2$s.</string>
-    <string name="error_bar_code_encoding_iso_8859_1_error_message">No se admiten caracteres especiales en este tipo de códigos.</string>
-    <string name="error_bar_code_encoding_us_ascii_error_message">No se admiten caracteres especiales para este tipo de códigos.</string>
-    <string name="error_bar_code_93_regex_error_message">El código de barras "Código 93" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 8 caracteres especiales « -, ., espacio, *, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
-    <string name="error_bar_code_39_regex_error_message">El código de barras "Código 39" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 7 caracteres especiales « -, ., espacio, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
-    <string name="error_bar_codabar_regex_error_message">El código de barras "Codabar" puede codificar los 10 dígitos (0 a 9) así como los 6 caracteres especiales « -, $, :, /, ., + ». También puede contener los caracteres A, B, C o D para el primer y el último carácter del código de barras para especificar el principio y el final de la cadena.</string>
-    <string name="error_bar_code_itf_error_message">El código de barras "ITF" debe contener un número par de caracteres.</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Los códigos de barras "UPC-E" deben comenzar con 0.</string>
+    <string name="error_barcode_none_character_message">Debes introducir un valor correcto en el campo.</string>
+    <string name="error_barcode_not_a_number_message">El código debe estar compuesto únicamente de dígitos.</string>
+    <string name="error_barcode_wrong_length_message">El código debe contener %1$s dígitos.</string>
+    <string name="error_barcode_wrong_key_message">El dígito número %1$s (clave de control) debería ser %2$s.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">No se admiten caracteres especiales en este tipo de códigos.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">No se admiten caracteres especiales para este tipo de códigos.</string>
+    <string name="error_barcode_93_regex_error_message">El código de barras "Código 93" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 8 caracteres especiales « -, ., espacio, *, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
+    <string name="error_barcode_39_regex_error_message">El código de barras "Código 39" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 7 caracteres especiales « -, ., espacio, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
+    <string name="error_barcode_codabar_regex_error_message">El código de barras "Codabar" puede codificar los 10 dígitos (0 a 9) así como los 6 caracteres especiales « -, $, :, /, ., + ». También puede contener los caracteres A, B, C o D para el primer y el último carácter del código de barras para especificar el principio y el final de la cadena.</string>
+    <string name="error_barcode_itf_error_message">El código de barras "ITF" debe contener un número par de caracteres.</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">Los códigos de barras "UPC-E" deben comenzar con 0.</string>
+    <string name="error_barcode_qr_url_format_message">La dirección de una página web debe empezar por "http://" o "https://"</string>
+    <string name="error_barcode_qr_phone_number_missing_message">Debes introducir un número de teléfono</string>
+    <string name="error_barcode_qr_email_missing_message">Debes introducir al menos uno de los campos</string>
+    <string name="error_barcode_qr_localisation_missing_message">Debes introducir la latitud y la longitud</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Generar</string>

@@ -20,14 +20,25 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import com.atharok.barcodescanner.common.extensions.canBeConvertibleToLong
-import com.atharok.barcodescanner.domain.library.BarcodeFormatCheckerResult.CheckerResponse
-import com.google.zxing.BarcodeFormat
 import kotlin.math.ceil
 
 class BarcodeFormatChecker {
 
-    fun check(content: String, format: BarcodeFormat): BarcodeFormatCheckerResult = when(format){
+    enum class CheckerResponse {
+        BAR_CODE_SUCCESSFUL,
+        BAR_CODE_NOT_A_NUMBER_ERROR,
+        BAR_CODE_WRONG_LENGTH_ERROR,
+        BAR_CODE_WRONG_KEY_ERROR,
+        BAR_CODE_ENCODING_ISO_8859_1_ERROR,
+        BAR_CODE_ENCODING_US_ASCII_ERROR,
+        BAR_CODE_CODE_93_REGEX_ERROR,
+        BAR_CODE_CODE_39_REGEX_ERROR,
+        BAR_CODE_CODABAR_REGEX_ERROR,
+        BAR_CODE_ITF_ERROR,
+        BAR_CODE_UPC_E_NOT_START_WITH_0_ERROR,
+    }
+
+    /*fun check(content: String, format: BarcodeFormat): CheckerResponse = when(format){
         BarcodeFormat.EAN_13 -> checkBarCode(content, 1, 3, 13)
         BarcodeFormat.EAN_8 -> checkBarCode(content, 3, 1, 8)
         BarcodeFormat.UPC_A -> checkBarCode(content, 3, 1, 12)
@@ -38,12 +49,28 @@ class BarcodeFormatChecker {
         BarcodeFormat.CODE_39 -> checkCode39Regex(content)
         BarcodeFormat.CODABAR -> checkCodabarRegex(content)
         BarcodeFormat.ITF -> checkITFBarCode(content)
-        else -> BarcodeFormatCheckerResult(response = CheckerResponse.BAR_CODE_SUCCESSFUL)
+        else -> CheckerResponse.BAR_CODE_SUCCESSFUL
+    }*/
+
+    fun calculateEAN13CheckDigit(content: String): Int {
+        return calculateBarcodeCheckDigit(content, 1, 3, 13)
     }
 
-    private fun checkBarCode(content: String, multPairValue: Int, multImpairValue: Int, maxLength: Int): BarcodeFormatCheckerResult {
-        if (content.length != maxLength) return BarcodeFormatCheckerResult(response = CheckerResponse.BAR_CODE_WRONG_LENGTH_ERROR, length = maxLength)
-        if(!content.canBeConvertibleToLong()) return BarcodeFormatCheckerResult(response = CheckerResponse.BAR_CODE_NOT_A_NUMBER_ERROR, length = maxLength)
+    fun calculateEAN8CheckDigit(content: String): Int {
+        return calculateBarcodeCheckDigit(content, 3, 1, 8)
+    }
+
+    fun calculateUPCACheckDigit(content: String): Int {
+        return calculateBarcodeCheckDigit(content, 3, 1, 12)
+    }
+
+    fun calculateUPCECheckDigit(content: String): Int {
+        return calculateBarcodeCheckDigit(content, 3, 1, 8)
+    }
+
+    private fun calculateBarcodeCheckDigit(content: String, multPairValue: Int, multImpairValue: Int, maxLength: Int): Int {
+        //if (content.length != maxLength) return CheckerResponse.BAR_CODE_WRONG_LENGTH_ERROR
+        //if(!content.canBeConvertibleToLong()) return CheckerResponse.BAR_CODE_NOT_A_NUMBER_ERROR
 
         var sum = 0
         for ((i, char) in content.withIndex()) {
@@ -60,23 +87,21 @@ class BarcodeFormatChecker {
 
         val key = max - remainder
 
-        val response: CheckerResponse = if(key == Character.getNumericValue(content.last())) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_WRONG_KEY_ERROR
-
-        return BarcodeFormatCheckerResult(response = response, key = key, length = maxLength)
+        return key
     }
 
-    private fun checkUPCE(content: String): BarcodeFormatCheckerResult {
+    /*private fun checkUPCE(content: String): CheckerResponse {
         val result = checkBarCode(content, 3, 1, 8)
 
-        return if (result.response == CheckerResponse.BAR_CODE_SUCCESSFUL && !content.startsWith("0"))
-            BarcodeFormatCheckerResult(response = CheckerResponse.BAR_CODE_UPC_E_NOT_START_WITH_0_ERROR)
+        return if (result == CheckerResponse.BAR_CODE_SUCCESSFUL && !content.startsWith("0"))
+            CheckerResponse.BAR_CODE_UPC_E_NOT_START_WITH_0_ERROR
         else result
-    }
+    }*/
 
     /**
      * Vérifie si la chaine de caractère en paramètre contient des caractères spéciaux.
      */
-    private fun checkISO88591EncodingValue(content: String): BarcodeFormatCheckerResult {
+    fun checkISO88591EncodingValue(content: String): Boolean {
 
         val byteArrayISO = content.toByteArray(Charsets.ISO_8859_1)
         val byteArrayUTF8 = content.toByteArray(Charsets.UTF_8)
@@ -84,53 +109,35 @@ class BarcodeFormatChecker {
         val strISO88591 = String(byteArrayISO, Charsets.ISO_8859_1)
         val strUTF8 = String(byteArrayUTF8, Charsets.UTF_8)
 
-        val response: CheckerResponse = if(strISO88591 == strUTF8) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_ENCODING_ISO_8859_1_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
+        return strISO88591 == strUTF8
     }
 
     /**
      * Vérifie si la chaine de caractère en paramètre contient des caractères spéciaux ou des accents.
      */
-    private fun checkUSASCIIEncodingValue(content: String): BarcodeFormatCheckerResult {
-
+    fun checkUSASCIIEncodingValue(content: String): Boolean {
         val byteArrayUSASCII = content.toByteArray(Charsets.US_ASCII)
         val byteArrayUTF8 = content.toByteArray(Charsets.UTF_8)
 
         val strUSASCII = String(byteArrayUSASCII, Charsets.ISO_8859_1)
         val strUTF8 = String(byteArrayUTF8, Charsets.UTF_8)
 
-        val response: CheckerResponse = if(strUSASCII == strUTF8) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_ENCODING_US_ASCII_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
+        return strUSASCII == strUTF8
     }
 
-    private fun checkCode93Regex(content: String): BarcodeFormatCheckerResult {
-
-        val response = if(content.matches("[A-Z0-9-. *$/+%]*".toRegex())) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_CODE_93_REGEX_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
+    fun checkCode93Regex(content: String): Boolean {
+        return content.matches("[A-Z0-9-. *$/+%]*".toRegex())
     }
 
-    private fun checkCode39Regex(content: String): BarcodeFormatCheckerResult {
-
-        val response = if(content.matches("[A-Z0-9-. $/+%]*".toRegex())) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_CODE_39_REGEX_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
+    fun checkCode39Regex(content: String): Boolean {
+        return content.matches("[A-Z0-9-. $/+%]*".toRegex())
     }
 
-    private fun checkCodabarRegex(content: String): BarcodeFormatCheckerResult {
-
-        val response = if(content.matches("^[A-Da-d][0-9-$:/.+]*[A-Da-d]$".toRegex()) || content.matches("[0-9-\$:/.+]*".toRegex()))
-            CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_CODABAR_REGEX_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
+    fun checkCodabarRegex(content: String): Boolean {
+        return content.matches(
+            "^[A-Da-d][0-9-$:/.+]*[A-Da-d]$".toRegex()) || content.matches("[0-9-\$:/.+]*".toRegex()
+        )
     }
 
-    private fun checkITFBarCode(content: String): BarcodeFormatCheckerResult {
-
-        val response = if(content.length % 2 == 0) CheckerResponse.BAR_CODE_SUCCESSFUL else CheckerResponse.BAR_CODE_ITF_ERROR
-
-        return BarcodeFormatCheckerResult(response = response)
-    }
+    fun checkITFBarcode(content: String): Boolean = content.length % 2 == 0
 }

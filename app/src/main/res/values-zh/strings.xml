@@ -63,6 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">地理坐标</string>
     <string name="qr_code_type_name_agenda">日程</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
+    <string name="qr_code_type_name_apps">Application</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">产品</string>
@@ -290,23 +291,19 @@
     <string name="matrix_localisation_query_label">查询：</string>
 
     <!-- Barcode Description -->
-    <string name="bar_code_industrial_description_label">这种条码在工业上经常使用。</string>
-    <string name="bar_code_code_39_description_label">Code 39 是一种用于纺织品标记和药店药品的条形码。它也用于军事部门和汽车工业。</string>
-    <string name="bar_code_code_93_description_label">Code 93 是一种用于军队和汽车部门的条形码，也被“Postes Canada”用于编码特殊递送信息。</string>
-    <string name="bar_code_code_128_description_label">Code 128 是行业中经常使用的条形码。它被用于运输行业和供应链中的产品识别。它也可以用于汽车行业或药店的产品标识。Code 128 被广泛使用，也可以用于许多其他结尾。</string>
-    <string name="bar_code_itf_description_label">ITF（交叉2/5码）是一种主要用于货物运输的条形码。</string>
-    <string name="bar_code_codabar_description_label">Codabar 是一种设计用于点阵打印机读取的条形码。今天，Codabar 很少用于其他类型，但仍被一些组织如图书馆使用。</string>
-    <string name="bar_code_upc_a_description_label">UPC-A（通用产品代码）是美国和加拿大广泛使用的条形码，用于识别商店和商店中销售的产品。由12位数字组成。</string>
-    <string name="bar_code_upc_e_description_label">UPC-E（通用产品代码）是 UPC-A 的压缩条形码，主要用于美国和加拿大在商店和商店中识别销售的产品。用于太小而不能使用 UPC-A 的包装。</string>
-    <string name="bar_code_ean_13_description_label">EAN-13（欧洲商品编码13）广泛用于识别在欧洲和世界各地的商店和商店销售的产品的一种条形码。由13位数字组成。</string>
-    <string name="bar_code_ean_8_description_label">EAN-8（欧洲商品编码8）是 EAN-13 的压缩条形码，用于识别在欧洲和世界各地的商店和商店销售的产品。用于太小而不能使用 EAN-13 的包装。</string>
+    <string name="barcode_industrial_description_label">这种条码在工业上经常使用。</string>
+    <string name="barcode_code_39_description_label">Code 39 是一种用于纺织品标记和药店药品的条形码。它也用于军事部门和汽车工业。</string>
+    <string name="barcode_code_93_description_label">Code 93 是一种用于军队和汽车部门的条形码，也被“Postes Canada”用于编码特殊递送信息。</string>
+    <string name="barcode_code_128_description_label">Code 128 是行业中经常使用的条形码。它被用于运输行业和供应链中的产品识别。它也可以用于汽车行业或药店的产品标识。Code 128 被广泛使用，也可以用于许多其他结尾。</string>
+    <string name="barcode_itf_description_label">ITF（交叉2/5码）是一种主要用于货物运输的条形码。</string>
+    <string name="barcode_codabar_description_label">Codabar 是一种设计用于点阵打印机读取的条形码。今天，Codabar 很少用于其他类型，但仍被一些组织如图书馆使用。</string>
+    <string name="barcode_upc_a_description_label">UPC-A（通用产品代码）是美国和加拿大广泛使用的条形码，用于识别商店和商店中销售的产品。由12位数字组成。</string>
+    <string name="barcode_upc_e_description_label">UPC-E（通用产品代码）是 UPC-A 的压缩条形码，主要用于美国和加拿大在商店和商店中识别销售的产品。用于太小而不能使用 UPC-A 的包装。</string>
+    <string name="barcode_ean_13_description_label">EAN-13（欧洲商品编码13）广泛用于识别在欧洲和世界各地的商店和商店销售的产品的一种条形码。由13位数字组成。</string>
+    <string name="barcode_ean_8_description_label">EAN-8（欧洲商品编码8）是 EAN-13 的压缩条形码，用于识别在欧洲和世界各地的商店和商店销售的产品。用于太小而不能使用 EAN-13 的包装。</string>
 
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">您必须接受使用此功能的许可。</string>
-    <string name="snack_bar_message_error_url_format">网址的开头必须是 "http://" 或 "https://"</string>
-    <string name="snack_bar_message_error_phone_number_missing">您必须输入一个电话号码</string>
-    <string name="snack_bar_message_error_email_missing">您必须输入至少一个字段</string>
-    <string name="snack_bar_message_error_localisation_missing">你必须告知纬度和经度</string>
     <string name="snack_bar_message_save_bitmap_ok">图片已保存</string>
     <string name="snack_bar_message_save_bitmap_error">图片保存失败… 可能是存储空间不足？</string>
     <string name="snack_bar_message_share_bitmap_error">配置共享时出错。</string>
@@ -349,17 +346,21 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">您必须在字段中输入正确的值。</string>
-    <string name="error_bar_code_not_a_number_message">条码只能由数字组成。</string>
-    <string name="error_bar_code_wrong_length_message">条码必须是 %1$s 位数字。</string>
-    <string name="error_bar_code_wrong_key_message">第 %1$s 位（控制键）应该是 %2$s.</string>
-    <string name="error_bar_code_encoding_iso_8859_1_error_message">此条形码类型不支持特殊字符。</string>
-    <string name="error_bar_code_encoding_us_ascii_error_message">此条形码类型不支持特殊字符。</string>
-    <string name="error_bar_code_93_regex_error_message">"Code 93" 条码类型可以编码26个大写字母，10个数字(0到9)以及8个特殊字符«-，.，空格，*，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
-    <string name="error_bar_code_39_regex_error_message">"Code 39" 条码类型可以编码26个大写字母，10个数字(0到9)以及7个特殊字符«-，.，空格，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
-    <string name="error_bar_codabar_regex_error_message">"Codabar" 条码类型可以编码10位数字(0到9)以及6个特殊字符«-，$，:，/，.，+»。它还可以包含字符A、B、C或D作为第一个和最后一个字符，以指定字符串的开始和结束。</string>
-    <string name="error_bar_code_itf_error_message">"ITF" 条码必须是偶数个字符。</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">"UPC-E" 条码开头必须是 0.</string>
+    <string name="error_barcode_none_character_message">您必须在字段中输入正确的值。</string>
+    <string name="error_barcode_not_a_number_message">条码只能由数字组成。</string>
+    <string name="error_barcode_wrong_length_message">条码必须是 %1$s 位数字。</string>
+    <string name="error_barcode_wrong_key_message">第 %1$s 位（控制键）应该是 %2$s.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">此条形码类型不支持特殊字符。</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">此条形码类型不支持特殊字符。</string>
+    <string name="error_barcode_93_regex_error_message">"Code 93" 条码类型可以编码26个大写字母，10个数字(0到9)以及8个特殊字符«-，.，空格，*，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
+    <string name="error_barcode_39_regex_error_message">"Code 39" 条码类型可以编码26个大写字母，10个数字(0到9)以及7个特殊字符«-，.，空格，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
+    <string name="error_barcode_codabar_regex_error_message">"Codabar" 条码类型可以编码10位数字(0到9)以及6个特殊字符«-，$，:，/，.，+»。它还可以包含字符A、B、C或D作为第一个和最后一个字符，以指定字符串的开始和结束。</string>
+    <string name="error_barcode_itf_error_message">"ITF" 条码必须是偶数个字符。</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">"UPC-E" 条码开头必须是 0.</string>
+    <string name="error_barcode_qr_url_format_message">网址的开头必须是 "http://" 或 "https://"</string>
+    <string name="error_barcode_qr_phone_number_missing_message">您必须输入一个电话号码</string>
+    <string name="error_barcode_qr_email_missing_message">您必须输入至少一个字段</string>
+    <string name="error_barcode_qr_localisation_missing_message">你必须告知纬度和经度</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">生成</string>

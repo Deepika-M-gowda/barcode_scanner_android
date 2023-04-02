@@ -25,6 +25,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import com.atharok.barcodescanner.common.extensions.is1DIndustrialBarcode
+import com.atharok.barcodescanner.common.extensions.is1DProductBarcode
+import com.atharok.barcodescanner.common.extensions.is2DBarcode
 import com.google.zxing.BarcodeFormat
 import java.io.Serializable
 

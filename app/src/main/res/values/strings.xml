@@ -63,6 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">Geographic coordinates</string>
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
+    <string name="qr_code_type_name_apps">Application</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Product</string>
@@ -290,23 +291,19 @@
     <string name="matrix_localisation_query_label">Query:</string>
 
     <!-- Barcode Description -->
-    <string name="bar_code_industrial_description_label">This type of bar code is often used in the industry.</string>
-    <string name="bar_code_code_39_description_label">Code 39 is a bar code used in textile marking and drugs in pharmacies. It is also used in military sector and automotive industry.</string>
-    <string name="bar_code_code_93_description_label">Code 93 is a bar code used in army and automotive sectors, as well as by "Postes Canada" to encode special deliveries information.</string>
-    <string name="bar_code_code_128_description_label">Code 128 is a bar code often used in the industry. It is used in transport industry and for product identification in supply chains. It can also be used in automotive sector or for product marking in pharmacies. Code 128 is widely used and can also be used in many other endings.</string>
-    <string name="bar_code_itf_description_label">Code ITF (Interleaved 2 of 5) is a bar code mainly used for goods shipments.</string>
-    <string name="bar_code_codabar_description_label">Code Codabar is a bar code designed to be read by dot matrix printers. Today, Codabar is little used for the benefit of other bar codes types, but is still used by some organisations like libraries.</string>
-    <string name="bar_code_upc_a_description_label">Code UPC-A (Universal Product Code) is a bar code widely used in USA and Canada to identify products sold in stores and shops. It is composed of 12 digits.</string>
-    <string name="bar_code_upc_e_description_label">Code UPC-E (Universal Product Code) is a condensed bar code of code UPC-A mainly used in USA and Canada to identify products sold in stores and shops. It is used on packaging too small to receive code UPC-A.</string>
-    <string name="bar_code_ean_13_description_label">Code EAN-13 (European Article Numbering 13) is a bar code widely used to identify products sold in stores and shops in Europe and pretty much everywhere in the world. It is composed of 13 digits.</string>
-    <string name="bar_code_ean_8_description_label">Code EAN-8 (European Article Numbering 8) is a condensed bar code of code EAN-13 used to identify products sold in stores and shops in Europe and pretty much everywhere in the world. It is used on packaging too small to receive code EAN-13.</string>
+    <string name="barcode_industrial_description_label">This type of barcode is often used in the industry.</string>
+    <string name="barcode_code_39_description_label">Code 39 is a barcode used in textile marking and drugs in pharmacies. It is also used in military sector and automotive industry.</string>
+    <string name="barcode_code_93_description_label">Code 93 is a barcode used in army and automotive sectors, as well as by "Postes Canada" to encode special deliveries information.</string>
+    <string name="barcode_code_128_description_label">Code 128 is a barcode often used in the industry. It is used in transport industry and for product identification in supply chains. It can also be used in automotive sector or for product marking in pharmacies. Code 128 is widely used and can also be used in many other endings.</string>
+    <string name="barcode_itf_description_label">Code ITF (Interleaved 2 of 5) is a barcode mainly used for goods shipments.</string>
+    <string name="barcode_codabar_description_label">Code Codabar is a barcode designed to be read by dot matrix printers. Today, Codabar is little used for the benefit of other barcodes types, but is still used by some organisations like libraries.</string>
+    <string name="barcode_upc_a_description_label">Code UPC-A (Universal Product Code) is a barcode widely used in USA and Canada to identify products sold in stores and shops. It is composed of 12 digits.</string>
+    <string name="barcode_upc_e_description_label">Code UPC-E (Universal Product Code) is a condensed barcode of code UPC-A mainly used in USA and Canada to identify products sold in stores and shops. It is used on packaging too small to receive code UPC-A.</string>
+    <string name="barcode_ean_13_description_label">Code EAN-13 (European Article Numbering 13) is a barcode widely used to identify products sold in stores and shops in Europe and pretty much everywhere in the world. It is composed of 13 digits.</string>
+    <string name="barcode_ean_8_description_label">Code EAN-8 (European Article Numbering 8) is a condensed barcode of code EAN-13 used to identify products sold in stores and shops in Europe and pretty much everywhere in the world. It is used on packaging too small to receive code EAN-13.</string>
 
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">You must accept permission to use this functionality.</string>
-    <string name="snack_bar_message_error_url_format">A web address must begin with "http://" or "https://"</string>
-    <string name="snack_bar_message_error_phone_number_missing">You must enter a phone number</string>
-    <string name="snack_bar_message_error_email_missing">You must inform at least one of the input fields</string>
-    <string name="snack_bar_message_error_localisation_missing">You must inform latitude and longitude</string>
     <string name="snack_bar_message_save_bitmap_ok">Image has been saved</string>
     <string name="snack_bar_message_save_bitmap_error">Image has not been saved… \nInsufficient memory?</string>
     <string name="snack_bar_message_share_bitmap_error">An error occurred during share configuration.</string>
@@ -349,17 +346,21 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">You must enter a correct value in the input field.</string>
-    <string name="error_bar_code_not_a_number_message">Bar code must be composed of digits only.</string>
-    <string name="error_bar_code_wrong_length_message">Bar code must contain %1$s digits.</string>
-    <string name="error_bar_code_wrong_key_message">%1$sth digit (control key) should be %2$s.</string>
-    <string name="error_bar_code_encoding_iso_8859_1_error_message">Special characters are not supported for this bar code type.</string>
-    <string name="error_bar_code_encoding_us_ascii_error_message">Special characters are not supported pour this bar code type.</string>
-    <string name="error_bar_code_93_regex_error_message">"Code 93" bar code type can codify the 26 uppercase letters, the 10 digits (0 to 9) as well as the 8 special characters « -, ., space, *, $, /, +, % ». Lowercase letters and other special characters can not be codify by this bar code type.</string>
-    <string name="error_bar_code_39_regex_error_message">"Code 39" bar code type can codify the 26 uppercase letters, the 10 digits (0 to 9) as well as the 7 special characters « -, ., space, $, /, +, % ». Lowercase letters and other special characters can not be codify by this bar code type.</string>
-    <string name="error_bar_codabar_regex_error_message">"Codabar" bar code type can codify the 10 digits (0 to 9) as well as the 6 special characters « -, $, :, /, ., + ». It can also contain characters A, B, C or D for the first and the last bar code character to specify the beginning and the end of the string.</string>
-    <string name="error_bar_code_itf_error_message">"ITF" bar code type must contain an even number of characters.</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">"UPC-E" bar code type must begin with 0.</string>
+    <string name="error_barcode_none_character_message">You must enter a correct value in the input field.</string>
+    <string name="error_barcode_not_a_number_message">Barcode must be composed of digits only.</string>
+    <string name="error_barcode_wrong_length_message">Barcode must contain %1$s digits.</string>
+    <string name="error_barcode_wrong_key_message">%1$sth digit (check digit) should be %2$s.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">Special characters are not supported for this barcode type.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">Special characters are not supported pour this barcode type.</string>
+    <string name="error_barcode_93_regex_error_message">"Code 93" barcode type can codify the 26 uppercase letters, the 10 digits (0 to 9) as well as the 8 special characters « -, ., space, *, $, /, +, % ». Lowercase letters and other special characters can not be codify by this barcode type.</string>
+    <string name="error_barcode_39_regex_error_message">"Code 39" barcode type can codify the 26 uppercase letters, the 10 digits (0 to 9) as well as the 7 special characters « -, ., space, $, /, +, % ». Lowercase letters and other special characters can not be codify by this barcode type.</string>
+    <string name="error_barcode_codabar_regex_error_message">"Codabar" barcode type can codify the 10 digits (0 to 9) as well as the 6 special characters « -, $, :, /, ., + ». It can also contain characters A, B, C or D for the first and the last barcode character to specify the beginning and the end of the string.</string>
+    <string name="error_barcode_itf_error_message">"ITF" barcode type must contain an even number of characters.</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">"UPC-E" barcode type must begin with 0.</string>
+    <string name="error_barcode_qr_url_format_message">A web address must begin with "http://" or "https://"</string>
+    <string name="error_barcode_qr_phone_number_missing_message">You must enter a phone number</string>
+    <string name="error_barcode_qr_email_missing_message">You must inform at least one of the input fields</string>
+    <string name="error_barcode_qr_localisation_missing_message">You must inform latitude and longitude</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Generate</string>

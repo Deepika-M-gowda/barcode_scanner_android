@@ -63,6 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">Geografische Koordinaten</string>
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">WLAN</string>
+    <string name="qr_code_type_name_apps">Application</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Produkt</string>
@@ -290,23 +291,19 @@
     <string name="matrix_localisation_query_label">Anfrage:</string>
 
     <!-- Barcode Description -->
-    <string name="bar_code_industrial_description_label">Dieser Barcodetyp wird häufig in der Industrie eingesetzt.</string>
-    <string name="bar_code_code_39_description_label">Code 39 ist ein Barcode welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Außerdem wird er in militärischen Umgebungen und in der Automobilindustrie genutzt.</string>
-    <string name="bar_code_code_93_description_label">Code 93 ist ein Barcode welcher in militärischen Umgebungen und in der Automobilindustrie genutzt wird, so wie von der "Postes Canada" um spezielle Lieferinformationen zu hinterlegen.</string>
-    <string name="bar_code_code_128_description_label">Code 128 ist ein Barcode welcher häufig in der Industrie eingesetzt wird. Er wird im Transportwesen und zur Produktidentifizierung in Supply Chains verwendet, aber auch in der Automobilindustrie und zur Produktmarkierung in Apotheken. Code 128 ist weit verbreitet und findet auch in vielen weiteren Bereichen Anwendung.</string>
-    <string name="bar_code_itf_description_label">Code ITF (Interleaved 2 of 5) ist ein Barcode welcher hauptsächlich für den Warenversand Verwendung findet.</string>
-    <string name="bar_code_codabar_description_label">Codabar ist ein Barcode welcher entwickelt wurde um von Nadeldruckern gedruckt werden zu können. Findet heute seltener Anwendung, wird aber noch von vielen Bibliotheken genutzt.</string>
-    <string name="bar_code_upc_a_description_label">UPC-A (Universal Product Code) ist ein Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er besteht aus 12 Zahlen.</string>
-    <string name="bar_code_upc_e_description_label">UPC-E (Universal Product Code) ist ein gekürzter Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen UPC-A Barcode sind. Er besteht aus 8 Zahlen.</string>
-    <string name="bar_code_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
-    <string name="bar_code_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen EAN-13 Barcode sind. Er besteht aus 8 Zahlen.</string>
+    <string name="barcode_industrial_description_label">Dieser Barcodetyp wird häufig in der Industrie eingesetzt.</string>
+    <string name="barcode_code_39_description_label">Code 39 ist ein Barcode welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Außerdem wird er in militärischen Umgebungen und in der Automobilindustrie genutzt.</string>
+    <string name="barcode_code_93_description_label">Code 93 ist ein Barcode welcher in militärischen Umgebungen und in der Automobilindustrie genutzt wird, so wie von der "Postes Canada" um spezielle Lieferinformationen zu hinterlegen.</string>
+    <string name="barcode_code_128_description_label">Code 128 ist ein Barcode welcher häufig in der Industrie eingesetzt wird. Er wird im Transportwesen und zur Produktidentifizierung in Supply Chains verwendet, aber auch in der Automobilindustrie und zur Produktmarkierung in Apotheken. Code 128 ist weit verbreitet und findet auch in vielen weiteren Bereichen Anwendung.</string>
+    <string name="barcode_itf_description_label">Code ITF (Interleaved 2 of 5) ist ein Barcode welcher hauptsächlich für den Warenversand Verwendung findet.</string>
+    <string name="barcode_codabar_description_label">Codabar ist ein Barcode welcher entwickelt wurde um von Nadeldruckern gedruckt werden zu können. Findet heute seltener Anwendung, wird aber noch von vielen Bibliotheken genutzt.</string>
+    <string name="barcode_upc_a_description_label">UPC-A (Universal Product Code) ist ein Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er besteht aus 12 Zahlen.</string>
+    <string name="barcode_upc_e_description_label">UPC-E (Universal Product Code) ist ein gekürzter Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen UPC-A Barcode sind. Er besteht aus 8 Zahlen.</string>
+    <string name="barcode_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
+    <string name="barcode_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen EAN-13 Barcode sind. Er besteht aus 8 Zahlen.</string>
 
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Sie müssen die Berechtigungen zulassen um diese Funktionalität nutzen zu können</string>
-    <string name="snack_bar_message_error_url_format">Eine Webadresse muss mit "http://" oder "https://" beginnen</string>
-    <string name="snack_bar_message_error_phone_number_missing">Sie müssen eine Telefonnummer eingeben</string>
-    <string name="snack_bar_message_error_email_missing">Sie müssen mindestens ein Eingabefeld ausfüllen</string>
-    <string name="snack_bar_message_error_localisation_missing">Sie müssen Längen- und Breitengrad angeben</string>
     <string name="snack_bar_message_save_bitmap_ok">Bild wurde gespeichert</string>
     <string name="snack_bar_message_save_bitmap_error">Bild wurde nicht gespeichert… \nZu wenig Speicherplatz?</string>
     <string name="snack_bar_message_share_bitmap_error">Ein Fehler ist während der "Teilen" Konfiguration aufgetreten.</string>
@@ -349,17 +346,21 @@
     <!-- QR Code Generator -->
 
     <!-- Barcode Generator Errors -->
-    <string name="error_bar_code_none_character_message">Sie müssen einen korrekten Wert im Eingabefeld eingeben.</string>
-    <string name="error_bar_code_not_a_number_message">Barcodes dürfen nur aus Zahlen bestehen.</string>
-    <string name="error_bar_code_wrong_length_message">Barcode muss aus %1$s Zahlen bestehen.</string>
-    <string name="error_bar_code_wrong_key_message">%1$ste Zahl (Prüfziffer) sollte %2$s sein.</string>
-    <string name="error_bar_code_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
-    <string name="error_bar_code_encoding_us_ascii_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
-    <string name="error_bar_code_93_regex_error_message">Der "Code 93" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 8 Sonderzeichen « -, ., Leerzeichen, *, $, /, +, % » codieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
-    <string name="error_bar_code_39_regex_error_message">Der "Code 39" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 7 Sonderzeichen « -, ., Leerzeichen, $, /, +, % ». Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
-    <string name="error_bar_codabar_regex_error_message">Der "Codabar" Barcode kann Zahlen (0 bis 9), so wie die 6 Sonderzeichen « -, $, :, /, ., + » codieren. Außerdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden um den Anfang und das Ende zu definieren.</string>
-    <string name="error_bar_code_itf_error_message">Der "ITF" Barcode muss aus einer gerade Anzahl an Zeichen bestehen.</string>
-    <string name="error_bar_code_upc_e_not_start_with_0_error_message">Der "UPC-E" Barcode muss mit einer 0 beginnen.</string>
+    <string name="error_barcode_none_character_message">Sie müssen einen korrekten Wert im Eingabefeld eingeben.</string>
+    <string name="error_barcode_not_a_number_message">Barcodes dürfen nur aus Zahlen bestehen.</string>
+    <string name="error_barcode_wrong_length_message">Barcode muss aus %1$s Zahlen bestehen.</string>
+    <string name="error_barcode_wrong_key_message">%1$ste Zahl (Prüfziffer) sollte %2$s sein.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_barcode_93_regex_error_message">Der "Code 93" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 8 Sonderzeichen « -, ., Leerzeichen, *, $, /, +, % » codieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
+    <string name="error_barcode_39_regex_error_message">Der "Code 39" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 7 Sonderzeichen « -, ., Leerzeichen, $, /, +, % ». Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
+    <string name="error_barcode_codabar_regex_error_message">Der "Codabar" Barcode kann Zahlen (0 bis 9), so wie die 6 Sonderzeichen « -, $, :, /, ., + » codieren. Außerdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden um den Anfang und das Ende zu definieren.</string>
+    <string name="error_barcode_itf_error_message">Der "ITF" Barcode muss aus einer gerade Anzahl an Zeichen bestehen.</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">Der "UPC-E" Barcode muss mit einer 0 beginnen.</string>
+    <string name="error_barcode_qr_url_format_message">Eine Webadresse muss mit "http://" oder "https://" beginnen</string>
+    <string name="error_barcode_qr_phone_number_missing_message">Sie müssen eine Telefonnummer eingeben</string>
+    <string name="error_barcode_qr_email_missing_message">Sie müssen mindestens ein Eingabefeld ausfüllen</string>
+    <string name="error_barcode_qr_localisation_missing_message">Sie müssen Längen- und Breitengrad angeben</string>
 
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Generieren</string>
