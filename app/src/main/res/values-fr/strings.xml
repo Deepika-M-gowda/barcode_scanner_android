@@ -84,6 +84,8 @@
     <string name="menu_item_history_delete">Supprimer l\'historique</string>
     <string name="menu_item_history_delete_from_history">Supprimer de l\'historique</string>
     <string name="menu_item_history_removed_from_history">Retiré de l\'historique!</string>
+    <string name="menu_item_history_add_in_history">Ajouter dans l\'historique</string>
+    <string name="menu_item_history_added_in_history">Ajouté dans l\'historique!</string>
     <string name="delete_label">Supprimer</string>
     <string name="cancel_label">Annuler</string>
     <string name="record_label">Enregistrer</string>

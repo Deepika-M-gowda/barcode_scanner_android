@@ -29,7 +29,7 @@ class DatabaseUseCase(private val barcodeRepository: BarcodeRepository) {
 
     val barcodeList: LiveData<List<Barcode>> = barcodeRepository.getBarcodeList()
 
-    fun getBarcodeByDate(date: Long): LiveData<Barcode> = barcodeRepository.getBarcodeByDate(date)
+    fun getBarcodeByDate(date: Long): LiveData<Barcode?> = barcodeRepository.getBarcodeByDate(date)
 
     suspend fun insertBarcode(barcode: Barcode): Long = barcodeRepository.insertBarcode(barcode)
 

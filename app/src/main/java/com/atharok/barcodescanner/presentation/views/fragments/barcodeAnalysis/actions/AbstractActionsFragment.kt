@@ -62,6 +62,8 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
     private val viewBinding get() = _binding!!
 
+    private val adapter = ActionButtonAdapter()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeAnalysisActionsBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -82,10 +84,29 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         val actionItems = configureActions(barcode, parsedResult)
 
         configureRecyclerView(actionItems)
+
+        configureDatabaseObserver(barcode, parsedResult)
+    }
+
+    /**
+     * On ajoute le bouton DeleteActionItem si le Barcode est présent dans la BDD. Sinon on ne
+     * l'affiche pas.
+     * Si le Barcode a été supprimé de la BDD via le bouton DeleteActionItem, on met à jour
+     * automatiquement l'adapter permettant de ne plus afficher le bouton.
+     */
+    private fun configureDatabaseObserver(barcode: Barcode, parsedResult: ParsedResult) {
+        databaseViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
+            val items = if(it!=null){
+                configureActions(barcode, parsedResult) + configureDeleteBarcodeFromHistoryActionItem(barcode)
+            } else {
+                configureActions(barcode, parsedResult) + configureAddBarcodeInHistoryActionItem(barcode)
+            }
+            adapter.updateData(items)
+        }
     }
 
     private fun configureRecyclerView(actionItems: Array<ActionItem>) {
-        val adapter = ActionButtonAdapter(actionItems)
+
         val layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.grid_layout_span_count))
 
         val recyclerView = viewBinding.fragmentBarcodeAnalysisActionRecyclerView
@@ -93,6 +114,8 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         recyclerView.isNestedScrollingEnabled = false
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
+
+        adapter.updateData(actionItems)
     }
 
     abstract fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem>
@@ -100,9 +123,16 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     protected fun configureDefaultActions(barcode: Barcode) = arrayOf(
         ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openUrl(getSearchEngineUrl(barcode.contents))),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
-        ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteContentsFromHistory(barcode))
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
     )
+
+    private fun configureDeleteBarcodeFromHistoryActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteBarcodeFromHistory(barcode))
+    }
+
+    private fun configureAddBarcodeInHistoryActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(R.string.menu_item_history_add_in_history, R.drawable.baseline_add_24, addBarcodeInHistory(barcode))
+    }
 
     // ---- Actions ----
 
@@ -127,11 +157,17 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         }
     }
 
-    protected fun deleteContentsFromHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+    private fun deleteBarcodeFromHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             databaseViewModel.deleteBarcode(barcode)
-            view?.visibility = View.GONE
             showSnackbar(getString(R.string.menu_item_history_removed_from_history))
+        }
+    }
+
+    private fun addBarcodeInHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            databaseViewModel.insertBarcode(barcode)
+            showSnackbar(getString(R.string.menu_item_history_added_in_history))
         }
     }
 

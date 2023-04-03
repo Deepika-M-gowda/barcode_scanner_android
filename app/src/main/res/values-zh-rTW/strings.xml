@@ -84,6 +84,8 @@
     <string name="menu_item_history_delete">刪除歷史紀錄</string>
     <string name="menu_item_history_delete_from_history">從歷史紀錄中刪除</string>
     <string name="menu_item_history_removed_from_history">從歷史紀錄中移除！</string>
+    <string name="menu_item_history_add_in_history">Add in the history</string>
+    <string name="menu_item_history_added_in_history">Added in the history!</string>
     <string name="delete_label">刪除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">儲存</string>

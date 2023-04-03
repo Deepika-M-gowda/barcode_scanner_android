@@ -20,12 +20,18 @@
 
 package com.atharok.barcodescanner.presentation.views.recyclerView.actionButton
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItem
 
-class ActionButtonAdapter(private val items: Array<ActionItem>): RecyclerView.Adapter<ActionButtonHolder>() {
+class ActionButtonAdapter: RecyclerView.Adapter<ActionButtonHolder>() {
+
+    private var items: List<ActionItem> = listOf()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionButtonHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val viewBinding = TemplateActionButtonBinding.inflate(layoutInflater, parent, false)
@@ -36,5 +42,11 @@ class ActionButtonAdapter(private val items: Array<ActionItem>): RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ActionButtonHolder, position: Int) {
         holder.updateItem(items[position])
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(actionItemArray: Array<ActionItem>){
+        items = actionItemArray.map { it }
+        this.notifyDataSetChanged()
     }
 }

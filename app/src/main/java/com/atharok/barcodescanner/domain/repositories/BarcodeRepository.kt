@@ -31,7 +31,7 @@ interface BarcodeRepository {
 
     fun getBarcodeList(): LiveData<List<Barcode>>
 
-    fun getBarcodeByDate(date: Long): LiveData<Barcode>
+    fun getBarcodeByDate(date: Long): LiveData<Barcode?>
 
     suspend fun insertBarcode(barcode: Barcode): Long
 

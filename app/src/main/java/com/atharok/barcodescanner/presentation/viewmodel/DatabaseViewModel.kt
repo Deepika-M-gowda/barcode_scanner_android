@@ -32,7 +32,7 @@ class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel
 
     val barcodeList: LiveData<List<Barcode>> = databaseUseCase.barcodeList
 
-    fun getBarcodeByDate(date: Long): LiveData<Barcode> = databaseUseCase.getBarcodeByDate(date)
+    fun getBarcodeByDate(date: Long): LiveData<Barcode?> = databaseUseCase.getBarcodeByDate(date)
 
     fun insertBarcode(barcode: Barcode) = viewModelScope.launch {
         databaseUseCase.insertBarcode(barcode)

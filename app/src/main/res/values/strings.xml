@@ -84,6 +84,8 @@
     <string name="menu_item_history_delete">Delete history</string>
     <string name="menu_item_history_delete_from_history">Delete from history</string>
     <string name="menu_item_history_removed_from_history">Removed from history!</string>
+    <string name="menu_item_history_add_in_history">Add in the history</string>
+    <string name="menu_item_history_added_in_history">Added in the history!</string>
     <string name="delete_label">Delete</string>
     <string name="cancel_label">Cancel</string>
     <string name="record_label">Save</string>

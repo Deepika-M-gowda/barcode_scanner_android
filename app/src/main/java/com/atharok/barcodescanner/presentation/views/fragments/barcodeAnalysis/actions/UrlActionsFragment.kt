@@ -35,9 +35,8 @@ class UrlActionsFragment: AbstractActionsFragment() {
     }
 
     private fun configureUrlActions(barcode: Barcode) = arrayOf(
-        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(barcode.contents)), //Idée text: Ouvrir le lien
+        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(barcode.contents)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
-        ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteContentsFromHistory(barcode))
+        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
     )
 }

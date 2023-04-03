@@ -31,7 +31,7 @@ interface BarcodeDao {
     fun getBarcodeList(): LiveData<List<Barcode>>
 
     @Query("SELECT * FROM Barcode WHERE scan_date = :date LIMIT 1")
-    fun getBarcodeByDate(date: Long): LiveData<Barcode>
+    fun getBarcodeByDate(date: Long): LiveData<Barcode?>
 
     @Insert
     suspend fun insert(barcode: Barcode): Long
