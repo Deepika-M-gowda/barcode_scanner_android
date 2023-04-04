@@ -117,7 +117,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
             if(bitmap != null){
                 job?.cancel()
                 job = lifecycleScope.launch(Dispatchers.IO) {
-                    zxingResult = bitmapBarcodeAnalyser.findBarcodeInBitmap(bitmap)
+                    zxingResult = bitmapBarcodeAnalyser.detectBarcodeFromBitmap(bitmap)
                     setMenuVisibility(zxingResult != null)
                 }
             }

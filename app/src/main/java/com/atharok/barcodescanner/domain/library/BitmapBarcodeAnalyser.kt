@@ -20,17 +20,20 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import android.graphics.Bitmap
+import android.graphics.*
 import android.util.Log
 import com.google.zxing.*
 import com.google.zxing.common.HybridBinarizer
+
 
 /**
  * Recherche un code-barres dans une image.
  */
 class BitmapBarcodeAnalyser {
 
-    fun findBarcodeInBitmap(bitmap: Bitmap): Result? {
+    private val reader = MultiFormatReader()
+
+    fun detectBarcodeFromBitmap(bitmap: Bitmap): Result? {
 
         val width = bitmap.width
         val height = bitmap.height
@@ -43,13 +46,24 @@ class BitmapBarcodeAnalyser {
         val source = RGBLuminanceSource(width, height, bitmapBuffer)
         val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
 
-        val reader = MultiFormatReader()
+        //val hints = hashMapOf<DecodeHintType, Any>()
+        //hints[DecodeHintType.TRY_HARDER] = true
+        //hints[DecodeHintType.PURE_BARCODE] = true
+
+        reader.reset()
 
         return try {
             reader.decode(binaryBitmap)
         } catch (e: NotFoundException) {
-            Log.e("BitmapBarcodeAnalyser", "Barcode not found in Bitmap")
-            null
+            val invertedSource = source.invert()
+            val invertedBinaryBitmap = BinaryBitmap(HybridBinarizer(invertedSource))
+            reader.reset()
+            try {
+                reader.decode(invertedBinaryBitmap)
+            } catch (e: ReaderException) {
+                Log.e("BitmapBarcodeAnalyser", "Barcode not found in Bitmap")
+                null
+            }
         }
     }
 }
