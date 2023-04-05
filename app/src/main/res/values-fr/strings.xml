@@ -291,6 +291,9 @@
     <string name="matrix_localisation_longitude_label">Longitude :</string>
     <string name="matrix_localisation_altitude_label">Altitude :</string>
     <string name="matrix_localisation_query_label">Query :</string>
+    <string name="matrix_localisation_button_find_location">Générer à partir de votre position</string>
+    <string name="matrix_localisation_search_current_position_label">Recherche de la position en cours…</string>
+    <string name="matrix_localisation_location_disabled_label">La localisation sur votre appareil ne semble pas être activée.</string>
 
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Ce type de code-barres est souvent utilisé dans le milieu industriel.</string>

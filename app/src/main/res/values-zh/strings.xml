@@ -291,6 +291,9 @@
     <string name="matrix_localisation_longitude_label">经度：</string>
     <string name="matrix_localisation_altitude_label">高度：</string>
     <string name="matrix_localisation_query_label">查询：</string>
+    <string name="matrix_localisation_button_find_location">Generate from your position</string>
+    <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
+    <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
 
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">这种条码在工业上经常使用。</string>
