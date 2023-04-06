@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/nutrition_facts_no_information_found_label"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"/>
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
         <!-- Table -->
         <FrameLayout
@@ -34,8 +34,7 @@
 
             <include
                 layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_food_analysis_root_nutrition_facts_table_entitled_text_view_template"
-                />
+                android:id="@+id/fragment_food_analysis_root_nutrition_facts_table_entitled_text_view_template" />
 
         </FrameLayout>
 
@@ -43,7 +42,7 @@
             android:id="@+id/fragment_food_analysis_root_nutrition_facts_table_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_table_entitled_layout"/>
+            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_table_entitled_layout" />
 
         <!-- Nutrient Level -->
         <FrameLayout
@@ -55,8 +54,7 @@
 
             <include
                 layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_text_view_template"
-                />
+                android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_text_view_template" />
 
         </FrameLayout>
 
@@ -65,28 +63,28 @@
             android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_fat_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_layout"/>
+            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_layout" />
 
         <!-- Saturated Fat -->
         <FrameLayout
             android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_saturated_fat_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_fat_layout"/>
+            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_fat_layout" />
 
         <!-- Sugars -->
         <FrameLayout
             android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_sugars_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_saturated_fat_layout"/>
+            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_saturated_fat_layout" />
 
         <!-- Salt -->
         <FrameLayout
             android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_salt_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_sugars_layout"/>
+            android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_nutrient_level_sugars_layout" />
 
     </RelativeLayout>
 

@@ -46,8 +46,7 @@
                 <FrameLayout
                     android:id="@+id/activity_barcode_form_creator_fragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
                 <RelativeLayout
                     android:id="@+id/activity_barcode_form_creator_error_layout"

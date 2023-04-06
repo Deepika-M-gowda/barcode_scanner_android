@@ -45,13 +45,11 @@
                 android:id="@+id/activity_barcode_image_about_barcode_entitled_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_below="@id/activity_barcode_image_image_rounded">
 
                 <include
                     layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/activity_barcode_image_about_barcode_entitled_text_view_template"
-                    />
+                    android:id="@+id/activity_barcode_image_about_barcode_entitled_text_view_template" />
 
             </FrameLayout>
 
@@ -60,14 +58,14 @@
                 android:id="@+id/activity_barcode_image_barcode_contents_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/activity_barcode_image_about_barcode_entitled_layout"/>
+                android:layout_below="@id/activity_barcode_image_about_barcode_entitled_layout" />
 
             <!-- Barcode Information -->
             <FrameLayout
                 android:id="@+id/activity_barcode_image_about_barcode_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/activity_barcode_image_barcode_contents_frame_layout"/>
+                android:layout_below="@id/activity_barcode_image_barcode_contents_frame_layout" />
 
         </RelativeLayout>
 

@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_history_delete_icon_image_view"
             android:text="@string/delete_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
         <ImageView
             android:id="@+id/recycler_view_item_history_delete_icon_image_view"
@@ -57,8 +57,7 @@
                 android:background="@drawable/circle"
                 app:backgroundTint="?colorPrimary"
                 app:tint="?colorOnPrimary"
-                android:contentDescription="@string/image_view_description_type_icon"
-                />
+                android:contentDescription="@string/image_view_description_type_icon" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -81,8 +80,7 @@
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_format_text_view"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
-                        />
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
                     <TextView
                         android:id="@+id/recycler_view_item_history_barcode_format_text_view"

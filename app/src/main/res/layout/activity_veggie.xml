@@ -10,7 +10,7 @@
         layout="@layout/template_toolbar"
         android:id="@+id/activity_veggie_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/ingredients_no_information_found_label"
             style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/activity_veggie_ingredients_list_layout"
@@ -40,8 +40,7 @@
 
                 <include
                     layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/activity_veggie_ingredients_list_entitled_text_view_template"
-                    />
+                    android:id="@+id/activity_veggie_ingredients_list_entitled_text_view_template" />
 
             </FrameLayout>
 
@@ -50,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
-                android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout"/>
+                android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout" />
 
         </RelativeLayout>
 

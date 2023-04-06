@@ -22,27 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/activity_barcode_information_toolbar"/>
 
-        <!--<com.google.android.material.tabs.TabLayout
-            android:id="@+id/activity_barcode_information_tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/tab_layout_height"
-            android:layout_below="@id/activity_barcode_information_toolbar"
-            app:tabIndicatorColor="?colorAccent"
-            app:tabSelectedTextColor="?colorAccent"
-            app:tabTextAppearance="@style/TabLayoutTextAppearance"
-
-            app:tabGravity="center"
-            app:tabMode="scrollable"
-
-            android:background="?colorPrimary"
-            />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/activity_barcode_information_view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/activity_barcode_information_tab_layout"/>-->
-
         <ProgressBar
             android:id="@+id/activity_barcode_information_progress_bar"
             android:layout_width="wrap_content"

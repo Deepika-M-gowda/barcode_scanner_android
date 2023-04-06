@@ -10,6 +10,6 @@
     <!-- Labels -->
     <include
         layout="@layout/template_expandable_view"
-        android:id="@+id/food_analysis_labels_expandable_view_template"/>
+        android:id="@+id/food_analysis_labels_expandable_view_template" />
 
 </com.google.android.material.card.MaterialCardView>

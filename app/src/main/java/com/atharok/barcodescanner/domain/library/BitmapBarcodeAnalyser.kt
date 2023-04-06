@@ -20,7 +20,7 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import android.graphics.*
+import android.graphics.Bitmap
 import android.util.Log
 import com.google.zxing.*
 import com.google.zxing.common.HybridBinarizer

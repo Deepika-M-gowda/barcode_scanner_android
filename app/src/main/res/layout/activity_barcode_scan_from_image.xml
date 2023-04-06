@@ -10,7 +10,7 @@
         layout="@layout/template_toolbar"
         android:id="@+id/activity_barcode_scan_from_image_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
         <com.canhub.cropper.CropImageView
             android:id="@+id/activity_barcode_scan_from_image_crop_image_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </FrameLayout>
 
 </RelativeLayout>

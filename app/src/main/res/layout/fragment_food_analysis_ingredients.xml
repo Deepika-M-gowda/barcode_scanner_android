@@ -10,20 +10,20 @@
     <FrameLayout
         android:id="@+id/fragment_food_analysis_ingredients_frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <!-- Allergens -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_ingredients_allergens_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_ingredients_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_ingredients_frame_layout" />
 
     <!-- Traces -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_ingredients_traces_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_ingredients_allergens_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_ingredients_allergens_frame_layout" />
 
 </RelativeLayout>

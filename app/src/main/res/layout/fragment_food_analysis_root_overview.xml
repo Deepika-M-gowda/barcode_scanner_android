@@ -30,7 +30,7 @@
                 android:id="@+id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_overview_frame_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_overview_frame_layout" />
 
             <!-- Product Quality -->
             <FrameLayout
@@ -41,8 +41,7 @@
 
                 <include
                     layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view_template"
-                    />
+                    android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view_template" />
 
             </FrameLayout>
 
@@ -51,33 +50,31 @@
                 android:id="@+id/fragment_food_analysis_root_overview_quality_nutri_score_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_quality_entitled_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_quality_entitled_layout" />
 
             <!-- Nova Group -->
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_quality_nova_group_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_quality_nutri_score_frame_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_quality_nutri_score_frame_layout" />
 
             <!-- EcoScore -->
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_quality_eco_score_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_quality_nova_group_frame_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_quality_nova_group_frame_layout" />
 
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_details_entitled_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_below="@id/fragment_food_analysis_root_overview_quality_eco_score_frame_layout">
 
                 <include
                     layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view_template"
-                    />
+                    android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view_template" />
 
             </FrameLayout>
 
@@ -86,21 +83,21 @@
                 android:id="@+id/fragment_food_analysis_root_overview_labels_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_details_entitled_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_details_entitled_layout" />
 
             <!-- Product Details -->
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_details_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_labels_frame_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_labels_frame_layout" />
 
             <!-- About Barcode -->
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_about_barcode_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_details_frame_layout"/>
+                android:layout_below="@id/fragment_food_analysis_root_overview_details_frame_layout" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>

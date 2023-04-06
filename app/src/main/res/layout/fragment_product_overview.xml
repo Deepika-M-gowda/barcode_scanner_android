@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_product_overview_title_text_view"
                 android:layout_alignStart="@id/fragment_product_overview_title_text_view"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"/>
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
             <TextView
                 android:id="@+id/fragment_product_overview_subtitle_2_text_view"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_product_overview_subtitle_1_text_view"
                 android:layout_alignStart="@id/fragment_product_overview_title_text_view"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"/>
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
             <TextView
                 android:id="@+id/fragment_product_overview_subtitle_3_text_view"

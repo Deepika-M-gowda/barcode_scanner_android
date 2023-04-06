@@ -50,37 +50,35 @@ class BarcodeMatrixLocalisationFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is GeoParsedResult && parsedResult.type == ParsedResultType.GEO) {
             configureLatitude(parsedResult.latitude)
             configureLongitude(parsedResult.longitude)
             configureAltitude(parsedResult.altitude)
             configureQuery(parsedResult.query)
-
         }else{
             viewBinding.root.visibility = View.GONE
         }
     }
 
-    private fun configureLatitude(latitude: Double?) = displayText(
+    private fun configureLatitude(latitude: Double?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixLocalisationLatitudeTextView,
         layout = viewBinding.fragmentBarcodeMatrixLocalisationLatitudeLayout,
         text = latitude?.toString()
     )
 
-    private fun configureLongitude(longitude: Double?) = displayText(
+    private fun configureLongitude(longitude: Double?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixLocalisationLongitudeTextView,
         layout = viewBinding.fragmentBarcodeMatrixLocalisationLongitudeLayout,
         text = longitude?.toString()
     )
 
-    private fun configureAltitude(altitude: Double?) = displayText(
+    private fun configureAltitude(altitude: Double?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixLocalisationAltitudeTextView,
         layout = viewBinding.fragmentBarcodeMatrixLocalisationAltitudeLayout,
         text = altitude?.toString()
     )
 
-    private fun configureQuery(query: String?) = displayText(
+    private fun configureQuery(query: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixLocalisationQueryTextView,
         layout = viewBinding.fragmentBarcodeMatrixLocalisationQueryLayout,
         text = query

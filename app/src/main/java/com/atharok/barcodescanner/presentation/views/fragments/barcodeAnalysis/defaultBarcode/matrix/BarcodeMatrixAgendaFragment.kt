@@ -55,43 +55,42 @@ class BarcodeMatrixAgendaFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is CalendarParsedResult && parsedResult.type == ParsedResultType.CALENDAR) {
             configureNameEvent(parsedResult.summary)
             configureStartEvent(parsedResult.startTimestamp)
             configureEndEvent(parsedResult.endTimestamp)
             configurePlace(parsedResult.location)
             configureDescription(parsedResult.description)
-        }else{
+        } else {
             viewBinding.root.visibility = View.GONE
         }
     }
 
-    private fun configureNameEvent(name: String?) = displayText(
+    private fun configureNameEvent(name: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixAgendaNameEventTextView,
         layout = viewBinding.fragmentBarcodeMatrixAgendaNameEventLayout,
         text = name
     )
 
-    private fun configureStartEvent(startDate: Long?) = displayText(
+    private fun configureStartEvent(startDate: Long?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixAgendaStartDateTextView,
         layout = viewBinding.fragmentBarcodeMatrixAgendaStartDateLayout,
         text = getDateFormat(startDate)
     )
 
-    private fun configureEndEvent(endDate: Long?) = displayText(
+    private fun configureEndEvent(endDate: Long?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixAgendaEndDateTextView,
         layout = viewBinding.fragmentBarcodeMatrixAgendaEndDateLayout,
         text = getDateFormat(endDate)
     )
 
-    private fun configurePlace(place: String?) = displayText(
+    private fun configurePlace(place: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixAgendaPlaceTextView,
         layout = viewBinding.fragmentBarcodeMatrixAgendaPlaceLayout,
         text = place
     )
 
-    private fun configureDescription(description: String?) = displayText(
+    private fun configureDescription(description: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixAgendaDescriptionTextView,
         layout = viewBinding.fragmentBarcodeMatrixAgendaDescriptionLayout,
         text = description

@@ -63,7 +63,7 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configureUri(uri: String?) = displayText(
+    private fun configureUri(uri: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixUriUrlTextView,
         layout = viewBinding.fragmentBarcodeMatrixUriUrlLayout,
         text = uri

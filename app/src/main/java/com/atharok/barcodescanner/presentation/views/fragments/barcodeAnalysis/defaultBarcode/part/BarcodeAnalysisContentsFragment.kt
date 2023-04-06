@@ -57,7 +57,7 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeAnalysisContentsBinding.inflate(inflater, container, false)
-        configureBarcodeContentsTemplates(inflater)
+        configureHeaderEntitledTemplateBinding(inflater)
         return viewBinding.root
     }
 
@@ -66,26 +66,17 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         _binding=null
     }
 
-    private fun configureBarcodeContentsTemplates(inflater: LayoutInflater) {
-
-        val expandableViewTemplate = viewBinding.fragmentBarcodeAnalysisContentsExpandableViewTemplate
-
-        expandableViewTemplate.root.open() // L'ExpandableView est ouvert par défaut
-        val parentHeader = expandableViewTemplate.templateExpandableViewHeaderFrameLayout
-
+    private fun configureHeaderEntitledTemplateBinding(inflater: LayoutInflater) {
+        val parentHeader = viewBinding.fragmentBarcodeAnalysisContentsHeaderFrameLayout
         headerEntitledTemplateBinding = TemplateEntitledViewBinding.inflate(inflater, parentHeader, true)
     }
 
     override fun start(product: BarcodeAnalysis) {
-
         val barcode = product.barcode
-
         val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
             parametersOf(barcode.contents, barcode.getBarcodeFormat())
         }
-
         val displayResult = parsedResult.displayResult
-
         configureHeaderEntitled(parsedResult, displayResult)
         configureHeaderIcon(barcode.getBarcodeFormat())
         configureBarcodeContentsFragment(parsedResult, displayResult)
@@ -102,7 +93,6 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
                 else -> R.string.bar_code_content_label
             }
         }
-
         headerEntitledTemplateBinding.templateEntitledViewTextView.root.text = getString(entitledStringResource)
     }
 
@@ -114,12 +104,10 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
             BarcodeFormat.PDF_417 -> R.drawable.ic_pdf_417_code_24
             else -> R.drawable.ic_bar_code_24
         }
-
         headerEntitledTemplateBinding.templateEntitledViewIconImageView.setImageResource(barCodeIconDrawableResource)
     }
 
     private fun configureBarcodeContentsFragment(parsedResult: ParsedResult, displayResult: String?){
-
         val fragmentKClass = if(displayResult.isNullOrEmpty()){
             BarcodeAnalysisTextFragment::class
         }else {
@@ -136,8 +124,7 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
                 else -> BarcodeAnalysisTextFragment::class
             }
         }
-
-        val frameLayout = viewBinding.fragmentBarcodeAnalysisContentsExpandableViewTemplate.templateExpandableViewBodyFrameLayout
+        val frameLayout = viewBinding.fragmentBarcodeAnalysisContentsBodyFrameLayout
         applyFragment(frameLayout.id, fragmentKClass, arguments)
     }
 }

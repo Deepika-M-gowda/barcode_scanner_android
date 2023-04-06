@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:paddingStart="@dimen/standard_margin"
     android:paddingEnd="@dimen/standard_margin"
-
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".presentation.views.fragments.barcodeAnalysis.product.ProductAnalysisFragment">
 
@@ -17,7 +16,6 @@
         android:layout_height="match_parent">
 
         <!-- Product Information API -->
-
         <FrameLayout
             android:id="@+id/fragment_product_analysis_search_api_entitled_layout"
             android:layout_width="wrap_content"
@@ -25,8 +23,7 @@
 
             <include
                 layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_product_analysis_product_search_api_entitled_text_view_template"
-                />
+                android:id="@+id/fragment_product_analysis_product_search_api_entitled_text_view_template" />
 
         </FrameLayout>
 
@@ -34,16 +31,13 @@
             android:id="@+id/fragment_product_analysis_search_api_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_product_analysis_search_api_entitled_layout"/>
+            android:layout_below="@id/fragment_product_analysis_search_api_entitled_layout" />
 
         <!-- About Barcode -->
-
         <FrameLayout
             android:id="@+id/fragment_product_analysis_about_barcode_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_product_analysis_search_api_frame_layout"/>
-
+            android:layout_below="@id/fragment_product_analysis_search_api_frame_layout" />
     </RelativeLayout>
-
 </androidx.core.widget.NestedScrollView>

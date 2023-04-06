@@ -11,17 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_layout_height"
         app:tabTextAppearance="@style/AppTheme.TabLayout.TextAppearance"
-
         app:tabGravity="center"
         app:tabMode="scrollable"
-
-        android:background="?android:colorBackground"
-        />
+        android:background="?android:colorBackground" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/fragment_food_analysis_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fragment_food_analysis_tab_layout"/>
+        android:layout_below="@id/fragment_food_analysis_tab_layout" />
 
 </RelativeLayout>

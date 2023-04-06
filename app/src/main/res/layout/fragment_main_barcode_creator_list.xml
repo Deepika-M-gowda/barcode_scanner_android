@@ -57,7 +57,7 @@
                         android:layout_toStartOf="@id/fragment_main_create_barcode_list_header_icon_image_view"
                         android:layout_centerVertical="true"
                         android:text="@string/barcode_qr_code_label"
-                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
                     <ImageView
                         android:id="@+id/fragment_main_create_barcode_list_header_icon_image_view"
@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/x_large_margin"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical" />
 
             </FrameLayout>
 
@@ -98,7 +98,7 @@
                 android:id="@+id/fragment_main_create_barcode_list_barcode_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
         </FrameLayout>
     </RelativeLayout>

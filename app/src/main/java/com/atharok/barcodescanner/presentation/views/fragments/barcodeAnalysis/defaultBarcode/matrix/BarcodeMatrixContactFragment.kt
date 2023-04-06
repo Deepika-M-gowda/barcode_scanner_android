@@ -51,7 +51,6 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is AddressBookParsedResult && parsedResult.type == ParsedResultType.ADDRESSBOOK) {
             configureName(parsedResult.names ?: parsedResult.nicknames)
             configureOrganization(parsedResult.org)
@@ -60,24 +59,24 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
             configureMail(parsedResult.emails, parsedResult.emailTypes)
             configureAddress(parsedResult.addresses)
             configureNotes(parsedResult.note)
-        }else{
+        } else {
             viewBinding.root.visibility = View.GONE
         }
     }
 
-    private fun configureName(names: Array<String?>?) = displayArray(
+    private fun configureName(names: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixContactNameTextView,
         layout = viewBinding.fragmentBarcodeMatrixContactNameLayout,
         array = names
     )
 
-    private fun configureOrganization(org: String?) = displayText(
+    private fun configureOrganization(org: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixContactOrganizationTextView,
         layout = viewBinding.fragmentBarcodeMatrixContactOrganizationLayout,
         text = org
     )
 
-    private fun configureTitle(title: String?) = displayText(
+    private fun configureTitle(title: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixContactTitleTextView,
         layout = viewBinding.fragmentBarcodeMatrixContactTitleLayout,
         text = title
@@ -153,13 +152,13 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configureAddress(addresses: Array<String?>?) = displayArray(
+    private fun configureAddress(addresses: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixContactAddressTextView,
         layout = viewBinding.fragmentBarcodeMatrixContactAddressLayout,
         array = addresses
     )
 
-    private fun configureNotes(notes: String?) = displayText(
+    private fun configureNotes(notes: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixContactNotesTextView,
         layout = viewBinding.fragmentBarcodeMatrixContactNotesLayout,
         text = notes
@@ -172,7 +171,7 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
         contact: String?,
         type: String?){
 
-        displayText(nameTextView, layout, contact)
+        configureText(nameTextView, layout, contact)
 
         if(!type.isNullOrBlank()){
             val typeConcat = "($type)"

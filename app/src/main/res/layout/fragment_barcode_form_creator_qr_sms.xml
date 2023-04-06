@@ -25,8 +25,7 @@
             android:inputType="phone"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_sms_message_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_sms_message_input_edit_text" />
 
     </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -48,8 +47,7 @@
             android:inputType="textMultiLine"
             android:imeOptions="actionDone"
             android:lines="8"
-            android:gravity="top|start"
-            />
+            android:gravity="top|start" />
 
     </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 

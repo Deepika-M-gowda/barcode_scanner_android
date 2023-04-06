@@ -49,7 +49,6 @@ class BarcodeMatrixPhoneFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is TelParsedResult && parsedResult.type == ParsedResultType.TEL) {
             configurePhoneNumber(parsedResult.number)
         }else{
@@ -57,7 +56,7 @@ class BarcodeMatrixPhoneFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configurePhoneNumber(phoneNumber: String?) = displayText(
+    private fun configurePhoneNumber(phoneNumber: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixPhoneNumberTextView,
         layout = viewBinding.root,
         text = phoneNumber

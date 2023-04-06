@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/standard_margin"
-            android:text="@string/matrix_localisation_button_find_location"/>
+            android:text="@string/matrix_localisation_button_find_location" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fragment_barcode_form_creator_qr_localisation_cancel_button"
@@ -28,7 +28,7 @@
             android:text="@string/cancel_label"
             android:backgroundTint="?colorTertiary"
             android:textColor="?colorOnTertiary"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </FrameLayout>
 
@@ -48,8 +48,7 @@
             android:inputType="numberDecimal"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_localisation_longitude_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_localisation_longitude_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,8 +68,7 @@
             android:inputType="numberDecimal"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_localisation_request_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_localisation_request_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,8 +87,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:maxLines="1"
-            android:imeOptions="actionDone"
-            />
+            android:imeOptions="actionDone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +103,7 @@
             android:id="@+id/fragment_barcode_form_creator_qr_localisation_progress_bar"
             android:layout_width="@dimen/icon_standard_size"
             android:layout_height="@dimen/icon_standard_size"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true" />
 
         <TextView
             android:id="@+id/fragment_barcode_form_creator_qr_localisation_search_text_view"
@@ -116,8 +113,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
             android:text="@string/matrix_localisation_search_current_position_label"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
-            />
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
     </RelativeLayout>
 

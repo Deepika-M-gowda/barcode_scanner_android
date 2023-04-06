@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.activities.AboutBddActivity">
 
-    <!--<com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/activity_about_bdd_app_bar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <include
-            layout="@layout/template_toolbar"
-            android:id="@+id/activity_about_bdd_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </com.google.android.material.appbar.AppBarLayout>-->
-
     <include
         layout="@layout/template_toolbar"
         android:id="@+id/activity_about_bdd_toolbar"

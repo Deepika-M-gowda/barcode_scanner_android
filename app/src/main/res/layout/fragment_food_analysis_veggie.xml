@@ -19,19 +19,19 @@
             android:id="@+id/fragment_food_analysis_veggie_vegan_chip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:chipStrokeWidth="@dimen/stroke_width"/>
+            app:chipStrokeWidth="@dimen/stroke_width" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/fragment_food_analysis_veggie_vegetarian_chip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:chipStrokeWidth="@dimen/stroke_width"/>
+            app:chipStrokeWidth="@dimen/stroke_width" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/fragment_food_analysis_veggie_palm_oil_chip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:chipStrokeWidth="@dimen/stroke_width"/>
+            app:chipStrokeWidth="@dimen/stroke_width" />
 
     </com.google.android.material.chip.ChipGroup>
 

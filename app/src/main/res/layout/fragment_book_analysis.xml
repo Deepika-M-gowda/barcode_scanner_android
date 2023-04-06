@@ -20,14 +20,14 @@
             android:id="@+id/fragment_book_analysis_overview_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true" />
 
         <!-- Summary -->
         <FrameLayout
             android:id="@+id/fragment_book_analysis_summary_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_overview_layout"/>
+            android:layout_below="@id/fragment_book_analysis_overview_layout" />
 
         <!-- More Label -->
         <FrameLayout
@@ -38,8 +38,7 @@
 
             <include
                 layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_book_analysis_more_entitled_text_view_template"
-                />
+                android:id="@+id/fragment_book_analysis_more_entitled_text_view_template" />
 
         </FrameLayout>
 
@@ -48,35 +47,35 @@
             android:id="@+id/fragment_book_analysis_categories_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_more_entitled_layout"/>
+            android:layout_below="@id/fragment_book_analysis_more_entitled_layout" />
 
         <!-- Nb Pages -->
         <FrameLayout
             android:id="@+id/fragment_book_analysis_nb_pages_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_categories_frame_layout"/>
+            android:layout_below="@id/fragment_book_analysis_categories_frame_layout" />
 
         <!-- Contributions -->
         <FrameLayout
             android:id="@+id/fragment_book_analysis_contributions_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_nb_pages_frame_layout"/>
+            android:layout_below="@id/fragment_book_analysis_nb_pages_frame_layout" />
 
         <!-- Publication Date -->
         <FrameLayout
             android:id="@+id/fragment_book_analysis_publication_date_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_contributions_frame_layout"/>
+            android:layout_below="@id/fragment_book_analysis_contributions_frame_layout" />
 
         <!-- Original Title -->
         <FrameLayout
             android:id="@+id/fragment_book_analysis_original_title_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_publication_date_frame_layout"/>
+            android:layout_below="@id/fragment_book_analysis_publication_date_frame_layout" />
 
         <!-- About Barcode -->
 
@@ -84,7 +83,7 @@
             android:id="@+id/fragment_book_analysis_about_barcode_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_book_analysis_original_title_frame_layout"/>
+            android:layout_below="@id/fragment_book_analysis_original_title_frame_layout" />
 
     </RelativeLayout>
 

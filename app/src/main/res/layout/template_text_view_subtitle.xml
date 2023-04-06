@@ -6,9 +6,3 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/standard_margin"
     style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
-
-<!--
-android:textColor="?android:textColorSecondary"
-    android:textSize="@dimen/sub_title_text_size"
-    android:fontFamily="@font/roboto_medium"
-    -->

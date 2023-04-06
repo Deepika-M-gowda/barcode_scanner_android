@@ -5,10 +5,3 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
-
-<!--
-
-    android:textColor="?android:attr/textColorPrimary"
-    android:textSize="@dimen/title_text_size"
-    android:fontFamily="@font/roboto_black"
--->

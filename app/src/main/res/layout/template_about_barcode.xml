@@ -17,7 +17,7 @@
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@id/template_about_barcode_origin_layout"
             android:text="@string/about_barcode_format_label"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"/>
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
         <!-- Barcode origin -->
         <RelativeLayout
@@ -33,7 +33,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:text="@string/about_barcode_origin_label"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"/>
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
             <ImageView
                 android:id="@+id/template_about_barcode_origin_flag_image_view"
@@ -43,7 +43,6 @@
                 android:layout_marginEnd="@dimen/standard_margin"
                 android:layout_toEndOf="@id/template_about_barcode_origin_country_label"
                 android:layout_centerVertical="true"
-
                 android:contentDescription="@string/image_view_description_flag" />
 
             <TextView
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/template_about_barcode_origin_flag_image_view"
                 android:layout_centerVertical="true"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"/>
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
         </RelativeLayout>
 
@@ -70,7 +69,7 @@
             android:id="@+id/fragment_about_barcode_description_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic"/>
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </FrameLayout>
 

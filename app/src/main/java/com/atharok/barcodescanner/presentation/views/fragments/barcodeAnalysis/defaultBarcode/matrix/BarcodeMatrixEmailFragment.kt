@@ -49,7 +49,6 @@ class BarcodeMatrixEmailFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is EmailAddressParsedResult && parsedResult.type == ParsedResultType.EMAIL_ADDRESS) {
             configureAddress(parsedResult.tos)
             configureCC(parsedResult.cCs)
@@ -61,31 +60,31 @@ class BarcodeMatrixEmailFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configureAddress(addresses: Array<String?>?) = displayArray(
+    private fun configureAddress(addresses: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixEmailAddressTextView,
         layout = viewBinding.fragmentBarcodeMatrixEmailAddressLayout,
         array = addresses
     )
 
-    private fun configureCC(ccs: Array<String?>?) = displayArray(
+    private fun configureCC(ccs: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixEmailCcTextView,
         layout = viewBinding.fragmentBarcodeMatrixEmailCcLayout,
         array = ccs
     )
 
-    private fun configureBCC(bccs: Array<String?>?) = displayArray(
+    private fun configureBCC(bccs: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixEmailBccTextView,
         layout = viewBinding.fragmentBarcodeMatrixEmailBccLayout,
         array = bccs
     )
 
-    private fun configureSubject(subject: String?) = displayText(
+    private fun configureSubject(subject: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixEmailSubjectTextView,
         layout = viewBinding.fragmentBarcodeMatrixEmailSubjectLayout,
         text = subject
     )
 
-    private fun configureBody(message: String?) = displayText(
+    private fun configureBody(message: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixEmailBodyTextView,
         layout = viewBinding.fragmentBarcodeMatrixEmailBodyLayout,
         text = message

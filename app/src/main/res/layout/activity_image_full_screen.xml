@@ -12,10 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/image_view_description_image"
-        android:transitionName="@string/animation_activity_transition"/>
+        android:transitionName="@string/animation_activity_transition" />
 
     <androidx.appcompat.widget.Toolbar
-
         android:id="@+id/activity_image_full_screen_toolbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

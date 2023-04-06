@@ -67,49 +67,49 @@ class BarcodeMatrixWifiFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configureSSID(ssid: String?) = displayText(
+    private fun configureSSID(ssid: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiSsidTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiSsidLayout,
         text = ssid
     )
 
-    private fun configurePassword(password: String?) = displayText(
+    private fun configurePassword(password: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiPasswordTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiPasswordLayout,
         text = password
     )
 
-    private fun configureEncryption(encryption: String?) = displayText(
+    private fun configureEncryption(encryption: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiEncryptionTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiEncryptionLayout,
         text = encryption
     )
 
-    private fun configureIsHidden(isHidden: Boolean?) = displayText(
+    private fun configureIsHidden(isHidden: Boolean?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiIsHiddenTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiIsHiddenLayout,
         text = if(isHidden == true) getString(R.string.yes_label) else getString(R.string.no_label)
     )
 
-    /*private fun configureAnonymousIdentity(anonymousIdentity: String?) = displayText(
+    /*private fun configureAnonymousIdentity(anonymousIdentity: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiAnonymousIdentityTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiAnonymousIdentityLayout,
         text = anonymousIdentity
     )
 
-    private fun configureIdentity(identity: String?) = displayText(
+    private fun configureIdentity(identity: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiIdentityTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiIdentityLayout,
         text = identity
     )
 
-    private fun configureEapMethod(eapMethod: String?) = displayText(
+    private fun configureEapMethod(eapMethod: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiEapMethodTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiEapMethodLayout,
         text = eapMethod
     )
 
-    private fun configurePhase2Method(phase2Method: String?) = displayText(
+    private fun configurePhase2Method(phase2Method: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixWifiPhase2MethodTextView,
         layout = viewBinding.fragmentBarcodeMatrixWifiPhase2MethodLayout,
         text = phase2Method

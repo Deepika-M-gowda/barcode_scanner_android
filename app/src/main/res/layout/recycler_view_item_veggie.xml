@@ -29,7 +29,7 @@
     <Space
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight=".1"/>
+        android:layout_weight=".1" />
 
     <TextView
         android:id="@+id/recycler_view_item_veggie_vegetarian_text_view"

@@ -16,16 +16,14 @@
             android:id="@+id/template_nutrient_level_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"
-            />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
         <TextView
             android:id="@+id/template_nutrient_level_sub_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/template_nutrient_level_entitled_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
-            />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
     </RelativeLayout>
 
@@ -41,8 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
-            />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
         <ImageView
             android:id="@+id/template_nutrient_level_indicator_image_view"

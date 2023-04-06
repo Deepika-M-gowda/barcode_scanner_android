@@ -34,21 +34,21 @@ import kotlin.reflect.KClass
 
 abstract class BaseFragment: Fragment() {
 
-    protected fun applyFragment(containerViewId: Int, fragment: Fragment){
+    protected fun applyFragment(containerViewId: Int, fragment: Fragment) {
         childFragmentManager
             .beginTransaction()
             .replace(containerViewId, fragment)
             .commit()
     }
 
-    protected fun applyFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null){
+    protected fun applyFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null) {
         childFragmentManager
             .beginTransaction()
             .replace(containerViewId, fragmentClass.java, args, tag)
             .commit()
     }
 
-    protected fun removeAllFragments(){
+    protected fun removeAllFragments() {
         childFragmentManager.fragments.forEach { fragment ->
             childFragmentManager
                 .beginTransaction()
@@ -57,15 +57,15 @@ abstract class BaseFragment: Fragment() {
         }
     }
 
-    protected fun showToastText(@StringRes textResource: Int){
+    protected fun showToastText(@StringRes textResource: Int) {
         Toast.makeText(requireContext(), getString(textResource), Toast.LENGTH_SHORT).show()
     }
 
-    protected fun showToastText(text: String){
+    protected fun showToastText(text: String) {
         Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
     }
 
-    protected fun copyToClipboard(label: String, text: String){
+    protected fun copyToClipboard(label: String, text: String) {
         val clipboard: ClipboardManager = get()
         val clip = ClipData.newPlainText(label, text)
         clipboard.setPrimaryClip(clip)
@@ -78,7 +78,7 @@ abstract class BaseFragment: Fragment() {
         return if(text.isNullOrBlank()) {
             layout.visibility = View.GONE
             false
-        }else {
+        } else {
             textView.text = text.trim()
             layout.visibility = View.VISIBLE
             true

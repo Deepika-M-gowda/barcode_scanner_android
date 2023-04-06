@@ -9,6 +9,6 @@
 
     <include
         layout="@layout/template_expandable_view"
-        android:id="@+id/fragment_food_analysis_nutrient_level_expandable_view_template"/>
+        android:id="@+id/fragment_food_analysis_nutrient_level_expandable_view_template" />
 
 </com.google.android.material.card.MaterialCardView>

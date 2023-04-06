@@ -10,34 +10,34 @@
     <FrameLayout
         android:id="@+id/fragment_food_analysis_details_origins_countries_frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <!-- Categories -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_details_categories_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_details_origins_countries_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_details_origins_countries_frame_layout" />
 
     <!-- Packaging -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_details_packaging_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_details_categories_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_details_categories_frame_layout" />
 
     <!-- Stores -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_details_stores_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_details_packaging_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_details_packaging_frame_layout" />
 
     <!-- Sales Countries -->
     <FrameLayout
         android:id="@+id/fragment_food_analysis_details_sales_countries_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_food_analysis_details_stores_frame_layout"/>
+        android:layout_below="@id/fragment_food_analysis_details_stores_frame_layout" />
 
 </RelativeLayout>

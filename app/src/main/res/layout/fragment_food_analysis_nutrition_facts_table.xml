@@ -30,7 +30,7 @@
                 android:textAlignment="textStart"
                 android:text="@string/nutrition_facts_table_label"
                 android:textColor="?colorOnPrimary"
-                style="@style/AppTheme.TextView.Appearance.Title.Variant"/>
+                style="@style/AppTheme.TextView.Appearance.Title.Variant" />
             <TextView
                 android:id="@+id/fragment_food_analysis_nutrition_facts_table_entitled_100_text_view"
                 android:layout_width="0dp"
@@ -55,7 +55,7 @@
             android:id="@+id/fragment_food_analysis_nutrition_facts_table_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_food_analysis_nutrition_facts_table_entitled_row_layout"/>
+            android:layout_below="@id/fragment_food_analysis_nutrition_facts_table_entitled_row_layout" />
 
     </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

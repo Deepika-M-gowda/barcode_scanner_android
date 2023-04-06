@@ -49,7 +49,6 @@ class BarcodeMatrixSmsFragment : AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is SMSParsedResult && parsedResult.type == ParsedResultType.SMS) {
             configurePhoneNumber(parsedResult.numbers)
             configureSmsSubject(parsedResult.subject)
@@ -59,19 +58,19 @@ class BarcodeMatrixSmsFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configurePhoneNumber(phoneNumbers: Array<String?>?) = displayArray(
+    private fun configurePhoneNumber(phoneNumbers: Array<String?>?) = configureTextArray(
         textView = viewBinding.fragmentBarcodeMatrixSmsNumberTextView,
         layout = viewBinding.fragmentBarcodeMatrixSmsNumberLayout,
         array = phoneNumbers
     )
 
-    private fun configureSmsSubject(subject: String?) = displayText(
+    private fun configureSmsSubject(subject: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixSmsSubjectTextView,
         layout = viewBinding.fragmentBarcodeMatrixSmsSubjectLayout,
         text = subject
     )
 
-    private fun configureSmsBody(message: String?) = displayText(
+    private fun configureSmsBody(message: String?) = configureText(
         textView = viewBinding.fragmentBarcodeMatrixSmsBodyTextView,
         layout = viewBinding.fragmentBarcodeMatrixSmsBodyLayout,
         text = message

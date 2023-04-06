@@ -7,9 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisContentsFragment">
 
-    <!-- Barcode Contents -->
-    <include
-        layout="@layout/template_expandable_view"
-        android:id="@+id/fragment_barcode_analysis_contents_expandable_view_template"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin">
+        <!-- Header -->
+        <FrameLayout
+            android:id="@+id/fragment_barcode_analysis_contents_header_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/standard_margin"/>
+
+        <!-- Body -->
+        <FrameLayout
+            android:id="@+id/fragment_barcode_analysis_contents_body_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_below="@id/fragment_barcode_analysis_contents_header_frame_layout" />
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

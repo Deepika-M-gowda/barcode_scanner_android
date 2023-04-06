@@ -25,8 +25,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItem
 
 class ActionButtonAdapter: RecyclerView.Adapter<ActionButtonHolder>() {
 

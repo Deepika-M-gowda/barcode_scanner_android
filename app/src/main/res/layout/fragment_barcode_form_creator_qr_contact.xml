@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="@string/qr_code_type_name_generate_from_contact"/>
+        android:text="@string/qr_code_type_name_generate_from_contact" />
 
     <RadioGroup
         android:id="@+id/fragment_barcode_form_creator_qr_contact_civil_radio_group"
@@ -78,8 +78,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_first_name_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_first_name_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,8 +98,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_organisation_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_organisation_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,8 +119,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_web_site_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_web_site_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,8 +141,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_1_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_1_input_edit_text" />
 
     </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -163,7 +159,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".65"
-
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_1"
             app:startIconDrawable="@drawable/baseline_mail_24"
             app:startIconTintFocused="?colorPrimary"
@@ -176,8 +171,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_2_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_2_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -192,7 +186,7 @@
                 android:id="@+id/contact_mail_1_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -212,7 +206,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".65"
-
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_2"
             app:startIconDrawable="@drawable/baseline_mail_24"
             app:startIconTintFocused="?colorPrimary"
@@ -225,8 +218,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_3_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_mail_3_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -241,7 +233,7 @@
                 android:id="@+id/contact_mail_2_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -261,7 +253,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".65"
-
             android:hint="@string/qr_code_text_input_edit_text_hint_mail_3"
             app:startIconDrawable="@drawable/baseline_mail_24"
             app:startIconTintFocused="?colorPrimary"
@@ -274,8 +265,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_1_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_1_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -290,7 +280,7 @@
                 android:id="@+id/contact_mail_3_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -323,8 +313,7 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_2_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_2_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -339,7 +328,7 @@
                 android:id="@+id/contact_phone_1_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -372,8 +361,7 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_3_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_phone_3_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -388,7 +376,7 @@
                 android:id="@+id/contact_phone_2_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -421,8 +409,7 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_street_address_input_edit_text"
-                />
+                android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_street_address_input_edit_text" />
 
         </com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout>
 
@@ -437,7 +424,7 @@
                 android:id="@+id/contact_phone_3_auto_complete_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -459,8 +446,7 @@
             android:inputType="textPostalAddress"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_postal_code_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_postal_code_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -480,8 +466,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_city_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_city_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -501,8 +486,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_country_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_country_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -522,8 +506,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_region_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_region_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -543,8 +526,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_notes_input_edit_text"
-            />
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_notes_input_edit_text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -563,8 +545,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:maxLines="1"
-            android:imeOptions="actionDone"
-            />
+            android:imeOptions="actionDone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

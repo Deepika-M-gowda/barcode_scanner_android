@@ -16,8 +16,7 @@
         android:text="@string/camera_permission_denied"
         android:textAlignment="center"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
-        />
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/fragment_main_scanner_code_scanner_view"
@@ -33,7 +32,7 @@
         app:frameSize="0.75"
         app:frameThickness="2dp"
         app:maskColor="#88000000"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/fragment_main_scanner_camera_slider"
@@ -47,7 +46,7 @@
         app:tickVisible="false"
         app:labelBehavior="gone"
         android:contentDescription="@string/slider_description_zoom"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -62,8 +61,8 @@
             android:text="@string/scan_information_label"
             android:visibility="gone"
             android:textColor="@android:color/white"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
-            />
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
     </FrameLayout>
 
 </FrameLayout>

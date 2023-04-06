@@ -12,4 +12,4 @@
     app:lowBarColor="?colorPositive"
     app:mediumBarColor="?colorMedium"
     app:highBarColor="?colorNegative"
-    app:fontFamily="sans-serif-medium"/>
+    app:fontFamily="sans-serif-medium" />

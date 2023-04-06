@@ -15,15 +15,13 @@
         android:text="@string/camera_permission_denied"
         android:textAlignment="center"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
-        />
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
     <androidx.camera.view.PreviewView
         android:id="@+id/fragment_main_camera_x_scanner_preview_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <com.atharok.barcodescanner.presentation.customView.ScanOverlay
         android:id="@+id/fragment_main_camera_x_scanner_scan_overlay"
@@ -33,8 +31,7 @@
         app:viewfinder_corner_thickness="4dp"
         app:viewfinder_corner_color="@android:color/white"
         app:overlay_mask_color="@color/overlay_mask"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <FrameLayout
         android:layout_width="48dp"
@@ -54,25 +51,8 @@
             android:valueTo="1"
             app:labelBehavior="gone"
             android:contentDescription="@string/slider_description_zoom"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </FrameLayout>
-
-    <!--<FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/x_large_margin"
-        android:layout_gravity="start|center_vertical">
-
-        <TextView
-            android:id="@+id/fragment_main_camera_x_scanner_information_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan_information_label"
-            android:visibility="gone"
-            android:textColor="@android:color/white"
-            style="@style/StandardPrimaryTextViewAppearance"
-            />
-    </FrameLayout>-->
 
 </FrameLayout>
