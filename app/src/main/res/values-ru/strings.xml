@@ -63,7 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">Географические координаты</string>
     <string name="qr_code_type_name_agenda">Мероприятие</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
-    <string name="qr_code_type_name_apps">Application</string>
+    <string name="qr_code_type_name_apps">Приложение</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Товар</string>
@@ -84,8 +84,8 @@
     <string name="menu_item_history_delete">Удалить историю</string>
     <string name="menu_item_history_delete_from_history">Удалить из истории</string>
     <string name="menu_item_history_removed_from_history">Удалено из истории!</string>
-    <string name="menu_item_history_add_in_history">Add in the history</string>
-    <string name="menu_item_history_added_in_history">Added in the history!</string>
+    <string name="menu_item_history_add_in_history">Добавить в историю</string>
+    <string name="menu_item_history_added_in_history">Добавлено в историю!</string>
     <string name="delete_label">Удалить</string>
     <string name="cancel_label">Отмена</string>
     <string name="record_label">Сохранить</string>
@@ -291,9 +291,9 @@
     <string name="matrix_localisation_longitude_label">Долгота:</string>
     <string name="matrix_localisation_altitude_label">Высота:</string>
     <string name="matrix_localisation_query_label">Запрос:</string>
-    <string name="matrix_localisation_button_find_location">Generate from your position</string>
-    <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
-    <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
+    <string name="matrix_localisation_button_find_location">Создать из текущего положения</string>
+    <string name="matrix_localisation_search_current_position_label">Поиск по текущему положению…</string>
+    <string name="matrix_localisation_location_disabled_label">Вероятно, на вашем устройстве не активирована геолокация.</string>
 
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Этот тип штрих-кода часто используется в промышленности.</string>
@@ -522,8 +522,8 @@
     <string name="preferences_switch_scan_vibrate_label">Вибросигнал при успешном сканировании</string>
     <string name="preferences_switch_scan_bip_label">Звук при успешном сканировании</string>
     <string name="preferences_switch_scan_screen_rotation_label">Отключить автоматический поворот во время сканирования</string>
-    <string name="preferences_switch_scan_barcode_copied_label">Скопировать отсканированный штрих-код в буфер обмена</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
+    <string name="preferences_switch_scan_barcode_copied_label">Копировать сосканированный штрих-код в буфер обмена</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Добавлять сосканированные штрих-коды в историю</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Поиск</string>
