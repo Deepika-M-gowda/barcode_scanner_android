@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">遠端 API 查詢訊息所需。</string>
     <string name="permission_contact_label">通訊錄</string>
     <string name="permission_contact_description_label">匯入通訊錄以產生 QR Code 所需。</string>
+    <string name="permission_location_label">Location</string>
+    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">通過掃描含有 Wi-Fi 存取之 QR Code 以連接到 Wi-Fi 所需。 </string>
     <string name="permission_vibrate_label">震動</string>

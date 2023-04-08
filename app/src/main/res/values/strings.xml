@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">Required to retrieve information from remote API</string>
     <string name="permission_contact_label">Contact</string>
     <string name="permission_contact_description_label">Required to import contact to generate QR Code from this one.</string>
+    <string name="permission_location_label">Location</string>
+    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Required to connect to Wi-Fi by scanning a QR Code containing Wi-Fi access.</string>
     <string name="permission_vibrate_label">Vibrate</string>

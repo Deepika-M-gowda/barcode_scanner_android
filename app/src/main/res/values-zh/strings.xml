@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">用于从远程API查询信息。</string>
     <string name="permission_contact_label">通讯录</string>
     <string name="permission_contact_description_label">用于导入通讯录信息并生成二维码。</string>
+    <string name="permission_location_label">Location</string>
+    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">用于通过扫描Wi-Fi二维码连接到Wi-Fi时。</string>
     <string name="permission_vibrate_label">振动</string>

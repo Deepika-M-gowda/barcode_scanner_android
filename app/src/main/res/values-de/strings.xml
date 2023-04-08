@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">Benötigt um die Remote APIs abzufragen.</string>
     <string name="permission_contact_label">Kontakte</string>
     <string name="permission_contact_description_label">Benötigt um Kontake zu importieren oder Kontakt QR Codes zu generieren.</string>
+    <string name="permission_location_label">Location</string>
+    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
     <string name="permission_wifi_label">WLAN</string>
     <string name="permission_wifi_description_label">Benötigt um zu einem WLAN zu verbinden dessen QR Code gescannt wurde.</string>
     <string name="permission_vibrate_label">Vibrate</string>

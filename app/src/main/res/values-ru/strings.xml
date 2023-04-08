@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">Требуется для получения информации от удаленного API</string>
     <string name="permission_contact_label">Контакты</string>
     <string name="permission_contact_description_label">Требуется для импорта контакта, чтобы из него сгенерировать QR-код.</string>
+    <string name="permission_location_label">Location</string>
+    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Требуется для подключения к Wi-Fi путем сканирования QR-кода, содержащего информацию о доступе к Wi-Fi.</string>
     <string name="permission_vibrate_label">Вибрация</string>

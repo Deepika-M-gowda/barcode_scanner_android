@@ -543,6 +543,8 @@
     <string name="permission_internet_description_label">Nécessaire pour récupérer des informations pour certains code-barres dans des API distantes.</string>
     <string name="permission_contact_label">Contact</string>
     <string name="permission_contact_description_label">Nécessaire pour importer un contact permettant de générer un QR Code à partir de celui-ci.</string>
+    <string name="permission_location_label">Position</string>
+    <string name="permission_location_description_label">Nécessaire pour générer un QR Code à partir de la position de l\'appareil.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Nécessaire pour se connecter au Wi-Fi lors du scan d\'un QR Code contenant l\'accès à un Wi-Fi.</string>
     <string name="permission_vibrate_label">Vibrate</string>

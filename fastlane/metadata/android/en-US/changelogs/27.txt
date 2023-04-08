@@ -1,0 +1,10 @@
+1.13.0
+
+- Add text to the bottom of a barcode image.
+- Added a setting to disable the history.
+- Added the generation of a QR Code from the ID of an installed application.
+- Improved deletion of items from the history in the actions.
+- Added an "add to history" button in the actions, if the item is not present in the history.
+- Fix the detection of a light colored barcode on a dark background via an image.
+- Added the generation of a Qr Code from the location.
+- Addition of a long press on the texts of the barcode analysis.

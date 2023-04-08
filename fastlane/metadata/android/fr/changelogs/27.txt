@@ -1,0 +1,10 @@
+1.13.0
+
+- Ajout du code textuel en bas de l'image d'un code-barres.
+- Ajout d'un paramètre permettant de désactiver l'historique.
+- Ajout de la génération d'un QR Code à partir de l'ID d'une application installée.
+- Amélioration de la suppression des éléments de l'historique dans les actions.
+- Ajout d'un bouton "ajouter dans l'historique" dans les actions, si l'élément n'est pas présent dans l'historique.
+- Corrige la détection d'un code-barre de couleur clair sur fond sombre via une image.
+- Ajout de la génération d'un Qr Code à partir de la localisation.
+- Ajout d'un appui long sur les textes de l'analyse du code-barres.

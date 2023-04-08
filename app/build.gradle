@@ -11,8 +11,8 @@ android {
         applicationId "com.atharok.barcodescanner"
         minSdk 21
         targetSdk 33
-        versionCode 26
-        versionName "1.12.0"
+        versionCode 27
+        versionName "1.13.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,9 +40,9 @@ android {
 dependencies {
 
     // Android
-    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.7.0'
     implementation 'androidx.preference:preference-ktx:1.2.0'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
     implementation 'androidx.appcompat:appcompat:1.6.1'
 
     // Test
@@ -62,8 +62,8 @@ dependencies {
     implementation 'io.insert-koin:koin-android:3.3.3'
 
     // Room - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:2.5.0"
-    kapt "androidx.room:room-compiler:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.1"
+    kapt "androidx.room:room-compiler:2.5.1"
 
     // Gère la sérialisation et la désérialisation des fichiers JSON
     implementation 'com.google.code.gson:gson:2.10.1'
@@ -73,7 +73,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // CameraX
-    def camerax_version = "1.2.1"
+    def camerax_version = "1.2.2"
     implementation "androidx.camera:camera-core:${camerax_version}"
     implementation "androidx.camera:camera-camera2:${camerax_version}"
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"
