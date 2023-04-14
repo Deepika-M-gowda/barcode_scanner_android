@@ -32,7 +32,7 @@
 
     <string name="title_qr_code_creator">產生 QR Code</string>
     <string name="title_bar_code_creator">產生條碼</string>
-    <string name="information_label">訊息</string>
+    <string name="information_label">資訊</string>
     <string name="barcode_label">條碼</string>
     <string name="download_from_api_label">從 API 下載</string>
     <string name="menu_more">更多</string>
@@ -63,7 +63,7 @@
     <string name="qr_code_type_name_geographic_coordinates">地理座標</string>
     <string name="qr_code_type_name_agenda">日程</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
-    <string name="qr_code_type_name_apps">Application</string>
+    <string name="qr_code_type_name_apps">應用程式</string>
 
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">產品</string>
@@ -84,8 +84,8 @@
     <string name="menu_item_history_delete">刪除歷史紀錄</string>
     <string name="menu_item_history_delete_from_history">從歷史紀錄中刪除</string>
     <string name="menu_item_history_removed_from_history">從歷史紀錄中移除！</string>
-    <string name="menu_item_history_add_in_history">Add in the history</string>
-    <string name="menu_item_history_added_in_history">Added in the history!</string>
+    <string name="menu_item_history_add_in_history">加入至歷史紀錄</string>
+    <string name="menu_item_history_added_in_history">已加入至歷史紀錄！</string>
     <string name="delete_label">刪除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">儲存</string>
@@ -101,13 +101,13 @@
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">搜尋中…</string>
     <string name="scan_error_label">搜尋時錯誤！</string>
-    <string name="scan_error_short_information_label">搜尋訊息時發生錯誤！</string>
+    <string name="scan_error_short_information_label">搜尋資訊時發生錯誤！</string>
     <string name="barcode_scanned_label">%1$s 已掃描！</string>
     <string name="barcode_found_on_label">發現 %1$s！</string>
-    <string name="barcode_not_found_on_api_label">沒有發現訊息 %1$s！</string>
+    <string name="barcode_not_found_on_api_label">沒有發現資訊 %1$s！</string>
     <string name="no_internet_permission">您沒有允許存取網路！</string>
 
-    <string name="about_barcode_information_label">條碼訊息</string>
+    <string name="about_barcode_information_label">條碼資訊</string>
     <string name="about_barcode_label">關於條碼</string>
     <string name="about_barcode_format_label">格式：%1$s</string>
     <string name="about_barcode_content_label">內容：%1$s</string>
@@ -119,8 +119,8 @@
 
     <!-- Barcode Searching Error -->
     <string name="warning_label">警告</string>
-    <string name="scan_error_information_label">在遠端 API 搜尋訊息時發生錯誤…請檢查您的網連接與應用程式的權限！如果問題依然存在，應該是伺服器問題。</string>
-    <string name="scan_error_internet_information_label">沒有產品檢索的訊息，您似乎沒有連接到網路！</string>
+    <string name="scan_error_information_label">在遠端 API 搜尋資訊時發生錯誤…請檢查您的網連接與應用程式的權限！如果問題依然存在，應該是伺服器問題。</string>
+    <string name="scan_error_internet_information_label">沒有產品檢索的資訊，您似乎沒有連接到網路！</string>
     <string name="scan_error_message_label">錯誤訊息：</string>
 
     <!-- Food Beauty and Pet Food Product -->
@@ -175,7 +175,7 @@
     <string name="veggie_label">素食</string>
 
     <!-- Additif -->
-    <string name="off_additive_info_label">訊息</string>
+    <string name="off_additive_info_label">資訊</string>
     <string name="off_risk_low_label">安全</string>
     <string name="off_risk_moderate_label">不確定</string>
     <string name="off_risk_high_label">避免</string>
@@ -188,7 +188,7 @@
 
     <string name="stabilizer_label">穩定劑</string>
     <string name="stabilizer_description_label">穩定劑、增稠劑與膠凝劑，像是洋菜或果膠 (例如用於果醬) 使食物質地更堅固，雖然它們不是真正的乳化劑，但它們有助於穩定乳化劑。</string>
-    <string name="additive_no_information_found_label">沒有找到關於此添加物訊息！</string>
+    <string name="additive_no_information_found_label">沒有找到關於此添加物資訊！</string>
 
     <!-- Veggie -->
     <string name="ingredient_veggie_entitled_label">素食與素食主義者狀態</string>
@@ -291,9 +291,9 @@
     <string name="matrix_localisation_longitude_label">經度：</string>
     <string name="matrix_localisation_altitude_label">高度：</string>
     <string name="matrix_localisation_query_label">查詢：</string>
-    <string name="matrix_localisation_button_find_location">Generate from your position</string>
-    <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
-    <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
+    <string name="matrix_localisation_button_find_location">從您的位置產生</string>
+    <string name="matrix_localisation_search_current_position_label">搜尋目前位置…</string>
+    <string name="matrix_localisation_location_disabled_label">您的裝置定位似乎沒有被啟用。</string>
 
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">此條碼類型經常被使用於工業。</string>
@@ -423,7 +423,7 @@
     <string name="qr_code_text_input_edit_text_hint_epc_purpose">目的</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">匯款 (參考)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">匯款 (訊息)</string>
-    <string name="qr_code_text_input_edit_text_hint_epc_information">訊息</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">資訊</string>
 
     <string name="qr_code_text_input_edit_text_epc_name_error">\"名稱\" 欄位是必須的</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN 不正確</string>
@@ -523,7 +523,7 @@
     <string name="preferences_switch_scan_bip_label">掃描成功後播放聲音</string>
     <string name="preferences_switch_scan_screen_rotation_label">掃描期間禁用自動旋轉螢幕</string>
     <string name="preferences_switch_scan_barcode_copied_label">複製掃描的結果至剪貼簿</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">加入已掃描的條碼至歷史紀錄</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">搜尋</string>
@@ -540,11 +540,11 @@
     <string name="permission_camera_label">相機</string>
     <string name="permission_camera_description_label">掃描條碼所需。</string>
     <string name="permission_internet_label">網路</string>
-    <string name="permission_internet_description_label">遠端 API 查詢訊息所需。</string>
+    <string name="permission_internet_description_label">遠端 API 查詢資訊所需。</string>
     <string name="permission_contact_label">通訊錄</string>
     <string name="permission_contact_description_label">匯入通訊錄以產生 QR Code 所需。</string>
-    <string name="permission_location_label">Location</string>
-    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
+    <string name="permission_location_label">定位</string>
+    <string name="permission_location_description_label">從裝置定位產生 QR Code 所需。</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">通過掃描含有 Wi-Fi 存取之 QR Code 以連接到 Wi-Fi 所需。 </string>
     <string name="permission_vibrate_label">震動</string>
