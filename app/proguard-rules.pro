@@ -25,3 +25,8 @@
     private com.budiyev.android.codescanner.DecoderWrapper mDecoderWrapper;
     private android.view.SurfaceHolder mSurfaceHolder;
 }
+
+-dontwarn okhttp3.internal.platform.**
+-dontwarn org.conscrypt.**
+-dontwarn org.bouncycastle.**
+-dontwarn org.openjsse.**
