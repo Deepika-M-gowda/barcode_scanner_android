@@ -266,6 +266,7 @@ class MainScannerFragment : BaseFragment() {
         lifecycleScope.launchWhenResumed {
             val maxZoom: Int = codeScanner.getMaxZoom()
             if (maxZoom <= 0) return@launchWhenResumed
+            codeScanner.zoom = get<SettingsManager>().getDefaultZoomValue()
             val defaultZoom: Float = codeScanner.zoom.toFloat()
             val slider = viewBinding.fragmentMainScannerCameraSlider.apply {
                 valueTo = maxZoom.toFloat()

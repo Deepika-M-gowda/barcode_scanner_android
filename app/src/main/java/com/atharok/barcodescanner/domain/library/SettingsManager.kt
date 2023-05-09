@@ -46,6 +46,7 @@ class SettingsManager(private val context: Context) {
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
     private val copyBarcodeScanKey = context.getString(R.string.preferences_switch_scan_barcode_copied_key)
     private val addBarcodeToHistoryScanKey = context.getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key)
+    private val defaultZoomValueKey = context.getString(R.string.preferences_seek_bar_camera_default_zoom_value_key)
 
     var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         private set
@@ -132,4 +133,6 @@ class SettingsManager(private val context: Context) {
 
     private fun getDefaultColorKey(): String =
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) "material_you" else "blue"
+
+    fun getDefaultZoomValue(): Int = prefs.getInt(defaultZoomValueKey, 50)
 }

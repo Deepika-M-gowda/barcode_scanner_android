@@ -113,6 +113,10 @@
         <item name="haloColor">?colorSecondaryContainer</item>
     </style>
 
+    <style name="AppTheme.SeekBarPreferenceCompat.Material3" parent="Preference.SeekBarPreference.Material">
+        <item name="showSeekBarValue">true</item>
+    </style>
+
     <!-- Switch -->
     <style name="AppTheme.Switch.Material3" parent="Widget.Material3.CompoundButton.MaterialSwitch" />
 

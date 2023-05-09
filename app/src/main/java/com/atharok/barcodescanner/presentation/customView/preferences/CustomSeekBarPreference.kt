@@ -22,12 +22,14 @@ package com.atharok.barcodescanner.presentation.customView.preferences
 
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.TextView
+import android.widget.SeekBar
 import androidx.preference.PreferenceViewHolder
-import androidx.preference.SwitchPreferenceCompat
+import androidx.preference.SeekBarPreference
+import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.getColorStateListFromAttrRes
 import com.atharok.barcodescanner.common.extensions.initializeCustomResourcesValues
 
-class CustomSwitchPreferenceCompat: SwitchPreferenceCompat {
+class CustomSeekBarPreference: SeekBarPreference {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -40,9 +42,9 @@ class CustomSwitchPreferenceCompat: SwitchPreferenceCompat {
         super.onBindViewHolder(holder)
         initializeCustomResourcesValues(holder)
 
-        val titleView = holder.findViewById(android.R.id.title) as TextView
-        titleView.setLineSpacing(0f, 1f)
-        val summaryView = holder.findViewById(android.R.id.summary) as TextView
-        summaryView.setLineSpacing(0f, 1f)
+        val seekBar = holder.findViewById(R.id.seekbar) as SeekBar
+        seekBar.thumbTintList = context.getColorStateListFromAttrRes(android.R.attr.colorPrimary)
+        seekBar.progressTintList = context.getColorStateListFromAttrRes(android.R.attr.colorPrimary)
+        //seekBar.progressBackgroundTintList = context.getColorStateListFromAttrRes(android.R.attr.colorButtonNormal)
     }
 }

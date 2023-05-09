@@ -232,6 +232,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
     private fun configureZoom(cameraConfig: CameraConfig) {
         val slider = viewBinding.fragmentMainCameraXScannerSlider
+        slider.value = get<SettingsManager>().getDefaultZoomValue()/100f
         cameraConfig.setLinearZoom(slider.value)
         slider.addOnChangeListener { v, value, _ ->
             cameraConfig.setLinearZoom(value)

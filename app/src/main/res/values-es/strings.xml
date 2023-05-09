@@ -524,6 +524,7 @@
     <string name="preferences_switch_scan_screen_rotation_label">Desactivar la rotación automática durante el escaneo</string>
     <string name="preferences_switch_scan_barcode_copied_label">Copiar los códigos escaneados al portapapeles</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Búsqueda</string>

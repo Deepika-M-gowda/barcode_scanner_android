@@ -35,6 +35,7 @@
         <item name="switchStyle">@style/AppTheme.Switch.Material3</item>
         <item name="materialSwitchStyle">@style/AppTheme.Switch.Material3</item>
         <item name="switchPreferenceCompatStyle">@style/AppTheme.SwitchPreferenceCompat.Material3</item>
+        <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
         <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
@@ -82,6 +83,7 @@
         <item name="switchStyle">@style/AppTheme.Switch.Material3</item>
         <item name="materialSwitchStyle">@style/AppTheme.Switch.Material3</item>
         <item name="switchPreferenceCompatStyle">@style/AppTheme.SwitchPreferenceCompat.Material3</item>
+        <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
         <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>

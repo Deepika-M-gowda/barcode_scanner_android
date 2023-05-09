@@ -524,6 +524,7 @@
     <string name="preferences_switch_scan_screen_rotation_label">Disable automatic rotation during scan</string>
     <string name="preferences_switch_scan_barcode_copied_label">Copy scanned barcodes to clipboard</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
@@ -733,6 +734,7 @@
     <string name="preferences_switch_scan_screen_rotation_key" translatable="false">preferences_switch_scan_screen_rotation_key</string>
     <string name="preferences_switch_scan_barcode_copied_key" translatable="false">preferences_switch_scan_barcode_copied_key</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_key" translatable="false">preferences_switch_scan_add_barcode_to_the_history_key</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_key" translatable="false">preferences_seek_bar_camera_default_zoom_value_default_key</string>
     <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>

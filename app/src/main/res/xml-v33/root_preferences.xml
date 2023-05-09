@@ -77,6 +77,14 @@
             android:defaultValue="true"
             app:singleLineTitle="false"/>
 
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSeekBarPreference
+            android:key="@string/preferences_seek_bar_camera_default_zoom_value_key"
+            android:title="@string/slider_description_zoom"
+            android:summary="@string/preferences_seek_bar_camera_default_zoom_value_label"
+            android:defaultValue="50"
+            android:min="0"
+            android:max="100"/>
+
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
