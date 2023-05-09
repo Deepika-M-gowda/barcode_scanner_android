@@ -51,9 +51,17 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@id/fragment_barcode_matrix_uri_malicious_warning_icon_image_view"
+            android:layout_marginStart="@dimen/standard_margin"
             android:text="@string/matrix_uri_malicious_label"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_barcode_matrix_uri_parsed_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_uri_malicious_layout"/>
 
 </RelativeLayout>

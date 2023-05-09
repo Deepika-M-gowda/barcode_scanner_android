@@ -286,6 +286,14 @@
     <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">URL könnte bösartige Inhalte enthalten…</string>
 
+    <!-- Matrix Barcode URI UPI Analysis -->
+    <string name="matrix_uri_upi_entitled_label">URI analysis</string>
+    <string name="matrix_uri_upi_id_label">UPI ID:</string>
+    <string name="matrix_uri_upi_payee_name_label">Payee Name:</string>
+    <string name="matrix_uri_upi_amount_label">Amount:</string>
+    <string name="matrix_uri_upi_currency_label">Currency:</string>
+    <string name="matrix_uri_upi_description_label">Description:</string>
+
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">Breitengrad:</string>
     <string name="matrix_localisation_longitude_label">Längengrad:</string>

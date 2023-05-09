@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixUpiParsedFragment">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/stroke_width"
+        android:background="?colorOutline"
+        android:layout_centerHorizontal="true"/>
+
+    <include
+        layout="@layout/template_text_view_title"
+        android:id="@+id/fragment_barcode_matrix_upi_template_entitled_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin" />
+
+    <!-- UPI ID -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_upi_template_entitled_view">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_uri_upi_id_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_matrix_upi_parsed_upi_id_label"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+
+    <!-- Payee Name -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_upi_parsed_payee_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_upi_parsed_upi_id_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_payee_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_uri_upi_payee_name_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_payee_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_matrix_upi_parsed_payee_name_label"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+
+    <!-- Amount -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_upi_parsed_amount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_upi_parsed_payee_name_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_amount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_uri_upi_amount_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_amount_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_matrix_upi_parsed_amount_label"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+
+    <!-- Currency -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_upi_parsed_currency_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_upi_parsed_amount_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_currency_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_uri_upi_currency_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_currency_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_matrix_upi_parsed_currency_label"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+
+    <!-- Description -->
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_matrix_upi_parsed_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_upi_parsed_currency_layout">
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_description_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_uri_upi_description_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_matrix_upi_parsed_description_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_matrix_upi_parsed_description_label"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+
+</RelativeLayout>

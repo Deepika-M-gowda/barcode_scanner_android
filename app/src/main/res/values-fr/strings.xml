@@ -247,50 +247,58 @@
     <string name="bar_code_analysis_label">Analyse du code-barres</string>
 
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">Nom :</string>
-    <string name="matrix_contact_organisation_label">Organisation :</string>
-    <string name="matrix_contact_title_label">Titre :</string>
-    <string name="matrix_contact_phone_label">Téléphone :</string>
-    <string name="matrix_contact_mail_label">Email :</string>
-    <string name="matrix_contact_address_label">Adresse :</string>
-    <string name="matrix_contact_notes_label">Notes :</string>
+    <string name="matrix_contact_name_label">Nom:</string>
+    <string name="matrix_contact_organisation_label">Organisation:</string>
+    <string name="matrix_contact_title_label">Titre:</string>
+    <string name="matrix_contact_phone_label">Téléphone:</string>
+    <string name="matrix_contact_mail_label">Email:</string>
+    <string name="matrix_contact_address_label">Adresse:</string>
+    <string name="matrix_contact_notes_label">Notes:</string>
 
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Nom de l\'événement :</string>
-    <string name="matrix_agenda_start_date_event_label">Début :</string>
-    <string name="matrix_agenda_end_date_event_label">Fin :</string>
-    <string name="matrix_agenda_place_event_label">Lieu :</string>
-    <string name="matrix_agenda_description_event_label">Description :</string>
+    <string name="matrix_agenda_name_event_label">Nom de l\'événement:</string>
+    <string name="matrix_agenda_start_date_event_label">Début:</string>
+    <string name="matrix_agenda_end_date_event_label">Fin:</string>
+    <string name="matrix_agenda_place_event_label">Lieu:</string>
+    <string name="matrix_agenda_description_event_label">Description:</string>
 
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Téléphone :</string>
+    <string name="matrix_phone_tel_number_label">Téléphone:</string>
 
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">Destinataire :</string>
-    <string name="matrix_email_cc_label">Cc :</string>
-    <string name="matrix_email_bcc_label">Bcc :</string>
-    <string name="matrix_subject_label">Sujet :</string>
-    <string name="matrix_body_label">Message :</string>
+    <string name="matrix_email_recipient_label">Destinataire:</string>
+    <string name="matrix_email_cc_label">Cc:</string>
+    <string name="matrix_email_bcc_label">Bcc:</string>
+    <string name="matrix_subject_label">Sujet:</string>
+    <string name="matrix_body_label">Message:</string>
 
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID :</string>
-    <string name="matrix_wifi_password_label">Mot de passe :</string>
-    <string name="matrix_wifi_encryption_label">Encryption :</string>
-    <string name="matrix_wifi_is_hidden_label">Caché :</string>
-    <string name="matrix_wifi_anonymous_identity_label">Anonymous Identity :</string>
-    <string name="matrix_wifi_identity_label">Identity :</string>
-    <string name="matrix_wifi_eap_method_label">Eap Method :</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2 Method :</string>
+    <string name="matrix_wifi_ssid_label">SSID:</string>
+    <string name="matrix_wifi_password_label">Mot de passe:</string>
+    <string name="matrix_wifi_encryption_label">Encryption:</string>
+    <string name="matrix_wifi_is_hidden_label">Caché:</string>
+    <string name="matrix_wifi_anonymous_identity_label">Anonymous Identity:</string>
+    <string name="matrix_wifi_identity_label">Identity:</string>
+    <string name="matrix_wifi_eap_method_label">Eap Method:</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 Method:</string>
 
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL :</string>
+    <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">L\'URL est peut-être malveillant…</string>
 
+    <!-- Matrix Barcode URI UPI Analysis -->
+    <string name="matrix_uri_upi_entitled_label">Analyse de l\'URI</string>
+    <string name="matrix_uri_upi_id_label">UPI ID:</string>
+    <string name="matrix_uri_upi_payee_name_label">Nom du bénéficiaire:</string>
+    <string name="matrix_uri_upi_amount_label">Montant:</string>
+    <string name="matrix_uri_upi_currency_label">Devise:</string>
+    <string name="matrix_uri_upi_description_label">Description:</string>
+
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">Latitude :</string>
-    <string name="matrix_localisation_longitude_label">Longitude :</string>
-    <string name="matrix_localisation_altitude_label">Altitude :</string>
-    <string name="matrix_localisation_query_label">Query :</string>
+    <string name="matrix_localisation_latitude_label">Latitude:</string>
+    <string name="matrix_localisation_longitude_label">Longitude:</string>
+    <string name="matrix_localisation_altitude_label">Altitude:</string>
+    <string name="matrix_localisation_query_label">Query:</string>
     <string name="matrix_localisation_button_find_location">Générer à partir de votre position</string>
     <string name="matrix_localisation_search_current_position_label">Recherche de la position en cours…</string>
     <string name="matrix_localisation_location_disabled_label">La localisation sur votre appareil ne semble pas être activée.</string>

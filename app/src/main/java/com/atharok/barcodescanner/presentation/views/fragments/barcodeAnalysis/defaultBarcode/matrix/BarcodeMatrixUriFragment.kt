@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,10 +55,16 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
     }
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
-
         if(parsedResult is URIParsedResult && parsedResult.type == ParsedResultType.URI) {
-            configureUri(parsedResult.uri)
+            val uri = parsedResult.uri
+            configureUri(uri)
             configureIsPossiblyMaliciousURI(parsedResult.isPossiblyMaliciousURI)
+            if(uri.startsWith("upi")) {
+                applyFragment(
+                    containerViewId = viewBinding.fragmentBarcodeMatrixUriParsedLayout.id,
+                    fragment = BarcodeMatrixUpiParsedFragment.newInstance(uri)
+                )
+            }
         }else{
             viewBinding.root.visibility = View.GONE
         }
