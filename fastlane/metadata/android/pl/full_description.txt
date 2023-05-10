@@ -18,6 +18,6 @@ Funkcje aplikacji :
 • Śledź wszystkie zeskanowane kody kreskowe za pomocą narzędzia historii. 
 • Generuj własne kody kreskowe 
 • Dostosuj interfejs za pomocą różnych kolorów, jasnego motywu lub ciemnego. Aplikacja integruje funkcje Androida 12, umożliwiając dostosowanie kolorów w zależności od tapety.
-• Teksty są w całości tłumaczone na język angielski, hiszpański, francuski, niemiecki, polski, rosyjski i chiński.
+• Teksty są w całości tłumaczone na język polski, angielski, hiszpański, francuski, niemiecki, rosyjski i chiński.
 
 Ta aplikacja szanuje Twoją prywatność. Nie zawiera żadnych trackerów i nie zbiera żadnych danych.

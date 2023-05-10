@@ -65,7 +65,7 @@ Collect information about a product during a scan:
 - Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in English, Spanish, French, German, Russian and Chinese.
+- Texts are entirely translated in English, Spanish, French, German, Polish, Russian and Chinese.
 
 # Licences
 
