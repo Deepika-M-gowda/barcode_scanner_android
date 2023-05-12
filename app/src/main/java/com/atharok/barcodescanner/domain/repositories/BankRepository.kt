@@ -18,17 +18,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.domain.repositories
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.domain.entity.bank.Bank
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 
-@Database(entities = [Barcode::class, Bank::class], version = 2, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
+/**
+ * Repository permettant les interactions avec la BDD.
+ */
+interface BankRepository {
 
-    abstract fun barcodeDao(): BarcodeDao
+    fun getBankList(): LiveData<List<Bank>>
 
-    abstract fun bankDao(): BankDao
+    suspend fun insertBank(bank: Bank): Long
+
+    suspend fun deleteAllBank(): Int
+
+    suspend fun deleteBanks(banks: List<Bank>): Int
+
+    suspend fun deleteBank(bank: Bank): Int
 }

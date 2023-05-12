@@ -18,8 +18,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.recyclerView.history
+package com.atharok.barcodescanner.presentation.views.recyclerView.bankHistory
 
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 
-data class HistoryItem(val barcode: Barcode, var isSelected: Boolean = false)
+interface BankHistoryItemTouchHelperListener: CustomItemTouchHelperCallback.ItemTouchHelperListener {
+
+    override fun getForegroundView(viewHolder: RecyclerView.ViewHolder?): View? {
+        return if (viewHolder is BankHistoryItemHolder) viewHolder.getForegroundLayout() else null
+    }
+}

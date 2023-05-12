@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.activities.BankListActivity">
+
+    <include
+        layout="@layout/template_toolbar"
+        android:id="@+id/activity_bank_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_bank_list_toolbar">
+
+        <TextView
+            android:id="@+id/activity_bank_list_empty_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_gravity="start|top"
+            android:text="@string/list_bank_empty_message"
+            android:visibility="gone"
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_bank_list_history_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:clipChildren="false" />
+    </FrameLayout>
+
+</RelativeLayout>

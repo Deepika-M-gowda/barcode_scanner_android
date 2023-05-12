@@ -24,9 +24,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 
-interface HistoryItemTouchHelperListener: CustomItemTouchHelperCallback.ItemTouchHelperListener {
+interface BarcodeHistoryItemTouchHelperListener: CustomItemTouchHelperCallback.ItemTouchHelperListener {
 
     override fun getForegroundView(viewHolder: RecyclerView.ViewHolder?): View? {
-        return if (viewHolder is HistoryItemHolder) viewHolder.getForegroundLayout() else null
+        return if (viewHolder is BarcodeHistoryItemHolder) viewHolder.getForegroundLayout() else null
     }
 }

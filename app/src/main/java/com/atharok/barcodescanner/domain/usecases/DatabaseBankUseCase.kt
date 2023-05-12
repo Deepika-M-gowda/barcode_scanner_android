@@ -18,17 +18,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.domain.usecases
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.domain.entity.bank.Bank
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.repositories.BankRepository
+import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 
-@Database(entities = [Barcode::class, Bank::class], version = 2, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
+class DatabaseBankUseCase(private val bankRepository: BankRepository) {
 
-    abstract fun barcodeDao(): BarcodeDao
+    val bankList: LiveData<List<Bank>> = bankRepository.getBankList()
 
-    abstract fun bankDao(): BankDao
+    suspend fun insertBank(bank: Bank): Long = bankRepository.insertBank(bank)
+
+    suspend fun deleteBank(bank: Bank) = bankRepository.deleteBank(bank)
+
+    suspend fun deleteBanks(banks: List<Bank>) = bankRepository.deleteBanks(banks)
+
+    suspend fun deleteAll(): Int = bankRepository.deleteAllBank()
 }

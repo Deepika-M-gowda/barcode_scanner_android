@@ -41,7 +41,7 @@ import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.resources.Resource
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.DefaultBarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ProductAnalysisFragment
@@ -70,7 +70,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
     // ---- ViewModel ----
 
-    private val databaseViewModel by viewModel<DatabaseViewModel>()
+    private val databaseBarcodeViewModel by viewModel<DatabaseBarcodeViewModel>()
     private val retrofitViewModel by viewModel<ProductViewModel>()
 
     // ----
@@ -263,10 +263,10 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         if(!productName.isNullOrBlank()) {
             if (barcode.name != productName || barcode.getBarcodeType() != newBarcodeType)
-                databaseViewModel.updateTypeAndName(barcode.scanDate, newBarcodeType, productName.trim())
+                databaseBarcodeViewModel.updateTypeAndName(barcode.scanDate, newBarcodeType, productName.trim())
         }else{
             if(barcode.getBarcodeType() != newBarcodeType)
-                databaseViewModel.updateType(barcode.scanDate, newBarcodeType)
+                databaseBarcodeViewModel.updateType(barcode.scanDate, newBarcodeType)
         }
         barcode.type = newBarcodeType.name
     }

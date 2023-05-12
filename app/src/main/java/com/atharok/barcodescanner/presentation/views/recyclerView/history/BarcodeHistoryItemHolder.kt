@@ -26,27 +26,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.getColorStateListFromAttrRes
 import com.atharok.barcodescanner.common.extensions.getDisplayName
-import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBinding
+import com.atharok.barcodescanner.databinding.RecyclerViewItemHistoryBarcodeBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.android.material.card.MaterialCardView
 import com.google.zxing.BarcodeFormat
 import java.lang.ref.WeakReference
 
-class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
+class BarcodeHistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBarcodeBinding)
     : RecyclerView.ViewHolder(viewBinding.root), View.OnClickListener, View.OnLongClickListener {
 
-    private var weakRefCallback: WeakReference<HistoryItemAdapter.OnBarcodeItemListener>? = null
-    private lateinit var item: HistoryItem
+    private var weakRefCallback: WeakReference<BarcodeHistoryItemAdapter.OnBarcodeItemListener>? = null
+    private lateinit var item: BarcodeHistoryItem
 
     init {
-        itemView.findViewById<MaterialCardView>(R.id.recycler_view_item_history_foreground_layout).apply {
-            setOnClickListener(this@HistoryItemHolder)
-            setOnLongClickListener(this@HistoryItemHolder)
+        itemView.findViewById<MaterialCardView>(R.id.recycler_view_item_history_barcode_foreground_layout).apply {
+            setOnClickListener(this@BarcodeHistoryItemHolder)
+            setOnLongClickListener(this@BarcodeHistoryItemHolder)
         }
     }
 
-    fun update(item: HistoryItem, listener: HistoryItemAdapter.OnBarcodeItemListener){
+    fun update(item: BarcodeHistoryItem, listener: BarcodeHistoryItemAdapter.OnBarcodeItemListener){
 
         val barcode: Barcode = item.barcode
 
@@ -54,7 +54,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
 
         // ---- Product Type Title TextView ----
         val entitled = if(barcode.name != "") barcode.name else itemView.context.getString(barcodeType.stringResource)
-        viewBinding.recyclerViewItemHistoryEntitledTextView.text = entitled
+        viewBinding.recyclerViewItemHistoryBarcodeEntitledTextView.text = entitled
 
         // ---- Product Type Icon ----
         val drawableResource: Int = when {
@@ -63,7 +63,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
             else -> R.drawable.baseline_qr_code_24
         }
 
-        viewBinding.recyclerViewItemHistoryImageView.setImageResource(drawableResource)
+        viewBinding.recyclerViewItemHistoryBarcodeImageView.setImageResource(drawableResource)
 
         // ---- Barcode Icon ----
         val barcodeIconDrawableResource: Int = when {
@@ -82,24 +82,24 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         viewBinding.recyclerViewItemHistoryBarcodeFormatTextView.text = barcode.getBarcodeFormat().getDisplayName(itemView.context)
 
         // ---- Content barcode TextView ----
-        viewBinding.recyclerViewItemHistoryContentTextView.text = barcode.contents
+        viewBinding.recyclerViewItemHistoryBarcodeContentTextView.text = barcode.contents
 
         // ---- Country ----
         val origin = barcode.country
         if(origin!=null){
-            viewBinding.recyclerViewItemHistoryOriginFlagImageView.setImageResource(origin.drawableResource)
-            viewBinding.recyclerViewItemHistoryOriginFlagImageView.visibility = View.VISIBLE
+            viewBinding.recyclerViewItemHistoryBarcodeOriginFlagImageView.setImageResource(origin.drawableResource)
+            viewBinding.recyclerViewItemHistoryBarcodeOriginFlagImageView.visibility = View.VISIBLE
         }else{
-            viewBinding.recyclerViewItemHistoryOriginFlagImageView.setImageDrawable(null)
-            viewBinding.recyclerViewItemHistoryOriginFlagImageView.visibility = View.GONE
+            viewBinding.recyclerViewItemHistoryBarcodeOriginFlagImageView.setImageDrawable(null)
+            viewBinding.recyclerViewItemHistoryBarcodeOriginFlagImageView.visibility = View.GONE
         }
 
         // ---- Date ----
         val date = barcode.scanDate
-        viewBinding.recyclerViewItemHistoryDateTextView.text = getDateAgo(date)
+        viewBinding.recyclerViewItemHistoryBarcodeDateTextView.text = getDateAgo(date)
 
         // ---- Item CardView Selected ----
-        viewBinding.recyclerViewItemHistoryForegroundLayout.backgroundTintList = if(item.isSelected){
+        viewBinding.recyclerViewItemHistoryBarcodeForegroundLayout.backgroundTintList = if(item.isSelected){
             itemView.context.getColorStateListFromAttrRes(R.attr.colorSurfaceVariant)
         } else null
 
@@ -107,7 +107,7 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         this.weakRefCallback = WeakReference(listener)
     }
 
-    fun getForegroundLayout() = viewBinding.recyclerViewItemHistoryForegroundLayout
+    fun getForegroundLayout() = viewBinding.recyclerViewItemHistoryBarcodeForegroundLayout
     //fun getBackgroundLayout() = viewBinding.recyclerViewItemHistoryBackgroundLayout
 
     /**
@@ -137,11 +137,11 @@ class HistoryItemHolder(private val viewBinding: RecyclerViewItemHistoryBinding)
         return true
     }
 
-    private fun selectItem(v: View?, barcodeItemListener: HistoryItemAdapter.OnBarcodeItemListener) {
+    private fun selectItem(v: View?, barcodeItemListener: BarcodeHistoryItemAdapter.OnBarcodeItemListener) {
         item.isSelected = !item.isSelected
         barcodeItemListener.onItemSelect(v, item.barcode, item.isSelected)
 
-        viewBinding.recyclerViewItemHistoryForegroundLayout.backgroundTintList = if(item.isSelected){
+        viewBinding.recyclerViewItemHistoryBarcodeForegroundLayout.backgroundTintList = if(item.isSelected){
             itemView.context.getColorStateListFromAttrRes(R.attr.colorSurfaceVariant)
         } else null
     }

@@ -436,6 +436,8 @@
     <string name="qr_code_text_input_edit_text_epc_name_error">\"Name\" field is mandatory</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN incorrect</string>
 
+    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC Qr Code.</string>
+
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Subject</string>
@@ -713,6 +715,8 @@
 
     <!-- Default font (Put here to avoid a crash on Android 7) -->
     <string name="default_font" translatable="false">sans-serif-medium</string>
+
+    <string name="text_colon" translatable="false">%1$s:</string>
 
     <!-- External Services Label -->
     <string name="google_label" translatable="false">Google</string>

@@ -25,36 +25,36 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
+import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import kotlinx.coroutines.launch
 
-class DatabaseViewModel(private val databaseUseCase: DatabaseUseCase): ViewModel() {
+class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarcodeUseCase): ViewModel() {
 
-    val barcodeList: LiveData<List<Barcode>> = databaseUseCase.barcodeList
+    val barcodeList: LiveData<List<Barcode>> = databaseBarcodeUseCase.barcodeList
 
-    fun getBarcodeByDate(date: Long): LiveData<Barcode?> = databaseUseCase.getBarcodeByDate(date)
+    fun getBarcodeByDate(date: Long): LiveData<Barcode?> = databaseBarcodeUseCase.getBarcodeByDate(date)
 
     fun insertBarcode(barcode: Barcode) = viewModelScope.launch {
-        databaseUseCase.insertBarcode(barcode)
+        databaseBarcodeUseCase.insertBarcode(barcode)
     }
 
     fun updateType(date: Long, barcodeType: BarcodeType) = viewModelScope.launch {
-        databaseUseCase.updateType(date, barcodeType)
+        databaseBarcodeUseCase.updateType(date, barcodeType)
     }
 
     fun updateTypeAndName(date: Long, barcodeType: BarcodeType, name: String) = viewModelScope.launch {
-        databaseUseCase.updateTypeAndName(date, barcodeType, name)
+        databaseBarcodeUseCase.updateTypeAndName(date, barcodeType, name)
     }
 
     fun deleteBarcode(barcode: Barcode) = viewModelScope.launch {
-        databaseUseCase.deleteBarcode(barcode)
+        databaseBarcodeUseCase.deleteBarcode(barcode)
     }
 
     fun deleteBarcodes(barcodes: List<Barcode>) = viewModelScope.launch {
-        databaseUseCase.deleteBarcodes(barcodes)
+        databaseBarcodeUseCase.deleteBarcodes(barcodes)
     }
 
     fun deleteAll() = viewModelScope.launch {
-        databaseUseCase.deleteAll()
+        databaseBarcodeUseCase.deleteAll()
     }
 }

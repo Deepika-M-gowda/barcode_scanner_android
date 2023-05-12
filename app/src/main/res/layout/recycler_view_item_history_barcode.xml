@@ -6,22 +6,22 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:id="@+id/recycler_view_item_history_background_layout"
+        android:id="@+id/recycler_view_item_history_barcode_background_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical">
 
         <TextView
-            android:id="@+id/recycler_view_item_history_delete_text_view"
+            android:id="@+id/recycler_view_item_history_barcode_delete_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/recycler_view_item_history_delete_icon_image_view"
+            android:layout_toStartOf="@id/recycler_view_item_history_barcode_delete_icon_image_view"
             android:text="@string/delete_label"
             style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
         <ImageView
-            android:id="@+id/recycler_view_item_history_delete_icon_image_view"
+            android:id="@+id/recycler_view_item_history_barcode_delete_icon_image_view"
             android:layout_width="@dimen/icon_standard_size"
             android:layout_height="@dimen/icon_standard_size"
             android:layout_centerVertical="true"
@@ -33,7 +33,7 @@
     </RelativeLayout>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/recycler_view_item_history_foreground_layout"
+        android:id="@+id/recycler_view_item_history_barcode_foreground_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardUseCompatPadding="false">
@@ -48,7 +48,7 @@
             android:paddingEnd="@dimen/large_margin">
 
             <ImageView
-                android:id="@+id/recycler_view_item_history_image_view"
+                android:id="@+id/recycler_view_item_history_barcode_image_view"
                 android:layout_width="@dimen/icon_x_large_size"
                 android:layout_height="@dimen/icon_x_large_size"
                 android:layout_alignParentStart="true"
@@ -62,16 +62,16 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/recycler_view_item_history_image_view"
+                android:layout_toEndOf="@id/recycler_view_item_history_barcode_image_view"
                 android:layout_centerVertical="true">
 
                 <RelativeLayout
-                    android:id="@+id/recycler_view_item_history_entitled_layout"
+                    android:id="@+id/recycler_view_item_history_barcode_entitled_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/recycler_view_item_history_entitled_text_view"
+                        android:id="@+id/recycler_view_item_history_barcode_entitled_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -106,7 +106,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/recycler_view_item_history_entitled_layout"
+                    android:layout_below="@id/recycler_view_item_history_barcode_entitled_layout"
                     android:layout_marginTop="@dimen/light_margin">
 
                     <RelativeLayout
@@ -114,9 +114,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/recycler_view_item_history_date_image_view">
+                        android:layout_toStartOf="@id/recycler_view_item_history_barcode_date_image_view">
                         <TextView
-                            android:id="@+id/recycler_view_item_history_content_text_view"
+                            android:id="@+id/recycler_view_item_history_barcode_content_text_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -127,26 +127,26 @@
                             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
                         <ImageView
-                            android:id="@+id/recycler_view_item_history_origin_flag_image_view"
+                            android:id="@+id/recycler_view_item_history_barcode_origin_flag_image_view"
                             android:layout_width="@dimen/icon_light_size"
                             android:layout_height="@dimen/icon_light_size"
                             android:layout_centerVertical="true"
-                            android:layout_toEndOf="@id/recycler_view_item_history_content_text_view"
+                            android:layout_toEndOf="@id/recycler_view_item_history_barcode_content_text_view"
                             android:contentDescription="@string/image_view_description_flag" />
                     </RelativeLayout>
 
                     <ImageView
-                        android:id="@+id/recycler_view_item_history_date_image_view"
+                        android:id="@+id/recycler_view_item_history_barcode_date_image_view"
                         android:layout_width="@dimen/icon_standard_size"
                         android:layout_height="@dimen/icon_standard_size"
                         android:layout_centerVertical="true"
-                        android:layout_toStartOf="@id/recycler_view_item_history_date_text_view"
+                        android:layout_toStartOf="@id/recycler_view_item_history_barcode_date_text_view"
                         android:src="@drawable/baseline_history_24"
                         app:tint="?android:attr/textColorSecondary"
                         android:contentDescription="@string/image_view_description_icon" />
 
                     <TextView
-                        android:id="@+id/recycler_view_item_history_date_text_view"
+                        android:id="@+id/recycler_view_item_history_barcode_date_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"

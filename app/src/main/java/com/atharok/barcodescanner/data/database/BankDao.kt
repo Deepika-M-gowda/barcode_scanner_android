@@ -20,15 +20,25 @@
 
 package com.atharok.barcodescanner.data.database
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.atharok.barcodescanner.domain.entity.bank.Bank
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
-@Database(entities = [Barcode::class, Bank::class], version = 2, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
+@Dao
+interface BankDao {
 
-    abstract fun barcodeDao(): BarcodeDao
+    @Query("SELECT * FROM Bank ORDER BY name")
+    fun getBankList(): LiveData<List<Bank>>
 
-    abstract fun bankDao(): BankDao
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(bank: Bank): Long
+
+    @Query("DELETE FROM Bank")
+    suspend fun deleteAll(): Int
+
+    @Delete
+    suspend fun deleteBanks(banks: List<Bank>): Int
+
+    @Delete
+    suspend fun delete(bank: Bank): Int
 }

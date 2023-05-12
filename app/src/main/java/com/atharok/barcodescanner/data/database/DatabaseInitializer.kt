@@ -22,9 +22,24 @@ package com.atharok.barcodescanner.data.database
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.atharok.barcodescanner.common.utils.DATABASE_NAME
 
+private val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "CREATE TABLE IF NOT EXISTS Bank (name TEXT NOT NULL, bic TEXT NOT NULL, iban TEXT NOT NULL PRIMARY KEY)"
+        )
+    }
+}
+
+
 fun createDatabase(context: Context): AppDatabase =
-    Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME).build()
+    Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
+        .addMigrations(MIGRATION_1_2)
+        .build()
 
 fun createBarcodeDao(database: AppDatabase): BarcodeDao = database.barcodeDao()
+
+fun createBankDao(database: AppDatabase): BankDao = database.bankDao()

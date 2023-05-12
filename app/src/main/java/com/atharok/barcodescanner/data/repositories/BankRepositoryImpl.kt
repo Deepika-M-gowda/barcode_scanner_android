@@ -18,17 +18,26 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.data.repositories
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+import androidx.lifecycle.LiveData
+import com.atharok.barcodescanner.data.database.BankDao
+import com.atharok.barcodescanner.data.database.BarcodeDao
 import com.atharok.barcodescanner.domain.entity.bank.Bank
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.repositories.BankRepository
+import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 
-@Database(entities = [Barcode::class, Bank::class], version = 2, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
+class BankRepositoryImpl(private val bankDao: BankDao): BankRepository {
 
-    abstract fun barcodeDao(): BarcodeDao
+    override fun getBankList(): LiveData<List<Bank>> = bankDao.getBankList()
 
-    abstract fun bankDao(): BankDao
+    override suspend fun insertBank(bank: Bank): Long = bankDao.insert(bank)
+
+    override suspend fun deleteAllBank(): Int = bankDao.deleteAll()
+
+    override suspend fun deleteBanks(banks: List<Bank>): Int = bankDao.deleteBanks(banks)
+
+    override suspend fun deleteBank(bank: Bank): Int = bankDao.delete(bank)
 }

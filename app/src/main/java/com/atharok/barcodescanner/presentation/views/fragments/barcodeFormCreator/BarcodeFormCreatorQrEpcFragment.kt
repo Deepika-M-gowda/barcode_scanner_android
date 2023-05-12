@@ -20,16 +20,26 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.common.extensions.serializable
+import com.atharok.barcodescanner.common.utils.BANK_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrEpcBinding
+import com.atharok.barcodescanner.domain.entity.bank.Bank
 import com.atharok.barcodescanner.domain.library.Iban
+import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
+import com.atharok.barcodescanner.presentation.views.activities.BankListActivity
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -43,9 +53,11 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
         private const val IDENTIFICATION = "SCT"
     }
 
+    private val databaseBankViewModel: DatabaseBankViewModel by activityViewModel()
+
     private val iban: Iban by inject()
     private val inputMethodManager: InputMethodManager by inject()
-    private val stringBuilder = StringBuilder()
+    private val stringBuilder: StringBuilder by lazy { StringBuilder() }
 
     private var _binding: FragmentBarcodeFormCreatorQrEpcBinding? = null
     private val viewBinding get() = _binding!!
@@ -54,6 +66,7 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
         _binding = FragmentBarcodeFormCreatorQrEpcBinding.inflate(inflater, container, false)
         configureMenu()
         configureInputEditTexts()
+        configureBankHistoryButton()
         return viewBinding.root
     }
 
@@ -61,6 +74,7 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
         super.onDestroyView()
         _binding=null
     }
+
 
     override fun getBarcodeTextFromForm(): String {
         val nameInputEditText = viewBinding.fragmentBarcodeFormCreatorQrEpcNameInputEditText
@@ -81,12 +95,16 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
             return ""
         }
 
+        val bicText: String = viewBinding.fragmentBarcodeFormCreatorQrEpcBicInputEditText.text.toString()
+
+        saveBankInformationIntoDatabase(name, bicText, ibanText)
+
         stringBuilder.clear()
         stringBuilder.appendLine(SERVICE_TAG)
         stringBuilder.appendLine(VERSION)
         stringBuilder.appendLine(CHARACTER_SET)
         stringBuilder.appendLine(IDENTIFICATION)
-        stringBuilder.appendLine(viewBinding.fragmentBarcodeFormCreatorQrEpcBicInputEditText.text.toString())
+        stringBuilder.appendLine(bicText)
         stringBuilder.appendLine(name)
         stringBuilder.appendLine(ibanText)
         stringBuilder.appendLine(viewBinding.fragmentBarcodeFormCreatorQrEpcAmountInputEditText.text.toString())
@@ -127,6 +145,31 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
             viewBinding.fragmentBarcodeFormCreatorQrEpcRemittanceRefInputEditText.apply {
                 visibility = if(it.isNullOrEmpty()) View.VISIBLE else View.GONE
             }
+        }
+    }
+
+    // ---- Bank History ----
+
+    private fun saveBankInformationIntoDatabase(name: String, bic: String, iban: String) {
+        val bank = Bank(name, bic, iban)
+        databaseBankViewModel.insertBank(bank)
+    }
+
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+            data?.serializable(BANK_KEY, Bank::class.java)?.let {
+                viewBinding.fragmentBarcodeFormCreatorQrEpcBicInputEditText.setText(it.bic)
+                viewBinding.fragmentBarcodeFormCreatorQrEpcNameInputEditText.setText(it.name)
+                viewBinding.fragmentBarcodeFormCreatorQrEpcIbanInputEditText.setText(it.iban)
+            }
+        }
+    }
+
+    private fun configureBankHistoryButton() {
+        viewBinding.fragmentBarcodeFormCreatorQrEpcOnActivityResultButton.setOnClickListener {
+            val intent = createStartActivityIntent(requireContext(), BankListActivity::class)
+            resultLauncher.launch(intent)
         }
     }
 }

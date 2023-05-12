@@ -18,17 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.presentation.views.recyclerView.history
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
-import com.atharok.barcodescanner.domain.entity.bank.Bank
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
-@Database(entities = [Barcode::class, Bank::class], version = 2, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
-
-    abstract fun barcodeDao(): BarcodeDao
-
-    abstract fun bankDao(): BankDao
-}
+data class BarcodeHistoryItem(val barcode: Barcode, var isSelected: Boolean = false)

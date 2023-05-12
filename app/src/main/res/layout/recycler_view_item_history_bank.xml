@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/recycler_view_item_history_bank_background_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/recycler_view_item_history_bank_delete_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/recycler_view_item_history_bank_delete_icon_image_view"
+            android:text="@string/delete_label"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+
+        <ImageView
+            android:id="@+id/recycler_view_item_history_bank_delete_icon_image_view"
+            android:layout_width="@dimen/icon_standard_size"
+            android:layout_height="@dimen/icon_standard_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:src="@drawable/baseline_delete_forever_24"
+            android:contentDescription="@string/image_view_description_icon" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/recycler_view_item_history_bank_foreground_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardUseCompatPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="@dimen/large_margin"
+            android:paddingBottom="@dimen/large_margin"
+            android:paddingStart="@dimen/large_margin"
+            android:paddingEnd="@dimen/large_margin">
+
+            <TextView
+                android:id="@+id/recycler_view_item_history_bank_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:maxLines="1"
+                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+            <RelativeLayout
+                android:id="@+id/recycler_view_item_history_bank_bic_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_view_item_history_bank_name_text_view">
+
+                <TextView
+                    android:id="@+id/recycler_view_item_history_bank_bic_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/qr_code_text_input_edit_text_hint_epc_bic"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+                <TextView
+                    android:id="@+id/recycler_view_item_history_bank_bic_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/recycler_view_item_history_bank_bic_label"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_view_item_history_bank_bic_layout">
+
+                <TextView
+                    android:id="@+id/recycler_view_item_history_bank_iban_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/qr_code_text_input_edit_text_hint_epc_iban"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+                <TextView
+                    android:id="@+id/recycler_view_item_history_bank_iban_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/recycler_view_item_history_bank_iban_label"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

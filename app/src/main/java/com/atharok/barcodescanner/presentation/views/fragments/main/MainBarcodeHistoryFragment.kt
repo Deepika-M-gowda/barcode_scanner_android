@@ -38,23 +38,23 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemAdapter
-import com.atharok.barcodescanner.presentation.views.recyclerView.history.HistoryItemTouchHelperListener
+import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemAdapter
+import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemTouchHelperListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
-class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnBarcodeItemListener, HistoryItemTouchHelperListener {
+class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnBarcodeItemListener, BarcodeHistoryItemTouchHelperListener {
 
-    private val databaseViewModel: DatabaseViewModel by activityViewModel()
-    private val adapter: HistoryItemAdapter = HistoryItemAdapter(this)
+    private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
+    private val adapter: BarcodeHistoryItemAdapter = BarcodeHistoryItemAdapter(this)
 
     private var _binding: FragmentMainHistoryBinding? = null
     private val viewBinding get() = _binding!!
@@ -79,7 +79,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnBarcodeItemList
 
         configureRecyclerView()
 
-        databaseViewModel.barcodeList.observe(viewLifecycleOwner) {
+        databaseBarcodeViewModel.barcodeList.observe(viewLifecycleOwner) {
 
             barcodeItemSelected.clear()
             adapter.updateData(it)
@@ -174,7 +174,7 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnBarcodeItemList
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
         val barcode: Barcode = adapter.getBarcode(position)
 
-        databaseViewModel.deleteBarcode(barcode)
+        databaseBarcodeViewModel.deleteBarcode(barcode)
 
         // Dans le cas de texte trop long et/ou contenant des '\n', on adapte la chaine de caractères
         val content = if (barcode.contents.length <= 16) {
@@ -189,13 +189,13 @@ class MainHistoryFragment : BaseFragment(), HistoryItemAdapter.OnBarcodeItemList
 
     private fun showDeleteAllConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_history) {
-            databaseViewModel.deleteAll()
+            databaseBarcodeViewModel.deleteAll()
         }
     }
 
     private fun showDeleteSelectedItemsConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
-            databaseViewModel.deleteBarcodes(barcodeItemSelected)
+            databaseBarcodeViewModel.deleteBarcodes(barcodeItemSelected)
         }
     }
 

@@ -25,7 +25,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 
-class DatabaseUseCase(private val barcodeRepository: BarcodeRepository) {
+class DatabaseBarcodeUseCase(private val barcodeRepository: BarcodeRepository) {
 
     val barcodeList: LiveData<List<Barcode>> = barcodeRepository.getBarcodeList()
 

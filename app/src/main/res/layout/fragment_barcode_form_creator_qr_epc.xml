@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.fragments.barcodeFormCreator.BarcodeFormCreatorQrEpcFragment">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_barcode_form_creator_qr_epc_on_activity_result_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:text="@string/title_history" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fragment_barcode_form_creator_qr_epc_bic_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/fragment_barcode_form_creator_qr_epc_on_activity_result_button"
         android:hint="@string/qr_code_text_input_edit_text_hint_epc_bic"
         style="@style/AppTheme.TextInputLayoutStyle">
 

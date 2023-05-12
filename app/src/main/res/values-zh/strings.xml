@@ -436,6 +436,8 @@
     <string name="qr_code_text_input_edit_text_epc_name_error">“名称” 字段是必须的</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN 错误</string>
 
+    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC Qr Code.</string>
+
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">电子邮件</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">主题</string>

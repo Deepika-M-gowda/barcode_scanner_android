@@ -44,7 +44,9 @@ import com.atharok.barcodescanner.data.api.OpenFoodFactsService
 import com.atharok.barcodescanner.data.api.OpenLibraryService
 import com.atharok.barcodescanner.data.api.OpenPetFoodFactsService
 import com.atharok.barcodescanner.data.database.AppDatabase
+import com.atharok.barcodescanner.data.database.BankDao
 import com.atharok.barcodescanner.data.database.BarcodeDao
+import com.atharok.barcodescanner.data.database.createBankDao
 import com.atharok.barcodescanner.data.database.createBarcodeDao
 import com.atharok.barcodescanner.data.database.createDatabase
 import com.atharok.barcodescanner.data.file.FileFetcher
@@ -59,11 +61,13 @@ import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSet
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
 import com.atharok.barcodescanner.domain.repositories.*
-import com.atharok.barcodescanner.domain.usecases.DatabaseUseCase
+import com.atharok.barcodescanner.domain.usecases.DatabaseBankUseCase
+import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
 import com.atharok.barcodescanner.presentation.intent.*
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
@@ -160,7 +164,11 @@ val viewModelModule: Module = module {
     }
 
     viewModel {
-        DatabaseViewModel(get<DatabaseUseCase>())
+        DatabaseBankViewModel(get<DatabaseBankUseCase>())
+    }
+
+    viewModel {
+        DatabaseBarcodeViewModel(get<DatabaseBarcodeUseCase>())
     }
 
     viewModel {
@@ -182,8 +190,12 @@ val useCaseModule: Module = module {
         )
     }
 
-    single<DatabaseUseCase> {
-        DatabaseUseCase(get<BarcodeRepository>())
+    single<DatabaseBankUseCase> {
+        DatabaseBankUseCase(get<BankRepository>())
+    }
+
+    single<DatabaseBarcodeUseCase> {
+        DatabaseBarcodeUseCase(get<BarcodeRepository>())
     }
 
     single<ExternalFoodProductDependencyUseCase> {
@@ -212,6 +224,10 @@ val repositoryModule: Module = module {
 
     single<BookProductRepository> {
         BookProductRepositoryImpl(get<OpenLibraryService>())
+    }
+
+    single<BankRepository> {
+        BankRepositoryImpl(get<BankDao>())
     }
 
     single<BarcodeRepository> {
@@ -277,6 +293,10 @@ val dataModule: Module = module {
         createBarcodeDao(get<AppDatabase>())
     }
 
+    single<BankDao> {
+        createBankDao(get<AppDatabase>())
+    }
+
     single<FileFetcher> { FileFetcher(androidContext()) }
 }
 
@@ -284,7 +304,7 @@ val fragmentsModule = module {
 
     factory { MainCameraXScannerFragment() }
     factory { MainScannerFragment() }
-    factory { MainHistoryFragment() }
+    factory { MainBarcodeHistoryFragment() }
     factory { MainBarcodeCreatorListFragment() }
     factory { MainSettingsFragment() }
 

@@ -42,6 +42,9 @@ const val BARCODE_KEY = "barcodeKey"
 // Clé du Bundle associé au au type d'erreur lors de la recherche sur une API.
 const val API_ERROR_KEY = "apiErrorKey"
 
+// Clé de l'intent permettant la récupération des données de Bank entre BarcodeFormCreatorQrEpcFragment et BarcodeEpcTemplateListActivity.
+const val BANK_KEY = "bankKey"
+
 // Clé de l'intent lors de la re-création de l'activity permettant de rechercher dans les APIs même lorsque désactivé dans les paramètres
 const val IGNORE_USE_SEARCH_ON_API_SETTING_KEY = "ignoreUseSearchOnApiSettingKey"
 

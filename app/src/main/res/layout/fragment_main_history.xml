@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.main.MainHistoryFragment">
+    tools:context=".presentation.views.fragments.main.MainBarcodeHistoryFragment">
 
     <TextView
         android:id="@+id/fragment_main_history_empty_text_view"

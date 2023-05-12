@@ -48,7 +48,7 @@ import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.domain.library.camera.*
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageGalleryActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
@@ -70,7 +70,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     }
 
     private var cameraConfig: CameraConfig? = null
-    private val databaseViewModel: DatabaseViewModel by activityViewModel()
+    private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
 
     // ---- View ----
     private var _binding: FragmentMainCameraXScannerBinding? = null
@@ -268,7 +268,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
             if(settingsManager.shouldAddBarcodeScanToHistory) {
                 // Insert les informations du code-barres dans la base de données (de manière asynchrone)
-                databaseViewModel.insertBarcode(barcode)
+                databaseBarcodeViewModel.insertBarcode(barcode)
             }
 
             onResult(barcode)

@@ -43,7 +43,7 @@ class MainActivity: BaseActivity() {
 
     private val mainCameraXScannerFragment: MainCameraXScannerFragment by inject()
     private val mainScannerFragment: MainScannerFragment by inject()
-    private val mainHistoryFragment: MainHistoryFragment by inject()
+    private val mainHistoryFragment: MainBarcodeHistoryFragment by inject()
     private val mainBarcodeCreatorListFragment: MainBarcodeCreatorListFragment by inject()
     private val mainSettingsFragment: MainSettingsFragment by inject()
 

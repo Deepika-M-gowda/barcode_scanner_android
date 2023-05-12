@@ -39,7 +39,7 @@ import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
-import com.atharok.barcodescanner.presentation.viewmodel.DatabaseViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
@@ -57,7 +57,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     protected val actionScope get() = getKoin().getOrCreateScope(
         ACTION_SCOPE_SESSION_ID, named(ACTION_SCOPE_SESSION)
     )
-    private val databaseViewModel: DatabaseViewModel by activityViewModel()
+    private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
 
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
     private val viewBinding get() = _binding!!
@@ -95,7 +95,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
      * automatiquement l'adapter permettant de ne plus afficher le bouton.
      */
     private fun configureDatabaseObserver(barcode: Barcode, parsedResult: ParsedResult) {
-        databaseViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
+        databaseBarcodeViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
             val items = if(it!=null){
                 configureActions(barcode, parsedResult) + configureDeleteBarcodeFromHistoryActionItem(barcode)
             } else {
@@ -159,14 +159,14 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
     private fun deleteBarcodeFromHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            databaseViewModel.deleteBarcode(barcode)
+            databaseBarcodeViewModel.deleteBarcode(barcode)
             showSnackbar(getString(R.string.menu_item_history_removed_from_history))
         }
     }
 
     private fun addBarcodeInHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            databaseViewModel.insertBarcode(barcode)
+            databaseBarcodeViewModel.insertBarcode(barcode)
             showSnackbar(getString(R.string.menu_item_history_added_in_history))
         }
     }
