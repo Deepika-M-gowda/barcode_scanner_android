@@ -32,7 +32,14 @@ import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisContentsBin
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.*
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixAgendaFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixContactFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixEmailFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixLocalisationFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixPhoneFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixSmsFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixUriFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixWifiFragment
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType

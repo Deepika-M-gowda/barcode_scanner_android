@@ -26,7 +26,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.common.extensions.*
+import com.atharok.barcodescanner.common.extensions.firstCharacterIntoCapital
+import com.atharok.barcodescanner.common.extensions.setChipBackgroundColorFromAttrRes
+import com.atharok.barcodescanner.common.extensions.setChipIconTintFromAttrRes
+import com.atharok.barcodescanner.common.extensions.setChipStrokeColorFromAttrRes
+import com.atharok.barcodescanner.common.extensions.setChipTextColorFromAttrRes
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisVeggieBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis

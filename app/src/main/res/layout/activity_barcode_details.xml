@@ -23,12 +23,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ProgressBar
+                android:id="@+id/activity_barcode_details_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/activity_barcode_image_image_rounded"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true">
+                android:layout_below="@id/activity_barcode_details_progress_bar"
+                android:layout_centerHorizontal="true">
 
                 <ImageView
                     android:id="@+id/activity_barcode_image_image_view"

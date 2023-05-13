@@ -22,7 +22,12 @@ package com.atharok.barcodescanner.domain.library
 
 import android.graphics.Bitmap
 import android.util.Log
-import com.google.zxing.*
+import com.google.zxing.BinaryBitmap
+import com.google.zxing.MultiFormatReader
+import com.google.zxing.NotFoundException
+import com.google.zxing.RGBLuminanceSource
+import com.google.zxing.ReaderException
+import com.google.zxing.Result
 import com.google.zxing.common.HybridBinarizer
 
 

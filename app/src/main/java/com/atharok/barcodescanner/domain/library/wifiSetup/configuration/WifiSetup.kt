@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.domain.library.wifiSetup.configuration
 import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
 import com.atharok.barcodescanner.domain.library.wifiSetup.extensions.toEapMethod
 import com.atharok.barcodescanner.domain.library.wifiSetup.extensions.toPhase2Method
-import java.util.*
+import java.util.Locale
 
 interface WifiSetup<CONFIGURATION> {
 

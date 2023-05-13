@@ -21,7 +21,13 @@
 package com.atharok.barcodescanner.domain.library.camera
 
 import androidx.camera.core.ImageAnalysis
-import com.google.zxing.*
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.BinaryBitmap
+import com.google.zxing.DecodeHintType
+import com.google.zxing.MultiFormatReader
+import com.google.zxing.PlanarYUVLuminanceSource
+import com.google.zxing.ReaderException
+import com.google.zxing.Result
 import com.google.zxing.common.HybridBinarizer
 
 abstract class AbstractCameraXBarcodeAnalyzer(

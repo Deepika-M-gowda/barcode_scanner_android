@@ -31,7 +31,7 @@ import kotlinx.coroutines.Dispatchers
  * Liste les applications installées sur l'appareil.
  */
 class InstalledAppsViewModel(private val installedAppsRepository: InstalledAppsRepository): ViewModel() {
-    fun getInstalledApps(): LiveData<List<ApplicationsItem>> = liveData(Dispatchers.IO) {
+    val installedApps: LiveData<List<ApplicationsItem>> = liveData(Dispatchers.IO) {
         emit(installedAppsRepository.getInstalledApps())
     }
 }

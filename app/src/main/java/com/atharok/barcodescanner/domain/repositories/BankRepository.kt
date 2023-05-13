@@ -22,8 +22,6 @@ package com.atharok.barcodescanner.domain.repositories
 
 import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.domain.entity.bank.Bank
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 
 /**
  * Repository permettant les interactions avec la BDD.

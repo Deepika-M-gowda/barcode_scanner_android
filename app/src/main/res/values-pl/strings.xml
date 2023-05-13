@@ -119,7 +119,7 @@
 
     <!-- Barcode Searching Error -->
     <string name="warning_label">Ostrzeżenie</string>
-    <string name="scan_error_information_label">Wystąpił błąd podczas wyszukiwania informacji w zdalnym API... Sprawdź swoje połączenie internetowe i uprawnienia aplikacji! Jeśli problem będzie się powtarzał, powinien to być problem z serwerem.</string>
+    <string name="scan_error_information_label">Wystąpił błąd podczas wyszukiwania informacji w zdalnym API… Sprawdź swoje połączenie internetowe i uprawnienia aplikacji! Jeśli problem będzie się powtarzał, powinien to być problem z serwerem.</string>
     <string name="scan_error_internet_information_label">Brak informacji o pobranym produkcie, ponieważ nie wydaje się, że jesteś podłączony do Internetu!</string>
     <string name="scan_error_message_label">Błąd: </string>
 
@@ -560,6 +560,8 @@
     <string name="permission_wifi_description_label">Wymagane do połączenia z siecią Wi-Fi poprzez zeskanowanie kodu QR zawierającego dostęp do sieci Wi-Fi.</string>
     <string name="permission_vibrate_label">Wibracje</string>
     <string name="permission_vibrate_description_label">Użyj wibrowania podczas skanowania.</string>
+    <string name="permission_query_all_packages_label">Query all packages</string>
+    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts to bezpłatna baza danych o żywności, która zawiera listę składników, alergenów, składu odżywczego i wszystkich informacji obecnych na etykietach produktów.</string>

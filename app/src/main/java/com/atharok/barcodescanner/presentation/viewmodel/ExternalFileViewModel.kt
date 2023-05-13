@@ -22,7 +22,16 @@ package com.atharok.barcodescanner.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.ADDITIVES_CLASSES_LOCALE_FILE_NAME
+import com.atharok.barcodescanner.common.utils.ADDITIVES_CLASSES_URL
+import com.atharok.barcodescanner.common.utils.ADDITIVES_LOCALE_FILE_NAME
+import com.atharok.barcodescanner.common.utils.ADDITIVES_URL
+import com.atharok.barcodescanner.common.utils.ALLERGENS_LOCALE_FILE_NAME
+import com.atharok.barcodescanner.common.utils.ALLERGENS_URL
+import com.atharok.barcodescanner.common.utils.COUNTRIES_LOCALE_FILE_NAME
+import com.atharok.barcodescanner.common.utils.COUNTRIES_URL
+import com.atharok.barcodescanner.common.utils.LABELS_LOCALE_FILE_NAME
+import com.atharok.barcodescanner.common.utils.LABELS_URL
 import com.atharok.barcodescanner.domain.entity.dependencies.Additive
 import com.atharok.barcodescanner.domain.entity.dependencies.Allergen
 import com.atharok.barcodescanner.domain.entity.dependencies.Country

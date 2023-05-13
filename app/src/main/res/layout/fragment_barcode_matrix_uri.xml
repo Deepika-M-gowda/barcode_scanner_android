@@ -61,7 +61,6 @@
         android:id="@+id/fragment_barcode_matrix_uri_parsed_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
         android:layout_below="@id/fragment_barcode_matrix_uri_malicious_layout"/>
 
 </RelativeLayout>

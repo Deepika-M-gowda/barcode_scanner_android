@@ -560,6 +560,8 @@
     <string name="permission_wifi_description_label">Benötigt um zu einem WLAN zu verbinden dessen QR Code gescannt wurde.</string>
     <string name="permission_vibrate_label">Vibrate</string>
     <string name="permission_vibrate_description_label">Benötigt um beim scannen zu vibrieren.</string>
+    <string name="permission_query_all_packages_label">Query all packages</string>
+    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Lebensmittelprodukten aus der ganzen Welt. Sie listet alle auf dem Produktlabel gekennzeichneten Informationen wie z.B. Zutaten, Allergene und Nährwerte.</string>

@@ -560,6 +560,8 @@
     <string name="permission_wifi_description_label">用于通过扫描Wi-Fi二维码连接到Wi-Fi时。</string>
     <string name="permission_vibrate_label">振动</string>
     <string name="permission_vibrate_description_label">用于扫描成功时振动提醒。</string>
+    <string name="permission_query_all_packages_label">Query all packages</string>
+    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts is a free database about food which lists ingredients, allergens, nutritional composition and all information present on the products labels.</string>

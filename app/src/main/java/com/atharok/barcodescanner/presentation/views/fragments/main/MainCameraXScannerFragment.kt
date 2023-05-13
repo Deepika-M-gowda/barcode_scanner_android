@@ -27,7 +27,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.view.*
+import android.view.HapticFeedbackConstants
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -46,7 +52,11 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
-import com.atharok.barcodescanner.domain.library.camera.*
+import com.atharok.barcodescanner.domain.library.camera.AbstractCameraXBarcodeAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraConfig
+import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraXBarcodeLegacyAnalyzer
+import com.atharok.barcodescanner.domain.library.camera.CameraZoomGestureDetector
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity

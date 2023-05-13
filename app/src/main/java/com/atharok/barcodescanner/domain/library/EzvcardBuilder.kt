@@ -25,7 +25,14 @@ import com.atharok.barcodescanner.R
 import ezvcard.VCard
 import ezvcard.parameter.EmailType
 import ezvcard.parameter.TelephoneType
-import ezvcard.property.*
+import ezvcard.property.Address
+import ezvcard.property.Email
+import ezvcard.property.FormattedName
+import ezvcard.property.Note
+import ezvcard.property.Organization
+import ezvcard.property.StructuredName
+import ezvcard.property.Telephone
+import ezvcard.property.Url
 
 class EzvcardBuilder {
 

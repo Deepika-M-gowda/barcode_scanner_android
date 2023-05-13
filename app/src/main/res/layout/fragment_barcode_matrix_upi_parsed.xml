@@ -9,22 +9,22 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/stroke_width"
         android:background="?colorOutline"
+        android:layout_marginTop="@dimen/x_large_margin"
         android:layout_centerHorizontal="true"/>
 
-    <include
+    <!--<include
         layout="@layout/template_text_view_title"
         android:id="@+id/fragment_barcode_matrix_upi_template_entitled_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin" />
+        android:layout_marginTop="@dimen/x_large_margin" />-->
 
     <!-- UPI ID -->
     <RelativeLayout
         android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_upi_template_entitled_view">
+        android:layout_marginTop="@dimen/x_large_margin">
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_label"

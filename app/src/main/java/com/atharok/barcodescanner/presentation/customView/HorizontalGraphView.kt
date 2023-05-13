@@ -21,8 +21,12 @@
 package com.atharok.barcodescanner.presentation.customView
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.Paint.ANTI_ALIAS_FLAG
+import android.graphics.Path
+import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.View
 import com.atharok.barcodescanner.R

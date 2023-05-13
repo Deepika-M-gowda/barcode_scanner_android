@@ -44,11 +44,13 @@ class BarcodeFormCreatorQrApplicationFragment : AbstractBarcodeFormCreatorQrFrag
     private var _binding: FragmentBarcodeFormCreatorQrApplicationBinding? = null
     private val viewBinding get() = _binding!!
 
+    private val adapter = ApplicationsItemAdapter(this)
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeFormCreatorQrApplicationBinding.inflate(inflater, container, false)
 
-        viewBinding.fragmentBarcodeFormCreatorQrApplicationRecyclerView.visibility = View.GONE
-        viewBinding.fragmentBarcodeFormCreatorQrApplicationProgressBar.visibility = View.VISIBLE
+        /*viewBinding.fragmentBarcodeFormCreatorQrApplicationRecyclerView.visibility = View.GONE
+        viewBinding.fragmentBarcodeFormCreatorQrApplicationProgressBar.visibility = View.VISIBLE*/
 
         return viewBinding.root
     }
@@ -61,23 +63,25 @@ class BarcodeFormCreatorQrApplicationFragment : AbstractBarcodeFormCreatorQrFrag
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getInstalledApps().observe(viewLifecycleOwner) {
+        configureRecyclerView()
+
+        viewModel.installedApps.observe(viewLifecycleOwner) {
             viewBinding.fragmentBarcodeFormCreatorQrApplicationProgressBar.visibility = View.GONE
-            configureRecyclerView(it)
+            adapter.updateData(it)
         }
     }
 
-    private fun configureRecyclerView(applications: List<ApplicationsItem>) {
+    private fun configureRecyclerView() {
         val recyclerView = viewBinding.fragmentBarcodeFormCreatorQrApplicationRecyclerView
 
         val layoutManager = LinearLayoutManager(requireContext())
         val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
 
-        recyclerView.adapter = ApplicationsItemAdapter(applications, this)
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
         recyclerView.addItemDecoration(decoration)
 
-        recyclerView.visibility = View.VISIBLE
+        //recyclerView.visibility = View.VISIBLE
     }
 
     private var barcodeContents = ""

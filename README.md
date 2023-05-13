@@ -1,4 +1,4 @@
-<div align="center"><img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="192" /></div>
+<div align="center"><img src="fastlane/metadata/android/en-US/images/icon.png" width="192" style="border-radius: 50%;" /></div>
 
 # <div align="center">Barcode Scanner</div>
 

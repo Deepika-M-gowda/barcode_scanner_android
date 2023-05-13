@@ -20,7 +20,11 @@
 
 package com.atharok.barcodescanner.domain.library
 
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Rect
 import com.atharok.barcodescanner.common.extensions.is2DBarcode
 import com.atharok.barcodescanner.common.utils.ENCODING_ISO_8859_1
 import com.atharok.barcodescanner.common.utils.ENCODING_UTF_8

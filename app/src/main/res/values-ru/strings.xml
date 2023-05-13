@@ -560,6 +560,8 @@
     <string name="permission_wifi_description_label">Требуется для подключения к Wi-Fi путем сканирования QR-кода, содержащего информацию о доступе к Wi-Fi.</string>
     <string name="permission_vibrate_label">Вибрация</string>
     <string name="permission_vibrate_description_label">Используется для включения вибрации при сканировании.</string>
+    <string name="permission_query_all_packages_label">Query all packages</string>
+    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о продуктах питания, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>

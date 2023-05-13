@@ -29,7 +29,11 @@ import androidx.fragment.app.commitNow
 import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
-import com.atharok.barcodescanner.presentation.views.fragments.main.*
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeHistoryFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
+import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.snackbar.Snackbar

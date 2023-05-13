@@ -32,7 +32,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.*
+import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.extensions.getDisplayName
+import com.atharok.barcodescanner.common.extensions.is2DBarcode
+import com.atharok.barcodescanner.common.extensions.parcelable
+import com.atharok.barcodescanner.common.extensions.read
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
@@ -57,7 +61,7 @@ import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 class BarcodeDetailsActivity : BaseActivity() {
 
@@ -123,6 +127,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 viewBinding.activityBarcodeImageImageView.setImageBitmap(bitmapCreated)
 
             bitmap = bitmapCreated
+            viewBinding.activityBarcodeDetailsProgressBar.visibility = View.GONE
         }
     }
 

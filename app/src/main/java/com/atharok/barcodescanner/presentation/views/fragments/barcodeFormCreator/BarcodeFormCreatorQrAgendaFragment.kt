@@ -34,7 +34,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.android.TimePicke
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 /**
  * A simple [Fragment] subclass.

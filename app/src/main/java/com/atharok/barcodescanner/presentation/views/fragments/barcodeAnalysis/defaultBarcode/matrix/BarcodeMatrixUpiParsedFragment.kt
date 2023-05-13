@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixUpiParsedBinding
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
@@ -37,8 +36,8 @@ class BarcodeMatrixUpiParsedFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         uri?.let {
 
-            val entitledTextView = viewBinding.fragmentBarcodeMatrixUpiTemplateEntitledView.templateTextViewTitleTextView
-            entitledTextView.setText(R.string.matrix_uri_upi_entitled_label)
+            /*val entitledTextView = viewBinding.fragmentBarcodeMatrixUpiTemplateEntitledView.templateTextViewTitleTextView
+            entitledTextView.setText(R.string.matrix_uri_upi_entitled_label)*/
 
             val uriParsed: Uri = Uri.parse(uri)
             configureText(

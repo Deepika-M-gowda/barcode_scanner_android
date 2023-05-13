@@ -94,7 +94,7 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
                 typeTextView = viewBinding.fragmentBarcodeMatrixContactPhoneType1TextView,
                 layout = viewBinding.fragmentBarcodeMatrixContactPhone1Layout,
                 contact = if(phoneNumbers.isNotEmpty()) phoneNumbers[0] else null,
-                type = if(phoneTypes != null && phoneTypes.isNotEmpty()) phoneTypes[0] else null
+                type = if(!phoneTypes.isNullOrEmpty()) phoneTypes[0] else null
             )
 
             // Phone 2
@@ -129,7 +129,7 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
                 typeTextView = viewBinding.fragmentBarcodeMatrixContactEmailType1TextView,
                 layout = viewBinding.fragmentBarcodeMatrixContactEmail1Layout,
                 contact = if(mails.isNotEmpty()) mails[0] else null,
-                type = if(mailTypes != null && mailTypes.isNotEmpty()) mailTypes[0] else null
+                type = if(!mailTypes.isNullOrEmpty()) mailTypes[0] else null
             )
 
             // Mail 2

@@ -22,10 +22,7 @@ package com.atharok.barcodescanner.domain.usecases
 
 import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.domain.entity.bank.Bank
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.repositories.BankRepository
-import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 
 class DatabaseBankUseCase(private val bankRepository: BankRepository) {
 
