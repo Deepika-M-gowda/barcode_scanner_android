@@ -436,7 +436,7 @@
     <string name="qr_code_text_input_edit_text_epc_name_error">\"Name\" ist obligatorisch</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN nicht korrekt</string>
 
-    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC Qr Code.</string>
+    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC QR Code.</string>
 
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>

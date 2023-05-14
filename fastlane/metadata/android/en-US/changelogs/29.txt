@@ -1,0 +1,3 @@
+1.13.2
+
+- Added permission to detect installed applications in order to generate a QR Code containing the URI of the application to a store.
