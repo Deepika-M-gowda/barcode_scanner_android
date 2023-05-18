@@ -1,0 +1,4 @@
+1.14.1
+
+- Fixed a bug that blocked the search on remote APIs.
+- Update polish translation.
