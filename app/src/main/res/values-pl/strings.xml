@@ -82,7 +82,7 @@
     <string name="popup_message_confirmation_delete_history">Usunąć całą historię?</string>
     <string name="popup_message_confirmation_delete_selected_items_history">Usunąć wybrane?</string>
     <string name="menu_item_history_delete">Historia usunięta</string>
-    <string name="menu_item_history_delete_from_history">Usunięte z historii</string>
+    <string name="menu_item_history_delete_from_history">Usuń z historii</string>
     <string name="menu_item_history_removed_from_history">Usunięte z historii!</string>
     <string name="menu_item_history_add_in_history">Dodane do historii</string>
     <string name="menu_item_history_added_in_history">Dodane do historii!</string>
@@ -107,8 +107,8 @@
     <string name="barcode_not_found_on_api_label">Nie znaleziono informacji o %1$s!</string>
     <string name="no_internet_permission">Nie masz dostępu do internetu!</string>
 
-    <string name="about_barcode_information_label">Informacje o barcode</string>
-    <string name="about_barcode_label">O barcode</string>
+    <string name="about_barcode_information_label">Informacje o kodzie</string>
+    <string name="about_barcode_label">O kodzie</string>
     <string name="about_barcode_format_label">Format: %1$s</string>
     <string name="about_barcode_content_label">Barcode: %1$s</string>
     <string name="about_barcode_origin_label">Pochodzenie: </string>
@@ -119,7 +119,7 @@
 
     <!-- Barcode Searching Error -->
     <string name="warning_label">Ostrzeżenie</string>
-    <string name="scan_error_information_label">Wystąpił błąd podczas wyszukiwania informacji w zdalnym API… Sprawdź swoje połączenie internetowe i uprawnienia aplikacji! Jeśli problem będzie się powtarzał, powinien to być problem z serwerem.</string>
+    <string name="scan_error_information_label">Wystąpił błąd podczas wyszukiwania informacji w zdalnym API… Sprawdź swoje połączenie internetowe i uprawnienia aplikacji! Jeśli problem będzie się powtarzał, prawdopodobnie jest to problem z serwerem.</string>
     <string name="scan_error_internet_information_label">Brak informacji o pobranym produkcie, ponieważ nie wydaje się, że jesteś podłączony do Internetu!</string>
     <string name="scan_error_message_label">Błąd: </string>
 
@@ -565,7 +565,7 @@
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts to bezpłatna baza danych o żywności, która zawiera listę składników, alergenów, składu odżywczego i wszystkich informacji obecnych na etykietach produktów.</string>
-    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts to bezpłatna baza danych no karmie dla zwierząt</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts to bezpłatna baza danych o karmie dla zwierząt.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts to bezpłatna baza danych o produktach kosmetycznych.</string>
     <string name="bdd_open_library_description_label">Open Library to bezpłatna baza danych mająca na celu skatalogowanie wszystkich opublikowanych książek, niezależnie od ich języka.</string>
 
