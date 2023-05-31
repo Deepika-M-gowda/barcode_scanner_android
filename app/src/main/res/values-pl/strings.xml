@@ -287,12 +287,12 @@
     <string name="matrix_uri_malicious_label">URL może być złośliwy…</string>
 
     <!-- Matrix Barcode URI UPI Analysis -->
-    <string name="matrix_uri_upi_entitled_label">URI analysis</string>
+    <string name="matrix_uri_upi_entitled_label">Analiza URI</string>
     <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Payee Name:</string>
-    <string name="matrix_uri_upi_amount_label">Amount:</string>
-    <string name="matrix_uri_upi_currency_label">Currency:</string>
-    <string name="matrix_uri_upi_description_label">Description:</string>
+    <string name="matrix_uri_upi_payee_name_label">Nazwa odbiorcy płatności:</string>
+    <string name="matrix_uri_upi_amount_label">Kwota:</string>
+    <string name="matrix_uri_upi_currency_label">Waluta:</string>
+    <string name="matrix_uri_upi_description_label">Opis:</string>
 
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">Szerokość:</string>
@@ -436,7 +436,7 @@
     <string name="qr_code_text_input_edit_text_epc_name_error">\"Nazwa\" pole obowiązkowe</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN niepoprawny</string>
 
-    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC QR Code.</string>
+    <string name="list_bank_empty_message">Brak pozycji…\nNie wygenerowałeś jeszcze kodu QR EPC.</string>
 
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>
@@ -534,14 +534,14 @@
     <string name="preferences_switch_scan_screen_rotation_label">Wyłącz automatyczne obracanie podczas skanowania</string>
     <string name="preferences_switch_scan_barcode_copied_label">Skopiuj zeskanowane kody do schowka</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Dodaj zeskanowane kody do historii</string>
-    <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">Domyślna wartość zoomu kamery</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Wyszukiwanie</string>
     <string name="preferences_search_engine">Silnik wyszukiwania</string>
 
     <!-- About Settings -->
-    <string name="preferences_about_title">O</string>
+    <string name="preferences_about_title">Informacje</string>
     <string name="preferences_about_permissions_label">Uprawnienia</string>
     <string name="preferences_about_library_third_label">Inne bilbioteki</string>
     <string name="preferences_about_bdd_label">Database</string>
@@ -560,8 +560,8 @@
     <string name="permission_wifi_description_label">Wymagane do połączenia z siecią Wi-Fi poprzez zeskanowanie kodu QR zawierającego dostęp do sieci Wi-Fi.</string>
     <string name="permission_vibrate_label">Wibracje</string>
     <string name="permission_vibrate_description_label">Użyj wibrowania podczas skanowania.</string>
-    <string name="permission_query_all_packages_label">Query all packages</string>
-    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
+    <string name="permission_query_all_packages_label">Zapytanie o wszystkie pakiety</string>
+    <string name="permission_query_all_packages_description_label">Przydatne do wygenerowania kodu QR z zainstalowanej aplikacji.</string>
 
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts to bezpłatna baza danych o żywności, która zawiera listę składników, alergenów, składu odżywczego i wszystkich informacji obecnych na etykietach produktów.</string>
@@ -708,3 +708,4 @@
     <string name="country_my">Malezja</string>
     <string name="country_mo">Macao</string>
 </resources>
+
