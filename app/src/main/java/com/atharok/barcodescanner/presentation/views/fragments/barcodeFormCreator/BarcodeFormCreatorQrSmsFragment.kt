@@ -70,6 +70,6 @@ class BarcodeFormCreatorQrSmsFragment : AbstractBarcodeFormCreatorQrFragment() {
         }
 
         hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE)
+        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
     }
 }

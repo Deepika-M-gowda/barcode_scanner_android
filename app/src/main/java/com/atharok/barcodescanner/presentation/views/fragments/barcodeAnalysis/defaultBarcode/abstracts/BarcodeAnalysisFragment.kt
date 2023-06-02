@@ -79,6 +79,7 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
             val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
                 putExtra(BARCODE_CONTENTS_KEY, barcodeAnalysis.barcode.contents)
                 putExtra(BARCODE_FORMAT_KEY, barcodeAnalysis.barcode.formatName)
+                putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, barcodeAnalysis.barcode.errorCorrectionLevel)
             }
 
             startActivity(intent)

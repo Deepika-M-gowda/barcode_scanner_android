@@ -68,4 +68,18 @@
         <item>lilo</item>
     </string-array>
 
+    <string-array name="preference_barcode_generation_error_correction_level_entries">
+        <item>@string/qr_code_error_correction_level_name_low</item>
+        <item>@string/qr_code_error_correction_level_name_medium</item>
+        <item>@string/qr_code_error_correction_level_name_quartile</item>
+        <item>@string/qr_code_error_correction_level_name_high</item>
+    </string-array>
+
+    <string-array name="preference_barcode_generation_error_correction_level_values" translatable="false">
+        <item>low</item>
+        <item>medium</item>
+        <item>quartile</item>
+        <item>high</item>
+    </string-array>
+
 </resources>

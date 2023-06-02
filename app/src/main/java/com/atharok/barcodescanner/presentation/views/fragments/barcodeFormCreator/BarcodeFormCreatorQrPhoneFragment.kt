@@ -63,6 +63,6 @@ class BarcodeFormCreatorQrPhoneFragment : AbstractBarcodeFormCreatorQrFragment()
 
         closeVirtualKeyBoard(viewBinding.fragmentBarcodeFormCreatorQrPhoneInputEditText)
         hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE)
+        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
     }
 }

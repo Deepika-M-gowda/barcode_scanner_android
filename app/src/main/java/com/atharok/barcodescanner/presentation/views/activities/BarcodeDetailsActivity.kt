@@ -41,8 +41,10 @@ import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
 import com.atharok.barcodescanner.domain.library.BitmapRecorder
@@ -81,13 +83,14 @@ class BarcodeDetailsActivity : BaseActivity() {
 
         viewBinding.activityBarcodeImageOuterView.fixAnimateLayoutChangesInNestedScroll()
 
-        val barcodeContents = getIntentStringValue()
-        val barcodeFormatString: String = intent.getStringExtra(BARCODE_FORMAT_KEY) ?: BarcodeFormat.QR_CODE.name
-        val barcodeFormat: BarcodeFormat = BarcodeFormat.valueOf(barcodeFormatString)
+        val barcodeContents: String? = getIntentStringValue()
+        val barcodeFormat: BarcodeFormat = getBarcodeFormat()
+        val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = getQrCodeErrorCorrectionLevel(barcodeFormat)
+
         if(barcodeContents != null) {
             this.contents = barcodeContents
-            createBarcodeBitmap(barcodeContents, barcodeFormat)
-            configureBarcodeInformation(barcodeContents, barcodeFormat)
+            createBarcodeBitmap(barcodeContents, barcodeFormat, qrCodeErrorCorrectionLevel)
+            configureBarcodeInformation(barcodeContents, barcodeFormat, qrCodeErrorCorrectionLevel)
         }else{
             viewBinding.activityBarcodeImageAboutBarcodeEntitledLayout.visibility = View.GONE
         }
@@ -108,9 +111,28 @@ class BarcodeDetailsActivity : BaseActivity() {
         } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
     }
 
+    private fun getBarcodeFormat(): BarcodeFormat {
+        val barcodeFormatString: String = intent.getStringExtra(BARCODE_FORMAT_KEY) ?: BarcodeFormat.QR_CODE.name
+        return BarcodeFormat.valueOf(barcodeFormatString)
+    }
+
+    private fun getQrCodeErrorCorrectionLevel(barcodeFormat: BarcodeFormat): QrCodeErrorCorrectionLevel {
+        return when(barcodeFormat) {
+            BarcodeFormat.QR_CODE -> {
+                val qrCodeErrorCorrectionLevelString: String? = intent.getStringExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY)
+                if(qrCodeErrorCorrectionLevelString!=null){
+                    QrCodeErrorCorrectionLevel.valueOf(qrCodeErrorCorrectionLevelString)
+                }else{
+                    settingsManager.getQrCodeErrorCorrectionLevel()
+                }
+            }
+            else -> QrCodeErrorCorrectionLevel.NONE
+        }
+    }
+
     // ---- Barcode Bitmap Creator ----
 
-    private fun createBarcodeBitmap(bitmapStr: String, barcodeFormat: BarcodeFormat){
+    private fun createBarcodeBitmap(bitmapStr: String, barcodeFormat: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel){
 
         lifecycleScope.launch(Dispatchers.Main) {
 
@@ -118,6 +140,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 bitmapBarcodeGenerator.create(
                     text = bitmapStr,
                     barcodeFormat = barcodeFormat,
+                    errorCorrectionLevel = qrCodeErrorCorrectionLevel.errorCorrectionLevel,
                     width = BARCODE_IMAGE_SIZE,
                     height = if(barcodeFormat.is2DBarcode()) BARCODE_IMAGE_SIZE else BARCODE_IMAGE_SIZE/2
                 )
@@ -133,7 +156,7 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     // ---- Barcode Information ----
 
-    private fun configureBarcodeInformation(contents: String, format: BarcodeFormat){
+    private fun configureBarcodeInformation(contents: String, format: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel){
 
         // Entitled
         viewBinding.activityBarcodeImageAboutBarcodeEntitledLayout.visibility = View.VISIBLE
@@ -141,7 +164,7 @@ class BarcodeDetailsActivity : BaseActivity() {
         viewBinding.activityBarcodeImageAboutBarcodeEntitledTextViewTemplate.root.text = entitled
 
         configureContentsExpandableViewFragment(contents, format)
-        configureAboutBarcodeFragment(contents, format)
+        configureAboutBarcodeFragment(contents, format, qrCodeErrorCorrectionLevel)
     }
 
     private fun configureContentsExpandableViewFragment(contents: String, format: BarcodeFormat){
@@ -166,10 +189,10 @@ class BarcodeDetailsActivity : BaseActivity() {
         )
     }
 
-    private fun configureAboutBarcodeFragment(contents: String, format: BarcodeFormat){
+    private fun configureAboutBarcodeFragment(contents: String, format: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel){
 
-        val barcodeInformation = Barcode(contents, format.name, Date().time)
-        val barcodeAnalysis = DefaultBarcodeAnalysis(barcodeInformation)
+        val barcode: Barcode = get { parametersOf(contents, format.name, qrCodeErrorCorrectionLevel) }
+        val barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
 
         val args: Bundle = get<Bundle>().apply {
             putSerializable(PRODUCT_KEY, barcodeAnalysis)

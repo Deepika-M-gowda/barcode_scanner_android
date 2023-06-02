@@ -57,13 +57,28 @@
 
     </RelativeLayout>
 
+    <!-- Error Correction Level -->
+    <FrameLayout
+        android:id="@+id/template_about_barcode_error_correction_level_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/template_about_barcode_format_origin_layout">
+
+        <TextView
+            android:id="@+id/fragment_about_barcode_error_correction_level_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+    </FrameLayout>
+
     <!-- Description -->
     <FrameLayout
         android:id="@+id/template_about_barcode_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/standard_margin"
-        android:layout_below="@id/template_about_barcode_format_origin_layout">
+        android:layout_below="@id/template_about_barcode_error_correction_level_layout">
 
         <TextView
             android:id="@+id/fragment_about_barcode_description_text_view"

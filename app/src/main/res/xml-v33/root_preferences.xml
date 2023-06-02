@@ -88,6 +88,20 @@
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_barcode_generation_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
+            android:key="@string/preferences_barcode_generation_error_correction_level_key"
+            android:title="@string/qr_code_error_correction_level_settings_label"
+            android:summary="%s"
+            android:entries="@array/preference_barcode_generation_error_correction_level_entries"
+            android:entryValues="@array/preference_barcode_generation_error_correction_level_values"
+            app:defaultValue="low"
+            app:singleLineTitle="false"/>
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
         android:title="@string/preferences_search_title">
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference

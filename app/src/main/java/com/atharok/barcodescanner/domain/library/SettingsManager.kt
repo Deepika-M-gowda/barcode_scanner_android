@@ -27,6 +27,7 @@ import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Build
 import androidx.preference.PreferenceManager
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 
 class SettingsManager(private val context: Context) {
 
@@ -63,6 +64,10 @@ class SettingsManager(private val context: Context) {
     var shouldAddBarcodeScanToHistory = prefs.getBoolean(addBarcodeToHistoryScanKey, true)
         private set
 
+    // Barcode Generation
+    private val errorCorrectionLevelKey = context.getString(R.string.preferences_barcode_generation_error_correction_level_key)
+    private var errorCorrectionLevelEntry = prefs.getString(errorCorrectionLevelKey, "low")
+
     // Search
     private val searchEngineKey = context.getString(R.string.preferences_search_engine_key)
     private var defaultSearchEngine = prefs.getString(searchEngineKey, "google")
@@ -79,6 +84,7 @@ class SettingsManager(private val context: Context) {
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
         shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
         shouldAddBarcodeScanToHistory = prefs.getBoolean(addBarcodeToHistoryScanKey, true)
+        errorCorrectionLevelEntry = prefs.getString(errorCorrectionLevelKey, "low")
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 
@@ -106,6 +112,14 @@ class SettingsManager(private val context: Context) {
                 else -> R.style.BlueLightTheme
             }
         }
+    }
+
+    fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel = when(errorCorrectionLevelEntry){
+        "low" -> QrCodeErrorCorrectionLevel.L
+        "medium" -> QrCodeErrorCorrectionLevel.M
+        "quartile" -> QrCodeErrorCorrectionLevel.Q
+        "high" -> QrCodeErrorCorrectionLevel.H
+        else -> QrCodeErrorCorrectionLevel.L
     }
 
     fun getSearchEngineUrl(contents: String): String = when(defaultSearchEngine){

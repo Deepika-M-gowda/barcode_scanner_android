@@ -34,10 +34,18 @@ private val MIGRATION_1_2 = object : Migration(1, 2) {
     }
 }
 
+private val MIGRATION_2_3 = object : Migration(2, 3) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL(
+            "ALTER TABLE Barcode ADD COLUMN error_correction_level TEXT NOT NULL DEFAULT 'NONE'"
+        )
+    }
+}
+
 
 fun createDatabase(context: Context): AppDatabase =
     Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
-        .addMigrations(MIGRATION_1_2)
+        .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
         .build()
 
 fun createBarcodeDao(database: AppDatabase): BarcodeDao = database.barcodeDao()

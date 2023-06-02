@@ -55,6 +55,7 @@ import com.atharok.barcodescanner.data.repositories.*
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.*
 import com.atharok.barcodescanner.domain.library.wifiSetup.WifiConnect
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
@@ -79,6 +80,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
+import com.google.zxing.ResultMetadataType
 import com.google.zxing.client.result.*
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
@@ -129,8 +131,29 @@ val androidModule: Module = module {
     single<WifiManager> { androidApplication().applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager }
     single<LocationManager> { androidApplication().applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager }
 
-    factory<Barcode> { (contents: String, formatName: String) ->
-        Barcode(contents, formatName, System.currentTimeMillis())
+    factory<Barcode> { (contents: String, formatName: String, qrErrorCorrectionLevel: QrCodeErrorCorrectionLevel) ->
+        Barcode(contents, formatName, System.currentTimeMillis(), errorCorrectionLevel = qrErrorCorrectionLevel.name)
+    }
+
+    factory<QrCodeErrorCorrectionLevel>(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING)) { (errorCorrectionLevel: String?) ->
+        when(errorCorrectionLevel){
+            "L" -> QrCodeErrorCorrectionLevel.L
+            "M" -> QrCodeErrorCorrectionLevel.M
+            "Q" -> QrCodeErrorCorrectionLevel.Q
+            "H" -> QrCodeErrorCorrectionLevel.H
+            else -> QrCodeErrorCorrectionLevel.NONE
+        }
+    }
+
+    factory<QrCodeErrorCorrectionLevel>(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT)) { (result: Result) ->
+        var errorCorrectionLevel: QrCodeErrorCorrectionLevel = QrCodeErrorCorrectionLevel.NONE
+        result.resultMetadata?.let { metadata ->
+            val errorCorrectionLevelStr = metadata[ResultMetadataType.ERROR_CORRECTION_LEVEL] as? String
+            errorCorrectionLevel = get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING)) {
+                parametersOf(errorCorrectionLevelStr)
+            }
+        }
+        errorCorrectionLevel
     }
 
     factory { Bundle() }

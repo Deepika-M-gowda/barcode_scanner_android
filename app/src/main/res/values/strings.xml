@@ -76,6 +76,14 @@
     <string name="bar_code_type_unknown_matrix">Matrix Code</string>
     <string name="bar_code_type_name_unknown">Unknown</string>
 
+    <!-- Error Correction Level -->
+    <string name="qr_code_error_correction_level_label">Error correction level</string>
+    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
+    <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
+
     <!-- History -->
     <string name="label_history_empty">No elements scanned…</string>
     <string name="snack_bar_message_item_deleted">The product \"%1$s\" has been deleted from history.</string>
@@ -536,6 +544,9 @@
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
 
+    <!-- Barcode Generation Settings -->
+    <string name="preferences_barcode_generation_title">Barcode generation</string>
+
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
     <string name="preferences_search_engine">Search engine</string>
@@ -719,6 +730,7 @@
     <string name="default_font" translatable="false">sans-serif-medium</string>
 
     <string name="text_colon" translatable="false">%1$s:</string>
+    <string name="empty" translatable="false" />
 
     <!-- External Services Label -->
     <string name="google_label" translatable="false">Google</string>
@@ -750,6 +762,7 @@
     <string name="preferences_switch_scan_add_barcode_to_the_history_key" translatable="false">preferences_switch_scan_add_barcode_to_the_history_key</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_key" translatable="false">preferences_seek_bar_camera_default_zoom_value_default_key</string>
     <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
+    <string name="preferences_barcode_generation_error_correction_level_key" translatable="false">preferences_barcode_generation_error_correction_level_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
     <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>

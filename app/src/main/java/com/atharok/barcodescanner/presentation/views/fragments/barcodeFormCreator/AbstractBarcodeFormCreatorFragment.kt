@@ -31,6 +31,8 @@ import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
+import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
@@ -58,15 +60,20 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    fun closeVirtualKeyBoard(view: View){
+    fun closeVirtualKeyBoard(view: View) {
         val inputMethodManager: InputMethodManager = get()
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    protected fun startBarcodeDetailsActivity(content: String, barCodeFormat: BarcodeFormat){
+    protected fun startBarcodeDetailsActivity(
+        content: String,
+        barcodeFormat: BarcodeFormat,
+        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = QrCodeErrorCorrectionLevel.NONE
+    ) {
         val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
             putExtra(BARCODE_CONTENTS_KEY, content)
-            putExtra(BARCODE_FORMAT_KEY, barCodeFormat.name)
+            putExtra(BARCODE_FORMAT_KEY, barcodeFormat.name)
+            putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, qrCodeErrorCorrectionLevel)
         }
         startActivity(intent)
     }

@@ -44,11 +44,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
+import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_ERROR_CORRECTION_LEVEL
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT
+import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING
 import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
@@ -70,6 +74,7 @@ import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 import kotlin.math.round
 import kotlin.math.roundToInt
 
@@ -318,7 +323,10 @@ class MainScannerFragment : BaseFragment() {
             if(codeScanner?.isFlashEnabled == true)
                 switchTorchFlash()
 
-            val barcode: Barcode = get { parametersOf(contents, formatName) }
+            val errorCorrectionLevel: QrCodeErrorCorrectionLevel =
+                get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT)) { parametersOf(result) }
+
+            val barcode: Barcode = get { parametersOf(contents, formatName, errorCorrectionLevel) }
 
             if(settingsManager.shouldAddBarcodeScanToHistory) {
                 // Insert les informations du code-barres dans la base de données (de manière asynchrone)
@@ -359,7 +367,12 @@ class MainScannerFragment : BaseFragment() {
             if(codeScanner?.isFlashEnabled == true)
                 switchTorchFlash()
 
-            val barcode: Barcode = get { parametersOf(contents, formatName) }
+            val errorCorrectionLevel: QrCodeErrorCorrectionLevel =
+                get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING)) {
+                    parametersOf(intentResult.getStringExtra(SCAN_RESULT_ERROR_CORRECTION_LEVEL))
+                }
+
+            val barcode: Barcode = get { parametersOf(contents, formatName, errorCorrectionLevel) }
 
             if(settingsManager.shouldAddBarcodeScanToHistory) {
                 // Insert les informations du code-barres dans la base de données (de manière asynchrone)

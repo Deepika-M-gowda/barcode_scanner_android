@@ -21,37 +21,47 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 class BarcodeScanFromImageShortcutActivity: BarcodeScanFromImageGalleryActivity() {
 
     private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by viewModel()
 
     override fun onSuccessfulImageScan(result: Result?) {
-        val contents = result?.text
-        val formatName = result?.barcodeFormat?.name
 
-        if(contents != null && formatName != null){
+        result?.let {
+            val contents = result.text
+            val formatName = result.barcodeFormat?.name
 
-            val barcode: Barcode = get { parametersOf(contents, formatName) }
+            if(contents != null && formatName != null){
 
-            if(settingsManager.shouldAddBarcodeScanToHistory) {
-                databaseBarcodeViewModel.insertBarcode(barcode)
+                val errorCorrectionLevel: QrCodeErrorCorrectionLevel =
+                    get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT)) { parametersOf(result) }
+
+                val barcode: Barcode = get { parametersOf(contents, formatName, errorCorrectionLevel) }
+
+                if(settingsManager.shouldAddBarcodeScanToHistory) {
+                    databaseBarcodeViewModel.insertBarcode(barcode)
+                }
+
+                val intent = createStartActivityIntent(this, BarcodeAnalysisActivity::class).apply {
+                    putExtra(BARCODE_KEY, barcode)
+                }
+
+                startActivity(intent)
+
+                finish()
             }
-
-            val intent = createStartActivityIntent(this, BarcodeAnalysisActivity::class).apply {
-                putExtra(BARCODE_KEY, barcode)
-            }
-
-            startActivity(intent)
-
-            finish()
         }
+
     }
 }

@@ -28,6 +28,9 @@ const val BARCODE_ANALYSIS_SCOPE_SESSION_ID = "barcodeAnalysisSessionID"
 const val ACTION_SCOPE_SESSION = "actionScopeSession"
 const val ACTION_SCOPE_SESSION_ID = "actionScopeSessionID"
 
+const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT = "koinNamedErrorCorrectionLevelByResult"
+const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING = "koinNamedErrorCorrectionLevelByString"
+
 // ------------------------------------------ BUNDLE KEY -------------------------------------------
 
 // Clé du Bundle associé à l'URI d'une image.
@@ -59,6 +62,9 @@ const val BARCODE_CONTENTS_KEY = "barcodeStringKey" // Clé de l'intent contenan
 
 // Clé du Bundle associé au type BarcodeFormat
 const val BARCODE_FORMAT_KEY = "barcodeFormatKey"
+
+// Clé du Bundle associé au type QrCodeErrorCorrectionLevel
+const val QR_CODE_ERROR_CORRECTION_LEVEL_KEY = "qrCodeErrorCorrectionLevelKey"
 
 
 // ---- Permet d'identifier le ViewPagerAdapter à instancier avec les bons paramètres dans Koin ----

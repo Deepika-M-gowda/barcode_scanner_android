@@ -88,7 +88,7 @@ class BarcodeFormCreatorQrLocalisationFragment : AbstractBarcodeFormCreatorQrFra
         }
 
         hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE)
+        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
     }
 
     // ---- Permissions ----

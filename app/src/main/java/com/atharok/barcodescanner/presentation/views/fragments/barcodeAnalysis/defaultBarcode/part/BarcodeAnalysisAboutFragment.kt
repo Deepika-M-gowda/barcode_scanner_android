@@ -30,6 +30,7 @@ import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisAboutBinding
 import com.atharok.barcodescanner.databinding.TemplateAboutBarcodeBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.zxing.BarcodeFormat
@@ -72,6 +73,7 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
         configureHeaderEntitledAndIcon()
         configureFormat(product)
         configureOrigin(product)
+        configureErrorCorrectionLevel(product)
         configureDescription(product)
     }
 
@@ -99,6 +101,26 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
         }else{
             bodyAboutBarcodeTemplateBinding.templateAboutBarcodeOriginLayout.visibility = View.GONE
         }
+    }
+
+    private fun configureErrorCorrectionLevel(barcodeAnalysis: BarcodeAnalysis){
+        val text = when(barcodeAnalysis.barcode.getBarcodeFormat()){
+            BarcodeFormat.QR_CODE -> {
+                val errorCorrectionLevel = barcodeAnalysis.barcode.getQrCodeErrorCorrectionLevel()
+                if(errorCorrectionLevel != QrCodeErrorCorrectionLevel.NONE){
+                    val errorCorrectionLevelLabel = getString(R.string.qr_code_error_correction_level_label)
+                    val entitled = getString(R.string.text_colon, errorCorrectionLevelLabel)
+                    "$entitled ${getString(errorCorrectionLevel.stringResource)}"
+                } else null
+            }
+            else -> null
+        }
+
+        displayText(
+            textView = bodyAboutBarcodeTemplateBinding.fragmentAboutBarcodeErrorCorrectionLevelTextView,
+            layout = bodyAboutBarcodeTemplateBinding.templateAboutBarcodeErrorCorrectionLevelLayout,
+            text = text
+        )
     }
 
     private fun configureDescription(barcodeAnalysis: BarcodeAnalysis){

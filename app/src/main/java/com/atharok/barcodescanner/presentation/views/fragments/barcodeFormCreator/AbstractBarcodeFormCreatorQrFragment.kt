@@ -22,7 +22,10 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreat
 
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.google.zxing.BarcodeFormat
+import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
@@ -38,6 +41,10 @@ abstract class AbstractBarcodeFormCreatorQrFragment: AbstractBarcodeFormCreatorF
         }
 
         hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE)
+        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
+    }
+
+    protected fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel {
+        return get<SettingsManager>().getQrCodeErrorCorrectionLevel()
     }
 }

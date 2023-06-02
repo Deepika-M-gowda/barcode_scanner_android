@@ -32,15 +32,17 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 
 /**
  * Génère l'image d'un code-barres à partir d'un texte.
  */
 class BitmapBarcodeGenerator(private val multiFormatWriter: MultiFormatWriter) {
 
-    fun create(text: String, barcodeFormat: BarcodeFormat, width: Int, height: Int): Bitmap? {
+    fun create(text: String, barcodeFormat: BarcodeFormat, errorCorrectionLevel: ErrorCorrectionLevel?, width: Int, height: Int): Bitmap? {
         return try {
-            val bitMatrix = createBitMatrix(text, barcodeFormat, width, height)
+            val hints = getHints(barcodeFormat, errorCorrectionLevel)
+            val bitMatrix = multiFormatWriter.encode(text, barcodeFormat, width, height, hints)
             createBitmap(text, barcodeFormat, bitMatrix)
         } catch (e: Exception) {
             e.printStackTrace()
@@ -48,14 +50,17 @@ class BitmapBarcodeGenerator(private val multiFormatWriter: MultiFormatWriter) {
         }
     }
 
-    private fun createBitMatrix(text: String, barcodeFormat: BarcodeFormat, width: Int, height: Int): BitMatrix {
+    private fun getHints(barcodeFormat: BarcodeFormat, errorCorrectionLevel: ErrorCorrectionLevel?): Map<EncodeHintType, Any> {
         val encoding: String = when(barcodeFormat) {
             BarcodeFormat.QR_CODE, BarcodeFormat.PDF_417 -> ENCODING_UTF_8
             else -> ENCODING_ISO_8859_1
         }
 
-        val hints = mapOf<EncodeHintType, Any>(EncodeHintType.CHARACTER_SET to encoding)
-        return multiFormatWriter.encode(text, barcodeFormat, width, height, hints)
+        return if(errorCorrectionLevel==null) {
+            mapOf<EncodeHintType, Any>(EncodeHintType.CHARACTER_SET to encoding)
+        } else {
+            mapOf<EncodeHintType, Any>(EncodeHintType.CHARACTER_SET to encoding, EncodeHintType.ERROR_CORRECTION to errorCorrectionLevel)
+        }
     }
 
     private fun createBitmap(content: String, barcodeFormat: BarcodeFormat, matrix: BitMatrix): Bitmap? {

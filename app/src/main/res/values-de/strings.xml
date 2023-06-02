@@ -76,6 +76,14 @@
     <string name="bar_code_type_unknown_matrix">Matrix Code</string>
     <string name="bar_code_type_name_unknown">Unbekannt</string>
 
+    <!-- Error Correction Level -->
+    <string name="qr_code_error_correction_level_label">Error correction level</string>
+    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
+    <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
+
     <!-- History -->
     <string name="label_history_empty">Kein Element gescannt…</string>
     <string name="snack_bar_message_item_deleted">Das Produkt \"%1$s\" wurde aus der Historie gelöscht.</string>
@@ -535,6 +543,9 @@
     <string name="preferences_switch_scan_barcode_copied_label">Kopiere gescannten Barcode in die Zwischenablage</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
+
+    <!-- Barcode Generation Settings -->
+    <string name="preferences_barcode_generation_title">Barcode generation</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Suche</string>

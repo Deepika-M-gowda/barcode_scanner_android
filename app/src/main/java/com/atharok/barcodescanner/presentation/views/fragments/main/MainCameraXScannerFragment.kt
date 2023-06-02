@@ -44,11 +44,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT
+import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_ERROR_CORRECTION_LEVEL
 import com.atharok.barcodescanner.common.extensions.SCAN_RESULT_FORMAT
 import com.atharok.barcodescanner.common.extensions.toIntent
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
+import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT
+import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING
 import com.atharok.barcodescanner.databinding.FragmentMainCameraXScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BeepManager
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
@@ -68,6 +72,7 @@ import com.google.zxing.Result
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
+import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
@@ -257,7 +262,12 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
     // ---- Scan successful ----
 
-    private inline fun onSuccessfulScan(contents: String?, formatName: String?, crossinline onResult: (barcode: Barcode) -> Unit) = requireActivity().runOnUiThread {
+    private inline fun onSuccessfulScan(
+        contents: String?,
+        formatName: String?,
+        errorCorrectionLevel: QrCodeErrorCorrectionLevel,
+        crossinline onResult: (barcode: Barcode) -> Unit
+    ) = requireActivity().runOnUiThread {
 
         if(contents != null && formatName != null) {
 
@@ -274,7 +284,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
             if(settingsManager.useVibrateScan)
                 get<VibratorAppCompat>().vibrate()
 
-            val barcode: Barcode = get { parametersOf(contents, formatName) }
+            val barcode: Barcode = get { parametersOf(contents, formatName, errorCorrectionLevel) }
 
             if(settingsManager.shouldAddBarcodeScanToHistory) {
                 // Insert les informations du code-barres dans la base de données (de manière asynchrone)
@@ -292,8 +302,10 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     private fun onSuccessfulScanFromCamera(result: Result) {
         val contents = result.text
         val formatName = result.barcodeFormat?.name
+        val errorCorrectionLevel: QrCodeErrorCorrectionLevel =
+            get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT)) { parametersOf(result) }
 
-        onSuccessfulScan(contents, formatName) { barcode ->
+        onSuccessfulScan(contents, formatName, errorCorrectionLevel) { barcode ->
             // Si l'application a été ouverte via une application tierce
             if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
                 sendResultToAppIntent(result.toIntent())
@@ -320,7 +332,6 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     private fun configureResultBarcodeScanFromImageActivity(){
         resultBarcodeScanFromImageActivity = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if(it.resultCode == Activity.RESULT_OK){
-
                 it.data?.let { intentResult ->
                     onSuccessfulScanFromImage(intentResult)
                 }
@@ -331,8 +342,12 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     private fun onSuccessfulScanFromImage(intentResult: Intent) {
         val contents = intentResult.getStringExtra(SCAN_RESULT)
         val formatName = intentResult.getStringExtra(SCAN_RESULT_FORMAT)
+        val errorCorrectionLevel: QrCodeErrorCorrectionLevel =
+            get(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING)) {
+                parametersOf(intentResult.getStringExtra(SCAN_RESULT_ERROR_CORRECTION_LEVEL))
+            }
 
-        onSuccessfulScan(contents, formatName) { barcode ->
+        onSuccessfulScan(contents, formatName, errorCorrectionLevel) { barcode ->
             // Si l'application a été ouverte via une application tierce
             if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
                 sendResultToAppIntent(intentResult)

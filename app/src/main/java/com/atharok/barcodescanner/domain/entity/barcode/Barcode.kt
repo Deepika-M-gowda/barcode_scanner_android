@@ -38,6 +38,7 @@ data class Barcode(
     @ColumnInfo(name = "format_name") val formatName: String,
     @PrimaryKey @ColumnInfo(name = "scan_date") val scanDate: Long,
     @ColumnInfo(name = "type") var type: String = BarcodeType.UNKNOWN.name,
+    @ColumnInfo(name = "error_correction_level") var errorCorrectionLevel: String = QrCodeErrorCorrectionLevel.NONE.name,
     @ColumnInfo(name = "name") var name: String = ""
 ): Serializable {
 
@@ -55,6 +56,9 @@ data class Barcode(
 
     @Ignore
     fun getBarcodeType(): BarcodeType = BarcodeType.valueOf(type)
+
+    @Ignore
+    fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel = QrCodeErrorCorrectionLevel.valueOf(errorCorrectionLevel)
 
     @Ignore
     fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.valueOf(formatName)

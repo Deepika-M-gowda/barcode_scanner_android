@@ -18,17 +18,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.domain.entity.barcode
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
-import com.atharok.barcodescanner.domain.entity.bank.Bank
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.R
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
+import java.io.Serializable
 
-@Database(entities = [Barcode::class, Bank::class], version = 3, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
-
-    abstract fun barcodeDao(): BarcodeDao
-
-    abstract fun bankDao(): BankDao
+enum class QrCodeErrorCorrectionLevel(val stringResource: Int, val errorCorrectionLevel: ErrorCorrectionLevel?): Serializable {
+    L(R.string.qr_code_error_correction_level_name_low, ErrorCorrectionLevel.L),
+    M(R.string.qr_code_error_correction_level_name_medium, ErrorCorrectionLevel.M),
+    Q(R.string.qr_code_error_correction_level_name_quartile, ErrorCorrectionLevel.Q),
+    H(R.string.qr_code_error_correction_level_name_high, ErrorCorrectionLevel.H),
+    NONE(R.string.empty, null)
 }

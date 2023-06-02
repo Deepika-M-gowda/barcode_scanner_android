@@ -76,6 +76,14 @@
     <string name="bar_code_type_unknown_matrix">Code Matriciel</string>
     <string name="bar_code_type_name_unknown">Inconnu</string>
 
+    <!-- Error Correction Level -->
+    <string name="qr_code_error_correction_level_label">Niveau de correction d\'erreur</string>
+    <string name="qr_code_error_correction_level_settings_label">Niveau de correction d\'erreur (QR Code)</string>
+    <string name="qr_code_error_correction_level_name_low">Faible (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">Moyen (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">Élevé (~30%)</string>
+
     <!-- History -->
     <string name="label_history_empty">Aucun éléments scannés…</string>
     <string name="snack_bar_message_item_deleted">Le produit \"%1$s\" a été supprimé de l\'historique</string>
@@ -535,6 +543,9 @@
     <string name="preferences_switch_scan_barcode_copied_label">Copier le code-barres dans le presse-papier lors du scan</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Ajouter les code-barres scannés dans l\'historique</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Valeur par défaut du zoom de la caméra</string>
+
+    <!-- Barcode Generation Settings -->
+    <string name="preferences_barcode_generation_title">Génération de codes-barres</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Recherche</string>
