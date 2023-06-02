@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 class BarcodeFormCreatorAztecFragment: AbstractBarcodeFormCreatorBasicFragment() {
     override fun generateBarcode() {
@@ -34,4 +35,6 @@ class BarcodeFormCreatorAztecFragment: AbstractBarcodeFormCreatorBasicFragment()
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.AZTEC)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
 }

@@ -66,7 +66,11 @@ class SettingsManager(private val context: Context) {
 
     // Barcode Generation
     private val errorCorrectionLevelKey = context.getString(R.string.preferences_barcode_generation_error_correction_level_key)
+    private val addBarcodeToHistoryGenerateKey = context.getString(R.string.preferences_switch_barcode_generation_add_barcode_to_the_history_key)
+
     private var errorCorrectionLevelEntry = prefs.getString(errorCorrectionLevelKey, "low")
+    var shouldAddBarcodeGenerateToHistory = prefs.getBoolean(addBarcodeToHistoryGenerateKey, false)
+        private set
 
     // Search
     private val searchEngineKey = context.getString(R.string.preferences_search_engine_key)
@@ -85,6 +89,7 @@ class SettingsManager(private val context: Context) {
         shouldCopyBarcodeScan = prefs.getBoolean(copyBarcodeScanKey, false)
         shouldAddBarcodeScanToHistory = prefs.getBoolean(addBarcodeToHistoryScanKey, true)
         errorCorrectionLevelEntry = prefs.getString(errorCorrectionLevelKey, "low")
+        shouldAddBarcodeGenerateToHistory = prefs.getBoolean(addBarcodeToHistoryGenerateKey, false)
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 

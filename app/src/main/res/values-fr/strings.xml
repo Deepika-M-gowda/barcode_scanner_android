@@ -546,6 +546,7 @@
 
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Génération de codes-barres</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Ajouter les codes-barres générés dans l\'historique</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Recherche</string>

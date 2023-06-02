@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrSmsBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 /**
@@ -72,4 +73,6 @@ class BarcodeFormCreatorQrSmsFragment : AbstractBarcodeFormCreatorQrFragment() {
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.SMS
 }

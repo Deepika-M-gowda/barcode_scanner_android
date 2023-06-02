@@ -24,6 +24,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.View
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorCodabarFragment: AbstractBarcodeFormCreatorBasicFragment() {
@@ -49,4 +50,6 @@ class BarcodeFormCreatorCodabarFragment: AbstractBarcodeFormCreatorBasicFragment
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.CODABAR)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.INDUSTRIAL
 }

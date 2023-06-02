@@ -35,6 +35,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrContactBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.library.EzvcardBuilder
 import com.atharok.barcodescanner.domain.library.VCardReader
 import com.atharok.barcodescanner.presentation.intent.createPickContactIntent
@@ -400,4 +401,6 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
         viewBinding.fragmentBarcodeFormCreatorQrContactRegionInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactNotesInputEditText.setText("")
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.CONTACT
 }

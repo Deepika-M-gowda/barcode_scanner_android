@@ -25,6 +25,7 @@ import android.text.InputFilter
 import android.text.InputType
 import android.view.View
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 class BarcodeFormCreatorPDF417Fragment: AbstractBarcodeFormCreatorBasicFragment() {
 
@@ -38,6 +39,7 @@ class BarcodeFormCreatorPDF417Fragment: AbstractBarcodeFormCreatorBasicFragment(
         inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(MAX_LENGTH))
         inputEditText.inputType = InputType.TYPE_CLASS_TEXT
     }
+
     override fun generateBarcode() {
         val barcodeContents: String = getBarcodeTextFromForm()
 
@@ -49,4 +51,6 @@ class BarcodeFormCreatorPDF417Fragment: AbstractBarcodeFormCreatorBasicFragment(
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.PDF_417)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
 }

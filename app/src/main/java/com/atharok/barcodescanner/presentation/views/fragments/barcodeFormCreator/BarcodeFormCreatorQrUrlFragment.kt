@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrUrlBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 /**
@@ -70,4 +71,6 @@ class BarcodeFormCreatorQrUrlFragment : AbstractBarcodeFormCreatorQrFragment() {
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.URL
 }

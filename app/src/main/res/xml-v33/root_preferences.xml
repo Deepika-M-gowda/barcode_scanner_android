@@ -99,6 +99,12 @@
             app:defaultValue="low"
             app:singleLineTitle="false"/>
 
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_barcode_generation_add_barcode_to_the_history_key"
+            android:title="@string/preferences_switch_barcode_generation_add_barcode_to_the_history_label"
+            android:defaultValue="false"
+            app:singleLineTitle="false"/>
+
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory

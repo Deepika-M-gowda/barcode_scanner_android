@@ -86,6 +86,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key),
                 getString(R.string.preferences_switch_scan_search_on_api_key),
                 getString(R.string.preferences_barcode_generation_error_correction_level_key),
+                getString(R.string.preferences_switch_barcode_generation_add_barcode_to_the_history_key),
                 getString(R.string.preferences_search_engine_key)
                 -> mActivity.settingsManager.reload()
             }

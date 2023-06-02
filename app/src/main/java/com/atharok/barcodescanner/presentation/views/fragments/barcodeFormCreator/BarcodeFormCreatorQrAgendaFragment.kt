@@ -28,6 +28,7 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrAgendaBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.library.VEventBuilder
 import com.atharok.barcodescanner.presentation.views.fragments.android.DatePickerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.android.TimePickerFragment
@@ -155,4 +156,6 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
         }
         fragment.show(requireActivity().supportFragmentManager, "timeTag")
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.AGENDA
 }

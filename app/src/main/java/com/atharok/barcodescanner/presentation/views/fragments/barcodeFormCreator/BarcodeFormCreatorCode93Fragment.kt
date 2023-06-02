@@ -25,6 +25,7 @@ import android.text.InputFilter
 import android.text.InputType
 import android.view.View
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorCode93Fragment: AbstractBarcodeFormCreatorBasicFragment() {
@@ -55,4 +56,6 @@ class BarcodeFormCreatorCode93Fragment: AbstractBarcodeFormCreatorBasicFragment(
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.CODE_93)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.INDUSTRIAL
 }

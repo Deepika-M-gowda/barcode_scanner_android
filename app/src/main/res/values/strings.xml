@@ -546,6 +546,7 @@
 
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Barcode generation</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
@@ -761,8 +762,9 @@
     <string name="preferences_switch_scan_barcode_copied_key" translatable="false">preferences_switch_scan_barcode_copied_key</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_key" translatable="false">preferences_switch_scan_add_barcode_to_the_history_key</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_key" translatable="false">preferences_seek_bar_camera_default_zoom_value_default_key</string>
-    <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
     <string name="preferences_barcode_generation_error_correction_level_key" translatable="false">preferences_barcode_generation_error_correction_level_key</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_key" translatable="false">preferences_switch_barcode_generation_add_barcode_to_the_history_key</string>
+    <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
     <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>

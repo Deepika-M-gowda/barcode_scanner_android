@@ -26,6 +26,7 @@ import android.text.InputType
 import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.canBeConvertibleToLong
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorEAN13Fragment: AbstractBarcodeFormCreatorBasicFragment() {
@@ -67,4 +68,6 @@ class BarcodeFormCreatorEAN13Fragment: AbstractBarcodeFormCreatorBasicFragment()
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.EAN_13)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.UNKNOWN_PRODUCT
 }

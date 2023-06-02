@@ -32,18 +32,25 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeFormCreatorActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import org.koin.core.parameter.parametersOf
 
 abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
 
+    private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
     protected val barcodeFormatChecker: BarcodeFormatChecker by inject()
 
     protected fun configureMenu() {
@@ -66,16 +73,33 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
     }
 
     protected fun startBarcodeDetailsActivity(
-        content: String,
+        contents: String,
         barcodeFormat: BarcodeFormat,
         qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = QrCodeErrorCorrectionLevel.NONE
     ) {
+        insertBarcodeIntoDatabase(contents, barcodeFormat, qrCodeErrorCorrectionLevel)
         val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
-            putExtra(BARCODE_CONTENTS_KEY, content)
+            putExtra(BARCODE_CONTENTS_KEY, contents)
             putExtra(BARCODE_FORMAT_KEY, barcodeFormat.name)
             putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, qrCodeErrorCorrectionLevel)
         }
         startActivity(intent)
+    }
+
+    private fun insertBarcodeIntoDatabase(
+        contents: String,
+        barcodeFormat: BarcodeFormat,
+        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
+    ) {
+        if(get<SettingsManager>().shouldAddBarcodeGenerateToHistory) {
+            val barcode: Barcode = get {
+                parametersOf(contents, barcodeFormat.name, qrCodeErrorCorrectionLevel)
+            }
+            barcode.type = getBarcodeType().name
+
+            // Insert les informations du code-barres dans la base de données (de manière asynchrone)
+            databaseBarcodeViewModel.insertBarcode(barcode)
+        }
     }
 
     protected fun configureErrorMessage(message: String) {
@@ -94,4 +118,5 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
 
     abstract fun getBarcodeTextFromForm(): String
     abstract fun generateBarcode()
+    abstract fun getBarcodeType(): BarcodeType
 }

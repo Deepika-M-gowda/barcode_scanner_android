@@ -546,6 +546,7 @@
 
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Barcode generation</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">搜尋</string>

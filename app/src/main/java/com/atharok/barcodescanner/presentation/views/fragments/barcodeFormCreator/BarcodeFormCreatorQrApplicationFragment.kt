@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrApplicationBinding
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.views.recyclerView.applications.ApplicationsItem
@@ -91,4 +92,6 @@ class BarcodeFormCreatorQrApplicationFragment : AbstractBarcodeFormCreatorQrFrag
         barcodeContents = "${PREFIX}${item.pkg}"
         generateBarcode()
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.URL
 }

@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 class BarcodeFormCreatorDataMatrixFragment: AbstractBarcodeFormCreatorBasicFragment() {
     override fun generateBarcode() {
@@ -39,4 +40,6 @@ class BarcodeFormCreatorDataMatrixFragment: AbstractBarcodeFormCreatorBasicFragm
         hideErrorMessage()
         startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.DATA_MATRIX)
     }
+
+    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
 }
