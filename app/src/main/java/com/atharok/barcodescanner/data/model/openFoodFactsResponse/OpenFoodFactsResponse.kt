@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.data.model.openFoodFactsResponse
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.common.extensions.polishText
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.*
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -43,7 +43,7 @@ data class OpenFoodFactsResponse(
     var productResponse: FoodProductResponse? = null
 ) {
 
-    fun toModel(barcode: Barcode, source: ApiSource): FoodBarcodeAnalysis = FoodBarcodeAnalysis(
+    fun toModel(barcode: Barcode, source: RemoteAPI): FoodBarcodeAnalysis = FoodBarcodeAnalysis(
         barcode = barcode,
         source = source,
         name = productResponse?.productName?.polishText(),

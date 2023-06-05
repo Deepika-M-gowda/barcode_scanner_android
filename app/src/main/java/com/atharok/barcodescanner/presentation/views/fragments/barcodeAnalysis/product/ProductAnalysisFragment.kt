@@ -39,19 +39,25 @@ import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
 import com.atharok.barcodescanner.common.utils.IGNORE_USE_SEARCH_ON_API_SETTING_KEY
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentProductAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.product.ApiError
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPIError
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisErrorApiFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
  */
 class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>() {
+
+    private var barcode: Barcode? = null
 
     private var _binding: FragmentProductAnalysisBinding? = null
     private val viewBinding get() = _binding!!
@@ -74,22 +80,12 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
 
                 // On retire les menus inutile
                 menu.removeItem(R.id.menu_activity_barcode_analysis_product_source_api_info_item)
-
-                arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
-                    if(apiError == ApiError.NO_RESULT)
-                        menu.removeItem(R.id.menu_activity_barcode_analysis_download_from_apis)
-                }
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
 
                 R.id.menu_activity_barcode_analysis_download_from_apis -> {
-                    requireActivity().apply {
-                        if(this is BarcodeAnalysisActivity) {
-                            intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
-                            this.restartApiResearch()
-                        }
-                    }
+                    barcode?.let { downloadFromRemoteAPI(it) }
                     true
                 }
 
@@ -104,21 +100,23 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
 
     override fun start(product: DefaultBarcodeAnalysis) {
 
+        this.barcode = product.barcode
+
         viewBinding.fragmentProductAnalysisOuterView.fixAnimateLayoutChangesInNestedScroll()
 
         configureAboutBarcodeFragment()
 
-        arguments?.serializable(API_ERROR_KEY, ApiError::class.java)?.let { apiError ->
+        arguments?.serializable(API_ERROR_KEY, RemoteAPIError::class.java)?.let { apiError ->
             when(apiError){
-                ApiError.NO_INTERNET_PERMISSION, ApiError.ERROR -> {
+                RemoteAPIError.NO_INTERNET_PERMISSION, RemoteAPIError.ERROR -> {
                     configureProductSearchApiEntitledLayout()
                     configureBarcodeErrorApiFragment()
                 }
-                ApiError.NO_API_RESEARCH -> {
+                RemoteAPIError.NO_API_RESEARCH -> {
                     viewBinding.fragmentProductAnalysisSearchApiEntitledLayout.visibility = View.GONE
                     viewBinding.fragmentProductAnalysisSearchApiFrameLayout.visibility = View.GONE
                 }
-                ApiError.NO_RESULT -> {
+                RemoteAPIError.NO_RESULT -> {
                     configureProductSearchApiEntitledLayout()
                     configureBarcodeNotFoundApi(product)
                 }
@@ -150,10 +148,8 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
      * Si pas d'erreur mais pas trouvé dans les APIs distantes
      */
     private fun configureBarcodeNotFoundApi(barcodeAnalysis: BarcodeAnalysis) {
-        val api = if(barcodeAnalysis.barcode.isBookBarcode())
-            getString(R.string.open_library_label) else getString(R.string.open_food_facts_label)
-
-        configureBarcodeNotFoundApiFragment(getString(R.string.barcode_not_found_on_api_label, api))
+        val apiRemote = getString(barcodeAnalysis.source.nameResource)
+        configureBarcodeNotFoundApiFragment(getString(R.string.barcode_not_found_on_api_label, apiRemote))
     }
 
     private fun configureBarcodeNotFoundApiFragment(contents: String) = configureExpandableViewFragment(
@@ -163,8 +159,71 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
         iconDrawableResource = R.drawable.outline_info_24
     )
 
+    private fun downloadFromRemoteAPI(barcode: Barcode) {
+        requireActivity().apply {
+            if(this is BarcodeAnalysisActivity) {
+                val apiError: RemoteAPIError? = arguments?.serializable(API_ERROR_KEY, RemoteAPIError::class.java)
+                when(apiError) {
+                    RemoteAPIError.NO_RESULT -> {
+                        if (!barcode.isBookBarcode()) {
+                            createRemoteApiAlertDialog(barcode, this)
+                        }
+                    }
+                    RemoteAPIError.NO_API_RESEARCH -> {
+                        intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
+                        when(barcode.getBarcodeType()) {
+                            BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                            BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                            BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
+                            else -> createRemoteApiAlertDialog(barcode, this)
+                        }
+                    }
+                    else -> {
+                        when(barcode.getBarcodeType()) {
+                            BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                            BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                            BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
+                            else -> if(this.settingsManager.useSearchOnApi) {
+                                this.restartApiResearch(barcode)
+                            } else {
+                                createRemoteApiAlertDialog(barcode, this)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun createRemoteApiAlertDialog(barcode: Barcode, barcodeAnalysisActivity: BarcodeAnalysisActivity) {
+        val items = arrayOf(
+            getString(R.string.preferences_remote_api_food_label),
+            getString(R.string.preferences_remote_api_cosmetic_label),
+            getString(R.string.preferences_remote_api_pet_food_label)
+        )
+
+        val builder = MaterialAlertDialogBuilder(barcodeAnalysisActivity, R.style.AppTheme_MaterialAlertDialog).apply {
+            setTitle(R.string.preferences_remote_api_choose_label)
+            setItems(items) { dialog, i ->
+                when(i) {
+                    0 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                    1 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                    2 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                }
+            }
+            setNegativeButton(R.string.close_dialog_label) {
+                    dialogInterface, _ -> dialogInterface.cancel()
+            }
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
     companion object {
-        fun newInstance(defaultBarcodeAnalysis: DefaultBarcodeAnalysis, apiError: ApiError, errorMessage: String?) = ProductAnalysisFragment().apply {
+        fun newInstance(defaultBarcodeAnalysis: DefaultBarcodeAnalysis, apiError: RemoteAPIError, errorMessage: String?) = ProductAnalysisFragment().apply {
             arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, defaultBarcodeAnalysis)
                 putSerializable(API_ERROR_KEY, apiError)

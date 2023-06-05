@@ -24,13 +24,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
 
 class ProductViewModel(private val productUseCase: ProductUseCase): ViewModel() {
 
-    fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeAnalysis>> =
-        productUseCase.getProduct(barcode)
+    fun getProduct(barcode: Barcode, apiRemote: RemoteAPI): LiveData<Resource<BarcodeAnalysis>> =
+        productUseCase.getProduct(barcode, apiRemote)
 
     fun refresh(){
         productUseCase.refresh()

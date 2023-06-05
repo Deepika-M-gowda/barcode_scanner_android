@@ -22,8 +22,8 @@ package com.atharok.barcodescanner.data.repositories
 
 import com.atharok.barcodescanner.data.api.OpenLibraryService
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 
 class BookProductRepositoryImpl(private val service: OpenLibraryService): BookProductRepository {
@@ -33,6 +33,6 @@ class BookProductRepositoryImpl(private val service: OpenLibraryService): BookPr
         if(bookProductResponse.informationSchema == null)
             return null
 
-        return bookProductResponse.toModel(barcode, ApiSource.OPEN_LIBRARY)
+        return bookProductResponse.toModel(barcode, RemoteAPI.OPEN_LIBRARY)
     }
 }

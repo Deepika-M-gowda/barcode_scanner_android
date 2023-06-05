@@ -23,10 +23,9 @@ package com.atharok.barcodescanner.domain.usecases
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
@@ -39,7 +38,31 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                      private val petFoodProductRepository: PetFoodProductRepository,
                      private val bookProductRepository: BookProductRepository) {
 
-    fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
+    fun getProduct(barcode: Barcode, apiRemote: RemoteAPI): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
+
+        emit(Resource.loading())
+
+        var barcodeAnalysis: BarcodeAnalysis? = null
+        try {
+            barcodeAnalysis = when(apiRemote) {
+                RemoteAPI.OPEN_FOOD_FACTS -> foodProductRepository.getFoodProduct(barcode)
+                RemoteAPI.OPEN_BEAUTY_FACTS -> beautyProductRepository.getBeautyProduct(barcode)
+                RemoteAPI.OPEN_PET_FOOD_FACTS -> petFoodProductRepository.getPetFoodProduct(barcode)
+                RemoteAPI.OPEN_LIBRARY -> bookProductRepository.getBookProduct(barcode)
+                RemoteAPI.NONE -> null
+            }
+
+            if (barcodeAnalysis == null)
+                barcodeAnalysis = DefaultBarcodeAnalysis(barcode, apiRemote)
+
+            emit(Resource.success(barcodeAnalysis))
+
+        } catch (e: Exception) {
+            emit(Resource.failure(e, barcodeAnalysis))
+        }
+    }
+
+    /*fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
 
         emit(Resource.loading())
 
@@ -54,7 +77,7 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                 else -> {
                     when {
                         barcode.isBookBarcode() -> bookProductRepository.getBookProduct(barcode)
-                        else -> searchEverywhere(barcode)
+                        //else -> searchEverywhere(barcode)
                     }
                 }
             }
@@ -67,9 +90,9 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
         } catch (e: Exception) {
             emit(Resource.failure(e, barcodeAnalysis))
         }
-    }
+    }*/
 
-    private suspend fun searchEverywhere(barcode: Barcode): FoodBarcodeAnalysis? {
+    /*private suspend fun searchEverywhere(barcode: Barcode): FoodBarcodeAnalysis? {
 
         var product: FoodBarcodeAnalysis? = null
         for(i in 0..2){
@@ -86,7 +109,7 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
         }
 
         return product
-    }
+    }*/
 
     fun refresh(){
         Resource.loading(null)

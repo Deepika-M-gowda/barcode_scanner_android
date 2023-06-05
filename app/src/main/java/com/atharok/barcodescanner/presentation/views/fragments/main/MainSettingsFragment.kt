@@ -55,6 +55,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
 
         //configureThemePreference()
+        configureAboutPreference(R.string.preferences_remote_api_information_about_api_key, AboutApisActivity::class)
         configureAboutPreference(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
         configureAboutPreference(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)
         configureAboutPreference(R.string.preferences_about_bdd_key, AboutBddActivity::class)
@@ -78,6 +79,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_color_key) -> mActivity.updateTheme()
                 getString(R.string.preferences_theme_key) -> mActivity.updateTheme()
 
+                getString(R.string.preferences_remote_api_choose_key),
                 getString(R.string.preferences_switch_scan_use_camera_x_api_key),
                 getString(R.string.preferences_switch_scan_vibrate_key),
                 getString(R.string.preferences_switch_scan_bip_key),

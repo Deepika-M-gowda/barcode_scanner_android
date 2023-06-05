@@ -24,17 +24,36 @@
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_remote_api_title">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_search_on_api_key"
+            android:title="@string/preferences_switch_scan_search_on_api_label"
+            android:defaultValue="true"
+            app:singleLineTitle="false"/>
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
+            app:key="@string/preferences_remote_api_choose_key"
+            app:title="@string/preferences_remote_api_to_use_label"
+            app:dialogTitle="@string/preferences_remote_api_choose_label"
+            android:summary="%s"
+            android:entries="@array/preference_remote_api_choose_entries"
+            android:entryValues="@array/preference_remote_api_choose_values"
+            app:defaultValue="@string/preferences_entry_value_food"
+            app:singleLineTitle="false" />
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
+            app:key="@string/preferences_remote_api_information_about_api_key"
+            app:title="@string/preferences_information_about_remote_api_title" />
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
         android:title="@string/preferences_scan_title">
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
             android:key="@string/preferences_switch_scan_use_camera_x_api_key"
             android:title="@string/preferences_switch_scan_use_camera_x_api_label"
-            android:defaultValue="true"
-            app:singleLineTitle="false"/>
-
-        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
-            android:key="@string/preferences_switch_scan_search_on_api_key"
-            android:title="@string/preferences_switch_scan_search_on_api_label"
             android:defaultValue="true"
             app:singleLineTitle="false"/>
 

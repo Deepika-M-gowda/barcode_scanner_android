@@ -25,4 +25,4 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import java.io.Serializable
 
 @Keep
-open class BarcodeAnalysis(open val barcode: Barcode, open val source: ApiSource): Serializable
+open class BarcodeAnalysis(open val barcode: Barcode, open val source: RemoteAPI): Serializable

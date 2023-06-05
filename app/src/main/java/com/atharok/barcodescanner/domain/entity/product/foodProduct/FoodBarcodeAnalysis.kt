@@ -22,13 +22,13 @@ package com.atharok.barcodescanner.domain.entity.product.foodProduct
 
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 
 @Keep
 class FoodBarcodeAnalysis(
     override val barcode: Barcode,
-    override val source: ApiSource,
+    override val source: RemoteAPI,
     val name: String?,
     val brands: String?,
     val quantity: String?,

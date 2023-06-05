@@ -25,7 +25,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
 @Keep
 class BookBarcodeAnalysis(barcode: Barcode,
-                          source: ApiSource,
+                          source: RemoteAPI,
                           val url: String?,
                           val title: String?,
                           val subtitle: String?,

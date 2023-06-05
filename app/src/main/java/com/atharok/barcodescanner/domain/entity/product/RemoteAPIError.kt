@@ -20,7 +20,7 @@
 
 package com.atharok.barcodescanner.domain.entity.product
 
-enum class ApiError {
+enum class RemoteAPIError {
     ERROR,
     NO_RESULT,
     NO_INTERNET_PERMISSION,

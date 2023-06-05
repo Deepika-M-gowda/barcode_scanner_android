@@ -24,4 +24,4 @@ import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
 @Keep
-class DefaultBarcodeAnalysis(barcode: Barcode): BarcodeAnalysis(barcode, ApiSource.NONE)
+class DefaultBarcodeAnalysis(barcode: Barcode, source: RemoteAPI = RemoteAPI.NONE): BarcodeAnalysis(barcode, source)

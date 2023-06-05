@@ -22,7 +22,7 @@ package com.atharok.barcodescanner.data.repositories
 
 import com.atharok.barcodescanner.data.api.OpenBeautyFactsService
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 
@@ -33,6 +33,6 @@ class BeautyProductRepositoryImpl(private val service: OpenBeautyFactsService): 
         if(beautyProductResponse.status == 0 || beautyProductResponse.productResponse == null)
             return null
 
-        return beautyProductResponse.toModel(barcode, ApiSource.OPEN_BEAUTY_FACTS)
+        return beautyProductResponse.toModel(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
     }
 }

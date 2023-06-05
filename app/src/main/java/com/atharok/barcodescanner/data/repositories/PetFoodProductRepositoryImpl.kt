@@ -22,7 +22,7 @@ package com.atharok.barcodescanner.data.repositories
 
 import com.atharok.barcodescanner.data.api.OpenPetFoodFactsService
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.ApiSource
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 
@@ -33,6 +33,6 @@ class PetFoodProductRepositoryImpl(private val service: OpenPetFoodFactsService)
         if(petFoodProductResponse.status == 0 || petFoodProductResponse.productResponse == null)
             return null
 
-        return petFoodProductResponse.toModel(barcode, ApiSource.OPEN_PET_FOOD_FACTS)
+        return petFoodProductResponse.toModel(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
     }
 }

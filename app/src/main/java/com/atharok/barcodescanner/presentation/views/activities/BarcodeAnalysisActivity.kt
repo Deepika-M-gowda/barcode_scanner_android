@@ -35,10 +35,11 @@ import com.atharok.barcodescanner.common.utils.IGNORE_USE_SEARCH_ON_API_SETTING_
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.entity.product.ApiError
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPIError
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
@@ -98,64 +99,62 @@ class BarcodeAnalysisActivity: BaseActivity() {
         super.onDestroy()
     }
 
-    private fun configureContentsView(barcode: Barcode){
-
+    private fun configureContentsView(barcode: Barcode) {
         changeToolbarText(barcode)
-
         when {
-            barcode.is1DProductBarcodeFormat -> configureApiResearch(barcode)
+            barcode.is1DProductBarcodeFormat -> startApiResearch(barcode)
             barcode.is1DIndustrialBarcodeFormat -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode), BarcodeType.INDUSTRIAL)
             barcode.is2DBarcodeFormat -> configureMatrixCodeView(DefaultBarcodeAnalysis(barcode))
             else -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode), BarcodeType.UNKNOWN)
         }
     }
 
-    fun restartApiResearch() {
-        viewBinding.activityBarcodeInformationProgressBar.visibility = View.VISIBLE
-
-        val barcode: Barcode? = intent?.serializable(BARCODE_KEY, Barcode::class.java)
-
-        if(barcode!=null){
-            configureApiResearch(barcode)
-        } else {
-            viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
-        }
-    }
-
-    private fun configureApiResearch(barcode: Barcode){
-
+    private fun startApiResearch(barcode: Barcode) {
         val type = when(barcode.getBarcodeType()){
             BarcodeType.BOOK, BarcodeType.FOOD, BarcodeType.BEAUTY, BarcodeType.PET_FOOD -> barcode.getBarcodeType()
             else -> if(barcode.isBookBarcode()) BarcodeType.BOOK else BarcodeType.UNKNOWN_PRODUCT
         }
 
+        val apiRemote = determineAPIRemote(barcode, type)
+
+        configureApiResearch(barcode, type, apiRemote)
+    }
+
+    fun restartApiResearch(barcode: Barcode, apiRemote: RemoteAPI? = null) {
+        viewBinding.activityBarcodeInformationProgressBar.visibility = View.VISIBLE
+        val type = barcode.getBarcodeType()
+        configureApiResearch(barcode, type, apiRemote ?: determineAPIRemote(barcode, type))
+    }
+
+    private fun configureApiResearch(barcode: Barcode, type: BarcodeType, apiRemote: RemoteAPI) {
+        // Check Internet Permission
+        if(!checkInternetPermission()){
+            configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), type, RemoteAPIError.NO_INTERNET_PERMISSION, getString(R.string.no_internet_permission))
+            return
+        }
+
         val ignoreUseSearchOnApiSetting = intent.getBooleanExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, false)
 
-        when {
-            !checkInternetPermission() -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), type, ApiError.NO_INTERNET_PERMISSION, getString(R.string.no_internet_permission))
-            settingsManager.useSearchOnApi || ignoreUseSearchOnApiSetting -> observeOnAPI(barcode, type)
-            else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), type, ApiError.NO_API_RESEARCH)
+        if((settingsManager.useSearchOnApi || ignoreUseSearchOnApiSetting) && apiRemote != RemoteAPI.NONE) {
+            observeOnAPI(barcode, type, apiRemote)
+        } else {
+            configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), type, RemoteAPIError.NO_API_RESEARCH)
         }
     }
 
-    private fun checkInternetPermission(): Boolean {
-        val permission: Int = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
-        return permission == PackageManager.PERMISSION_GRANTED
-    }
+    // ---- Query remote API ----
+    private fun observeOnAPI(barcode: Barcode, defaultBarcodeType: BarcodeType, apiRemote: RemoteAPI) {
 
-    // ---- OpenFoodFacts ----
-    private fun observeOnAPI(barcode: Barcode, defaultBarcodeType: BarcodeType){
-
-        retrofitViewModel.getProduct(barcode).observe(this) {
+        retrofitViewModel.getProduct(barcode, apiRemote).observe(this) {
 
             when (it) {
 
                 is Resource.Progress -> {}
 
                 is Resource.Failure -> configureProductAnalysisView(
-                    barcodeAnalysis = DefaultBarcodeAnalysis(barcode),
+                    barcodeAnalysis = DefaultBarcodeAnalysis(barcode, apiRemote),
                     barcodeType = defaultBarcodeType,
-                    apiError = ApiError.ERROR,
+                    apiError = RemoteAPIError.ERROR,
                     message = it.throwable.toString()
                 )
 
@@ -163,13 +162,13 @@ class BarcodeAnalysisActivity: BaseActivity() {
                     when (it.data) {
                         is FoodBarcodeAnalysis -> configureFoodAnalysisView(it.data)
                         is BookBarcodeAnalysis -> configureBookAnalysisView(it.data)
-                        is DefaultBarcodeAnalysis -> configureProductAnalysisView(it.data, defaultBarcodeType, ApiError.NO_RESULT)
-                        else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), defaultBarcodeType, ApiError.NO_RESULT)
+                        is DefaultBarcodeAnalysis -> configureProductAnalysisView(it.data, defaultBarcodeType, RemoteAPIError.NO_RESULT)
+                        else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode, apiRemote), defaultBarcodeType, RemoteAPIError.NO_RESULT)
                     }
                 }
 
                 // Si le code-barres n'a été trouvé sur aucun des services distants
-                else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode), defaultBarcodeType, ApiError.NO_RESULT)
+                else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode, apiRemote), defaultBarcodeType, RemoteAPIError.NO_RESULT)
             }
         }
     }
@@ -195,7 +194,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     private fun configureProductAnalysisView(
         barcodeAnalysis: DefaultBarcodeAnalysis,
         barcodeType: BarcodeType,
-        apiError: ApiError,
+        apiError: RemoteAPIError,
         message: String? = null
     ) = configureContentFragment(
         fragment = ProductAnalysisFragment.newInstance(barcodeAnalysis, apiError, message),
@@ -203,12 +202,10 @@ class BarcodeAnalysisActivity: BaseActivity() {
         barcodeType = barcodeType
     )
 
-    private fun configureMatrixCodeView(barcodeAnalysis: DefaultBarcodeAnalysis){
-
+    private fun configureMatrixCodeView(barcodeAnalysis: DefaultBarcodeAnalysis) {
         val barcodeType = barcodeAnalysisScope.get<BarcodeType> {
             parametersOf(barcodeAnalysis.barcode.contents, barcodeAnalysis.barcode.getBarcodeFormat())
         }
-
         configureDefaultBarcodeAnalysisView(barcodeAnalysis, barcodeType)
     }
 
@@ -222,7 +219,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
     )
 
     private fun configureContentFragment(fragment: Fragment, barcodeAnalysis: BarcodeAnalysis, barcodeType: BarcodeType) {
-
         updateTypeIntoDatabase(barcodeAnalysis = barcodeAnalysis, newBarcodeType = barcodeType)
 
         replaceFragment(
@@ -235,6 +231,33 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
     }
+
+    // ---- Utils ----
+
+    private fun checkInternetPermission(): Boolean {
+        val permission: Int = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
+        return permission == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun determineAPIRemote(barcode: Barcode, barcodeType: BarcodeType): RemoteAPI =
+        if(barcode.isBookBarcode()) {
+            RemoteAPI.OPEN_LIBRARY
+        } else if(barcodeType == BarcodeType.UNKNOWN_PRODUCT) {
+            when(settingsManager.apiChoose) {
+                getString(R.string.preferences_entry_value_food) -> RemoteAPI.OPEN_FOOD_FACTS
+                getString(R.string.preferences_entry_value_cosmetic) -> RemoteAPI.OPEN_BEAUTY_FACTS
+                getString(R.string.preferences_entry_value_pet_food) -> RemoteAPI.OPEN_PET_FOOD_FACTS
+                else -> RemoteAPI.NONE
+            }
+        } else {
+            when(barcodeType) {
+                BarcodeType.FOOD -> RemoteAPI.OPEN_FOOD_FACTS
+                BarcodeType.BEAUTY -> RemoteAPI.OPEN_BEAUTY_FACTS
+                BarcodeType.PET_FOOD -> RemoteAPI.OPEN_PET_FOOD_FACTS
+                BarcodeType.BOOK -> RemoteAPI.OPEN_LIBRARY
+                else -> RemoteAPI.NONE
+            }
+        }
 
     // ---- UI ----
 
@@ -251,8 +274,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
     // ---- Database Update ----
 
-    private fun updateTypeIntoDatabase(barcodeAnalysis: BarcodeAnalysis, newBarcodeType: BarcodeType){
-
+    private fun updateTypeIntoDatabase(barcodeAnalysis: BarcodeAnalysis, newBarcodeType: BarcodeType) {
         val productName = when (barcodeAnalysis) {
             is BookBarcodeAnalysis -> barcodeAnalysis.title
             is FoodBarcodeAnalysis -> barcodeAnalysis.name

@@ -34,15 +34,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -52,7 +49,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.zxing.client.android.SCAN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -68,9 +64,7 @@
             android:label="@string/title_scan">
             <intent-filter android:label="@string/intent_filter_scan_by_image">
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
@@ -86,23 +80,17 @@
             android:label="@string/title_bar_code_creator">
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/x-vcard" />
             </intent-filter>
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/calendar" />
             </intent-filter>
         </activity>
@@ -110,18 +98,20 @@
             android:name=".presentation.views.activities.BarcodeFormCreatorActivity"
             android:label="@string/title_bar_code_creator" />
         <activity
+            android:name=".presentation.views.activities.AboutApisActivity"
+            android:exported="false"
+            android:label="@string/preferences_information_about_remote_api_title" />
+        <activity
             android:name=".presentation.views.activities.AboutPermissionsDescriptionActivity"
             android:exported="true"
             android:label="@string/preferences_about_permissions_label"
             android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -134,8 +124,8 @@
         <activity android:name=".presentation.views.activities.ImageFullScreenActivity" />
         <activity
             android:name=".presentation.views.activities.BankListActivity"
-            android:label="@string/title_history"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/title_history" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

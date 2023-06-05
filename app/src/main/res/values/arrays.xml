@@ -46,6 +46,18 @@
         <item>dark</item>
     </string-array>
 
+    <string-array name="preference_remote_api_choose_entries">
+        <item>@string/preferences_remote_api_food_label</item>
+        <item>@string/preferences_remote_api_cosmetic_label</item>
+        <item>@string/preferences_remote_api_pet_food_label</item>
+    </string-array>
+
+    <string-array name="preference_remote_api_choose_values" translatable="false">
+        <item>@string/preferences_entry_value_food</item>
+        <item>@string/preferences_entry_value_cosmetic</item>
+        <item>@string/preferences_entry_value_pet_food</item>
+    </string-array>
+
     <string-array name="preference_search_engine_entries">
         <item>@string/google_label</item>
         <item>@string/bing_label</item>

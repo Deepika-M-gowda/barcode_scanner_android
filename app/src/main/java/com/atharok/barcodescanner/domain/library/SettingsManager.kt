@@ -39,9 +39,17 @@ class SettingsManager(private val context: Context) {
     private var color = prefs.getString(colorKey, getDefaultColorKey())
     private var theme = prefs.getString(themeKey, "system")
 
+    // Remote API
+    private val searchOnApiKey = context.getString(R.string.preferences_switch_scan_search_on_api_key)
+    private val apiChooseKey = context.getString(R.string.preferences_remote_api_choose_key)
+
+    var useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
+        private set
+    var apiChoose = prefs.getString(apiChooseKey, context.getString(R.string.preferences_entry_value_food))
+        private set
+
     // Scan
     private val useCameraXApiKey = context.getString(R.string.preferences_switch_scan_use_camera_x_api_key)
-    private val searchOnApiKey = context.getString(R.string.preferences_switch_scan_search_on_api_key)
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
@@ -50,8 +58,6 @@ class SettingsManager(private val context: Context) {
     private val defaultZoomValueKey = context.getString(R.string.preferences_seek_bar_camera_default_zoom_value_key)
 
     var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
-        private set
-    var useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         private set
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         private set
@@ -81,8 +87,9 @@ class SettingsManager(private val context: Context) {
 
         color = prefs.getString(colorKey, getDefaultColorKey())
         theme = prefs.getString(themeKey, "system")
-        useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
+        apiChoose = prefs.getString(apiChooseKey, context.getString(R.string.preferences_entry_value_food))
+        useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)
