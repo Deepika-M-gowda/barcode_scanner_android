@@ -70,6 +70,8 @@
     <string name="bar_code_type_food">Produit Alimentaire</string>
     <string name="bar_code_type_pet_food">Nourriture pour Animaux</string>
     <string name="bar_code_type_beauty">Produit Cosmétique</string>
+    <string name="bar_code_type_music">Musique</string>
+    <string name="bar_code_type_unknown_music_album_title">Nom de l\'album inconnu</string>
     <string name="bar_code_type_book">Livre</string>
     <string name="bar_code_type_unknown_book_title">Titre du livre inconnu</string>
     <string name="bar_code_type_industrial">Code Industriel</string>
@@ -249,6 +251,10 @@
     <string name="book_product_publish_date_label">Date de publication</string>
     <string name="book_product_original_title_label">Titre original</string>
     <string name="book_product_pages_number">%1$s pages</string>
+
+    <!-- Music -->
+    <string name="music_product_tracks_label">Pistes</string>
+    <string name="music_product_tracks_number">%1$s pistes</string>
 
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Contenu du code-barres</string>
@@ -477,6 +483,8 @@
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
+    <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
 
     <!-- URL Engines -->
@@ -498,6 +506,7 @@
     <string name="search_engine_open_food_facts_product_url">https://fr.openfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://fr.openpetfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_beauty_facts_product_url">https://fr.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://fr.openfoodfacts.org/additive/%1$s</string>
 
@@ -506,11 +515,13 @@
     <string name="search_engine_open_pet_food_facts_url">https://fr.openpetfoodfacts.org/</string>
     <string name="search_engine_open_beauty_facts_url">https://fr.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+    <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
 
     <!-- API Sources Description -->
     <string name="open_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Food Facts.</string>
     <string name="open_pet_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Pet Food Facts.</string>
     <string name="open_beauty_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Beauty Facts.</string>
+    <string name="music_brainz_source_description_label">Les informations sur les produits musicaux proviennent de la base de données gratuite MusicBrainz.</string>
     <string name="open_library_source_description_label">Les informations sur le livre sont issues de la base de données libre Open Library.</string>
 
     <!-- Preferences -->
@@ -541,10 +552,11 @@
     <string name="preferences_remote_api_food_label">Open Food Facts (Produits alimentaires)</string>
     <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Produits cosmétiques)</string>
     <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Produits alimentaires pour animaux)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyles, …)</string>
     <string name="preferences_remote_api_book_label">Open Library (Livres)</string>
 
     <!-- About Remote API -->
-    <string name="preferences_information_about_remote_api_title">Informations sur les API</string>
+    <string name="preferences_information_about_remote_api_title">Informations sur les APIs</string>
     <string name="preferences_information_about_remote_api_foreword">Avant-propos</string>
     <string name="preferences_information_about_remote_api_what_is_an_api_title">Qu\'est-ce qu\'une API ?</string>
     <string name="preferences_information_about_remote_api_what_is_an_api_description">Une API est une bibliothèque logicielle utilisée pour accéder à un service. Dans le cas de cette application, une API permet d\'accéder à un service web. Ce service web permet de récupérer des informations présentes dans une base de données.\nPar exemple, Open Food Facts est une base de données de produits alimentaires et fournit une API pour accéder à sa base de données. C\'est cette API que j\'utilise pour afficher les informations sur les produits alimentaires.</string>
@@ -554,15 +566,16 @@
     <string name="preferences_information_about_remote_api_product_types_supported_food">• Produits alimentaires (avec l\'API d\'Open Food Facts)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Produits cosmétiques (avec l\'API d\'Open Beauty Facts)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Produits alimentaires pour animaux (avec l\'API d\'Open Pet Food Facts)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyles, … (avec l\'API de MusicBrainz)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_book">• Livres (avec l\'API d\'Open Library)</string>
     <string name="preferences_information_about_remote_api_some_additional_information_title">Quelques informations supplémentaires</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Il est possible que certains produits ne soient pas présents dans certaines bases de données.</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_2">• Il peut y avoir des erreurs dans les informations fournies par les APIs.</string>
     <string name="preferences_information_about_remote_api_how_it_works">Fonctionnement</string>
     <string name="preferences_information_about_remote_api_automatic_search_title">Recherche automatique</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">Si l\'option \"%1$s\" est activée, lorsque vous scannez le code-barres d\'un produit, une recherche est automatiquement effectuée sur l\'API sélectionnée dans les paramètres.</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">Si l\'option \"%1$s\" est activée, lorsque vous scannez le code-barres d\'un produit, une recherche est automatiquement effectuée sur l\'API sélectionnée dans les paramètres. Si aucune information n\'est trouvée sur l\'API, vous pouvez toujours effectuer une recherche manuelle sur une autre API après le scan.</string>
     <string name="preferences_information_about_remote_api_manual_search_title">Recherche manuelle</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">Si l\'option \"%1$s\" est désactivée, lorsque vous scannez le code-barres d\'un produit, aucune information n\'est récupérée des serveurs distants. Mais vous pouvez toujours rechercher les informations sur le produit. Pour cela, après avoir scanné le produit, vous devez appuyer sur l\'icône dans la barre de menus prévue à cet effet. Vous pourrez ensuite sélectionner une API sur laquelle effectuer une recherche.</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">Si l\'option \"%1$s\" est désactivée, lorsque vous scannez le code-barres d\'un produit, aucune information n\'est récupérée des serveurs distants. Mais vous pouvez toujours rechercher manuellement des informations sur le produit scanné. Pour cela, après avoir scanné le produit, vous devez appuyer sur l\'icône dans la barre de menus prévue à cet effet. Vous pourrez ensuite sélectionner une API sur laquelle effectuer une recherche.</string>
     <string name="preferences_information_about_remote_api_about_books_title">Livres</string>
     <string name="preferences_information_about_remote_api_about_books_description">Si le produit que vous scannez est un livre, vous n\'avez pas besoin de spécifier l\'API sur laquelle rechercher des informations. Le code-barres d\'un livre est identifiable car il commence toujours par les chiffres \"978\". La recherche sera donc automatiquement effectuée sur Open Library.</string>
 
@@ -611,6 +624,7 @@
     <string name="bdd_open_food_facts_description_label">Open Food Facts est une base de données libre de produits alimentaires qui répertorie les ingrédients, les allergènes, la composition nutritionnelle et toutes les informations présentes sur les étiquettes des aliments.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts est une base de données libre de produits alimentaires pour animaux de compagnie.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts est une base de données libre sur les produits cosmétiques.</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz est une encyclopédie musicale libre qui collecte des métadonnées musicales et les propose au public.</string>
     <string name="bdd_open_library_description_label">Open Library est une base de données libre visant à cataloguer tous les livres publiés, quelle que soit leur langue.</string>
 
     <!-- About Library Third -->

@@ -18,9 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extensions
+package com.atharok.barcodescanner.data.api
 
-fun List<String?>.convertToString(separator: String = ", "): String {
-    val filteredList = this.filterNotNull().filter { it.isNotBlank() }
-    return filteredList.joinToString(separator)
+import com.atharok.barcodescanner.data.model.covertArtArchiveResponse.CoverArtArchiveResponse
+import retrofit2.http.GET
+import retrofit2.http.Path
+
+interface CoverArtArchiveService {
+    @GET("release/{MBID}")
+    suspend fun getCoverArt(@Path("MBID") mbid: String): CoverArtArchiveResponse?
 }

@@ -18,9 +18,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extensions
+package com.atharok.barcodescanner.domain.repositories
 
-fun List<String?>.convertToString(separator: String = ", "): String {
-    val filteredList = this.filterNotNull().filter { it.isNotBlank() }
-    return filteredList.joinToString(separator)
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
+
+interface MusicProductRepository {
+    suspend fun getMusicProduct(barcode: Barcode): MusicBarcodeAnalysis?
 }

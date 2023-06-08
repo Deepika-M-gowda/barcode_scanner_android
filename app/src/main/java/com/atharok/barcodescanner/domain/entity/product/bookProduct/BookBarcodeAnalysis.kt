@@ -18,10 +18,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.product.bookProduct
 
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 
 @Keep
 class BookBarcodeAnalysis(barcode: Barcode,

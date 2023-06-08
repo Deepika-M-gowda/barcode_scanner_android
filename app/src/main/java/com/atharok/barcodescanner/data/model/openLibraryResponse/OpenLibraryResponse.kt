@@ -23,6 +23,19 @@ package com.atharok.barcodescanner.data.model.openLibraryResponse
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.product.*
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.BookBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainAuthorsStringList
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainCategories
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainContributions
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainCoverUrl
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainDescription
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainNumberPages
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainOriginalTitle
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainPublishDate
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainPublishers
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainSubtitle
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainTitle
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainUrl
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

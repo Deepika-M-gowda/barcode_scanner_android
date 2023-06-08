@@ -18,9 +18,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extensions
+package com.atharok.barcodescanner.data.api
 
-fun List<String?>.convertToString(separator: String = ", "): String {
-    val filteredList = this.filterNotNull().filter { it.isNotBlank() }
-    return filteredList.joinToString(separator)
+import com.atharok.barcodescanner.data.model.musicBrainzResponse.musicAlbumInfo.MusicAlbumInfoResponse
+import com.atharok.barcodescanner.data.model.musicBrainzResponse.musicAlbumTracks.MusicAlbumTracksResponse
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
+
+interface MusicBrainzService {
+    @GET("release/")
+    suspend fun getAlbumInfoFromBarcode(@Query("query") barcode: String, @Query("fmt") fmt: String = "json"): MusicAlbumInfoResponse?
+
+    @GET("release/{DISC_ID}")
+    suspend fun getAlbumTracks(@Path("DISC_ID") discId: String, @Query("inc") inc: String = "recordings", @Query("fmt") fmt: String = "json"): MusicAlbumTracksResponse?
 }

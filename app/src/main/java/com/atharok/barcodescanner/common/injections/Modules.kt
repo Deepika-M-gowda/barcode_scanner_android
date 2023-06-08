@@ -39,6 +39,8 @@ import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.data.api.CoverArtArchiveService
+import com.atharok.barcodescanner.data.api.MusicBrainzService
 import com.atharok.barcodescanner.data.api.OpenBeautyFactsService
 import com.atharok.barcodescanner.data.api.OpenFoodFactsService
 import com.atharok.barcodescanner.data.api.OpenLibraryService
@@ -171,6 +173,7 @@ val libraryModule: Module = module {
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
     single<Iban> { Iban() }
     single<InternetChecker> { InternetChecker() }
+    single<DateConverter> { DateConverter() }
 
     factory { Date() }
     factory { (pattern: String) -> SimpleDateFormat(pattern, Locale.getDefault()) }
@@ -209,6 +212,7 @@ val useCaseModule: Module = module {
             foodProductRepository = get<FoodProductRepository>(),
             beautyProductRepository = get<BeautyProductRepository>(),
             petFoodProductRepository = get<PetFoodProductRepository>(),
+            musicProductRepository = get<MusicProductRepository>(),
             bookProductRepository = get<BookProductRepository>()
         )
     }
@@ -243,6 +247,10 @@ val repositoryModule: Module = module {
 
     single<PetFoodProductRepository> {
         PetFoodProductRepositoryImpl(get<OpenPetFoodFactsService>())
+    }
+
+    single<MusicProductRepository> {
+        MusicProductRepositoryImpl(get<MusicBrainzService>(), get<CoverArtArchiveService>())
     }
 
     single<BookProductRepository> {
@@ -301,6 +309,16 @@ val dataModule: Module = module {
     single<OpenPetFoodFactsService> {
         val baseUrl = androidContext().getString(R.string.base_api_open_pet_food_facts_url)
         createApiClient(androidContext(), baseUrl).create(OpenPetFoodFactsService::class.java)
+    }
+
+    single<MusicBrainzService> {
+        val baseUrl = androidContext().getString(R.string.base_api_musicbrainz_url)
+        createApiClient(androidContext(), baseUrl).create(MusicBrainzService::class.java)
+    }
+
+    single<CoverArtArchiveService> {
+        val baseUrl = androidContext().getString(R.string.base_api_cover_art_archive_url)
+        createApiClient(androidContext(), baseUrl).create(CoverArtArchiveService::class.java)
     }
 
     single<OpenLibraryService> {
@@ -397,6 +415,7 @@ val fragmentsModule = module {
             BarcodeType.FOOD -> FoodActionsFragment::class
             BarcodeType.PET_FOOD -> PetFoodActionsFragment::class
             BarcodeType.BEAUTY -> BeautyActionsFragment::class
+            BarcodeType.MUSIC -> MusicActionsFragment::class
             BarcodeType.BOOK -> BookActionsFragment::class
             BarcodeType.INDUSTRIAL -> DefaultActionsFragment::class
             BarcodeType.MATRIX -> DefaultActionsFragment::class

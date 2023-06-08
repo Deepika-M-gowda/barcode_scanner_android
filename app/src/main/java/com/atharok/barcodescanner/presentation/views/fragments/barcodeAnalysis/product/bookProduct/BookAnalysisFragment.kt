@@ -30,7 +30,7 @@ import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBookAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.BookBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ApiAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment

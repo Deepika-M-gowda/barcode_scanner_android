@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.product.bookProduct
 
 import com.atharok.barcodescanner.data.model.openLibraryResponse.OpenLibraryResponse
 import com.atharok.barcodescanner.data.model.openLibraryResponse.records.commons.Author

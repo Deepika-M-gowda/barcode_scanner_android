@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.data.network
 
 import android.content.Context
+import com.atharok.barcodescanner.BuildConfig
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -30,6 +31,7 @@ import java.util.concurrent.TimeUnit
 
 private const val WS_CALL_TIMEOUT_SECONDS = 10L
 private const val CACHE_MAX_SIZE = 10L * 1024L * 1024L
+private const val USER_AGENT = "${BuildConfig.APPLICATION_ID}/${BuildConfig.VERSION_NAME} (https://gitlab.com/Atharok/BarcodeScanner)"
 
 fun createApiClient(context: Context, baseUrl: String): Retrofit =
     Retrofit.Builder()
@@ -40,6 +42,7 @@ fun createApiClient(context: Context, baseUrl: String): Retrofit =
 
 private fun createHttpClient(context: Context): OkHttpClient =
     OkHttpClient.Builder()
+        .addNetworkInterceptor(UserAgentInterceptor(USER_AGENT))
         .cache(createHttpCache(context))
         .addNetworkInterceptor(CacheInterceptor())
         .addInterceptor(WSApiInterceptor())

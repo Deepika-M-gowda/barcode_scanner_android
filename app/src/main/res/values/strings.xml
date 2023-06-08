@@ -70,6 +70,8 @@
     <string name="bar_code_type_food">Food Product</string>
     <string name="bar_code_type_pet_food">Pet Food</string>
     <string name="bar_code_type_beauty">Cosmetic Product</string>
+    <string name="bar_code_type_music">Music</string>
+    <string name="bar_code_type_unknown_music_album_title">Album title unknown</string>
     <string name="bar_code_type_book">Book</string>
     <string name="bar_code_type_unknown_book_title">Book title unknown</string>
     <string name="bar_code_type_industrial">Industrial Code</string>
@@ -249,6 +251,10 @@
     <string name="book_product_publish_date_label">Publish date</string>
     <string name="book_product_original_title_label">Original title</string>
     <string name="book_product_pages_number">%1$s pages</string>
+
+    <!-- Music -->
+    <string name="music_product_tracks_label">Tracks</string>
+    <string name="music_product_tracks_number">%1$s tracks</string>
 
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Barcode content</string>
@@ -477,6 +483,8 @@
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
+    <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
 
     <!-- URL Engines -->
@@ -498,6 +506,7 @@
     <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
 
@@ -506,11 +515,13 @@
     <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
     <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+    <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
 
     <!-- API Sources Description -->
     <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
     <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
     <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
+    <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
     <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
 
     <!-- Preferences -->
@@ -541,6 +552,7 @@
     <string name="preferences_remote_api_food_label">Open Food Facts (Food products)</string>
     <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Cosmetic products)</string>
     <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Pet food products)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyls, …)</string>
     <string name="preferences_remote_api_book_label">Open Library (Books)</string>
 
     <!-- About Remote API -->
@@ -554,15 +566,16 @@
     <string name="preferences_information_about_remote_api_product_types_supported_food">• Food products (with Open Food Facts API)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Cosmetic products (with Open Beauty Facts API)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Pet food products (with Open Pet Food Facts API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (with MusicBrainz API)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_book">• Books (with Open Library API)</string>
     <string name="preferences_information_about_remote_api_some_additional_information_title">Some additional information</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Some products may not be included in certain databases.</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_2">• There may be some errors in the information provided by the APIs.</string>
     <string name="preferences_information_about_remote_api_how_it_works">How it works</string>
     <string name="preferences_information_about_remote_api_automatic_search_title">Automatic search</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings.</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings. If no information is found on the API, you can always perform a manual search on another API after the scan.</string>
     <string name="preferences_information_about_remote_api_manual_search_title">Manual search</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always search for product information. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always manually search for information on the scanned product. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
     <string name="preferences_information_about_remote_api_about_books_title">Books</string>
     <string name="preferences_information_about_remote_api_about_books_description">If the product you\'re scanning is a book, you don\'t need to specify the API on which to search for information. A book\'s barcode is identifiable because it always begins with the digits \"978\". The search will automatically be performed on Open Library.</string>
 
@@ -611,6 +624,7 @@
     <string name="bdd_open_food_facts_description_label">Open Food Facts is a free database about food which lists ingredients, allergens, nutritional composition and all information present on the products labels.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts is a free database about pet food.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts is a free database about cosmetic products.</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.</string>
     <string name="bdd_open_library_description_label">Open Library is a free database aimed at cataloging all published books, whatever their language.</string>
 
     <!-- About Library Third -->
@@ -778,8 +792,9 @@
     <string name="ebay_label" translatable="false">Ebay</string>
     <string name="fnac_label" translatable="false">Fnac</string>
     <string name="open_food_facts_label" translatable="false">Open Food Facts</string>
-    <string name="open_pet_food_facts_label" translatable="false">Open Pet Food Facts</string>
     <string name="open_beauty_facts_label" translatable="false">Open Beauty Facts</string>
+    <string name="open_pet_food_facts_label" translatable="false">Open Pet Food Facts</string>
+    <string name="musicbrainz_label" translatable="false">MusicBrainz</string>
     <string name="open_library_label" translatable="false">Open Library</string>
 
     <!-- Preferences Settings Keys -->
@@ -808,6 +823,7 @@
     <string name="preferences_entry_value_food" translatable="false">food</string>
     <string name="preferences_entry_value_cosmetic" translatable="false">cosmetic</string>
     <string name="preferences_entry_value_pet_food" translatable="false">pet_food</string>
+    <string name="preferences_entry_value_musicbrainz" translatable="false">musicbrainz</string>
 
     <!-- About Library Third -->
     <string name="dependency_zxing_title_label" translatable="false">ZXing</string>

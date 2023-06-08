@@ -21,15 +21,6 @@
 package com.atharok.barcodescanner.common.extensions
 
 fun Array<String?>.convertToString(separator: String = ", "): String {
-    val strBuilder = StringBuilder()
-    for((i, item) in this.withIndex()) {
-
-        if(!item.isNullOrBlank()) {
-            strBuilder.append(item)
-
-            if (i < this.size - 1)
-                strBuilder.append(separator)
-        }
-    }
-    return strBuilder.toString()
+    val filteredArray = this.filterNotNull().filter { it.isNotBlank() }
+    return filteredArray.joinToString(separator)
 }

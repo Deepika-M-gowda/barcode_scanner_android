@@ -36,6 +36,7 @@ enum class BarcodeType(val stringResource: Int, val drawableResource: Int): Seri
     FOOD(R.string.bar_code_type_food, R.drawable.baseline_restaurant_24),
     PET_FOOD(R.string.bar_code_type_pet_food, R.drawable.baseline_pets_24),
     BEAUTY(R.string.bar_code_type_beauty, R.drawable.baseline_face_24),
+    MUSIC(R.string.bar_code_type_music, R.drawable.baseline_music_note_24),
     BOOK(R.string.bar_code_type_book, R.drawable.ic_book_24),
     INDUSTRIAL(R.string.bar_code_type_industrial, R.drawable.ic_bar_code_24),
     MATRIX(R.string.bar_code_type_unknown_matrix, R.drawable.baseline_qr_code_24),

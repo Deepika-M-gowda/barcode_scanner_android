@@ -175,6 +175,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
                             BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
                             BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
                             BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.MUSIC -> this.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
                             BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
                             else -> createRemoteApiAlertDialog(barcode, this)
                         }
@@ -184,6 +185,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
                             BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
                             BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
                             BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.MUSIC -> this.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
                             BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
                             else -> if(this.settingsManager.useSearchOnApi) {
                                 this.restartApiResearch(barcode)
@@ -201,7 +203,8 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
         val items = arrayOf(
             getString(R.string.preferences_remote_api_food_label),
             getString(R.string.preferences_remote_api_cosmetic_label),
-            getString(R.string.preferences_remote_api_pet_food_label)
+            getString(R.string.preferences_remote_api_pet_food_label),
+            getString(R.string.preferences_remote_api_musicbrainz_label)
         )
 
         val builder = MaterialAlertDialogBuilder(barcodeAnalysisActivity, R.style.AppTheme_MaterialAlertDialog).apply {
@@ -211,6 +214,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
                     0 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
                     1 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
                     2 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                    3 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
                 }
             }
             setNegativeButton(R.string.close_dialog_label) {

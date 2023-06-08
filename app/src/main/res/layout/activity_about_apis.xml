@@ -138,10 +138,18 @@
                     style="@style/AppTheme.TextView.Appearance.Standard.Primary"/>
 
                 <TextView
-                    android:id="@+id/activity_about_apis_product_types_supported_book_text_view"
+                    android:id="@+id/activity_about_apis_product_types_supported_music_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/activity_about_apis_product_types_supported_pet_food_text_view"
+                    android:text="@string/preferences_information_about_remote_api_product_types_supported_music"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"/>
+
+                <TextView
+                    android:id="@+id/activity_about_apis_product_types_supported_book_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/activity_about_apis_product_types_supported_music_text_view"
                     android:text="@string/preferences_information_about_remote_api_product_types_supported_book"
                     style="@style/AppTheme.TextView.Appearance.Standard.Primary"/>
 

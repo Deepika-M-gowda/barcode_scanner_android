@@ -35,6 +35,10 @@ class WSException(val code: Int, val type: Type, message: String?): IOException(
         OTHER
     }
 
+    override fun toString(): String {
+        return "Error type: $type\n${super.toString()}"
+    }
+
     companion object {
         private fun Response.type(): Type {
             return when(code){

@@ -27,6 +27,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
@@ -36,11 +37,12 @@ import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.RemoteAPIError
+import com.atharok.barcodescanner.domain.entity.product.bookProduct.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
@@ -48,6 +50,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.d
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ProductAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.bookProduct.BookAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.FoodAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.musicProduct.MusicAnalysisFragment
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -111,7 +114,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
     private fun startApiResearch(barcode: Barcode) {
         val type = when(barcode.getBarcodeType()){
-            BarcodeType.BOOK, BarcodeType.FOOD, BarcodeType.BEAUTY, BarcodeType.PET_FOOD -> barcode.getBarcodeType()
+            BarcodeType.BOOK, BarcodeType.FOOD, BarcodeType.BEAUTY, BarcodeType.PET_FOOD, BarcodeType.MUSIC -> barcode.getBarcodeType()
             else -> if(barcode.isBookBarcode()) BarcodeType.BOOK else BarcodeType.UNKNOWN_PRODUCT
         }
 
@@ -161,6 +164,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 is Resource.Success -> {
                     when (it.data) {
                         is FoodBarcodeAnalysis -> configureFoodAnalysisView(it.data)
+                        is MusicBarcodeAnalysis -> configureMusicAnalysisView(it.data)
                         is BookBarcodeAnalysis -> configureBookAnalysisView(it.data)
                         is DefaultBarcodeAnalysis -> configureProductAnalysisView(it.data, defaultBarcodeType, RemoteAPIError.NO_RESULT)
                         else -> configureProductAnalysisView(DefaultBarcodeAnalysis(barcode, apiRemote), defaultBarcodeType, RemoteAPIError.NO_RESULT)
@@ -174,19 +178,27 @@ class BarcodeAnalysisActivity: BaseActivity() {
     }
 
     // ---- Configuration de la vue principale en fonction du type de code-barres / produits ----
-    
-    private fun configureBookAnalysisView(
-        barcodeAnalysis: BookBarcodeAnalysis
-    ) = configureContentFragment(
-        fragment = BookAnalysisFragment.newInstance(barcodeAnalysis),
-        barcodeAnalysis = barcodeAnalysis,
-        barcodeType = barcodeAnalysis.source.barcodeType
-    )
 
     private fun configureFoodAnalysisView(
         barcodeAnalysis: FoodBarcodeAnalysis
     ) = configureContentFragment(
         fragment = FoodAnalysisFragment.newInstance(barcodeAnalysis),
+        barcodeAnalysis = barcodeAnalysis,
+        barcodeType = barcodeAnalysis.source.barcodeType
+    )
+
+    private fun configureMusicAnalysisView(
+        barcodeAnalysis: MusicBarcodeAnalysis
+    ) = configureContentFragment(
+        fragment = MusicAnalysisFragment.newInstance(barcodeAnalysis),
+        barcodeAnalysis = barcodeAnalysis,
+        barcodeType = barcodeAnalysis.source.barcodeType
+    )
+
+    private fun configureBookAnalysisView(
+        barcodeAnalysis: BookBarcodeAnalysis
+    ) = configureContentFragment(
+        fragment = BookAnalysisFragment.newInstance(barcodeAnalysis),
         barcodeAnalysis = barcodeAnalysis,
         barcodeType = barcodeAnalysis.source.barcodeType
     )
@@ -247,6 +259,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 getString(R.string.preferences_entry_value_food) -> RemoteAPI.OPEN_FOOD_FACTS
                 getString(R.string.preferences_entry_value_cosmetic) -> RemoteAPI.OPEN_BEAUTY_FACTS
                 getString(R.string.preferences_entry_value_pet_food) -> RemoteAPI.OPEN_PET_FOOD_FACTS
+                getString(R.string.preferences_entry_value_musicbrainz) -> RemoteAPI.MUSICBRAINZ
                 else -> RemoteAPI.NONE
             }
         } else {
@@ -254,6 +267,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 BarcodeType.FOOD -> RemoteAPI.OPEN_FOOD_FACTS
                 BarcodeType.BEAUTY -> RemoteAPI.OPEN_BEAUTY_FACTS
                 BarcodeType.PET_FOOD -> RemoteAPI.OPEN_PET_FOOD_FACTS
+                BarcodeType.MUSIC -> RemoteAPI.MUSICBRAINZ
                 BarcodeType.BOOK -> RemoteAPI.OPEN_LIBRARY
                 else -> RemoteAPI.NONE
             }
@@ -275,10 +289,15 @@ class BarcodeAnalysisActivity: BaseActivity() {
     // ---- Database Update ----
 
     private fun updateTypeIntoDatabase(barcodeAnalysis: BarcodeAnalysis, newBarcodeType: BarcodeType) {
-        val productName = when (barcodeAnalysis) {
-            is BookBarcodeAnalysis -> barcodeAnalysis.title
+        val productName: String? = when (barcodeAnalysis) {
             is FoodBarcodeAnalysis -> barcodeAnalysis.name
-            else -> ""
+            is BookBarcodeAnalysis -> barcodeAnalysis.title
+            is MusicBarcodeAnalysis -> barcodeAnalysis.album?.let { album ->
+                barcodeAnalysis.artists?.convertToString()?.let { artist ->
+                    "$album - $artist"
+                } ?: album
+            }
+            else -> null
         }
 
         val barcode = barcodeAnalysis.barcode

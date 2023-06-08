@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/standard_margin">
+
+    <RelativeLayout
+        android:id="@+id/recycler_view_item_music_album_track_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/recycler_view_item_music_album_track_number_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+
+        <TextView
+            android:id="@+id/recycler_view_item_music_album_track_title_text_view"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_toEndOf="@id/recycler_view_item_music_album_track_number_text_view"
+            android:layout_toStartOf="@id/recycler_view_item_music_album_track_length_text_view" />
+
+        <TextView
+            android:id="@+id/recycler_view_item_music_album_track_length_text_view"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/recycler_view_item_music_album_track_artist_text_view"
+        style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/light_margin"
+        android:layout_below="@id/recycler_view_item_music_album_track_top_layout" />
+
+</RelativeLayout>

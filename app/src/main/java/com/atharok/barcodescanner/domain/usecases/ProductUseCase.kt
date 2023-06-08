@@ -29,6 +29,7 @@ import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
+import com.atharok.barcodescanner.domain.repositories.MusicProductRepository
 import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 import com.atharok.barcodescanner.domain.resources.Resource
 import kotlinx.coroutines.Dispatchers
@@ -36,6 +37,7 @@ import kotlinx.coroutines.Dispatchers
 class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                      private val beautyProductRepository: BeautyProductRepository,
                      private val petFoodProductRepository: PetFoodProductRepository,
+                     private val musicProductRepository: MusicProductRepository,
                      private val bookProductRepository: BookProductRepository) {
 
     fun getProduct(barcode: Barcode, apiRemote: RemoteAPI): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
@@ -48,6 +50,7 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                 RemoteAPI.OPEN_FOOD_FACTS -> foodProductRepository.getFoodProduct(barcode)
                 RemoteAPI.OPEN_BEAUTY_FACTS -> beautyProductRepository.getBeautyProduct(barcode)
                 RemoteAPI.OPEN_PET_FOOD_FACTS -> petFoodProductRepository.getPetFoodProduct(barcode)
+                RemoteAPI.MUSICBRAINZ -> musicProductRepository.getMusicProduct(barcode)
                 RemoteAPI.OPEN_LIBRARY -> bookProductRepository.getBookProduct(barcode)
                 RemoteAPI.NONE -> null
             }
@@ -59,6 +62,7 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
 
         } catch (e: Exception) {
             emit(Resource.failure(e, barcodeAnalysis))
+            e.printStackTrace()
         }
     }
 
