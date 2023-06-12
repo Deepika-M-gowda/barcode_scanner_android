@@ -187,11 +187,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
                             BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
                             BarcodeType.MUSIC -> this.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
                             BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
-                            else -> if(this.settingsManager.useSearchOnApi) {
-                                this.restartApiResearch(barcode)
-                            } else {
-                                createRemoteApiAlertDialog(barcode, this)
-                            }
+                            else -> createRemoteApiAlertDialog(barcode, this)
                         }
                     }
                 }

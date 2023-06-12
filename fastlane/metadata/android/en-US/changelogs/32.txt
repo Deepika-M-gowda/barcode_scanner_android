@@ -1,0 +1,8 @@
+1.15.0
+
+- Polish translation updated (thanks to phyrz91).
+- Traditional Chinese translation updated (thanks to plum7x).
+- Added error correction level for QR Codes.
+- Added option to add generated barcodes to history (must be enabled in settings).
+- Modification of remote APIs management.
+- Added MusicBrainz API.

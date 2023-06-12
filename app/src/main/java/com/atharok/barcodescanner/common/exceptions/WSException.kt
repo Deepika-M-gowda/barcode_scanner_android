@@ -36,7 +36,7 @@ class WSException(val code: Int, val type: Type, message: String?): IOException(
     }
 
     override fun toString(): String {
-        return "Error type: $type\n${super.toString()}"
+        return "Error type: $type (Error $code)\n${super.toString()}"
     }
 
     companion object {
