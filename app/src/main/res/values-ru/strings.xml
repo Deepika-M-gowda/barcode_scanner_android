@@ -22,7 +22,7 @@
     <string name="image_view_description_eco_score">ECO SCORE</string>
     <string name="image_view_description_background">Фон</string>
     <string name="image_view_description_image">Изображение</string>
-    <string name="slider_description_zoom">Zoom</string>
+    <string name="slider_description_zoom">Масштаб</string>
 
     <!-- Menu Item -->
     <string name="title_scan">Сканер</string>
@@ -70,8 +70,8 @@
     <string name="bar_code_type_food">Пищевой продукт</string>
     <string name="bar_code_type_pet_food">Корм для животных</string>
     <string name="bar_code_type_beauty">Косметическое средство</string>
-    <string name="bar_code_type_music">Music</string>
-    <string name="bar_code_type_unknown_music_album_title">Album title unknown</string>
+    <string name="bar_code_type_music">Музыка</string>
+    <string name="bar_code_type_unknown_music_album_title">Название альбома неизвестно</string>
     <string name="bar_code_type_book">Книга</string>
     <string name="bar_code_type_unknown_book_title">Название книги неизвестно</string>
     <string name="bar_code_type_industrial">Производственный код</string>
@@ -79,12 +79,12 @@
     <string name="bar_code_type_name_unknown">Неизвестно</string>
 
     <!-- Error Correction Level -->
-    <string name="qr_code_error_correction_level_label">Error correction level</string>
-    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
-    <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
-    <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
-    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
-    <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
+    <string name="qr_code_error_correction_level_label">Уровень коррекции ошибок</string>
+    <string name="qr_code_error_correction_level_settings_label">Уровень коррекции ошибок (QR-код)</string>
+    <string name="qr_code_error_correction_level_name_low">Низкий (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">Средний (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">Квартиль (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">Высокий (~30%)</string>
 
     <!-- History -->
     <string name="label_history_empty">История сканирования пуста…</string>
@@ -129,7 +129,7 @@
 
     <!-- Barcode Searching Error -->
     <string name="warning_label">Предупреждение</string>
-    <string name="scan_error_information_label">Произошла ошибка при поиске информации на удаленном API… Пожалуйста, проверьте ваше интернет-соединение и разрешения приложения! Если ошибка не исчезает, это проблема сервера.</string>
+    <string name="scan_error_information_label">Произошла ошибка при поиске информации на удаленном API… Пожалуйста, проверьте ваше интернет-соединение и разрешения приложения! Если ошибка не исчезает - это проблема сервера.</string>
     <string name="scan_error_internet_information_label">Информация о продукте не получена, поскольку вы не подключены к интернету!</string>
     <string name="scan_error_message_label">Сообщение об ошибке: </string>
 
@@ -142,7 +142,7 @@
     <string name="quality_label">Качество товара</string>
 
     <string name="nutriscore_entitled_label">Nutri-Score</string>
-    <string name="nutriscore_description">Nutri-Score — это логотип, информирующий о питательной ценности продуктов питания с оценками от A до E. При подсчете учитываются питательные вещества, ингредиенты <b>полезные организму</b> (клетчатка, белки, фрукты, овощи, бобовые, масличные) и <b>потребление которых следует ограничивать</b> (энергетики, насыщенные жирные кислоты, сахара, соль).</string>
+    <string name="nutriscore_description">Nutri-Score — это логотип, информирующий о питательной ценности пищевых продуктов с оценками от A до E. При подсчете учитываются питательные вещества, ингредиенты <b>полезные организму</b> (клетчатка, белки, фрукты, овощи, бобовые, масличные) и <b>потребление которых следует ограничивать</b> (энергетики, насыщенные жирные кислоты, сахара, соль).</string>
     <string name="nutriscore_description_a">Очень хорошее качество питания</string>
     <string name="nutriscore_description_b">Хорошее качество питания</string>
     <string name="nutriscore_description_c">Среднее качество питания</string>
@@ -151,7 +151,7 @@
     <string name="nutriscore_description_unknown">Nutri-Score отсутствует</string>
 
     <string name="nova_group_entitled_label">NOVA Group</string>
-    <string name="nova_group_description">NOVA Group - это классификация по 4 группам для обозначения уровня переработки продуктов питания:\n1 - Необработанные продукты или продукты с минимальной обработкой\n2 - Обработанные ингредиенты\n3 - Обработанные продукты\n4 - Ультраобработанные продукты и напитки</string>
+    <string name="nova_group_description">NOVA Group - это классификация по 4 группам для обозначения уровня переработки пищевых продуктов:\n1 - Необработанные продукты или продукты с минимальной обработкой\n2 - Обработанные ингредиенты\n3 - Обработанные продукты\n4 - Ультраобработанные продукты и напитки</string>
     <string name="nova_group_description_1">Необработанные продукты или продукты с минимальной обработкой</string>
     <string name="nova_group_description_2">Обработанные ингредиенты</string>
     <string name="nova_group_description_3">Обработанные продукты</string>
@@ -253,8 +253,8 @@
     <string name="book_product_pages_number">%1$s страниц</string>
 
     <!-- Music -->
-    <string name="music_product_tracks_label">Tracks</string>
-    <string name="music_product_tracks_number">%1$s tracks</string>
+    <string name="music_product_tracks_label">Треки</string>
+    <string name="music_product_tracks_number">%1$s треков</string>
 
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Содержимое штрих-кода</string>
@@ -518,10 +518,10 @@
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
 
     <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Информация о продуктах взята из свободной базы данных Open Food Facts.</string>
-    <string name="open_pet_food_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Pet Food Facts.</string>
-    <string name="open_beauty_facts_source_description_label">Информация о продукте взята из свободной базы данных Open Beauty Facts.</string>
-    <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
+    <string name="open_food_facts_source_description_label">Информация о пищевом продукте взята из свободной базы данных Open Food Facts.</string>
+    <string name="open_pet_food_facts_source_description_label">Информация о корме для животных взята из свободной базы данных Open Pet Food Facts.</string>
+    <string name="open_beauty_facts_source_description_label">Информация о косметическом средстве взята из свободной базы данных Open Beauty Facts.</string>
+    <string name="music_brainz_source_description_label">Информация о музыке взята из свободной базы данных MusicBrainz.</string>
     <string name="open_library_source_description_label">Информация о книге взята из свободной базы данных Open Library.</string>
 
     <!-- Preferences -->
@@ -545,39 +545,39 @@
     <string name="preferences_languages_change">Изменить язык</string>
 
     <!-- Remote API -->
-    <string name="preferences_remote_api_title">Products and API</string>
+    <string name="preferences_remote_api_title">Продукты и API</string>
     <string name="preferences_switch_scan_search_on_api_label">Автоматические запросы к удаленным API</string>
-    <string name="preferences_remote_api_to_use_label">Default API</string>
-    <string name="preferences_remote_api_choose_label">Choose an API</string>
-    <string name="preferences_remote_api_food_label">Open Food Facts (Food products)</string>
-    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Cosmetic products)</string>
-    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Pet food products)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyls, …)</string>
-    <string name="preferences_remote_api_book_label">Open Library (Books)</string>
+    <string name="preferences_remote_api_to_use_label">API по умолчанию</string>
+    <string name="preferences_remote_api_choose_label">Выбор API</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts (пищевые продукты)</string>
+    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (косметические средства)</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (корма для животных)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CD, пластинки, …)</string>
+    <string name="preferences_remote_api_book_label">Open Library (книги)</string>
 
     <!-- About Remote API -->
-    <string name="preferences_information_about_remote_api_title">Information about APIs</string>
-    <string name="preferences_information_about_remote_api_foreword">Foreword</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_title">What is an API?</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_description">An API is a software library used to access a service. In the case of this application, an API is used to access a web service. This web service retrieves information from a database.\nFor example, Open Food Facts is a database of food products and provides an API to access its database. I use this API to display information on food products.</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Barcode types concerned</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">The API search function is only activated for EAN 13, EAN 8, UPC A and UPC E barcodes.</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_title">Product types currently supported</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_food">• Food products (with Open Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Cosmetic products (with Open Beauty Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Pet food products (with Open Pet Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (with MusicBrainz API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_book">• Books (with Open Library API)</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_title">Some additional information</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Some products may not be included in certain databases.</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• There may be some errors in the information provided by the APIs.</string>
-    <string name="preferences_information_about_remote_api_how_it_works">How it works</string>
-    <string name="preferences_information_about_remote_api_automatic_search_title">Automatic search</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings. If no information is found on the API, you can always perform a manual search on another API after the scan.</string>
-    <string name="preferences_information_about_remote_api_manual_search_title">Manual search</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always manually search for information on the scanned product. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
-    <string name="preferences_information_about_remote_api_about_books_title">Books</string>
-    <string name="preferences_information_about_remote_api_about_books_description">If the product you\'re scanning is a book, you don\'t need to specify the API on which to search for information. A book\'s barcode is identifiable because it always begins with the digits \"978\". The search will automatically be performed on Open Library.</string>
+    <string name="preferences_information_about_remote_api_title">Информация о API</string>
+    <string name="preferences_information_about_remote_api_foreword">Предисловие</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">Что такое API?</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_description">API - это программная библиотека, используемая для доступа к сервису. В этом приложении API используется для доступа к веб-сервису.\nНапример, Open Food Facts - это база данных о продуктах питания, которая предоставляет API для доступа к ней. Я использую этот API для отображения информации о пищевых продуктах.</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Соответствующие типы штрих-кодов</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Возможность поиска API активирована только для штрихкодов EAN 13, EAN 8, UPC A и UPC E.</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_title">Поддерживаемые типы продуктов</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_food">• Пищевые продукты (API Open Food Facts)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Косметические средства (API Open Beauty Facts)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Корма для животных (API Open Pet Food Facts)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CD, пластинки, … (API MusicBrainz)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_book">• Книги (API Open Library)</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_title">Дополнительная информация</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Некоторые продукты могут быть не включены в определенные базы данных.</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• Информация, представляемая по API может содержать ошибки.</string>
+    <string name="preferences_information_about_remote_api_how_it_works">Как это работает</string>
+    <string name="preferences_information_about_remote_api_automatic_search_title">Автоматический поиск</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">Если опция \"%1$s\" включена, при сканировании штрих-кода продукта автоматически выполняется поиск по API, выбранному в настройках. Если информация в API не найдена, вы всегда можете выполнить ручной поиск в другом API после сканирования.</string>
+    <string name="preferences_information_about_remote_api_manual_search_title">Ручной поиск</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">Если опция \"%1$s\" отключена, при сканировании штрих-кода продукта информация с удаленных серверов не извлекается. Но вы всегда можете найти информацию о сосканированном продукте вручную. Для этого после сканирования продукта нажмите на значок в строке меню. Затем вы сможете выбрать API для поиска.</string>
+    <string name="preferences_information_about_remote_api_about_books_title">Книги</string>
+    <string name="preferences_information_about_remote_api_about_books_description">Если сканируемый вами продукт - книга, вам не нужно указывать API, по которому искать информацию. Штрих-код книги можно идентифицировать, так как он всегда начинается с цифр \"978\". Поиск автоматически будет выполнен в Open Library.</string>
 
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Сканирование</string>
@@ -585,13 +585,13 @@
     <string name="preferences_switch_scan_vibrate_label">Вибросигнал при успешном сканировании</string>
     <string name="preferences_switch_scan_bip_label">Звук при успешном сканировании</string>
     <string name="preferences_switch_scan_screen_rotation_label">Отключить автоматический поворот во время сканирования</string>
-    <string name="preferences_switch_scan_barcode_copied_label">Копировать сосканированный штрих-код в буфер обмена</string>
+    <string name="preferences_switch_scan_barcode_copied_label">Скопировать сосканированный штрих-код в буфер обмена</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Добавлять сосканированные штрих-коды в историю</string>
-    <string name="preferences_seek_bar_camera_default_zoom_value_label">Значение зума камеры по умолчанию</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">Значение масштаба камеры по умолчанию</string>
 
     <!-- Barcode Generation Settings -->
-    <string name="preferences_barcode_generation_title">Barcode generation</string>
-    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
+    <string name="preferences_barcode_generation_title">Создание штрих-кода</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Добавлять создаваемые штрих-коды в историю</string>
 
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Поиск</string>
@@ -621,10 +621,10 @@
     <string name="permission_query_all_packages_description_label">Используется для генерации QR-кода из установленного приложения.</string>
 
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о продуктах питания, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
+    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о пищевых продуктах, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных о кормах для домашних животных.</string>
-    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических продуктах.</string>
-    <string name="bdd_music_brainz_description_label">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических средствах.</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz - это свободная музыкальная энциклопедия, которая собирает музыкальные метаданные и делает их доступными для всех.</string>
     <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг независимо от их языка.</string>
 
     <!-- About Library Third -->
