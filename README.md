@@ -8,7 +8,9 @@
 
 # Overview
 
-Barcode scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics and books thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts and OpenLibrary.
+Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics, books and music (CDs, Vinyls, ...) thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts, OpenLibrary and MusicBrainz.
+It supports various barcode formats: QR Code, Data Matrix, PDF 417, AZTEC, EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF.
+This app respects your privacy. It does not contain any trackers and does not collect any data.
 
 # Download
 
@@ -55,6 +57,7 @@ Collect information about a product during a scan:
 - Cosmetic Products with [Open Beauty Facts](https://world.openbeautyfacts.org/)
 - Pet Food Products with [Open Pet Food Facts](https://world.openpetfoodfacts.org/)
 - Books with [Open Library](https://openlibrary.org/)
+- Music (CDs, Vinyls...) with [MusicBrainz](https://musicbrainz.org/)
 
 # App features
 
@@ -65,7 +68,7 @@ Collect information about a product during a scan:
 - Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in English, Spanish, French, German, Polish, Russian and Chinese.
+- Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
 
 # Licences
 

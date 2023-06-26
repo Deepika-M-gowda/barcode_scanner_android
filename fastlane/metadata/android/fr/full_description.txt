@@ -1,4 +1,4 @@
-Barcode Scanner est une application gratuite, libre et open source permettant de lire et de générer des code-barres. Elle peut récupérer des informations sur des produits alimentaires, cosmétiques et livres.
+Barcode Scanner est une application gratuite, libre et open source permettant de lire et de générer des code-barres. Elle peut récupérer des informations sur des produits alimentaires, cosmétiques, livres et musicaux (CDs, Vinyles...).
 
 Différents formats de code-barres sont gérés:
 • Les code-barres à 2 dimensions gérées: QR Code, Data Matrix, PDF 417, AZTEC
@@ -9,6 +9,7 @@ Récupérez des informations sur un produit lors d'un scan:
 • Produits cosmétiques via Open Beauty Facts
 • Produits alimentaires pour animaux via Open Pet Food Facts
 • Livres via Open Library
+• Musiques via MusicBrainz
 
 Fonctionnalités de l'appli:
 • Pointez simplement la caméra de votre smartphone vers un code-barres et obtenez instantanément des informations liées à celui-ci. Vous pouvez aussi scanner des code-barres via une image ou une photo présente dans votre smartphone.
@@ -18,6 +19,6 @@ Fonctionnalités de l'appli:
 • Conservez une trace de tous vos code-barres scannés grace à l'historique.
 • Générez vos propres code-barres.
 • Personnalisez l'interface avec différents choix de couleurs, que ce soit en thème clair ou sombre. L'application intègre en plus les dernières fonctionnalités d'Android 12, permettant d'adapter les couleurs de l'interface en fonction de votre fond d'écran.
-• Les textes sont entièrement traduits en français, anglais, espagnol, allemand, polonais, russe, chinois simplifié et chinois traditionnel.
+• Les textes sont entièrement traduits en français, anglais, espagnol, allemand, polonais, russe, turque, chinois simplifié et chinois traditionnel.
 
 L'application respecte votre vie privée. Elle ne contient aucun tracker et ne collecte aucune donnée.
