@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Permission Denied -->
     <string name="camera_permission_denied">Vous avez refusé l\'accès à la caméra.\nVous devez l\'autoriser pour scanner un code-barres.</string>
-
     <!-- AlertDialog -->
     <string name="close_dialog_label">Fermer</string>
     <string name="yes_label">Oui</string>
     <string name="no_label">Non</string>
     <string name="go_to_dialog_label">Aller sur le site</string>
-
     <!-- ImageView Description -->
     <string name="image_view_description_flag">Drapeau</string>
     <string name="image_view_description_logo">Logo</string>
@@ -23,20 +20,17 @@
     <string name="image_view_description_background">Fond</string>
     <string name="image_view_description_image">Image</string>
     <string name="slider_description_zoom">Zoom</string>
-
     <!-- Menu Item -->
     <string name="title_scan">Scan</string>
     <string name="title_history">Historique</string>
     <string name="title_generate">Générer</string>
     <string name="title_settings">Paramètres</string>
-
     <string name="title_qr_code_creator">Générer un QR Code</string>
     <string name="title_bar_code_creator">Générer un Code-Barres</string>
     <string name="information_label">Informations</string>
     <string name="barcode_label">Code-barres</string>
     <string name="download_from_api_label">Télécharger à partir des APIs</string>
     <string name="menu_more">Plus</string>
-
     <!-- Barcode Type -->
     <string name="barcode_qr_code_label">QR Code</string>
     <string name="barcode_data_matrix_label">Data Matrix</string>
@@ -51,7 +45,6 @@
     <string name="barcode_code_39_label">Code 39</string>
     <string name="barcode_codabar_label">Codabar</string>
     <string name="barcode_itf_label">ITF</string>
-
     <!-- QR Type -->
     <string name="qr_code_type_name_text">Texte</string>
     <string name="qr_code_type_name_web_site">Site Web</string>
@@ -64,7 +57,6 @@
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
     <string name="qr_code_type_name_apps">Application</string>
-
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Produit</string>
     <string name="bar_code_type_food">Produit Alimentaire</string>
@@ -77,7 +69,6 @@
     <string name="bar_code_type_industrial">Code Industriel</string>
     <string name="bar_code_type_unknown_matrix">Code Matriciel</string>
     <string name="bar_code_type_name_unknown">Inconnu</string>
-
     <!-- Error Correction Level -->
     <string name="qr_code_error_correction_level_label">Niveau de correction d\'erreur</string>
     <string name="qr_code_error_correction_level_settings_label">Niveau de correction d\'erreur (QR Code)</string>
@@ -85,10 +76,9 @@
     <string name="qr_code_error_correction_level_name_medium">Moyen (~15%)</string>
     <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
     <string name="qr_code_error_correction_level_name_high">Élevé (~30%)</string>
-
     <!-- History -->
     <string name="label_history_empty">Aucun éléments scannés…</string>
-    <string name="snack_bar_message_item_deleted">Le produit \"%1$s\" a été supprimé de l\'historique</string>
+    <string name="snack_bar_message_item_deleted">Le produit \"%1$s\" a été supprimé de l\'historique.</string>
     <string name="popup_message_confirmation_delete_history">Supprimer tout l\'historique ?</string>
     <string name="popup_message_confirmation_delete_selected_items_history">Supprimer les éléments sélectionnés?</string>
     <string name="menu_item_history_delete">Supprimer l\'historique</string>
@@ -99,7 +89,6 @@
     <string name="delete_label">Supprimer</string>
     <string name="cancel_label">Annuler</string>
     <string name="record_label">Enregistrer</string>
-
     <!-- CaptureActivity -->
     <string name="scan_cancel_label">Scan annulé !</string>
     <string name="scan_error_exception_label">Une erreur est survenue: %1$s</string>
@@ -107,7 +96,6 @@
     <string name="scan_from_image_label">Image</string>
     <string name="intent_filter_scan_by_image">Scanner une image</string>
     <string name="scan_information_label">Vise le code-barres à scanner</string>
-
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">Recherche en cours…</string>
     <string name="scan_error_label">Erreur lors du scan!</string>
@@ -116,31 +104,25 @@
     <string name="barcode_found_on_label">Trouvé sur %1$s !</string>
     <string name="barcode_not_found_on_api_label">Aucune information trouvée sur %1$s…</string>
     <string name="no_internet_permission">Vous n\'avez pas la permission pour accéder à Internet.</string>
-
     <string name="about_barcode_information_label">Information sur le code-barres</string>
     <string name="about_barcode_label">A propos du code-barres</string>
     <string name="about_barcode_format_label">Format: %1$s</string>
     <string name="about_barcode_content_label">Code-Barres: %1$s</string>
     <string name="about_barcode_origin_label">Origine: </string>
-
     <!-- Product -->
     <string name="product_search_label">Recherche de produit</string>
     <string name="no_product_found_label">Aucun produit n\'a été trouvée !</string>
-
     <!-- Barcode Searching Error -->
     <string name="warning_label">Avertissement</string>
     <string name="scan_error_information_label">Une erreur est survenue lors de la recherche d\'informations sur l\'API distante… Vérifiez que vous êtes bien connecté et que l\'application est bien autorisée à accéder à Internet ! Si le problème persiste, il s\'agit probablement d\'un problème serveur.</string>
     <string name="scan_error_internet_information_label">Aucune information sur le produit n\'a pu être récupérée car vous ne semblez pas être connecté à Internet !</string>
     <string name="scan_error_message_label">Message d\'erreur : </string>
-
     <!-- Food Beauty and Pet Food Product -->
     <string name="overview_tab_label">Résumé</string>
     <string name="ingredients_label">Ingrédients</string>
     <string name="nutrition_facts_tab_label">Nutrition</string>
-
     <!-- Overview -->
     <string name="quality_label">Qualité du produit</string>
-
     <string name="nutriscore_entitled_label">Nutri-Score</string>
     <string name="nutriscore_description">Le Nutri-Score est un logo qui informe sur la qualité nutritionnelle des aliments avec des notes allant de A à E. Le score prend en compte dans son calcul, les nutriments et aliments <b>à favoriser</b> (fibres, protéines, fruits, légumes, légumineuses, oléagineux) et <b>à limiter</b> (énergie, acides gras saturés, sucres, sel).</string>
     <string name="nutriscore_description_a">Très bonne qualité nutritionnelle</string>
@@ -149,7 +131,6 @@
     <string name="nutriscore_description_d">Mauvaise qualité nutritionnelle</string>
     <string name="nutriscore_description_e">Mauvaise qualité nutritionnelle</string>
     <string name="nutriscore_description_unknown">Pas de Nutri-Score</string>
-
     <string name="nova_group_entitled_label">Groupe NOVA</string>
     <string name="nova_group_description">Le Groupe NOVA est une classification en 4 groupes pour mettre en évidence le degré de transformation des aliments:\n1 - Aliments non transformés ou transformés minimalement\n2 - Ingrédients culinaires transformés\n3 - Aliments transformés\n4 - Produits alimentaires et boissons ultra-transformés</string>
     <string name="nova_group_description_1">Aliments non transformés ou minimalement transformés</string>
@@ -157,7 +138,6 @@
     <string name="nova_group_description_3">Aliments transformés</string>
     <string name="nova_group_description_4">Aliments ultra-transformés</string>
     <string name="nova_group_description_unknown">Pas de Groupe NOVA</string>
-
     <string name="eco_score_entitled_label">Eco-Score</string>
     <string name="eco_score_description">L’Eco-Score est conçu sur un modèle similaire au Nutri-Score : c’est une note allant de A (très faible impact) à E (impact très important).</string>
     <string name="eco_score_description_a">Très faible impact environnemental</string>
@@ -166,7 +146,6 @@
     <string name="eco_score_description_d">Impact environnemental élevé</string>
     <string name="eco_score_description_e">Impact environnemental très élevé</string>
     <string name="eco_score_description_unknown">Impact environnemental inconnu</string>
-
     <!-- Details -->
     <string name="details_label">Détails</string>
     <string name="ingredients_analysis_label">Analyse des ingrédients : </string>
@@ -176,30 +155,25 @@
     <string name="packaging_label">Emballages</string>
     <string name="stores_label">Magasins</string>
     <string name="countries_label">Pays de vente</string>
-
     <!-- Ingredients -->
     <string name="ingredients_no_information_found_label">Aucun ingrédient trouvé pour ce produit…</string>
     <string name="allergens_label">Allergènes</string>
     <string name="traces_label">Traces</string>
     <string name="additives_label">Additifs</string>
     <string name="veggie_label">Veggie</string>
-
     <!-- Additif -->
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Sans danger</string>
     <string name="off_risk_moderate_label">Douteux</string>
     <string name="off_risk_high_label">A éviter</string>
     <string name="off_risk_none_label">Risque NC</string>
-
     <string name="off_overexposure_risk_low_label">Risque de sur-exposition faible</string>
     <string name="off_overexposure_risk_moderate_label">Risque de sur-exposition modéré</string>
     <string name="off_overexposure_risk_high_label">Risque de sur-exposition élevé</string>
     <string name="off_overexposure_risk_none_label">Risque de sur-exposition NC</string>
-
     <string name="stabilizer_label">Stabilisant</string>
     <string name="stabilizer_description_label">Les stabilisants sont ajoutés à une denrée alimentaire pour permettre de maintenir son état physico-chimique. Les stabilisants comprennent les substances qui permettent de maintenir la dispersion homogène de deux ou plusieurs substances non miscibles, ainsi que les substances qui stabilisent, conservent ou intensifient la couleur d’une denrée alimentaire.</string>
     <string name="additive_no_information_found_label">Aucune information n\'a été trouvée sur cet additif!</string>
-
     <!-- Veggie -->
     <string name="ingredient_veggie_entitled_label">Ingrédients en fonction du caractère végétalien et végétarien</string>
     <string name="palm_oil_free_label">Sans huile de palme</string>
@@ -214,11 +188,9 @@
     <string name="no_vegetarian_label">Non végétarien</string>
     <string name="maybe_vegetarian_label">Peut-être végétarien</string>
     <string name="vegetarian_status_unknown_label">Caractère végétarien inconnu</string>
-
     <!-- Nutrition -->
     <string name="nutrition_facts_no_information_found_label">Aucune valeur nutritionnelle trouvée pour ce produit…</string>
     <string name="nutrition_facts_entitled_label">Informations Nutritionnelles</string>
-
     <!-- Table -->
     <string name="nutrition_facts_table_label">Composition nutritionnelle</string>
     <string name="off_per_100_label">Pour 100%1$s</string>
@@ -235,14 +207,12 @@
     <string name="off_proteins_label">Protéines</string>
     <string name="off_salt_label">Sel</string>
     <string name="off_sodium_label">Sodium</string>
-
     <!-- For 100g -->
     <string name="nutrient_level_entitled_label">Repères Nutritionnels pour 100g</string>
     <string name="off_quantity_low_label">Quantité faible</string>
     <string name="off_quantity_moderate_label">Quantité modérée</string>
     <string name="off_quantity_high_label">Quantité élevée</string>
     <string name="off_quantity_none_label">NC</string>
-
     <!-- Book -->
     <string name="book_product_summary_label">Résumé</string>
     <string name="book_product_more_label">Plus</string>
@@ -251,15 +221,12 @@
     <string name="book_product_publish_date_label">Date de publication</string>
     <string name="book_product_original_title_label">Titre original</string>
     <string name="book_product_pages_number">%1$s pages</string>
-
     <!-- Music -->
     <string name="music_product_tracks_label">Pistes</string>
     <string name="music_product_tracks_number">%1$s pistes</string>
-
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Contenu du code-barres</string>
     <string name="bar_code_analysis_label">Analyse du code-barres</string>
-
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Nom:</string>
     <string name="matrix_contact_organisation_label">Organisation:</string>
@@ -268,24 +235,20 @@
     <string name="matrix_contact_mail_label">Email:</string>
     <string name="matrix_contact_address_label">Adresse:</string>
     <string name="matrix_contact_notes_label">Notes:</string>
-
     <!-- Matrix Barcode Agenda Analysis -->
     <string name="matrix_agenda_name_event_label">Nom de l\'événement:</string>
     <string name="matrix_agenda_start_date_event_label">Début:</string>
     <string name="matrix_agenda_end_date_event_label">Fin:</string>
     <string name="matrix_agenda_place_event_label">Lieu:</string>
     <string name="matrix_agenda_description_event_label">Description:</string>
-
     <!-- Matrix Barcode Phone Analysis -->
     <string name="matrix_phone_tel_number_label">Téléphone:</string>
-
     <!-- Matrix Barcode Email Analysis -->
     <string name="matrix_email_recipient_label">Destinataire:</string>
     <string name="matrix_email_cc_label">Cc:</string>
     <string name="matrix_email_bcc_label">Bcc:</string>
     <string name="matrix_subject_label">Sujet:</string>
     <string name="matrix_body_label">Message:</string>
-
     <!-- Matrix Barcode Wi-Fi Analysis -->
     <string name="matrix_wifi_ssid_label">SSID:</string>
     <string name="matrix_wifi_password_label">Mot de passe:</string>
@@ -295,11 +258,9 @@
     <string name="matrix_wifi_identity_label">Identity:</string>
     <string name="matrix_wifi_eap_method_label">Eap Method:</string>
     <string name="matrix_wifi_phase_2_method_label">Phase 2 Method:</string>
-
     <!-- Matrix Barcode URL Analysis -->
     <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">L\'URL est peut-être malveillant…</string>
-
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">Analyse de l\'URI</string>
     <string name="matrix_uri_upi_id_label">UPI ID:</string>
@@ -307,7 +268,6 @@
     <string name="matrix_uri_upi_amount_label">Montant:</string>
     <string name="matrix_uri_upi_currency_label">Devise:</string>
     <string name="matrix_uri_upi_description_label">Description:</string>
-
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">Latitude:</string>
     <string name="matrix_localisation_longitude_label">Longitude:</string>
@@ -316,7 +276,6 @@
     <string name="matrix_localisation_button_find_location">Générer à partir de votre position</string>
     <string name="matrix_localisation_search_current_position_label">Recherche de la position en cours…</string>
     <string name="matrix_localisation_location_disabled_label">La localisation sur votre appareil ne semble pas être activée.</string>
-
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Ce type de code-barres est souvent utilisé dans le milieu industriel.</string>
     <string name="barcode_code_39_description_label">Le Code 39 est un code-barres utilisé dans le marquage des textiles et des médicaments en pharmacie. Il est aussi utilisé dans le secteur militaire et automobile.</string>
@@ -328,13 +287,11 @@
     <string name="barcode_upc_e_description_label">Le code UPC-E (Universal Product Code) est un code-barres condensé du code UPC-A principalement utilisé aux États-Unis et au Canada pour identifier les produits vendus dans les magasins et autres commerces. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code UPC-A.</string>
     <string name="barcode_ean_13_description_label">Le code EAN-13 (European Article Numbering 13) est un code-barres très largement utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est composé de 13 chiffres.</string>
     <string name="barcode_ean_8_description_label">Le code EAN-8 (European Article Numbering 8) est un code-barres condensé du code EAN-13 utilisé pour identifier les produits vendus dans les magasins et autres commerces en Europe et un peu partout dans le monde. Il est principalement utilisé sur les emballages de produits ayant une surface trop petite pour accueillir un code EAN-13.</string>
-
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Vous devez accepter la permission pour utiliser cette fonctionnalité.</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'image a été enregistrée</string>
     <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante?</string>
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
-
     <!-- Actions -->
     <string name="actions_label">Actions</string>
     <string name="intent_chooser_share_title">"Partager avec…"</string>
@@ -354,7 +311,6 @@
     <string name="action_add_to_contacts">Ajouter aux contacts</string>
     <string name="action_show_location">Montrer l\'emplacement</string>
     <string name="action_open_link">Ouvrir le lien</string>
-
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Connexion Wi-Fi</string>
     <string name="action_wifi_connection_from_app">Se connecter au Wi-Fi</string>
@@ -369,9 +325,7 @@
     <string name="action_wifi_add_network_failed">Echec de l\'ajout du réseau Wifi.</string>
     <string name="action_wifi_add_network_already_exists">Vous avez déjà ajouté ce réseau Wifi.</string>
     <string name="action_wifi_add_network_unknown_error">Echec de l\'ajout du réseau Wifi.</string>
-
     <!-- QR Code Generator -->
-
     <!-- Barcode Generator Errors -->
     <string name="error_barcode_none_character_message">Vous devez entrer une valeur correcte dans le champ de saisie.</string>
     <string name="error_barcode_not_a_number_message">Le code-barres doit être composé uniquement de chiffres.</string>
@@ -388,7 +342,6 @@
     <string name="error_barcode_qr_phone_number_missing_message">Vous devez entrer un numéro de téléphone</string>
     <string name="error_barcode_qr_email_missing_message">Vous devez renseigner au moins un des champs de saisies</string>
     <string name="error_barcode_qr_localisation_missing_message">Vous devez renseigner la latitude et la longitude</string>
-
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Générer</string>
     <string name="save_label">Enregistrer</string>
@@ -396,13 +349,11 @@
     <string name="share_image_label">Partager l\'image</string>
     <string name="share_text_label">Partager le texte</string>
     <string name="popup_message_confirmation_save_image">Enregistrer l\'image ?</string>
-
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">Saisie un texte…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Saisie un numéro de téléphone…</string>
     <string name="qr_code_text_generator_hint_url_input_edit_text">Saisie une adresse web…</string>
     <string name="qr_code_text_input_edit_text_hint_message">Message</string>
-
     <!-- Contact Creator -->
     <string name="qr_code_type_name_generate_from_contact">Générer à partir d\'un contact</string>
     <string name="qr_code_text_radio_button_label_m">Mr</string>
@@ -426,13 +377,11 @@
     <string name="qr_code_text_input_edit_text_hint_region">Region</string>
     <string name="qr_code_text_input_edit_text_hint_notes">Notes</string>
     <string name="qr_code_spinner_prompt_none">Aucun</string>
-
     <string name="spinner_type_mobile">Mobile</string>
     <string name="spinner_type_fax">Fax</string>
     <string name="spinner_type_home">Domicile</string>
     <string name="spinner_type_work">Bureau</string>
     <string name="spinner_type_other">Autre</string>
-
     <!-- EPC Creator -->
     <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Code de service</string>
     <string name="qr_code_text_input_edit_text_hint_epc_version">Version</string>
@@ -446,21 +395,16 @@
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Paiement (Reference)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Paiement (Text)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_information">Information</string>
-
     <string name="qr_code_text_input_edit_text_epc_name_error">Le champs \"Nom\" est obligatoire</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN incorrect</string>
-
     <string name="list_bank_empty_message">Aucun élément…\nVous n\'avez pas encore généré de QR Code EPC.</string>
-
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Adresse Courriel</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Sujet</string>
-
     <!-- Geo Localisation Creator -->
     <string name="qr_code_text_input_edit_text_hint_localisation_latitude">Latitude</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_longitude">Longitude</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_request">Requête</string>
-
     <!-- Wifi Creator -->
     <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / Nom du réseau</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_password">Mot de passe</string>
@@ -468,7 +412,6 @@
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
     <string name="spinner_wifi_encryption_none">Aucun mot de passe</string>
-
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Nom de l\'événement</string>
     <string name="qr_code_text_input_edit_text_hint_agenda_place">Lieu</string>
@@ -476,9 +419,7 @@
     <string name="check_box_event_all_of_day">Evénement toute une journée</string>
     <string name="begin_label">Début</string>
     <string name="end_label">Fin</string>
-
     <!-- URL -->
-
     <!-- API Base URL -->
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
@@ -486,7 +427,6 @@
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
-
     <!-- URL Engines -->
     <string name="search_engine_google_url">https://www.google.fr/search?q=%1$s</string>
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
@@ -496,12 +436,10 @@
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
-
     <!-- E-Commerce Engines -->
     <string name="search_engine_amazon_url">https://www.amazon.fr/s?k=%1$s</string>
     <string name="search_engine_ebay_url">https://www.ebay.fr/sch/i.html?_nkw=%1$s</string>
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
-
     <!-- API Product Engines -->
     <string name="search_engine_open_food_facts_product_url">https://fr.openfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://fr.openpetfoodfacts.org/product/%1$s</string>
@@ -509,23 +447,19 @@
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://fr.openfoodfacts.org/additive/%1$s</string>
-
     <!-- API Sources Links -->
     <string name="search_engine_open_food_facts_url">https://fr.openfoodfacts.org/</string>
     <string name="search_engine_open_pet_food_facts_url">https://fr.openpetfoodfacts.org/</string>
     <string name="search_engine_open_beauty_facts_url">https://fr.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
-
     <!-- API Sources Description -->
     <string name="open_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Food Facts.</string>
     <string name="open_pet_food_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Pet Food Facts.</string>
     <string name="open_beauty_facts_source_description_label">Les informations sur le produit sont issues de la base de données libre Open Beauty Facts.</string>
     <string name="music_brainz_source_description_label">Les informations sur les produits musicaux proviennent de la base de données gratuite MusicBrainz.</string>
     <string name="open_library_source_description_label">Les informations sur le livre sont issues de la base de données libre Open Library.</string>
-
     <!-- Preferences -->
-
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Apparence</string>
     <string name="preferences_theme_label">Thème</string>
@@ -539,11 +473,9 @@
     <string name="preferences_color_green">Vert</string>
     <string name="preferences_color_red">Rouge</string>
     <string name="preferences_color_purple">Violet</string>
-
     <!-- Languages Settings -->
     <string name="preferences_languages_title">Langues</string>
     <string name="preferences_languages_change">Changer la langue</string>
-
     <!-- Remote API -->
     <string name="preferences_remote_api_title">Produits et API</string>
     <string name="preferences_switch_scan_search_on_api_label">Interroger automatiquement l\'API distante</string>
@@ -554,7 +486,6 @@
     <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Produits alimentaires pour animaux)</string>
     <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyles, …)</string>
     <string name="preferences_remote_api_book_label">Open Library (Livres)</string>
-
     <!-- About Remote API -->
     <string name="preferences_information_about_remote_api_title">Informations sur les APIs</string>
     <string name="preferences_information_about_remote_api_foreword">Avant-propos</string>
@@ -578,7 +509,6 @@
     <string name="preferences_information_about_remote_api_manual_search_description">Si l\'option \"%1$s\" est désactivée, lorsque vous scannez le code-barres d\'un produit, aucune information n\'est récupérée des serveurs distants. Mais vous pouvez toujours rechercher manuellement des informations sur le produit scanné. Pour cela, après avoir scanné le produit, vous devez appuyer sur l\'icône dans la barre de menus prévue à cet effet. Vous pourrez ensuite sélectionner une API sur laquelle effectuer une recherche.</string>
     <string name="preferences_information_about_remote_api_about_books_title">Livres</string>
     <string name="preferences_information_about_remote_api_about_books_description">Si le produit que vous scannez est un livre, vous n\'avez pas besoin de spécifier l\'API sur laquelle rechercher des informations. Le code-barres d\'un livre est identifiable car il commence toujours par les chiffres \"978\". La recherche sera donc automatiquement effectuée sur Open Library.</string>
-
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">Utiliser l\'API CameraX</string>
@@ -588,22 +518,18 @@
     <string name="preferences_switch_scan_barcode_copied_label">Copier le code-barres dans le presse-papier lors du scan</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Ajouter les code-barres scannés dans l\'historique</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Valeur par défaut du zoom de la caméra</string>
-
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Génération de codes-barres</string>
     <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Ajouter les codes-barres générés dans l\'historique</string>
-
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Recherche</string>
     <string name="preferences_search_engine">Moteur de recherche</string>
-
     <!-- About Settings -->
     <string name="preferences_about_title">À propos</string>
     <string name="preferences_about_permissions_label">Permissions</string>
     <string name="preferences_about_library_third_label">Bibliothèques tierces</string>
     <string name="preferences_about_bdd_label">Base de données</string>
     <string name="preferences_source_code_label">Code source</string>
-
     <!-- About Permissions -->
     <string name="permission_camera_label">Caméra</string>
     <string name="permission_camera_description_label">Nécessaire pour scanner un code-barres.</string>
@@ -619,17 +545,14 @@
     <string name="permission_vibrate_description_label">Utile pour vibrer lors du scan.</string>
     <string name="permission_query_all_packages_label">Query all packages</string>
     <string name="permission_query_all_packages_description_label">Utile pour générer un QR Code à partir d\'une application installée.</string>
-
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts est une base de données libre de produits alimentaires qui répertorie les ingrédients, les allergènes, la composition nutritionnelle et toutes les informations présentes sur les étiquettes des aliments.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts est une base de données libre de produits alimentaires pour animaux de compagnie.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts est une base de données libre sur les produits cosmétiques.</string>
     <string name="bdd_music_brainz_description_label">MusicBrainz est une encyclopédie musicale libre qui collecte des métadonnées musicales et les propose au public.</string>
     <string name="bdd_open_library_description_label">Open Library est une base de données libre visant à cataloguer tous les livres publiés, quelle que soit leur langue.</string>
-
     <!-- About Library Third -->
     <string name="dependency_by">par %1$s</string>
-
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
     <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
@@ -644,7 +567,6 @@
     <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
     <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
-
     <!-- Countries -->
     <string name="country_usa">États-Unis</string>
     <string name="country_ca">Canada</string>
@@ -765,5 +687,4 @@
     <string name="country_nz">Nouvelle-Zélande</string>
     <string name="country_my">Malaisie</string>
     <string name="country_mo">Macao</string>
-
 </resources>
