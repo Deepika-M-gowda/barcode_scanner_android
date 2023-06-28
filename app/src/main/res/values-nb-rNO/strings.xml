@@ -67,4 +67,5 @@
     <string name="scan_from_image_label">Bilde</string>
     <string name="scan_error_message_label">Feilmelding:</string>
     <string name="nova_group_description_2">Bearbeidede ingredienser</string>
+    <string name="qr_code_type_name_mail">E-post</string>
 </resources>
