@@ -35,11 +35,16 @@ This app respects your privacy. It does not contain any trackers and does not co
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07_history_dark.png" width="192" />
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08_create_dark.png" width="192" />
 
-# Donate
+# App features
 
-If you like Barcode Scanner you can donate via Liberapay.
-
-[![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Atharok/donate)
+- Simply point your smartphone's camera to a barcode and instantly receive information about it. You can also scan barcodes through a picture in your smartphone.
+- With a simple scan, read business cards, add new contacts, add new events to your agenda, open URL or even connect to Wi-Fi.
+- Scan Food products barcodes to receive information about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
+- Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
+- Keep track of all your scanned barcodes with the history tool.
+- Generate your own barcodes
+- Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
+- Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
 
 # Format
 
@@ -59,16 +64,15 @@ Collect information about a product during a scan:
 - Books with [Open Library](https://openlibrary.org/)
 - Music (CDs, Vinyls...) with [MusicBrainz](https://musicbrainz.org/)
 
-# App features
+# Donate
 
-- Simply point your smartphone's camera to a barcode and instantly receive information about it. You can also scan barcodes through a picture in your smartphone.
-- With a simple scan, read business cards, add new contacts, add new events to your agenda, open URL or even connect to Wi-Fi.
-- Scan Food products barcodes to receive information about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
-- Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
-- Keep track of all your scanned barcodes with the history tool.
-- Generate your own barcodes
-- Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
+If you like Barcode Scanner, you can support me via [Liberapay](https://liberapay.com/Atharok/donate) or [Ko-fi](https://ko-fi.com/atharok)
+
+[![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Atharok/donate)
+
+# Translation
+
+If you want to translate Barcode Scanner, you can use [Weblate](https://hosted.weblate.org/projects/barcodescanner/) or make a merge request.
 
 # Licences
 
