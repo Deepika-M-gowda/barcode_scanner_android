@@ -1,41 +1,39 @@
-<div align="center"><img src="fastlane/metadata/android/en-US/images/icon.png" width="192" style="border-radius: 50%;" /></div>
+<div align="center"><img src="assets/icon_round.png" width="192" /></div>
 
-# <div align="center">Barcode Scanner</div>
+## <div align="center">Barcode Scanner</div>
 
 <div align="center"><h4>A free app which allow to read and generate barcodes for Android.</h4></div>
 
+<div align="center">
+    <a href="https://f-droid.org/packages/com.atharok.barcodescanner/" target"_blank"><img src="assets/get-it-on-f-droid-badge.png" alt="Get it on F-Droid" height="90"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.atharok.barcodescanner" target"_blank"><img src="assets/get-it-on-google-play-badge.png" alt="Get it on Google Play" height="90"></a>
+    <a href="https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2" target"_blank"><img src="assets/get-it-on-amazon-badge.png" alt="Get it on Amazon Appstore" height="90"></a>
+</div>
+
 [![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0)
 
-# Overview
+## Overview
 
-Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics, books and music (CDs, Vinyls, ...) thanks to the databases Open Food Facts, Open Beauty Facts, Open Pet Food Facts, OpenLibrary and MusicBrainz.
-It supports various barcode formats: QR Code, Data Matrix, PDF 417, AZTEC, EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF.
-This app respects your privacy. It does not contain any trackers and does not collect any data.
+Barcode Scanner is a free and open source app which allow to read and generate barcodes. This app respects your privacy. It does not contain any trackers and does not collect any data.
 
-# Download
+## Formats
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-     height="90">](https://f-droid.org/packages/com.atharok.barcodescanner/)
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-     alt="Get it on Google Play"
-     height="90">](https://play.google.com/store/apps/details?id=com.atharok.barcodescanner)
-[<img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png"
-     alt="Get it on Amazon Appstore"
-     height="90">](https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2)
+Different barcode formats are supported:
 
-# Screenshots
+- 2D barcode format: ***QR Code, Data Matrix, PDF 417, AZTEC***
+- 1D barcode format: ***EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF***
 
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01_qr_light.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02_food_product_light.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03_history_light.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04_create_light.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05_qr_dark.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/06_food_product_dark.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07_history_dark.png" width="192" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08_create_dark.png" width="192" />
+## Services
 
-# App features
+Get information about a product during a scan:
+
+- Food Products with [Open Food Facts](https://world.openfoodfacts.org/)
+- Cosmetic Products with [Open Beauty Facts](https://world.openbeautyfacts.org/)
+- Pet Food Products with [Open Pet Food Facts](https://world.openpetfoodfacts.org/)
+- Books with [Open Library](https://openlibrary.org/)
+- Music (CDs, Vinyls...) with [MusicBrainz](https://musicbrainz.org/)
+
+## App features
 
 - Simply point your smartphone's camera to a barcode and instantly receive information about it. You can also scan barcodes through a picture in your smartphone.
 - With a simple scan, read business cards, add new contacts, add new events to your agenda, open URL or even connect to Wi-Fi.
@@ -46,35 +44,28 @@ This app respects your privacy. It does not contain any trackers and does not co
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
 - Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
 
-# Format
+## Screenshots
 
-- 2D barcode format:
-***QR Code, Data Matrix, PDF 417, AZTEC***
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01_qr_light.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02_food_product_light.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03_history_light.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04_create_light.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05_qr_dark.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/06_food_product_dark.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07_history_dark.png" width="192" />
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08_create_dark.png" width="192" />
 
-- 1D barcode format:
-***EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF***
+## Donate
 
-# Services
-
-Collect information about a product during a scan:
-
-- Food Products with [Open Food Facts](https://world.openfoodfacts.org/)
-- Cosmetic Products with [Open Beauty Facts](https://world.openbeautyfacts.org/)
-- Pet Food Products with [Open Pet Food Facts](https://world.openpetfoodfacts.org/)
-- Books with [Open Library](https://openlibrary.org/)
-- Music (CDs, Vinyls...) with [MusicBrainz](https://musicbrainz.org/)
-
-# Donate
-
-If you like Barcode Scanner, you can support me via [Liberapay](https://liberapay.com/Atharok/donate) or [Ko-fi](https://ko-fi.com/atharok)
+If you like Barcode Scanner, you can support me via [Liberapay](https://liberapay.com/Atharok/donate) or [Ko-fi](https://ko-fi.com/atharok).
 
 [![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Atharok/donate)
 
-# Translation
+## Translation
 
 If you want to translate Barcode Scanner, you can use [Weblate](https://hosted.weblate.org/projects/barcodescanner/) or make a merge request.
 
-# Licences
+## Licences
 
 The code is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0).
 
