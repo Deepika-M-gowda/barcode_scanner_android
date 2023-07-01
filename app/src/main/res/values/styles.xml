@@ -203,7 +203,7 @@
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:background">?dialogBackgroundColor</item>
+        <item name="android:colorBackground">?dialogBackgroundColor</item>
 
         <!-- Title Text -->
         <item name="android:textSize">@dimen/title_text_size</item>
@@ -225,7 +225,7 @@
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:background">?dialogBackgroundColor</item>
+        <item name="android:colorBackground">?dialogBackgroundColor</item>
 
         <!-- Title Text -->
         <item name="android:textSize">@dimen/title_text_size</item>
