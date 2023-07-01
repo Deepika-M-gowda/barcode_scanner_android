@@ -29,7 +29,6 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.common.extensions.convertToString
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import org.koin.android.ext.android.get
 import kotlin.reflect.KClass
 
@@ -81,7 +80,6 @@ abstract class BaseFragment: Fragment() {
             false
         } else {
             textView.text = text.trim()
-            textView.setTextIsSelectableCompat(true)
             layout.visibility = View.VISIBLE
             true
         }

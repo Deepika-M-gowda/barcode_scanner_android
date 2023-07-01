@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -46,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -69,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -92,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_agenda_place_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -115,6 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_agenda_description_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>

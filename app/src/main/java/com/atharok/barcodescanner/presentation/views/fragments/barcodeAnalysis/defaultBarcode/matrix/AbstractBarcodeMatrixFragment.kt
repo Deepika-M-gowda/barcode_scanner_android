@@ -22,7 +22,6 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import android.view.View
 import android.widget.TextView
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
@@ -50,12 +49,10 @@ abstract class AbstractBarcodeMatrixFragment : BarcodeAnalysisFragment<BarcodeAn
     abstract fun start(product: BarcodeAnalysis, parsedResult: ParsedResult)
 
     protected fun configureText(textView: TextView, layout: View, text: String?) {
-        textView.setTextIsSelectableCompat(true)
         displayText(textView, layout, text)
     }
 
     protected fun configureTextArray(textView: TextView, layout: View, array: Array<String?>?) {
-        textView.setTextIsSelectableCompat(true)
         displayArray(textView, layout, array)
     }
 }

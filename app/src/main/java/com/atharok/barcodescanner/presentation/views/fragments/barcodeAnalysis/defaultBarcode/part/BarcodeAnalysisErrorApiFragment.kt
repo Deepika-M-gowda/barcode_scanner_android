@@ -26,7 +26,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisErrorApiBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
@@ -76,7 +75,6 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         configureHeaderEntitledAndIcon()
         configureInformationTextViewError()
         configureMessageTextViewError()
-        bodyWarningTemplateBinding.templateWarningViewErrorMessageTextView.setTextIsSelectableCompat(true)
     }
 
     private fun configureHeaderEntitledAndIcon(){

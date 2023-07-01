@@ -37,7 +37,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.common.utils.*
 import com.atharok.barcodescanner.data.api.CoverArtArchiveService
 import com.atharok.barcodescanner.data.api.MusicBrainzService
@@ -461,7 +460,7 @@ val viewsModule = module {
             val textSizeInDP = resources.getDimension(R.dimen.standard_text_size) / resources.displayMetrics.density
             textSize = textSizeInDP
             typeface = Typeface.create("sans-serif-medium", Typeface.ITALIC)//ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
-            setTextIsSelectableCompat(true)
+            setTextIsSelectable(true)
         }
     }
 

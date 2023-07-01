@@ -83,10 +83,16 @@ class FoodAnalysisQualityFragment : BaseFragment() {
             if (!title.isNullOrBlank() || !subtitle.isNullOrBlank() || !description.isNullOrBlank() || drawableResource!=-1) {
                 cardView.visibility = View.VISIBLE
 
-                headerProductQualityTemplateBinding.templateProductQualityEntitled.text = title
-                headerProductQualityTemplateBinding.templateProductQualityDescription.text = subtitle
-                headerProductQualityTemplateBinding.templateProductQualityImageView.setImageResource(drawableResource)
-                bodyTextViewTemplateBinding.root.text = description
+                headerProductQualityTemplateBinding.apply {
+                    templateProductQualityEntitled.text = title
+                    templateProductQualityDescription.text = subtitle
+                    templateProductQualityImageView.setImageResource(drawableResource)
+                }
+                bodyTextViewTemplateBinding.root.apply {
+                    text = description
+                    setTextIsSelectable(true)
+                }
+
             } else {
                 cardView.visibility = View.GONE
             }

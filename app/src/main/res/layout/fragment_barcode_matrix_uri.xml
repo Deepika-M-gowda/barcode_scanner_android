@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_uri_url_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 

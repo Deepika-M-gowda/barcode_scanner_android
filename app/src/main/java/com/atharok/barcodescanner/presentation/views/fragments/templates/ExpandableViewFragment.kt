@@ -84,7 +84,10 @@ class ExpandableViewFragment : Fragment() {
 
         configureDrawableResource(drawableResource)
         headerTemplateBinding.templateEntitledViewTextView.root.text = title
-        bodyTemplateBinding.templateTextViewContentsTextView.text = contents
+        bodyTemplateBinding.templateTextViewContentsTextView.apply {
+            text = contents
+            setTextIsSelectable(true)
+        }
     }
 
     private fun configureDrawableResource(drawableResource: Int?){

@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_name_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -47,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_organization_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -70,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_title_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -100,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -107,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_1_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
@@ -123,6 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -130,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_2_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
@@ -146,6 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -153,6 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_phone_3_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
@@ -185,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -192,6 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_1_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
@@ -208,6 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -215,6 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_2_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
         </RelativeLayout>
@@ -231,6 +244,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/light_margin"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
             <TextView
@@ -238,6 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/fragment_barcode_matrix_contact_email_3_text_view"
+                android:textIsSelectable="true"
                 style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
         </RelativeLayout>
 
@@ -263,6 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_address_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -287,6 +303,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_matrix_contact_notes_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>

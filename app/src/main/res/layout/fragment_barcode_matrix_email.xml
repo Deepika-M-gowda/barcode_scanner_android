@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_address_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -46,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_cc_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
 
     </RelativeLayout>
@@ -69,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_bcc_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -91,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_subject_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -113,6 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_email_body_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 

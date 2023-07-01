@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_sms_number_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_sms_subject_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 
@@ -70,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/fragment_barcode_matrix_sms_body_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
     </RelativeLayout>
 

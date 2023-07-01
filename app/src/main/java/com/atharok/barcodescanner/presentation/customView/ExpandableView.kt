@@ -74,7 +74,9 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
         // Permet de synchroniser le rapetissement de la vue avec les autres vues extérieurs
         layoutTransition?.setStartDelay(LayoutTransition.CHANGE_DISAPPEARING, 0)
 
-        setOnClickListener(this)
+        val headerView = children.elementAt(0)
+        headerView.setOnClickListener(this)
+        //setOnClickListener(this)
 
 
         val subView = children.elementAt(1)

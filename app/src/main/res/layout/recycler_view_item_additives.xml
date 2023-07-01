@@ -21,6 +21,7 @@
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@id/recycler_view_item_additives_info_button"
             android:layout_centerVertical="true"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -66,6 +67,7 @@
             android:layout_toEndOf="@id/recycler_view_item_additives_overexposure_risk_image_view"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Primary.Italic" />
 
     </RelativeLayout>

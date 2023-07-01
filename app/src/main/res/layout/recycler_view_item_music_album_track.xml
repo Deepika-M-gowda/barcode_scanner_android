@@ -12,11 +12,12 @@
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_number_text_view"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+            android:textIsSelectable="true" />
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_title_text_view"
@@ -25,14 +26,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standard_margin"
             android:layout_toEndOf="@id/recycler_view_item_music_album_track_number_text_view"
-            android:layout_toStartOf="@id/recycler_view_item_music_album_track_length_text_view" />
+            android:layout_toStartOf="@id/recycler_view_item_music_album_track_length_text_view"
+            android:textIsSelectable="true" />
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_length_text_view"
             style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:textIsSelectable="true" />
     </RelativeLayout>
 
     <TextView
@@ -41,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/light_margin"
-        android:layout_below="@id/recycler_view_item_music_album_track_top_layout" />
+        android:layout_below="@id/recycler_view_item_music_album_track_top_layout"
+        android:textIsSelectable="true" />
 
 </RelativeLayout>

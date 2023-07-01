@@ -28,7 +28,7 @@ import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
-import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisContentsBinding
+import com.atharok.barcodescanner.databinding.FragmentExpandableViewBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
@@ -57,14 +57,14 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         named(BARCODE_ANALYSIS_SCOPE_SESSION)
     )
 
-    private var _binding: FragmentBarcodeAnalysisContentsBinding? = null
+    private var _binding: FragmentExpandableViewBinding? = null
     private val viewBinding get() = _binding!!
 
     private lateinit var headerEntitledTemplateBinding: TemplateEntitledViewBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentBarcodeAnalysisContentsBinding.inflate(inflater, container, false)
-        configureHeaderEntitledTemplateBinding(inflater)
+        _binding = FragmentExpandableViewBinding.inflate(inflater, container, false)
+        configureBarcodeContentsTemplates(inflater)
         return viewBinding.root
     }
 
@@ -73,17 +73,26 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         _binding=null
     }
 
-    private fun configureHeaderEntitledTemplateBinding(inflater: LayoutInflater) {
-        val parentHeader = viewBinding.fragmentBarcodeAnalysisContentsHeaderFrameLayout
+    private fun configureBarcodeContentsTemplates(inflater: LayoutInflater) {
+
+        val expandableViewTemplate = viewBinding.fragmentExpandableViewTemplate
+
+        expandableViewTemplate.root.open() // L'ExpandableView est ouvert par défaut
+        val parentHeader = expandableViewTemplate.templateExpandableViewHeaderFrameLayout
+
         headerEntitledTemplateBinding = TemplateEntitledViewBinding.inflate(inflater, parentHeader, true)
     }
 
     override fun start(product: BarcodeAnalysis) {
+
         val barcode = product.barcode
+
         val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
             parametersOf(barcode.contents, barcode.getBarcodeFormat())
         }
+
         val displayResult = parsedResult.displayResult
+
         configureHeaderEntitled(parsedResult, displayResult)
         configureHeaderIcon(barcode.getBarcodeFormat())
         configureBarcodeContentsFragment(parsedResult, displayResult)
@@ -100,6 +109,7 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
                 else -> R.string.bar_code_content_label
             }
         }
+
         headerEntitledTemplateBinding.templateEntitledViewTextView.root.text = getString(entitledStringResource)
     }
 
@@ -111,10 +121,12 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
             BarcodeFormat.PDF_417 -> R.drawable.ic_pdf_417_code_24
             else -> R.drawable.ic_bar_code_24
         }
+
         headerEntitledTemplateBinding.templateEntitledViewIconImageView.setImageResource(barCodeIconDrawableResource)
     }
 
     private fun configureBarcodeContentsFragment(parsedResult: ParsedResult, displayResult: String?){
+
         val fragmentKClass = if(displayResult.isNullOrEmpty()){
             BarcodeAnalysisTextFragment::class
         }else {
@@ -131,7 +143,8 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
                 else -> BarcodeAnalysisTextFragment::class
             }
         }
-        val frameLayout = viewBinding.fragmentBarcodeAnalysisContentsBodyFrameLayout
+
+        val frameLayout = viewBinding.fragmentExpandableViewTemplate.templateExpandableViewBodyFrameLayout
         applyFragment(frameLayout.id, fragmentKClass, arguments)
     }
 }

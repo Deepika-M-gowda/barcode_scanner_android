@@ -98,7 +98,7 @@ class FoodAnalysisLabelsFragment : BarcodeAnalysisFragment<FoodBarcodeAnalysis>(
 
         val labelsTags = foodProduct.labelsTagList
 
-        if(labelsTags != null && labelsTags.isNotEmpty()) {
+        if(!labelsTags.isNullOrEmpty()) {
 
             viewModel.obtainLabelsList(labelsTags).observe(viewLifecycleOwner) {
 

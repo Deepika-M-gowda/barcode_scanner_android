@@ -25,8 +25,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixUpiParsedBinding
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 
@@ -60,27 +58,27 @@ class BarcodeMatrixUpiParsedFragment : BaseFragment() {
             entitledTextView.setText(R.string.matrix_uri_upi_entitled_label)*/
 
             val uriParsed: Uri = Uri.parse(uri)
-            configureText(
+            displayText(
                 textView = viewBinding.fragmentBarcodeMatrixUpiParsedUpiIdTextView,
                 layout = viewBinding.fragmentBarcodeMatrixUpiParsedUpiIdLayout,
                 text = uriParsed.getQueryParameter("pa")
             )
-            configureText(
+            displayText(
                 textView = viewBinding.fragmentBarcodeMatrixUpiParsedPayeeNameTextView,
                 layout = viewBinding.fragmentBarcodeMatrixUpiParsedPayeeNameLayout,
                 text = uriParsed.getQueryParameter("pn")
             )
-            configureText(
+            displayText(
                 textView = viewBinding.fragmentBarcodeMatrixUpiParsedAmountTextView,
                 layout = viewBinding.fragmentBarcodeMatrixUpiParsedAmountLayout,
                 text = uriParsed.getQueryParameter("am")
             )
-            configureText(
+            displayText(
                 textView = viewBinding.fragmentBarcodeMatrixUpiParsedCurrencyTextView,
                 layout = viewBinding.fragmentBarcodeMatrixUpiParsedCurrencyLayout,
                 text = uriParsed.getQueryParameter("cu")
             )
-            configureText(
+            displayText(
                 textView = viewBinding.fragmentBarcodeMatrixUpiParsedDescriptionTextView,
                 layout = viewBinding.fragmentBarcodeMatrixUpiParsedDescriptionLayout,
                 text = uriParsed.getQueryParameter("tn")
@@ -91,11 +89,6 @@ class BarcodeMatrixUpiParsedFragment : BaseFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
-    }
-
-    private fun configureText(textView: TextView, layout: View, text: String?) {
-        textView.setTextIsSelectableCompat(true)
-        displayText(textView, layout, text)
     }
 
     companion object {

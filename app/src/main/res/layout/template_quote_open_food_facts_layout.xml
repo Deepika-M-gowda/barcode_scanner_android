@@ -39,6 +39,7 @@
             android:layout_below="@id/out_quote_open_food_facts_layout_card_view"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/open_food_facts_source_description_label"
+            android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
     </RelativeLayout>

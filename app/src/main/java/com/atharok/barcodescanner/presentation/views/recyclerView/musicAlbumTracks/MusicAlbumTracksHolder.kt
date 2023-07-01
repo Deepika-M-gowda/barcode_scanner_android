@@ -23,7 +23,6 @@ package com.atharok.barcodescanner.presentation.views.recyclerView.musicAlbumTra
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.common.extensions.setTextIsSelectableCompat
 import com.atharok.barcodescanner.databinding.RecyclerViewItemMusicAlbumTrackBinding
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
 
@@ -40,7 +39,6 @@ class MusicAlbumTracksHolder(private val viewBinding: RecyclerViewItemMusicAlbum
     private fun configureTextView(textView: TextView, text: String?) {
         textView.visibility = if(text.isNullOrEmpty()) View.GONE else View.VISIBLE
         textView.text = text
-        textView.setTextIsSelectableCompat(true)
     }
 
     private fun convertMillisecondsToMinutesSeconds(time: Long): String {

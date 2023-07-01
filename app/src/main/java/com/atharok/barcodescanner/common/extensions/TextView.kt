@@ -31,8 +31,8 @@ fun TextView.setTextColorFromAttrRes(@AttrRes attrRes: Int){
     setTextColor(ColorStateList.valueOf(color))
 }
 
-fun TextView.setTextIsSelectableCompat(value: Boolean) {
-    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+/*fun TextView.setTextIsSelectableCompat(value: Boolean) {
+    //if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
         setTextIsSelectable(value)
-    }
-}
+    //}
+}*/
