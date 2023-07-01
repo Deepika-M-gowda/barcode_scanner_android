@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">Sie haben den Zugriff auf die Kamera verweigert.\nSie müssen diese Berechtigung zulassen um einen Barcode scannen zu können!</string>
+    <string name="camera_permission_denied">Sie haben den Zugriff auf die Kamera verweigert.
+\nSie müssen diese Berechtigung zulassen um einen Barcode scannen zu können.</string>
     <!-- AlertDialog -->
     <string name="close_dialog_label">Schließen</string>
     <string name="yes_label">Ja</string>
