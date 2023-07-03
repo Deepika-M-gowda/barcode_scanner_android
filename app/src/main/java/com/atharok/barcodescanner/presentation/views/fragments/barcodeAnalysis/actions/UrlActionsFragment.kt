@@ -29,13 +29,13 @@ import com.google.zxing.client.result.URIParsedResult
 class UrlActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
-            is URIParsedResult -> configureUrlActions(barcode)
+            is URIParsedResult -> configureUrlActions(barcode, parsedResult.uri)
             else -> configureDefaultActions(barcode)
         }
     }
 
-    private fun configureUrlActions(barcode: Barcode) = arrayOf(
-        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(barcode.contents)),
+    private fun configureUrlActions(barcode: Barcode, uri: String) = arrayOf(
+        ActionItem(R.string.action_open_link, R.drawable.baseline_open_in_browser_24, openUrl(uri)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
         ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
     )
