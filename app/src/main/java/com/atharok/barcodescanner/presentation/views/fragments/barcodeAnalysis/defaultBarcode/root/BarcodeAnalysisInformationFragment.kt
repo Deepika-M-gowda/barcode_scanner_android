@@ -26,7 +26,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisInformationBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
@@ -98,12 +97,12 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         args = arguments
     )
 
-    companion object {
+    /*companion object {
         fun newInstance(barcodeAnalysis: BarcodeAnalysis) = BarcodeAnalysisInformationFragment()
             .apply {
             arguments = get<Bundle>().apply {
                 putSerializable(PRODUCT_KEY, barcodeAnalysis)
             }
         }
-    }
+    }*/
 }

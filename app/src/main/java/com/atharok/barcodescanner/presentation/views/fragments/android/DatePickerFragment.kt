@@ -25,38 +25,34 @@ import android.app.Dialog
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
+import java.text.SimpleDateFormat
 import java.util.Calendar
 
 class DatePickerFragment: DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var callback: (date: String) -> Unit
+    private lateinit var simpleDateFormat: SimpleDateFormat
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        // Use the current date as the default date in the picker
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
-
-        // Create a new instance of DatePickerDialog and return it
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
         return DatePickerDialog(requireContext(), this, year, month, day)
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        val numberOfMonth = month+1 // Dans android, month commence à 0, donc on ajoute 1 pour avoir le bon nombre
-
-        val monthStr: String = if(numberOfMonth<10) "0$numberOfMonth" else "$numberOfMonth"
-        val dayStr: String = if(dayOfMonth<10) "0$dayOfMonth" else "$dayOfMonth"
-
-        val dateStr = "$year-$monthStr-$dayStr"
-
-        callback(dateStr)
+        val calendar = Calendar.getInstance()
+        calendar.set(year, month, dayOfMonth)
+        val formattedDate = simpleDateFormat.format(calendar.time)
+        callback(formattedDate)
     }
 
     companion object {
-        fun newInstance(callback: (date: String) -> Unit): DatePickerFragment {
+        fun newInstance(callback: (date: String) -> Unit, simpleDateFormat: SimpleDateFormat): DatePickerFragment {
             return DatePickerFragment().apply {
                 this.callback = callback
+                this.simpleDateFormat = simpleDateFormat
             }
         }
     }

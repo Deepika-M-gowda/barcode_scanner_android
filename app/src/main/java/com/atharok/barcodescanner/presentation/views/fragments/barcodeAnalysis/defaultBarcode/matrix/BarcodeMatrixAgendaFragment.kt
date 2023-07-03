@@ -101,7 +101,7 @@ class BarcodeMatrixAgendaFragment : AbstractBarcodeMatrixFragment() {
         simpleDateFormat.format(d)
     } else null*/
 
-    private fun getDateFormat(date: Long?): String? = if(date!=null){
+    private fun getDateFormat(date: Long?): String? = if(date!=null) {
         simpleDateFormat.format(date)
     } else null
 }

@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.common.extensions
 
 import android.content.res.ColorStateList
-import android.os.Build
 import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt

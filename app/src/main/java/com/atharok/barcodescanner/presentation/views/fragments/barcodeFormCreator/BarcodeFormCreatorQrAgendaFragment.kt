@@ -25,7 +25,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrAgendaBinding
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -45,7 +44,7 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
     private val date: Date = get()
     private val simpleDateTimeFormat: SimpleDateFormat = get { parametersOf("yyyyMMdd'T'HHmmss'Z'") }
     private val simpleDateFormat: SimpleDateFormat = get { parametersOf("yyyy-MM-dd") }
-    private val simpleTimeFormat: SimpleDateFormat = get { parametersOf("HH:mm") }
+    private val simpleTimeFormat: SimpleDateFormat = get { parametersOf("HH:mm z") }
 
     private var _binding: FragmentBarcodeFormCreatorQrAgendaBinding? = null
     private val viewBinding get() = _binding!!
@@ -74,15 +73,13 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
     }
 
     override fun getBarcodeTextFromForm(): String {
-
         val dtStart: String
         val dtEnd: String
 
-        if(viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked){
+        if(viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked) {
             dtStart = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text.toString().replace("-", "")
             dtEnd = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text.toString().replace("-", "")
-
-        }else{
+        } else {
             val dateStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text.toString()
             val dateEndStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text.toString()
             val timeStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text.toString()
@@ -107,54 +104,69 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
     }
 
     private fun configureOnClickAllOfDayCheckBox(checkBox: CheckBox) {
-
         checkBox.setOnClickListener {
-            if(checkBox.isChecked){
+            if(checkBox.isChecked) {
                 viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.visibility=View.GONE
                 viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.visibility=View.GONE
-            }else{
+            } else {
                 viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.visibility=View.VISIBLE
                 viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.visibility=View.VISIBLE
             }
         }
     }
 
+    // ---- Date Time Picker ----
+
+    private val beginDatePickerFragment: DatePickerFragment by lazy {
+        DatePickerFragment.newInstance(
+            { viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text = it },
+            simpleDateFormat
+        )
+    }
+
+    private val endDatePickerFragment: DatePickerFragment by lazy {
+        DatePickerFragment.newInstance(
+            { viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text = it },
+            simpleDateFormat
+        )
+    }
+
+    private val beginTimePickerFragment: TimePickerFragment by lazy {
+        TimePickerFragment.newInstance(
+            { viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text = it },
+            simpleTimeFormat
+        )
+    }
+
+    private val endTimePickerFragment: TimePickerFragment by lazy {
+        TimePickerFragment.newInstance(
+            { viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.text = it },
+            simpleTimeFormat
+        )
+    }
+
     private fun configureOnClickDateTimePicker(){
         // Begin Date
         viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.setOnClickListener {
-            showDatePickerDialog(viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker)
+            beginDatePickerFragment.show(requireActivity().supportFragmentManager, "beginDateTag")
         }
 
         // BeginTime
         viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.setOnClickListener {
             if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked)
-                showTimePickerDialog(viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker)
+                beginTimePickerFragment.show(requireActivity().supportFragmentManager, "beginTimeTag")
         }
 
         // End Date
         viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.setOnClickListener {
-            showDatePickerDialog(viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker)
+            endDatePickerFragment.show(requireActivity().supportFragmentManager, "endDateTag")
         }
 
         // End Time
         viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.setOnClickListener {
             if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked)
-                showTimePickerDialog(viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker)
+                endTimePickerFragment.show(requireActivity().supportFragmentManager, "endTimeTag")
         }
-    }
-
-    private fun showDatePickerDialog(textView: TextView) {
-        val fragment = DatePickerFragment.newInstance  {
-            textView.text = it
-        }
-        fragment.show(requireActivity().supportFragmentManager, "dateTag")
-    }
-
-    private fun showTimePickerDialog(textView: TextView) {
-        val fragment = TimePickerFragment.newInstance {
-            textView.text = it
-        }
-        fragment.show(requireActivity().supportFragmentManager, "timeTag")
     }
 
     override fun getBarcodeType(): BarcodeType = BarcodeType.AGENDA

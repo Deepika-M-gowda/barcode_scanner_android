@@ -26,36 +26,34 @@ import android.os.Bundle
 import android.text.format.DateFormat
 import android.widget.TimePicker
 import androidx.fragment.app.DialogFragment
+import java.text.SimpleDateFormat
 import java.util.Calendar
 
 class TimePickerFragment: DialogFragment(), TimePickerDialog.OnTimeSetListener {
 
     private lateinit var callback: (time: String) -> Unit
+    private lateinit var simpleDateFormat: SimpleDateFormat
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
-        // Use the current date as the default date in the picker
-        val c = Calendar.getInstance()
-        val hour = c.get(Calendar.HOUR_OF_DAY)
-        val minute = c.get(Calendar.MINUTE)
-
-        // Create a new instance of DatePickerDialog and return it
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val minute = calendar.get(Calendar.MINUTE)
         return TimePickerDialog(requireContext(), this, hour, minute, DateFormat.is24HourFormat(requireContext()))
     }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        val hourStr: String = if(hourOfDay<10) "0$hourOfDay" else "$hourOfDay"
-        val minuteStr: String = if(minute<10) "0$minute" else "$minute"
-
-        val timeStr = "$hourStr:$minuteStr"
-
-        callback(timeStr)
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
+        calendar.set(Calendar.MINUTE, minute)
+        val formattedTime = simpleDateFormat.format(calendar.time)
+        callback(formattedTime)
     }
 
     companion object {
-        fun newInstance(callback: (time: String) -> Unit): TimePickerFragment {
+        fun newInstance(callback: (time: String) -> Unit, simpleDateFormat: SimpleDateFormat): TimePickerFragment {
             return TimePickerFragment().apply {
                 this.callback = callback
+                this.simpleDateFormat = simpleDateFormat
             }
         }
     }

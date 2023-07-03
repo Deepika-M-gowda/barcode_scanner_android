@@ -96,8 +96,8 @@ fun createShareImageIntent(context: Context, uri: Uri): Intent {
 fun createAddAgendaIntent(parsedResult: CalendarParsedResult): Intent = Intent(Intent.ACTION_EDIT).apply {
     type = "vnd.android.cursor.item/event"
     putExtra(CalendarContract.Events.ALL_DAY, parsedResult.isStartAllDay && parsedResult.isEndAllDay)
-    putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, parsedResult.startTimestamp + TimeZone.getTimeZone("GMT").rawOffset - TimeZone.getDefault().rawOffset)
-    putExtra(CalendarContract.EXTRA_EVENT_END_TIME, parsedResult.endTimestamp + TimeZone.getTimeZone("GMT").rawOffset - TimeZone.getDefault().rawOffset)
+    putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, parsedResult.startTimestamp)
+    putExtra(CalendarContract.EXTRA_EVENT_END_TIME, parsedResult.endTimestamp)
     putExtra(CalendarContract.Events.TITLE, parsedResult.summary ?: "")
     putExtra(CalendarContract.Events.EVENT_LOCATION, parsedResult.location ?: "")
     putExtra(CalendarContract.Events.DESCRIPTION, parsedResult.description ?: "")
