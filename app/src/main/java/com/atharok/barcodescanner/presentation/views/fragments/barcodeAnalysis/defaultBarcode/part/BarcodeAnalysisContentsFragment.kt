@@ -55,7 +55,7 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
     private val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
         BARCODE_ANALYSIS_SCOPE_SESSION_ID,
         named(BARCODE_ANALYSIS_SCOPE_SESSION)
-    )
+    ) // close in BarcodeAnalysisActivity
 
     private var _binding: FragmentExpandableViewBinding? = null
     private val viewBinding get() = _binding!!

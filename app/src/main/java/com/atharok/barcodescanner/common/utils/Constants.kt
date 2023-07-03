@@ -25,9 +25,6 @@ package com.atharok.barcodescanner.common.utils
 const val BARCODE_ANALYSIS_SCOPE_SESSION = "barcodeAnalysisSession"
 const val BARCODE_ANALYSIS_SCOPE_SESSION_ID = "barcodeAnalysisSessionID"
 
-const val ACTION_SCOPE_SESSION = "actionScopeSession"
-const val ACTION_SCOPE_SESSION_ID = "actionScopeSessionID"
-
 const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT = "koinNamedErrorCorrectionLevelByResult"
 const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING = "koinNamedErrorCorrectionLevelByString"
 

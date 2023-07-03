@@ -489,9 +489,7 @@ val scopesModule: Module = module {
         }
 
         scoped<BarcodeType> { (contents: String, format: BarcodeFormat) ->
-
             val parsedResult: ParsedResult = this@scoped.get { parametersOf(contents, format) }
-
             when(parsedResult.type){
                 ParsedResultType.ADDRESSBOOK -> BarcodeType.CONTACT
                 ParsedResultType.EMAIL_ADDRESS -> BarcodeType.MAIL
@@ -508,19 +506,9 @@ val scopesModule: Module = module {
                 else -> BarcodeType.UNKNOWN
             }
         }
-    }
 
-    // Scope utilisé par les ActionFragment
-    scope(named(ACTION_SCOPE_SESSION)) {
-
-        scoped<ParsedResult> { (barcode: Barcode) ->
-            val result = Result(barcode.contents, null, null, barcode.getBarcodeFormat())
-            ResultParser.parseResult(result)
-        }
-
-        // ---- Wi-Fi ----
+        // ---- Action: Wi-Fi ----
         scoped<WifiSetupData> { (parsedResult: WifiParsedResult) ->
-
             WifiSetupData(
                 authType = parsedResult.networkEncryption ?: "",
                 name = parsedResult.ssid ?: "",

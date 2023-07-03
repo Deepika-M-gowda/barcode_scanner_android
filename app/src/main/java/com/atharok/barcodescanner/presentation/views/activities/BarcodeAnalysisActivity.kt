@@ -70,7 +70,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     private val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
         BARCODE_ANALYSIS_SCOPE_SESSION_ID,
         named(BARCODE_ANALYSIS_SCOPE_SESSION)
-    )
+    ) // close in BarcodeAnalysisActivity
 
     // ---- ViewModel ----
 

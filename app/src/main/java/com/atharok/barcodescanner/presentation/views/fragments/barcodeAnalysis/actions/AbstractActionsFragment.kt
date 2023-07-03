@@ -31,8 +31,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.ACTION_SCOPE_SESSION
-import com.atharok.barcodescanner.common.utils.ACTION_SCOPE_SESSION_ID
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisActionsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
@@ -54,9 +54,11 @@ import org.koin.core.qualifier.named
 
 abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() {
 
-    protected val actionScope get() = getKoin().getOrCreateScope(
-        ACTION_SCOPE_SESSION_ID, named(ACTION_SCOPE_SESSION)
-    )
+    protected val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
+        BARCODE_ANALYSIS_SCOPE_SESSION_ID,
+        named(BARCODE_ANALYSIS_SCOPE_SESSION)
+    ) // close in BarcodeAnalysisActivity
+
     private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
 
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
@@ -70,7 +72,6 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     }
 
     override fun onDestroyView() {
-        actionScope.close()
         super.onDestroyView()
         _binding=null
     }
@@ -79,7 +80,9 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
         val barcode: Barcode = product.barcode
 
-        val parsedResult: ParsedResult = actionScope.get { parametersOf(barcode) }
+        val parsedResult: ParsedResult = barcodeAnalysisScope.get {
+            parametersOf(barcode.contents, barcode.getBarcodeFormat())
+        }
 
         val actionItems = configureActions(barcode, parsedResult)
 

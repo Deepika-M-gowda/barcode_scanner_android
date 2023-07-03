@@ -93,8 +93,8 @@ class WifiActionsFragment: AbstractActionsFragment() {
 
     private fun connectToWifiFromApp(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val data: WifiSetupData = actionScope.get { parametersOf(parsedResult) }
-            val wifiConnect: WifiConnect = actionScope.get()
+            val data: WifiSetupData = barcodeAnalysisScope.get { parametersOf(parsedResult) }
+            val wifiConnect: WifiConnect = barcodeAnalysisScope.get()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> wifiConnect.connectWithApiR(data, wifiPreviewRequest)

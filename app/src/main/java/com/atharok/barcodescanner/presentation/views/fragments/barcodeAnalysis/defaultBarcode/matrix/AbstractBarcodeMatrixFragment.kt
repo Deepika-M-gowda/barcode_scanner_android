@@ -36,7 +36,7 @@ abstract class AbstractBarcodeMatrixFragment : BarcodeAnalysisFragment<BarcodeAn
     private val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
         BARCODE_ANALYSIS_SCOPE_SESSION_ID,
         named(BARCODE_ANALYSIS_SCOPE_SESSION)
-    )
+    ) // close in BarcodeAnalysisActivity
 
     override fun start(product: BarcodeAnalysis) {
         val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
