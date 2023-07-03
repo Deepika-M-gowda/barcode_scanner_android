@@ -1,1 +1,1 @@
-A free app which allow to read and generate barcodes.
+Una aplicación gratuita que permite leer y generar códigos de barras.
