@@ -332,7 +332,7 @@
     <string name="error_barcode_wrong_length_message">El código debe contener %1$s dígitos.</string>
     <string name="error_barcode_wrong_key_message">El dígito número %1$s (clave de control) debería ser %2$s.</string>
     <string name="error_barcode_encoding_iso_8859_1_error_message">No se admiten caracteres especiales en este tipo de códigos.</string>
-    <string name="error_barcode_encoding_us_ascii_error_message">No se admiten caracteres especiales para este tipo de códigos.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">No se admiten caracteres especiales para este tipo de código de barras.</string>
     <string name="error_barcode_93_regex_error_message">El código de barras "Código 93" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 8 caracteres especiales « -, ., espacio, *, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
     <string name="error_barcode_39_regex_error_message">El código de barras "Código 39" puede codificar las 26 letras mayúsculas, los 10 dígitos (del 0 al 9) y los 7 caracteres especiales « -, ., espacio, $, /, +, % ». Las letras minúsculas y otros caracteres especiales no pueden ser codificados por este tipo de código de barras.</string>
     <string name="error_barcode_codabar_regex_error_message">El código de barras "Codabar" puede codificar los 10 dígitos (0 a 9) así como los 6 caracteres especiales « -, $, :, /, ., + ». También puede contener los caracteres A, B, C o D para el primer y el último carácter del código de barras para especificar el principio y el final de la cadena.</string>
