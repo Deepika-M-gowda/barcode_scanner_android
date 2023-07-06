@@ -52,9 +52,9 @@ fun createPickWifiNetworkIntent(): Intent = Intent(WifiManager.ACTION_PICK_WIFI_
 @RequiresApi(Build.VERSION_CODES.R)
 fun createWifiAddNetworksIntent(): Intent = Intent(Settings.ACTION_WIFI_ADD_NETWORKS)
 
-fun createActionCreateImageIntent(name: String): Intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+fun createActionCreateImageIntent(name: String, mimeType: String): Intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
     addCategory(Intent.CATEGORY_OPENABLE)
-    type = "image/png"
+    type = mimeType
 
     putExtra(Intent.EXTRA_TITLE, name)
 

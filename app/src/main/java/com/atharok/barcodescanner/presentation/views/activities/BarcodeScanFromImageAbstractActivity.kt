@@ -29,7 +29,7 @@ import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.getColorStateListFromAttrRes
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanFromImageBinding
-import com.atharok.barcodescanner.domain.library.BitmapBarcodeAnalyser
+import com.atharok.barcodescanner.domain.library.BarcodeBitmapAnalyser
 import com.google.zxing.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -39,7 +39,7 @@ import java.io.File
 
 abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
 
-    private val bitmapBarcodeAnalyser: BitmapBarcodeAnalyser by inject()
+    private val barcodeBitmapAnalyser: BarcodeBitmapAnalyser by inject()
 
     private var zxingResult: Result? = null
     private var menuVisibility = false
@@ -117,7 +117,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
             if(bitmap != null){
                 job?.cancel()
                 job = lifecycleScope.launch(Dispatchers.IO) {
-                    zxingResult = bitmapBarcodeAnalyser.detectBarcodeFromBitmap(bitmap)
+                    zxingResult = barcodeBitmapAnalyser.detectBarcodeFromBitmap(bitmap)
                     setMenuVisibility(zxingResult != null)
                 }
             }

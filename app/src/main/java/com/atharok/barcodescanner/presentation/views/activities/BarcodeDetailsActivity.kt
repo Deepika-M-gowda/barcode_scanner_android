@@ -46,9 +46,10 @@ import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
-import com.atharok.barcodescanner.domain.library.BitmapBarcodeGenerator
-import com.atharok.barcodescanner.domain.library.BitmapRecorder
-import com.atharok.barcodescanner.domain.library.BitmapSharer
+import com.atharok.barcodescanner.domain.library.BarcodeBitmapSharer
+import com.atharok.barcodescanner.domain.library.BarcodeImageRecorder
+import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeBitmapGenerator
+import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeSvgGenerator
 import com.atharok.barcodescanner.presentation.intent.createActionCreateImageIntent
 import com.atharok.barcodescanner.presentation.intent.createShareImageIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
@@ -67,9 +68,10 @@ import java.util.Date
 
 class BarcodeDetailsActivity : BaseActivity() {
 
-    private val bitmapBarcodeGenerator: BitmapBarcodeGenerator by inject()
-    private val bitmapRecorder: BitmapRecorder by inject()
-    private val bitmapSharer: BitmapSharer by inject()
+    private val barcodeBitmapGenerator: BarcodeBitmapGenerator by inject()
+    private val barcodeSvgGenerator: BarcodeSvgGenerator by inject()
+    private val barcodeImageRecorder: BarcodeImageRecorder by inject()
+    private val barcodeBitmapSharer: BarcodeBitmapSharer by inject()
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
@@ -136,8 +138,8 @@ class BarcodeDetailsActivity : BaseActivity() {
 
         lifecycleScope.launch(Dispatchers.Main) {
 
-            val bitmapCreated: Bitmap? = withContext(Dispatchers.IO){
-                bitmapBarcodeGenerator.create(
+            val bitmapCreated: Bitmap? = withContext(Dispatchers.IO) {
+                barcodeBitmapGenerator.create(
                     text = bitmapStr,
                     barcodeFormat = barcodeFormat,
                     errorCorrectionLevel = qrCodeErrorCorrectionLevel.errorCorrectionLevel,
@@ -216,7 +218,9 @@ class BarcodeDetailsActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.menu_activity_barcode_details_save -> createFile()
+            R.id.menu_activity_barcode_details_save_image_png -> createFile(BarcodeImageRecorder.ImageFormat.PNG)
+            R.id.menu_activity_barcode_details_save_image_jpg -> createFile(BarcodeImageRecorder.ImageFormat.JPG)
+            R.id.menu_activity_barcode_details_save_image_svg -> createFile(BarcodeImageRecorder.ImageFormat.SVG)
             R.id.menu_activity_barcode_details_share_image -> shareImage()
             R.id.menu_activity_barcode_details_share_text -> shareText()
         }
@@ -234,27 +238,49 @@ class BarcodeDetailsActivity : BaseActivity() {
             }
         }
 
-    private fun createFile() {
+    private var imageFormat: BarcodeImageRecorder.ImageFormat = BarcodeImageRecorder.ImageFormat.PNG
+
+    private fun createFile(imageFormat: BarcodeImageRecorder.ImageFormat) {
+        this.imageFormat = imageFormat
         val date = get<Date>()
         val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
         val dateNameStr = simpleDateFormat.format(date)
         val name = "barcode_$dateNameStr"
 
-        val intent: Intent = createActionCreateImageIntent(name)
+        val intent: Intent = createActionCreateImageIntent(name, imageFormat.mimeType)
         result.launch(intent)
     }
 
     private fun saveImage(uri: Uri) {
-        val mBitmap = bitmap
-        if(mBitmap!=null) {
+        when(imageFormat) {
+            BarcodeImageRecorder.ImageFormat.SVG -> saveSvg(uri)
+            else -> saveBitmap(uri)
+        }
+    }
 
+    private fun saveBitmap(uri: Uri) {
+        bitmap?.let {
             lifecycleScope.launch(Dispatchers.IO) {
-                val successful = bitmapRecorder.recordImage(mBitmap, uri)
-                val stringRes: Int = if(successful)
-                    R.string.snack_bar_message_save_bitmap_ok
-                else
-                    R.string.snack_bar_message_save_bitmap_error
+                val successful = barcodeImageRecorder.saveBitmap(it, imageFormat, uri)
+                val stringRes: Int = if(successful) R.string.snack_bar_message_save_bitmap_ok else R.string.snack_bar_message_save_bitmap_error
+                show(stringRes)
+            }
+        }
+    }
 
+    private fun saveSvg(uri: Uri) {
+        lifecycleScope.launch(Dispatchers.IO) {
+            getIntentStringValue()?.let { barcodeContents ->
+                val barcodeFormat: BarcodeFormat = getBarcodeFormat()
+                val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = getQrCodeErrorCorrectionLevel(barcodeFormat)
+
+                val svg: String? = barcodeSvgGenerator.create(
+                    text = barcodeContents,
+                    barcodeFormat = barcodeFormat,
+                    errorCorrectionLevel = qrCodeErrorCorrectionLevel.errorCorrectionLevel
+                )
+                val successful = if (svg != null) barcodeImageRecorder.saveSvg(svg, imageFormat, uri) else false
+                val stringRes: Int = if (successful) R.string.snack_bar_message_save_bitmap_ok else R.string.snack_bar_message_save_bitmap_error
                 show(stringRes)
             }
         }
@@ -266,7 +292,7 @@ class BarcodeDetailsActivity : BaseActivity() {
         val mBitmap = bitmap
         if(mBitmap!=null) {
             lifecycleScope.launch {
-                val uri: Uri? = bitmapSharer.share(mBitmap)
+                val uri: Uri? = barcodeBitmapSharer.share(mBitmap)
 
                 if(uri == null)
                     show(R.string.snack_bar_message_share_bitmap_error)

@@ -36,7 +36,7 @@ import java.util.Locale
 /**
  * Configure tous les pré-requis permettant le partage d'une image.
  */
-class BitmapSharer(private val context: Context) {
+class BarcodeBitmapSharer(private val context: Context) {
 
     companion object {
         private const val AUTHORITY = "com.atharok.barcodescanner.fileprovider"

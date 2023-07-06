@@ -58,6 +58,8 @@ import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.*
+import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeBitmapGenerator
+import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeSvgGenerator
 import com.atharok.barcodescanner.domain.library.wifiSetup.WifiConnect
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
@@ -162,13 +164,14 @@ val androidModule: Module = module {
 
 val libraryModule: Module = module {
     single<SettingsManager> { SettingsManager(androidContext()) }
-    single<BitmapBarcodeAnalyser>{ BitmapBarcodeAnalyser() }
+    single<BarcodeBitmapAnalyser>{ BarcodeBitmapAnalyser() }
     single<BarcodeFormatChecker> { BarcodeFormatChecker() }
     single<VCardReader> { VCardReader(androidContext()) }
     single<MultiFormatWriter> { MultiFormatWriter() }
-    single<BitmapBarcodeGenerator> { BitmapBarcodeGenerator(get<MultiFormatWriter>()) }
-    single<BitmapRecorder> { BitmapRecorder(androidContext()) }
-    single<BitmapSharer> { BitmapSharer(androidContext()) }
+    single<BarcodeBitmapGenerator> { BarcodeBitmapGenerator(get<MultiFormatWriter>()) }
+    single<BarcodeSvgGenerator> { BarcodeSvgGenerator(get<MultiFormatWriter>()) }
+    single<BarcodeImageRecorder> { BarcodeImageRecorder(androidContext()) }
+    single<BarcodeBitmapSharer> { BarcodeBitmapSharer(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
     single<Iban> { Iban() }
     single<InternetChecker> { InternetChecker() }

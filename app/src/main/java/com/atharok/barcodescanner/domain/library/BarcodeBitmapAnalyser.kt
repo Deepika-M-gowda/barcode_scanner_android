@@ -34,7 +34,7 @@ import com.google.zxing.common.HybridBinarizer
 /**
  * Recherche un code-barres dans une image.
  */
-class BitmapBarcodeAnalyser {
+class BarcodeBitmapAnalyser {
 
     private val reader = MultiFormatReader()
 

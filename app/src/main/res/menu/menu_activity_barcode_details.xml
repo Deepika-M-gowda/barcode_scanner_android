@@ -8,6 +8,23 @@
         android:icon="@drawable/baseline_save_24"
         app:showAsAction="ifRoom"
         android:title="@string/save_label">
+
+        <menu>
+            <item
+                android:id="@+id/menu_activity_barcode_details_save_image_png"
+                app:showAsAction="ifRoom|withText"
+                android:title="PNG"/>
+
+            <item
+                android:id="@+id/menu_activity_barcode_details_save_image_jpg"
+                app:showAsAction="ifRoom|withText"
+                android:title="JPG"/>
+
+            <item
+                android:id="@+id/menu_activity_barcode_details_save_image_svg"
+                app:showAsAction="ifRoom|withText"
+                android:title="SVG"/>
+        </menu>
     </item>
 
     <item
