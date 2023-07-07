@@ -1,0 +1,24 @@
+Barcode Scanner es una aplicación gratuita y de código abierto que permite leer y generar códigos de barras. Puede recoger información sobre productos alimenticios, cosméticos, libros y música (CDs, Vinilos...).
+
+La aplicación gestiona diferentes formatos de códigos de barras:
+• Códigos de barras de 2 dimensiones: Código QR, Data Matrix, PDF 417, AZTEC
+• Códigos de barras de 1 dimensión: EAN 13, EAN 8, UPC A, UPC E, Código 128, Código 93, Código 39, Codabar, ITF
+
+Recopila información sobre un producto durante una exploración :
+• Productos alimenticios con Open Food Facts
+• Cosméticos con Open Beauty Facts
+• Productos alimenticios para mascotas con Open Pet Food Facts
+• Libros con Open Library
+• CDs de música, vinilos... con MusicBrainz
+
+Características de la aplicación :
+• Basta con apuntar con la cámara del smartphone a un código de barras para recibir al instante información sobre él. También puedes escanear los códigos de barras a través de una imagen de tu smartphone.
+• Con un simple escaneado, lee tarjetas de visita, añade nuevos contactos, añade nuevos eventos a tu agenda, abre URL o incluso conéctate a una Wi-Fi.
+• Escanea los códigos de barras de los productos alimentarios para recibir información sobre su composición gracias a las bases de datos de Open Food Facts y Open Beauty Facts.
+• Busca información sobre el producto que escaneas, con una rápida investigación en diferentes páginas web como Amazon o Fnac.
+• Realiza un seguimiento de todos tus códigos de barras escaneados con la herramienta historial.
+• Genera tus propios códigos de barras
+• Personaliza la interfaz con diferentes colores, con un tema claro o uno oscuro. La aplicación integra las características de Android 12, permitiendo ajustar los colores en función de tu fondo de pantalla.
+• Los textos están totalmente traducidos al Inglés, Español, Francés, Alemán, Polaco, Turco, Ruso y Chino.
+
+Esta aplicación respeta tu privacidad. No contiene rastreadores ni recopila datos.
