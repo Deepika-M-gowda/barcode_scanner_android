@@ -463,9 +463,10 @@
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Appearance</string>
     <string name="preferences_theme_label">Theme</string>
-    <string name="preferences_switch_system_theme_label">Follow System</string>
-    <string name="preferences_switch_light_theme_label">Light Theme</string>
-    <string name="preferences_switch_dark_theme_label">Dark Theme</string>
+    <string name="preferences_switch_system_theme_label">Follow</string>
+    <string name="preferences_switch_light_theme_label">Light</string>
+    <string name="preferences_switch_dark_theme_label">Dark</string>
+    <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Main Color</string>
     <string name="preferences_color_material_you">System (Material You)</string>
     <string name="preferences_color_blue">Blue</string>
@@ -689,12 +690,15 @@
     <string name="country_mo">Macao</string>
     <!-- No translatable -->
     <string name="app_name" translatable="false">Barcode Scanner</string>
+    <string name="text_colon" translatable="false">%1$s:</string>
+    <string name="empty" translatable="false"/>
+    <string name="png_label" translatable="false">PNG</string>
+    <string name="jpg_label" translatable="false">JPG</string>
+    <string name="svg_label" translatable="false">SVG</string>
     <!-- Animations -->
     <string name="animation_activity_transition" translatable="false">AnimationActivityTransition</string>
     <!-- Default font (Put here to avoid a crash on Android 7) -->
     <string name="default_font" translatable="false">sans-serif-medium</string>
-    <string name="text_colon" translatable="false">%1$s:</string>
-    <string name="empty" translatable="false"/>
     <!-- External Services Label -->
     <string name="google_label" translatable="false">Google</string>
     <string name="bing_label" translatable="false">Bing</string>

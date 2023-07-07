@@ -532,6 +532,7 @@
     <string name="preferences_switch_system_theme_label">Системная</string>
     <string name="preferences_switch_light_theme_label">Светлая</string>
     <string name="preferences_switch_dark_theme_label">Темная</string>
+    <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Основной цвет</string>
     <string name="preferences_color_material_you">Системный (Material You)</string>
     <string name="preferences_color_blue">Синий</string>

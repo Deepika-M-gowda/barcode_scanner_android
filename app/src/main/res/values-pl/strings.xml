@@ -532,6 +532,7 @@
     <string name="preferences_switch_system_theme_label">Systemowy</string>
     <string name="preferences_switch_light_theme_label">Jasny</string>
     <string name="preferences_switch_dark_theme_label">Ciemny</string>
+    <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Główny kolor</string>
     <string name="preferences_color_material_you">System (Material You)</string>
     <string name="preferences_color_blue">Niebieski</string>

@@ -532,6 +532,7 @@
     <string name="preferences_switch_system_theme_label">跟随系统</string>
     <string name="preferences_switch_light_theme_label">浅色主题</string>
     <string name="preferences_switch_dark_theme_label">深色主题</string>
+    <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">主题色</string>
     <string name="preferences_color_material_you">跟随系统 (Material You)</string>
     <string name="preferences_color_blue">蓝色</string>

@@ -466,6 +466,7 @@
     <string name="preferences_switch_system_theme_label">Sistema</string>
     <string name="preferences_switch_light_theme_label">Tema claro</string>
     <string name="preferences_switch_dark_theme_label">Tema oscuro</string>
+    <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Color principal</string>
     <string name="preferences_color_material_you">Sistema (Material You)</string>
     <string name="preferences_color_blue">Azul</string>

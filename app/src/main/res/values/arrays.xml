@@ -38,7 +38,7 @@
         <item>@string/preferences_switch_system_theme_label</item>
         <item>@string/preferences_switch_light_theme_label</item>
         <item>@string/preferences_switch_dark_theme_label</item>
-        <item>Black Theme</item>
+        <item>@string/preferences_switch_black_theme_label</item>
     </string-array>
 
     <string-array name="preference_theme_values" translatable="false">

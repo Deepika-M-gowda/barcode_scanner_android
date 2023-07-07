@@ -464,8 +464,9 @@
     <string name="preferences_appearance_title">Apparence</string>
     <string name="preferences_theme_label">Thème</string>
     <string name="preferences_switch_system_theme_label">Selon le système</string>
-    <string name="preferences_switch_light_theme_label">Thème Clair</string>
-    <string name="preferences_switch_dark_theme_label">Thème Sombre</string>
+    <string name="preferences_switch_light_theme_label">Clair</string>
+    <string name="preferences_switch_dark_theme_label">Sombre</string>
+    <string name="preferences_switch_black_theme_label">Noir</string>
     <string name="preferences_color">Couleur principale</string>
     <string name="preferences_color_material_you">Système (Material You)</string>
     <string name="preferences_color_blue">Bleu</string>
