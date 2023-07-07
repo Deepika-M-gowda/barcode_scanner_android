@@ -535,7 +535,7 @@
     <string name="permission_camera_label">Caméra</string>
     <string name="permission_camera_description_label">Nécessaire pour scanner un code-barres.</string>
     <string name="permission_internet_label">Internet</string>
-    <string name="permission_internet_description_label">Nécessaire pour récupérer des informations pour certains code-barres dans des API distantes.</string>
+    <string name="permission_internet_description_label">Nécessaire pour récupérer des informations sur certains code-barres dans les API distantes.</string>
     <string name="permission_contact_label">Contact</string>
     <string name="permission_contact_description_label">Nécessaire pour importer un contact permettant de générer un QR Code à partir de celui-ci.</string>
     <string name="permission_location_label">Position</string>
