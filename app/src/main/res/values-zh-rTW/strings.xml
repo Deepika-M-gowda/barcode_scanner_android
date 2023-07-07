@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Permission Denied -->
     <string name="camera_permission_denied">您已拒絕存取相機。\n您必須同意授權它以掃描條碼。</string>
-
     <!-- AlertDialog -->
     <string name="close_dialog_label">關閉</string>
     <string name="yes_label">是</string>
     <string name="no_label">否</string>
     <string name="go_to_dialog_label">進入網站</string>
-
     <!-- ImageView Description -->
     <string name="image_view_description_flag">標誌</string>
     <string name="image_view_description_logo">標示</string>
@@ -23,20 +20,17 @@
     <string name="image_view_description_background">背景</string>
     <string name="image_view_description_image">圖片</string>
     <string name="slider_description_zoom">縮放</string>
-
     <!-- Menu Item -->
     <string name="title_scan">掃描</string>
     <string name="title_history">歷史紀錄</string>
     <string name="title_generate">產生</string>
     <string name="title_settings">設定</string>
-
     <string name="title_qr_code_creator">產生 QR Code</string>
     <string name="title_bar_code_creator">產生條碼</string>
     <string name="information_label">資訊</string>
     <string name="barcode_label">條碼</string>
     <string name="download_from_api_label">從 API 下載</string>
     <string name="menu_more">更多</string>
-
     <!-- Barcode Type -->
     <string name="barcode_qr_code_label">QR Code</string>
     <string name="barcode_data_matrix_label">Data Matrix</string>
@@ -51,7 +45,6 @@
     <string name="barcode_code_39_label">Code 39</string>
     <string name="barcode_codabar_label">Codabar</string>
     <string name="barcode_itf_label">ITF</string>
-
     <!-- QR Type -->
     <string name="qr_code_type_name_text">文字</string>
     <string name="qr_code_type_name_web_site">網站</string>
@@ -64,28 +57,25 @@
     <string name="qr_code_type_name_agenda">日程</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
     <string name="qr_code_type_name_apps">應用程式</string>
-
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">產品</string>
     <string name="bar_code_type_food">食品</string>
     <string name="bar_code_type_pet_food">寵物食品</string>
     <string name="bar_code_type_beauty">美容產品</string>
-    <string name="bar_code_type_music">Music</string>
-    <string name="bar_code_type_unknown_music_album_title">Album title unknown</string>
+    <string name="bar_code_type_music">音樂</string>
+    <string name="bar_code_type_unknown_music_album_title">未知專輯標題</string>
     <string name="bar_code_type_book">書籍</string>
     <string name="bar_code_type_unknown_book_title">未知書名</string>
     <string name="bar_code_type_industrial">工業代碼</string>
     <string name="bar_code_type_unknown_matrix">Matrix Code</string>
     <string name="bar_code_type_name_unknown">未知</string>
-
     <!-- Error Correction Level -->
-    <string name="qr_code_error_correction_level_label">Error correction level</string>
-    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
-    <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
-    <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
-    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
-    <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
-
+    <string name="qr_code_error_correction_level_label">錯誤修正等級</string>
+    <string name="qr_code_error_correction_level_settings_label">錯誤修正等級 (QR Code)</string>
+    <string name="qr_code_error_correction_level_name_low">低 (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">中 (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">四分位數 (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">高 (~30%)</string>
     <!-- History -->
     <string name="label_history_empty">沒有掃描紀錄…</string>
     <string name="snack_bar_message_item_deleted">\"%1$s\" 已被從歷史紀錄中刪除。</string>
@@ -99,7 +89,6 @@
     <string name="delete_label">刪除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">儲存</string>
-
     <!-- CaptureActivity -->
     <string name="scan_cancel_label">掃描已取消！</string>
     <string name="scan_error_exception_label">發生錯誤：%1$s</string>
@@ -107,7 +96,6 @@
     <string name="scan_from_image_label">圖片</string>
     <string name="intent_filter_scan_by_image">掃描圖片</string>
     <string name="scan_information_label">對準條碼以掃描</string>
-
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">搜尋中…</string>
     <string name="scan_error_label">搜尋時錯誤！</string>
@@ -116,31 +104,25 @@
     <string name="barcode_found_on_label">發現 %1$s！</string>
     <string name="barcode_not_found_on_api_label">沒有發現資訊 %1$s…</string>
     <string name="no_internet_permission">您沒有允許存取網路。</string>
-
     <string name="about_barcode_information_label">條碼資訊</string>
     <string name="about_barcode_label">關於條碼</string>
     <string name="about_barcode_format_label">格式：%1$s</string>
     <string name="about_barcode_content_label">內容：%1$s</string>
     <string name="about_barcode_origin_label">來源：</string>
-
     <!-- Product -->
     <string name="product_search_label">產品搜尋</string>
     <string name="no_product_found_label">沒有發現產品！</string>
-
     <!-- Barcode Searching Error -->
     <string name="warning_label">警告</string>
     <string name="scan_error_information_label">在遠端 API 搜尋資訊時發生錯誤…請檢查您的網連接與應用程式的權限！如果問題依然存在，應該是伺服器問題。</string>
     <string name="scan_error_internet_information_label">沒有產品檢索的資訊，您似乎沒有連接到網路！</string>
     <string name="scan_error_message_label">錯誤訊息：</string>
-
     <!-- Food Beauty and Pet Food Product -->
     <string name="overview_tab_label">概述</string>
     <string name="ingredients_label">成分</string>
     <string name="nutrition_facts_tab_label">營養</string>
-
     <!-- Overview -->
     <string name="quality_label">產品品質</string>
-
     <string name="nutriscore_entitled_label">Nutri-Score</string>
     <string name="nutriscore_description">Nutri-Score 是一個標示告知食物的營養價值，評級從 A 到 E。此分數考慮了營養成分、<b>推廣食物</b> (纖維、蛋白質、水果、蔬菜、豆類、油籽) 與<b>限制食物</b> (能量、飽和脂肪酸、糖、鹽)。</string>
     <string name="nutriscore_description_a">非常高營養價值</string>
@@ -149,7 +131,6 @@
     <string name="nutriscore_description_d">低營養價值</string>
     <string name="nutriscore_description_e">非常低營養價值</string>
     <string name="nutriscore_description_unknown">沒有 Nutri-Score</string>
-
     <string name="nova_group_entitled_label">NOVA Group</string>
     <string name="nova_group_description">NOVA Group 是一個 4 組分類以突出加工食物的等級：\n1 - 非加工食品或最低限度加工食品\n2 - 加工原料\n3 - 加工食品\n4 - 精緻食品與飲料</string>
     <string name="nova_group_description_1">非加工食品或最低限度加工食品</string>
@@ -157,7 +138,6 @@
     <string name="nova_group_description_3">加工食品</string>
     <string name="nova_group_description_4">精緻食品與飲料</string>
     <string name="nova_group_description_unknown">沒有 NOVA Group</string>
-
     <string name="eco_score_entitled_label">Eco-Score</string>
     <string name="eco_score_description">Eco-Score 是圍繞類似 Nutri-Score 模型所建立的：它是一個從 A (非常低影響) 到 E (很高影響) 的評級。</string>
     <string name="eco_score_description_a">非常低環境影響</string>
@@ -166,7 +146,6 @@
     <string name="eco_score_description_d">高環境影響</string>
     <string name="eco_score_description_e">非常高環境影響</string>
     <string name="eco_score_description_unknown">未知環境影響</string>
-
     <!-- Details -->
     <string name="details_label">詳情</string>
     <string name="ingredients_analysis_label">原料分析：</string>
@@ -176,30 +155,25 @@
     <string name="packaging_label">包裝</string>
     <string name="stores_label">店家</string>
     <string name="countries_label">銷售國家</string>
-
     <!-- Ingredients -->
     <string name="ingredients_no_information_found_label">沒有找到此產品的成分…</string>
     <string name="allergens_label">過敏原</string>
     <string name="traces_label">微量</string>
     <string name="additives_label">添加物</string>
     <string name="veggie_label">素食</string>
-
     <!-- Additif -->
     <string name="off_additive_info_label">資訊</string>
     <string name="off_risk_low_label">安全</string>
     <string name="off_risk_moderate_label">不確定</string>
     <string name="off_risk_high_label">避免</string>
     <string name="off_risk_none_label">未知風險</string>
-
     <string name="off_overexposure_risk_low_label">少量</string>
     <string name="off_overexposure_risk_moderate_label">中量</string>
     <string name="off_overexposure_risk_high_label">大量</string>
     <string name="off_overexposure_risk_none_label">未知用量</string>
-
     <string name="stabilizer_label">穩定劑</string>
     <string name="stabilizer_description_label">穩定劑、增稠劑與膠凝劑，像是洋菜或果膠 (例如用於果醬) 使食物質地更堅固，雖然它們不是真正的乳化劑，但它們有助於穩定乳化劑。</string>
     <string name="additive_no_information_found_label">沒有找到關於此添加物資訊！</string>
-
     <!-- Veggie -->
     <string name="ingredient_veggie_entitled_label">素食與素食主義者狀態</string>
     <string name="palm_oil_free_label">不含棕櫚油</string>
@@ -214,11 +188,9 @@
     <string name="no_vegetarian_label">不是素食主義者</string>
     <string name="maybe_vegetarian_label">可能是素食主義者</string>
     <string name="vegetarian_status_unknown_label">素食主義者狀態未知</string>
-
     <!-- Nutrition -->
     <string name="nutrition_facts_no_information_found_label">沒有找到此產品的營養成分…</string>
     <string name="nutrition_facts_entitled_label">營養成分</string>
-
     <!-- Table -->
     <string name="nutrition_facts_table_label">營養成分</string>
     <string name="off_per_100_label">每 100%1$s</string>
@@ -235,14 +207,12 @@
     <string name="off_proteins_label">蛋白質</string>
     <string name="off_salt_label">鹽</string>
     <string name="off_sodium_label">鈉</string>
-
     <!-- For 100g -->
     <string name="nutrient_level_entitled_label">每 100g 營養成分</string>
     <string name="off_quantity_low_label">低量</string>
     <string name="off_quantity_moderate_label">中量</string>
     <string name="off_quantity_high_label">高量</string>
     <string name="off_quantity_none_label">未知含量</string>
-
     <!-- Book -->
     <string name="book_product_summary_label">概要</string>
     <string name="book_product_more_label">更多</string>
@@ -251,15 +221,12 @@
     <string name="book_product_publish_date_label">出版日期</string>
     <string name="book_product_original_title_label">原始標題</string>
     <string name="book_product_pages_number">%1$s 頁</string>
-
     <!-- Music -->
     <string name="music_product_tracks_label">Tracks</string>
     <string name="music_product_tracks_number">%1$s tracks</string>
-
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">條碼內容</string>
     <string name="bar_code_analysis_label">條碼分析</string>
-
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">名稱：</string>
     <string name="matrix_contact_organisation_label">公司：</string>
@@ -268,24 +235,20 @@
     <string name="matrix_contact_mail_label">電子郵件：</string>
     <string name="matrix_contact_address_label">地址：</string>
     <string name="matrix_contact_notes_label">備註：</string>
-
     <!-- Matrix Barcode Agenda Analysis -->
     <string name="matrix_agenda_name_event_label">事件名稱：</string>
     <string name="matrix_agenda_start_date_event_label">開始：</string>
     <string name="matrix_agenda_end_date_event_label">結束：</string>
     <string name="matrix_agenda_place_event_label">地點：</string>
     <string name="matrix_agenda_description_event_label">描述：</string>
-
     <!-- Matrix Barcode Phone Analysis -->
     <string name="matrix_phone_tel_number_label">電話：</string>
-
     <!-- Matrix Barcode Email Analysis -->
     <string name="matrix_email_recipient_label">收件人：</string>
     <string name="matrix_email_cc_label">副本：</string>
     <string name="matrix_email_bcc_label">密件副本：</string>
     <string name="matrix_subject_label">主旨：</string>
     <string name="matrix_body_label">訊息：</string>
-
     <!-- Matrix Barcode Wi-Fi Analysis -->
     <string name="matrix_wifi_ssid_label">SSID：</string>
     <string name="matrix_wifi_password_label">密碼：</string>
@@ -295,11 +258,9 @@
     <string name="matrix_wifi_identity_label">身分：</string>
     <string name="matrix_wifi_eap_method_label">Eap 方法：</string>
     <string name="matrix_wifi_phase_2_method_label">Phase 2 方法：</string>
-
     <!-- Matrix Barcode URL Analysis -->
     <string name="matrix_uri_url_label">URL：</string>
     <string name="matrix_uri_malicious_label">可能是惡意 URL…</string>
-
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI 分析</string>
     <string name="matrix_uri_upi_id_label">UPI ID：</string>
@@ -307,7 +268,6 @@
     <string name="matrix_uri_upi_amount_label">金額：</string>
     <string name="matrix_uri_upi_currency_label">貨幣：</string>
     <string name="matrix_uri_upi_description_label">描述：</string>
-
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">緯度：</string>
     <string name="matrix_localisation_longitude_label">經度：</string>
@@ -316,7 +276,6 @@
     <string name="matrix_localisation_button_find_location">從您的位置產生</string>
     <string name="matrix_localisation_search_current_position_label">搜尋目前位置…</string>
     <string name="matrix_localisation_location_disabled_label">您的裝置定位似乎沒有被啟用。</string>
-
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">此條碼類型經常被使用於工業。</string>
     <string name="barcode_code_39_description_label">Code 39 是一種用於紡織記號與西藥房藥品的條碼。它也用於軍事行業與汽車工業。</string>
@@ -328,13 +287,11 @@
     <string name="barcode_upc_e_description_label">Code UPC-E (通用產品代碼) 是 UPC-A 代碼的壓縮條碼，主要用於美國和加拿大辨認商店與商店中銷售的商品。它用於太小而無法使用 UPC-A 的包裝。</string>
     <string name="barcode_ean_13_description_label">Code EAN-13 (歐洲商品條碼 13) 是一種廣泛用於辨識銷售在歐洲與世界上幾乎所有地方的產品的條碼。它由 13 位數字組成。</string>
     <string name="barcode_ean_8_description_label">Code EAN-8 (歐洲商品條碼 8) 是 EAN-13 代碼的壓縮條碼，用於辨識銷售在歐洲與世界上幾乎所有地方的產品的條碼。它用於太小而無法使用 EAN-13 的包裝。</string>
-
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">您必須接受許可以使用此功能。</string>
     <string name="snack_bar_message_save_bitmap_ok">圖片已儲存</string>
     <string name="snack_bar_message_save_bitmap_error">圖片未被儲存… \n可能是儲存空間不足？</string>
     <string name="snack_bar_message_share_bitmap_error">分享組態時發生錯誤</string>
-
     <!-- Actions -->
     <string name="actions_label">功能</string>
     <string name="intent_chooser_share_title">"分享…"</string>
@@ -354,7 +311,6 @@
     <string name="action_add_to_contacts">加入到通訊綠</string>
     <string name="action_show_location">顯示位置</string>
     <string name="action_open_link">開啟連結</string>
-
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Wi-Fi連接</string>
     <string name="action_wifi_connection_from_app">連接到 Wi-Fi</string>
@@ -369,9 +325,7 @@
     <string name="action_wifi_add_network_failed">加入Wi-Fi網路失敗。</string>
     <string name="action_wifi_add_network_already_exists">您已經加入過此 Wi-Fi 網路。</string>
     <string name="action_wifi_add_network_unknown_error">加入 Wi-Fi 網路時發生未知錯誤。</string>
-
     <!-- QR Code Generator -->
-
     <!-- Barcode Generator Errors -->
     <string name="error_barcode_none_character_message">您必須在欄位中輸入正確的值。</string>
     <string name="error_barcode_not_a_number_message">條碼只能由數字組成。</string>
@@ -388,7 +342,6 @@
     <string name="error_barcode_qr_phone_number_missing_message">您必須輸入一個電話號碼</string>
     <string name="error_barcode_qr_email_missing_message">您必須至少輸入一個欄位</string>
     <string name="error_barcode_qr_localisation_missing_message">您必須告知經度或緯度</string>
-
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">產生</string>
     <string name="save_label">儲存</string>
@@ -396,13 +349,11 @@
     <string name="share_image_label">分享圖片</string>
     <string name="share_text_label">分享文字</string>
     <string name="popup_message_confirmation_save_image">儲存圖片？</string>
-
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">輸入文字…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">輸入電話號碼…</string>
     <string name="qr_code_text_generator_hint_url_input_edit_text">輸入網站位址…</string>
     <string name="qr_code_text_input_edit_text_hint_message">訊息</string>
-
     <!-- Contact Creator -->
     <string name="qr_code_type_name_generate_from_contact">從通訊錄產生</string>
     <string name="qr_code_text_radio_button_label_m">先生</string>
@@ -426,13 +377,11 @@
     <string name="qr_code_text_input_edit_text_hint_region">地區</string>
     <string name="qr_code_text_input_edit_text_hint_notes">備註</string>
     <string name="qr_code_spinner_prompt_none">無</string>
-
     <string name="spinner_type_mobile">手機</string>
     <string name="spinner_type_fax">傳真</string>
     <string name="spinner_type_home">住家</string>
     <string name="spinner_type_work">工作</string>
     <string name="spinner_type_other">其他</string>
-
     <!-- EPC Creator -->
     <string name="qr_code_text_input_edit_text_hint_epc_service_tag">服務標籤</string>
     <string name="qr_code_text_input_edit_text_hint_epc_version">版本</string>
@@ -446,21 +395,16 @@
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">匯款 (參考)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">匯款 (訊息)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_information">資訊</string>
-
     <string name="qr_code_text_input_edit_text_epc_name_error">\"名稱\" 欄位是必須的</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN 不正確</string>
-
     <string name="list_bank_empty_message">沒有項目…\n您還沒有產生一個 EPC QR Code。</string>
-
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">電子郵件</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">主旨</string>
-
     <!-- Geo Localisation Creator -->
     <string name="qr_code_text_input_edit_text_hint_localisation_latitude">緯度</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_longitude">經度</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_request">查詢</string>
-
     <!-- Wifi Creator -->
     <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / 網路名稱</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_password">密碼</string>
@@ -468,7 +412,6 @@
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
     <string name="spinner_wifi_encryption_none">無密碼</string>
-
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">事件名稱</string>
     <string name="qr_code_text_input_edit_text_hint_agenda_place">地點</string>
@@ -476,9 +419,7 @@
     <string name="check_box_event_all_of_day">整日</string>
     <string name="begin_label">開始</string>
     <string name="end_label">結束</string>
-
     <!-- URL -->
-
     <!-- API Base URL -->
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
@@ -486,7 +427,6 @@
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
-
     <!-- URL Engines -->
     <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
@@ -496,12 +436,10 @@
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
-
     <!-- E-Commerce Engines -->
     <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
     <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
-
     <!-- API Product Engines -->
     <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
@@ -509,23 +447,19 @@
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
-
     <!-- API Sources Links -->
     <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
     <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
     <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
-
     <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
-    <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
-    <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
-    <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
-    <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
-
+    <string name="open_food_facts_source_description_label">關於食品的資訊來自 Open Food Facts 免費資料庫。</string>
+    <string name="open_pet_food_facts_source_description_label">寵物食品的資訊來自 Open Pet Food Facts 免費資料庫。</string>
+    <string name="open_beauty_facts_source_description_label">美容產品的資訊來自來自 Open Beauty Facts 免費資料庫。</string>
+    <string name="music_brainz_source_description_label">音樂產品的資訊來自來自免費的 MusicBrainz 資料庫。</string>
+    <string name="open_library_source_description_label">書籍的資訊來自 Open Library 免費資料庫。</string>
     <!-- Preferences -->
-
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">外觀</string>
     <string name="preferences_theme_label">主題</string>
@@ -539,46 +473,43 @@
     <string name="preferences_color_green">綠色</string>
     <string name="preferences_color_red">紅色</string>
     <string name="preferences_color_purple">紫色</string>
-
     <!-- Languages Settings -->
     <string name="preferences_languages_title">語言</string>
     <string name="preferences_languages_change">更換語言</string>
-
     <!-- Remote API -->
-    <string name="preferences_remote_api_title">Products and API</string>
+    <string name="preferences_remote_api_title">產品與 API</string>
     <string name="preferences_switch_scan_search_on_api_label">自動在遠端 API 搜尋</string>
-    <string name="preferences_remote_api_to_use_label">Default API</string>
-    <string name="preferences_remote_api_choose_label">Choose an API</string>
-    <string name="preferences_remote_api_food_label">Open Food Facts (Food products)</string>
-    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Cosmetic products)</string>
-    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Pet food products)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyls, …)</string>
-    <string name="preferences_remote_api_book_label">Open Library (Books)</string>
-
+    <string name="preferences_remote_api_to_use_label">預設 API</string>
+    <string name="preferences_remote_api_choose_label">選擇一個 API</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts (食品)</string>
+    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (化妝品)</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (寵物食品)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CD、黑膠唱片…)</string>
+    <string name="preferences_remote_api_book_label">Open Library (書籍)</string>
     <!-- About Remote API -->
-    <string name="preferences_information_about_remote_api_title">Information about APIs</string>
-    <string name="preferences_information_about_remote_api_foreword">Foreword</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_title">What is an API?</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_description">An API is a software library used to access a service. In the case of this application, an API is used to access a web service. This web service retrieves information from a database.\nFor example, Open Food Facts is a database of food products and provides an API to access its database. I use this API to display information on food products.</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Barcode types concerned</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">The API search function is only activated for EAN 13, EAN 8, UPC A and UPC E barcodes.</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_title">Product types currently supported</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_food">• Food products (with Open Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Cosmetic products (with Open Beauty Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Pet food products (with Open Pet Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (with MusicBrainz API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_book">• Books (with Open Library API)</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_title">Some additional information</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Some products may not be included in certain databases.</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• There may be some errors in the information provided by the APIs.</string>
-    <string name="preferences_information_about_remote_api_how_it_works">How it works</string>
-    <string name="preferences_information_about_remote_api_automatic_search_title">Automatic search</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings. If no information is found on the API, you can always perform a manual search on another API after the scan.</string>
-    <string name="preferences_information_about_remote_api_manual_search_title">Manual search</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always manually search for information on the scanned product. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
-    <string name="preferences_information_about_remote_api_about_books_title">Books</string>
-    <string name="preferences_information_about_remote_api_about_books_description">If the product you\'re scanning is a book, you don\'t need to specify the API on which to search for information. A book\'s barcode is identifiable because it always begins with the digits \"978\". The search will automatically be performed on Open Library.</string>
-
+    <string name="preferences_information_about_remote_api_title">關於 API 的資訊</string>
+    <string name="preferences_information_about_remote_api_foreword">前言</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">何為 API？</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_description">API 是一個用於存取服務的軟體函式庫。 在此應用程式的情況下，API 用於存取網路服務。此網路服務從資料庫檢索資訊。
+\n例如，Open Food Facts 是一個食品資料庫並提供 API 存取它的資料庫。我使用 API 以取得食品的資訊。</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">相關條碼類型</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">此 API 搜尋功能僅適用於 EAN 13、EAN 8、UPC 與 UPC E 條碼。</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_title">目前支援的產品類型</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_food">• 食品 (使用 Open Food Facts API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• 化妝品 (使用 Open Beauty Facts API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• 寵物食品 (使用 Open Pet Food Facts API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CD、黑膠唱片… (使用 MusicBrainz API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_book">• 書籍 (使用 Open Library API)</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_title">一些附加資訊</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• 一些產品或許不被包含在某些資料庫。</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• 由 API 提供的資訊中或有些錯誤。</string>
+    <string name="preferences_information_about_remote_api_how_it_works">它是如何工作的</string>
+    <string name="preferences_information_about_remote_api_automatic_search_title">自動搜尋</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">假如 \"%1$s\" 選項已啟用，當您掃描產品條碼，搜尋是自動執行在設置中選擇的 API 上。如果在該 API 上沒有發現資訊，掃描之後您始終可以在另一個 API 執行手動搜尋。</string>
+    <string name="preferences_information_about_remote_api_manual_search_title">手動搜尋</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">假如 \"%1$s\" 選項已啟用，當您掃描一個產品條碼，沒有從遠端伺服器檢索到任何資訊。但您始終可以手動搜尋掃描的產品的資訊。 為此，掃描產品後，點擊選單列中的圖示。之後您可以選擇一個 API 以執行搜尋。</string>
+    <string name="preferences_information_about_remote_api_about_books_title">書籍</string>
+    <string name="preferences_information_about_remote_api_about_books_description">如果您正在掃描的產品是書籍，則無需指定用於搜尋資訊的 API。 書籍的條碼是可被辨識的，因為它總是以數字 \"978\" 開頭。 搜尋將自動在 Open Library 上執行。</string>
     <!-- Scan Settings -->
     <string name="preferences_scan_title">掃描</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">使用 CameraX API</string>
@@ -588,22 +519,18 @@
     <string name="preferences_switch_scan_barcode_copied_label">複製掃描的結果至剪貼簿</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">加入已掃描的條碼至歷史紀錄</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">攝影機縮放的預設值</string>
-
     <!-- Barcode Generation Settings -->
-    <string name="preferences_barcode_generation_title">Barcode generation</string>
-    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
-
+    <string name="preferences_barcode_generation_title">條碼產生</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">新增已產生的條碼至歷史紀錄</string>
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">搜尋</string>
     <string name="preferences_search_engine">搜尋引擎</string>
-
     <!-- About Settings -->
     <string name="preferences_about_title">關於</string>
     <string name="preferences_about_permissions_label">權限</string>
     <string name="preferences_about_library_third_label">第三方函式庫</string>
     <string name="preferences_about_bdd_label">資料庫</string>
     <string name="preferences_source_code_label">原始碼</string>
-
     <!-- About Permissions -->
     <string name="permission_camera_label">相機</string>
     <string name="permission_camera_description_label">掃描條碼所需。</string>
@@ -619,17 +546,14 @@
     <string name="permission_vibrate_description_label">用於在掃描時震動。</string>
     <string name="permission_query_all_packages_label">查詢所有套件</string>
     <string name="permission_query_all_packages_description_label">用於從安裝的應用程式產生 QR Code。</string>
-
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts is a free database about food which lists ingredients, allergens, nutritional composition and all information present on the products labels.</string>
-    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts is a free database about pet food.</string>
-    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts is a free database about cosmetic products.</string>
-    <string name="bdd_music_brainz_description_label">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.</string>
-    <string name="bdd_open_library_description_label">Open Library is a free database aimed at cataloging all published books, whatever their language.</string>
-
+    <string name="bdd_open_food_facts_description_label">Open Food Facts 是一個關於食品的免費資料庫，其中列出了成分、過敏原、營養成分以及產品標籤上顯示的所有資訊。</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts 是一個關於寵物食品的免費資料庫。</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts 是一個關於化妝品的免費資料庫。</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz 是一本開放的音樂百科全書，它收集了音樂詮釋資料並向公眾開放。</string>
+    <string name="bdd_open_library_description_label">Open Library 是一個免費資料庫，旨在對所有出版的書籍進行編目，無論語言。</string>
     <!-- About Library Third -->
     <string name="dependency_by">by %1$s</string>
-
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
     <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
@@ -644,7 +568,6 @@
     <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
     <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
-
     <!-- Countries -->
     <string name="country_usa">美國</string>
     <string name="country_ca">加拿大</string>
