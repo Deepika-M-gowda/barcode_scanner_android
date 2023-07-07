@@ -38,8 +38,8 @@
         <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
-        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
@@ -86,8 +86,8 @@
         <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
-        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
@@ -153,6 +153,20 @@
         <item name="dialogBackgroundColor">@color/blue_dark_dialog</item>
     </style>
 
+    <style name="BlueBlackTheme" parent="BlueDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
+    </style>
+
     <style name="OrangeLightTheme" parent="LightTheme">
         <item name="colorPrimary">@color/orange_light_primary</item>
         <item name="colorOnPrimary">@color/orange_light_onPrimary</item>
@@ -203,6 +217,20 @@
         <item name="colorSurfaceInverse">@color/orange_dark_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/orange_dark_inversePrimary</item>
         <item name="dialogBackgroundColor">@color/orange_dark_dialog</item>
+    </style>
+
+    <style name="OrangeBlackTheme" parent="OrangeDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
     </style>
 
     <style name="GreenLightTheme" parent="LightTheme">
@@ -257,6 +285,20 @@
         <item name="dialogBackgroundColor">@color/green_dark_dialog</item>
     </style>
 
+    <style name="GreenBlackTheme" parent="GreenDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
+    </style>
+
     <style name="RedLightTheme" parent="LightTheme">
         <item name="colorPrimary">@color/red_light_primary</item>
         <item name="colorOnPrimary">@color/red_light_onPrimary</item>
@@ -309,6 +351,20 @@
         <item name="dialogBackgroundColor">@color/red_dark_dialog</item>
     </style>
 
+    <style name="RedBlackTheme" parent="RedDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
+    </style>
+
     <style name="PurpleLightTheme" parent="LightTheme">
         <item name="colorPrimary">@color/purple_light_primary</item>
         <item name="colorOnPrimary">@color/purple_light_onPrimary</item>
@@ -359,5 +415,19 @@
         <item name="colorSurfaceInverse">@color/purple_dark_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/purple_dark_inversePrimary</item>
         <item name="dialogBackgroundColor">@color/purple_dark_dialog</item>
+    </style>
+
+    <style name="PurpleBlackTheme" parent="PurpleDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
     </style>
 </resources>

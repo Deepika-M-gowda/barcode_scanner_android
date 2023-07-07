@@ -38,12 +38,14 @@
         <item>@string/preferences_switch_system_theme_label</item>
         <item>@string/preferences_switch_light_theme_label</item>
         <item>@string/preferences_switch_dark_theme_label</item>
+        <item>Black Theme</item>
     </string-array>
 
     <string-array name="preference_theme_values" translatable="false">
         <item>system</item>
         <item>light</item>
         <item>dark</item>
+        <item>black</item>
     </string-array>
 
     <string-array name="preference_remote_api_choose_entries">

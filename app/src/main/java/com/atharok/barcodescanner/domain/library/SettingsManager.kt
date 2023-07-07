@@ -100,7 +100,7 @@ class SettingsManager(private val context: Context) {
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
     }
 
-    fun getTheme(): Int {
+    /*fun getTheme(): Int {
         return if(useDarkTheme()) {
             //R.style.DarkTheme
             when(color){
@@ -123,6 +123,52 @@ class SettingsManager(private val context: Context) {
                 "purple" -> R.style.PurpleLightTheme
                 else -> R.style.BlueLightTheme
             }
+        }
+    }*/
+
+    fun getTheme(): Int {
+        return when(theme) {
+            "system" -> if(isDarkThemeSystemOn()) getDarkTheme() else getLightTheme()
+            "light" -> getLightTheme()
+            "dark" -> getDarkTheme()
+            "black" -> getBlackTheme()
+            else -> if(isDarkThemeSystemOn()) getDarkTheme() else getLightTheme()
+        }
+    }
+
+    private fun getLightTheme(): Int {
+        return when(color){
+            "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouLightTheme else R.style.BlueLightTheme
+            "blue" -> R.style.BlueLightTheme
+            "orange" -> R.style.OrangeLightTheme
+            "green" -> R.style.GreenLightTheme
+            "red" -> R.style.RedLightTheme
+            "purple" -> R.style.PurpleLightTheme
+            else -> R.style.BlueLightTheme
+        }
+    }
+
+    private fun getDarkTheme(): Int {
+        return when(color){
+            "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouDarkTheme else R.style.BlueDarkTheme
+            "blue" -> R.style.BlueDarkTheme
+            "orange" -> R.style.OrangeDarkTheme
+            "green" -> R.style.GreenDarkTheme
+            "red" -> R.style.RedDarkTheme
+            "purple" -> R.style.PurpleDarkTheme
+            else -> R.style.BlueDarkTheme
+        }
+    }
+
+    private fun getBlackTheme(): Int {
+        return when(color){
+            "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouBlackTheme else R.style.BlueBlackTheme
+            "blue" -> R.style.BlueBlackTheme
+            "orange" -> R.style.OrangeBlackTheme
+            "green" -> R.style.GreenBlackTheme
+            "red" -> R.style.RedBlackTheme
+            "purple" -> R.style.PurpleBlackTheme
+            else -> R.style.BlueBlackTheme
         }
     }
 
@@ -149,7 +195,7 @@ class SettingsManager(private val context: Context) {
     fun useDarkTheme(): Boolean = when(theme){
         "system" -> isDarkThemeSystemOn()
         "light" -> false
-        "dark" -> true
+        "dark", "black" -> true
         else -> isDarkThemeSystemOn()
     }
 

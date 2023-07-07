@@ -36,8 +36,8 @@
         <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
-        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 

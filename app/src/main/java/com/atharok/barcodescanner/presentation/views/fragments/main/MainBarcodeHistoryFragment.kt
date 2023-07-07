@@ -29,6 +29,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -50,7 +51,6 @@ import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemTouchHelperListener
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
@@ -205,7 +205,9 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
     }
 
     private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
-        MaterialAlertDialogBuilder(requireContext(), R.style.AppTheme_MaterialAlertDialog)
+        //MaterialAlertDialogBuilder(requireActivity())
+        AlertDialog.Builder(requireActivity())
+            //.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.dialog_background))
             .setTitle(R.string.delete_label)
             .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->

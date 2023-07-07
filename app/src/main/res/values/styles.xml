@@ -85,6 +85,11 @@
         <item name="cardElevation">@dimen/card_elevation</item>
     </style>
 
+    <style name="AppTheme.CardView.Material3.BlackTheme" parent="@style/AppTheme.CardView.Material3">
+        <item name="strokeColor">?colorOutline</item>
+        <item name="strokeWidth">@dimen/stroke_width</item>
+    </style>
+
     <!-- BottomNavigationView -->
     <style name="AppTheme.BottomNavigationView.Style" parent="Widget.Material3.BottomNavigationView">
         <item name="android:background">?colorSurface</item>
@@ -198,12 +203,13 @@
     </style>
 
     <!-- AlertDialog -->
-    <style name="AppTheme.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+    <style name="AppTheme.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered">
 
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:colorBackground">?dialogBackgroundColor</item>
+        <!--<item name="android:colorBackground">?dialogBackgroundColor</item>-->
+        <item name="android:colorBackground">?colorSurface</item>
 
         <!-- Title Text -->
         <item name="android:textSize">@dimen/title_text_size</item>
@@ -220,26 +226,13 @@
         <item name="buttonBarNeutralButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
     </style>
 
-    <style name="AppTheme.MaterialAlertDialog.Centered" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered">
+    <style name="AppTheme.MaterialAlertDialog.BlackTheme" parent="@style/AppTheme.MaterialAlertDialog">
+        <!--<item name="strokeColor">#40ffffff</item>
+        <item name="strokeWidth">@dimen/stroke_width</item>-->
+        <item name="android:windowBackground">@drawable/dialog_background_stroke</item>
+        <!--<item name="android:colorBackground">?colorPrimary</item>-->
 
-        <!-- Overlay -->
-        <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
-        <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:colorBackground">?dialogBackgroundColor</item>
 
-        <!-- Title Text -->
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="fontFamily">sans-serif-black</item>
-        <item name="android:textStyle">normal</item>
-
-        <!-- Pour les checked button dans preferences -->
-        <item name="android:checkedTextViewStyle">@style/AppTheme.TextView.Appearance.Subtitle.Primary</item>
-        <item name="materialAlertDialogBodyTextStyle">@style/AppTheme.TextView.Appearance.Standard.Primary</item>
-
-        <!-- Buttons -->
-        <item name="buttonBarPositiveButtonStyle">@style/AppTheme.MaterialButton</item>
-        <item name="buttonBarNegativeButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
-        <item name="buttonBarNeutralButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
     </style>
 
     <!-- DateTimePicker -->
@@ -248,8 +241,8 @@
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:background">@drawable/dialog_background</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:background">@drawable/dialog_background</item>-->
+        <item name="android:windowBackground">@drawable/dialog_background</item>
 
         <!-- Date / Time Style -->
         <item name="android:datePickerStyle">@style/ThemeOverlay.Material3.MaterialCalendar</item>
@@ -259,6 +252,10 @@
         <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.MaterialButton</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
         <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
+    </style>
+
+    <style name="AppTheme.DateTimePickerTheme.BlackTheme" parent="AppTheme.DateTimePickerTheme">
+        <item name="android:windowBackground">@drawable/dialog_background_stroke</item>
     </style>
 
     <!-- Overflow Menu (Placement de Item Menu) -->

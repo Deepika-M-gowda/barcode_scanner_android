@@ -79,7 +79,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
 import com.google.android.material.chip.Chip
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
@@ -462,7 +461,7 @@ val viewsModule = module {
 
             val textSizeInDP = resources.getDimension(R.dimen.standard_text_size) / resources.displayMetrics.density
             textSize = textSizeInDP
-            typeface = Typeface.create("sans-serif-medium", Typeface.ITALIC)//ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
+            typeface = Typeface.create(activity.getString(R.string.default_font), Typeface.ITALIC)//ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
             setTextIsSelectable(true)
         }
     }
@@ -472,7 +471,7 @@ val viewsModule = module {
         val textView = get<TextView> { parametersOf(activity, message) }
         val frameLayout = get<FrameLayout> { parametersOf(activity, textView) }
 
-        MaterialAlertDialogBuilder(activity, R.style.AppTheme_MaterialAlertDialog).apply {
+        AlertDialog.Builder(activity).apply {
             setTitle(title)
             setNegativeButton(R.string.close_dialog_label) {
                     dialogInterface, _ -> dialogInterface.cancel()

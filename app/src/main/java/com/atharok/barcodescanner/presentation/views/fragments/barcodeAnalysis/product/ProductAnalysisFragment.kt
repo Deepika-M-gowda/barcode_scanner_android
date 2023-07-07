@@ -27,6 +27,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -49,7 +50,6 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisA
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisErrorApiFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.android.ext.android.get
 
 /**
@@ -203,7 +203,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
             getString(R.string.preferences_remote_api_musicbrainz_label)
         )
 
-        val builder = MaterialAlertDialogBuilder(barcodeAnalysisActivity, R.style.AppTheme_MaterialAlertDialog).apply {
+        val builder = AlertDialog.Builder(barcodeAnalysisActivity).apply {
             setTitle(R.string.preferences_remote_api_choose_label)
             setItems(items) { dialog, i ->
                 when(i) {

@@ -311,4 +311,9 @@
     <color name="purple_dark_outlineVariant">#49454E</color>
     <color name="purple_dark_scrim">#000000</color>
     <color name="purple_dark_dialog">#2a282e</color>
+
+    <!-- Black Theme -->
+    <color name="black_theme_background">#000000</color>
+    <color name="black_theme_surface">#000000</color>
+    <color name="black_theme_outline">#40ffffff</color>
 </resources>

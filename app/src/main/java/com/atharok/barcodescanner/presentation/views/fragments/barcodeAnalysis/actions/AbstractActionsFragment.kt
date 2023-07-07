@@ -44,7 +44,6 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisA
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.client.result.ParsedResult
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
@@ -204,7 +203,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
         val itemsLabel: Array<String> = items.map { it.first }.toTypedArray()
 
-        return MaterialAlertDialogBuilder(context).apply {
+        return AlertDialog.Builder(context).apply {
             setTitle(title)
             setNegativeButton(R.string.close_dialog_label) {
                     dialogInterface, _ -> dialogInterface.cancel()

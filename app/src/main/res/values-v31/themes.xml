@@ -32,8 +32,8 @@
         <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
-        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
@@ -78,8 +78,8 @@
         <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
         <item name="chipStyle">@style/AppTheme.Chip</item>
         <item name="sliderStyle">@style/AppTheme.Slider</item>
-        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
-        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.Centered</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
@@ -91,6 +91,20 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="MaterialYouBlackTheme" parent="MaterialYouDarkTheme">
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3.BlackTheme</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog.BlackTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
+        <item name="elevationOverlayEnabled">false</item>
+
+        <item name="android:colorBackground">@color/black_theme_background</item>
+        <item name="colorSurface">@color/black_theme_surface</item>
+        <item name="colorOutline">@color/black_theme_outline</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.Material3.DayNight.NoActionBar">
