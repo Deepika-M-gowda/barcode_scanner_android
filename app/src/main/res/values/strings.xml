@@ -463,7 +463,7 @@
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Appearance</string>
     <string name="preferences_theme_label">Theme</string>
-    <string name="preferences_switch_system_theme_label">Follow</string>
+    <string name="preferences_switch_system_theme_label">Follow System</string>
     <string name="preferences_switch_light_theme_label">Light</string>
     <string name="preferences_switch_dark_theme_label">Dark</string>
     <string name="preferences_switch_black_theme_label">Black</string>
@@ -535,7 +535,7 @@
     <string name="permission_camera_label">Camera</string>
     <string name="permission_camera_description_label">Required to scan barcode.</string>
     <string name="permission_internet_label">Internet</string>
-    <string name="permission_internet_description_label">Required to retrieve information from remote API</string>
+    <string name="permission_internet_description_label">Required to retrieve information from remote API.</string>
     <string name="permission_contact_label">Contact</string>
     <string name="permission_contact_description_label">Required to import contact to generate QR Code from this one.</string>
     <string name="permission_location_label">Location</string>
