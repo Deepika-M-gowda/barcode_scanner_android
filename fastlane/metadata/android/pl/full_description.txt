@@ -1,0 +1,24 @@
+Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls...).
+
+Różne formaty kodów kreskowych są zarządzane przez aplikację: 
+• dwuwymiarowe kody kreskowych: QR Code, Data Matrix, PDF 417, AZTEC 
+• jednowymiarowe kody kreskowe: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, IT
+
+Collect information about a product during a scan :
+• Food products with Open Food Facts
+• Cosmetics with Open Beauty Facts
+• Food products for pets with Open Pet Food Facts
+• Books with Open Library
+• Music CDs, Vinyls... with MusicBrainz
+
+Funkcje aplikacji : 
+• Wystarczy skierować aparat smartfona na kod kreskowy i natychmiast otrzymać o nim informację. Możesz także skanować kody kreskowe za pomocą obrazu w smartfonie. 
+• Za pomocą prostego skanowania czytaj wizytówki, dodawaj nowe kontakty, dodawaj nowe wydarzenia do swojego planu, otwieraj adresy URL, a nawet łącz się z Wi-Fi.
+• Skanuj kody kreskowe produktów spożywczych, aby otrzymywać informacje o ich składzie dzięki bazom danych Open Food Facts i Open Beauty Facts. 
+• Wyszukaj informacje o skanowanym produkcie, dzięki szybkiemu badaniu na różnych stronach internetowych, takich jak Amazon lub Fnac. 
+• Śledź wszystkie zeskanowane kody kreskowe za pomocą narzędzia historii. 
+• Generuj własne kody kreskowe 
+• Dostosuj interfejs za pomocą różnych kolorów, jasnego motywu lub ciemnego. Aplikacja integruje funkcje Androida 12, umożliwiając dostosowanie kolorów w zależności od tapety.
+• Teksty są w całości tłumaczone na język polski, angielski, hiszpański, francuski, niemiecki, rosyjski i chiński.
+
+Ta aplikacja szanuje Twoją prywatność. Nie zawiera żadnych trackerów i nie zbiera żadnych danych.

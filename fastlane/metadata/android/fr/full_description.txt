@@ -1,0 +1,24 @@
+Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls...).
+
+Différents formats de code-barres sont gérés :
+• Les code-barres à 2 dimensions gérées : QR Code, Data Matrix, PDF 417, AZTEC
+• Les code-barres à une dimension gérées : EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
+
+Collect information about a product during a scan :
+• Food products with Open Food Facts
+• Cosmetics with Open Beauty Facts
+• Food products for pets with Open Pet Food Facts
+• Books with Open Library
+• Music CDs, Vinyls... with MusicBrainz
+
+Fonctionnalités de l'appli :
+• Pointez simplement la caméra de votre smartphone vers un code-barres et obtenez instantanément des informations liées à celui-ci. Vous pouvez aussi scanner des code-barres via une image ou une photo présente dans votre smartphone.
+• Avec un simple scan, lisez des cartes de visite, ajoutez des contacts, ajoutez des événements à votre agenda, ouvrez des URL ou encore connectez-vous à des points d'accès Wi-Fi, etc...
+• Scannez les code-barres de produits alimentaires ou cosmétiques, pour obtenir des informations sur leurs compositions grâce aux bases de données Open Food Facts et Open Beauty Facts.
+• Recherchez des informations sur les produits que vous scannez, avec une recherche rapide sur différents sites comme Amazon ou Fnac...
+• Conservez une trace de tous vos code-barres scannés grâce à l'historique.
+• Générez vos propres code-barres.
+• Personnalisez l'interface avec différents choix de couleurs, que ce soit en thème clair ou sombre. L'application intègre en plus les dernières fonctionnalités d'Android 12, permettant d'adapter les couleurs de l'interface en fonction de votre fond d'écran.
+• Les textes sont entièrement traduits en français, anglais, espagnol, allemand, polonais, russe, turque, chinois simplifié et chinois traditionnel.
+
+L'application respecte votre vie privée. Elle ne contient aucun tracker et ne collecte aucune donnée.
