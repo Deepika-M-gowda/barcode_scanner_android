@@ -9,7 +9,7 @@ Barcode Scanner 是一个免费的开源应用程序，允许扫描和生成条�
 • 化妆品通过 Open Beauty Facts 收集
 • 宠物食品通过 Open Pet Food Facts 收集
 • 书籍通过 Open Library 收集
-• Music CDs, Vinyls... with MusicBrainz
+• Music CDs, Vinyls… with MusicBrainz
 
 App功能：
 • 只需将手机的摄像头对准条码，就能立即接收到相关信息。你还可以通过手机上的图片扫描条码。
