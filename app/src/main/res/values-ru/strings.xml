@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Permission Denied -->
     <string name="camera_permission_denied">Вы запретили доступ к камере.\nДля сканирования штрих-кода необходимо разрешить ее использование.</string>
-
     <!-- AlertDialog -->
     <string name="close_dialog_label">Закрыть</string>
     <string name="yes_label">Да</string>
     <string name="no_label">Нет</string>
     <string name="go_to_dialog_label">Перейти на сайт</string>
-
     <!-- ImageView Description -->
     <string name="image_view_description_flag">Флаг</string>
     <string name="image_view_description_logo">Логотип</string>
@@ -23,20 +20,17 @@
     <string name="image_view_description_background">Фон</string>
     <string name="image_view_description_image">Изображение</string>
     <string name="slider_description_zoom">Масштаб</string>
-
     <!-- Menu Item -->
     <string name="title_scan">Сканер</string>
     <string name="title_history">История</string>
     <string name="title_generate">Создать</string>
     <string name="title_settings">Настройки</string>
-
     <string name="title_qr_code_creator">Создание QR-кода</string>
     <string name="title_bar_code_creator">Создание штрих-кода</string>
     <string name="information_label">Информация</string>
     <string name="barcode_label">Штрих-код</string>
     <string name="download_from_api_label">Скачать с API</string>
     <string name="menu_more">Больше</string>
-
     <!-- Barcode Type -->
     <string name="barcode_qr_code_label">QR-код</string>
     <string name="barcode_data_matrix_label">Data Matrix</string>
@@ -51,7 +45,6 @@
     <string name="barcode_code_39_label">Code 39</string>
     <string name="barcode_codabar_label">Codabar</string>
     <string name="barcode_itf_label">ITF</string>
-
     <!-- QR Type -->
     <string name="qr_code_type_name_text">Текст</string>
     <string name="qr_code_type_name_web_site">Сайт</string>
@@ -64,7 +57,6 @@
     <string name="qr_code_type_name_agenda">Мероприятие</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
     <string name="qr_code_type_name_apps">Приложение</string>
-
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">Товар</string>
     <string name="bar_code_type_food">Пищевой продукт</string>
@@ -77,7 +69,6 @@
     <string name="bar_code_type_industrial">Производственный код</string>
     <string name="bar_code_type_unknown_matrix">Матричный код</string>
     <string name="bar_code_type_name_unknown">Неизвестно</string>
-
     <!-- Error Correction Level -->
     <string name="qr_code_error_correction_level_label">Уровень коррекции ошибок</string>
     <string name="qr_code_error_correction_level_settings_label">Уровень коррекции ошибок (QR-код)</string>
@@ -85,7 +76,6 @@
     <string name="qr_code_error_correction_level_name_medium">Средний (~15%)</string>
     <string name="qr_code_error_correction_level_name_quartile">Квартиль (~25%)</string>
     <string name="qr_code_error_correction_level_name_high">Высокий (~30%)</string>
-
     <!-- History -->
     <string name="label_history_empty">История сканирования пуста…</string>
     <string name="snack_bar_message_item_deleted">Элемент \"%1$s\" был удален из истории.</string>
@@ -99,7 +89,6 @@
     <string name="delete_label">Удалить</string>
     <string name="cancel_label">Отмена</string>
     <string name="record_label">Сохранить</string>
-
     <!-- CaptureActivity -->
     <string name="scan_cancel_label">Сканирование отменено!</string>
     <string name="scan_error_exception_label">Произошла ошибка: %1$s</string>
@@ -107,40 +96,33 @@
     <string name="scan_from_image_label">Изображение</string>
     <string name="intent_filter_scan_by_image">Сканировать изображение</string>
     <string name="scan_information_label">Наведите на штрих-код для сканирования</string>
-
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">Идет поиск…</string>
     <string name="scan_error_label">Ошибка при сканировании!</string>
     <string name="scan_error_short_information_label">Во время поиска информации произошла ошибка!</string>
-    <string name="barcode_scanned_label">%1$s отсканировано!</string>
+    <string name="barcode_scanned_label">%1$s сосканирован!</string>
     <string name="barcode_found_on_label">Найдено в %1$s!</string>
     <string name="barcode_not_found_on_api_label">Не найдено информации в %1$s…</string>
     <string name="no_internet_permission">У вас нет разрешения на доступ в интернет.</string>
-
     <string name="about_barcode_information_label">Информация о штрих-коде</string>
     <string name="about_barcode_label">О штрих-коде</string>
     <string name="about_barcode_format_label">Формат: %1$s</string>
     <string name="about_barcode_content_label">Штрих-код: %1$s</string>
     <string name="about_barcode_origin_label">Происхождение: </string>
-
     <!-- Product -->
     <string name="product_search_label">Поиск товара</string>
     <string name="no_product_found_label">Товар не найден!</string>
-
     <!-- Barcode Searching Error -->
     <string name="warning_label">Предупреждение</string>
     <string name="scan_error_information_label">Произошла ошибка при поиске информации на удаленном API… Пожалуйста, проверьте ваше интернет-соединение и разрешения приложения! Если ошибка не исчезает - это проблема сервера.</string>
     <string name="scan_error_internet_information_label">Информация о продукте не получена, поскольку вы не подключены к интернету!</string>
     <string name="scan_error_message_label">Сообщение об ошибке: </string>
-
     <!-- Food Beauty and Pet Food Product -->
     <string name="overview_tab_label">Описание</string>
     <string name="ingredients_label">Ингредиенты</string>
     <string name="nutrition_facts_tab_label">Питание</string>
-
     <!-- Overview -->
     <string name="quality_label">Качество товара</string>
-
     <string name="nutriscore_entitled_label">Nutri-Score</string>
     <string name="nutriscore_description">Nutri-Score — это логотип, информирующий о питательной ценности пищевых продуктов с оценками от A до E. При подсчете учитываются питательные вещества, ингредиенты <b>полезные организму</b> (клетчатка, белки, фрукты, овощи, бобовые, масличные) и <b>потребление которых следует ограничивать</b> (энергетики, насыщенные жирные кислоты, сахара, соль).</string>
     <string name="nutriscore_description_a">Очень хорошее качество питания</string>
@@ -149,7 +131,6 @@
     <string name="nutriscore_description_d">Плохое качество питания</string>
     <string name="nutriscore_description_e">Очень плохое качество питания</string>
     <string name="nutriscore_description_unknown">Nutri-Score отсутствует</string>
-
     <string name="nova_group_entitled_label">NOVA Group</string>
     <string name="nova_group_description">NOVA Group - это классификация по 4 группам для обозначения уровня переработки пищевых продуктов:\n1 - Необработанные продукты или продукты с минимальной обработкой\n2 - Обработанные ингредиенты\n3 - Обработанные продукты\n4 - Ультраобработанные продукты и напитки</string>
     <string name="nova_group_description_1">Необработанные продукты или продукты с минимальной обработкой</string>
@@ -157,7 +138,6 @@
     <string name="nova_group_description_3">Обработанные продукты</string>
     <string name="nova_group_description_4">Ультраобработанные продукты и напитки</string>
     <string name="nova_group_description_unknown">NOVA Group отсутствует</string>
-
     <string name="eco_score_entitled_label">Eco-Score</string>
     <string name="eco_score_description">Eco-Score построен по модели, схожей с Nutri-Score: это рейтинг от A (очень низкое воздействие) до E (очень высокое воздействие).</string>
     <string name="eco_score_description_a">Очень низкое воздействие на окружающую среду</string>
@@ -166,7 +146,6 @@
     <string name="eco_score_description_d">Высокое воздействие на окружающую среду</string>
     <string name="eco_score_description_e">Очень высокое воздействие на окружающую среду</string>
     <string name="eco_score_description_unknown">Воздействие на окружающую среду неизвестно</string>
-
     <!-- Details -->
     <string name="details_label">Подробности</string>
     <string name="ingredients_analysis_label">Анализ ингредиентов: </string>
@@ -176,30 +155,25 @@
     <string name="packaging_label">Упаковка</string>
     <string name="stores_label">Магазины</string>
     <string name="countries_label">Страна продажи</string>
-
     <!-- Ingredients -->
     <string name="ingredients_no_information_found_label">Ингредиентов для этого продукта не найдено…</string>
     <string name="allergens_label">Аллергены</string>
     <string name="traces_label">Следы</string>
     <string name="additives_label">Добавки</string>
     <string name="veggie_label">Вегетарианский</string>
-
     <!-- Additif -->
     <string name="off_additive_info_label">Информация</string>
     <string name="off_risk_low_label">Безопасно</string>
     <string name="off_risk_moderate_label">Сомнительно</string>
     <string name="off_risk_high_label">Избегать</string>
     <string name="off_risk_none_label">Неизвестный риск</string>
-
     <string name="off_overexposure_risk_low_label">Низкий риск воздействия на организм</string>
     <string name="off_overexposure_risk_moderate_label">Умеренный риск воздействия на организм</string>
     <string name="off_overexposure_risk_high_label">Высокий риск воздействия на организм</string>
     <string name="off_overexposure_risk_none_label">Неизвестный риск воздействия на организм</string>
-
     <string name="stabilizer_label">Стабилизатор</string>
     <string name="stabilizer_description_label">Стабилизаторы, загустители и желирующие агенты, такие как агар или пектин (используемый, например, в джеме), придают продуктам более упругую текстуру. Хотя они и не являются настоящими эмульгаторами, они способствуют стабилизации эмульсий.</string>
     <string name="additive_no_information_found_label">Информация об этой добавке не найдена!</string>
-
     <!-- Veggie -->
     <string name="ingredient_veggie_entitled_label">Ингредиенты с точки зрения вегетарианского и веганского статуса</string>
     <string name="palm_oil_free_label">Без пальмового масла</string>
@@ -214,11 +188,9 @@
     <string name="no_vegetarian_label">Не вегетарианский</string>
     <string name="maybe_vegetarian_label">Возможно вегетарианский</string>
     <string name="vegetarian_status_unknown_label">Вегетарианский статус неизвестен</string>
-
     <!-- Nutrition -->
     <string name="nutrition_facts_no_information_found_label">Пищевая ценность данного продукта не найдена…</string>
     <string name="nutrition_facts_entitled_label">Пищевая ценность</string>
-
     <!-- Table -->
     <string name="nutrition_facts_table_label">Пищевой состав</string>
     <string name="off_per_100_label">На 100%1$s</string>
@@ -235,14 +207,12 @@
     <string name="off_proteins_label">Белки</string>
     <string name="off_salt_label">Соль</string>
     <string name="off_sodium_label">Натрий</string>
-
     <!-- For 100g -->
     <string name="nutrient_level_entitled_label">Содержание питательных веществ в 100 г</string>
     <string name="off_quantity_low_label">Низкое количество</string>
     <string name="off_quantity_moderate_label">Умеренное количество</string>
     <string name="off_quantity_high_label">Высокое количество</string>
     <string name="off_quantity_none_label">Неизвестное количество</string>
-
     <!-- Book -->
     <string name="book_product_summary_label">Сводка</string>
     <string name="book_product_more_label">Подробнее</string>
@@ -251,15 +221,12 @@
     <string name="book_product_publish_date_label">Дата публикации</string>
     <string name="book_product_original_title_label">Оригинальное название</string>
     <string name="book_product_pages_number">%1$s страниц</string>
-
     <!-- Music -->
     <string name="music_product_tracks_label">Треки</string>
     <string name="music_product_tracks_number">%1$s треков</string>
-
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Содержимое штрих-кода</string>
     <string name="bar_code_analysis_label">Анализ штрих-кода</string>
-
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Имя:</string>
     <string name="matrix_contact_organisation_label">Организация:</string>
@@ -268,24 +235,20 @@
     <string name="matrix_contact_mail_label">Email:</string>
     <string name="matrix_contact_address_label">Адрес:</string>
     <string name="matrix_contact_notes_label">Заметки:</string>
-
     <!-- Matrix Barcode Agenda Analysis -->
     <string name="matrix_agenda_name_event_label">Название события:</string>
     <string name="matrix_agenda_start_date_event_label">Начало:</string>
     <string name="matrix_agenda_end_date_event_label">Конец:</string>
     <string name="matrix_agenda_place_event_label">Место:</string>
     <string name="matrix_agenda_description_event_label">Описание:</string>
-
     <!-- Matrix Barcode Phone Analysis -->
     <string name="matrix_phone_tel_number_label">Телефон:</string>
-
     <!-- Matrix Barcode Email Analysis -->
     <string name="matrix_email_recipient_label">Получатель:</string>
     <string name="matrix_email_cc_label">Копия:</string>
     <string name="matrix_email_bcc_label">Скрытая копия:</string>
     <string name="matrix_subject_label">Тема:</string>
     <string name="matrix_body_label">Сообщение:</string>
-
     <!-- Matrix Barcode Wi-Fi Analysis -->
     <string name="matrix_wifi_ssid_label">SSID:</string>
     <string name="matrix_wifi_password_label">Пароль:</string>
@@ -295,11 +258,9 @@
     <string name="matrix_wifi_identity_label">Идентификация:</string>
     <string name="matrix_wifi_eap_method_label">EAP:</string>
     <string name="matrix_wifi_phase_2_method_label">Phase 2:</string>
-
     <!-- Matrix Barcode URL Analysis -->
     <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">URL может оказаться вредоносным…</string>
-
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">Анализ URI</string>
     <string name="matrix_uri_upi_id_label">UPI ID:</string>
@@ -307,7 +268,6 @@
     <string name="matrix_uri_upi_amount_label">Сумма:</string>
     <string name="matrix_uri_upi_currency_label">Валюта:</string>
     <string name="matrix_uri_upi_description_label">Описание:</string>
-
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">Широта:</string>
     <string name="matrix_localisation_longitude_label">Долгота:</string>
@@ -316,7 +276,6 @@
     <string name="matrix_localisation_button_find_location">Создать из текущего положения</string>
     <string name="matrix_localisation_search_current_position_label">Поиск по текущему положению…</string>
     <string name="matrix_localisation_location_disabled_label">Вероятно, на вашем устройстве не активирована геолокация.</string>
-
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Этот тип штрих-кода часто используется в промышленности.</string>
     <string name="barcode_code_39_description_label">Code 39 - это штрих-код, используемый в маркировке текстиля и лекарств в аптеках. Он также используется в военном секторе и автомобильной промышленности.</string>
@@ -328,13 +287,11 @@
     <string name="barcode_upc_e_description_label">Код UPC-E (Universal Product Code) - это сокращенный штрих-код UPC-A, используемый в основном в США и Канаде для идентификации товаров, продаваемых в магазинах. Он используется на упаковках, слишком маленьких для кода UPC-A.</string>
     <string name="barcode_ean_13_description_label">Код EAN-13 (European Article Numbering 13) - это штрих-код, широко используемый для идентификации товаров, продаваемых в магазинах в Европе и практически во всем мире. Он состоит из 13 цифр.</string>
     <string name="barcode_ean_8_description_label">Код EAN-8 (European Article Numbering 8) - это сокращенный штрих-код EAN-13, используемый для идентификации товаров, продаваемых в магазинах Европы и практически во всем мире. Он используется на упаковках, слишком маленьких для кода EAN-13.</string>
-
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Вы должны подтвердить разрешение на использование этой возможности.</string>
     <string name="snack_bar_message_save_bitmap_ok">Изображение сохранено</string>
     <string name="snack_bar_message_save_bitmap_error">Изображение не было сохранено…\nНедостаточно памяти?</string>
     <string name="snack_bar_message_share_bitmap_error">Произошла ошибка при настройке общего ресурса.</string>
-
     <!-- Actions -->
     <string name="actions_label">Действия</string>
     <string name="intent_chooser_share_title">"Поделиться с…"</string>
@@ -354,7 +311,6 @@
     <string name="action_add_to_contacts">Добавить в контакты</string>
     <string name="action_show_location">Показать местоположение</string>
     <string name="action_open_link">Открыть ссылку</string>
-
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Wi-Fi соединение</string>
     <string name="action_wifi_connection_from_app">Подключиться к Wi-Fi</string>
@@ -369,9 +325,7 @@
     <string name="action_wifi_add_network_failed">Ошибка при добавлении сети Wi-Fi.</string>
     <string name="action_wifi_add_network_already_exists">Вы уже добавили эту сеть Wi-Fi.</string>
     <string name="action_wifi_add_network_unknown_error">Неизвестная ошибка при добавлении сети Wi-Fi.</string>
-
     <!-- QR Code Generator -->
-
     <!-- Barcode Generator Errors -->
     <string name="error_barcode_none_character_message">Вы должны ввести правильное значение в поле ввода.</string>
     <string name="error_barcode_not_a_number_message">Штрих-код должен состоять только из цифр.</string>
@@ -384,11 +338,10 @@
     <string name="error_barcode_codabar_regex_error_message">Тип штрих-кода "Codabar" может кодировать 10 цифр (от 0 до 9), а также 6 специальных символов « -, $, :, /, ., + ». Он также может содержать символы A, B, C или D для первого и последнего символа штрих-кода, чтобы указать начало и конец строки.</string>
     <string name="error_barcode_itf_error_message">Тип штрих-кода "ITF" должен содержать четное количество символов.</string>
     <string name="error_barcode_upc_e_not_start_with_0_error_message">Тип штрих-кода "UPC-E" должен начинаться с 0.</string>
-    <string name="error_barcode_qr_url_format_message">Веб-адрес должен начинаться с "http://" или "https://".</string>
+    <string name="error_barcode_qr_url_format_message">Веб-адрес должен начинаться с http:// или https://</string>
     <string name="error_barcode_qr_phone_number_missing_message">Вы должны ввести номер телефона</string>
     <string name="error_barcode_qr_email_missing_message">Вы должны ввести информацию хотя бы в одно из полей</string>
     <string name="error_barcode_qr_localisation_missing_message">Вы должны указать широту и долготу</string>
-
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">Создать</string>
     <string name="save_label">Сохранить</string>
@@ -396,13 +349,11 @@
     <string name="share_image_label">Поделиться изображением</string>
     <string name="share_text_label">Поделиться текстом</string>
     <string name="popup_message_confirmation_save_image">Сохранить изображение?</string>
-
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">Введите текст…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Введите номер телефона…</string>
     <string name="qr_code_text_generator_hint_url_input_edit_text">Введите веб-адрес…</string>
     <string name="qr_code_text_input_edit_text_hint_message">Сообщение</string>
-
     <!-- Contact Creator -->
     <string name="qr_code_type_name_generate_from_contact">Создать из контакта</string>
     <string name="qr_code_text_radio_button_label_m">Г-н</string>
@@ -426,13 +377,11 @@
     <string name="qr_code_text_input_edit_text_hint_region">Регион</string>
     <string name="qr_code_text_input_edit_text_hint_notes">Заметка</string>
     <string name="qr_code_spinner_prompt_none">Нет</string>
-
     <string name="spinner_type_mobile">Мобильный</string>
     <string name="spinner_type_fax">Факс</string>
     <string name="spinner_type_home">Домашний</string>
     <string name="spinner_type_work">Рабочий</string>
     <string name="spinner_type_other">Другой</string>
-
     <!-- EPC Creator -->
     <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Сервисная метка</string>
     <string name="qr_code_text_input_edit_text_hint_epc_version">Версия</string>
@@ -446,21 +395,16 @@
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Денежный перевод (ссылка)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Денежный перевод (текст)</string>
     <string name="qr_code_text_input_edit_text_hint_epc_information">Информация</string>
-
     <string name="qr_code_text_input_edit_text_epc_name_error">Поле \"Имя\" обязательно</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN некорректен</string>
-
     <string name="list_bank_empty_message">Нет элемента…\nВы еще не создали QR-код EPC.</string>
-
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Тема</string>
-
     <!-- Geo Localisation Creator -->
     <string name="qr_code_text_input_edit_text_hint_localisation_latitude">Широта</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_longitude">Долгота</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_request">Название</string>
-
     <!-- Wifi Creator -->
     <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / Имя сети</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_password">Пароль</string>
@@ -468,7 +412,6 @@
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
     <string name="spinner_wifi_encryption_none">Без шифрования</string>
-
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Название мероприятия</string>
     <string name="qr_code_text_input_edit_text_hint_agenda_place">Место</string>
@@ -476,9 +419,7 @@
     <string name="check_box_event_all_of_day">Весь день</string>
     <string name="begin_label">Начало</string>
     <string name="end_label">Конец</string>
-
     <!-- URL -->
-
     <!-- API Base URL -->
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
@@ -486,7 +427,6 @@
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
-
     <!-- URL Engines -->
     <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
@@ -496,12 +436,10 @@
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
-
     <!-- E-Commerce Engines -->
     <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
     <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
-
     <!-- API Product Engines -->
     <string name="search_engine_open_food_facts_product_url">https://ru.openfoodfacts.org/product/%1$s</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://ru.openpetfoodfacts.org/product/%1$s</string>
@@ -509,30 +447,26 @@
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="search_engine_additive_url">https://ru.openfoodfacts.org/additive/%1$s</string>
-
     <!-- API Sources Links -->
     <string name="search_engine_open_food_facts_url">https://ru.openfoodfacts.org/</string>
     <string name="search_engine_open_pet_food_facts_url">https://ru.openpetfoodfacts.org/</string>
     <string name="search_engine_open_beauty_facts_url">https://ru.openbeautyfacts.org/</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
-
     <!-- API Sources Description -->
     <string name="open_food_facts_source_description_label">Информация о пищевом продукте взята из свободной базы данных Open Food Facts.</string>
     <string name="open_pet_food_facts_source_description_label">Информация о корме для животных взята из свободной базы данных Open Pet Food Facts.</string>
     <string name="open_beauty_facts_source_description_label">Информация о косметическом средстве взята из свободной базы данных Open Beauty Facts.</string>
     <string name="music_brainz_source_description_label">Информация о музыке взята из свободной базы данных MusicBrainz.</string>
     <string name="open_library_source_description_label">Информация о книге взята из свободной базы данных Open Library.</string>
-
     <!-- Preferences -->
-
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Внешний вид</string>
     <string name="preferences_theme_label">Тема</string>
     <string name="preferences_switch_system_theme_label">Системная</string>
     <string name="preferences_switch_light_theme_label">Светлая</string>
     <string name="preferences_switch_dark_theme_label">Темная</string>
-    <string name="preferences_switch_black_theme_label">Black</string>
+    <string name="preferences_switch_black_theme_label">Черная</string>
     <string name="preferences_color">Основной цвет</string>
     <string name="preferences_color_material_you">Системный (Material You)</string>
     <string name="preferences_color_blue">Синий</string>
@@ -540,11 +474,9 @@
     <string name="preferences_color_green">Зеленый</string>
     <string name="preferences_color_red">Красный</string>
     <string name="preferences_color_purple">Фиолетовый</string>
-
     <!-- Languages Settings -->
     <string name="preferences_languages_title">Языки</string>
     <string name="preferences_languages_change">Изменить язык</string>
-
     <!-- Remote API -->
     <string name="preferences_remote_api_title">Продукты и API</string>
     <string name="preferences_switch_scan_search_on_api_label">Автоматические запросы к удаленным API</string>
@@ -555,14 +487,13 @@
     <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (корма для животных)</string>
     <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CD, пластинки, …)</string>
     <string name="preferences_remote_api_book_label">Open Library (книги)</string>
-
     <!-- About Remote API -->
     <string name="preferences_information_about_remote_api_title">Информация о API</string>
     <string name="preferences_information_about_remote_api_foreword">Предисловие</string>
     <string name="preferences_information_about_remote_api_what_is_an_api_title">Что такое API?</string>
     <string name="preferences_information_about_remote_api_what_is_an_api_description">API - это программная библиотека, используемая для доступа к сервису. В этом приложении API используется для доступа к веб-сервису.\nНапример, Open Food Facts - это база данных о продуктах питания, которая предоставляет API для доступа к ней. Я использую этот API для отображения информации о пищевых продуктах.</string>
     <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Соответствующие типы штрих-кодов</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Возможность поиска API активирована только для штрихкодов EAN 13, EAN 8, UPC A и UPC E.</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Возможность поиска API активирована только для штрих-кодов EAN 13, EAN 8, UPC A и UPC E.</string>
     <string name="preferences_information_about_remote_api_product_types_supported_title">Поддерживаемые типы продуктов</string>
     <string name="preferences_information_about_remote_api_product_types_supported_food">• Пищевые продукты (API Open Food Facts)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Косметические средства (API Open Beauty Facts)</string>
@@ -579,7 +510,6 @@
     <string name="preferences_information_about_remote_api_manual_search_description">Если опция \"%1$s\" отключена, при сканировании штрих-кода продукта информация с удаленных серверов не извлекается. Но вы всегда можете найти информацию о сосканированном продукте вручную. Для этого после сканирования продукта нажмите на значок в строке меню. Затем вы сможете выбрать API для поиска.</string>
     <string name="preferences_information_about_remote_api_about_books_title">Книги</string>
     <string name="preferences_information_about_remote_api_about_books_description">Если сканируемый вами продукт - книга, вам не нужно указывать API, по которому искать информацию. Штрих-код книги можно идентифицировать, так как он всегда начинается с цифр \"978\". Поиск автоматически будет выполнен в Open Library.</string>
-
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Сканирование</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">Использовать API CameraX</string>
@@ -589,27 +519,23 @@
     <string name="preferences_switch_scan_barcode_copied_label">Скопировать сосканированный штрих-код в буфер обмена</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">Добавлять сосканированные штрих-коды в историю</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Значение масштаба камеры по умолчанию</string>
-
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Создание штрих-кода</string>
     <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Добавлять создаваемые штрих-коды в историю</string>
-
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Поиск</string>
     <string name="preferences_search_engine">Поисковая система</string>
-
     <!-- About Settings -->
     <string name="preferences_about_title">О приложении</string>
     <string name="preferences_about_permissions_label">Разрешения</string>
     <string name="preferences_about_library_third_label">Сторонние библиотеки</string>
     <string name="preferences_about_bdd_label">База данных</string>
     <string name="preferences_source_code_label">Исходный код</string>
-
     <!-- About Permissions -->
     <string name="permission_camera_label">Камера</string>
     <string name="permission_camera_description_label">Требуется для сканирования штрих-кода.</string>
     <string name="permission_internet_label">Интернет</string>
-    <string name="permission_internet_description_label">Требуется для получения информации от удаленного API</string>
+    <string name="permission_internet_description_label">Требуется для получения информации от удаленного API.</string>
     <string name="permission_contact_label">Контакты</string>
     <string name="permission_contact_description_label">Требуется для импорта контакта, чтобы из него сгенерировать QR-код.</string>
     <string name="permission_location_label">Местоположение</string>
@@ -620,17 +546,14 @@
     <string name="permission_vibrate_description_label">Используется для включения вибрации при сканировании.</string>
     <string name="permission_query_all_packages_label">Запрос всех пакетов</string>
     <string name="permission_query_all_packages_description_label">Используется для генерации QR-кода из установленного приложения.</string>
-
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о пищевых продуктах, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных о кормах для домашних животных.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических средствах.</string>
     <string name="bdd_music_brainz_description_label">MusicBrainz - это свободная музыкальная энциклопедия, которая собирает музыкальные метаданные и делает их доступными для всех.</string>
     <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг независимо от их языка.</string>
-
     <!-- About Library Third -->
     <string name="dependency_by">от %1$s</string>
-
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
     <string name="dependency_camera_x_description_label">Библиотека поддержки CameraX от Jetpack обеспечивает удобный в использовании и многофункциональный API камеры для Android.</string>
@@ -640,12 +563,15 @@
     <string name="dependency_coil_description_label">Библиотека загрузки изображений для Android, поддерживаемая Kotlin Coroutines.</string>
     <string name="dependency_material_components_description_label">Material Components для Android (MDC-Android) помогают разработчикам реализовывать Material Design. Разработанные основной командой инженеров и UX-дизайнеров Google, эти компоненты обеспечивают надежный рабочий процесс разработки для создания красивых и функциональных приложений для Android.\n\nMaterial Components для Android - это полноценная замена библиотеки Android Design Support.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Обеспечивает контекст Dispatchers.Main для приложений Android.</string>
-    <string name="dependency_koin_description_label">Прагматичный легкий фреймворк внедрения зависимостей для разработчиков на Kotlin.\n\nНаписано на чистом Kotlin, с использованием только функционального разрешения: без прокси, без генерации кода, без рефлексии.\n\nKoin - это DSL, легкий контейнер и прагматичный API.</string>
+    <string name="dependency_koin_description_label">Прагматичный легкий фреймворк внедрения зависимостей для разработчиков на Kotlin.
+\n
+\nНаписано на чистом Kotlin, с использованием только функционального разрешения: без прокси, без генерации кода, без рефлексии.
+\n
+\nKoin - это DSL, легкий контейнер и прагматичный API</string>
     <string name="dependency_room_description_label">Room предоставляет слой абстракции над SQLite, который позволяет получить свободный доступ к базе данных, используя при этом всю мощь SQLite.</string>
     <string name="dependency_gson_description_label">Gson - это библиотека Java, которую можно использовать для преобразования объектов Java в их представление JSON. Кроме того, ее можно использовать для преобразования строки JSON в эквивалентный объект Java. Gson может работать с произвольными объектами Java, включая уже существующие, исходный код которых у вас отсутствует.</string>
     <string name="dependency_retrofit_description_label">Безопасный с точки зрения типов HTTP-клиент для Android и Java.</string>
     <string name="dependency_live_data_description_label">LiveData - это наблюдаемый класс держателя данных. В отличие от обычного наблюдаемого, LiveData учитывает жизненный цикл, то есть учитывает жизненный цикл других компонентов приложения, таких как действия, фрагменты или службы. Эта осведомленность гарантирует, что LiveData обновляет только те наблюдатели компонентов приложения, которые находятся в активном состоянии жизненного цикла.</string>
-
     <!-- Countries -->
     <string name="country_usa">Соединенные Штаты</string>
     <string name="country_ca">Канада</string>
@@ -766,5 +692,4 @@
     <string name="country_nz">Новая Зеландия</string>
     <string name="country_my">Малайзия</string>
     <string name="country_mo">Макао</string>
-
 </resources>

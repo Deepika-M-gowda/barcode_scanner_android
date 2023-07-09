@@ -464,8 +464,8 @@
     <string name="preferences_appearance_title">Aspecto</string>
     <string name="preferences_theme_label">Tema</string>
     <string name="preferences_switch_system_theme_label">Sistema</string>
-    <string name="preferences_switch_light_theme_label">Tema claro</string>
-    <string name="preferences_switch_dark_theme_label">Tema oscuro</string>
+    <string name="preferences_switch_light_theme_label">Claro</string>
+    <string name="preferences_switch_dark_theme_label">Oscuro</string>
     <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Color principal</string>
     <string name="preferences_color_material_you">Sistema (Material You)</string>
@@ -535,7 +535,7 @@
     <string name="permission_camera_label">Cámara</string>
     <string name="permission_camera_description_label">Necesario para poder escanear los códigos.</string>
     <string name="permission_internet_label">Internet</string>
-    <string name="permission_internet_description_label">Necesario para obtener la información de las APIs remotas</string>
+    <string name="permission_internet_description_label">Necesario para obtener la información de las APIs remotas.</string>
     <string name="permission_contact_label">Contactos</string>
     <string name="permission_contact_description_label">Necesario para importar contactos y poder crear códigos QR a partir del seleccionado.</string>
     <string name="permission_location_label">Location</string>
