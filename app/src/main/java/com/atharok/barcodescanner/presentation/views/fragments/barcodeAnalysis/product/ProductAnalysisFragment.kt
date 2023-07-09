@@ -205,7 +205,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
 
         val builder = AlertDialog.Builder(barcodeAnalysisActivity).apply {
             setTitle(R.string.preferences_remote_api_choose_label)
-            setItems(items) { dialog, i ->
+            setItems(items) { _, i ->
                 when(i) {
                     0 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
                     1 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)

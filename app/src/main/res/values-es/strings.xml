@@ -102,7 +102,7 @@
     <string name="scan_error_short_information_label">¡Sucedió un error al buscar información!</string>
     <string name="barcode_scanned_label">¡%1$s escaneado!</string>
     <string name="barcode_found_on_label">¡Encontrado en %1$s!</string>
-    <string name="barcode_not_found_on_api_label">¡No se ha encontrado información en %1$s…</string>
+    <string name="barcode_not_found_on_api_label">¡No se ha encontrado información en %1$s.</string>
     <string name="no_internet_permission">¡No tienes permiso para acceder a Internet.</string>
     <string name="about_barcode_information_label">Información sobre el código</string>
     <string name="about_barcode_label">Acerca del código</string>

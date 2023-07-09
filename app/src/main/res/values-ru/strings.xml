@@ -102,7 +102,7 @@
     <string name="scan_error_short_information_label">Во время поиска информации произошла ошибка!</string>
     <string name="barcode_scanned_label">%1$s сосканирован!</string>
     <string name="barcode_found_on_label">Найдено в %1$s!</string>
-    <string name="barcode_not_found_on_api_label">Не найдено информации в %1$s…</string>
+    <string name="barcode_not_found_on_api_label">Не найдено информации в %1$s.</string>
     <string name="no_internet_permission">У вас нет разрешения на доступ в интернет.</string>
     <string name="about_barcode_information_label">Информация о штрих-коде</string>
     <string name="about_barcode_label">О штрих-коде</string>

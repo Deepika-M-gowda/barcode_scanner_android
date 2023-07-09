@@ -5,9 +5,9 @@
 <div align="center"><h4>A free app which allow to read and generate barcodes for Android.</h4></div>
 
 <div align="center">
-    <a href="https://f-droid.org/packages/com.atharok.barcodescanner/" target"_blank"><img src="assets/get-it-on-f-droid-badge.png" alt="Get it on F-Droid" height="90"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.atharok.barcodescanner" target"_blank"><img src="assets/get-it-on-google-play-badge.png" alt="Get it on Google Play" height="90"></a>
-    <a href="https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2" target"_blank"><img src="assets/get-it-on-amazon-badge.png" alt="Get it on Amazon Appstore" height="90"></a>
+    <a href="https://f-droid.org/packages/com.atharok.barcodescanner/" target="_blank"><img src="assets/get-it-on-f-droid-badge.png" alt="Get it on F-Droid" height="90"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.atharok.barcodescanner" target="_blank"><img src="assets/get-it-on-google-play-badge.png" alt="Get it on Google Play" height="90"></a>
+    <a href="https://www.amazon.com/Atharok-Barcode-Scanner/dp/B0BCDZ19T2" target="_blank"><img src="assets/get-it-on-amazon-badge.png" alt="Get it on Amazon Appstore" height="90"></a>
 </div>
 
 [![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0)
