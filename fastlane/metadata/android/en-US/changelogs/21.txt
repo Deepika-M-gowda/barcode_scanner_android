@@ -7,4 +7,3 @@
 - Removal of Roboto fonts. Now the application uses the system font.
 - Adding system features.
 - Russian translation updated (Thanks to s s).
-

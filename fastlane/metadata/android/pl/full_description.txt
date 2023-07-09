@@ -9,7 +9,7 @@ Zbiera informacje o produkcie podczas skanowania:
 • Kosmetyki z Open Beauty Facts
 • Produkty spożywcze dla zwierząt domowych z Open Pet Food Facts 
 • Książki z Open Library
-• Music CDs, Vinyls... with MusicBrainz
+• Music CDs, Vinyls… with MusicBrainz
 
 Funkcje aplikacji : 
 • Wystarczy skierować aparat smartfona na kod kreskowy i natychmiast otrzymać o nim informację. Możesz także skanować kody kreskowe za pomocą obrazu w smartfonie. 
