@@ -1,14 +1,14 @@
-Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls...).
+Barcode Scanner 是一个免费的开源应用程序，允许扫描和生成条码。它可以收集有关食品、化妆品和书籍的信息。
 
 应用程序支持管理不同的条码格式：
 • 二维条码: 二维码, Data Matrix, PDF 417, AZTEC
 • 一维条码: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
 
-Collect information about a product during a scan :
-• Food products with Open Food Facts
-• Cosmetics with Open Beauty Facts
-• Food products for pets with Open Pet Food Facts
-• Books with Open Library
+在扫描成功后可以收集有关产品的信息:
+• 食品信息通过 Open Food Facts 收集
+• 化妆品通过 Open Beauty Facts 收集
+• 宠物食品通过 Open Pet Food Facts 收集
+• 书籍通过 Open Library 收集
 • Music CDs, Vinyls... with MusicBrainz
 
 App功能：

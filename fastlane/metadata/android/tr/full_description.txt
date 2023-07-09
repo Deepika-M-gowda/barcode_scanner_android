@@ -1,14 +1,14 @@
-Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls...).
+﻿Barkod tarayıcı, barkodları okuyabilen ve oluşturabilen ücretsiz ve açık kaynak bir uygulamadır. Gıda ürünleri, kozmetik ürünler ve kitaplar hakkında bilgi toplayabilir.
 
 Farklı barkod formatları uygulama tarafından yönetilir :
 • 2 boyutlu barkodlar: QR Kod, Data Matrix, PDF 417, AZTEC
 • 1 boyutlu barkodlar: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
 
-Collect information about a product during a scan :
-• Food products with Open Food Facts
-• Cosmetics with Open Beauty Facts
-• Food products for pets with Open Pet Food Facts
-• Books with Open Library
+Tarama sırasında bir ürün hakkında bilgi alın :
+• Gıda ürünleri, Open Food Facts ile
+• Kozmetik ürünleri, Open Beauty Facts ile
+• Evcil hayvanlar için gıda ürünleri, Open Pet Food Facts ile
+• Kitaplar, Open Library ile
 • Music CDs, Vinyls... with MusicBrainz
 
 Uygulama özellikleri :
