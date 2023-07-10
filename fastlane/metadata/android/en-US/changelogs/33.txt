@@ -1,0 +1,15 @@
+1.16.0
+
+Translation (using Weblate):
+- Added Turkish translation (thanks to abfreeman).
+- Added Norwegian Bokmål (not complete) (thanks to Allan Nordhøy).
+- Updated Spanish translation (thanks to J. Lavoie and gallegonovato).
+- Updated Traditional Chinese translation (thanks to plum7x).
+- Updated German translation (thanks to J. Lavoie).
+- Updated French translation (thanks to J. Lavoie).
+
+New features:
+- Added black theme.
+- Added JPG and SVG export for barcode image.
+- Some code improvements.
+- Some bugs fixed.

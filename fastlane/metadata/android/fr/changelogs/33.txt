@@ -1,0 +1,15 @@
+1.16.0
+
+Traduction (en utilisant Weblate):
+- Ajout de la traduction en turc (merci à abfreeman).
+- Ajout du norvégien Bokmål (pas complet) (merci à Allan Nordhøy).
+- Mise à jour de la traduction en espagnol (merci à J. Lavoie and gallegonovato).
+- Mise à jour de la traduction en chinois traditionnel (merci à plum7x).
+- Mise à jour de la traduction en allemand (merci à J. Lavoie).
+- Mise à jour de la traduction en français (merci à J. Lavoie).
+
+Nouvelles fonctionnalités:
+- Ajout d'un thème OLED noir.
+- Ajout de l'exportation en JPG et SVG pour l'image du code-barres.
+- Quelques améliorations du code.
+- Correction de quelques bugs.
