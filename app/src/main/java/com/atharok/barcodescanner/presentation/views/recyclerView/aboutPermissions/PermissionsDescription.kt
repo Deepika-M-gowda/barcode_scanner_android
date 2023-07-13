@@ -29,5 +29,5 @@ enum class PermissionsDescription(val nameResource: Int, val descriptionResource
     LOCATION(R.string.permission_location_label, R.string.permission_location_description_label),
     WIFI(R.string.permission_wifi_label, R.string.permission_wifi_description_label),
     VIBRATE(R.string.permission_vibrate_label, R.string.permission_vibrate_description_label),
-    QUERY_ALL_PACKAGES(R.string.permission_query_all_packages_label, R.string.permission_query_all_packages_description_label)
+    //QUERY_ALL_PACKAGES(R.string.permission_query_all_packages_label, R.string.permission_query_all_packages_description_label)
 }
