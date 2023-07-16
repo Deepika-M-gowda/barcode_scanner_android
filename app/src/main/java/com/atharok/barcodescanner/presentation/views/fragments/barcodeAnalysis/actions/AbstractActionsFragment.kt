@@ -123,7 +123,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     abstract fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem>
 
     protected fun configureDefaultActions(barcode: Barcode) = arrayOf(
-        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openUrl(getSearchEngineUrl(barcode.contents))),
+        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openContentsWithSearchEngine(barcode.contents)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
         ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
     )
@@ -141,6 +141,16 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     protected fun openUrl(url: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             val intent = createSearchUrlIntent(url)
+            mStartActivity(intent)
+        }
+    }
+
+    /**
+     * Ouvre le contenu du code-barres avec le moteur de recherche définie dans les paramètres.
+     */
+    protected fun openContentsWithSearchEngine(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val intent = get<SettingsManager>().getSearchEngineIntent(contents)
             mStartActivity(intent)
         }
     }
@@ -174,10 +184,6 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     }
 
     // ---- Utils ----
-
-    protected fun getSearchEngineUrl(contents: String): String {
-        return get<SettingsManager>().getSearchEngineUrl(contents)
-    }
 
     protected fun showSnackbar(text: String) {
         val activity = requireActivity()

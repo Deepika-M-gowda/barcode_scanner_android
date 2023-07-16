@@ -460,6 +460,7 @@
     <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
     <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
     <!-- Preferences -->
+    <string name="preferences_default">Default</string>
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Appearance</string>
     <string name="preferences_theme_label">Theme</string>

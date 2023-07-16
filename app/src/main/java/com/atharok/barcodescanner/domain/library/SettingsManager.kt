@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.domain.library
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
@@ -28,6 +29,8 @@ import android.os.Build
 import androidx.preference.PreferenceManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
+import com.atharok.barcodescanner.presentation.intent.createWebSearchIntent
 
 class SettingsManager(private val context: Context) {
 
@@ -180,7 +183,7 @@ class SettingsManager(private val context: Context) {
         else -> QrCodeErrorCorrectionLevel.L
     }
 
-    fun getSearchEngineUrl(contents: String): String = when(defaultSearchEngine){
+    private fun getSearchEngineUrl(contents: String): String = when(defaultSearchEngine){
         "google" -> context.getString(R.string.search_engine_google_url, contents)
         "bing" -> context.getString(R.string.search_engine_bing_url, contents)
         "duckduckgo" -> context.getString(R.string.search_engine_duck_duck_go_url, contents)
@@ -190,6 +193,14 @@ class SettingsManager(private val context: Context) {
         "ecosia" -> context.getString(R.string.search_engine_ecosia_url, contents)
         "lilo" -> context.getString(R.string.search_engine_lilo_url, contents)
         else -> context.getString(R.string.search_engine_google_url, contents)
+    }
+
+    fun getSearchEngineIntent(contents: String): Intent {
+        return if(defaultSearchEngine == "default") {
+            createWebSearchIntent(contents)
+        } else {
+            createSearchUrlIntent(getSearchEngineUrl(contents))
+        }
     }
 
     fun useDarkTheme(): Boolean = when(theme){

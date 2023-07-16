@@ -24,10 +24,8 @@ import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.ParsedResult
-import org.koin.android.ext.android.get
 
 class MusicActionsFragment: AbstractActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
@@ -47,14 +45,13 @@ class MusicActionsFragment: AbstractActionsFragment() {
 
     private fun showUrlsAlertDialog(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val webUrl = get<SettingsManager>().getSearchEngineUrl(contents)
             val amazonUrl = getString(R.string.search_engine_amazon_url, contents)
             val ebayUrl = getString(R.string.search_engine_ebay_url, contents)
             val fnacUrl = getString(R.string.search_engine_fnac_url, contents)
             val musicBrainzUrl = getString(R.string.search_engine_musicbrainz_product_url, contents)
 
             val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                Pair(getString(R.string.action_web_search_label), openUrl(webUrl)),
+                Pair(getString(R.string.action_web_search_label), openContentsWithSearchEngine(contents)),
                 Pair(getString(R.string.action_product_search_label, getString(R.string.amazon_label)), openUrl(amazonUrl)),
                 Pair(getString(R.string.action_product_search_label, getString(R.string.ebay_label)), openUrl(ebayUrl)),
                 Pair(getString(R.string.action_product_search_label, getString(R.string.fnac_label)), openUrl(fnacUrl)),

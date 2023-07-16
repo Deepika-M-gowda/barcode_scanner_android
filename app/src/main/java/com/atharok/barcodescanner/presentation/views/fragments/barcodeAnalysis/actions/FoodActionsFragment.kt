@@ -45,11 +45,10 @@ class FoodActionsFragment: AbstractActionsFragment() {
 
     private fun showUrlsAlertDialog(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val webUrl = getSearchEngineUrl(contents)
             val openFoodFactsUrl = getString(R.string.search_engine_open_food_facts_product_url, contents)
 
             val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                Pair(getString(R.string.action_web_search_label), openUrl(webUrl)),
+                Pair(getString(R.string.action_web_search_label), openContentsWithSearchEngine(contents)),
                 Pair(getString(R.string.action_product_search_label, getString(R.string.open_food_facts_label)), openUrl(openFoodFactsUrl))
             )
 

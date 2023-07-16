@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.intent
 
+import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -238,4 +239,10 @@ fun createSendSmsToSmsNumberIntent(parsedResult: SMSParsedResult): Intent {
 
 fun createSearchUrlIntent(url: String): Intent {
     return Intent(Intent.ACTION_VIEW, Uri.parse(url).normalizeScheme())
+}
+
+fun createWebSearchIntent(query: String): Intent {
+    return Intent(Intent.ACTION_WEB_SEARCH).apply {
+        putExtra(SearchManager.QUERY, query)
+    }
 }
