@@ -411,6 +411,7 @@
     <string name="qr_code_text_input_edit_text_hint_wifi_hide">Hidden</string>
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="spinner_wifi_encryption_none">No password</string>
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Event name</string>

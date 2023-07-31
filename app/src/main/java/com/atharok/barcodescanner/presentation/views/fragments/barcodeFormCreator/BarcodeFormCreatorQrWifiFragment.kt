@@ -67,6 +67,7 @@ class BarcodeFormCreatorQrWifiFragment : AbstractBarcodeFormCreatorQrFragment() 
         val spinnerArray = arrayOf(
             getString(R.string.spinner_wifi_encryption_wep),
             getString(R.string.spinner_wifi_encryption_wpa),
+            getString(R.string.spinner_wifi_encryption_sae),
             getString(R.string.spinner_wifi_encryption_none)
         )
 
@@ -79,6 +80,7 @@ class BarcodeFormCreatorQrWifiFragment : AbstractBarcodeFormCreatorQrFragment() 
     private fun getEncryption(): String = when(viewBinding.fragmentBarcodeFormCreatorQrWifiEncryptionAutoCompleteTextView.text.toString()) {
         getString(R.string.spinner_wifi_encryption_wep) -> "WEP"
         getString(R.string.spinner_wifi_encryption_wpa) -> "WPA"
+        getString(R.string.spinner_wifi_encryption_sae) -> "SAE"
         getString(R.string.spinner_wifi_encryption_none) -> "nopass"
         else -> "WEP"
     }
