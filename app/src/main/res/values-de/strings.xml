@@ -98,7 +98,7 @@
     <string name="intent_filter_scan_by_image">Bild scannen</string>
     <string name="scan_information_label">Zum Scannen auf den Barcode zielen</string>
     <!-- BarcodeAnalysisActivity -->
-    <string name="barcode_information_search_label">Suche …</string>
+    <string name="barcode_information_search_label">Suche…</string>
     <string name="scan_error_label">Fehler beim Scannen!</string>
     <string name="scan_error_short_information_label">Beim suchen der Informationen ist ein Fehler aufgetreten!</string>
     <string name="barcode_scanned_label">%1$s gescannt!</string>
