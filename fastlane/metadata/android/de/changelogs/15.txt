@@ -1,0 +1,4 @@
+- Behebung des Fehlers „java.lang.NumberFormatException: empty String” bei der Suche auf OpenFoodFacts.
+- Korrektur falscher Werte in der Nährwerttabelle für „pro Portion”.
+- Einige Verbesserungen.
+- Aktualisierung der Abhängigkeiten.

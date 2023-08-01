@@ -1,0 +1,2 @@
+- Code-Verbesserung.
+- Behebung eines Problems mit der Kamera, die sich beim Scannen eines Bildes manchmal nicht ausschaltet.

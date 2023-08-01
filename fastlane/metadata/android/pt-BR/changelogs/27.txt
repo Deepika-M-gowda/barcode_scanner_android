@@ -1,0 +1,10 @@
+1.13.0
+
+- Adiciona texto debaixo da imagem do código de barra.
+- Adiciona ajuste de desativar histórico.
+- Adiciona geração de código QR do ID de aplicativo instalado.
+- Melhora remoção de itens do histórico nas ações.
+- Adiciona botão "adicionar ao histórico" nas ações se item não estiver presente no histórico.
+- Corrige detecção de código de barras claro em fundo escuro via imagem.
+- Adiciona geração de código QR da localização.
+- Adiciona toque longo nos textos da análise do código de barras.

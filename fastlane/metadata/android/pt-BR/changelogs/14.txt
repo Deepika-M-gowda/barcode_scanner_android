@@ -1,0 +1,6 @@
+- Adicionada tradução para espanhol (graças a zgll2022).
+- Adicionado o Brave Search como motor de busca.
+- Mudado o ícone da Eco-Store.
+- Mudado o ícone para a ação "abrir com um navegador".
+- Melhoria no tema claro.
+- Melhorias no código.

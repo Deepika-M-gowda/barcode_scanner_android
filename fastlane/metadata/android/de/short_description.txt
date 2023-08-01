@@ -1,0 +1,1 @@
+Eine kostenlose App, die es erlaubt Barcodes zu lesen und zu generieren.

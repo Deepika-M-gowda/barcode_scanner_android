@@ -464,8 +464,8 @@
     <string name="preferences_appearance_title">Görünüm</string>
     <string name="preferences_theme_label">Tema</string>
     <string name="preferences_switch_system_theme_label">Sistemi Takip Et</string>
-    <string name="preferences_switch_light_theme_label">Açık Tema</string>
-    <string name="preferences_switch_dark_theme_label">Koyu Tema</string>
+    <string name="preferences_switch_light_theme_label">Açık</string>
+    <string name="preferences_switch_dark_theme_label">Koyu</string>
     <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Ana Renk</string>
     <string name="preferences_color_material_you">Sistem (Material You)</string>
@@ -517,7 +517,7 @@
     <string name="preferences_switch_scan_bip_label">Tarama başarılı olduğunda ses çal</string>
     <string name="preferences_switch_scan_screen_rotation_label">Tarama sırasında otomatik döndürmeyi devre dışı bırak</string>
     <string name="preferences_switch_scan_barcode_copied_label">Taranan barkodları panoya kopyala</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Taranmış barkodları geçmişe ekleyin</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Taranan barkodları geçmişe ekleyin</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Kamera yakınlaştırmasının varsayılan değeri</string>
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Barkod oluşturma</string>
@@ -535,7 +535,7 @@
     <string name="permission_camera_label">Kamera</string>
     <string name="permission_camera_description_label">Barkod taraması için gereklidir.</string>
     <string name="permission_internet_label">Internet</string>
-    <string name="permission_internet_description_label">Uzak API\'den bilgi almak için gerekli</string>
+    <string name="permission_internet_description_label">Uzak API\'den bilgi almak için gereklidir.</string>
     <string name="permission_contact_label">Kişi</string>
     <string name="permission_contact_description_label">Bundan QR Kodu oluşturmak için kişiyi içe aktarmak gerekir.</string>
     <string name="permission_location_label">Konum</string>
@@ -543,11 +543,11 @@
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Wi-Fi erişimi içeren bir QR Kodunu tarayarak Wi-Fi\'ye bağlanmak için gereklidir.</string>
     <string name="permission_vibrate_label">Titreşim</string>
-    <string name="permission_vibrate_description_label">Tarama sırasında titremek için kullanılır.</string>
+    <string name="permission_vibrate_description_label">Tarama sırasında titreşim için kullanılır.</string>
     <string name="permission_query_all_packages_label">Tüm paketleri sorgula</string>
     <string name="permission_query_all_packages_description_label">Yüklü bir uygulamadan bir QR Kodu oluşturmak için kullanılır.</string>
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts, içerikleri, alerjenleri, besin bileşimini ve ürün etiketlerinde bulunan tüm bilgileri listeleyen yiyecekler hakkında ücretsiz bir veri tabanıdır.</string>
+    <string name="bdd_open_food_facts_description_label">Open Food Facts, içerikleri, alerjenleri, besin bileşimini ve ürün etiketlerinde bulunan tüm bilgileri listeleyen, yiyecekler hakkında ücretsiz bir veri tabanıdır.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts, evcil hayvan yiyecekleri hakkında ücretsiz bir veri tabanıdır.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts, kozmetik ürünler hakkında ücretsiz bir veri tabanıdır.</string>
     <string name="bdd_music_brainz_description_label">MusicBrainz, müzik meta verilerini toplayan ve halka açık hale getiren bir açık müzik ansiklopedisidir.</string>
@@ -688,4 +688,5 @@
     <string name="country_nz">Yeni Zelanda</string>
     <string name="country_my">Malezya</string>
     <string name="country_mo">Makao</string>
+    <string name="preferences_default">Varsayılan</string>
 </resources>

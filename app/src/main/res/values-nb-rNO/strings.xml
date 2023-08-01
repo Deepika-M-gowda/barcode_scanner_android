@@ -68,4 +68,7 @@
     <string name="scan_error_message_label">Feilmelding:</string>
     <string name="nova_group_description_2">Bearbeidede ingredienser</string>
     <string name="qr_code_type_name_mail">E-post</string>
+    <string name="title_scan">Skann</string>
+    <string name="qr_code_type_name_web_site">Nettside</string>
+    <string name="qr_code_type_name_contact">Kontakt</string>
 </resources>

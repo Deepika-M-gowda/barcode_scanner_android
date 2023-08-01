@@ -1,0 +1,4 @@
+- Corrige erro "java.lang.NumberFormatException: empty String" ao buscar no OpenFoodFacts.
+- Correção de valores incorretos na tabela nutricional para "por porção".
+- Algumas melhorias.
+- Atualização de dependências.

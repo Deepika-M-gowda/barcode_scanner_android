@@ -1,0 +1,4 @@
+- Modificação de biblioteca permitindo escanear códigos de barra.
+- Atualizações de: versão Kotlin (1.7.10), SDK (API 33) e dependências.
+- Melhoria no código.
+- Adiciona ícone monocromático para o Android 13.

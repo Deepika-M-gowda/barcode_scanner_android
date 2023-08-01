@@ -1,0 +1,5 @@
+1.8.0
+
+- Implementação da API CameraX.
+- Visões melhoradas no modo paisagem.
+- Algumas melhorias na tradução para russo (graças a s s).

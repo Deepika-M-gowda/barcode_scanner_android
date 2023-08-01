@@ -1,0 +1,1 @@
+- Corrige escaneamento de imagem quando a imagem está sendo compartilhada.

@@ -1,0 +1,7 @@
+1.14.0
+
+- Adicionada tradução para polaco (graças phyrz91).
+- Corrigido crash no Android 7.
+- Adicionado parâmetro para definir o valor padrão de zoom da câmera.
+- Adicionada análise de código QR UPI.
+- Adicionado histórico para criação de código QR EPC.

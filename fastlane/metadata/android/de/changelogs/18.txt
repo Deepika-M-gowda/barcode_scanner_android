@@ -1,0 +1,5 @@
+1.7.0
+
+- Deutsche Übersetzung hinzugefügt (Dank an konwin).
+- Kleine Änderungen in der russischen Übersetzung (Dank an s s).
+- Einige grafische Verbesserungen.

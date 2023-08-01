@@ -1,0 +1,5 @@
+1.8.0
+
+- CameraX Schnittstellen-Implementierung.
+- Verbesserte Ansichten im Querformat.
+- Einige Verbesserungen in der russischen Übersetzung (Dank an s s).
