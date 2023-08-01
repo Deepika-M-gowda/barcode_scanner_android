@@ -50,7 +50,7 @@
     <string name="qr_code_type_name_text">Text</string>
     <string name="qr_code_type_name_web_site">Webseite</string>
     <string name="qr_code_type_name_contact">Kontakt</string>
-    <string name="qr_code_type_name_epc">EPC QR Code</string>
+    <string name="qr_code_type_name_epc">EPC-QR-Code</string>
     <string name="qr_code_type_name_mail">E-Mail</string>
     <string name="qr_code_type_name_sms">SMS</string>
     <string name="qr_code_type_name_phone">Telefonnummer</string>
@@ -71,11 +71,11 @@
     <string name="bar_code_type_unknown_matrix">Matrix Code</string>
     <string name="bar_code_type_name_unknown">Unbekannt</string>
     <!-- Error Correction Level -->
-    <string name="qr_code_error_correction_level_label">Error correction level</string>
-    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
+    <string name="qr_code_error_correction_level_label">Fehlerkorrekturlevel</string>
+    <string name="qr_code_error_correction_level_settings_label">Fehlerkorrekturlevel (QR-Code)</string>
     <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
     <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
-    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">Quartil (~25%)</string>
     <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
     <!-- History -->
     <string name="label_history_empty">Kein Element gescannt…</string>
@@ -84,7 +84,7 @@
     <string name="popup_message_confirmation_delete_selected_items_history">Ausgewählte Elemente löschen\?</string>
     <string name="menu_item_history_delete">Verlauf löschen</string>
     <string name="menu_item_history_delete_from_history">Aus dem Verlauf löschen</string>
-    <string name="menu_item_history_removed_from_history">Aus dem Verlauf entfernt</string>
+    <string name="menu_item_history_removed_from_history">Aus dem Verlauf entfernt!</string>
     <string name="menu_item_history_add_in_history">In Verlauf hinzufügen</string>
     <string name="menu_item_history_added_in_history">In den Verlauf hinzugefügt!</string>
     <string name="delete_label">Löschen</string>
@@ -133,7 +133,11 @@
     <string name="nutriscore_description_e">Sehr ungünstige Nährstoffzusammensetzung</string>
     <string name="nutriscore_description_unknown">Kein Nutri-Score</string>
     <string name="nova_group_entitled_label">NOVA-Gruppe</string>
-    <string name="nova_group_description">NOVA-Gruppen ist eine Klassifizierung in 4 Gruppen, um den Grad der Verarbeitung von Lebensmitteln darzustellen.</string>
+    <string name="nova_group_description">NOVA-Gruppe ist eine Klassifizierung in vier Gruppen, um den Verarbeitungsgrad von Lebensmitteln darzustellen:
+\n1 - Nicht verarbeitetes oder minimal verarbeitetes Essen
+\n2 - Verarbeitete Zutaten
+\n3 - Verarbeitetes Essen
+\n4 - Stark verarbeitetes Essen und Getränke</string>
     <string name="nova_group_description_1">Unverarbeitete oder minimal verarbeitete Lebensmittel</string>
     <string name="nova_group_description_2">Verarbeitete Küchenzutaten</string>
     <string name="nova_group_description_3">Verarbeitete Lebensmittel</string>
@@ -176,7 +180,7 @@
     <string name="stabilizer_description_label">Stabilisatoren, Verdickungsmittel und Geliermittel, welche Beschaffenheit, Handhabbarkeit, Aroma oder andere Parameter in definierter Weise erhalten.</string>
     <string name="additive_no_information_found_label">Keine Informationen zu diesem Stabilisator gefunden!</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Zutaten welche bezüglich vegetarisch und vegan eine Rolle spielen.</string>
+    <string name="ingredient_veggie_entitled_label">Inhaltsstoffe bezüglich des vegetarischen und veganen Zustands</string>
     <string name="palm_oil_free_label">Palmölfrei</string>
     <string name="contain_palm_oil_label">Enthält Palmöl</string>
     <string name="may_contain_palm_oil_label">Kann Palmöl enthalten</string>
@@ -224,7 +228,7 @@
     <string name="book_product_pages_number">%1$s Seiten</string>
     <!-- Music -->
     <string name="music_product_tracks_label">Tracks</string>
-    <string name="music_product_tracks_number">%1$s tracks</string>
+    <string name="music_product_tracks_number">%1$s Tracks</string>
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">Barcodeinhalt</string>
     <string name="bar_code_analysis_label">Barcodeanalyse</string>
@@ -263,10 +267,10 @@
     <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">URL könnte bösartige Inhalte enthalten…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
-    <string name="matrix_uri_upi_entitled_label">URI analysis</string>
+    <string name="matrix_uri_upi_entitled_label">URI-Analyse</string>
     <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Payee Name:</string>
-    <string name="matrix_uri_upi_amount_label">Amount:</string>
+    <string name="matrix_uri_upi_payee_name_label">Name des Zahlungsempfängers:</string>
+    <string name="matrix_uri_upi_amount_label">Betrag:</string>
     <string name="matrix_uri_upi_currency_label">Currency:</string>
     <string name="matrix_uri_upi_description_label">Description:</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
@@ -274,9 +278,9 @@
     <string name="matrix_localisation_longitude_label">Längengrad:</string>
     <string name="matrix_localisation_altitude_label">Höhe:</string>
     <string name="matrix_localisation_query_label">Anfrage:</string>
-    <string name="matrix_localisation_button_find_location">Generate from your position</string>
-    <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
-    <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
+    <string name="matrix_localisation_button_find_location">Generiere von deinem Standpunkt aus</string>
+    <string name="matrix_localisation_search_current_position_label">Suche nach dem aktuellen Standort…</string>
+    <string name="matrix_localisation_location_disabled_label">Die Standort-Funktion scheint auf deinem Gerät nicht aktiviert zu sein.</string>
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Dieser Barcodetyp wird häufig in der Industrie eingesetzt.</string>
     <string name="barcode_code_39_description_label">Code 39 ist ein Barcode welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Außerdem wird er in militärischen Umgebungen und in der Automobilindustrie genutzt.</string>
@@ -289,7 +293,7 @@
     <string name="barcode_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
     <string name="barcode_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen EAN-13 Barcode sind. Er besteht aus 8 Zahlen.</string>
     <!-- Snackbar Feddbacks -->
-    <string name="snack_bar_message_permission_refused">Sie müssen die Berechtigungen zulassen um diese Funktionalität nutzen zu können</string>
+    <string name="snack_bar_message_permission_refused">Du musst die Berechtigungen zulassen um diese Funktion nutzen zu können.</string>
     <string name="snack_bar_message_save_bitmap_ok">Bild wurde gespeichert</string>
     <string name="snack_bar_message_save_bitmap_error">Bild wurde nicht gespeichert… \nZu wenig Speicherplatz?</string>
     <string name="snack_bar_message_share_bitmap_error">Ein Fehler ist während der "Teilen" Konfiguration aufgetreten.</string>
@@ -308,9 +312,9 @@
     <string name="action_send_mail_label">E-Mail senden</string>
     <string name="action_send_sms_label">Sende SMS</string>
     <string name="action_call_phone_label">Wähle Telefonnummer</string>
-    <string name="action_add_to_calendar">Add to calendar</string>
+    <string name="action_add_to_calendar">Zum Kalender hinzufügen</string>
     <string name="action_add_to_contacts">Add to contacts</string>
-    <string name="action_show_location">Show location</string>
+    <string name="action_show_location">Zeige den Standort</string>
     <string name="action_open_link">Open link</string>
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">WLAN Verbindung</string>
@@ -333,7 +337,7 @@
     <string name="error_barcode_wrong_length_message">Barcode muss aus %1$s Zahlen bestehen.</string>
     <string name="error_barcode_wrong_key_message">%1$ste Zahl (Prüfziffer) sollte %2$s sein.</string>
     <string name="error_barcode_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
-    <string name="error_barcode_encoding_us_ascii_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_barcode_encoding_us_ascii_error_message">Sonderzeichen werden für diesen Barcode-Typ nicht unterstützt.</string>
     <string name="error_barcode_93_regex_error_message">Der "Code 93" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 8 Sonderzeichen « -, ., Leerzeichen, *, $, /, +, % » codieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
     <string name="error_barcode_39_regex_error_message">Der "Code 39" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 7 Sonderzeichen « -, ., Leerzeichen, $, /, +, % ». Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
     <string name="error_barcode_codabar_regex_error_message">Der "Codabar" Barcode kann Zahlen (0 bis 9), so wie die 6 Sonderzeichen « -, $, :, /, ., + » codieren. Außerdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden um den Anfang und das Ende zu definieren.</string>
@@ -398,7 +402,8 @@
     <string name="qr_code_text_input_edit_text_hint_epc_information">Hinweis an den Nutzer</string>
     <string name="qr_code_text_input_edit_text_epc_name_error">Das Feld „Name“ ist obligatorisch</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN nicht korrekt</string>
-    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC QR Code.</string>
+    <string name="list_bank_empty_message">Kein Element…
+\nDu hast noch keinen EPC-QR-Code generiert.</string>
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">E-Mail</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Betreff</string>
@@ -458,7 +463,7 @@
     <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open Food Facts Datenbank.</string>
     <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open Pet Food Facts Datenbank.</string>
     <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open Beauty Facts Datenbank.</string>
-    <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
+    <string name="music_brainz_source_description_label">Informationen zu musikalischen Produkten stammen von der freien Datenbank namens MusicBrainz.</string>
     <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open Library Datenbank.</string>
     <!-- Preferences -->
     <!-- Appearance Settings -->
@@ -469,7 +474,7 @@
     <string name="preferences_switch_dark_theme_label">Dunkel</string>
     <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Hauptfarbe</string>
-    <string name="preferences_color_material_you">System (Material You)</string>
+    <string name="preferences_color_material_you">System („Material You”: Android-Designsprache)</string>
     <string name="preferences_color_blue">Blau</string>
     <string name="preferences_color_orange">Orange</string>
     <string name="preferences_color_green">Grün</string>
@@ -479,50 +484,51 @@
     <string name="preferences_languages_title">Sprache</string>
     <string name="preferences_languages_change">Ändere die Sprache</string>
     <!-- Remote API -->
-    <string name="preferences_remote_api_title">Products and API</string>
+    <string name="preferences_remote_api_title">Produkte und Schnittstelle (API)</string>
     <string name="preferences_switch_scan_search_on_api_label">Remote API automatisch abfragen</string>
     <string name="preferences_remote_api_to_use_label">Default API</string>
-    <string name="preferences_remote_api_choose_label">Choose an API</string>
-    <string name="preferences_remote_api_food_label">Open Food Facts (Food products)</string>
-    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Cosmetic products)</string>
-    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Pet food products)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyls, …)</string>
-    <string name="preferences_remote_api_book_label">Open Library (Books)</string>
+    <string name="preferences_remote_api_choose_label">Wähle eine Schnittstelle (API)</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts (freiverfügbare Fakten zu Nahrungsmitteln)</string>
+    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Kosmetikprodukte)</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (freiverfügbare Fakten zu Tiernahrungsmitteln)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinylsscheiben, …)</string>
+    <string name="preferences_remote_api_book_label">Open Library (Bücher)</string>
     <!-- About Remote API -->
-    <string name="preferences_information_about_remote_api_title">Information about APIs</string>
-    <string name="preferences_information_about_remote_api_foreword">Foreword</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_title">What is an API?</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_description">An API is a software library used to access a service. In the case of this application, an API is used to access a web service. This web service retrieves information from a database.\nFor example, Open Food Facts is a database of food products and provides an API to access its database. I use this API to display information on food products.</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Barcode types concerned</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">The API search function is only activated for EAN 13, EAN 8, UPC A and UPC E barcodes.</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_title">Product types currently supported</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_food">• Food products (with Open Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Cosmetic products (with Open Beauty Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Pet food products (with Open Pet Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (with MusicBrainz API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_book">• Books (with Open Library API)</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_title">Some additional information</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Some products may not be included in certain databases.</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• There may be some errors in the information provided by the APIs.</string>
-    <string name="preferences_information_about_remote_api_how_it_works">How it works</string>
-    <string name="preferences_information_about_remote_api_automatic_search_title">Automatic search</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings. If no information is found on the API, you can always perform a manual search on another API after the scan.</string>
-    <string name="preferences_information_about_remote_api_manual_search_title">Manual search</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always manually search for information on the scanned product. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
-    <string name="preferences_information_about_remote_api_about_books_title">Books</string>
-    <string name="preferences_information_about_remote_api_about_books_description">If the product you\'re scanning is a book, you don\'t need to specify the API on which to search for information. A book\'s barcode is identifiable because it always begins with the digits \"978\". The search will automatically be performed on Open Library.</string>
+    <string name="preferences_information_about_remote_api_title">Informationen über Schnittstellen (APIs)</string>
+    <string name="preferences_information_about_remote_api_foreword">Vorwärts</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">Was ist eine Schnittstelle (API)\?</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_description">Eine Schnittstelle (auch API genannt) ist eine Softwarebibliothek, die für den Zugriff auf einen Dienst verwendet wird. Im Fall dieser App wird eine API für den Zugriff auf einen Webdienst verwendet. Dieser Webdienst ruft Informationen aus einer Datenbank ab.
+\nOpen Food Facts, zum Beispiel, ist eine Datenbank für Lebensmittelprodukte und bietet eine API für den Zugriff auf deren Datenbank. Ich verwende diese API, um Informationen über Lebensmittelprodukte anzuzeigen.</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Betroffene Barcodetypen</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Die Schnittstellen-Suche ist nur aktiviert für EAN 13, EAN 8, UPC A und UPC E Barcodes.</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_title">Aktuell unterstützte Produkkategorien</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_food">• Nahrungsmittel (mit Open Food Facts Schnitttelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Kosmetikprodukte (mit Open Beauty Facts Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Tiernahrungsmittel (mit Open Pet Food Facts Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (mit MusicBrainz Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_book">• Bücher (mit Open Library Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_title">Einige zusätzliche Informationen</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Einige Produkte sind eventuell nicht enthalten in bestimmen Datenbanken.</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• Möglicherweise existieren Fehler bei den Informationen der bereitgestellten Schnittstellen.</string>
+    <string name="preferences_information_about_remote_api_how_it_works">Wie es funktioniert</string>
+    <string name="preferences_information_about_remote_api_automatic_search_title">Automatische Suche</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">Wenn die Option \\\"%1$s\\\" aktiviert ist, wird beim Scannen eines Produktbarcodes automatisch eine Suche in der in den Einstellungen ausgewählten Schnittstelle (auch API genannt) durchgeführt. Wenn in der API keine Informationen gefunden werden, können Sie nach dem Scannen jederzeit eine manuelle Suche in einer anderen API durchführen.</string>
+    <string name="preferences_information_about_remote_api_manual_search_title">Manuelle Suche</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">Wenn die Option \\\"%1$s\\\" deaktiviert ist, werden beim Scannen eines Produktbarcodes keine Informationen von den Remote-Servern (remote, engl. = ferngesteuert) abgerufen. Sie können jedoch jederzeit manuell nach Informationen über das gescannte Produkt suchen. Klicken Sie dazu nach dem Scannen des Produkts auf das Symbol in der Menüleiste. Sie können dann eine Schnittstelle (API) für die Suche auswählen.</string>
+    <string name="preferences_information_about_remote_api_about_books_title">Bücher</string>
+    <string name="preferences_information_about_remote_api_about_books_description">Wenn es sich bei dem zu scannenden Produkt um ein Buch handelt, musst Du die Schnittstelle (API), über die Du nach Informationen suchst, nicht angeben. Der Barcode eines Buches ist identifizierbar, da er immer mit den Ziffern „978” beginnt. Die Suche wird automatisch in Open Library durchgeführt.</string>
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
-    <string name="preferences_switch_scan_use_camera_x_api_label">Use CameraX API</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">Verwende die CameraX Schnittstelle (API)</string>
     <string name="preferences_switch_scan_vibrate_label">Vibriere bei erfolgreichem Scan</string>
     <string name="preferences_switch_scan_bip_label">Ton ausgeben bei erfolgeichem Scan</string>
     <string name="preferences_switch_scan_screen_rotation_label">Automatische Drehung während des Scans deaktivieren</string>
     <string name="preferences_switch_scan_barcode_copied_label">Kopiere gescannten Barcode in die Zwischenablage</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
-    <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Füge gescannte Barcodes zum Verlauf hinzu</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">Standardwerte des Kamerazooms</string>
     <!-- Barcode Generation Settings -->
-    <string name="preferences_barcode_generation_title">Barcode generation</string>
-    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
+    <string name="preferences_barcode_generation_title">Barcodegenerierung</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Füge generierte Barcodes zum Verlauf hinzu</string>
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Suche</string>
     <string name="preferences_search_engine">Suchmaschine</string>
@@ -539,32 +545,36 @@
     <string name="permission_internet_description_label">Benötigt um die Remote APIs abzufragen.</string>
     <string name="permission_contact_label">Kontakte</string>
     <string name="permission_contact_description_label">Benötigt um Kontake zu importieren oder Kontakt QR Codes zu generieren.</string>
-    <string name="permission_location_label">Location</string>
-    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
+    <string name="permission_location_label">Standort</string>
+    <string name="permission_location_description_label">Notwendig um einen QR-Code zum Standort des Gerätes zu generieren.</string>
     <string name="permission_wifi_label">WLAN</string>
     <string name="permission_wifi_description_label">Benötigt um zu einem WLAN zu verbinden dessen QR Code gescannt wurde.</string>
-    <string name="permission_vibrate_label">Vibrate</string>
+    <string name="permission_vibrate_label">Vibrieren</string>
     <string name="permission_vibrate_description_label">Benötigt um beim scannen zu vibrieren.</string>
-    <string name="permission_query_all_packages_label">Query all packages</string>
-    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
+    <string name="permission_query_all_packages_label">Abfrage aller Daten-Pakete</string>
+    <string name="permission_query_all_packages_description_label">Nützlich um einen QR-Code einer installierten App zu generieren.</string>
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Lebensmittelprodukten aus der ganzen Welt. Sie listet alle auf dem Produktlabel gekennzeichneten Informationen wie z.B. Zutaten, Allergene und Nährwerte.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Tierfutterprodukten.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts ist eine freie, Online-Crowdsourcing-Datenbank von Kosmetikprodukten.</string>
-    <string name="bdd_music_brainz_description_label">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz ist eine freie Musikbibliothek, die Musikmetadaten sammelt und diese öffentlich zur Verfügung stellt.</string>
     <string name="bdd_open_library_description_label">Open Library ist eine freie, Online-Crowdsourcing-Datenbank welche zum Ziel hat alle veröffentlichten Bücher weltweit aufzulisten, egal in welcher Sprache.</string>
     <!-- About Library Third -->
     <string name="dependency_by">abhängig von %1$s</string>
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") ist eine quelloffene Bibliothek zur Verarbeitung von 1D/2D-Barcodes in verschiedenen Formaten.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
+    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX Hilfsbibliothek bietet eine einfach zu bedienende und funktionsreiche Android Kamera-Schnittstelle (API).</string>
     <string name="dependency_zxing_code_scanner_description_label">Code-Scanner-Bibliothek für Android, die auf ZXing basiert.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard ist eine in Java geschriebene vCard-Bibliothek. Sie kann vCards in vielen verschiedenen Formaten lesen und schreiben.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper ist eine Bibliothek zum Zuschneiden von Bildern für Android.</string>
     <string name="dependency_coil_description_label">Eine Bildladebibliothek für Android, die von Kotlin Coroutines unterstützt wird.</string>
     <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) unterstützen Entwickler bei der Umsetzung von Material Design. Diese Komponenten wurden von einem Kernteam von Ingenieuren und UX-Designern bei Google entwickelt und ermöglichen einen zuverlässigen Entwicklungs-Workflow, um schöne und funktionale Android-Apps zu erstellen.\n\nMaterial Components for Android ist ein Drop-in-Ersatz für die Design Support Library von Android.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Stellt den Dispatchers.Main-Kontext für Android-Anwendungen bereit.</string>
-    <string name="dependency_koin_description_label">Ein pragmatisches, leichtgewichtiges Dependency-Injection-Framework für Kotlin-Entwickler.\n\nGeschrieben in reinem Kotlin, nur mit funktionaler Auflösung: kein Proxy, keine Code-Generierung, keine Reflexion.\n\nKoin ist eine DSL, ein leichter Container und eine pragmatische API.</string>
+    <string name="dependency_koin_description_label">Ein pragmatisches, leichtgewichtiges abhängiges eingespeistes Rahmenprogramm(Dependency Injection Framework) für Kotlin-Entwickler.
+\n
+\nGeschrieben in reinem Kotlin, nur mit funktionaler Auflösung: kein Proxy, keine Code-Generierung, keine Reflektion.
+\n
+\nKoin ist eine domänenspezifische Sprache (DSL), ein leichter Behälter (Container) und eine pragmatische Schnittstelle (API)</string>
     <string name="dependency_room_description_label">Room bietet eine Abstraktionsschicht über SQLite, um einen flüssigen Datenbankzugriff zu ermöglichen und gleichzeitig die volle Leistungsfähigkeit von SQLite zu nutzen.</string>
     <string name="dependency_gson_description_label">Gson ist eine Java-Bibliothek die verwendet werden kann um Java-Objekte in ihre JSON-Darstellung zu konvertieren. Sie kann auch verwendet werden um einen JSON-String in ein entsprechendes Java-Objekt zu konvertieren. Gson kann mit beliebigen Java-Objekten arbeiten, einschließlich bereits vorhandener Objekte für die Sie keinen Quellcode haben.</string>
     <string name="dependency_retrofit_description_label">Ein typsicherer HTTP-Client für Android und Java.</string>
@@ -689,4 +699,5 @@
     <string name="country_nz">Neuseeland</string>
     <string name="country_my">Malaysia</string>
     <string name="country_mo">Macau</string>
+    <string name="preferences_default">Standard</string>
 </resources>

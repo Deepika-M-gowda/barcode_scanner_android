@@ -1,0 +1,1 @@
+- Problembehebung der Verknüpfung „von Bild scannen”.

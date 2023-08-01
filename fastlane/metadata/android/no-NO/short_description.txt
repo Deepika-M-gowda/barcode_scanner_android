@@ -1,0 +1,1 @@
+Et fritt program som lar deg lese og generere strekkoder.

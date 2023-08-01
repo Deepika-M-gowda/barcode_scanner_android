@@ -1,0 +1,7 @@
+- Aktualisierung der Kotlin-Version (1.7.20).
+- Einige Verbesserungen bei den Strings (Englisch).
+- In den Einstellungen wurde eine Schaltfläche hinzugefügt, die den Inhalt des gescannten Barcodes automatisch in die Zwischenablage kopieren kann.
+- Code-Verbesserung.
+- Es wurde die Möglichkeit hinzugefügt, ferngesteuerte Schnittstellen (Remote-APIs) manuell abzufragen.
+- Es wurde die Unterstützung für die Erzeugung von EPC-QR-Codes hinzugefügt.
+- In der Symbolleiste wurde eine Schaltfläche zur Suche nach QR-Codes hinzugefügt, die eine URL enthalten.

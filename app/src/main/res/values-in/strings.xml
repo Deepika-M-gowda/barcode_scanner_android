@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_label">Tidak</string>
+    <string name="go_to_dialog_label">Masuk ke situs web</string>
+    <string name="image_view_description_flag">Bendera</string>
+    <string name="image_view_description_logo">Logo</string>
+    <string name="image_view_description_type_icon">Tipe</string>
+    <string name="image_view_description_bar_code">Kode batang</string>
+    <string name="image_view_description_icon">Ikon</string>
+    <string name="image_view_description_nutriscore">NUTRI-SKOR</string>
+    <string name="image_view_description_eco_score">SKOR ECO</string>
+    <string name="image_view_description_background">Latar Belakang</string>
+    <string name="image_view_description_image">Gambar</string>
+    <string name="slider_description_zoom">Perbesar</string>
+    <string name="title_scan">Pindai</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_generate">Buat</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="title_qr_code_creator">Buat Kode QR</string>
+    <string name="title_bar_code_creator">Buat kode batang</string>
+    <string name="information_label">Informasi</string>
+    <string name="barcode_label">Kode batang</string>
+    <string name="yes_label">Ya</string>
+    <string name="close_dialog_label">Tutup</string>
+    <string name="image_view_description_product_front">Gambar produk</string>
+    <string name="image_view_description_nova_group">GRUP NOVA</string>
+    <string name="download_from_api_label">Unduh dari API</string>
+</resources>

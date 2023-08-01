@@ -1,0 +1,1 @@
+Um app livre que permite ler e gerar códigos de barras.
