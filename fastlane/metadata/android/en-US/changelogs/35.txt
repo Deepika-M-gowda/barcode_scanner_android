@@ -1,0 +1,17 @@
+1.17.0
+
+New features:
+- Added browser default search engine.
+- Added Wi-Fi connection with WPA3 security (thanks to Mateus J.).
+Translation (using Weblate):
+- Added Portuguese (Brazil) translation (thanks to joaooliva).
+- Added Japanese translation (not complete) (thanks to しいたけ).
+- Added Ukrainian translation (not complete) (thanks to MaSHiNiK).
+- Added Italian translation (not complete) (thanks to Tua madre).
+- Added Indonesian translation (not complete) (thanks to Reza).
+- Updated German translation (thanks to Fabian Rennebeck).
+- Updated Norwegian Bokmål translation (thanks to Allan Nordhøy).
+- Updated Chinese (Simplified) translation (thanks to 御坂13766号 and Red Star Over Earth).
+- Updated Polish translation (thanks to Eryk Michalak).
+- Updated Turkish translation (thanks to abfreeman).
+- Updated Spanish translation (thanks to gallegonovato).
