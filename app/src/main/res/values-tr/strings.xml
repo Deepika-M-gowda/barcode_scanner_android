@@ -689,4 +689,5 @@
     <string name="country_my">Malezya</string>
     <string name="country_mo">Makao</string>
     <string name="preferences_default">Varsayılan</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>
