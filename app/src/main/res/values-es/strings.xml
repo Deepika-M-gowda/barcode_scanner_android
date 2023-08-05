@@ -689,4 +689,5 @@
     <string name="country_my">Malasia</string>
     <string name="country_mo">Macao</string>
     <string name="preferences_default">Por defecto</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>

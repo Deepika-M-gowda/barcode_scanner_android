@@ -1,0 +1,2 @@
+- Mejoras en el código.
+- Solucionado un problema con la cámara que a veces no se apaga al escanear una imagen.

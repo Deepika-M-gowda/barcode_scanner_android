@@ -1,0 +1,1 @@
+- Arreglar el escaneo de una imagen cuando se comparte la imagen.

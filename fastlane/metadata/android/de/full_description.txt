@@ -19,6 +19,6 @@ App-Funktionen:
 - Behalten Sie mit dem Verlaufstool den Überblick über alle gescannten Barcodes.
 - Erstellen Sie Ihre eigenen Barcodes.
 - Passen Sie die Benutzeroberfläche mit verschiedenen Farben an, mit einem hellen oder einem dunklen Thema. Die App integriert die Funktionen von Android 12 und ermöglicht es, die Farben je nach Hintergrundbild anzupassen (Material You).
-- Die Texte sind vollständig in Englisch, Spanisch, Französisch, Deutsch, Polnisch, Türkisch, Russisch und Chinesisch übersetzt.
+- Die Texte sind vollständig in Deutsch, Englisch, Spanisch, Französisch, Polnisch, Türkisch, Russisch und Chinesisch übersetzt.
 
 Diese App respektiert Ihre Privatsphäre. Sie enthält keine Tracker und sammelt keine Daten.
