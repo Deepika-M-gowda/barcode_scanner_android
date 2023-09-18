@@ -26,11 +26,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.LocaleList
-import android.provider.Settings
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
@@ -142,18 +140,23 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                         selectedIndex = index
                         val locales = localList[index].second
                         val base = requireContext()
-                        val newConfig = Configuration(base.resources.configuration)
-                        newConfig.setLocales(locales.unwrap() as LocaleList?)
-                        val localeContext = base.createConfigurationContext(newConfig)
-                        val dialog = dialogInterface as Dialog
-                        items[0] = localeContext.getString(R.string.preferences_default)
-                        val adapter = dialog.findViewById<ListView>(R.id.select_dialog_listview)?.adapter
-                        (adapter as? BaseAdapter)?.notifyDataSetChanged()
-                        dialog.setTitle(localeContext.getString(R.string.preferences_languages_change))
-                        dialog.findViewById<TextView>(android.R.id.button1)
-                            ?.text = localeContext.getString(android.R.string.ok)
-                        dialog.findViewById<TextView>(android.R.id.button2)
-                            ?.text = localeContext.getString(android.R.string.cancel)
+
+                        val newConfig = Configuration(base.resources.configuration).apply {
+                            setLocales(locales.unwrap() as LocaleList?)
+                        }
+
+                        base.createConfigurationContext(newConfig).let { localeContext ->
+                            items[0] = localeContext.getString(R.string.preferences_default)
+
+                            (dialogInterface as Dialog).apply {
+                                findViewById<ListView>(R.id.select_dialog_listview)?.adapter?.run {
+                                    (this as? BaseAdapter)?.notifyDataSetChanged()
+                                }
+                                setTitle(localeContext.getString(R.string.preferences_languages_change))
+                                findViewById<TextView>(android.R.id.button1)?.text = localeContext.getString(android.R.string.ok)
+                                findViewById<TextView>(android.R.id.button2)?.text = localeContext.getString(android.R.string.cancel)
+                            }
+                        }
                     }
                     .setPositiveButton(android.R.string.ok) { _, _ ->
                         if (selectedIndex != savedIndex) {
@@ -169,11 +172,11 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    /*@RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun createActionAppLocaleSettingsIntent(): Intent = Intent(
         Settings.ACTION_APP_LOCALE_SETTINGS,
         Uri.fromParts("package", requireActivity().packageName, null)
-    )
+    )*/
 
     private fun configureAboutPreference(keyResource: Int, activityKClass: KClass<out Activity>) {
         val pref = findPreference(getString(keyResource)) as Preference?
