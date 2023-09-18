@@ -129,10 +129,14 @@
     <string name="nutriscore_description_b">Bonne qualité nutritionnelle</string>
     <string name="nutriscore_description_c">Qualité nutritionnelle moyenne</string>
     <string name="nutriscore_description_d">Mauvaise qualité nutritionnelle</string>
-    <string name="nutriscore_description_e">Mauvaise qualité nutritionnelle</string>
+    <string name="nutriscore_description_e">Très mauvaise qualité nutritionnelle</string>
     <string name="nutriscore_description_unknown">Pas de Nutri-Score</string>
     <string name="nova_group_entitled_label">Groupe NOVA</string>
-    <string name="nova_group_description">Le Groupe NOVA est une classification en 4 groupes pour mettre en évidence le degré de transformation des aliments:\n1 - Aliments non transformés ou transformés minimalement\n2 - Ingrédients culinaires transformés\n3 - Aliments transformés\n4 - Produits alimentaires et boissons ultra-transformés</string>
+    <string name="nova_group_description">Le Groupe NOVA est une classification en 4 groupes pour mettre en évidence le degré de transformation des aliments :
+\n1 - Aliments non transformés ou transformés minimalement
+\n2 - Ingrédients culinaires transformés
+\n3 - Aliments transformés
+\n4 - Produits alimentaires et boissons ultra-transformés</string>
     <string name="nova_group_description_1">Aliments non transformés ou minimalement transformés</string>
     <string name="nova_group_description_2">Ingrédients culinaires transformés</string>
     <string name="nova_group_description_3">Aliments transformés</string>
@@ -160,7 +164,7 @@
     <string name="allergens_label">Allergènes</string>
     <string name="traces_label">Traces</string>
     <string name="additives_label">Additifs</string>
-    <string name="veggie_label">Veggie</string>
+    <string name="veggie_label">Végétarien</string>
     <!-- Additif -->
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Sans danger</string>
@@ -173,7 +177,7 @@
     <string name="off_overexposure_risk_none_label">Risque de sur-exposition NC</string>
     <string name="stabilizer_label">Stabilisant</string>
     <string name="stabilizer_description_label">Les stabilisants sont ajoutés à une denrée alimentaire pour permettre de maintenir son état physico-chimique. Les stabilisants comprennent les substances qui permettent de maintenir la dispersion homogène de deux ou plusieurs substances non miscibles, ainsi que les substances qui stabilisent, conservent ou intensifient la couleur d’une denrée alimentaire.</string>
-    <string name="additive_no_information_found_label">Aucune information n\'a été trouvée sur cet additif!</string>
+    <string name="additive_no_information_found_label">Aucune information n\'a été trouvée sur cet additif !</string>
     <!-- Veggie -->
     <string name="ingredient_veggie_entitled_label">Ingrédients en fonction du caractère végétalien et végétarien</string>
     <string name="palm_oil_free_label">Sans huile de palme</string>
@@ -228,21 +232,21 @@
     <string name="bar_code_content_label">Contenu du code-barres</string>
     <string name="bar_code_analysis_label">Analyse du code-barres</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">Nom:</string>
-    <string name="matrix_contact_organisation_label">Organisation:</string>
-    <string name="matrix_contact_title_label">Titre:</string>
-    <string name="matrix_contact_phone_label">Téléphone:</string>
+    <string name="matrix_contact_name_label">Nom :</string>
+    <string name="matrix_contact_organisation_label">Organisation :</string>
+    <string name="matrix_contact_title_label">Titre :</string>
+    <string name="matrix_contact_phone_label">Téléphone :</string>
     <string name="matrix_contact_mail_label">Courriel :</string>
-    <string name="matrix_contact_address_label">Adresse:</string>
-    <string name="matrix_contact_notes_label">Notes:</string>
+    <string name="matrix_contact_address_label">Adresse :</string>
+    <string name="matrix_contact_notes_label">Notes :</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Nom de l\'événement:</string>
-    <string name="matrix_agenda_start_date_event_label">Début:</string>
-    <string name="matrix_agenda_end_date_event_label">Fin:</string>
-    <string name="matrix_agenda_place_event_label">Lieu:</string>
-    <string name="matrix_agenda_description_event_label">Description:</string>
+    <string name="matrix_agenda_name_event_label">Nom de l\'événement :</string>
+    <string name="matrix_agenda_start_date_event_label">Début :</string>
+    <string name="matrix_agenda_end_date_event_label">Fin :</string>
+    <string name="matrix_agenda_place_event_label">Lieu :</string>
+    <string name="matrix_agenda_description_event_label">Description :</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Téléphone:</string>
+    <string name="matrix_phone_tel_number_label">Téléphone :</string>
     <!-- Matrix Barcode Email Analysis -->
     <string name="matrix_email_recipient_label">Destinataire :</string>
     <string name="matrix_email_cc_label">Cc :</string>
@@ -272,7 +276,7 @@
     <string name="matrix_localisation_latitude_label">Latitude:</string>
     <string name="matrix_localisation_longitude_label">Longitude:</string>
     <string name="matrix_localisation_altitude_label">Altitude:</string>
-    <string name="matrix_localisation_query_label">Query:</string>
+    <string name="matrix_localisation_query_label">Requête :</string>
     <string name="matrix_localisation_button_find_location">Générer à partir de votre position</string>
     <string name="matrix_localisation_search_current_position_label">Recherche de la position en cours…</string>
     <string name="matrix_localisation_location_disabled_label">La localisation sur votre appareil ne semble pas être activée.</string>
@@ -290,7 +294,8 @@
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Vous devez accepter la permission pour utiliser cette fonctionnalité.</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'image a été enregistrée</string>
-    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante?</string>
+    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…
+\nMémoire insuffisante \?</string>
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
     <!-- Actions -->
     <string name="actions_label">Actions</string>
@@ -322,9 +327,9 @@
     <string name="action_wifi_already_added_label">Wi-Fi déjà ajouté</string>
     <string name="action_wifi_add_network_refused">Vous avez refusé l\'ajout du réseau Wifi.</string>
     <string name="action_wifi_add_network_successful">Le réseau Wifi a été ajouté.</string>
-    <string name="action_wifi_add_network_failed">Echec de l\'ajout du réseau Wifi.</string>
+    <string name="action_wifi_add_network_failed">Échec de l\'ajout du réseau Wifi.</string>
     <string name="action_wifi_add_network_already_exists">Vous avez déjà ajouté ce réseau Wifi.</string>
-    <string name="action_wifi_add_network_unknown_error">Echec de l\'ajout du réseau Wifi.</string>
+    <string name="action_wifi_add_network_unknown_error">Erreur inconnue lors de l\'ajout du réseau Wifi.</string>
     <!-- QR Code Generator -->
     <!-- Barcode Generator Errors -->
     <string name="error_barcode_none_character_message">Vous devez entrer une valeur correcte dans le champ de saisie.</string>
@@ -543,9 +548,9 @@
     <string name="permission_location_description_label">Nécessaire pour générer un QR Code à partir de la position de l\'appareil.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Nécessaire pour se connecter au Wi-Fi lors du scan d\'un QR Code contenant l\'accès à un Wi-Fi.</string>
-    <string name="permission_vibrate_label">Vibrate</string>
+    <string name="permission_vibrate_label">Vibrations</string>
     <string name="permission_vibrate_description_label">Utile pour vibrer lors du scan.</string>
-    <string name="permission_query_all_packages_label">Query all packages</string>
+    <string name="permission_query_all_packages_label">Demander tous les paquets</string>
     <string name="permission_query_all_packages_description_label">Utile pour générer un QR Code à partir d\'une application installée.</string>
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts est une base de données libre de produits alimentaires qui répertorie les ingrédients, les allergènes, la composition nutritionnelle et toutes les informations présentes sur les étiquettes des aliments.</string>
@@ -556,11 +561,11 @@
     <!-- About Library Third -->
     <string name="dependency_by">par %1$s</string>
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
+    <string name="dependency_zxing_description_label">ZXing (zebra crossing) est une bibliothéque de traitement de codes barres 1D/2D libre et multi-format.</string>
+    <string name="dependency_camera_x_description_label">La librairie de supports de Jetpack CameraX donne une API de caméra Android facile à utiliser et pleine de fonctionnalités.</string>
+    <string name="dependency_zxing_code_scanner_description_label">Librairie de scanneurs de code pour Android, basée sur ZXing.</string>
+    <string name="dependency_ez_vcard_description_label">ez-vcard est une librairie vCard écrite en Java. Elle peut lire et écrire des vCards dans différents formats.</string>
+    <string name="dependency_android_image_cropper_description_label">Android Image Cropper est une librairie de recadrage d\'image pour Android.</string>
     <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
     <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
@@ -689,4 +694,5 @@
     <string name="country_nz">Nouvelle-Zélande</string>
     <string name="country_my">Malaisie</string>
     <string name="country_mo">Macao</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>

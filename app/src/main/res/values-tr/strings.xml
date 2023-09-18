@@ -466,7 +466,7 @@
     <string name="preferences_switch_system_theme_label">Sistemi Takip Et</string>
     <string name="preferences_switch_light_theme_label">Açık</string>
     <string name="preferences_switch_dark_theme_label">Koyu</string>
-    <string name="preferences_switch_black_theme_label">Black</string>
+    <string name="preferences_switch_black_theme_label">Siyah</string>
     <string name="preferences_color">Ana Renk</string>
     <string name="preferences_color_material_you">Sistem (Material You)</string>
     <string name="preferences_color_blue">Mavi</string>
