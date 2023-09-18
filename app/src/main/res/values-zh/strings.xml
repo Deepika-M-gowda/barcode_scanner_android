@@ -56,36 +56,36 @@
     <string name="qr_code_type_name_geographic_coordinates">地理坐标</string>
     <string name="qr_code_type_name_agenda">日程</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
-    <string name="qr_code_type_name_apps">Application</string>
+    <string name="qr_code_type_name_apps">应用</string>
     <!-- Product Type -->
     <string name="bar_code_type_unknown_product">产品</string>
     <string name="bar_code_type_food">食品</string>
     <string name="bar_code_type_pet_food">宠物食品</string>
     <string name="bar_code_type_beauty">美容产品</string>
-    <string name="bar_code_type_music">Music</string>
-    <string name="bar_code_type_unknown_music_album_title">Album title unknown</string>
+    <string name="bar_code_type_music">音乐</string>
+    <string name="bar_code_type_unknown_music_album_title">未知专辑</string>
     <string name="bar_code_type_book">书籍</string>
     <string name="bar_code_type_unknown_book_title">未知书名</string>
     <string name="bar_code_type_industrial">工业</string>
     <string name="bar_code_type_unknown_matrix">Matrix Code</string>
     <string name="bar_code_type_name_unknown">未知</string>
     <!-- Error Correction Level -->
-    <string name="qr_code_error_correction_level_label">Error correction level</string>
-    <string name="qr_code_error_correction_level_settings_label">Error correction level (QR Code)</string>
-    <string name="qr_code_error_correction_level_name_low">Low (~7%)</string>
-    <string name="qr_code_error_correction_level_name_medium">Medium (~15%)</string>
-    <string name="qr_code_error_correction_level_name_quartile">Quartile (~25%)</string>
-    <string name="qr_code_error_correction_level_name_high">High (~30%)</string>
+    <string name="qr_code_error_correction_level_label">纠错级别</string>
+    <string name="qr_code_error_correction_level_settings_label">纠错级别（二维码）</string>
+    <string name="qr_code_error_correction_level_name_low">低 (~7%)</string>
+    <string name="qr_code_error_correction_level_name_medium">中等 (~15%)</string>
+    <string name="qr_code_error_correction_level_name_quartile">四分之一 (~25%)</string>
+    <string name="qr_code_error_correction_level_name_high">高 (~30%)</string>
     <!-- History -->
     <string name="label_history_empty">没有扫描记录…</string>
     <string name="snack_bar_message_item_deleted">记录 “%1$s” 已经从扫描记录中删除。</string>
     <string name="popup_message_confirmation_delete_history">删除所有历史记录？</string>
-    <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">删除选中的项目？</string>
     <string name="menu_item_history_delete">删除历史记录</string>
-    <string name="menu_item_history_delete_from_history">Delete from history</string>
-    <string name="menu_item_history_removed_from_history">Removed from history!</string>
-    <string name="menu_item_history_add_in_history">Add in the history</string>
-    <string name="menu_item_history_added_in_history">Added in the history!</string>
+    <string name="menu_item_history_delete_from_history">从历史记录中删除</string>
+    <string name="menu_item_history_removed_from_history">已从历史记录中删除！</string>
+    <string name="menu_item_history_add_in_history">添加历史记录</string>
+    <string name="menu_item_history_added_in_history">已添加到历史记录中！</string>
     <string name="delete_label">删除</string>
     <string name="cancel_label">取消</string>
     <string name="record_label">保存</string>
@@ -102,7 +102,7 @@
     <string name="scan_error_short_information_label">搜索信息时发生错误！</string>
     <string name="barcode_scanned_label">%1$s 已扫描！</string>
     <string name="barcode_found_on_label">发现 %1$s！</string>
-    <string name="barcode_not_found_on_api_label">没有发现信息 %1$s</string>
+    <string name="barcode_not_found_on_api_label">没有发现信息 %1$s。</string>
     <string name="no_internet_permission">您没有同意网络权限。</string>
     <string name="about_barcode_information_label">条码信息</string>
     <string name="about_barcode_label">关于条码</string>
@@ -222,8 +222,8 @@
     <string name="book_product_original_title_label">原标题</string>
     <string name="book_product_pages_number">%1$s 页</string>
     <!-- Music -->
-    <string name="music_product_tracks_label">Tracks</string>
-    <string name="music_product_tracks_number">%1$s tracks</string>
+    <string name="music_product_tracks_label">歌曲</string>
+    <string name="music_product_tracks_number">%1$s 首歌曲</string>
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">条码内容</string>
     <string name="bar_code_analysis_label">条码分析</string>
@@ -262,20 +262,20 @@
     <string name="matrix_uri_url_label">URL:</string>
     <string name="matrix_uri_malicious_label">可能是恶意URL…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
-    <string name="matrix_uri_upi_entitled_label">URI analysis</string>
+    <string name="matrix_uri_upi_entitled_label">URI 分析</string>
     <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Payee Name:</string>
-    <string name="matrix_uri_upi_amount_label">Amount:</string>
-    <string name="matrix_uri_upi_currency_label">Currency:</string>
-    <string name="matrix_uri_upi_description_label">Description:</string>
+    <string name="matrix_uri_upi_payee_name_label">收款人名称：</string>
+    <string name="matrix_uri_upi_amount_label">金额：</string>
+    <string name="matrix_uri_upi_currency_label">货币：</string>
+    <string name="matrix_uri_upi_description_label">描述：</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
     <string name="matrix_localisation_latitude_label">纬度：</string>
     <string name="matrix_localisation_longitude_label">经度：</string>
     <string name="matrix_localisation_altitude_label">高度：</string>
     <string name="matrix_localisation_query_label">查询：</string>
-    <string name="matrix_localisation_button_find_location">Generate from your position</string>
-    <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
-    <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
+    <string name="matrix_localisation_button_find_location">根据您的位置生成</string>
+    <string name="matrix_localisation_search_current_position_label">搜索当前位置…</string>
+    <string name="matrix_localisation_location_disabled_label">您设备上的位置功能似乎没有被开启。</string>
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">这种条码在工业上经常使用。</string>
     <string name="barcode_code_39_description_label">Code 39 是一种用于纺织品标记和药店药品的条形码。它也用于军事部门和汽车工业。</string>
@@ -290,7 +290,8 @@
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">您必须接受使用此功能的许可。</string>
     <string name="snack_bar_message_save_bitmap_ok">图片已保存</string>
-    <string name="snack_bar_message_save_bitmap_error">图片保存失败… 可能是存储空间不足？</string>
+    <string name="snack_bar_message_save_bitmap_error">图片保存失败…
+\n可能是存储空间不足？</string>
     <string name="snack_bar_message_share_bitmap_error">配置共享时出错。</string>
     <!-- Actions -->
     <string name="actions_label">功能</string>
@@ -397,7 +398,8 @@
     <string name="qr_code_text_input_edit_text_hint_epc_information">信息</string>
     <string name="qr_code_text_input_edit_text_epc_name_error">“名称” 字段是必须的</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN 错误</string>
-    <string name="list_bank_empty_message">No item…\nYou have not yet generated an EPC QR Code.</string>
+    <string name="list_bank_empty_message">没有记录…
+\n您尚未生成过 EPC 二维码。</string>
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">电子邮件</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">主题</string>
@@ -454,11 +456,11 @@
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
     <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Information about products are from Open Food Facts free database.</string>
-    <string name="open_pet_food_facts_source_description_label">Information on product are from Open Pet Food Facts free database.</string>
-    <string name="open_beauty_facts_source_description_label">Information on product are from Open Beauty Facts free database.</string>
-    <string name="music_brainz_source_description_label">Information on musical products comes from the free MusicBrainz database.</string>
-    <string name="open_library_source_description_label">Information on book are from Open Library free database.</string>
+    <string name="open_food_facts_source_description_label">产品信息来自 Open Food Facts 免费数据库。</string>
+    <string name="open_pet_food_facts_source_description_label">宠物食品信息来自 Open Pet Food Facts 免费数据库。</string>
+    <string name="open_beauty_facts_source_description_label">美容产品信息来自 Open Beauty Facts 免费数据库。</string>
+    <string name="music_brainz_source_description_label">音乐产品信息来自免费的 MusicBrainz 数据库。</string>
+    <string name="open_library_source_description_label">书籍的信息来自 Open Library 免费数据库。</string>
     <!-- Preferences -->
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">外观</string>
@@ -478,38 +480,39 @@
     <string name="preferences_languages_title">语言</string>
     <string name="preferences_languages_change">修改语言</string>
     <!-- Remote API -->
-    <string name="preferences_remote_api_title">Products and API</string>
-    <string name="preferences_switch_scan_search_on_api_label">Query remote API automatically</string>
-    <string name="preferences_remote_api_to_use_label">Default API</string>
-    <string name="preferences_remote_api_choose_label">Choose an API</string>
-    <string name="preferences_remote_api_food_label">Open Food Facts (Food products)</string>
-    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Cosmetic products)</string>
-    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (Pet food products)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinyls, …)</string>
-    <string name="preferences_remote_api_book_label">Open Library (Books)</string>
+    <string name="preferences_remote_api_title">产品与 API</string>
+    <string name="preferences_switch_scan_search_on_api_label">自动查询远程 API</string>
+    <string name="preferences_remote_api_to_use_label">默认 API</string>
+    <string name="preferences_remote_api_choose_label">选择一个 API</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts（食品）</string>
+    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts（化妆品）</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts（宠物食品）</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz（CD、黑胶唱片…）</string>
+    <string name="preferences_remote_api_book_label">Open Library（书籍）</string>
     <!-- About Remote API -->
-    <string name="preferences_information_about_remote_api_title">Information about APIs</string>
-    <string name="preferences_information_about_remote_api_foreword">Foreword</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_title">What is an API?</string>
-    <string name="preferences_information_about_remote_api_what_is_an_api_description">An API is a software library used to access a service. In the case of this application, an API is used to access a web service. This web service retrieves information from a database.\nFor example, Open Food Facts is a database of food products and provides an API to access its database. I use this API to display information on food products.</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Barcode types concerned</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">The API search function is only activated for EAN 13, EAN 8, UPC A and UPC E barcodes.</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_title">Product types currently supported</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_food">• Food products (with Open Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Cosmetic products (with Open Beauty Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Pet food products (with Open Pet Food Facts API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (with MusicBrainz API)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_book">• Books (with Open Library API)</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_title">Some additional information</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Some products may not be included in certain databases.</string>
-    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• There may be some errors in the information provided by the APIs.</string>
-    <string name="preferences_information_about_remote_api_how_it_works">How it works</string>
-    <string name="preferences_information_about_remote_api_automatic_search_title">Automatic search</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">If the \"%1$s\" option is enabled, when you scan a product barcode, a search is automatically performed on the API selected in the settings. If no information is found on the API, you can always perform a manual search on another API after the scan.</string>
-    <string name="preferences_information_about_remote_api_manual_search_title">Manual search</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">If the \"%1$s\" option is disabled, when you scan a product barcode, no information is retrieved from the remote servers. But you can always manually search for information on the scanned product. To do this, after scanning the product, click on the icon in the menu bar. You can then select an API to search.</string>
-    <string name="preferences_information_about_remote_api_about_books_title">Books</string>
-    <string name="preferences_information_about_remote_api_about_books_description">If the product you\'re scanning is a book, you don\'t need to specify the API on which to search for information. A book\'s barcode is identifiable because it always begins with the digits \"978\". The search will automatically be performed on Open Library.</string>
+    <string name="preferences_information_about_remote_api_title">关于 API 的信息</string>
+    <string name="preferences_information_about_remote_api_foreword">前言</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">什么是 API？</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_description">API 是用于访问服务的软件库。在应用程序中，API 用于访问网络服务。这个网络服务从数据库中检索信息。
+\n例如，Open Food Facts 是一个食品产品数据库并提供 API 来访问它的数据库。我使用这个 API 来获取食品的信息。</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">相关条码类型</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">此 API 搜索功能仅用于 EAN 13、EAN 8、UPC A 和 UPC E 条码。</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_title">目前支持的产品类型</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_food">• 食品（使用 Open Food Facts API）</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• 化妆品（使用 Open Beauty Facts API）</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• 宠物食品（使用 Open Pet Food Facts API）</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CD、 黑胶唱片… （使用 MusicBrainz API）</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_book">• 书籍（使用 Open Library API）</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_title">一些附加信息</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_1">• 某些产品可能不包括在某些数据库中。</string>
+    <string name="preferences_information_about_remote_api_some_additional_information_description_2">• API 提供的信息可能会存在错误。</string>
+    <string name="preferences_information_about_remote_api_how_it_works">它是如何工作的</string>
+    <string name="preferences_information_about_remote_api_automatic_search_title">自动搜索</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">假如“%1$s”选项已开启，当您扫描产品条码，会自动通过设置中选择的 API 进行搜索。如果在该 API 上没有发现信息，您可以在扫描后使用另一个 API 手动搜索。</string>
+    <string name="preferences_information_about_remote_api_manual_search_title">手动搜索</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">假如“%1$s”选项已开启，当您扫描产品条码，没有从远程服务器检索到任何信息。 但是你可以手动搜索扫描到的产品信息。为此，在扫描产品后，单击菜单栏中的图标。然后您可以选择要搜索的 API。</string>
+    <string name="preferences_information_about_remote_api_about_books_title">书籍</string>
+    <string name="preferences_information_about_remote_api_about_books_description">如果你扫描的产品是书籍，则无需指定用于搜索信息的 API。书籍的条形码是可识别的，因为它总是以数字“978”开头。将自动在 Open Library 上搜索。</string>
     <!-- Scan Settings -->
     <string name="preferences_scan_title">扫描</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">使用CameraX API</string>
@@ -517,11 +520,11 @@
     <string name="preferences_switch_scan_bip_label">扫描成功后播放声音</string>
     <string name="preferences_switch_scan_screen_rotation_label">扫描时禁止旋转屏幕</string>
     <string name="preferences_switch_scan_barcode_copied_label">复制扫描结果到剪切板</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
-    <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">将已扫描的条码添加到历史记录中</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">相机的缩放默认值</string>
     <!-- Barcode Generation Settings -->
-    <string name="preferences_barcode_generation_title">Barcode generation</string>
-    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
+    <string name="preferences_barcode_generation_title">条码生成</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">将生成的条码添加到历史记录中</string>
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">搜索</string>
     <string name="preferences_search_engine">搜索引擎</string>
@@ -538,35 +541,41 @@
     <string name="permission_internet_description_label">用于从远程 API 查询信息。</string>
     <string name="permission_contact_label">通讯录</string>
     <string name="permission_contact_description_label">用于导入通讯录信息并生成二维码。</string>
-    <string name="permission_location_label">Location</string>
-    <string name="permission_location_description_label">Required to generate a QR Code from the position of the device.</string>
+    <string name="permission_location_label">定位</string>
+    <string name="permission_location_description_label">根据设备位置生成二维码所需要的。</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">用于通过扫描Wi-Fi二维码连接到Wi-Fi时。</string>
     <string name="permission_vibrate_label">振动</string>
     <string name="permission_vibrate_description_label">用于扫描成功时振动提醒。</string>
-    <string name="permission_query_all_packages_label">Query all packages</string>
-    <string name="permission_query_all_packages_description_label">Useful to generate a QR Code from an installed application.</string>
+    <string name="permission_query_all_packages_label">查询所有软件包</string>
+    <string name="permission_query_all_packages_description_label">用于从已安装的应用程序生成二维码。</string>
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts is a free database about food which lists ingredients, allergens, nutritional composition and all information present on the products labels.</string>
-    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts is a free database about pet food.</string>
-    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts is a free database about cosmetic products.</string>
-    <string name="bdd_music_brainz_description_label">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.</string>
-    <string name="bdd_open_library_description_label">Open Library is a free database aimed at cataloging all published books, whatever their language.</string>
+    <string name="bdd_open_food_facts_description_label">Open Food Facts 是一个免费的食品数据库，它列出了食品成分、过敏原、营养成分和产品标签上的所有信息。</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts 是一个关于宠物食品的免费数据库。</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts 是一个关于化妆品的免费数据库。</string>
+    <string name="bdd_music_brainz_description_label">MusicBrainz 是一本开发的音乐百科全书，它收集了音乐元数据并向大家开发。</string>
+    <string name="bdd_open_library_description_label">Open Library 是一个免费资料库，旨在对所有出版的书籍进行编目，无论什么语言。</string>
     <!-- About Library Third -->
     <string name="dependency_by" translatable="false">by %1$s</string>
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label" translatable="false">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label" translatable="false">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_zxing_code_scanner_description_label" translatable="false">Code scanner library for Android, based on ZXing.</string>
-    <string name="dependency_ez_vcard_description_label" translatable="false">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper is an image cropping library for Android.</string>
-    <string name="dependency_coil_description_label" translatable="false">An image loading library for Android backed by Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
-    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">Provides Dispatchers.Main context for Android applications.</string>
-    <string name="dependency_koin_description_label" translatable="false">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
-    <string name="dependency_room_description_label" translatable="false">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
-    <string name="dependency_gson_description_label" translatable="false">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
-    <string name="dependency_retrofit_description_label" translatable="false">A type-safe HTTP client for Android and Java.</string>
+    <string name="dependency_zxing_description_label" translatable="false">ZXing （zebra crossing）是一个开源、多格式的1D/2D条码图像处理库。</string>
+    <string name="dependency_camera_x_description_label" translatable="false">Jetpack出品的 CameraX support library 提供了一个易于使用和功能丰富的Android相机 API。</string>
+    <string name="dependency_zxing_code_scanner_description_label" translatable="false">基于 ZXing 的 Android 条码识别库。</string>
+    <string name="dependency_ez_vcard_description_label" translatable="false">Ez-vCard 是一个用 Java 编写的 vCard 库，它可以读写多种不同格式的 vCard。</string>
+    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper是一个 Android图像裁剪库。</string>
+    <string name="dependency_coil_description_label" translatable="false">一个由 Kotlin Coroutines 支持的 Android 图像加载库。</string>
+    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) 帮助开发者贯彻Material Design。这些组件由Google的核心工程师和UX设计师团队开发，可实现可靠的开发工作流程，以构建美丽且功能齐全的Android应用程序。
+\n
+\nMaterial Components for Android是Android\'s Design Support Library的无缝替代品。</string>
+    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">提供Dispatchers。Android应用程序的主上下文。</string>
+    <string name="dependency_koin_description_label" translatable="false">为 Kotlin 开发者提供的实用的轻量级依赖注入框架。
+\n
+\n完全由 Kotlin 编写，仅使用函数解析：没有代理，没有代码生成，没有反射。
+\n
+\nKoin 是一个 DSL、一个轻量级容器和一个实用的 API。</string>
+    <string name="dependency_room_description_label" translatable="false">Room 提供了一个SQLite之上的抽象层，允许流畅地访问数据库，同时利用 SQLite 的全部功能。</string>
+    <string name="dependency_gson_description_label" translatable="false">Gson 是一个 Java 库，可用于将 Java 对象转换为其 JSON 表示形式，或将 JSON 字符串转换为等效的 Java 对象。Gson 可以处理任意的 Java 对象，包括您没有源代码的预先存在的对象。</string>
+    <string name="dependency_retrofit_description_label" translatable="false">适用于 Android 和 Java 的类型安全 HTTP client。</string>
     <string name="dependency_live_data_description_label" translatable="false">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
     <!-- Countries -->
     <string name="country_usa">美国</string>
@@ -692,4 +701,5 @@
     <string name="google_label">谷歌</string>
     <string name="bing_label">必应</string>
     <string name="preferences_default">默认</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>

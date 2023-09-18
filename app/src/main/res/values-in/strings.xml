@@ -25,4 +25,30 @@
     <string name="image_view_description_product_front">Gambar produk</string>
     <string name="image_view_description_nova_group">GRUP NOVA</string>
     <string name="download_from_api_label">Unduh dari API</string>
+    <string name="barcode_upc_a_label">UPC A</string>
+    <string name="qr_code_type_name_wifi">Wi-FI</string>
+    <string name="barcode_pdf_417_label">PDF 417</string>
+    <string name="barcode_upc_e_label">UPC E</string>
+    <string name="qr_code_type_name_text">Teks</string>
+    <string name="menu_more">Lainnya</string>
+    <string name="barcode_qr_code_label">Kode QR</string>
+    <string name="barcode_ean_8_label">EAN 8</string>
+    <string name="barcode_itf_label">ITF</string>
+    <string name="barcode_aztec_label">AZTEC</string>
+    <string name="camera_permission_denied">Anda telah menolak akses ke kamera.
+\nAnda harus mengizinkannya untuk memindai barcode.</string>
+    <string name="qr_code_type_name_epc">Kode QR EPC</string>
+    <string name="barcode_code_39_label">Kode 39</string>
+    <string name="qr_code_type_name_web_site">Situs web</string>
+    <string name="barcode_codabar_label">Codabar</string>
+    <string name="barcode_code_93_label">Kode 93</string>
+    <string name="qr_code_type_name_phone">Nomor telepon</string>
+    <string name="qr_code_type_name_geographic_coordinates">Koordinat geografis</string>
+    <string name="qr_code_type_name_agenda">Agenda</string>
+    <string name="barcode_ean_13_label">EAN 13</string>
+    <string name="barcode_code_128_label">Kode 128</string>
+    <string name="qr_code_type_name_mail">Surat</string>
+    <string name="barcode_data_matrix_label">Matrix Data</string>
+    <string name="qr_code_type_name_sms">SMS</string>
+    <string name="qr_code_type_name_contact">Kontak</string>
 </resources>

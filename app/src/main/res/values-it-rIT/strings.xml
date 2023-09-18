@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="camera_permission_denied">Hai negato l\'accesso alla fotocamera.\nÈ richiesto il permesso per scansionare il codice a barre</string>
+    <string name="camera_permission_denied">Hai negato l\'accesso alla fotocamera.
+\nÈ richiesto il permesso per scansionare il codice a barre.</string>
     <string name="close_dialog_label">Chiudi</string>
     <string name="yes_label">Si</string>
     <string name="no_label">No</string>
@@ -68,7 +69,7 @@
     <string name="qr_code_error_correction_level_name_medium">Medio (~15%)</string>
     <string name="qr_code_error_correction_level_name_quartile">Un quarto (~25%)</string>
     <string name="qr_code_error_correction_level_name_high">Alto (~30%)</string>
-    <string name="label_history_empty">Nessun elemento scansionato...</string>
+    <string name="label_history_empty">Nessun elemento scansionato…</string>
     <string name="snack_bar_message_item_deleted">Il prodotto \"%1$s\" è stato cancellato dalla cronologia.</string>
     <string name="popup_message_confirmation_delete_history">Cancellare tutta la cronologia?</string>
     <string name="popup_message_confirmation_delete_selected_items_history">Cancellare gli elementi selezionati?</string>
@@ -86,15 +87,15 @@
     <string name="scan_from_image_label">Immagine</string>
     <string name="intent_filter_scan_by_image">Scansiona immagine</string>
     <string name="scan_information_label">Inquadra un codice da scansionare</string>
-    <string name="barcode_information_search_label">Cerco...</string>
+    <string name="barcode_information_search_label">Ricerca…</string>
     <string name="scan_error_label">Errore durante la scansione!</string>
-    <string name="scan_error_short_information_label">C\'è stato un errore durante la ricerca delle informazioni</string>
+    <string name="scan_error_short_information_label">C\'è stato un errore durante la ricerca delle informazioni.</string>
     <string name="barcode_scanned_label">%1$s scansionato!</string>
     <string name="barcode_found_on_label">Trovato in %1$s!</string>
     <string name="barcode_not_found_on_api_label">Nessuna informazione trovata su %1$s.</string>
     <string name="no_internet_permission">Non hai il permesso per accedere ad Internet.</string>
-    <string name="about_barcode_information_label">Informazioni sul codice a barre.</string>
-    <string name="about_barcode_label">Informazioni sul codice a barre.</string>
+    <string name="about_barcode_information_label">Informazioni sul codice a barre</string>
+    <string name="about_barcode_label">Informazioni sul codice a barre</string>
     <string name="about_barcode_format_label">Formato: %1$s</string>
     <string name="about_barcode_content_label">Codice a barre: %1$s</string>
     <string name="about_barcode_origin_label">Origine:</string>
@@ -136,7 +137,7 @@
     <string name="packaging_label">Confezionamento</string>
     <string name="stores_label">Negozi</string>
     <string name="countries_label">Paesi di vendita</string>
-    <string name="ingredients_no_information_found_label">Nessun ingrediente trovato per questo prodotto...</string>
+    <string name="ingredients_no_information_found_label">Nessun ingrediente trovato per questo prodotto…</string>
     <string name="allergens_label">Allergeni</string>
     <string name="traces_label">Tracce</string>
     <string name="additives_label">Additivi</string>
@@ -164,7 +165,7 @@
     <string name="no_vegetarian_label">Non vegetariano</string>
     <string name="maybe_vegetarian_label">Forse vegetariano</string>
     <string name="vegetarian_status_unknown_label">Stato vegetariano sconosciuto</string>
-    <string name="nutrition_facts_no_information_found_label">Nessun valore nutrizionale trovato per questo prodotto...</string>
+    <string name="nutrition_facts_no_information_found_label">Nessun valore nutrizionale trovato per questo prodotto…</string>
     <string name="nutrition_facts_entitled_label">Valori nutrizionali</string>
     <string name="nutrition_facts_table_label">Valori nutrizionali</string>
     <string name="off_per_100_label">Per 100%1$s</string>
@@ -224,7 +225,7 @@
     <string name="matrix_wifi_eap_method_label">Medoto EAP:</string>
     <string name="matrix_wifi_phase_2_method_label">Autenticazione fase 2:</string>
     <string name="matrix_uri_url_label">URL:</string>
-    <string name="matrix_uri_malicious_label">L\'URL potrebbe essere pericoloso...</string>
+    <string name="matrix_uri_malicious_label">L\'URL potrebbe essere pericoloso…</string>
     <string name="matrix_uri_upi_entitled_label">Analisi URI</string>
     <string name="matrix_uri_upi_id_label">ID UPI:</string>
     <string name="matrix_uri_upi_payee_name_label">Nome beneficiario:</string>
@@ -236,25 +237,26 @@
     <string name="matrix_localisation_altitude_label">Altitudine:</string>
     <string name="matrix_localisation_query_label">Domanda:</string>
     <string name="matrix_localisation_button_find_location">Crea dalla tua posizione</string>
-    <string name="matrix_localisation_search_current_position_label">Ricerca della posizione attuale...</string>
+    <string name="matrix_localisation_search_current_position_label">Ricerca della posizione attuale…</string>
     <string name="matrix_localisation_location_disabled_label">La geolocalizzazione del dispositivo sembra essere distattivata.</string>
     <string name="barcode_industrial_description_label">Questo tipo di codice a barre è spesso usato nelle industrie.</string>
     <string name="barcode_code_39_description_label">Codice 39 è un codice a barre usato per pennarelli tessili e farmaci nelle farmacie. È anche usato nelle industrie automobilistiche e nel settore militare.</string>
-    <string name="barcode_code_93_description_label">"Codice 93 è un codice a barre usato nei settori automobilistico e militare, e anche "</string>
-    <string name="barcode_code_128_description_label">"Codice 128 è un codice a barre spesso usato nelle industrie. È usato nelle "</string>
+    <string name="barcode_code_93_description_label">Codice 93 è un codice a barre usato nei settori automobilistico e militare, e anche da Postes Canada per codificare informazioni speciali sulle consegne.</string>
+    <string name="barcode_code_128_description_label">Codice 128 è un codice a barre spesso usato nelle industrie. È usato nelle industrie del trasporto e per l\'identificazione nelle catene di approvvigionamento. Può anche essere usato nel settore automobilistico o per marcare i prodotti in farmacia. Il Codice 128 è largamente usato anche in altri settori.</string>
     <string name="barcode_itf_description_label">Il codice Interleaved 2 of 5 è conosciuto anche come ITF ed è comunemente usato in applicazioni di magazzino ed industriali.</string>
     <string name="barcode_codabar_description_label">Il codice Codabar è un codice a barre progettato per essere letto da stampanti a matrice di punti. Oggi, Codabar è usato poco per favorire altri tipi di codice a barre, ma è comunque utilizzato da alcune organizzazioni come le librerie.</string>
     <string name="barcode_upc_a_description_label">Il codice UPC-A (Universal Product Code, Codice Prodotto Universale) è un codice a barre usato largamente negli USA e in Canada per identificare i prodotti venduti nei negozi. È composto da 12 cifre.</string>
     <string name="barcode_upc_e_description_label">Il codice UPC-E (Universal Product Code, Codice Prodotto Universale) è un codice a barre ridotto dal codice UPC-A principalmente utilizzato negli USA e in Canada per identificare i prodotti venduti nei negozi. È usato sulle confezioni troppo piccole per ospitare il codice UPC-A.</string>
     <string name="barcode_ean_13_description_label">Il codice EAN-13 (European Article Numbering 13, Numero di Articolo Europeo) è un codice a barre largamente usato per identificare i prodotti venduti nei negozi in Europa e praticamente dovunque nel mondo. È composto da 13 cifre.</string>
     <string name="barcode_ean_8_description_label">Il codice EAN-8 (European Article Numbering 8, Numero di Articolo Europeo) è un codice a barre ridotto dal codice EAN-13 utilizzato per identificare i prodotti venduti nei negozi in Europa e praticamente dovunque nel mondo. È usato sulle confezioni troppo piccole per ospitare il codice EAN-13.</string>
-    <string name="snack_bar_message_permission_refused">Devi consentire i permessi per usare questa funzionalità</string>
+    <string name="snack_bar_message_permission_refused">Devi accettare di fornire l\'autorizzazione per usare questa funzionalità.</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'immagine è stata salvata</string>
-    <string name="snack_bar_message_save_bitmap_error">L\'immagine non è stata salvata... Memoria insufficiente?</string>
+    <string name="snack_bar_message_save_bitmap_error">L\'immagine non è stata salvata…
+\nMemoria insufficiente\?</string>
     <string name="snack_bar_message_share_bitmap_error">C\'è stato un errore durante la condivisione della configurazione.</string>
     <string name="actions_label">Azioni</string>
-    <string name="intent_chooser_share_title">Condividi con...</string>
-    <string name="intent_chooser_mail_title">Invia email...</string>
+    <string name="intent_chooser_share_title">Condividi con…</string>
+    <string name="intent_chooser_mail_title">Invia email…</string>
     <string name="copy_label">Copia codice a barre</string>
     <string name="barcode_copied_label">Codice a barre copiato</string>
     <string name="barcode_search_error_label">URL non supportato</string>
@@ -286,7 +288,7 @@
     <string name="error_barcode_none_character_message">Devi inserire un valore valido nel campo di input.</string>
     <string name="error_barcode_not_a_number_message">Il codice a barre deve essere composto solo da cifre.</string>
     <string name="error_barcode_wrong_length_message">Il codice a barre deve contenere %1$s cifre.</string>
-    <string name="error_barcode_wrong_key_message">La $1$sth cifra (cifra di controllo) dovrebbe essere %2$s.</string>
+    <string name="error_barcode_wrong_key_message">La %1$sa cifra (cifra di controllo) dovrebbe essere %2$s.</string>
     <string name="error_barcode_encoding_iso_8859_1_error_message">I caratteri speciali non sono supportati per questo tipo di codice a barre.</string>
     <string name="error_barcode_encoding_us_ascii_error_message">I caratteri speciali non sono supportati per questo tipo di codice a barre.</string>
     <string name="error_barcode_93_regex_error_message">Il codice a barre \"Codice 93\" può codificare le 26 lettere maiuscole, le 10 cifre (da 0 a 9) e anche gli 8 caratteri speciali « -, ., spazio, *, $, /, +, % ». Le lettere minuscole e altri caratteri speciali non possono essere codificati con questo codice a barre.</string>
@@ -304,8 +306,8 @@
     <string name="share_image_label">Condividi immagine</string>
     <string name="share_text_label">Condividi testo</string>
     <string name="popup_message_confirmation_save_image">Salvare immagine?</string>
-    <string name="qr_code_text_generator_hint_text_input_edit_text">Inserisci testo...</string>
-    <string name="qr_code_text_generator_hint_phone_input_edit_text">Inserisci numero di telefono...</string>
+    <string name="qr_code_text_generator_hint_text_input_edit_text">Inserisci testo…</string>
+    <string name="qr_code_text_generator_hint_phone_input_edit_text">Inserisci numero di telefono…</string>
     <string name="qr_code_text_generator_hint_url_input_edit_text">Inserisci indirizzo web...</string>
     <string name="qr_code_text_input_edit_text_hint_message">Messaggio</string>
     <string name="qr_code_type_name_generate_from_contact">Crea da contatto</string>
@@ -580,4 +582,6 @@
     <string name="country_mo">Macao</string>
     <string name="preferences_default">Predefinito</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="dependency_by">di %1$s</string>
+    <string name="dependency_zxing_description_label">ZXing (Zebra Crossing) è una libreria di processamento codici a barre multi-formato 1D e 2D.</string>
 </resources>

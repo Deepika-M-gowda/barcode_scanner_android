@@ -102,7 +102,7 @@
     <string name="scan_error_short_information_label">搜尋資訊時發生錯誤！</string>
     <string name="barcode_scanned_label">%1$s 已掃描！</string>
     <string name="barcode_found_on_label">發現 %1$s！</string>
-    <string name="barcode_not_found_on_api_label">沒有發現資訊 %1$s</string>
+    <string name="barcode_not_found_on_api_label">沒有發現資訊 %1$s。</string>
     <string name="no_internet_permission">您沒有允許存取網路。</string>
     <string name="about_barcode_information_label">條碼資訊</string>
     <string name="about_barcode_label">關於條碼</string>
@@ -291,7 +291,7 @@
     <string name="snack_bar_message_permission_refused">您必須接受許可以使用此功能。</string>
     <string name="snack_bar_message_save_bitmap_ok">圖片已儲存</string>
     <string name="snack_bar_message_save_bitmap_error">圖片未被儲存… \n可能是儲存空間不足？</string>
-    <string name="snack_bar_message_share_bitmap_error">分享組態時發生錯誤</string>
+    <string name="snack_bar_message_share_bitmap_error">分享組態時發生錯誤。</string>
     <!-- Actions -->
     <string name="actions_label">功能</string>
     <string name="intent_chooser_share_title">"分享…"</string>
@@ -330,7 +330,7 @@
     <string name="error_barcode_none_character_message">您必須在欄位中輸入正確的值。</string>
     <string name="error_barcode_not_a_number_message">條碼只能由數字組成。</string>
     <string name="error_barcode_wrong_length_message">條碼必須包含 %1$s 位數字。</string>
-    <string name="error_barcode_wrong_key_message">第 %1$ 位 (控制鍵) 應該是 %2$s。</string>
+    <string name="error_barcode_wrong_key_message">第 %1$s 位 (控制鍵) 應該是 %2$s。</string>
     <string name="error_barcode_encoding_iso_8859_1_error_message">此條碼類型不支援特殊字元。</string>
     <string name="error_barcode_encoding_us_ascii_error_message">此條碼類型不支援特殊字元。</string>
     <string name="error_barcode_93_regex_error_message">"Code 93" 條碼類型可編碼 26 個大寫字母，10 個數字 (0–9) 以及8個特殊字元 « -, ., space, *, $, /, +, % »。此條碼類型不能編碼小寫字母與其他特殊字元。</string>
@@ -464,8 +464,8 @@
     <string name="preferences_appearance_title">外觀</string>
     <string name="preferences_theme_label">主題</string>
     <string name="preferences_switch_system_theme_label">跟隨系統</string>
-    <string name="preferences_switch_light_theme_label">淺色主題</string>
-    <string name="preferences_switch_dark_theme_label">深色主題</string>
+    <string name="preferences_switch_light_theme_label">淺色</string>
+    <string name="preferences_switch_dark_theme_label">深色</string>
     <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">主題顏色</string>
     <string name="preferences_color_material_you">系統 (Material You)</string>
@@ -476,7 +476,7 @@
     <string name="preferences_color_purple">紫色</string>
     <!-- Languages Settings -->
     <string name="preferences_languages_title">語言</string>
-    <string name="preferences_languages_change">更換語言</string>
+    <string name="preferences_languages_change">變更語言</string>
     <!-- Remote API -->
     <string name="preferences_remote_api_title">產品與 API</string>
     <string name="preferences_switch_scan_search_on_api_label">自動在遠端 API 搜尋</string>
@@ -689,4 +689,6 @@
     <string name="country_nz">紐西蘭</string>
     <string name="country_my">馬來西亞</string>
     <string name="country_mo">澳門</string>
+    <string name="preferences_default">預設</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>

@@ -635,4 +635,5 @@
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="country_cr">Costa Rica</string>
     <string name="barcode_itf_description_label">Código ITF (Intercalado 2 de 5) é um código de barras usado principalmente para o carregamento de bens.</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
 </resources>
