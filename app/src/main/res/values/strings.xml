@@ -795,4 +795,20 @@
     <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
+    <!-- Local Language text -->
+    <string name="locale_language_zh" translatable="false">简体中文</string>
+    <string name="locale_language_zh_Tw" translatable="false">繁體中文</string>
+    <string name="locale_language_en" translatable="false">English</string>
+    <string name="locale_language_de" translatable="false">Deutsch</string>
+    <string name="locale_language_es" translatable="false">Español</string>
+    <string name="locale_language_fr" translatable="false">Français</string>
+    <string name="locale_language_in" translatable="false">Indonesia</string>
+    <string name="locale_language_it" translatable="false">Italiano</string>
+    <string name="locale_language_ja" translatable="false">日本語</string>
+    <string name="locale_language_nb_NO" translatable="false">Norsk</string>
+    <string name="locale_language_pl" translatable="false">Polski</string>
+    <string name="locale_language_pt_BR" translatable="false">Português</string>
+    <string name="locale_language_ru" translatable="false">Русский</string>
+    <string name="locale_language_tr" translatable="false">Türkçe</string>
+    <string name="locale_language_uk" translatable="false">Українська</string>
 </resources>

@@ -9,9 +9,9 @@
             app:key="@string/preferences_color_key"
             app:title="@string/preferences_color"
             android:summary="%s"
-            android:entries="@array/preference_color_entries_v31"
-            android:entryValues="@array/preference_color_values_v31"
-            app:defaultValue="material_you" />
+            android:entries="@array/preference_color_entries"
+            android:entryValues="@array/preference_color_values"
+            app:defaultValue="blue" />
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomListPreference
             app:key="@string/preferences_theme_key"
