@@ -43,6 +43,7 @@ import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
 import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
+import com.atharok.barcodescanner.domain.entity.ImageFormat
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
@@ -218,9 +219,9 @@ class BarcodeDetailsActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.menu_activity_barcode_details_save_image_png -> createFile(BarcodeImageRecorder.ImageFormat.PNG)
-            R.id.menu_activity_barcode_details_save_image_jpg -> createFile(BarcodeImageRecorder.ImageFormat.JPG)
-            R.id.menu_activity_barcode_details_save_image_svg -> createFile(BarcodeImageRecorder.ImageFormat.SVG)
+            R.id.menu_activity_barcode_details_save_image_png -> createFile(ImageFormat.PNG)
+            R.id.menu_activity_barcode_details_save_image_jpg -> createFile(ImageFormat.JPG)
+            R.id.menu_activity_barcode_details_save_image_svg -> createFile(ImageFormat.SVG)
             R.id.menu_activity_barcode_details_share_image -> shareImage()
             R.id.menu_activity_barcode_details_share_text -> shareText()
         }
@@ -238,9 +239,9 @@ class BarcodeDetailsActivity : BaseActivity() {
             }
         }
 
-    private var imageFormat: BarcodeImageRecorder.ImageFormat = BarcodeImageRecorder.ImageFormat.PNG
+    private var imageFormat: ImageFormat = ImageFormat.PNG
 
-    private fun createFile(imageFormat: BarcodeImageRecorder.ImageFormat) {
+    private fun createFile(imageFormat: ImageFormat) {
         this.imageFormat = imageFormat
         val date = get<Date>()
         val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
@@ -253,7 +254,7 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun saveImage(uri: Uri) {
         when(imageFormat) {
-            BarcodeImageRecorder.ImageFormat.SVG -> saveSvg(uri)
+            ImageFormat.SVG -> saveSvg(uri)
             else -> saveBitmap(uri)
         }
     }

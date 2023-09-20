@@ -23,18 +23,13 @@ package com.atharok.barcodescanner.domain.library
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
+import com.atharok.barcodescanner.domain.entity.ImageFormat
 import java.io.OutputStream
 
 /**
  * Enregistre une image dans la mémoire interne de l'appareil.
  */
 class BarcodeImageRecorder(private val context: Context) {
-
-    enum class ImageFormat(val mimeType: String) {
-        PNG("image/png"),
-        JPG("image/jpeg"),
-        SVG("image/svg+xml")
-    }
 
     fun saveBitmap(bitmap: Bitmap, imageFormat: ImageFormat, uri: Uri): Boolean {
         return when(imageFormat){

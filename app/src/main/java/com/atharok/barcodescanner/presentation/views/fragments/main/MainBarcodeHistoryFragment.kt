@@ -22,6 +22,8 @@ package com.atharok.barcodescanner.presentation.views.fragments.main
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -29,6 +31,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -40,18 +44,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.databinding.FragmentMainHistoryBinding
+import com.atharok.barcodescanner.domain.entity.FileFormat
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
+import com.atharok.barcodescanner.presentation.intent.createActionCreateFileIntent
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.StorageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemTouchHelperListener
+import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
+import java.text.SimpleDateFormat
+import java.util.Date
 
 /**
  * A simple [Fragment] subclass.
@@ -63,6 +76,8 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     private var _binding: FragmentMainHistoryBinding? = null
     private val viewBinding get() = _binding!!
+
+    private var barcodes: List<Barcode>? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMainHistoryBinding.inflate(inflater, container, false)
@@ -77,6 +92,8 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        configureExportation()
+
         configureMenu()
 
         viewBinding.fragmentMainHistoryRecyclerView.visibility = View.GONE
@@ -87,6 +104,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         databaseBarcodeViewModel.barcodeList.observe(viewLifecycleOwner) {
 
             barcodeItemSelected.clear()
+            barcodes = it
             adapter.updateData(it)
 
             if (it.isEmpty()) {
@@ -123,6 +141,8 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
                     }
                     true
                 }
+                R.id.menu_history_export_as_csv -> { startExportation(FileFormat.CSV);true }
+                R.id.menu_history_export_as_json -> { startExportation(FileFormat.JSON);true }
                 else -> false
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
@@ -215,6 +235,53 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
             }
             .setNegativeButton(R.string.cancel_label, null)
             .show()
+    }
+
+    // ---- Export ----
+
+    private val storageManagerViewModel: StorageManagerViewModel by viewModel()
+
+    private var exportation: ActivityResultLauncher<Intent>? = null
+    private var fileFormat: FileFormat = FileFormat.CSV
+
+    private fun configureExportation() {
+        exportation = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            val uri = it.data?.data
+            if(uri != null) {
+                export(
+                    uri = uri,
+                    fileFormat = fileFormat
+                )
+            }
+        }
+    }
+
+    private fun startExportation(format: FileFormat) {
+        val date = get<Date>()
+        val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
+        val dateNameStr = simpleDateFormat.format(date)
+        val name = "bs_export_$dateNameStr"
+
+        fileFormat = format
+        val intent: Intent = createActionCreateFileIntent(name, format.mimeType)
+        exportation?.launch(intent)
+    }
+
+    private fun export(uri: Uri, fileFormat: FileFormat) {
+        barcodes?.let { barcodes ->
+            storageManagerViewModel.exportToFile(barcodes, fileFormat, uri).observe(viewLifecycleOwner) {
+                when(it) {
+                    is Resource.Progress -> {}
+                    is Resource.Success -> {
+                        when(it.data) {
+                            true -> showSnackbar(getString(R.string.snack_bar_message_file_export_success))
+                            else -> showSnackbar(getString(R.string.snack_bar_message_file_export_error))
+                        }
+                    }
+                    is Resource.Failure -> showSnackbar(getString(R.string.snack_bar_message_file_export_error))
+                }
+            }
+        }
     }
 
     // ---- UI ----

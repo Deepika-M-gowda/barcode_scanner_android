@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Pour activer wifi (DEPREACATED) -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> --> <!-- -> Refused by Google Play -->
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -34,12 +33,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -49,6 +51,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.zxing.client.android.SCAN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -64,7 +67,9 @@
             android:label="@string/title_scan">
             <intent-filter android:label="@string/intent_filter_scan_by_image">
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
@@ -80,17 +85,23 @@
             android:label="@string/title_bar_code_creator">
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/x-vcard" />
             </intent-filter>
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/calendar" />
             </intent-filter>
         </activity>
@@ -108,10 +119,12 @@
             android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -126,7 +139,6 @@
             android:name=".presentation.views.activities.BankListActivity"
             android:exported="false"
             android:label="@string/title_history" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.atharok.barcodescanner.fileprovider"
@@ -147,7 +159,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"

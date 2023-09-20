@@ -69,12 +69,14 @@ import com.atharok.barcodescanner.domain.usecases.DatabaseBankUseCase
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
+import com.atharok.barcodescanner.domain.usecases.StorageManagerUseCase
 import com.atharok.barcodescanner.presentation.intent.*
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.StorageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.*
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
@@ -205,6 +207,10 @@ val viewModelModule: Module = module {
     viewModel {
         InstalledAppsViewModel(get<InstalledAppsRepository>())
     }
+
+    viewModel {
+        StorageManagerViewModel(get<StorageManagerUseCase>())
+    }
 }
 
 val useCaseModule: Module = module {
@@ -234,6 +240,8 @@ val useCaseModule: Module = module {
             countriesRepository = get<CountriesRepository>()
         )
     }
+
+    single { StorageManagerUseCase(get<FileExportRepository>()) }
 }
 
 val repositoryModule: Module = module {
@@ -293,6 +301,8 @@ val repositoryModule: Module = module {
     single<InstalledAppsRepository> {
         InstalledAppsRepositoryImpl(androidContext())
     }
+
+    single<FileExportRepository> { FileExportRepositoryImpl(androidContext()) }
 }
 
 val dataModule: Module = module {

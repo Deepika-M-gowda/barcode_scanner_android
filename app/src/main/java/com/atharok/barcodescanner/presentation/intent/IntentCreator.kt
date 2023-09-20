@@ -53,15 +53,37 @@ fun createPickWifiNetworkIntent(): Intent = Intent(WifiManager.ACTION_PICK_WIFI_
 @RequiresApi(Build.VERSION_CODES.R)
 fun createWifiAddNetworksIntent(): Intent = Intent(Settings.ACTION_WIFI_ADD_NETWORKS)
 
-fun createActionCreateImageIntent(name: String, mimeType: String): Intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+fun createActionCreateImageIntent(name: String, mimeType: String): Intent {
+    return createActionCreateDocumentIntent(name, mimeType) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            it.putExtra(
+                DocumentsContract.EXTRA_INITIAL_URI,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+            )
+        }
+    }
+}
+
+fun createActionCreateFileIntent(name: String, mimeType: String): Intent {
+    return createActionCreateDocumentIntent(name, mimeType) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            it.putExtra(
+                DocumentsContract.EXTRA_INITIAL_URI,
+                MediaStore.Downloads.EXTERNAL_CONTENT_URI
+            )
+        }
+    }
+}
+
+private fun createActionCreateDocumentIntent(
+    name: String,
+    mimeType: String,
+    action: (Intent) -> Unit
+): Intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
     addCategory(Intent.CATEGORY_OPENABLE)
     type = mimeType
-
     putExtra(Intent.EXTRA_TITLE, name)
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        putExtra(DocumentsContract.EXTRA_INITIAL_URI, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-    }
+    action(this)
 }
 
 fun createShareTextIntent(context: Context, text: String): Intent {

@@ -89,6 +89,12 @@
     <string name="delete_label">Supprimer</string>
     <string name="cancel_label">Annuler</string>
     <string name="record_label">Enregistrer</string>
+    <!-- Export File -->
+    <string name="export_label">Exporter</string>
+    <string name="export_csv_label">Exporter en CSV</string>
+    <string name="export_json_label">Exporter en JSON</string>
+    <string name="snack_bar_message_file_export_success">Fichier sauvegardé !</string>
+    <string name="snack_bar_message_file_export_error">Une erreur s\'est produite ! Fichier non enregistré.</string>
     <!-- CaptureActivity -->
     <string name="scan_cancel_label">Scan annulé !</string>
     <string name="scan_error_exception_label">Une erreur est survenue : %1$s</string>
