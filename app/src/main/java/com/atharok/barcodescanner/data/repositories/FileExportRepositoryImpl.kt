@@ -20,17 +20,16 @@
 
 package com.atharok.barcodescanner.data.repositories
 
-import android.content.Context
 import android.net.Uri
+import com.atharok.barcodescanner.data.file.FileExporter
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.repositories.FileExportRepository
 import com.google.gson.Gson
-import java.io.OutputStream
 
-class FileExportRepositoryImpl(private val context: Context): FileExportRepository {
+class FileExportRepositoryImpl(private val exporter: FileExporter): FileExportRepository {
 
     override fun exportToCsv(barcodes: List<Barcode>, uri: Uri): Boolean {
-        return export(uri) { outputStream ->
+        return exporter.export(uri) { outputStream ->
             val strBuilder = StringBuilder()
             strBuilder.append("Barcode,Format,Scan Date,Type,Error Correction Level,Name\n")
             barcodes.forEach { barcode ->
@@ -47,26 +46,9 @@ class FileExportRepositoryImpl(private val context: Context): FileExportReposito
     }
 
     override fun exportToJson(barcodes: List<Barcode>, uri: Uri): Boolean {
-        return export(uri) { outputStream ->
+        return exporter.export(uri) { outputStream ->
             val gson = Gson()
             outputStream.write(gson.toJson(barcodes).toByteArray())
         }
-    }
-
-    private fun export(uri: Uri, action: (OutputStream) -> Unit): Boolean {
-        var successful = true
-
-        try {
-            context.contentResolver.openOutputStream(uri)?.let { outputStream ->
-                action(outputStream)
-                outputStream.flush()
-                outputStream.close()
-            }
-        } catch (e: Exception) {
-            successful = false
-            e.printStackTrace()
-        }
-
-        return successful
     }
 }

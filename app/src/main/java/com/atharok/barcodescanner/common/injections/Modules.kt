@@ -50,7 +50,11 @@ import com.atharok.barcodescanner.data.database.BarcodeDao
 import com.atharok.barcodescanner.data.database.createBankDao
 import com.atharok.barcodescanner.data.database.createBarcodeDao
 import com.atharok.barcodescanner.data.database.createDatabase
+import com.atharok.barcodescanner.data.file.FileExporter
 import com.atharok.barcodescanner.data.file.FileFetcher
+import com.atharok.barcodescanner.data.file.image.BarcodeBitmapGenerator
+import com.atharok.barcodescanner.data.file.image.BarcodeSvgGenerator
+import com.atharok.barcodescanner.data.file.image.BitmapSharer
 import com.atharok.barcodescanner.data.network.createApiClient
 import com.atharok.barcodescanner.data.repositories.*
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
@@ -58,8 +62,6 @@ import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.*
-import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeBitmapGenerator
-import com.atharok.barcodescanner.domain.library.imageGenerator.BarcodeSvgGenerator
 import com.atharok.barcodescanner.domain.library.wifiSetup.WifiConnect
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
@@ -68,15 +70,15 @@ import com.atharok.barcodescanner.domain.repositories.*
 import com.atharok.barcodescanner.domain.usecases.DatabaseBankUseCase
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
+import com.atharok.barcodescanner.domain.usecases.ImageManagerUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
-import com.atharok.barcodescanner.domain.usecases.StorageManagerUseCase
 import com.atharok.barcodescanner.presentation.intent.*
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
-import com.atharok.barcodescanner.presentation.viewmodel.StorageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.*
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator.*
 import com.atharok.barcodescanner.presentation.views.fragments.main.*
@@ -168,11 +170,6 @@ val libraryModule: Module = module {
     single<BarcodeBitmapAnalyser>{ BarcodeBitmapAnalyser() }
     single<BarcodeFormatChecker> { BarcodeFormatChecker() }
     single<VCardReader> { VCardReader(androidContext()) }
-    single<MultiFormatWriter> { MultiFormatWriter() }
-    single<BarcodeBitmapGenerator> { BarcodeBitmapGenerator(get<MultiFormatWriter>()) }
-    single<BarcodeSvgGenerator> { BarcodeSvgGenerator(get<MultiFormatWriter>()) }
-    single<BarcodeImageRecorder> { BarcodeImageRecorder(androidContext()) }
-    single<BarcodeBitmapSharer> { BarcodeBitmapSharer(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
     single<Iban> { Iban() }
     single<InternetChecker> { InternetChecker() }
@@ -209,7 +206,7 @@ val viewModelModule: Module = module {
     }
 
     viewModel {
-        StorageManagerViewModel(get<StorageManagerUseCase>())
+        ImageManagerViewModel(get<ImageManagerUseCase>())
     }
 }
 
@@ -229,7 +226,7 @@ val useCaseModule: Module = module {
     }
 
     single<DatabaseBarcodeUseCase> {
-        DatabaseBarcodeUseCase(get<BarcodeRepository>())
+        DatabaseBarcodeUseCase(get<BarcodeRepository>(), get<FileExportRepository>())
     }
 
     single<ExternalFoodProductDependencyUseCase> {
@@ -241,7 +238,7 @@ val useCaseModule: Module = module {
         )
     }
 
-    single { StorageManagerUseCase(get<FileExportRepository>()) }
+    single { ImageManagerUseCase(get<ImageGeneratorRepository>(), get<ImageExportRepository>()) }
 }
 
 val repositoryModule: Module = module {
@@ -302,7 +299,15 @@ val repositoryModule: Module = module {
         InstalledAppsRepositoryImpl(androidContext())
     }
 
-    single<FileExportRepository> { FileExportRepositoryImpl(androidContext()) }
+    single<ImageGeneratorRepository> {
+        ImageGeneratorRepositoryImpl(get<BarcodeBitmapGenerator>(), get<BarcodeSvgGenerator>())
+    }
+
+    single<ImageExportRepository> {
+        ImageExportRepositoryImpl(get<FileExporter>(), get<BitmapSharer>())
+    }
+
+    single<FileExportRepository> { FileExportRepositoryImpl(get<FileExporter>()) }
 }
 
 val dataModule: Module = module {
@@ -350,6 +355,14 @@ val dataModule: Module = module {
     }
 
     single<FileFetcher> { FileFetcher(androidContext()) }
+
+    single<MultiFormatWriter> { MultiFormatWriter() }
+    single<BarcodeBitmapGenerator> { BarcodeBitmapGenerator(get<MultiFormatWriter>()) }
+    single<BarcodeSvgGenerator> { BarcodeSvgGenerator(get<MultiFormatWriter>()) }
+
+    single { BitmapSharer(androidContext()) }
+
+    single { FileExporter(androidContext()) }
 }
 
 val fragmentsModule = module {

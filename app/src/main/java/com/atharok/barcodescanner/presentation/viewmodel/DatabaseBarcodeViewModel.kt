@@ -20,11 +20,14 @@
 
 package com.atharok.barcodescanner.presentation.viewmodel
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.atharok.barcodescanner.domain.entity.FileFormat
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import kotlinx.coroutines.launch
 
@@ -56,5 +59,16 @@ class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarco
 
     fun deleteAll() = viewModelScope.launch {
         databaseBarcodeUseCase.deleteAll()
+    }
+
+    fun exportToFile(
+        barcodes: List<Barcode>,
+        format: FileFormat,
+        uri: Uri
+    ): LiveData<Resource<Boolean>> {
+        return when(format) {
+            FileFormat.CSV -> databaseBarcodeUseCase.exportToCsv(barcodes, uri)
+            FileFormat.JSON -> databaseBarcodeUseCase.exportToJson(barcodes, uri)
+        }
     }
 }

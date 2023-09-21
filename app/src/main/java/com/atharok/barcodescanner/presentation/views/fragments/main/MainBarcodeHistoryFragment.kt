@@ -52,7 +52,6 @@ import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.intent.createActionCreateFileIntent
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
-import com.atharok.barcodescanner.presentation.viewmodel.StorageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
@@ -61,7 +60,6 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.history.Barcod
 import com.atharok.barcodescanner.presentation.views.recyclerView.history.BarcodeHistoryItemTouchHelperListener
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -239,8 +237,6 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     // ---- Export ----
 
-    private val storageManagerViewModel: StorageManagerViewModel by viewModel()
-
     private var exportation: ActivityResultLauncher<Intent>? = null
     private var fileFormat: FileFormat = FileFormat.CSV
 
@@ -269,7 +265,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     private fun export(uri: Uri, fileFormat: FileFormat) {
         barcodes?.let { barcodes ->
-            storageManagerViewModel.exportToFile(barcodes, fileFormat, uri).observe(viewLifecycleOwner) {
+            databaseBarcodeViewModel.exportToFile(barcodes, fileFormat, uri).observe(viewLifecycleOwner) {
                 when(it) {
                     is Resource.Progress -> {}
                     is Resource.Success -> {

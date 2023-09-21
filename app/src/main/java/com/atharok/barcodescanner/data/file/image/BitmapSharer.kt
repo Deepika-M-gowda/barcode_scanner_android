@@ -18,36 +18,28 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.library
+package com.atharok.barcodescanner.data.file.image
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.core.content.FileProvider
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 /**
  * Configure tous les pré-requis permettant le partage d'une image.
  */
-class BarcodeBitmapSharer(private val context: Context) {
+class BitmapSharer(private val context: Context) {
 
     companion object {
         private const val AUTHORITY = "com.atharok.barcodescanner.fileprovider"
     }
 
-    suspend fun share(bitmap: Bitmap): Uri? {
+    fun share(bitmap: Bitmap): Uri? {
         val file = configureFile()
-        val successful = withContext(Dispatchers.IO){
-            writeBitmap(file, bitmap)
-        }
-
+        val successful = writeBitmap(file, bitmap)
         return if (successful) FileProvider.getUriForFile(context, AUTHORITY, file) else null
     }
 
@@ -55,34 +47,24 @@ class BarcodeBitmapSharer(private val context: Context) {
      * Configure un fichier dans le répertoire cache
      */
     private fun configureFile(): File {
-        val date = Date()
-        val dateNameStr = SimpleDateFormat("yyyy-MM-dd-hh-mm-ss", Locale.getDefault()).format(date)
-        val name = "barcode_$dateNameStr"
-
         val imagesFolder = File(context.cacheDir, "images")
         imagesFolder.mkdirs()
-        return File(imagesFolder, "$name.png")
+        return File(imagesFolder, "image.png")
     }
 
     /**
      * Enregistre le Bitmap dans le File (cache)
      */
     private fun writeBitmap(file: File, bitmap: Bitmap): Boolean {
-
         var successful = false
-
         try {
-
             val outputStream: OutputStream = FileOutputStream(file)
-
             successful = bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-
             outputStream.flush()
             outputStream.close()
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
         return successful
     }
 }

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.library.imageGenerator
+package com.atharok.barcodescanner.data.file.image
 
 import android.graphics.Bitmap
 import android.graphics.Canvas

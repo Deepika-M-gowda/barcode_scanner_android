@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.library.imageGenerator
+package com.atharok.barcodescanner.data.file.image
 
 import com.atharok.barcodescanner.common.utils.ENCODING_ISO_8859_1
 import com.atharok.barcodescanner.common.utils.ENCODING_UTF_8

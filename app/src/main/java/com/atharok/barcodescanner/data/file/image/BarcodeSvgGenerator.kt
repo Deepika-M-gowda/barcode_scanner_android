@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.library.imageGenerator
+package com.atharok.barcodescanner.data.file.image
 
 import com.atharok.barcodescanner.common.extensions.is2DBarcode
 import com.google.zxing.BarcodeFormat
@@ -49,7 +49,7 @@ class BarcodeSvgGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGen
         val builder = StringBuilder()
         buildSvgBegin(builder, totalWidth = barcodeImageWidth, totalHeight = barcodeImageHeight)
         buildSvgImageContent(builder, matrix = matrix)
-        buildSbgEnd(builder)
+        buildSvgEnd(builder)
 
         return builder.toString()
     }
@@ -65,7 +65,7 @@ class BarcodeSvgGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGen
         buildSvgBegin(builder, totalWidth = barcodeImageWidth, totalHeight = totalHeight)
         buildSvgImageContent(builder, matrix = matrix, bitWidth = 1, bitHeight = barcodeImageHeight)
         buildSvgTextContent(builder, content = content, textSize = textSize, posX = barcodeImageWidth / 2, posY = totalHeight)
-        buildSbgEnd(builder)
+        buildSvgEnd(builder)
 
         return builder.toString()
     }
@@ -76,7 +76,7 @@ class BarcodeSvgGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGen
         builder.append("<svg width=\"$totalWidth\" height=\"$totalHeight\" viewBox=\"0 0 $totalWidth $totalHeight\" xmlns=\"http://www.w3.org/2000/svg\">\n")
     }
 
-    private fun buildSbgEnd(builder: StringBuilder) {
+    private fun buildSvgEnd(builder: StringBuilder) {
         builder.append("</svg>\n")
     }
 
