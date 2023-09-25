@@ -17,6 +17,10 @@
                 android:id="@+id/menu_history_export_as_json"
                 app:showAsAction="ifRoom|withText"
                 android:title="@string/export_json_label"/>
+            <item
+                android:id="@+id/menu_history_import_json"
+                app:showAsAction="ifRoom|withText"
+                android:title="@string/import_json_label"/>
         </menu>
     </item>
     <item

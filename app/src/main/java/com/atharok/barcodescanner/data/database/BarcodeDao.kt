@@ -36,6 +36,9 @@ interface BarcodeDao {
     @Insert
     suspend fun insert(barcode: Barcode): Long
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(barcodes: List<Barcode>)
+
     @Query("UPDATE Barcode SET type = :type WHERE scan_date = :date")
     suspend fun updateType(date: Long, type: String): Int
 

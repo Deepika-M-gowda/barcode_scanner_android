@@ -50,8 +50,8 @@ import com.atharok.barcodescanner.data.database.BarcodeDao
 import com.atharok.barcodescanner.data.database.createBankDao
 import com.atharok.barcodescanner.data.database.createBarcodeDao
 import com.atharok.barcodescanner.data.database.createDatabase
-import com.atharok.barcodescanner.data.file.FileExporter
 import com.atharok.barcodescanner.data.file.FileFetcher
+import com.atharok.barcodescanner.data.file.FileStream
 import com.atharok.barcodescanner.data.file.image.BarcodeBitmapGenerator
 import com.atharok.barcodescanner.data.file.image.BarcodeSvgGenerator
 import com.atharok.barcodescanner.data.file.image.BitmapSharer
@@ -226,7 +226,7 @@ val useCaseModule: Module = module {
     }
 
     single<DatabaseBarcodeUseCase> {
-        DatabaseBarcodeUseCase(get<BarcodeRepository>(), get<FileExportRepository>())
+        DatabaseBarcodeUseCase(get<BarcodeRepository>(), get<FileStreamRepository>())
     }
 
     single<ExternalFoodProductDependencyUseCase> {
@@ -304,10 +304,10 @@ val repositoryModule: Module = module {
     }
 
     single<ImageExportRepository> {
-        ImageExportRepositoryImpl(get<FileExporter>(), get<BitmapSharer>())
+        ImageExportRepositoryImpl(get<FileStream>(), get<BitmapSharer>())
     }
 
-    single<FileExportRepository> { FileExportRepositoryImpl(get<FileExporter>()) }
+    single<FileStreamRepository> { FileStreamRepositoryImpl(get<FileStream>()) }
 }
 
 val dataModule: Module = module {
@@ -362,7 +362,7 @@ val dataModule: Module = module {
 
     single { BitmapSharer(androidContext()) }
 
-    single { FileExporter(androidContext()) }
+    single { FileStream(androidContext()) }
 }
 
 val fragmentsModule = module {

@@ -22,29 +22,29 @@ package com.atharok.barcodescanner.data.repositories
 
 import android.graphics.Bitmap
 import android.net.Uri
-import com.atharok.barcodescanner.data.file.FileExporter
+import com.atharok.barcodescanner.data.file.FileStream
 import com.atharok.barcodescanner.data.file.image.BitmapSharer
 import com.atharok.barcodescanner.domain.repositories.ImageExportRepository
 
 class ImageExportRepositoryImpl(
-    private val exporter: FileExporter,
+    private val fileStream: FileStream,
     private val sharer: BitmapSharer
 ): ImageExportRepository {
 
     override fun exportToPng(bitmap: Bitmap, uri: Uri): Boolean {
-        return exporter.export(uri) {
+        return fileStream.export(uri) {
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
         }
     }
 
     override fun exportToJpg(bitmap: Bitmap, uri: Uri): Boolean {
-        return exporter.export(uri) {
+        return fileStream.export(uri) {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
         }
     }
 
     override fun exportToSvg(svg: String, uri: Uri): Boolean {
-        return exporter.export(uri) {
+        return fileStream.export(uri) {
             it.write(svg.toByteArray())
         }
     }

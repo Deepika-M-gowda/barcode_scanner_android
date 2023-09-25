@@ -71,4 +71,8 @@ class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarco
             FileFormat.JSON -> databaseBarcodeUseCase.exportToJson(barcodes, uri)
         }
     }
+
+    fun importFile(uri: Uri): LiveData<Resource<Boolean>> {
+        return databaseBarcodeUseCase.importFromJson(uri)
+    }
 }

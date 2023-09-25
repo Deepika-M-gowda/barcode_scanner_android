@@ -40,6 +40,12 @@ fun createStartActivityIntent(context: Context, kClass: KClass<*>): Intent {
     return Intent(context, kClass.java)
 }
 
+fun createActionOpenDocumentIntent(mimeType: String): Intent =
+    Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+        addCategory(Intent.CATEGORY_OPENABLE)
+        type = mimeType
+    }
+
 fun createPickImageIntent(): Intent = Intent(Intent.ACTION_PICK).apply {
     type = "image/*"
 }

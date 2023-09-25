@@ -50,6 +50,7 @@ import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.intent.createActionCreateFileIntent
+import com.atharok.barcodescanner.presentation.intent.createActionOpenDocumentIntent
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
@@ -91,6 +92,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         super.onViewCreated(view, savedInstanceState)
 
         configureExportation()
+        configureImportation()
 
         configureMenu()
 
@@ -141,6 +143,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
                 }
                 R.id.menu_history_export_as_csv -> { startExportation(FileFormat.CSV);true }
                 R.id.menu_history_export_as_json -> { startExportation(FileFormat.JSON);true }
+                R.id.menu_history_import_json -> { startImportation(FileFormat.JSON);true }
                 else -> false
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
@@ -256,7 +259,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         val date = get<Date>()
         val simpleDateFormat = get<SimpleDateFormat> { parametersOf("yyyy-MM-dd-HH-mm-ss") }
         val dateNameStr = simpleDateFormat.format(date)
-        val name = "bs_export_$dateNameStr"
+        val name = "bs_export_$dateNameStr${format.extension}"
 
         fileFormat = format
         val intent: Intent = createActionCreateFileIntent(name, format.mimeType)
@@ -276,6 +279,39 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
                     }
                     is Resource.Failure -> showSnackbar(getString(R.string.snack_bar_message_file_export_error))
                 }
+            }
+        }
+    }
+
+    // ---- Import ----
+
+    private var importation: ActivityResultLauncher<Intent>? = null
+
+    private fun startImportation(format: FileFormat = FileFormat.JSON){
+        val dbPickerIntent = createActionOpenDocumentIntent(format.mimeType)
+        importation?.launch(dbPickerIntent)
+    }
+
+    private fun configureImportation() {
+        importation = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            val uri = it.data?.data
+            if(uri != null) {
+                import(uri = uri)
+            }
+        }
+    }
+
+    private fun import(uri: Uri) {
+        databaseBarcodeViewModel.importFile(uri).observe(viewLifecycleOwner) {
+            when(it) {
+                is Resource.Progress -> {}
+                is Resource.Success -> {
+                    when(it.data) {
+                        true -> showSnackbar(getString(R.string.snack_bar_message_file_import_success))
+                        else -> showSnackbar(getString(R.string.snack_bar_message_file_import_error))
+                    }
+                }
+                is Resource.Failure -> showSnackbar(getString(R.string.snack_bar_message_file_import_error))
             }
         }
     }

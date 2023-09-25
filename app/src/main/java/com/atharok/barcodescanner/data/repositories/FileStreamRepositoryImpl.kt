@@ -21,15 +21,18 @@
 package com.atharok.barcodescanner.data.repositories
 
 import android.net.Uri
-import com.atharok.barcodescanner.data.file.FileExporter
+import com.atharok.barcodescanner.data.file.FileStream
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.repositories.FileExportRepository
+import com.atharok.barcodescanner.domain.repositories.FileStreamRepository
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
-class FileExportRepositoryImpl(private val exporter: FileExporter): FileExportRepository {
+class FileStreamRepositoryImpl(private val fileStream: FileStream): FileStreamRepository {
 
     override fun exportToCsv(barcodes: List<Barcode>, uri: Uri): Boolean {
-        return exporter.export(uri) { outputStream ->
+        return fileStream.export(uri) { outputStream ->
             val strBuilder = StringBuilder()
             strBuilder.append("Barcode,Format,Scan Date,Type,Error Correction Level,Name\n")
             barcodes.forEach { barcode ->
@@ -46,9 +49,25 @@ class FileExportRepositoryImpl(private val exporter: FileExporter): FileExportRe
     }
 
     override fun exportToJson(barcodes: List<Barcode>, uri: Uri): Boolean {
-        return exporter.export(uri) { outputStream ->
+        return fileStream.export(uri) { outputStream ->
             val gson = Gson()
             outputStream.write(gson.toJson(barcodes).toByteArray())
         }
+    }
+
+    override fun importFromJson(uri: Uri): List<Barcode>? {
+        var barcodes: List<Barcode>? = null
+        val successful = fileStream.import(uri) {
+            val reader = BufferedReader(InputStreamReader(it))
+            val jsonString = reader.readText()
+
+            val gson = Gson()
+            val userListType = object : TypeToken<List<Barcode>>() {}.type
+            barcodes = gson.fromJson(jsonString, userListType)
+
+            reader.close()
+        }
+
+        return if(successful) barcodes else null
     }
 }

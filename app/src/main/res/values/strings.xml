@@ -93,8 +93,11 @@
     <string name="export_label">Export</string>
     <string name="export_csv_label">Export as CSV</string>
     <string name="export_json_label">Export as JSON</string>
+    <string name="import_json_label">Import (JSON)</string>
     <string name="snack_bar_message_file_export_success">File saved!</string>
     <string name="snack_bar_message_file_export_error">An error has occurred! File not saved.</string>
+    <string name="snack_bar_message_file_import_success">File imported!</string>
+    <string name="snack_bar_message_file_import_error">An error has occurred! File not imported.</string>
     <!-- CaptureActivity -->
     <string name="scan_cancel_label">Scan cancelled!</string>
     <string name="scan_error_exception_label">An error occurred: %1$s</string>

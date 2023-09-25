@@ -23,7 +23,8 @@ package com.atharok.barcodescanner.domain.repositories
 import android.net.Uri
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
-interface FileExportRepository {
+interface FileStreamRepository {
     fun exportToCsv(barcodes: List<Barcode>, uri: Uri): Boolean
     fun exportToJson(barcodes: List<Barcode>, uri: Uri): Boolean
+    fun importFromJson(uri: Uri): List<Barcode>?
 }
