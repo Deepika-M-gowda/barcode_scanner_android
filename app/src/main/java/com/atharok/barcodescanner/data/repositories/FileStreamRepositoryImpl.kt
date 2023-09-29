@@ -25,11 +25,12 @@ import com.atharok.barcodescanner.data.file.FileStream
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.repositories.FileStreamRepository
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class FileStreamRepositoryImpl(private val fileStream: FileStream): FileStreamRepository {
+
+    private val gson by lazy { Gson() }
 
     override fun exportToCsv(barcodes: List<Barcode>, uri: Uri): Boolean {
         return fileStream.export(uri) { outputStream ->
@@ -50,7 +51,6 @@ class FileStreamRepositoryImpl(private val fileStream: FileStream): FileStreamRe
 
     override fun exportToJson(barcodes: List<Barcode>, uri: Uri): Boolean {
         return fileStream.export(uri) { outputStream ->
-            val gson = Gson()
             outputStream.write(gson.toJson(barcodes).toByteArray())
         }
     }
@@ -61,9 +61,7 @@ class FileStreamRepositoryImpl(private val fileStream: FileStream): FileStreamRe
             val reader = BufferedReader(InputStreamReader(it))
             val jsonString = reader.readText()
 
-            val gson = Gson()
-            val userListType = object : TypeToken<List<Barcode>>() {}.type
-            barcodes = gson.fromJson(jsonString, userListType)
+            barcodes = gson.fromJson(jsonString, Array<Barcode>::class.java).toList()
 
             reader.close()
         }
