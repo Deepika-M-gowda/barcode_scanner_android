@@ -1,0 +1,3 @@
+- Actualizar dependencias.
+- Corregir la apertura de la aplicación con los atajos que no funcionaban para "historial" y "generar".
+- Corregir escanear desde imagen al escanear desde una aplicación externa (filtro-intencional).

@@ -9,7 +9,7 @@ Tarama sırasında bir ürün hakkında bilgi alın :
 • Kozmetik ürünleri, Open Beauty Facts ile
 • Evcil hayvanlar için gıda ürünleri, Open Pet Food Facts ile
 • Kitaplar, Open Library ile
-• Music CDs, Vinyls… with MusicBrainz
+• Müzik CD'leri, Plaklar… MusicBrainz ile
 
 Uygulama özellikleri :
 • Akıllı telefonunuzun kamerasını bir barkoda doğrultmanız ilgili bilgileri anında almanız için yeterlidir. Akıllı telefonunuzda kayıtlı olan resimlerdeki barkodları da tarayabilirsiniz.
