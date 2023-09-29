@@ -1,0 +1,3 @@
+- Añadido "filtro-intencional" que permite escanear un código de barras desde una aplicación externa.
+- Añadido un conmutador para desactivar la rotación automática de pantalla durante el escaneo.
+- Actualizar dependencias.
