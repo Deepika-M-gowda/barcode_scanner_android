@@ -50,9 +50,9 @@
     <string name="action_open_link">リンクを開く</string>
     <string name="share_text_label">テキストで共有</string>
     <string name="copy_label">内容をコピー</string>
-    <string name="action_web_search_label">テキストで検索</string>
+    <string name="action_web_search_label">テキストを検索</string>
     <string name="preferences_switch_light_theme_label">ライト</string>
-    <string name="about_barcode_information_label">コードの情報</string>
+    <string name="about_barcode_information_label">詳細</string>
     <string name="preferences_color">メインの色</string>
     <string name="preferences_theme_label">テーマ</string>
     <string name="preferences_color_material_you">本体設定 (Material You)</string>
@@ -70,4 +70,5 @@
     <string name="delete_label">削除</string>
     <string name="cancel_label">キャンセル</string>
     <string name="actions_label">操作</string>
+    <string name="bar_code_content_label">内容</string>
 </resources>
