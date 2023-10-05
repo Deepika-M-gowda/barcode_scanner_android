@@ -556,19 +556,6 @@
     <!-- About Library Third -->
     <string name="dependency_by">by %1$s</string>
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label"></string>
-    <string name="dependency_camera_x_description_label"></string>
-    <string name="dependency_zxing_code_scanner_description_label"></string>
-    <string name="dependency_ez_vcard_description_label"></string>
-    <string name="dependency_android_image_cropper_description_label"></string>
-    <string name="dependency_coil_description_label"></string>
-    <string name="dependency_material_components_description_label"></string>
-    <string name="dependency_kotlinx_coroutines_description_label"></string>
-    <string name="dependency_koin_description_label"></string>
-    <string name="dependency_room_description_label"></string>
-    <string name="dependency_gson_description_label"></string>
-    <string name="dependency_retrofit_description_label"></string>
-    <string name="dependency_live_data_description_label"></string>
     <!-- Countries -->
     <string name="country_usa">美國</string>
     <string name="country_ca">加拿大</string>
