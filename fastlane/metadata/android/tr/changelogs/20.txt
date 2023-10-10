@@ -1,0 +1,4 @@
+1.8.1
+
+ - Düzeltme: Bir Intent aracılığıyla tarama yaparken CameraX API uygulaması eklendi.
+ - Bağımlılıklar güncellendi.

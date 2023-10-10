@@ -1,0 +1,9 @@
+1.9.0
+
+- Açılış ekranında yeni simge + animasyonlu simge.
+- Barkod oluşturmada görünümler arasına geçiş animasyonları eklendi.
+- BottomNavigationView'a simgelerin animasyonu eklendi.
+- Geliştirilmiş kod ve stiller. Spinner bileşenleri MaterialAutoCompleteTextView ile değiştirildi.
+- Roboto yazı tiplerinin kaldırılması. Artık uygulama sistem yazı tipini kullanıyor.
+- Sistem özelliklerinin eklenmesi.
+- Rusça çeviri güncellendi (s s' ye teşekkürler).

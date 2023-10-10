@@ -1,0 +1,13 @@
+1.6.0
+
+- Rusça çevirinin başlangıcı (s s' ye teşekkürler).
+- Glide ve GlideToVectorYou bağımlılıklarının Coil ile değiştirilmesi.
+- Android 5'teki bir çökme düzeltildi.
+- Kod iyileştirmeleri.
+
+1.5.1
+
+- OpenFoodFacts'te arama yaparken "java.lang.NumberFormatException: empty String" hatasını düzeltildi.
+- Besin tablosundaki "porsiyon başına" hatalı değerlerin düzeltilmesi.
+- Bazı iyileştirmeler.
+- Bağımlılıklar güncellendi.

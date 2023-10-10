@@ -1,0 +1,7 @@
+- Kotlin versiyonu yükseltildi (1.7.20).
+- Bazı dizelerde geliştirmeler (İngilizce).
+- Taranan barkodun içeriğini otomatik olarak panoya kopyalamak için ayarlara bir geçiş düğmesi eklendi.
+- Kod geliştirmesi.
+- Uzak API'leri manuel olarak sorgulama yeteneği eklendi.
+- EPC QR Kodu oluşturma desteği eklendi.
+- URL içeren QR Kodları için araç çubuğuna bir arama düğmesi eklendi.
