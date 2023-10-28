@@ -690,4 +690,12 @@
     <string name="country_mo">Makao</string>
     <string name="preferences_default">Varsayılan</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="snack_bar_message_file_export_success">Dosya kaydedildi!</string>
+    <string name="import_json_label">Ekle (JSON)</string>
+    <string name="snack_bar_message_file_export_error">Bir hata oluştu! Dosya kaydedilemedi.</string>
+    <string name="export_csv_label">CSV olarak dışarı aktar</string>
+    <string name="snack_bar_message_file_import_error">Bir hata oluştu! Dosya içe aktarılamadı.</string>
+    <string name="export_label">Dışarı Aktar</string>
+    <string name="snack_bar_message_file_import_success">Dosya eklendi!</string>
+    <string name="export_json_label">JSON olarak dışarı aktar</string>
 </resources>
