@@ -173,7 +173,7 @@
     <string name="allergens_label">Allergènes</string>
     <string name="traces_label">Traces</string>
     <string name="additives_label">Additifs</string>
-    <string name="veggie_label">Végétarien</string>
+    <string name="veggie_label">Légume</string>
     <!-- Additif -->
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Sans danger</string>
@@ -260,15 +260,15 @@
     <string name="matrix_email_recipient_label">Destinataire :</string>
     <string name="matrix_email_cc_label">Cc :</string>
     <string name="matrix_email_bcc_label">Cci :</string>
-    <string name="matrix_subject_label">Sujet:</string>
-    <string name="matrix_body_label">Message:</string>
+    <string name="matrix_subject_label">Sujet :</string>
+    <string name="matrix_body_label">Message :</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">Mot de passe:</string>
-    <string name="matrix_wifi_encryption_label">Encryption:</string>
+    <string name="matrix_wifi_ssid_label">SSID :</string>
+    <string name="matrix_wifi_password_label">Mot de passe :</string>
+    <string name="matrix_wifi_encryption_label">Chiffrement:</string>
     <string name="matrix_wifi_is_hidden_label">Caché:</string>
-    <string name="matrix_wifi_anonymous_identity_label">Anonymous Identity:</string>
-    <string name="matrix_wifi_identity_label">Identity:</string>
+    <string name="matrix_wifi_anonymous_identity_label">identité anonyme:</string>
+    <string name="matrix_wifi_identity_label">Identité:</string>
     <string name="matrix_wifi_eap_method_label">Eap Method:</string>
     <string name="matrix_wifi_phase_2_method_label">Phase 2 Method:</string>
     <!-- Matrix Barcode URL Analysis -->
@@ -557,7 +557,7 @@
     <string name="permission_location_description_label">Nécessaire pour générer un QR Code à partir de la position de l\'appareil.</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_wifi_description_label">Nécessaire pour se connecter au Wi-Fi lors du scan d\'un QR Code contenant l\'accès à un Wi-Fi.</string>
-    <string name="permission_vibrate_label">Vibrations</string>
+    <string name="permission_vibrate_label">Vibrer</string>
     <string name="permission_vibrate_description_label">Utile pour vibrer lors du scan.</string>
     <string name="permission_query_all_packages_label">Demander tous les paquets</string>
     <string name="permission_query_all_packages_description_label">Utile pour générer un QR Code à partir d\'une application installée.</string>
