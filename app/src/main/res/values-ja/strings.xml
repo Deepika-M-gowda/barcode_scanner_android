@@ -49,7 +49,7 @@
     <string name="qr_code_type_name_apps">アプリ</string>
     <string name="action_open_link">リンクを開く</string>
     <string name="share_text_label">テキストで共有</string>
-    <string name="copy_label">内容をコピー</string>
+    <string name="copy_label">テキストをコピー</string>
     <string name="action_web_search_label">テキストを検索</string>
     <string name="preferences_switch_light_theme_label">ライト</string>
     <string name="about_barcode_information_label">詳細</string>
