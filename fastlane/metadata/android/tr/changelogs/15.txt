@@ -1,0 +1,4 @@
+- OpenFoodFacts'te arama yaparken "java.lang.NumberFormatException: empty String" hatasını düzeltildi.
+- Besin tablosundaki "porsiyon başına" hatalı değerlerin düzeltilmesi.
+- Bazı iyileştirmeler.
+- Bağımlılıklar güncellendi.

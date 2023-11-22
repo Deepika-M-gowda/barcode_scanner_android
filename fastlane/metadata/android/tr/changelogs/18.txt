@@ -1,0 +1,5 @@
+1.7.0
+
+- Almanca çeviri eklendi (Konwin' e teşekkürler.
+- Rusça çeviride küçük değişiklikler (s s' ye teşekürler).
+- Bazı grafik iyileştirmeleri.

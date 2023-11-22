@@ -1,0 +1,5 @@
+1.8.0
+
+ - CameraX API uygulaması.
+ - Yatay modda geliştirilmiş görünümler.
+ - Rusça çeviride bazı iyileştirmeler (s s' e teşekkürler).

@@ -701,4 +701,12 @@
     <string name="country_mo">Macau</string>
     <string name="preferences_default">Standard</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="snack_bar_message_file_export_success">Datei gespeichert!</string>
+    <string name="import_json_label">Importieren (JSON)</string>
+    <string name="snack_bar_message_file_export_error">Es ist ein Fehler aufgetreten! Datei nicht gespeichert.</string>
+    <string name="export_csv_label">Als CSV exportieren</string>
+    <string name="snack_bar_message_file_import_error">Es ist ein Fehler aufgetreten! Datei nicht importiert.</string>
+    <string name="export_label">Exportieren</string>
+    <string name="snack_bar_message_file_import_success">Datei importiert!</string>
+    <string name="export_json_label">Als JSON exportieren</string>
 </resources>

@@ -222,8 +222,8 @@
     <string name="book_product_original_title_label">原始標題</string>
     <string name="book_product_pages_number">%1$s 頁</string>
     <!-- Music -->
-    <string name="music_product_tracks_label">Tracks</string>
-    <string name="music_product_tracks_number">%1$s tracks</string>
+    <string name="music_product_tracks_label">音軌</string>
+    <string name="music_product_tracks_number">%1$s 音軌</string>
     <!-- Matrix Barcode -->
     <string name="bar_code_content_label">條碼內容</string>
     <string name="bar_code_analysis_label">條碼分析</string>
@@ -556,19 +556,6 @@
     <!-- About Library Third -->
     <string name="dependency_by">by %1$s</string>
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
-    <string name="dependency_koin_description_label">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
-    <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
-    <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
-    <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
-    <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
     <!-- Countries -->
     <string name="country_usa">美國</string>
     <string name="country_ca">加拿大</string>
@@ -691,4 +678,12 @@
     <string name="country_mo">澳門</string>
     <string name="preferences_default">預設</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="snack_bar_message_file_export_success">檔案已儲存!</string>
+    <string name="import_json_label">匯入 (JSON)</string>
+    <string name="snack_bar_message_file_export_error">發生了錯誤！檔案未儲存。</string>
+    <string name="export_csv_label">匯出為 CSV</string>
+    <string name="snack_bar_message_file_import_error">發生了錯誤！檔案未匯出。</string>
+    <string name="export_label">匯出</string>
+    <string name="snack_bar_message_file_import_success">檔案已匯入！</string>
+    <string name="export_json_label">匯出為 JSON</string>
 </resources>
