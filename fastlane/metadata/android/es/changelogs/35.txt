@@ -1,0 +1,17 @@
+1.17.0
+
+Nuevas funciones:
+- Motor de búsqueda por defecto del navegador.
+- Conexión Wi-Fi con seguridad WPA3 (gracias a Mateus J.).
+Traducción (usando Weblate):
+- Traducción al portugués (Brasil) (gracias a joaooliva).
+- Traducción al japonés (no completa) (gracias a しいたけ).
+- Traducción al ucraniano (no completa) (gracias a MaSHiNiK).
+- Traducción al italiano (no completa) (gracias a Tua madre).
+- Traducción de indonesio (no completa) (gracias a Reza).
+- Traducción al alemán actualizada (gracias a Fabian Rennebeck).
+- Actualizada la traducción al noruego (Bokmål) (gracias a Allan Nordhøy).
+- Traducción actualizada al chino (simplificado) (gracias a 御坂13766号 y Red Star Over Earth).
+- Traducción al polaco actualizada (gracias a Eryk Michalak).
+- Traducción al turco actualizada (gracias a abfreeman).
+- Traducción al español actualizada (gracias a gallegonovato).

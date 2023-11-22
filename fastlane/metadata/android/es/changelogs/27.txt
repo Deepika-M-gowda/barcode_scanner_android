@@ -1,0 +1,10 @@
+1.13.0
+
+- Añadir texto a la parte inferior de una imagen de código de barras.
+- Se puede desactivar el historial.
+- Generación un QR a partir del ID de una aplicación instalada.
+- Mejora de la eliminación de elementos del historial.
+- Añadido un botón "añadir al historial" en las acciones, si el elemento no está en el historial.
+- Corrección de la detección de un código de barras de color claro sobre un fondo oscuro a través de una imagen.
+- Generar un Qr a partir de la localización.
+- Añadida una pulsación larga sobre los textos del código de barras.

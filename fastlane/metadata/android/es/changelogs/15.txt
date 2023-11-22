@@ -1,0 +1,4 @@
+- Corrección del error "java.lang.NumberFormatException: cadena vacía" al buscar en OpenFoodFacts.
+- Corrección de los valores incorrectos en la tabla nutricional para "por ración".
+- Algunas mejoras.
+- Actualización de las dependencias.

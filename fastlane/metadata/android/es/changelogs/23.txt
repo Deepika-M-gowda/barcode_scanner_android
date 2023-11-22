@@ -1,0 +1,7 @@
+1.10.0
+
+- Mejora del código.
+- Acceso simplificado a las acciones tras escanear un código de barras.
+- Mejora de la implementación de CameraX.
+- Actualización de las dependencias.
+- Algunas mejoras y correcciones de los errores.
