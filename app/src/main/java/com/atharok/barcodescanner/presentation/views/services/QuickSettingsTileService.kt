@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.services
 
+import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.Tile
@@ -46,6 +47,18 @@ class QuickSettingsTileService: TileService() {
         val intent = Intent(applicationContext, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        startActivityAndCollapse(intent)
+
+        if (Build.VERSION.SDK_INT >= 34) {
+            val pendingIntent = PendingIntent.getActivity(
+                applicationContext,
+                0,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT
+            )
+            startActivityAndCollapse(pendingIntent)
+        } else {
+            @Suppress("DEPRECATION")
+            startActivityAndCollapse(intent)
+        }
     }
 }

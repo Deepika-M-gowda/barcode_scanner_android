@@ -132,7 +132,7 @@ class HorizontalGraphView(context: Context, attrs: AttributeSet?): View(context,
         setMeasuredDimension(widthMeasureSpec, height)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         val barLeftPosX = offset
@@ -159,7 +159,7 @@ class HorizontalGraphView(context: Context, attrs: AttributeSet?): View(context,
         val positionTextY = barBottom+textSize-padY
         val positionGuideTextY = barTop-barHeight-spaceBetweenBarAndText*2+padY
 
-        canvas?.apply {
+        canvas.apply {
             //drawColor(Color.BLUE)
             drawRect(posMinValue, barTop, posLowValue, barBottom, lowBar)
             drawRect(posLowValue, barTop, posHighValue, barBottom, mediumBar)

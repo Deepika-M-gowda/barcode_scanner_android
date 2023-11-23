@@ -27,16 +27,16 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.atharok.barcodescanner.common.utils.DATABASE_NAME
 
 private val MIGRATION_1_2 = object : Migration(1, 2) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "CREATE TABLE IF NOT EXISTS Bank (name TEXT NOT NULL, bic TEXT NOT NULL, iban TEXT NOT NULL PRIMARY KEY)"
         )
     }
 }
 
 private val MIGRATION_2_3 = object : Migration(2, 3) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
             "ALTER TABLE Barcode ADD COLUMN error_correction_level TEXT NOT NULL DEFAULT 'NONE'"
         )
     }

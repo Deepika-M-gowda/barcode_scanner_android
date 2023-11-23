@@ -13,6 +13,8 @@ import androidx.camera.core.FocusMeteringAction
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
 import androidx.camera.core.SurfaceOrientedMeteringPointFactory
+import androidx.camera.core.resolutionselector.ResolutionSelector
+import androidx.camera.core.resolutionselector.ResolutionStrategy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
@@ -32,25 +34,27 @@ class CameraConfig(private val context: Context) {
     var flashEnabled = false
         private set
 
-    private val resolution: Size by lazy {
+    private val resolutionSelector: ResolutionSelector by lazy {
         val orientation: Int = context.applicationContext.resources.configuration.orientation
-        if (orientation == Configuration.ORIENTATION_PORTRAIT)
-            Size(960, 1280)
-        else
-            Size(1280, 960)
+
+        val resolution: Size = if (orientation == Configuration.ORIENTATION_PORTRAIT)
+            Size(960, 1280) else Size(1280, 960)
+
+        val strategy = ResolutionStrategy(resolution, ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER)
+        ResolutionSelector.Builder().setResolutionStrategy(strategy).build()
     }
 
-    private val cameraSelector by lazy {
+    private val cameraSelector: CameraSelector by lazy {
         CameraSelector.Builder().requireLensFacing(CameraSelector.LENS_FACING_BACK).build()
     }
 
-    private val preview by lazy {
-        Preview.Builder().setTargetResolution(resolution).build()
+    private val preview: Preview by lazy {
+        Preview.Builder().setResolutionSelector(resolutionSelector).build()
     }
 
-    private val imageAnalysis by lazy {
+    private val imageAnalysis: ImageAnalysis by lazy {
         ImageAnalysis.Builder().apply {
-            setTargetResolution(resolution)
+            setResolutionSelector(resolutionSelector)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 setOutputImageRotationEnabled(true)
             }
