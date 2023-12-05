@@ -1,0 +1,5 @@
+1.11.0
+
+ - Çince çeviri eklendi (Hu Shenghao tarafından).
+ - Hareketlerle kamera yakınlaştırma eklendi (2 parmakla ve çift dokunuşla) (Hu Shenghao tarafından).
+ - Diğer bazı küçük iyileştirmeler.
