@@ -1,0 +1,5 @@
+1.9.1
+
+ - Material3'ün tam entegrasyonu ve Material You'nun daha iyi uygulanması için stillerin yeniden tasarlanması.
+ - Kısayol simgelerinin rengi değiştirildi.
+ - Yeni OpenFoodFacts logosu eklendi.

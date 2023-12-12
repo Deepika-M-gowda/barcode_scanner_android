@@ -1,0 +1,6 @@
+1.10.1
+
+- Mejorada la implementación de CameraX y corregidos los errores.
+- Corregido un error en la visualización del tema por defecto en Android 6 a 11.
+- Corregido el Filtro de Intento que permitía obtener un evento en formato .ics.
+- Actualización de las dependencias.

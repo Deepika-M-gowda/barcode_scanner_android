@@ -1,0 +1,6 @@
+1.10.1
+
+ - CameraX'in uygulanması iyileştirildi ve hatalar düzeltildi.
+ - Android 6'dan 11'e kadar varsayılan temanın görüntülenmesindeki bir hata düzeltildi.
+ - .ics formatında bir etkinliğin alınmasına izin veren Niyet Filtresi düzeltildi.
+ - Bağımlılıkların güncellenmesi.

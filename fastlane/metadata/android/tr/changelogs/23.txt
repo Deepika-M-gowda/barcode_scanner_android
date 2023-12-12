@@ -1,0 +1,7 @@
+1.10.0
+
+ - Kod iyileştirmesi.
+ - Bir barkodu taradıktan sonra işlemlere basitleştirilmiş erişim.
+ - Geliştirilmiş CameraX uygulaması.
+ - Bağımlılıkların güncellenmesi.
+ - Bazı iyileştirmeler ve hata düzeltmeleri.

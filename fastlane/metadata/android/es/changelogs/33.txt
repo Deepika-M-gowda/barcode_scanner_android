@@ -1,0 +1,15 @@
+1.16.0
+
+Traducción (mediante Weblate):
+- Traducción al turco (gracias a abfreeman).
+- Traducción al bokmål noruego (no completo) (gracias a Allan Nordhøy).
+- Actualizada la traducción al español (gracias a J. Lavoie y gallegonovato).
+- Actualizada la traducción al chino tradicional (gracias a plum7x).
+- Traducción al alemán actualizada (gracias a J. Lavoie).
+- Traducción al francés actualizada (gracias a J. Lavoie).
+
+Nuevas funciones:
+- Añadido tema negro.
+- Añadida exportación JPG y SVG para la imagen del código de barras.
+- Mejoras en el código.
+- Algunos errores corregidos.

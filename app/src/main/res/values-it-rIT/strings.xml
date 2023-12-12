@@ -92,7 +92,7 @@
     <string name="scan_error_short_information_label">Si è verificato un errore durante la ricerca di informazioni!</string>
     <string name="barcode_scanned_label">%1$s scansionato!</string>
     <string name="barcode_found_on_label">Trovato in %1$s!</string>
-    <string name="barcode_not_found_on_api_label">Nessuna informazione trovata su %1$s.</string>
+    <string name="barcode_not_found_on_api_label">Non ho trovato informazioni su %1$s.</string>
     <string name="no_internet_permission">Non hai il permesso per accedere ad Internet.</string>
     <string name="about_barcode_information_label">Dettagli del codice a barre</string>
     <string name="about_barcode_label">Informazioni su BarcodeScanner</string>
@@ -124,9 +124,9 @@
     <string name="eco_score_entitled_label">Eco-Score</string>
     <string name="eco_score_description">L\'Eco-Score è un punteggio ambientale (ecoscore) dalla A (impatto molto basso) alla E (impatto molto alto) che rende facile confrontare l\'impatto dei prodotti alimentari sull\'ambiente.</string>
     <string name="eco_score_description_a">Impatto ambientale molto basso</string>
-    <string name="eco_score_description_b">Basso impatto ambientale</string>
+    <string name="eco_score_description_b">Impatto ambientale basso</string>
     <string name="eco_score_description_c">Impatto ambientale moderato</string>
-    <string name="eco_score_description_d">Alto impatto ambientale</string>
+    <string name="eco_score_description_d">Impatto ambientale alto</string>
     <string name="eco_score_description_e">Impatto ambientale molto alto</string>
     <string name="eco_score_description_unknown">Impatto ambientale sconosciuto</string>
     <string name="details_label">Dettagli</string>
@@ -188,7 +188,7 @@
     <string name="off_quantity_high_label">Alta quantità</string>
     <string name="off_quantity_none_label">Quantità sconosciuta</string>
     <string name="book_product_summary_label">Riepilogo</string>
-    <string name="book_product_more_label">Di più</string>
+    <string name="book_product_more_label">Altro</string>
     <string name="book_product_pages_number_label">Numero di pagine</string>
     <string name="book_product_contributions_label">Contribuzioni</string>
     <string name="book_product_publish_date_label">Data di pubblicazione</string>
@@ -282,7 +282,7 @@
     <string name="action_wifi_already_added_label">Connessione Wi-Fi già aggiunta</string>
     <string name="action_wifi_add_network_refused">Connessione Wi-Fi rifiutata.</string>
     <string name="action_wifi_add_network_successful">Rete Wi-Fi aggiunta.</string>
-    <string name="action_wifi_add_network_failed">Fallimento durante l\'aggiunta della rete Wi-Fi.</string>
+    <string name="action_wifi_add_network_failed">Errore durante la registrazione alla rete Wi-Fi.</string>
     <string name="action_wifi_add_network_already_exists">Hai già aggiunto questa rete Wi-Fi.</string>
     <string name="action_wifi_add_network_unknown_error">Errore sconosciunto durante l\'aggiunta della rete Wi-Fi.</string>
     <string name="error_barcode_none_character_message">Devi inserire un valore valido nel campo di input.</string>
@@ -585,7 +585,7 @@
     <string name="preferences_default">Predefinito</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="dependency_by">di %1$s</string>
-    <string name="dependency_zxing_description_label">ZXing (Zebra Crossing) è una libreria di processamento codici a barre multi-formato 1D e 2D.</string>
+    <string name="dependency_zxing_description_label">ZXing (Zebra Crossing) è una libreria per l\'elaborazione di codici a barre multi-formato 1D e 2D.</string>
     <string name="dependency_coil_description_label">Una libreria Android per il caricamento di immagini supportata da Kotlin Coroutines.</string>
     <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
     <string name="snack_bar_message_file_export_success">File salvato!</string>
