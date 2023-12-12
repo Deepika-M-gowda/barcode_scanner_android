@@ -36,4 +36,5 @@ enum class LibraryThird(val nameResource: Int, val licenseResource: Int, val aut
     RETROFIT(R.string.dependency_retrofit_title_label, R.string.dependency_retrofit_license_label, R.string.dependency_retrofit_author_label, R.string.dependency_retrofit_description_label, R.string.dependency_retrofit_github_link_label),
     ROOM(R.string.dependency_room_title_label, R.string.dependency_room_license_label, R.string.dependency_room_author_label, R.string.dependency_room_description_label, R.string.dependency_room_remote_link_label),
     //LIVE_DATA(R.string.dependency_live_data_title_label, R.string.dependency_live_data_description_label, R.string.dependency_live_data_github_link_label)
+    COLOR_PICKER(R.string.dependency_color_picker_title_label, R.string.dependency_color_picker_license_label, R.string.dependency_color_picker_author_label, R.string.dependency_color_picker_description_label, R.string.dependency_color_picker_github_link_label)
 }

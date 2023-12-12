@@ -326,7 +326,7 @@
     <string name="country_in">الهند</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_2">• قد تكون هناك بعض الأخطاء في المعلومات المقدمة من قبل واجهات برمجة التطبيقات.</string>
     <string name="nova_group_description_3">المكونات المعالجة</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (الأقراص المضغوطة، الفينيل، ...)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (الأقراص المضغوطة، الفينيل، …)</string>
     <string name="error_barcode_upc_e_not_start_with_0_error_message">يجب أن يبدأ نوع الرمز الشريطي UPC-E بالرقم 0.</string>
     <string name="preferences_about_library_third_label">مكتبة الطرف الثالث</string>
     <string name="preferences_switch_light_theme_label">فاتح</string>
@@ -388,7 +388,7 @@
     <string name="country_ro">رومانيا</string>
     <string name="country_pa">بنما</string>
     <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• الأقراص المضغوطة، وأقراص الفينيل،... (مع MusicBrainz API)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• الأقراص المضغوطة، وأقراص الفينيل،… (مع MusicBrainz API)</string>
     <string name="action_wifi_add_network_refused">تم رفض إضافة اتصال Wi-Fi.</string>
     <string name="book_product_pages_number_label">عدد الصفحات</string>
     <string name="preferences_information_about_remote_api_about_books_description">إذا كان المنتج الذي تقوم بمسحه ضوئيًا عبارة عن كتاب، فلن تحتاج إلى تحديد واجهة برمجة التطبيقات التي تريد البحث عن المعلومات عليها. يمكن التعرف على الباركود الخاص بالكتاب لأنه يبدأ دائمًا بالأرقام \"978\". سيتم إجراء البحث تلقائيًا على Open Library.</string>
@@ -574,7 +574,7 @@
     <string name="country_ge">جورجيا</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_request">طلب</string>
     <string name="country_rs">صربيا</string>
-    <string name="scan_error_information_label">"حدث خطأ أثناء البحث عن معلومات في واجهة برمجة التطبيقات البعيدة... يرجى التحقق من اتصالك بالإنترنت وأذونات التطبيق!  إذا استمرت المشكلة، فمن المفترض أن تكون مشكلة في الخادم."</string>
+    <string name="scan_error_information_label">"حدث خطأ أثناء البحث عن معلومات في واجهة برمجة التطبيقات البعيدة… يرجى التحقق من اتصالك بالإنترنت وأذونات التطبيق!  إذا استمرت المشكلة، فمن المفترض أن تكون مشكلة في الخادم."</string>
     <string name="matrix_agenda_description_event_label">وصف:</string>
     <string name="qr_code_text_radio_button_label_m">M</string>
     <string name="off_energy_kj_label">الطاقة (كيلو جول)</string>

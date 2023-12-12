@@ -591,6 +591,7 @@
     <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
     <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
+    <string name="dependency_color_picker_description_label">A color picker library for Android.</string>
     <!-- Countries -->
     <string name="country_usa">United States</string>
     <string name="country_ca">Canada</string>
@@ -815,6 +816,10 @@
     <string name="dependency_live_data_title_label" translatable="false">LiveData</string>
     <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
+    <string name="dependency_color_picker_title_label" translatable="false">Color Picker</string>
+    <string name="dependency_color_picker_license_label" translatable="false">Apache License 2.0</string>
+    <string name="dependency_color_picker_author_label" translatable="false">Atharok</string>
+    <string name="dependency_color_picker_github_link_label" translatable="false">https://github.com/Atharok/ColorPicker</string>
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
     <!-- Local Language text -->
     <string name="locale_language_zh" translatable="false">简体中文</string>

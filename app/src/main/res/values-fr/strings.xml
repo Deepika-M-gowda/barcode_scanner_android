@@ -169,7 +169,7 @@
     <string name="allergens_label">Allergènes</string>
     <string name="traces_label">Traces</string>
     <string name="additives_label">Additifs</string>
-    <string name="veggie_label">Légume</string>
+    <string name="veggie_label">Végétarien</string>
     <!-- Additif -->
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Sans danger</string>
@@ -590,6 +590,7 @@
     <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
     <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
+    <string name="dependency_color_picker_description_label">Une bibliothèque de sélection de couleurs pour Android.</string>
     <!-- Countries -->
     <string name="country_usa">États-Unis</string>
     <string name="country_ca">Canada</string>
