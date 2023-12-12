@@ -20,8 +20,9 @@
 
 package com.atharok.barcodescanner.data.file.image
 
-import com.atharok.barcodescanner.common.extensions.is2DBarcode
-import com.google.zxing.BarcodeFormat
+import com.atharok.barcodescanner.common.extensions.toColorAlpha
+import com.atharok.barcodescanner.common.extensions.toColorHex
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
 
@@ -31,46 +32,19 @@ import com.google.zxing.common.BitMatrix
 class BarcodeSvgGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGenerator<String>(multiFormatWriter) {
 
     override fun createImageBarcode(
-        content: String,
-        barcodeFormat: BarcodeFormat,
+        properties: BarcodeImageGeneratorProperties,
         matrix: BitMatrix
     ): String {
-        return if(barcodeFormat.is2DBarcode()) {
-            create2DBarcodeSvg(matrix)
-        } else {
-            create1DBarcodeSvg(content, matrix) // Pour les codes à une dimension, on affiche le texte sous le code-barres.
-        }
-    }
-
-    private fun create2DBarcodeSvg(matrix: BitMatrix): String {
-        val barcodeImageWidth = matrix.width
-        val barcodeImageHeight = matrix.height
-
         val builder = StringBuilder()
-        buildSvgBegin(builder, totalWidth = barcodeImageWidth, totalHeight = barcodeImageHeight)
-        buildSvgImageContent(builder, matrix = matrix)
+        buildSvgBegin(builder, totalWidth = properties.width, totalHeight = properties.height)
+        buildSvgImageContent(builder, properties = properties, matrix = matrix)
+        if(!properties.is2DBarcode)
+            buildSvgTextContent(builder, properties = properties)
         buildSvgEnd(builder)
-
         return builder.toString()
     }
 
-    private fun create1DBarcodeSvg(content: String, matrix: BitMatrix): String {
-        val barcodeImageWidth = matrix.width
-        val barcodeImageHeight = matrix.width/2 // matrix.height == 1 car il s'agit d'un code-barres à une dimension. Donc pour avoir de la hauteur on met la hauteur = largeur divisé par 2.
-
-        val textSize: Int = (barcodeImageWidth / (content.length + 2)) // Taille du texte s'affichant sous le code-barres.
-        val totalHeight: Int = barcodeImageHeight+textSize // Image du code-barres + la hauteur du texte.
-
-        val builder = StringBuilder()
-        buildSvgBegin(builder, totalWidth = barcodeImageWidth, totalHeight = totalHeight)
-        buildSvgImageContent(builder, matrix = matrix, bitWidth = 1, bitHeight = barcodeImageHeight)
-        buildSvgTextContent(builder, content = content, textSize = textSize, posX = barcodeImageWidth / 2, posY = totalHeight)
-        buildSvgEnd(builder)
-
-        return builder.toString()
-    }
-
-    // build svg parts
+    // ---- SVG build ----
 
     private fun buildSvgBegin(builder: StringBuilder, totalWidth: Int, totalHeight: Int) {
         builder.append("<svg width=\"$totalWidth\" height=\"$totalHeight\" viewBox=\"0 0 $totalWidth $totalHeight\" xmlns=\"http://www.w3.org/2000/svg\">\n")
@@ -80,17 +54,39 @@ class BarcodeSvgGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGen
         builder.append("</svg>\n")
     }
 
-    private fun buildSvgImageContent(builder: StringBuilder, matrix: BitMatrix, bitWidth: Int = 1, bitHeight: Int = 1) {
+    private fun buildSvgImageContent(builder: StringBuilder, properties: BarcodeImageGeneratorProperties, matrix: BitMatrix) {
+
+        // ---- Background ----
+        val backgroundFillColor = properties.backgroundColor.toColorHex()
+        val backgroundAlpha: Float = properties.backgroundColor.toColorAlpha()
+        builder.append("<rect x=\"0\" y=\"0\" width=\"${properties.width}\" height=\"${properties.height}\" style=\"fill:$backgroundFillColor;fill-opacity:$backgroundAlpha\"/>\n")
+
+        // ---- Foreground ----
+        val bitWidth: Float = properties.widthF / matrix.width.toFloat()
+        val bitHeight: Float = (properties.heightF-properties.contentsHeight) / matrix.height.toFloat()
+        val cornerRadius = bitWidth / 2f * properties.cornerRadius
+        val foregroundFillColor = properties.frontColor.toColorHex()
+        val foregroundAlpha: Float = properties.frontColor.toColorAlpha()
+
         for (y in 0 until matrix.height) {
             for (x in 0 until matrix.width) {
                 if (matrix.get(x, y)) {
-                    builder.append("<rect x=\"$x\" y=\"$y\" width=\"$bitWidth\" height=\"$bitHeight\"/>\n")
+                    val posX = x * bitWidth
+                    val posY = y * bitHeight
+                    builder.append("<rect x=\"$posX\" y=\"$posY\" width=\"$bitWidth\" height=\"$bitHeight\" rx=\"$cornerRadius\" ry=\"$cornerRadius\" style=\"fill:$foregroundFillColor;fill-opacity:$foregroundAlpha\"/>\n")
                 }
             }
         }
     }
 
-    private fun buildSvgTextContent(builder: StringBuilder, content: String, textSize: Int, posX: Int, posY: Int) {
-        builder.append("<text x=\"$posX\" y=\"$posY\" text-anchor=\"middle\" font-size=\"$textSize\">$content</text>\n")
+    private fun buildSvgTextContent(builder: StringBuilder, properties: BarcodeImageGeneratorProperties) {
+        val content = properties.contents
+        val textSize = properties.contentsHeight
+        val posX = properties.width / 2f
+        val posY = properties.height - (properties.contentsHeight/10f)
+        val fillColor = properties.frontColor.toColorHex()
+        val fillAlpha: Float = properties.frontColor.toColorAlpha()
+
+        builder.append("<text x=\"$posX\" y=\"$posY\" text-anchor=\"middle\" font-size=\"$textSize\" style=\"fill:$fillColor;fill-opacity:$fillAlpha\">$content</text>\n")
     }
 }

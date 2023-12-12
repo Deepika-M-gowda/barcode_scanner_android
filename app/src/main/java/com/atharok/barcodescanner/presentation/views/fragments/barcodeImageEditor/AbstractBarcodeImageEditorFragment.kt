@@ -18,20 +18,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.viewPagerAdapters
+package com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import android.util.Log
+import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
+import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 
-class BarcodeAnalysisPagerAdapter(fragmentManager: FragmentManager,
-                                  lifecycle: Lifecycle,
-                                  vararg fragment: Fragment)
-    : FragmentStateAdapter(fragmentManager, lifecycle) {
-
-    private val fragmentArray: Array<out Fragment> = fragment
-
-    override fun getItemCount(): Int = fragmentArray.size
-    override fun createFragment(position: Int): Fragment = fragmentArray[position]
+abstract class AbstractBarcodeImageEditorFragment : BaseFragment() {
+    fun onBarcodeDetailsActivity(task: (activity: BarcodeDetailsActivity) -> Unit) {
+        val activity = requireActivity()
+        if(activity is BarcodeDetailsActivity) {
+            task(activity)
+        } else {
+            Log.e("Error", "Fragment is not attached to BarcodeDetailsActivity!")
+        }
+    }
 }

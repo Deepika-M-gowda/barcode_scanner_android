@@ -18,31 +18,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.common.extensions
 
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import com.atharok.barcodescanner.domain.entity.bank.Bank
+import android.graphics.Canvas
+import android.graphics.Paint
 
-@Dao
-interface BankDao {
+fun Canvas.drawRectangle(left: Float, top: Float, right: Float, bottom: Float, paint: Paint) {
+    drawRect(left, top, right, bottom, paint)
+}
 
-    @Query("SELECT * FROM Bank ORDER BY name")
-    fun getBankList(): LiveData<List<Bank>>
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(bank: Bank): Long
-
-    @Query("DELETE FROM Bank")
-    suspend fun deleteAll(): Int
-
-    @Delete
-    suspend fun deleteBanks(banks: List<Bank>): Int
-
-    @Delete
-    suspend fun delete(bank: Bank): Int
+fun Canvas.drawRoundRectangle(left: Float, top: Float, right: Float, bottom: Float, rx: Float, ry: Float, paint: Paint) {
+    drawRoundRect(left, top, right, bottom, rx, ry, paint)
 }

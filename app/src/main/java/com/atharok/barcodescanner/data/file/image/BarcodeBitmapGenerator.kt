@@ -22,11 +22,10 @@ package com.atharok.barcodescanner.data.file.image
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.Rect
-import com.atharok.barcodescanner.common.extensions.is2DBarcode
-import com.google.zxing.BarcodeFormat
+import com.atharok.barcodescanner.common.extensions.drawRectangle
+import com.atharok.barcodescanner.common.extensions.drawRoundRectangle
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
 
@@ -36,48 +35,96 @@ import com.google.zxing.common.BitMatrix
 class BarcodeBitmapGenerator(multiFormatWriter: MultiFormatWriter): BarcodeImageGenerator<Bitmap>(multiFormatWriter) {
 
     override fun createImageBarcode(
-        content: String,
-        barcodeFormat: BarcodeFormat,
+        properties: BarcodeImageGeneratorProperties,
         matrix: BitMatrix
     ): Bitmap {
-        val barcodeImageWidth = matrix.width
-        val barcodeImageHeight = matrix.height
+        val bitmap: Bitmap =
+            Bitmap.createBitmap(properties.width, properties.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        val paint = Paint()
 
-        val bitmap: Bitmap
-
-        if(barcodeFormat.is2DBarcode()) {
-            bitmap = Bitmap.createBitmap(barcodeImageWidth, barcodeImageHeight, Bitmap.Config.ARGB_8888)
-        } else {
-            val textSize: Int = (barcodeImageWidth / (content.length + 2)) // ajuster la taille du texte en fonction de la largeur de l'image et du contenu
-            bitmap = Bitmap.createBitmap(barcodeImageWidth, barcodeImageHeight + textSize, Bitmap.Config.ARGB_8888)
-            createContentImage(bitmap, content, textSize.toFloat(), barcodeImageWidth, barcodeImageHeight)
-        }
-
-        createBarcodeImage(bitmap, matrix)
+        createBackground(canvas, paint, properties)
+        if(!properties.is2DBarcode)
+            createTextContentImage(canvas, paint, properties)
+        createBarcodeImage(canvas, paint, matrix, properties)
 
         return bitmap
     }
 
-    private fun createBarcodeImage(bitmap: Bitmap, matrix: BitMatrix) {
+    private fun createBackground(
+        canvas: Canvas,
+        paint: Paint,
+        properties: BarcodeImageGeneratorProperties
+    ) {
+        paint.apply {
+            this.color = properties.backgroundColor
+            this.isAntiAlias = true
+        }
+
+        canvas.drawRectangle(
+            left = 0f,
+            top = properties.heightF,
+            right = properties.widthF,
+            bottom = 0f,
+            paint = paint
+        )
+    }
+
+    private fun createBarcodeImage(
+        canvas: Canvas,
+        paint: Paint,
+        matrix: BitMatrix,
+        properties: BarcodeImageGeneratorProperties
+    ) {
+        val unitW: Float = properties.widthF / matrix.width.toFloat()
+        val unitH: Float = (properties.heightF-properties.contentsHeight) / matrix.height.toFloat()
+        val cornerRadius = unitW / 2f * properties.cornerRadius
+        paint.apply {
+            this.color = properties.frontColor
+            this.isAntiAlias = cornerRadius != 0f
+        }
+
         for (x in 0 until matrix.width) {
             for (y in 0 until matrix.height) {
-                bitmap.setPixel(x, y, if (matrix[x, y]) Color.BLACK else Color.WHITE)
+                if(matrix[x, y]) {
+                    val left = x.toFloat() * unitW
+                    val top = y.toFloat() * unitH
+                    val right = left + unitW
+                    val bottom = top + unitH
+
+                    canvas.drawRoundRectangle(
+                        left = left,
+                        top = top,
+                        right = right,
+                        bottom = bottom,
+                        rx = cornerRadius,
+                        ry = cornerRadius,
+                        paint = paint
+                    )
+                }
             }
         }
     }
 
-    private fun createContentImage(bitmap: Bitmap, content: String, textSize: Float, width: Int, height: Int) {
-        val canvas = Canvas(bitmap)
-        canvas.drawColor(Color.WHITE) // dessiner un fond blanc
-        val paint = Paint().apply {
-            this.color = Color.BLACK
-            this.textSize = textSize
+    private fun createTextContentImage(
+        canvas: Canvas,
+        paint: Paint,
+        properties: BarcodeImageGeneratorProperties
+    ) {
+        paint.apply {
+            this.color = properties.frontColor
+            this.isAntiAlias = true
+            this.textSize = properties.contentsHeight
             this.textAlign = Paint.Align.CENTER
         }
-        val textRect = Rect()
-        paint.getTextBounds(content, 0, content.length, textRect)
-        val textHeight = textRect.height().toFloat()
-        canvas.drawRect(0f, height.toFloat(), width.toFloat(), height + textHeight + 10f, paint.apply { color = Color.WHITE }) // dessiner un rectangle blanc en dessous du texte
-        canvas.drawText(content, width/2f, height + textSize - 10f, paint.apply { color = Color.BLACK }) // afficher le code texte
+
+        canvas.drawText(
+            properties.contents,
+            properties.width/2f,
+            properties.height - (properties.contentsHeight/10f),
+            paint.apply { color = properties.frontColor }
+        )
+
+        paint.reset()
     }
 }

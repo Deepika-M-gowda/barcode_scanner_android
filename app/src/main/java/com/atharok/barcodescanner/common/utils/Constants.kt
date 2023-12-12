@@ -63,6 +63,15 @@ const val BARCODE_FORMAT_KEY = "barcodeFormatKey"
 // Clé du Bundle associé au type QrCodeErrorCorrectionLevel
 const val QR_CODE_ERROR_CORRECTION_LEVEL_KEY = "qrCodeErrorCorrectionLevelKey"
 
+// Clé de l'intent associé au type BarcodeImageGeneratorSettings (Serializable)
+const val BARCODE_IMAGE_GENERATOR_PROPERTIES_KEY = "barcodeImageGeneratorPropertiesKey"
+
+const val BARCODE_IMAGE_FRONT_COLOR_KEY = "barcodeImageFrontColorKey"
+const val BARCODE_IMAGE_BACKGROUND_COLOR_KEY = "barcodeImageBackgroundColorKey"
+const val BARCODE_IMAGE_CORNER_RADIUS_KEY = "barcodeImageCornerRadiusKey"
+const val BARCODE_IMAGE_WIDTH_KEY = "barcodeImageWidthKey"
+const val BARCODE_IMAGE_HEIGHT_KEY = "barcodeImageHeightKey"
+
 
 // ---- Permet d'identifier le ViewPagerAdapter à instancier avec les bons paramètres dans Koin ----
 
@@ -118,7 +127,7 @@ const val ECO_SCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/attri
 const val DATABASE_NAME = "scan_history.db"
 const val ENCODING_UTF_8 = "UTF-8"
 const val ENCODING_ISO_8859_1 = "ISO-8859-1"
-const val BARCODE_IMAGE_SIZE = 2048
+const val BARCODE_IMAGE_DEFAULT_SIZE = 1024
 
 // ---- Valeures indicatives de la quantité des substances dans les produits alimentaires ----
 const val FAT_VALUE_LOW = 3.0f

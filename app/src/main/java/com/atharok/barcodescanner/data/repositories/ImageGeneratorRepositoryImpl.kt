@@ -23,30 +23,19 @@ package com.atharok.barcodescanner.data.repositories
 import android.graphics.Bitmap
 import com.atharok.barcodescanner.data.file.image.BarcodeBitmapGenerator
 import com.atharok.barcodescanner.data.file.image.BarcodeSvgGenerator
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.atharok.barcodescanner.domain.repositories.ImageGeneratorRepository
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 
 class ImageGeneratorRepositoryImpl(
     private val bitmapGenerator: BarcodeBitmapGenerator,
     private val svgGenerator: BarcodeSvgGenerator
 ): ImageGeneratorRepository {
 
-    override fun createBitmap(
-        text: String,
-        barcodeFormat: BarcodeFormat,
-        errorCorrectionLevel: ErrorCorrectionLevel?,
-        width: Int,
-        height: Int
-    ): Bitmap? {
-        return bitmapGenerator.create(text, barcodeFormat, errorCorrectionLevel, width, height)
+    override fun createBitmap(properties: BarcodeImageGeneratorProperties): Bitmap? {
+        return bitmapGenerator.create(properties)
     }
 
-    override fun createSvg(
-        text: String,
-        barcodeFormat: BarcodeFormat,
-        errorCorrectionLevel: ErrorCorrectionLevel?
-    ): String? {
-        return svgGenerator.create(text, barcodeFormat, errorCorrectionLevel)
+    override fun createSvg(properties: BarcodeImageGeneratorProperties): String? {
+        return svgGenerator.create(properties)
     }
 }

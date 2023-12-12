@@ -22,6 +22,7 @@ package com.atharok.barcodescanner.presentation.views.activities
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -29,29 +30,32 @@ import android.view.MenuItem
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
 import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.common.extensions.parcelable
 import com.atharok.barcodescanner.common.extensions.read
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_BACKGROUND_COLOR_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_CORNER_RADIUS_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_DEFAULT_SIZE
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_FRONT_COLOR_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_HEIGHT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_WIDTH_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.ImageFormat
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.intent.createActionCreateImageIntent
 import com.atharok.barcodescanner.presentation.intent.createShareImageIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
-import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageEditorFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
@@ -67,31 +71,65 @@ class BarcodeDetailsActivity : BaseActivity() {
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
     private var bitmap: Bitmap? = null
-    private var contents: String? = null
+
+    private val contents: String by lazy {
+        getIntentStringValue() ?: throw Exception("Barcode contents (String) is missing")
+    }
+
+    private val format: BarcodeFormat by lazy {
+        getBarcodeFormat()
+    }
+
+    private val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel by lazy {
+        getQrCodeErrorCorrectionLevel(format)
+    }
+
+    private val properties: BarcodeImageGeneratorProperties by lazy {
+        BarcodeImageGeneratorProperties(
+            contents = contents,
+            format = format,
+            qrCodeErrorCorrectionLevel = qrCodeErrorCorrectionLevel,
+            size = BARCODE_IMAGE_DEFAULT_SIZE,
+            frontColor = Color.BLACK,
+            backgroundColor = Color.WHITE
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeImageToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeDetailsToolbar.toolbar)
+        supportActionBar?.title = format.getDisplayName(this)
 
-        viewBinding.activityBarcodeImageOuterView.fixAnimateLayoutChangesInNestedScroll()
-
-        val barcodeContents: String? = getIntentStringValue()
-        val barcodeFormat: BarcodeFormat = getBarcodeFormat()
-        val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = getQrCodeErrorCorrectionLevel(barcodeFormat)
-
-        if(barcodeContents != null) {
-            this.contents = barcodeContents
-            createBarcodeBitmap(barcodeContents, barcodeFormat, qrCodeErrorCorrectionLevel)
-            configureBarcodeInformation(barcodeContents, barcodeFormat, qrCodeErrorCorrectionLevel)
-        }else{
-            viewBinding.activityBarcodeImageAboutBarcodeEntitledLayout.visibility = View.GONE
+        savedInstanceState?.let {
+            properties.apply {
+                frontColor = it.getInt(BARCODE_IMAGE_FRONT_COLOR_KEY, properties.frontColor)
+                backgroundColor = it.getInt(BARCODE_IMAGE_BACKGROUND_COLOR_KEY, properties.backgroundColor)
+                cornerRadius = it.getFloat(BARCODE_IMAGE_CORNER_RADIUS_KEY, properties.cornerRadius)
+                width = it.getInt(BARCODE_IMAGE_WIDTH_KEY, properties.width)
+                height = it.getInt(BARCODE_IMAGE_HEIGHT_KEY, properties.height)
+            }
         }
 
-        supportActionBar?.title = barcodeFormat.getDisplayName(this)
+        createBarcodeBitmap(properties)
+
+        replaceFragment(
+            containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
+            fragment = BarcodeImageEditorFragment.newInstance(properties),
+        )
 
         setContentView(viewBinding.root)
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(BARCODE_IMAGE_FRONT_COLOR_KEY, properties.frontColor)
+        outState.putInt(BARCODE_IMAGE_BACKGROUND_COLOR_KEY, properties.backgroundColor)
+        outState.putFloat(BARCODE_IMAGE_CORNER_RADIUS_KEY, properties.cornerRadius)
+        outState.putInt(BARCODE_IMAGE_WIDTH_KEY, properties.width)
+        outState.putInt(BARCODE_IMAGE_HEIGHT_KEY, properties.height)
+        super.onSaveInstanceState(outState)
+    }
+
 
     private fun getIntentStringValue(): String? {
         return if(intent?.action == Intent.ACTION_SEND){
@@ -113,9 +151,9 @@ class BarcodeDetailsActivity : BaseActivity() {
         return when(barcodeFormat) {
             BarcodeFormat.QR_CODE -> {
                 val qrCodeErrorCorrectionLevelString: String? = intent.getStringExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY)
-                if(qrCodeErrorCorrectionLevelString!=null){
+                if(qrCodeErrorCorrectionLevelString!=null) {
                     QrCodeErrorCorrectionLevel.valueOf(qrCodeErrorCorrectionLevelString)
-                }else{
+                } else {
                     settingsManager.getQrCodeErrorCorrectionLevel()
                 }
             }
@@ -125,78 +163,43 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     // ---- Barcode Bitmap Creator ----
 
-    private fun createBarcodeBitmap(contents: String, barcodeFormat: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel) {
-        imageManagerViewModel.createBitmap(
-            contents,
-            barcodeFormat,
-            qrCodeErrorCorrectionLevel
-        ).observe(this) {
+    private fun createBarcodeBitmap(properties: BarcodeImageGeneratorProperties) {
+        val progressBar = viewBinding.activityBarcodeDetailsProgressBar
+        val barcodeImageView = viewBinding.activityBarcodeDetailsImageView
+        imageManagerViewModel.getBitmap().observe(this) {
             when(it) {
-                is Resource.Progress -> viewBinding.activityBarcodeDetailsProgressBar.visibility = View.VISIBLE
+                is Resource.Progress -> progressBar.visibility = View.VISIBLE
                 is Resource.Success -> {
                     bitmap = it.data
                     bitmap?.let { localBitmap ->
-                        viewBinding.activityBarcodeImageImageView.setImageBitmap(localBitmap)
+                        barcodeImageView.setImageBitmap(localBitmap)
                     }
-                    viewBinding.activityBarcodeDetailsProgressBar.visibility = View.GONE
+                    progressBar.visibility = View.GONE
                 }
-                is Resource.Failure -> {
-                    viewBinding.activityBarcodeDetailsProgressBar.visibility = View.GONE
-                }
+                is Resource.Failure -> progressBar.visibility = View.GONE
             }
         }
+        imageManagerViewModel.createBitmap(properties)
     }
 
-    // ---- Barcode Information ----
-
-    private fun configureBarcodeInformation(contents: String, format: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel) {
-        // Entitled
-        viewBinding.activityBarcodeImageAboutBarcodeEntitledLayout.visibility = View.VISIBLE
-        val entitled: String = getString(R.string.about_barcode_label)
-        viewBinding.activityBarcodeImageAboutBarcodeEntitledTextViewTemplate.root.text = entitled
-
-        configureContentsExpandableViewFragment(contents, format)
-        configureAboutBarcodeFragment(contents, format, qrCodeErrorCorrectionLevel)
-    }
-
-    private fun configureContentsExpandableViewFragment(contents: String, format: BarcodeFormat) {
-
-        val iconResource: Int = when(format) {
-            BarcodeFormat.QR_CODE -> R.drawable.baseline_qr_code_24
-            BarcodeFormat.AZTEC -> R.drawable.ic_aztec_code_24
-            BarcodeFormat.DATA_MATRIX -> R.drawable.ic_data_matrix_code_24
-            BarcodeFormat.PDF_417 -> R.drawable.ic_pdf_417_code_24
-            else -> R.drawable.ic_bar_code_24
-        }
-
-        val contentsFragment = ExpandableViewFragment.newInstance(
-            title = getString(R.string.bar_code_content_label),
-            contents = contents,
-            drawableResource = iconResource
-        )
-
-        replaceFragment(
-            containerViewId = viewBinding.activityBarcodeImageBarcodeContentsFrameLayout.id,
-            fragment = contentsFragment
+    // Call by Fragments
+    fun regenerateBitmap(
+        width: Int = properties.width,
+        height: Int = properties.height,
+        @ColorInt frontColor: Int = properties.frontColor,
+        @ColorInt backgroundColor: Int = properties.backgroundColor,
+        cornerRadius: Float = properties.cornerRadius
+    ) {
+        imageManagerViewModel.createBitmap(
+            properties.apply {
+                this.width = width
+                this.height = height
+                this.frontColor = frontColor
+                this.backgroundColor = backgroundColor
+                this.cornerRadius = cornerRadius
+            }
         )
     }
-
-    private fun configureAboutBarcodeFragment(contents: String, format: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel) {
-
-        val barcode: Barcode = get { parametersOf(contents, format.name, qrCodeErrorCorrectionLevel) }
-        val barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
-
-        val args: Bundle = get<Bundle>().apply {
-            putSerializable(PRODUCT_KEY, barcodeAnalysis)
-        }
-
-        replaceFragment(
-            containerViewId = viewBinding.activityBarcodeImageAboutBarcodeFrameLayout.id,
-            fragmentClass = BarcodeAnalysisAboutFragment::class,
-            args = args
-        )
-    }
-
 
     // ---- Menu contenant les items permettant de sauvegarder ou partager le QrCode ----
 
@@ -257,23 +260,9 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun export(uri: Uri): LiveData<Resource<Boolean>> {
         return when(imageFormat) {
-            ImageFormat.PNG -> {
-                imageManagerViewModel.exportAsPng(bitmap, uri)
-            }
-            ImageFormat.JPG -> {
-                imageManagerViewModel.exportAsJpg(bitmap, uri)
-            }
-            ImageFormat.SVG -> {
-                val barcodeContents: String? = getIntentStringValue()
-                val barcodeFormat: BarcodeFormat = getBarcodeFormat()
-                val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = getQrCodeErrorCorrectionLevel(barcodeFormat)
-                imageManagerViewModel.exportAsSvg(
-                    contents = barcodeContents,
-                    barcodeFormat = barcodeFormat,
-                    qrCodeErrorCorrectionLevel = qrCodeErrorCorrectionLevel,
-                    uri = uri
-                )
-            }
+            ImageFormat.PNG -> imageManagerViewModel.exportAsPng(bitmap, uri)
+            ImageFormat.JPG -> imageManagerViewModel.exportAsJpg(bitmap, uri)
+            ImageFormat.SVG -> imageManagerViewModel.exportAsSvg(properties, uri)
         }
     }
 
@@ -298,10 +287,8 @@ class BarcodeDetailsActivity : BaseActivity() {
     }
 
     private fun shareText() {
-        contents?.let {
-            val intent: Intent = createShareTextIntent(applicationContext, it)//get(named(INTENT_SHARE_TEXT)) { parametersOf(contents) }
-            startActivity(intent)
-        }
+        val intent: Intent = createShareTextIntent(applicationContext, contents)
+        startActivity(intent)
     }
 
     // ---- Snackbar ----

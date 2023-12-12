@@ -23,8 +23,6 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreat
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
@@ -67,11 +65,6 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    fun closeVirtualKeyBoard(view: View) {
-        val inputMethodManager: InputMethodManager = get()
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
     protected fun startBarcodeDetailsActivity(
         contents: String,
         barcodeFormat: BarcodeFormat,
@@ -81,7 +74,7 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
         val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
             putExtra(BARCODE_CONTENTS_KEY, contents)
             putExtra(BARCODE_FORMAT_KEY, barcodeFormat.name)
-            putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, qrCodeErrorCorrectionLevel)
+            putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, qrCodeErrorCorrectionLevel.name)
         }
         startActivity(intent)
     }

@@ -358,6 +358,18 @@
     <string name="share_image_label">Share image</string>
     <string name="share_text_label">Share text</string>
     <string name="popup_message_confirmation_save_image">Save image?</string>
+    <!-- Barcode Image Editor -->
+    <string name="image_properties">Image properties</string>
+    <string name="colors_label">Colors</string>
+    <string name="background_color">Background color</string>
+    <string name="barcode_color">Barcode color</string>
+    <string name="shapes_label">Shapes</string>
+    <string name="corners_radius">Corners radius</string>
+    <string name="dimensions_label">Dimensions</string>
+    <string name="width_label">Width</string>
+    <string name="height_label">Height</string>
+    <string name="keep_proportions">Keep proportions</string>
+    <string name="color_shades_issue">Some color shades may not be detected.</string>
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">Enter text…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Enter phone number…</string>

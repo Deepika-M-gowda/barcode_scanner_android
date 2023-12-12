@@ -24,6 +24,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.StringRes
@@ -93,5 +94,10 @@ abstract class BaseFragment: Fragment() {
     protected fun displayList(textView: TextView, layout: View, list: List<String?>?, separator: String = ", "): Boolean {
         val text: String? = list?.convertToString(separator)
         return displayText(textView, layout, text)
+    }
+
+    fun closeVirtualKeyBoard(view: View) {
+        val inputMethodManager: InputMethodManager = get()
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }

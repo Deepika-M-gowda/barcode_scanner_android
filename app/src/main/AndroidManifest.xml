@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- Pour AddSuggestion -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Pour activer wifi (DEPREACATED) -->
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> --> <!-- -> Refused by Google Play -->
+    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> --><!-- -> Refused by Google Play -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -27,7 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
-        tools:targetApi="33">
+        tools:targetApi="34">
         <activity
             android:name=".presentation.views.activities.MainActivity"
             android:exported="true">
@@ -81,6 +81,7 @@
             android:label="@string/veggie_label" />
         <activity
             android:name=".presentation.views.activities.BarcodeDetailsActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true"
             android:label="@string/title_bar_code_creator">
             <intent-filter android:label="@string/title_qr_code_creator">
@@ -139,6 +140,7 @@
             android:name=".presentation.views.activities.BankListActivity"
             android:exported="false"
             android:label="@string/title_history" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.atharok.barcodescanner.fileprovider"

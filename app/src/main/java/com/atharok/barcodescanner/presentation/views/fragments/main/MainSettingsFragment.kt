@@ -40,7 +40,12 @@ import androidx.preference.PreferenceFragmentCompat
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
-import com.atharok.barcodescanner.presentation.views.activities.*
+import com.atharok.barcodescanner.presentation.views.activities.AboutApisActivity
+import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
+import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
+import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
+import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
+import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 import kotlin.reflect.KClass

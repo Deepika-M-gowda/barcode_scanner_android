@@ -7,7 +7,7 @@ import android.hardware.Camera
 import android.view.SurfaceHolder
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecoderWrapperAccessor
-import kotlinx.coroutines.*
+import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
 /**

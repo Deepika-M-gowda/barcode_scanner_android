@@ -20,52 +20,34 @@
 
 package com.atharok.barcodescanner.data.file.image
 
-import com.atharok.barcodescanner.common.utils.ENCODING_ISO_8859_1
-import com.atharok.barcodescanner.common.utils.ENCODING_UTF_8
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 
 /**
  * Génère l'image d'un code-barres à partir d'un texte.
  */
 abstract class BarcodeImageGenerator<T>(private val multiFormatWriter: MultiFormatWriter) {
 
-    fun create(text: String, barcodeFormat: BarcodeFormat, errorCorrectionLevel: ErrorCorrectionLevel?, width: Int = 0, height: Int = 0): T? {
+    fun create(properties: BarcodeImageGeneratorProperties): T? {
         return try {
-            val hints = getHints(barcodeFormat, errorCorrectionLevel)
-            val bitMatrix = encodeBarcodeImage(text, barcodeFormat, width, height, hints)
-            createImageBarcode(text, barcodeFormat, bitMatrix)
+            val bitMatrix = encodeBarcodeImage(properties.contents, properties.format, properties.hints)
+            createImageBarcode(properties, bitMatrix)
         } catch (e: Exception) {
             e.printStackTrace()
             null
         }
     }
 
-    private fun getHints(barcodeFormat: BarcodeFormat, errorCorrectionLevel: ErrorCorrectionLevel?): Map<EncodeHintType, Any> {
-        val encoding: String = when(barcodeFormat) {
-            BarcodeFormat.QR_CODE, BarcodeFormat.PDF_417 -> ENCODING_UTF_8
-            else -> ENCODING_ISO_8859_1
-        }
-
-        return if(errorCorrectionLevel==null) {
-            mapOf<EncodeHintType, Any>(EncodeHintType.CHARACTER_SET to encoding)
-        } else {
-            mapOf<EncodeHintType, Any>(EncodeHintType.CHARACTER_SET to encoding, EncodeHintType.ERROR_CORRECTION to errorCorrectionLevel)
-        }
-    }
-
     private fun encodeBarcodeImage(
         text: String,
         barcodeFormat: BarcodeFormat,
-        width: Int,
-        height: Int,
         hints: Map<EncodeHintType, Any>
     ): BitMatrix {
-        return multiFormatWriter.encode(text, barcodeFormat, width, height, hints)
+        return multiFormatWriter.encode(text, barcodeFormat, 0, 0, hints)
     }
 
-    protected abstract fun createImageBarcode(content: String, barcodeFormat: BarcodeFormat, matrix: BitMatrix): T
+    protected abstract fun createImageBarcode(properties: BarcodeImageGeneratorProperties, matrix: BitMatrix): T
 }

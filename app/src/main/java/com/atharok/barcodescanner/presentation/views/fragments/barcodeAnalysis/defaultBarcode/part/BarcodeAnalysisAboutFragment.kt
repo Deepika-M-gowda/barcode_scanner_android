@@ -77,18 +77,18 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
         configureDescription(product)
     }
 
-    private fun configureHeaderEntitledAndIcon(){
+    private fun configureHeaderEntitledAndIcon() {
         headerEntitledTemplateBinding.templateEntitledViewTextView.root.text = getString(R.string.about_barcode_information_label)
         headerEntitledTemplateBinding.templateEntitledViewIconImageView.setImageResource(R.drawable.outline_info_24)
     }
 
-    private fun configureFormat(barcodeAnalysis: BarcodeAnalysis){
+    private fun configureFormat(barcodeAnalysis: BarcodeAnalysis) {
         val formatName = barcodeAnalysis.barcode.getBarcodeFormat().getDisplayName(requireContext())
         val format = getString(R.string.about_barcode_format_label, formatName)
         bodyAboutBarcodeTemplateBinding.templateAboutBarcodeFormatTextView.text = format
     }
 
-    private fun configureOrigin(barcodeAnalysis: BarcodeAnalysis){
+    private fun configureOrigin(barcodeAnalysis: BarcodeAnalysis) {
         val origin = barcodeAnalysis.barcode.country
 
         if(origin != null) {
@@ -98,16 +98,16 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
                 layout = bodyAboutBarcodeTemplateBinding.templateAboutBarcodeOriginLayout,
                 text = getString(origin.stringResource)
             )
-        }else{
+        } else {
             bodyAboutBarcodeTemplateBinding.templateAboutBarcodeOriginLayout.visibility = View.GONE
         }
     }
 
-    private fun configureErrorCorrectionLevel(barcodeAnalysis: BarcodeAnalysis){
-        val text = when(barcodeAnalysis.barcode.getBarcodeFormat()){
+    private fun configureErrorCorrectionLevel(barcodeAnalysis: BarcodeAnalysis) {
+        val text = when(barcodeAnalysis.barcode.getBarcodeFormat()) {
             BarcodeFormat.QR_CODE -> {
                 val errorCorrectionLevel = barcodeAnalysis.barcode.getQrCodeErrorCorrectionLevel()
-                if(errorCorrectionLevel != QrCodeErrorCorrectionLevel.NONE){
+                if(errorCorrectionLevel != QrCodeErrorCorrectionLevel.NONE) {
                     val errorCorrectionLevelLabel = getString(R.string.qr_code_error_correction_level_label)
                     val entitled = getString(R.string.text_colon, errorCorrectionLevelLabel)
                     "$entitled ${getString(errorCorrectionLevel.stringResource)}"
@@ -123,8 +123,8 @@ class BarcodeAnalysisAboutFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
         )
     }
 
-    private fun configureDescription(barcodeAnalysis: BarcodeAnalysis){
-        val text = when(barcodeAnalysis.barcode.getBarcodeFormat()){
+    private fun configureDescription(barcodeAnalysis: BarcodeAnalysis) {
+        val text = when(barcodeAnalysis.barcode.getBarcodeFormat()) {
             BarcodeFormat.UPC_A -> getString(R.string.barcode_upc_a_description_label)
             BarcodeFormat.UPC_E -> getString(R.string.barcode_upc_e_description_label)
             BarcodeFormat.EAN_13 -> getString(R.string.barcode_ean_13_description_label)

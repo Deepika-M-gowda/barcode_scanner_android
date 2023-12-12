@@ -1,60 +1,55 @@
+/*
+ * Barcode Scanner
+ * Copyright (C) 2021  Atharok
+ *
+ * This file is part of Barcode Scanner.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package com.atharok.barcodescanner.domain.usecases
 
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
-import com.atharok.barcodescanner.common.extensions.is2DBarcode
-import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_SIZE
-import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.atharok.barcodescanner.domain.repositories.ImageExportRepository
 import com.atharok.barcodescanner.domain.repositories.ImageGeneratorRepository
 import com.atharok.barcodescanner.domain.resources.Resource
-import com.google.zxing.BarcodeFormat
 import kotlinx.coroutines.Dispatchers
 
 class ImageManagerUseCase(
     private val imageGeneratorRepository: ImageGeneratorRepository,
     private val imageExportRepository: ImageExportRepository
 ) {
-    fun createBitmap(
-        contents: String,
-        barcodeFormat: BarcodeFormat,
-        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
-    ): LiveData<Resource<Bitmap?>> = liveData(Dispatchers.IO) {
 
-        emit(Resource.loading())
+    val bitmapObserver = MutableLiveData<Resource<Bitmap?>>()
 
-        val bitmap = imageGeneratorRepository.createBitmap(
-            text = contents,
-            barcodeFormat = barcodeFormat,
-            errorCorrectionLevel = qrCodeErrorCorrectionLevel.errorCorrectionLevel,
-            width = BARCODE_IMAGE_SIZE,
-            height = if(barcodeFormat.is2DBarcode()) BARCODE_IMAGE_SIZE else BARCODE_IMAGE_SIZE /2
-        )
-
-        emit(Resource.success(bitmap))
+    suspend fun createBitmap(properties: BarcodeImageGeneratorProperties) {
+        bitmapObserver.value = Resource.loading()
+        val bitmap = imageGeneratorRepository.createBitmap(properties)
+        bitmapObserver.value = Resource.success(bitmap)
     }
 
-    fun createSvg(
-        contents: String?,
-        barcodeFormat: BarcodeFormat,
-        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
-    ): LiveData<String?> = liveData(Dispatchers.IO) {
-
-        contents?.let {
-            try {
-                val svg = imageGeneratorRepository.createSvg(
-                    text = it,
-                    barcodeFormat = barcodeFormat,
-                    errorCorrectionLevel = qrCodeErrorCorrectionLevel.errorCorrectionLevel
-                )
-                emit(svg)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                emit(null)
-            }
-        } ?: run {
+    fun createSvg(properties: BarcodeImageGeneratorProperties): LiveData<String?> = liveData(Dispatchers.IO) {
+        try {
+            val svg = imageGeneratorRepository.createSvg(properties)
+            emit(svg)
+        } catch (e: Exception) {
+            e.printStackTrace()
             emit(null)
         }
     }

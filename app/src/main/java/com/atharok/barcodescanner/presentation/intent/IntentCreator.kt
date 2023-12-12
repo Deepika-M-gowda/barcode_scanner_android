@@ -28,12 +28,19 @@ import android.content.pm.ResolveInfo
 import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Build
-import android.provider.*
+import android.provider.CalendarContract
+import android.provider.ContactsContract
+import android.provider.DocumentsContract
+import android.provider.MediaStore
+import android.provider.Settings
 import androidx.annotation.RequiresApi
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.queryIntentActivitiesAppCompat
-import com.google.zxing.client.result.*
-import java.util.*
+import com.google.zxing.client.result.AddressBookParsedResult
+import com.google.zxing.client.result.CalendarParsedResult
+import com.google.zxing.client.result.EmailAddressParsedResult
+import com.google.zxing.client.result.SMSParsedResult
+import com.google.zxing.client.result.TelParsedResult
 import kotlin.reflect.KClass
 
 fun createStartActivityIntent(context: Context, kClass: KClass<*>): Intent {

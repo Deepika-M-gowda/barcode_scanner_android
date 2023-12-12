@@ -18,31 +18,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.data.database
+package com.atharok.barcodescanner.presentation.views.viewPagerAdapters
 
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import com.atharok.barcodescanner.domain.entity.bank.Bank
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-@Dao
-interface BankDao {
+class FragmentPagerAdapter(fragmentManager: FragmentManager,
+                           lifecycle: Lifecycle,
+                           vararg fragment: Fragment)
+    : FragmentStateAdapter(fragmentManager, lifecycle) {
 
-    @Query("SELECT * FROM Bank ORDER BY name")
-    fun getBankList(): LiveData<List<Bank>>
+    private val fragmentArray: Array<out Fragment> = fragment
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(bank: Bank): Long
-
-    @Query("DELETE FROM Bank")
-    suspend fun deleteAll(): Int
-
-    @Delete
-    suspend fun deleteBanks(banks: List<Bank>): Int
-
-    @Delete
-    suspend fun delete(bank: Bank): Int
+    override fun getItemCount(): Int = fragmentArray.size
+    override fun createFragment(position: Int): Fragment = fragmentArray[position]
 }

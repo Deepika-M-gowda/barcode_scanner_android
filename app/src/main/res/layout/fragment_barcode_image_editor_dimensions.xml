@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeImageEditor.BarcodeImageEditorDimensionsFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_image_editor_dimensions_outer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fragment_barcode_image_editor_dimensions_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            android:text="@string/dimensions_label" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_barcode_image_editor_dimensions_width_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/fragment_barcode_image_editor_dimensions_title_text_view"
+            android:hint="@string/width_label"
+            style="@style/AppTheme.TextInputLayoutStyle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_barcode_image_editor_dimensions_width_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="4"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/fragment_barcode_image_editor_dimensions_height_input_edit_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_barcode_image_editor_dimensions_height_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_image_editor_dimensions_width_input_layout"
+            android:layout_alignParentStart="true"
+            android:hint="@string/height_label"
+            style="@style/AppTheme.TextInputLayoutStyle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_barcode_image_editor_dimensions_height_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="4"
+                android:imeOptions="actionDone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/fragment_barcode_image_editor_dimensions_keep_proportions_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_image_editor_dimensions_height_input_layout"
+            android:checked="true"
+            android:text="@string/keep_proportions"/>
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

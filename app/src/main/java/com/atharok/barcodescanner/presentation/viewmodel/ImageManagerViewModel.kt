@@ -25,27 +25,21 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
+import androidx.lifecycle.viewModelScope
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.domain.usecases.ImageManagerUseCase
-import com.google.zxing.BarcodeFormat
+import kotlinx.coroutines.launch
 
 class ImageManagerViewModel(private val imageManagerUseCase: ImageManagerUseCase): ViewModel() {
+    fun getBitmap(): LiveData<Resource<Bitmap?>> = imageManagerUseCase.bitmapObserver
 
-    fun createBitmap(
-        contents: String,
-        barcodeFormat: BarcodeFormat,
-        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
-    ): LiveData<Resource<Bitmap?>> {
-        return imageManagerUseCase.createBitmap(contents, barcodeFormat, qrCodeErrorCorrectionLevel)
+    fun createBitmap(properties: BarcodeImageGeneratorProperties) = viewModelScope.launch {
+        imageManagerUseCase.createBitmap(properties)
     }
 
-    fun createSvg(
-        contents: String?,
-        barcodeFormat: BarcodeFormat,
-        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
-    ): LiveData<String?> {
-        return imageManagerUseCase.createSvg(contents, barcodeFormat, qrCodeErrorCorrectionLevel)
+    fun createSvg(properties: BarcodeImageGeneratorProperties): LiveData<String?> {
+        return imageManagerUseCase.createSvg(properties)
     }
 
     fun exportAsPng(bitmap: Bitmap?, uri: Uri): LiveData<Resource<Boolean>> {
@@ -56,16 +50,8 @@ class ImageManagerViewModel(private val imageManagerUseCase: ImageManagerUseCase
         return imageManagerUseCase.exportToJpg(bitmap, uri)
     }
 
-    fun exportAsSvg(contents: String?,
-                    barcodeFormat: BarcodeFormat,
-                    qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel,
-                    uri: Uri
-    ): LiveData<Resource<Boolean>> {
-        return createSvg(
-            contents = contents,
-            barcodeFormat = barcodeFormat,
-            qrCodeErrorCorrectionLevel = qrCodeErrorCorrectionLevel
-        ).switchMap { svg: String? ->
+    fun exportAsSvg(properties: BarcodeImageGeneratorProperties, uri: Uri): LiveData<Resource<Boolean>> {
+        return createSvg(properties).switchMap { svg: String? ->
             imageManagerUseCase.exportToSvg(svg, uri)
         }
     }

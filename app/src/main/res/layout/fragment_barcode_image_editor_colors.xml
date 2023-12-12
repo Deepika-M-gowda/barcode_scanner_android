@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.views.fragments.barcodeImageEditor.BarcodeImageEditorColorsFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_image_editor_colors_outer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fragment_barcode_image_editor_colors_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            android:text="@string/colors_label" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fragment_barcode_image_editor_colors_background_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_image_editor_colors_title_text_view">
+            <RelativeLayout
+                android:id="@+id/fragment_barcode_image_editor_colors_background_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x_large_margin">
+                <ImageView
+                    android:id="@+id/fragment_barcode_image_editor_colors_background_image_view"
+                    android:layout_width="@dimen/icon_large_size"
+                    android:layout_height="@dimen/icon_large_size"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/circle"
+                    android:contentDescription="@string/colors_label" />
+
+                <TextView
+                    android:id="@+id/fragment_barcode_image_editor_colors_background_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_background_image_view"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                    android:text="@string/background_color" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fragment_barcode_image_editor_colors_foreground_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_image_editor_colors_background_card_view">
+            <RelativeLayout
+                android:id="@+id/fragment_barcode_image_editor_colors_foreground_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x_large_margin">
+                <ImageView
+                    android:id="@+id/fragment_barcode_image_editor_colors_foreground_image_view"
+                    android:layout_width="@dimen/icon_large_size"
+                    android:layout_height="@dimen/icon_large_size"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/circle"
+                    android:contentDescription="@string/colors_label" />
+
+                <TextView
+                    android:id="@+id/fragment_barcode_image_editor_colors_foreground_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_foreground_image_view"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                    android:text="@string/barcode_color" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/fragment_barcode_image_editor_colors_warning_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_below="@id/fragment_barcode_image_editor_colors_foreground_card_view">
+
+            <ImageView
+                android:id="@+id/fragment_barcode_image_editor_colors_warning_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/baseline_warning_24"
+                android:contentDescription="@string/warning_label" />
+
+            <TextView
+                android:id="@+id/fragment_barcode_image_editor_colors_warning_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/standard_margin"
+                android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_warning_image_view"
+                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
+                android:text="@string/color_shades_issue" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

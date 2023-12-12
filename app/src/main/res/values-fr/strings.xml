@@ -141,11 +141,7 @@
     <string name="nutriscore_description_e">Très mauvaise qualité nutritionnelle</string>
     <string name="nutriscore_description_unknown">Pas de Nutri-Score</string>
     <string name="nova_group_entitled_label">Groupe NOVA</string>
-    <string name="nova_group_description">Le Groupe NOVA est une classification en 4 groupes pour mettre en évidence le degré de transformation des aliments :
-\n1 - Aliments non transformés ou transformés minimalement
-\n2 - Ingrédients culinaires transformés
-\n3 - Aliments transformés
-\n4 - Produits alimentaires et boissons ultra-transformés</string>
+    <string name="nova_group_description">Le Groupe NOVA est une classification en 4 groupes pour mettre en évidence le degré de transformation des aliments :\n1 - Aliments non transformés ou transformés minimalement\n2 - Ingrédients culinaires transformés\n3 - Aliments transformés\n4 - Produits alimentaires et boissons ultra-transformés</string>
     <string name="nova_group_description_1">Aliments non transformés ou minimalement transformés</string>
     <string name="nova_group_description_2">Ingrédients culinaires transformés</string>
     <string name="nova_group_description_3">Aliments transformés</string>
@@ -303,8 +299,7 @@
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Vous devez accepter la permission pour utiliser cette fonctionnalité.</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'image a été enregistrée</string>
-    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…
-\nMémoire insuffisante \?</string>
+    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante \?</string>
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
     <!-- Actions -->
     <string name="actions_label">Actions</string>
@@ -363,6 +358,18 @@
     <string name="share_image_label">Partager l\'image</string>
     <string name="share_text_label">Partager le texte</string>
     <string name="popup_message_confirmation_save_image">Enregistrer l\'image ?</string>
+    <!-- Barcode Image Editor -->
+    <string name="image_properties">Propriétés de l\'image</string>
+    <string name="colors_label">Couleurs</string>
+    <string name="background_color">Couleur de l\'arrière-plan</string>
+    <string name="barcode_color">Couleur du code-barres</string>
+    <string name="shapes_label">Formes</string>
+    <string name="corners_radius">Rayon des angles</string>
+    <string name="dimensions_label">Dimensions</string>
+    <string name="width_label">Largeur</string>
+    <string name="height_label">Hauteur</string>
+    <string name="keep_proportions">Conserver les proportions</string>
+    <string name="color_shades_issue">Certaines nuances de couleurs peuvent ne pas être détectées.</string>
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">Saisie un texte…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Saisie un numéro de téléphone…</string>

@@ -21,21 +21,9 @@
 package com.atharok.barcodescanner.domain.repositories
 
 import android.graphics.Bitmap
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 
 interface ImageGeneratorRepository {
-    fun createBitmap(
-        text: String,
-        barcodeFormat: BarcodeFormat,
-        errorCorrectionLevel: ErrorCorrectionLevel?,
-        width: Int = 0,
-        height: Int = 0
-    ): Bitmap?
-
-    fun createSvg(
-        text: String,
-        barcodeFormat: BarcodeFormat,
-        errorCorrectionLevel: ErrorCorrectionLevel?
-    ): String?
+    fun createBitmap(properties: BarcodeImageGeneratorProperties): Bitmap?
+    fun createSvg(properties: BarcodeImageGeneratorProperties): String?
 }

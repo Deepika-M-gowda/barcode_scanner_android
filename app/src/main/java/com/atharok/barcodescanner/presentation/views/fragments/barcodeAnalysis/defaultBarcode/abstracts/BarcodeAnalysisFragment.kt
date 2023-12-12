@@ -24,7 +24,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.*
+import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
+import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity

@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.common.extensions
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
-import java.util.*
+import java.util.Locale
 
 /**
  * Cette méthode permet d'enjoliver une chaine de caractère. Elle est utilisée pour les textes

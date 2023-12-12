@@ -34,7 +34,7 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.p
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.ingredients.FoodAnalysisRootIngredientsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.nutritionFacts.FoodAnalysisRootNutritionFactsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisRootOverviewFragment
-import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.BarcodeAnalysisPagerAdapter
+import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.android.ext.android.get
 
@@ -70,7 +70,7 @@ class FoodAnalysisFragment: ApiAnalysisFragment<FoodBarcodeAnalysis>() {
         val overviewFragment = FoodAnalysisRootOverviewFragment.newInstance(barcodeAnalysis)
         val ingredientsFragment = FoodAnalysisRootIngredientsFragment.newInstance(barcodeAnalysis)
         val nutritionFragment = FoodAnalysisRootNutritionFactsFragment.newInstance(barcodeAnalysis)
-        val adapter = BarcodeAnalysisPagerAdapter(childFragmentManager, lifecycle, overviewFragment, ingredientsFragment, nutritionFragment)
+        val adapter = FragmentPagerAdapter(childFragmentManager, lifecycle, overviewFragment, ingredientsFragment, nutritionFragment)
 
         val overview: String = getString(R.string.overview_tab_label)
         val ingredients: String = getString(R.string.ingredients_label)
