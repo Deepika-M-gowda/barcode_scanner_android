@@ -23,7 +23,7 @@
     <string name="slider_description_zoom">Zoom</string>
     <!-- Menu Item -->
     <string name="title_scan">Scan</string>
-    <string name="title_history">Historie</string>
+    <string name="title_history">Verlauf</string>
     <string name="title_generate">Erzeugen</string>
     <string name="title_settings">Einstellungen</string>
     <string name="title_qr_code_creator">Erzeuge einen QR Code</string>
@@ -85,7 +85,7 @@
     <string name="menu_item_history_delete">Verlauf löschen</string>
     <string name="menu_item_history_delete_from_history">Aus dem Verlauf löschen</string>
     <string name="menu_item_history_removed_from_history">Aus dem Verlauf entfernt!</string>
-    <string name="menu_item_history_add_in_history">In Verlauf hinzufügen</string>
+    <string name="menu_item_history_add_in_history">Zum Verlauf hinzufügen</string>
     <string name="menu_item_history_added_in_history">In den Verlauf hinzugefügt!</string>
     <string name="delete_label">Löschen</string>
     <string name="cancel_label">Abbrechen</string>
@@ -709,4 +709,15 @@
     <string name="export_label">Exportieren</string>
     <string name="snack_bar_message_file_import_success">Datei importiert!</string>
     <string name="export_json_label">Als JSON exportieren</string>
+    <string name="corners_radius">Eckradius</string>
+    <string name="dependency_color_picker_description_label">Eine Farbwählerbibliothek für Android.</string>
+    <string name="barcode_color">Barcode-Farbe</string>
+    <string name="color_shades_issue">Einige Farbnuabcen werden möglicherweise nicht erkannt.</string>
+    <string name="keep_proportions">Seitenverhältnis bewahren</string>
+    <string name="dimensions_label">Abmessungen</string>
+    <string name="background_color">Hintergrundfarbe</string>
+    <string name="image_properties">Bildeigenschaften</string>
+    <string name="width_label">Breite</string>
+    <string name="colors_label">Farben</string>
+    <string name="height_label">Höhe</string>
 </resources>
