@@ -43,7 +43,11 @@ class MainActivity: BaseActivity() {
 
     companion object {
         private const val ITEM_ID_KEY = "itemIdKey"
+        private const val TITLE_RES_KEY = "titleResId"
     }
+
+    private var currentItemId: Int = R.id.menu_navigation_bottom_view_scan
+    private var titleRes: Int = R.string.title_scan
 
     private val mainCameraXScannerFragment: MainCameraXScannerFragment by inject()
     private val mainScannerFragment: MainScannerFragment by inject()
@@ -56,16 +60,38 @@ class MainActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityMainToolbar.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)// On n'affiche pas l'icone "retour" dans la MainActivity
+        savedInstanceState?.let {
+            currentItemId = it.getInt(ITEM_ID_KEY, R.id.menu_navigation_bottom_view_scan)
+            titleRes = it.getInt(TITLE_RES_KEY, R.string.title_scan)
+        }
 
-        if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+        setSupportActionBar(viewBinding.activityMainToolbar.toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(false)// On n'affiche pas l'icone "retour" dans la MainActivity
+            it.setTitle(titleRes)
+        }
+
+        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             configureNavigationRailView()
-        }else{
+        } else {
             configureBottomNavigationMenu()
         }
 
         setContentView(viewBinding.root)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(ITEM_ID_KEY, currentItemId)
+        outState.putInt(TITLE_RES_KEY, titleRes)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
     // ---- Configuration ----
@@ -83,16 +109,12 @@ class MainActivity: BaseActivity() {
     }
 
     private fun configureBottomNavigationMenu() {
-
         viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
-
+            bottomNavigationView.selectedItemId = currentItemId
             configureNavigationBarColor(bottomNavigationView)
-
             bottomNavigationView.setOnItemSelectedListener {
-                intent.putExtra(ITEM_ID_KEY, it.itemId)
                 changeView(it.itemId)
             }
-
             initializeFirstFragmentToShow {
                 bottomNavigationView.selectedItemId = it
             }
@@ -100,13 +122,11 @@ class MainActivity: BaseActivity() {
     }
 
     private fun configureNavigationRailView() {
-
         viewBinding.activityMainNavigationRail?.let { navigationRailView ->
+            navigationRailView.selectedItemId = currentItemId
             navigationRailView.setOnItemSelectedListener {
-                intent.putExtra(ITEM_ID_KEY, it.itemId)
                 changeView(it.itemId)
             }
-
             initializeFirstFragmentToShow {
                 navigationRailView.selectedItemId = it
             }
@@ -114,43 +134,58 @@ class MainActivity: BaseActivity() {
     }
 
     private fun initializeFirstFragmentToShow(onChangeItem: (selectedItemId: Int) -> Unit) {
-
-        // Utile lorsqu'on ouvre l'application via un shortcut
-        val selectedItemId = when (intent?.action) {
-            "${BuildConfig.APPLICATION_ID}.SCAN" -> R.id.menu_navigation_bottom_view_scan
-            "${BuildConfig.APPLICATION_ID}.HISTORY" -> R.id.menu_navigation_bottom_view_history
-            "${BuildConfig.APPLICATION_ID}.CREATE" -> R.id.menu_navigation_bottom_view_create
-            "android.intent.action.APPLICATION_PREFERENCES" -> R.id.menu_navigation_bottom_view_settings
-            else -> intent.getIntExtra(ITEM_ID_KEY, R.id.menu_navigation_bottom_view_scan)
+        if(supportFragmentManager.fragments.isEmpty()) {
+            // Utile lorsqu'on ouvre l'application via un shortcut
+            val selectedItemId = when (intent?.action) {
+                "${BuildConfig.APPLICATION_ID}.SCAN" -> R.id.menu_navigation_bottom_view_scan
+                "${BuildConfig.APPLICATION_ID}.HISTORY" -> R.id.menu_navigation_bottom_view_history
+                "${BuildConfig.APPLICATION_ID}.CREATE" -> R.id.menu_navigation_bottom_view_create
+                "android.intent.action.APPLICATION_PREFERENCES" -> R.id.menu_navigation_bottom_view_settings
+                else -> currentItemId
+            }
+            onChangeItem(selectedItemId)
+            changeView(selectedItemId)
         }
-
-        onChangeItem(selectedItemId)
-
-        val itemIdSelected: Int = intent.getIntExtra(ITEM_ID_KEY, selectedItemId)
-        changeView(itemIdSelected)
     }
 
     // ---- Change Fragment ----
 
-    private fun changeView(id: Int): Boolean = when(id){
-        R.id.menu_navigation_bottom_view_scan -> changeFragment(if(settingsManager.useCameraXApi) mainCameraXScannerFragment else mainScannerFragment, R.string.title_scan)
-        R.id.menu_navigation_bottom_view_history -> changeFragment(mainHistoryFragment, R.string.title_history)
-        R.id.menu_navigation_bottom_view_create -> changeFragment(mainBarcodeCreatorListFragment, R.string.title_bar_code_creator)
-        R.id.menu_navigation_bottom_view_settings -> changeFragment(mainSettingsFragment, R.string.title_settings)
-        else -> false
+    private fun changeView(id: Int): Boolean {
+        currentItemId = id
+        return when (id) {
+            R.id.menu_navigation_bottom_view_scan -> changeFragment(
+                if (settingsManager.useCameraXApi) mainCameraXScannerFragment else mainScannerFragment,
+                R.string.title_scan
+            )
+
+            R.id.menu_navigation_bottom_view_history -> changeFragment(
+                mainHistoryFragment,
+                R.string.title_history
+            )
+
+            R.id.menu_navigation_bottom_view_create -> changeFragment(
+                mainBarcodeCreatorListFragment,
+                R.string.title_bar_code_creator
+            )
+
+            R.id.menu_navigation_bottom_view_settings -> changeFragment(
+                mainSettingsFragment,
+                R.string.title_settings
+            )
+
+            else -> false
+        }
     }
 
     private fun changeFragment(fragment: Fragment, titleResource: Int): Boolean {
-
+        titleRes = titleResource
         supportActionBar?.setTitle(titleResource)
-
         supportFragmentManager.commitNow {
             setReorderingAllowed(false)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             replace(viewBinding.activityMainFrameLayout.id, fragment)
             //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back
         }
-
         return true
     }
 
@@ -166,16 +201,6 @@ class MainActivity: BaseActivity() {
 
     fun updateTheme() {
         settingsManager.reload()
-        //setTheme(settingsManager.getTheme())
-
-        viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
-            intent.putExtra(ITEM_ID_KEY, bottomNavigationView.selectedItemId)
-        }
-
-        viewBinding.activityMainNavigationRail?.let { navigationRailView ->
-            intent.putExtra(ITEM_ID_KEY, navigationRailView.selectedItemId)
-        }
-
         recreate()
     }
 }

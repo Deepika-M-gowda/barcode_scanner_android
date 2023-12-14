@@ -75,7 +75,8 @@
         </activity>
         <activity
             android:name=".presentation.views.activities.BarcodeAnalysisActivity"
-            android:label="@string/information_label" />
+            android:label="@string/information_label"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".presentation.views.activities.VeggieActivity"
             android:label="@string/veggie_label" />

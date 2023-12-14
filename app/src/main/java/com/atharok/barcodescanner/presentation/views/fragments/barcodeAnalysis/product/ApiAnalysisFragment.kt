@@ -35,7 +35,12 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.d
 
 abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<T>() {
 
-    private lateinit var sourceApiInfoAlertDialog: AlertDialog
+    private var sourceApiInfoAlertDialog: AlertDialog? = null
+
+    override fun onDestroy() {
+        super.onDestroy()
+        sourceApiInfoAlertDialog?.dismiss()
+    }
 
     private fun configureSourceApiInfoAlertDialog(titleResource: Int, layout: Int, urlResource: Int, barcodeContents: String){
         sourceApiInfoAlertDialog = AlertDialog.Builder(requireActivity()).apply {
@@ -61,7 +66,7 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId) {
                 R.id.menu_activity_barcode_analysis_product_source_api_info_item -> {
-                    sourceApiInfoAlertDialog.show()
+                    sourceApiInfoAlertDialog?.show()
                     true
                 }
                 R.id.menu_activity_barcode_analysis_about_barcode_item -> {

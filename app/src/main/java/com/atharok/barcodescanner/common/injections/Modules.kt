@@ -20,22 +20,15 @@
 
 package com.atharok.barcodescanner.common.injections
 
-import android.app.Activity
 import android.content.ClipboardManager
 import android.content.Context
-import android.graphics.Typeface
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.FrameLayout
-import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT
@@ -164,7 +157,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeH
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
-import com.google.android.material.chip.Chip
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.Result
@@ -196,8 +188,7 @@ val appModules by lazy {
             repositoryModule,
             dataModule,
             scopesModule,
-            fragmentsModule,
-            viewsModule
+            fragmentsModule
         )
     } else {
         listOf<Module>(
@@ -208,8 +199,7 @@ val appModules by lazy {
             repositoryModule,
             dataModule,
             scopesModule,
-            fragmentsModule,
-            viewsModule
+            fragmentsModule
         )
     }
 }
@@ -532,61 +522,6 @@ val fragmentsModule = module {
             BarcodeType.UNKNOWN -> DefaultActionsFragment::class
             BarcodeType.UNKNOWN_PRODUCT -> ProductActionsFragment::class
         }
-    }
-}
-
-val viewsModule = module {
-
-    factory<Chip> { (activity: Activity, text: String) ->
-
-        Chip(activity).apply {
-            id = View.NO_ID
-            this.text = text
-            setEnsureMinTouchTargetSize(false)
-            textAlignment = View.TEXT_ALIGNMENT_CENTER
-        }
-    }
-
-    factory<FrameLayout> { (activity: Activity, view: View) ->
-
-        FrameLayout(activity).apply {
-            id = View.NO_ID
-            addView(view)
-
-            val marginSizeInDP = resources.getDimensionPixelSize(R.dimen.standard_margin)
-
-            val params = view.layoutParams as ViewGroup.MarginLayoutParams
-            params.setMargins(marginSizeInDP, marginSizeInDP, marginSizeInDP, marginSizeInDP)
-            view.layoutParams = params
-        }
-    }
-
-    factory<TextView> { (activity: Activity, message: String) ->
-
-        TextView(activity).apply {
-            id = View.NO_ID
-            text = message
-            //setTextColorFromAttrRes(android.R.attr.textColorSecondary)
-
-            val textSizeInDP = resources.getDimension(R.dimen.standard_text_size) / resources.displayMetrics.density
-            textSize = textSizeInDP
-            typeface = Typeface.create(activity.getString(R.string.default_font), Typeface.ITALIC)//ResourcesCompat.getFont(context, R.font.roboto_medium_italic)
-            setTextIsSelectable(true)
-        }
-    }
-
-    factory<AlertDialog> { (activity: Activity, title: String, message: String) ->
-
-        val textView = get<TextView> { parametersOf(activity, message) }
-        val frameLayout = get<FrameLayout> { parametersOf(activity, textView) }
-
-        AlertDialog.Builder(activity).apply {
-            setTitle(title)
-            setNegativeButton(R.string.close_dialog_label) {
-                    dialogInterface, _ -> dialogInterface.cancel()
-            }
-            setView(frameLayout)
-        }.create()
     }
 }
 

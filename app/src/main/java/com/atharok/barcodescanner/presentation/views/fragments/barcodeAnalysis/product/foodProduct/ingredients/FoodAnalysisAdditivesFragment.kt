@@ -20,10 +20,12 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.ingredients
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +34,7 @@ import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisAdditivesBindi
 import com.atharok.barcodescanner.databinding.TemplateRecyclerViewBinding
 import com.atharok.barcodescanner.databinding.TemplateTextViewTitleBinding
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.additives.AdditivesItemAdapter
@@ -44,6 +47,7 @@ class FoodAnalysisAdditivesFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis
 
     private val viewModel: ExternalFileViewModel by activityViewModel()
     private var additivesAdapter: AdditivesItemAdapter? = null
+    private var alertDialog: AlertDialog? = null
 
     private var _binding: FragmentFoodAnalysisAdditivesBinding? = null
     private val viewBinding get() = _binding!!
@@ -60,6 +64,11 @@ class FoodAnalysisAdditivesFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        alertDialog?.dismiss()
     }
 
     // ---- Templates Configuration ----
@@ -102,10 +111,10 @@ class FoodAnalysisAdditivesFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis
         additivesHeaderTextViewTemplateBinding.root.text = getString(R.string.additives_label)
     }
 
-    private fun configureRecyclerView(){
+    private fun configureRecyclerView() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
         val dividerItemDecoration = DividerItemDecoration(requireContext(), linearLayoutManager.orientation)
-        additivesAdapter = AdditivesItemAdapter(requireActivity())
+        additivesAdapter = AdditivesItemAdapter(showAdditiveInfoDialog, searchAdditiveOnTheWeb)
 
         val additivesRecyclerView = additivesBodyRecyclerViewTemplateBinding.root
 
@@ -113,5 +122,21 @@ class FoodAnalysisAdditivesFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis
         additivesRecyclerView.layoutManager = linearLayoutManager
         additivesRecyclerView.addItemDecoration(dividerItemDecoration)
         additivesRecyclerView.suppressLayout(true)
+    }
+
+    private val showAdditiveInfoDialog = { additiveName: String, description: String ->
+        alertDialog = AlertDialog.Builder(requireActivity()).apply {
+            setTitle(additiveName)
+            setMessage(description)
+            setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->
+                dialogInterface.cancel()
+            }
+        }.show()
+    }
+
+    private val searchAdditiveOnTheWeb = { additiveId: String ->
+        val url = requireActivity().getString(R.string.search_engine_additive_url, additiveId)
+        val intent: Intent = createSearchUrlIntent(url)
+        requireActivity().startActivity(intent)
     }
 }

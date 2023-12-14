@@ -216,7 +216,6 @@ class BarcodeDetailsActivity : BaseActivity() {
             R.id.menu_activity_barcode_details_share_image -> shareImage()
             R.id.menu_activity_barcode_details_share_text -> shareText()
         }
-
         return super.onOptionsItemSelected(item)
     }
 

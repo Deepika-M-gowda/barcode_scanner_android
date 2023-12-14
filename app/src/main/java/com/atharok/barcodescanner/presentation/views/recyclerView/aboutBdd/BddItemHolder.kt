@@ -32,7 +32,6 @@ class BddItemHolder(private val viewBinding: RecyclerViewItemAboutBinding)
     private val context = itemView.context
 
     fun updateItem(bdd: Bdd) {
-
         viewBinding.recyclerViewItemAboutTitleTextView.text = context.getString(bdd.nameResource)
         viewBinding.recyclerViewItemAboutLicenseTextView.visibility = View.GONE
         viewBinding.recyclerViewItemAboutAuthorTextView.visibility = View.GONE

@@ -57,6 +57,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
 
     private val adapter: BankHistoryItemAdapter = BankHistoryItemAdapter(this)
     private val bankItemSelected by lazy { mutableListOf<Bank>() }
+    private var alertDialog: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +70,11 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
         observeDatabase()
 
         setContentView(viewBinding.root)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        alertDialog?.dismiss()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -168,7 +174,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
     }
 
     private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
-        AlertDialog.Builder(this)
+        alertDialog = AlertDialog.Builder(this)
             .setTitle(R.string.delete_label)
             .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->

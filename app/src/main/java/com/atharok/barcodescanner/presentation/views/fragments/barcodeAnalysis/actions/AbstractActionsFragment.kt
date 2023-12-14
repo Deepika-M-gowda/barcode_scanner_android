@@ -63,6 +63,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
     private val viewBinding get() = _binding!!
 
+    private var alertDialog: AlertDialog? = null
     private val adapter = ActionButtonAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -73,6 +74,11 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        alertDialog?.dismiss()
     }
 
     override fun start(product: BarcodeAnalysis) {
@@ -209,12 +215,13 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
         val itemsLabel: Array<String> = items.map { it.first }.toTypedArray()
 
-        return AlertDialog.Builder(context).apply {
+        alertDialog = AlertDialog.Builder(context).apply {
             setTitle(title)
             setNegativeButton(R.string.close_dialog_label) {
                     dialogInterface, _ -> dialogInterface.cancel()
             }
             setItems(itemsLabel, onClickListener)
         }.create()
+        return alertDialog!!
     }
 }

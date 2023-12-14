@@ -32,7 +32,6 @@ class LibraryThirdItemHolder(private val viewBinding: RecyclerViewItemAboutBindi
     private val context = itemView.context
 
     fun updateItem(libraryThird: LibraryThird) {
-
         viewBinding.recyclerViewItemAboutTitleTextView.text = context.getString(libraryThird.nameResource)
         viewBinding.recyclerViewItemAboutLicenseTextView.text = context.getString(libraryThird.licenseResource)
         viewBinding.recyclerViewItemAboutAuthorTextView.text = context.getString(R.string.dependency_by, context.getString(libraryThird.authorResource))

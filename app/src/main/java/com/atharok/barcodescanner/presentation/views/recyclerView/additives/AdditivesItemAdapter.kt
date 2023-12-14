@@ -21,14 +21,16 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.additives
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAdditivesBinding
 import com.atharok.barcodescanner.domain.entity.dependencies.Additive
 
-class AdditivesItemAdapter(private val activity: Activity): RecyclerView.Adapter<AdditivesItemHolder>() {
+class AdditivesItemAdapter(
+    private val showAdditiveInfoDialog: (additiveName: String, description: String) -> Unit,
+    private val searchAdditiveOnTheWeb: (additiveId: String) -> Unit
+): RecyclerView.Adapter<AdditivesItemHolder>() {
 
     private val additivesList = mutableListOf<Additive>()
 
@@ -36,7 +38,7 @@ class AdditivesItemAdapter(private val activity: Activity): RecyclerView.Adapter
         val layoutInflater = LayoutInflater.from(parent.context)
         val viewBinding = RecyclerViewItemAdditivesBinding.inflate(layoutInflater, parent, false)
 
-        return AdditivesItemHolder(activity, viewBinding)
+        return AdditivesItemHolder(viewBinding, showAdditiveInfoDialog, searchAdditiveOnTheWeb)
     }
 
     override fun getItemCount(): Int = additivesList.size
@@ -46,7 +48,7 @@ class AdditivesItemAdapter(private val activity: Activity): RecyclerView.Adapter
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(additivesList: List<Additive>){
+    fun update(additivesList: List<Additive>) {
         this.additivesList.clear()
         this.additivesList.addAll(additivesList)
         this.notifyDataSetChanged()

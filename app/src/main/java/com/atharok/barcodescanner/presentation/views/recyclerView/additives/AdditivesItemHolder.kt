@@ -20,28 +20,25 @@
 
 package com.atharok.barcodescanner.presentation.views.recyclerView.additives
 
-import android.app.Activity
-import android.content.Intent
+import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.setImageColorFromAttrRes
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAdditivesBinding
+import com.atharok.barcodescanner.databinding.TemplateChipBinding
 import com.atharok.barcodescanner.domain.entity.dependencies.Additive
 import com.atharok.barcodescanner.domain.entity.dependencies.AdditiveClass
 import com.atharok.barcodescanner.domain.entity.dependencies.OverexposureRiskRate
-import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
-import com.google.android.material.chip.Chip
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
+import com.google.android.material.chip.ChipGroup
 
 /**
  * Représente une ligne (TableRow) d'un tableau (Table) qui est gérer par un Adapter (IngredientsAdapter).
  */
-class AdditivesItemHolder(private val activity: Activity,
-                          private val viewBinding: RecyclerViewItemAdditivesBinding)
-    : RecyclerView.ViewHolder(viewBinding.root) {
+class AdditivesItemHolder(
+    private val viewBinding: RecyclerViewItemAdditivesBinding,
+    private val showAdditiveInfoDialog: (additiveName: String, description: String) -> Unit,
+    private val searchAdditiveOnTheWeb: (additiveId: String) -> Unit
+) : RecyclerView.ViewHolder(viewBinding.root) {
 
     private val context = itemView.context
 
@@ -52,9 +49,7 @@ class AdditivesItemHolder(private val activity: Activity,
 
         // ---- Info Image Button ----
         viewBinding.recyclerViewItemAdditivesInfoButton.setOnClickListener {
-            val url = context.getString(R.string.search_engine_additive_url, additive.additiveId)
-            val intent: Intent = createSearchUrlIntent(url)
-            activity.startActivity(intent)
+            searchAdditiveOnTheWeb(additive.additiveId)
         }
 
         // ---- Overexposure Risk ----
@@ -73,29 +68,22 @@ class AdditivesItemHolder(private val activity: Activity,
         handleType(additive.additiveClassList)
     }
 
-    private fun handleType(additiveClassList: List<AdditiveClass>){
-
+    private fun handleType(additiveClassList: List<AdditiveClass>) {
+        val chipGroup: ChipGroup = viewBinding.recyclerViewItemAdditivesTypeChipGroup
         if(additiveClassList.isNotEmpty()) {
+            val inflater = LayoutInflater.from(context)
             for (additiveClass in additiveClassList) {
-                val chip = activity.get<Chip> { parametersOf(activity, additiveClass.name) }
-
-                viewBinding.recyclerViewItemAdditivesTypeLayout.addView(chip)
-
-                chip.setOnClickListener {
-                    showAdditiveClassDescriptionDialog(additiveClass.name, additiveClass.description)
+                val chipLayout = TemplateChipBinding.inflate(inflater)
+                chipLayout.root.apply {
+                    this.text = additiveClass.name
+                    this.setOnClickListener {
+                        showAdditiveInfoDialog(additiveClass.name, additiveClass.description)
+                    }
+                    chipGroup.addView(this)
                 }
             }
-        }else{
-            viewBinding.recyclerViewItemAdditivesTypeLayout.visibility = View.GONE
+        } else {
+            chipGroup.visibility = View.GONE
         }
-
-    }
-
-    private fun showAdditiveClassDescriptionDialog(title: String, message: String){
-        val dialog = activity.get<AlertDialog> {
-            parametersOf(activity, title, message)
-        }
-
-        dialog.show()
     }
 }

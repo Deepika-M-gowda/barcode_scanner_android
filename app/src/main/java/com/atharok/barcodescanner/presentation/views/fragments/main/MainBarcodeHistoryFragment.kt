@@ -78,6 +78,8 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     private var barcodes: List<Barcode>? = null
 
+    private var alertDialog: AlertDialog? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMainHistoryBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -86,6 +88,11 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        alertDialog?.dismiss()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -144,7 +151,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
                 R.id.menu_history_export_as_csv -> { startExportation(FileFormat.CSV);true }
                 R.id.menu_history_export_as_json -> { startExportation(FileFormat.JSON);true }
                 R.id.menu_history_import_json -> { startImportation(FileFormat.JSON);true }
-                else -> false
+                else -> true
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
@@ -226,9 +233,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
     }
 
     private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
-        //MaterialAlertDialogBuilder(requireActivity())
-        AlertDialog.Builder(requireActivity())
-            //.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.dialog_background))
+        alertDialog = AlertDialog.Builder(requireActivity())
             .setTitle(R.string.delete_label)
             .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->

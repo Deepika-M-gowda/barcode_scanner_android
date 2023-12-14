@@ -33,7 +33,6 @@ class NutritionFactsHolder(private val viewBinding: RecyclerViewItemNutritionFac
     private val context = itemView.context
 
     fun updateItem(nutrient: Nutrient, showServing: Boolean) {
-
         // Pour les sous-nutriments
         if(nutrient.entitled == NutritionFactsEnum.SATURATED_FAT ||
             nutrient.entitled == NutritionFactsEnum.SUGARS ||
