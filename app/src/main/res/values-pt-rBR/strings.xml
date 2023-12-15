@@ -608,7 +608,7 @@
     <string name="qr_code_type_name_agenda">Agenda</string>
     <string name="qr_code_type_name_wifi">Wi-Fi</string>
     <string name="barcode_upc_e_label">UPC E</string>
-    <string name="matrix_localisation_altitude_label">Altitude:</string>
+    <string name="matrix_localisation_altitude_label">Altitude</string>
     <string name="barcode_itf_label">ITF</string>
     <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
     <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
@@ -621,7 +621,7 @@
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search\?query=%1$s&amp;type=release</string>
     <string name="search_engine_amazon_url">https://www.amazon.com/s\?k=%1$s</string>
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search\?q=%1$s</string>
     <string name="search_engine_google_url">https://www.google.com/search\?q=%1$s</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/\?q=%1$s</string>
@@ -656,4 +656,5 @@
     <string name="width_label">Largura</string>
     <string name="colors_label">Cores</string>
     <string name="height_label">Altura</string>
+    <string name="copy_label">Copiar</string>
 </resources>
