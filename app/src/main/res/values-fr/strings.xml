@@ -263,7 +263,7 @@
     <string name="matrix_wifi_password_label">Mot de passe</string>
     <string name="matrix_wifi_encryption_label">Chiffrement</string>
     <string name="matrix_wifi_is_hidden_label">Caché</string>
-    <string name="matrix_wifi_anonymous_identity_label">identité anonyme</string>
+    <string name="matrix_wifi_anonymous_identity_label">Identité anonyme</string>
     <string name="matrix_wifi_identity_label">Identité</string>
     <string name="matrix_wifi_eap_method_label">Eap Method</string>
     <string name="matrix_wifi_phase_2_method_label">Phase 2 Method</string>
@@ -579,17 +579,17 @@
     <string name="dependency_by">par %1$s</string>
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing (zebra crossing) est une bibliothèque de traitement de codes barres 1D/2D libre et multi-format.</string>
-    <string name="dependency_camera_x_description_label">La librairie de supports de Jetpack CameraX donne une API de caméra Android facile à utiliser et pleine de fonctionnalités.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Librairie de scanneurs de code pour Android, basée sur ZXing.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard est une librairie vCard écrite en Java. Elle peut lire et écrire des vCards dans différents formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper est une librairie de recadrage d\'image pour Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
+    <string name="dependency_camera_x_description_label">La bibliothèque CameraX fournit une API simple et riche en fonctionnalités permettant la gestion de la caméra sur Android.</string>
+    <string name="dependency_zxing_code_scanner_description_label">Bibliothèque permettant de scanner des codes-barres pour Android, basée sur ZXing.</string>
+    <string name="dependency_ez_vcard_description_label">ez-vcard est une bibliothèque vCard écrite en Java. Elle peut lire et écrire des vCards dans différents formats.</string>
+    <string name="dependency_android_image_cropper_description_label">Android Image Cropper est une bibliothèque de recadrage d\'image pour Android.</string>
+    <string name="dependency_coil_description_label">Une bibliothèque de chargement d\'images pour Android fonctionnant avec les coroutines Kotlin.</string>
     <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
     <string name="dependency_koin_description_label">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
+    <string name="dependency_room_description_label">Room fournit une couche d\'abstraction pour SQLite, permettant un accès fluide aux bases de données en exploitant toute la puissance de SQLite.</string>
     <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
     <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
-    <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
     <string name="dependency_color_picker_description_label">Une bibliothèque de sélection de couleurs pour Android.</string>
     <!-- Countries -->

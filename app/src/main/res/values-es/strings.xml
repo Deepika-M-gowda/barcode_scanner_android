@@ -698,4 +698,16 @@
     <string name="export_label">Exportar</string>
     <string name="snack_bar_message_file_import_success">¡Archivo importado!</string>
     <string name="export_json_label">Exportar como un JSON</string>
+    <string name="corners_radius">Radio de las esquinas</string>
+    <string name="dependency_color_picker_description_label">Biblioteca de selección de colores para Android.</string>
+    <string name="barcode_color">Color del código de barras</string>
+    <string name="color_shades_issue">Es posible que no se detecten algunos matices de color.</string>
+    <string name="shapes_label">Formas</string>
+    <string name="keep_proportions">Guardar las proporciones</string>
+    <string name="dimensions_label">Dimensiones</string>
+    <string name="background_color">Color de fondo</string>
+    <string name="image_properties">Propiedades de la imagen</string>
+    <string name="width_label">Anchura</string>
+    <string name="colors_label">Colores</string>
+    <string name="height_label">Altura</string>
 </resources>

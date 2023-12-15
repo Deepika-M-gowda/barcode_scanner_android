@@ -206,7 +206,7 @@
     <string name="matrix_localisation_location_disabled_label">A localização em seu dispositivo parece não estar ativada.</string>
     <string name="barcode_industrial_description_label">Este tipo de código de barras é muitas vezes usado na indústria.</string>
     <string name="barcode_code_39_description_label">Código 39 é um código de barras usado na fabricação têxtil e de droga em farmácias. É também usado no setor militar e na indústria automotiva.</string>
-    <string name="barcode_codabar_description_label">Código Codabar é um código de barras feito para ser lido por impressoras matriciais. Hoje, o Codabar é poco usado para o benefício dos outros tipos de código de barras, mas ainda é usado por algumas organizações como bibliotecas.</string>
+    <string name="barcode_codabar_description_label">Código Codabar é um código de barras feito para ser lido por impressoras matriciais. Hoje, o Codabar é pouco usado para o benefício dos outros tipos de código de barras, mas ainda é usado por algumas organizações como bibliotecas.</string>
     <string name="matrix_localisation_query_label">Consulta</string>
     <string name="matrix_localisation_latitude_label">Latitude</string>
     <string name="matrix_localisation_longitude_label">Longitude</string>
@@ -644,4 +644,16 @@
     <string name="export_label">Exportar</string>
     <string name="snack_bar_message_file_import_success">Arquivo importado!</string>
     <string name="export_json_label">Exportar como JSON</string>
+    <string name="corners_radius">Raio das bordas</string>
+    <string name="dependency_color_picker_description_label">Uma biblioteca de seleção de cores para o Android.</string>
+    <string name="barcode_color">Cor do código de barras</string>
+    <string name="color_shades_issue">Alguns tons de cor podem não ser detectados.</string>
+    <string name="shapes_label">Formas</string>
+    <string name="keep_proportions">Manter proporções</string>
+    <string name="dimensions_label">Dimensões</string>
+    <string name="background_color">Cor de fundo</string>
+    <string name="image_properties">Propriedades da Imagem</string>
+    <string name="width_label">Largura</string>
+    <string name="colors_label">Cores</string>
+    <string name="height_label">Altura</string>
 </resources>
