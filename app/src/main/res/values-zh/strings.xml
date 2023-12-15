@@ -228,51 +228,51 @@
     <string name="bar_code_content_label">条码内容</string>
     <string name="bar_code_analysis_label">条码分析</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">名字：</string>
-    <string name="matrix_contact_organisation_label">公司：</string>
-    <string name="matrix_contact_title_label">标题：</string>
-    <string name="matrix_contact_phone_label">电话：</string>
-    <string name="matrix_contact_mail_label">电子邮件：</string>
-    <string name="matrix_contact_address_label">地址：</string>
-    <string name="matrix_contact_notes_label">备注：</string>
+    <string name="matrix_contact_name_label">名字</string>
+    <string name="matrix_contact_organisation_label">公司</string>
+    <string name="matrix_contact_title_label">标题</string>
+    <string name="matrix_contact_phone_label">电话</string>
+    <string name="matrix_contact_mail_label">电子邮件</string>
+    <string name="matrix_contact_address_label">地址</string>
+    <string name="matrix_contact_notes_label">备注</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">事件名：</string>
-    <string name="matrix_agenda_start_date_event_label">开始：</string>
-    <string name="matrix_agenda_end_date_event_label">结束：</string>
-    <string name="matrix_agenda_place_event_label">地点：</string>
-    <string name="matrix_agenda_description_event_label">介绍：</string>
+    <string name="matrix_agenda_name_event_label">事件名</string>
+    <string name="matrix_agenda_start_date_event_label">开始</string>
+    <string name="matrix_agenda_end_date_event_label">结束</string>
+    <string name="matrix_agenda_place_event_label">地点</string>
+    <string name="matrix_agenda_description_event_label">介绍</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">电话：</string>
+    <string name="matrix_phone_tel_number_label">电话</string>
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">收件人：</string>
-    <string name="matrix_email_cc_label">抄送：</string>
-    <string name="matrix_email_bcc_label">BCC:</string>
-    <string name="matrix_subject_label">主题：</string>
-    <string name="matrix_body_label">信息：</string>
+    <string name="matrix_email_recipient_label">收件人</string>
+    <string name="matrix_email_cc_label">抄送</string>
+    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_subject_label">主题</string>
+    <string name="matrix_body_label">信息</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">密码：</string>
-    <string name="matrix_wifi_encryption_label">加密方式：</string>
-    <string name="matrix_wifi_is_hidden_label">隐藏：</string>
-    <string name="matrix_wifi_anonymous_identity_label">匿名身份：</string>
-    <string name="matrix_wifi_identity_label">身份：</string>
-    <string name="matrix_wifi_eap_method_label">Eap 类型：</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2 类型：</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_wifi_password_label">密码</string>
+    <string name="matrix_wifi_encryption_label">加密方式</string>
+    <string name="matrix_wifi_is_hidden_label">隐藏</string>
+    <string name="matrix_wifi_anonymous_identity_label">匿名身份</string>
+    <string name="matrix_wifi_identity_label">身份</string>
+    <string name="matrix_wifi_eap_method_label">Eap 类型</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 类型</string>
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">可能是恶意URL…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI 分析</string>
-    <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">收款人名称：</string>
-    <string name="matrix_uri_upi_amount_label">金额：</string>
-    <string name="matrix_uri_upi_currency_label">货币：</string>
-    <string name="matrix_uri_upi_description_label">描述：</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="matrix_uri_upi_payee_name_label">收款人名称</string>
+    <string name="matrix_uri_upi_amount_label">金额</string>
+    <string name="matrix_uri_upi_currency_label">货币</string>
+    <string name="matrix_uri_upi_description_label">描述</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">纬度：</string>
-    <string name="matrix_localisation_longitude_label">经度：</string>
-    <string name="matrix_localisation_altitude_label">高度：</string>
-    <string name="matrix_localisation_query_label">查询：</string>
+    <string name="matrix_localisation_latitude_label">纬度</string>
+    <string name="matrix_localisation_longitude_label">经度</string>
+    <string name="matrix_localisation_altitude_label">高度</string>
+    <string name="matrix_localisation_query_label">查询</string>
     <string name="matrix_localisation_button_find_location">根据您的位置生成</string>
     <string name="matrix_localisation_search_current_position_label">搜索当前位置…</string>
     <string name="matrix_localisation_location_disabled_label">您设备上的位置功能似乎没有被开启。</string>
@@ -297,7 +297,7 @@
     <string name="actions_label">功能</string>
     <string name="intent_chooser_share_title">分享…</string>
     <string name="intent_chooser_mail_title">发送邮件…</string>
-    <string name="copy_label">复制内容</string>
+    <string name="copy_barcode_label">复制内容</string>
     <string name="barcode_copied_label">条码已复制</string>
     <string name="barcode_search_error_label">Url不支持</string>
     <string name="search_label">搜索</string>

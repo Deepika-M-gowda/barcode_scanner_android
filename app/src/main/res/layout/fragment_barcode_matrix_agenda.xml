@@ -1,127 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixAgendaFragment">
 
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_name_event_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_margin"
+        app:title_text="@string/matrix_agenda_name_event_label" />
 
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_name_event_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_agenda_name_event_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_name_event_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_start_date_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_layout">
+        android:paddingTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_layout"
+        app:title_text="@string/matrix_agenda_start_date_event_label" />
 
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_start_date_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_agenda_start_date_event_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_start_date_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_end_date_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_layout">
+        android:paddingTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_layout"
+        app:title_text="@string/matrix_agenda_end_date_event_label" />
 
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_end_date_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_agenda_end_date_event_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_end_date_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_place_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_layout">
+        android:paddingTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_layout"
+        app:title_text="@string/matrix_agenda_place_event_label" />
 
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_place_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_agenda_place_event_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_place_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_agenda_place_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_agenda_place_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_description_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_agenda_description_event_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_agenda_description_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_agenda_description_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
+        android:paddingTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_agenda_place_layout"
+        app:title_text="@string/matrix_agenda_description_event_label" />
 
 </RelativeLayout>

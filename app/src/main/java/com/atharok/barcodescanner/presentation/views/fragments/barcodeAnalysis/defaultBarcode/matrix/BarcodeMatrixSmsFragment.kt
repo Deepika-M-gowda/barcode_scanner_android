@@ -25,6 +25,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixSmsBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
@@ -50,29 +51,15 @@ class BarcodeMatrixSmsFragment : AbstractBarcodeMatrixFragment() {
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
         if(parsedResult is SMSParsedResult && parsedResult.type == ParsedResultType.SMS) {
-            configurePhoneNumber(parsedResult.numbers)
-            configureSmsSubject(parsedResult.subject)
-            configureSmsBody(parsedResult.body)
+            val phoneNumberView = viewBinding.fragmentBarcodeMatrixSmsNumberLayout
+            val subjectView = viewBinding.fragmentBarcodeMatrixSmsSubjectLayout
+            val bodyView = viewBinding.fragmentBarcodeMatrixSmsBodyLayout
+
+            phoneNumberView.setContentsText(parsedResult.numbers?.convertToString())
+            subjectView.setContentsText(parsedResult.subject)
+            bodyView.setContentsText(parsedResult.body)
         }else{
             viewBinding.root.visibility = View.GONE
         }
     }
-
-    private fun configurePhoneNumber(phoneNumbers: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixSmsNumberTextView,
-        layout = viewBinding.fragmentBarcodeMatrixSmsNumberLayout,
-        array = phoneNumbers
-    )
-
-    private fun configureSmsSubject(subject: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixSmsSubjectTextView,
-        layout = viewBinding.fragmentBarcodeMatrixSmsSubjectLayout,
-        text = subject
-    )
-
-    private fun configureSmsBody(message: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixSmsBodyTextView,
-        layout = viewBinding.fragmentBarcodeMatrixSmsBodyLayout,
-        text = message
-    )
 }

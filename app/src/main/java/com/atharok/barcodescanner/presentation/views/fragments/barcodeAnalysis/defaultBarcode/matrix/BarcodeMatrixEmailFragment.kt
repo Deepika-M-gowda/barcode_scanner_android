@@ -25,6 +25,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixEmailBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.google.zxing.client.result.EmailAddressParsedResult
@@ -50,43 +51,19 @@ class BarcodeMatrixEmailFragment : AbstractBarcodeMatrixFragment() {
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
         if(parsedResult is EmailAddressParsedResult && parsedResult.type == ParsedResultType.EMAIL_ADDRESS) {
-            configureAddress(parsedResult.tos)
-            configureCC(parsedResult.cCs)
-            configureBCC(parsedResult.bcCs)
-            configureSubject(parsedResult.subject)
-            configureBody(parsedResult.body)
+            val emailAddressView = viewBinding.fragmentBarcodeMatrixEmailAddressLayout
+            val ccView = viewBinding.fragmentBarcodeMatrixEmailCcLayout
+            val bccView = viewBinding.fragmentBarcodeMatrixEmailBccLayout
+            val subjectView = viewBinding.fragmentBarcodeMatrixEmailSubjectLayout
+            val bodyView = viewBinding.fragmentBarcodeMatrixEmailBodyLayout
+
+            emailAddressView.setContentsText(parsedResult.tos?.convertToString())
+            ccView.setContentsText(parsedResult.cCs?.convertToString())
+            bccView.setContentsText(parsedResult.bcCs?.convertToString())
+            subjectView.setContentsText(parsedResult.subject)
+            bodyView.setContentsText(parsedResult.body)
         }else{
             viewBinding.root.visibility = View.GONE
         }
     }
-
-    private fun configureAddress(addresses: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixEmailAddressTextView,
-        layout = viewBinding.fragmentBarcodeMatrixEmailAddressLayout,
-        array = addresses
-    )
-
-    private fun configureCC(ccs: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixEmailCcTextView,
-        layout = viewBinding.fragmentBarcodeMatrixEmailCcLayout,
-        array = ccs
-    )
-
-    private fun configureBCC(bccs: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixEmailBccTextView,
-        layout = viewBinding.fragmentBarcodeMatrixEmailBccLayout,
-        array = bccs
-    )
-
-    private fun configureSubject(subject: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixEmailSubjectTextView,
-        layout = viewBinding.fragmentBarcodeMatrixEmailSubjectLayout,
-        text = subject
-    )
-
-    private fun configureBody(message: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixEmailBodyTextView,
-        layout = viewBinding.fragmentBarcodeMatrixEmailBodyLayout,
-        text = message
-    )
 }

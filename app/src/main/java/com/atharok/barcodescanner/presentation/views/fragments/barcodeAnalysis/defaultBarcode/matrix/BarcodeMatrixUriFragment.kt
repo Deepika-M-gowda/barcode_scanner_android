@@ -39,10 +39,6 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
     private var _binding: FragmentBarcodeMatrixUriBinding? = null
     private val viewBinding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeMatrixUriBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -56,26 +52,22 @@ class BarcodeMatrixUriFragment: AbstractBarcodeMatrixFragment() {
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
         if(parsedResult is URIParsedResult && parsedResult.type == ParsedResultType.URI) {
             val uri = parsedResult.uri
-            configureUri(uri)
+            viewBinding.fragmentBarcodeMatrixUriUrlLayout.setContentsText(uri)
             configureIsPossiblyMaliciousURI(parsedResult.isPossiblyMaliciousURI)
             if(uri.startsWith("upi")) {
                 applyFragment(
                     containerViewId = viewBinding.fragmentBarcodeMatrixUriParsedLayout.id,
                     fragment = BarcodeMatrixUpiParsedFragment.newInstance(uri)
                 )
+            } else {
+                viewBinding.fragmentBarcodeMatrixUriParsedLayout.visibility = View.GONE
             }
-        }else{
+        } else {
             viewBinding.root.visibility = View.GONE
         }
     }
 
-    private fun configureUri(uri: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixUriUrlTextView,
-        layout = viewBinding.fragmentBarcodeMatrixUriUrlLayout,
-        text = uri
-    )
-
-    private fun configureIsPossiblyMaliciousURI(isPossiblyMaliciousURI: Boolean?){
+    private fun configureIsPossiblyMaliciousURI(isPossiblyMaliciousURI: Boolean?) {
         if (isPossiblyMaliciousURI != true) {
             viewBinding.fragmentBarcodeMatrixUriMaliciousLayout.visibility = View.GONE
         }

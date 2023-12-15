@@ -50,7 +50,7 @@ class BarcodeImageEditorShapesFragment : AbstractBarcodeImageEditorFragment() {
 
         viewBinding.fragmentBarcodeImageEditorShapesCornerRadiusSlider.apply {
             value = arguments?.getFloat(BARCODE_IMAGE_CORNER_RADIUS_KEY, 0f) ?: 0f
-            addOnChangeListener { slider, value, fromUser ->
+            addOnChangeListener { _, value, _ ->
                 onBarcodeDetailsActivity { activity ->
                     activity.regenerateBitmap(cornerRadius = value)
                 }

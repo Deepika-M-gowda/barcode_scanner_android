@@ -48,7 +48,7 @@ class CustomItemTouchHelperCallback(private val listener: ItemTouchHelperListene
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-        listener.onSwiped(viewHolder, direction, viewHolder.adapterPosition)
+        listener.onSwiped(viewHolder, direction, viewHolder.bindingAdapterPosition)
     }
 
     override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {

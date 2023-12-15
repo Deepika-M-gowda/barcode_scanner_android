@@ -98,7 +98,7 @@ class BarcodeImageEditorColorsFragment : AbstractBarcodeImageEditorFragment() {
             colorPickerDialog = ColorPickerDialog.Builder(requireActivity())
                 .setTitle(title)
                 .setDefaultColor(currentColor)
-                .setPositiveButton { color: Int, hexColorARGB: String ->
+                .setPositiveButton { color: Int, _: String ->
                     currentColor = color
                     imageView.setColorFilter(color)
                     updateBitmap(color)

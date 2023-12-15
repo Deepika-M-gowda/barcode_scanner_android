@@ -17,6 +17,11 @@
         <attr name="overlay_mask_color" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="DisplayTemplate1">
+        <attr name="title_text" format="string" />
+        <attr name="contents_text" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="HorizontalGraphView">
         <attr name="barHeight" format="dimension" />
         <attr name="lowBarColor" format="color" />

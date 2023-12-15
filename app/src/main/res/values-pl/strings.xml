@@ -228,51 +228,51 @@
     <string name="bar_code_content_label">Zawartość kodu</string>
     <string name="bar_code_analysis_label">Analiza kodu</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">Nazwa:</string>
-    <string name="matrix_contact_organisation_label">Organizacja:</string>
-    <string name="matrix_contact_title_label">Tytuł:</string>
-    <string name="matrix_contact_phone_label">Numer:</string>
-    <string name="matrix_contact_mail_label">Email:</string>
-    <string name="matrix_contact_address_label">Adres:</string>
-    <string name="matrix_contact_notes_label">Notka:</string>
+    <string name="matrix_contact_name_label">Nazwa</string>
+    <string name="matrix_contact_organisation_label">Organizacja</string>
+    <string name="matrix_contact_title_label">Tytuł</string>
+    <string name="matrix_contact_phone_label">Numer</string>
+    <string name="matrix_contact_mail_label">Email</string>
+    <string name="matrix_contact_address_label">Adres</string>
+    <string name="matrix_contact_notes_label">Notka</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Nazwa wydarzenia:</string>
-    <string name="matrix_agenda_start_date_event_label">Start:</string>
-    <string name="matrix_agenda_end_date_event_label">Koniec:</string>
-    <string name="matrix_agenda_place_event_label">Miejsce:</string>
-    <string name="matrix_agenda_description_event_label">Opis:</string>
+    <string name="matrix_agenda_name_event_label">Nazwa wydarzenia</string>
+    <string name="matrix_agenda_start_date_event_label">Start</string>
+    <string name="matrix_agenda_end_date_event_label">Koniec</string>
+    <string name="matrix_agenda_place_event_label">Miejsce</string>
+    <string name="matrix_agenda_description_event_label">Opis</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Numer:</string>
+    <string name="matrix_phone_tel_number_label">Numer</string>
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">Odbiorca:</string>
-    <string name="matrix_email_cc_label">CC:</string>
-    <string name="matrix_email_bcc_label">BCC:</string>
-    <string name="matrix_subject_label">Tytuł:</string>
-    <string name="matrix_body_label">Wiadomość:</string>
+    <string name="matrix_email_recipient_label">Odbiorca</string>
+    <string name="matrix_email_cc_label">CC</string>
+    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_subject_label">Tytuł</string>
+    <string name="matrix_body_label">Wiadomość</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">Hasło:</string>
-    <string name="matrix_wifi_encryption_label">Szyfrowanie:</string>
-    <string name="matrix_wifi_is_hidden_label">Ukryta:</string>
-    <string name="matrix_wifi_anonymous_identity_label">Tożsamość anonimowa:</string>
-    <string name="matrix_wifi_identity_label">Tożsamość:</string>
-    <string name="matrix_wifi_eap_method_label"> Metoda EAP:</string>
-    <string name="matrix_wifi_phase_2_method_label">Metoda faza 2:</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_wifi_password_label">Hasło</string>
+    <string name="matrix_wifi_encryption_label">Szyfrowanie</string>
+    <string name="matrix_wifi_is_hidden_label">Ukryta</string>
+    <string name="matrix_wifi_anonymous_identity_label">Tożsamość anonimowa</string>
+    <string name="matrix_wifi_identity_label">Tożsamość</string>
+    <string name="matrix_wifi_eap_method_label"> Metoda EAP</string>
+    <string name="matrix_wifi_phase_2_method_label">Metoda faza 2</string>
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">URL może być złośliwy…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">Analiza URI</string>
-    <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Nazwa odbiorcy płatności:</string>
-    <string name="matrix_uri_upi_amount_label">Kwota:</string>
-    <string name="matrix_uri_upi_currency_label">Waluta:</string>
-    <string name="matrix_uri_upi_description_label">Opis:</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="matrix_uri_upi_payee_name_label">Nazwa odbiorcy płatności</string>
+    <string name="matrix_uri_upi_amount_label">Kwota</string>
+    <string name="matrix_uri_upi_currency_label">Waluta</string>
+    <string name="matrix_uri_upi_description_label">Opis</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">Szerokość:</string>
-    <string name="matrix_localisation_longitude_label">Długość:</string>
-    <string name="matrix_localisation_altitude_label">Wysokość:</string>
-    <string name="matrix_localisation_query_label">Zapytanie:</string>
+    <string name="matrix_localisation_latitude_label">Szerokość</string>
+    <string name="matrix_localisation_longitude_label">Długość</string>
+    <string name="matrix_localisation_altitude_label">Wysokość</string>
+    <string name="matrix_localisation_query_label">Zapytanie</string>
     <string name="matrix_localisation_button_find_location">Uzyskane z twojej pozyji</string>
     <string name="matrix_localisation_search_current_position_label">Szukanie twojej pozycji…</string>
     <string name="matrix_localisation_location_disabled_label">Lokalizacja nie jest włączona na twoim urządzeniu.</string>
@@ -296,7 +296,7 @@
     <string name="actions_label">Akcje</string>
     <string name="intent_chooser_share_title">"Udostępnij z…"</string>
     <string name="intent_chooser_mail_title">"Wyśli email…"</string>
-    <string name="copy_label">Kopiuj kod</string>
+    <string name="copy_barcode_label">Kopiuj kod</string>
     <string name="barcode_copied_label">Kod skopiowany</string>
     <string name="barcode_search_error_label">Url niewspierany</string>
     <string name="search_label">Szukaj</string>

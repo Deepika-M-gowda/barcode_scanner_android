@@ -56,50 +56,21 @@ class BarcodeMatrixAgendaFragment : AbstractBarcodeMatrixFragment() {
 
     override fun start(product: BarcodeAnalysis, parsedResult: ParsedResult) {
         if(parsedResult is CalendarParsedResult && parsedResult.type == ParsedResultType.CALENDAR) {
-            configureNameEvent(parsedResult.summary)
-            configureStartEvent(parsedResult.startTimestamp)
-            configureEndEvent(parsedResult.endTimestamp)
-            configurePlace(parsedResult.location)
-            configureDescription(parsedResult.description)
+            val nameEventView = viewBinding.fragmentBarcodeMatrixAgendaNameEventLayout
+            val startEventView = viewBinding.fragmentBarcodeMatrixAgendaStartDateLayout
+            val endEventView = viewBinding.fragmentBarcodeMatrixAgendaEndDateLayout
+            val placeView = viewBinding.fragmentBarcodeMatrixAgendaPlaceLayout
+            val descriptionView = viewBinding.fragmentBarcodeMatrixAgendaDescriptionLayout
+
+            nameEventView.setContentsText(parsedResult.summary)
+            startEventView.setContentsText(getDateFormat(parsedResult.startTimestamp))
+            endEventView.setContentsText(getDateFormat(parsedResult.endTimestamp))
+            placeView.setContentsText(parsedResult.location)
+            descriptionView.setContentsText(parsedResult.description)
         } else {
             viewBinding.root.visibility = View.GONE
         }
     }
-
-    private fun configureNameEvent(name: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixAgendaNameEventTextView,
-        layout = viewBinding.fragmentBarcodeMatrixAgendaNameEventLayout,
-        text = name
-    )
-
-    private fun configureStartEvent(startDate: Long?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixAgendaStartDateTextView,
-        layout = viewBinding.fragmentBarcodeMatrixAgendaStartDateLayout,
-        text = getDateFormat(startDate)
-    )
-
-    private fun configureEndEvent(endDate: Long?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixAgendaEndDateTextView,
-        layout = viewBinding.fragmentBarcodeMatrixAgendaEndDateLayout,
-        text = getDateFormat(endDate)
-    )
-
-    private fun configurePlace(place: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixAgendaPlaceTextView,
-        layout = viewBinding.fragmentBarcodeMatrixAgendaPlaceLayout,
-        text = place
-    )
-
-    private fun configureDescription(description: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixAgendaDescriptionTextView,
-        layout = viewBinding.fragmentBarcodeMatrixAgendaDescriptionLayout,
-        text = description
-    )
-
-    /*private fun getDateFormat(date: Long?): String? = if(date!=null){
-        val d = date + TimeZone.getTimeZone("GMT").rawOffset - TimeZone.getDefault().rawOffset
-        simpleDateFormat.format(d)
-    } else null*/
 
     private fun getDateFormat(date: Long?): String? = if(date!=null) {
         simpleDateFormat.format(date)

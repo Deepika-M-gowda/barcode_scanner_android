@@ -365,7 +365,7 @@
     <string name="country_do">الجمهورية الدومينيكية</string>
     <string name="snack_bar_message_permission_refused">يجب عليك قبول الإذن لاستخدام هذه الوظيفة.</string>
     <string name="preferences_information_about_remote_api_barcode_types_concerned_description">يتم تنشيط وظيفة البحث عن API فقط للرموز الشريطية EAN 13 وEAN 8 وUPC A وUPC E.</string>
-    <string name="copy_label">نسخ الباركود</string>
+    <string name="copy_barcode_label">نسخ الباركود</string>
     <string name="action_wifi_failure_added_label">فشل أثناء إضافة اتصال Wi-Fi</string>
     <string name="off_quantity_moderate_label">كمية معتدلة</string>
     <string name="action_wifi_connection_from_wifi_settings">انسخ كلمة المرور وانتقل إلى إعدادات Wi-Fi</string>
@@ -424,7 +424,7 @@
     <string name="country_mx">المكسيك</string>
     <string name="additive_no_information_found_label">لم يتم العثور على معلومات عن هذه المادة المضافة!</string>
     <string name="stabilizer_description_label">"المثبتات والمكثفات وعوامل التبلور، مثل الأجار أو البكتين (المستخدمة في المربى على سبيل المثال) تعطي الأطعمة قوامًا أكثر صلابة.  على الرغم من أنها ليست مستحلبات حقيقية، إلا أنها تساعد على استقرار المستحلبات."</string>
-    <string name="off_per_100_label">مقابل 100%1$</string>
+    <string name="off_per_100_label">100%1$s مقابل </string>
     <string name="matrix_contact_title_label">عنوان:</string>
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="qr_code_text_radio_button_label_none">لا أحد</string>

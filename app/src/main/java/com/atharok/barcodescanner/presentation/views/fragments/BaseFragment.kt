@@ -80,7 +80,7 @@ abstract class BaseFragment: Fragment() {
             layout.visibility = View.GONE
             false
         } else {
-            textView.text = text.trim()
+            textView.text = text//.trim()
             layout.visibility = View.VISIBLE
             true
         }

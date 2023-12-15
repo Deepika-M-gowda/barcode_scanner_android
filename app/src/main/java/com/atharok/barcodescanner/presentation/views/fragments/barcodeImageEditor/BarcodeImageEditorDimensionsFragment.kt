@@ -153,7 +153,7 @@ class BarcodeImageEditorDimensionsFragment : AbstractBarcodeImageEditorFragment(
             proportionsHeight = heightInputEditText.text.toString().toIntOrNull() ?: 1
         }
 
-        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+        checkBox.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked) {
                 proportionsWidth = widthInputEditText.text.toString().toIntOrNull() ?: 1
                 proportionsHeight = heightInputEditText.text.toString().toIntOrNull() ?: 1

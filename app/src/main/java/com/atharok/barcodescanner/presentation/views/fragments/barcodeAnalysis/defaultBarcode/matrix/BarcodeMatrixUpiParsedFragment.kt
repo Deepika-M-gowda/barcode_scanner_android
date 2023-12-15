@@ -53,36 +53,21 @@ class BarcodeMatrixUpiParsedFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         uri?.let {
-
-            /*val entitledTextView = viewBinding.fragmentBarcodeMatrixUpiTemplateEntitledView.templateTextViewTitleTextView
-            entitledTextView.setText(R.string.matrix_uri_upi_entitled_label)*/
-
             val uriParsed: Uri = Uri.parse(uri)
-            displayText(
-                textView = viewBinding.fragmentBarcodeMatrixUpiParsedUpiIdTextView,
-                layout = viewBinding.fragmentBarcodeMatrixUpiParsedUpiIdLayout,
-                text = uriParsed.getQueryParameter("pa")
-            )
-            displayText(
-                textView = viewBinding.fragmentBarcodeMatrixUpiParsedPayeeNameTextView,
-                layout = viewBinding.fragmentBarcodeMatrixUpiParsedPayeeNameLayout,
-                text = uriParsed.getQueryParameter("pn")
-            )
-            displayText(
-                textView = viewBinding.fragmentBarcodeMatrixUpiParsedAmountTextView,
-                layout = viewBinding.fragmentBarcodeMatrixUpiParsedAmountLayout,
-                text = uriParsed.getQueryParameter("am")
-            )
-            displayText(
-                textView = viewBinding.fragmentBarcodeMatrixUpiParsedCurrencyTextView,
-                layout = viewBinding.fragmentBarcodeMatrixUpiParsedCurrencyLayout,
-                text = uriParsed.getQueryParameter("cu")
-            )
-            displayText(
-                textView = viewBinding.fragmentBarcodeMatrixUpiParsedDescriptionTextView,
-                layout = viewBinding.fragmentBarcodeMatrixUpiParsedDescriptionLayout,
-                text = uriParsed.getQueryParameter("tn")
-            )
+
+            val upiIdView = viewBinding.fragmentBarcodeMatrixUpiParsedUpiIdLayout
+            val payeeNameView = viewBinding.fragmentBarcodeMatrixUpiParsedPayeeNameLayout
+            val amountView = viewBinding.fragmentBarcodeMatrixUpiParsedAmountLayout
+            val currencyView = viewBinding.fragmentBarcodeMatrixUpiParsedCurrencyLayout
+            val descriptionView = viewBinding.fragmentBarcodeMatrixUpiParsedDescriptionLayout
+
+            upiIdView.setContentsText(uriParsed.getQueryParameter("pa"))
+            payeeNameView.setContentsText(uriParsed.getQueryParameter("pn"))
+            amountView.setContentsText(uriParsed.getQueryParameter("am"))
+            currencyView.setContentsText(uriParsed.getQueryParameter("cu"))
+            descriptionView.setContentsText(uriParsed.getQueryParameter("tn"))
+        } ?: run {
+            viewBinding.root.visibility = View.GONE
         }
     }
 

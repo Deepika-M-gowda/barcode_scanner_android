@@ -10,28 +10,33 @@
     app:cardElevation="2dp"
     app:cardUseCompatPadding="false">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_margin"
+        android:padding="@dimen/large_margin"
         android:layout_gravity="center">
-
         <ImageView
             android:id="@+id/template_action_button_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/light_margin"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/image_view_description_icon" />
+            android:paddingBottom="@dimen/light_margin"
+            android:contentDescription="@string/image_view_description_icon"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/template_action_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/light_margin"
-            android:layout_below="@id/template_action_button_icon"
-            android:gravity="center_horizontal" />
-    </RelativeLayout>
+            android:paddingTop="@dimen/light_margin"
+            android:gravity="center_horizontal"
+
+            app:layout_constraintTop_toBottomOf="@id/template_action_button_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

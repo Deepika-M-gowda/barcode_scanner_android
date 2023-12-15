@@ -10,7 +10,8 @@
     <RelativeLayout
         android:id="@+id/fragment_barcode_matrix_contact_name_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_margin">
 
         <TextView
             android:id="@+id/fragment_barcode_matrix_contact_name_label"

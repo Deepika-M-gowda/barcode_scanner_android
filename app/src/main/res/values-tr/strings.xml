@@ -228,51 +228,51 @@
     <string name="bar_code_content_label">Barkod içeriği</string>
     <string name="bar_code_analysis_label">Barkod analizi</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">İsim:</string>
-    <string name="matrix_contact_organisation_label">Kurum:</string>
-    <string name="matrix_contact_title_label">Ünvan:</string>
-    <string name="matrix_contact_phone_label">Telefon:</string>
-    <string name="matrix_contact_mail_label">E-posta:</string>
-    <string name="matrix_contact_address_label">Adres:</string>
-    <string name="matrix_contact_notes_label">Notlar:</string>
+    <string name="matrix_contact_name_label">İsim</string>
+    <string name="matrix_contact_organisation_label">Kurum</string>
+    <string name="matrix_contact_title_label">Ünvan</string>
+    <string name="matrix_contact_phone_label">Telefon</string>
+    <string name="matrix_contact_mail_label">E-posta</string>
+    <string name="matrix_contact_address_label">Adres</string>
+    <string name="matrix_contact_notes_label">Notlar</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Etkinlik adı:</string>
-    <string name="matrix_agenda_start_date_event_label">Başlangıç:</string>
-    <string name="matrix_agenda_end_date_event_label">Bitiş:</string>
-    <string name="matrix_agenda_place_event_label">Yer:</string>
-    <string name="matrix_agenda_description_event_label">Açıklama:</string>
+    <string name="matrix_agenda_name_event_label">Etkinlik adı</string>
+    <string name="matrix_agenda_start_date_event_label">Başlangıç</string>
+    <string name="matrix_agenda_end_date_event_label">Bitiş</string>
+    <string name="matrix_agenda_place_event_label">Yer</string>
+    <string name="matrix_agenda_description_event_label">Açıklama</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Telefon:</string>
+    <string name="matrix_phone_tel_number_label">Telefon</string>
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">Alıcı:</string>
-    <string name="matrix_email_cc_label">CC:</string>
-    <string name="matrix_email_bcc_label">BCC:</string>
-    <string name="matrix_subject_label">Konu:</string>
-    <string name="matrix_body_label">Mesaj:</string>
+    <string name="matrix_email_recipient_label">Alıcı</string>
+    <string name="matrix_email_cc_label">CC</string>
+    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_subject_label">Konu</string>
+    <string name="matrix_body_label">Mesaj</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">Şifre:</string>
-    <string name="matrix_wifi_encryption_label">Şifreleme:</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_wifi_password_label">Şifre</string>
+    <string name="matrix_wifi_encryption_label">Şifreleme</string>
     <string name="matrix_wifi_is_hidden_label">Gizli:</string>
-    <string name="matrix_wifi_anonymous_identity_label">Anonim Kimlik:</string>
-    <string name="matrix_wifi_identity_label">Kimlik:</string>
-    <string name="matrix_wifi_eap_method_label">Eap Metodu:</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2 Metodu:</string>
+    <string name="matrix_wifi_anonymous_identity_label">Anonim Kimlik</string>
+    <string name="matrix_wifi_identity_label">Kimlik</string>
+    <string name="matrix_wifi_eap_method_label">Eap Metodu</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 Metodu</string>
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">URL kötü amaçlı olabilir…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI analizi</string>
-    <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Alıcı Adı:</string>
-    <string name="matrix_uri_upi_amount_label">Miktar:</string>
-    <string name="matrix_uri_upi_currency_label">Para Birimi:</string>
-    <string name="matrix_uri_upi_description_label">Açıklama:</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="matrix_uri_upi_payee_name_label">Alıcı Adı</string>
+    <string name="matrix_uri_upi_amount_label">Miktar</string>
+    <string name="matrix_uri_upi_currency_label">Para Birimi</string>
+    <string name="matrix_uri_upi_description_label">Açıklama</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">Enlem:</string>
-    <string name="matrix_localisation_longitude_label">Boylam:</string>
-    <string name="matrix_localisation_altitude_label">Rakım:</string>
-    <string name="matrix_localisation_query_label">Sorgu:</string>
+    <string name="matrix_localisation_latitude_label">Enlem</string>
+    <string name="matrix_localisation_longitude_label">Boylam</string>
+    <string name="matrix_localisation_altitude_label">Rakım</string>
+    <string name="matrix_localisation_query_label">Sorgu</string>
     <string name="matrix_localisation_button_find_location">Konumunuzdan oluşturun</string>
     <string name="matrix_localisation_search_current_position_label">Şu anki konumunuzu arayın…</string>
     <string name="matrix_localisation_location_disabled_label">Cihazınızda konum etkinleştirilmemiş gibi görünüyor.</string>
@@ -296,7 +296,7 @@
     <string name="actions_label">Eylemler</string>
     <string name="intent_chooser_share_title">"İle paylaş…"</string>
     <string name="intent_chooser_mail_title">"E-posta gönder…"</string>
-    <string name="copy_label">Barkodu kopyala</string>
+    <string name="copy_barcode_label">Barkodu kopyala</string>
     <string name="barcode_copied_label">Barkod kopyalandı</string>
     <string name="barcode_search_error_label">Url desteklenmiyor</string>
     <string name="search_label">Ara</string>

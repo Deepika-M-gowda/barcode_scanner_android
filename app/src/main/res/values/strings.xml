@@ -237,51 +237,51 @@
     <string name="bar_code_content_label">Barcode content</string>
     <string name="bar_code_analysis_label">Barcode analysis</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">Name:</string>
-    <string name="matrix_contact_organisation_label">Organisation:</string>
-    <string name="matrix_contact_title_label">Title:</string>
-    <string name="matrix_contact_phone_label">Phone:</string>
-    <string name="matrix_contact_mail_label">Email:</string>
-    <string name="matrix_contact_address_label">Address:</string>
-    <string name="matrix_contact_notes_label">Notes:</string>
+    <string name="matrix_contact_name_label">Name</string>
+    <string name="matrix_contact_organisation_label">Organisation</string>
+    <string name="matrix_contact_title_label">Title</string>
+    <string name="matrix_contact_phone_label">Phone</string>
+    <string name="matrix_contact_mail_label">Email</string>
+    <string name="matrix_contact_address_label">Address</string>
+    <string name="matrix_contact_notes_label">Notes</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Event name:</string>
-    <string name="matrix_agenda_start_date_event_label">Start:</string>
-    <string name="matrix_agenda_end_date_event_label">End:</string>
-    <string name="matrix_agenda_place_event_label">Place:</string>
-    <string name="matrix_agenda_description_event_label">Description:</string>
+    <string name="matrix_agenda_name_event_label">Event name</string>
+    <string name="matrix_agenda_start_date_event_label">Start</string>
+    <string name="matrix_agenda_end_date_event_label">End</string>
+    <string name="matrix_agenda_place_event_label">Place</string>
+    <string name="matrix_agenda_description_event_label">Description</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Phone:</string>
+    <string name="matrix_phone_tel_number_label">Phone</string>
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">Recipient:</string>
-    <string name="matrix_email_cc_label">CC:</string>
-    <string name="matrix_email_bcc_label">BCC:</string>
-    <string name="matrix_subject_label">Subject:</string>
-    <string name="matrix_body_label">Message:</string>
+    <string name="matrix_email_recipient_label">Recipient</string>
+    <string name="matrix_email_cc_label">CC</string>
+    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_subject_label">Subject</string>
+    <string name="matrix_body_label">Message</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">Password:</string>
-    <string name="matrix_wifi_encryption_label">Encryption:</string>
-    <string name="matrix_wifi_is_hidden_label">Hidden:</string>
-    <string name="matrix_wifi_anonymous_identity_label">Anonymous Identity:</string>
-    <string name="matrix_wifi_identity_label">Identity:</string>
-    <string name="matrix_wifi_eap_method_label">Eap Method:</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2 Method:</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_wifi_password_label">Password</string>
+    <string name="matrix_wifi_encryption_label">Encryption</string>
+    <string name="matrix_wifi_is_hidden_label">Hidden</string>
+    <string name="matrix_wifi_anonymous_identity_label">Anonymous Identity</string>
+    <string name="matrix_wifi_identity_label">Identity</string>
+    <string name="matrix_wifi_eap_method_label">Eap Method</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2 Method</string>
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">URL may be malicious…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI analysis</string>
-    <string name="matrix_uri_upi_id_label">UPI ID:</string>
-    <string name="matrix_uri_upi_payee_name_label">Payee Name:</string>
-    <string name="matrix_uri_upi_amount_label">Amount:</string>
-    <string name="matrix_uri_upi_currency_label">Currency:</string>
-    <string name="matrix_uri_upi_description_label">Description:</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="matrix_uri_upi_payee_name_label">Payee Name</string>
+    <string name="matrix_uri_upi_amount_label">Amount</string>
+    <string name="matrix_uri_upi_currency_label">Currency</string>
+    <string name="matrix_uri_upi_description_label">Description</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">Latitude:</string>
-    <string name="matrix_localisation_longitude_label">Longitude:</string>
-    <string name="matrix_localisation_altitude_label">Altitude:</string>
-    <string name="matrix_localisation_query_label">Query:</string>
+    <string name="matrix_localisation_latitude_label">Latitude</string>
+    <string name="matrix_localisation_longitude_label">Longitude</string>
+    <string name="matrix_localisation_altitude_label">Altitude</string>
+    <string name="matrix_localisation_query_label">Query</string>
     <string name="matrix_localisation_button_find_location">Generate from your position</string>
     <string name="matrix_localisation_search_current_position_label">Search for the current position…</string>
     <string name="matrix_localisation_location_disabled_label">The location on your device does not seem to be activated.</string>
@@ -305,7 +305,8 @@
     <string name="actions_label">Actions</string>
     <string name="intent_chooser_share_title">"Share with…"</string>
     <string name="intent_chooser_mail_title">"Send email…"</string>
-    <string name="copy_label">Copy barcode</string>
+    <string name="copy_barcode_label">Copy barcode</string>
+    <string name="copy_label">Copy</string>
     <string name="barcode_copied_label">Barcode copied</string>
     <string name="barcode_search_error_label">Url not supported</string>
     <string name="search_label">Search</string>
@@ -824,6 +825,7 @@
     <!-- Local Language text -->
     <string name="locale_language_zh" translatable="false">简体中文</string>
     <string name="locale_language_zh_Tw" translatable="false">繁體中文</string>
+    <string name="locale_language_ar" translatable="false">العربية</string>
     <string name="locale_language_en" translatable="false">English</string>
     <string name="locale_language_de" translatable="false">Deutsch</string>
     <string name="locale_language_es" translatable="false">Español</string>

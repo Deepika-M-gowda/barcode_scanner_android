@@ -8,26 +8,12 @@
     tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixUriFragment">
 
     <!-- Url -->
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_uri_url_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_uri_url_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_uri_url_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_uri_url_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_uri_url_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_margin"
+        app:title_text="@string/matrix_uri_url_label" />
 
     <!--- Maybe Malicious -->
     <RelativeLayout
@@ -62,6 +48,7 @@
         android:id="@+id/fragment_barcode_matrix_uri_parsed_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/x_large_margin"
         android:layout_below="@id/fragment_barcode_matrix_uri_malicious_layout"/>
 
 </RelativeLayout>

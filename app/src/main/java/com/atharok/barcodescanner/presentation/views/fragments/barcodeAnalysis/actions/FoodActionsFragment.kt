@@ -38,7 +38,7 @@ class FoodActionsFragment: AbstractActionsFragment() {
     private fun configureFoodActions(barcode: Barcode) = arrayOf(
         ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, showUrlsAlertDialog(barcode.contents)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
+        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
     )
 
     // Actions

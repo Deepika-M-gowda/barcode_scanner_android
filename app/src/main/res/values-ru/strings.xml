@@ -228,51 +228,51 @@
     <string name="bar_code_content_label">Содержимое штрих-кода</string>
     <string name="bar_code_analysis_label">Анализ штрих-кода</string>
     <!-- Matrix Barcode Contact Analysis -->
-    <string name="matrix_contact_name_label">Имя:</string>
-    <string name="matrix_contact_organisation_label">Организация:</string>
-    <string name="matrix_contact_title_label">Название:</string>
-    <string name="matrix_contact_phone_label">Телефон:</string>
-    <string name="matrix_contact_mail_label">Email:</string>
-    <string name="matrix_contact_address_label">Адрес:</string>
-    <string name="matrix_contact_notes_label">Заметки:</string>
+    <string name="matrix_contact_name_label">Имя</string>
+    <string name="matrix_contact_organisation_label">Организация</string>
+    <string name="matrix_contact_title_label">Название</string>
+    <string name="matrix_contact_phone_label">Телефон</string>
+    <string name="matrix_contact_mail_label">Email</string>
+    <string name="matrix_contact_address_label">Адрес</string>
+    <string name="matrix_contact_notes_label">Заметки</string>
     <!-- Matrix Barcode Agenda Analysis -->
-    <string name="matrix_agenda_name_event_label">Название события:</string>
-    <string name="matrix_agenda_start_date_event_label">Начало:</string>
-    <string name="matrix_agenda_end_date_event_label">Конец:</string>
-    <string name="matrix_agenda_place_event_label">Место:</string>
-    <string name="matrix_agenda_description_event_label">Описание:</string>
+    <string name="matrix_agenda_name_event_label">Название события</string>
+    <string name="matrix_agenda_start_date_event_label">Начало</string>
+    <string name="matrix_agenda_end_date_event_label">Конец</string>
+    <string name="matrix_agenda_place_event_label">Место</string>
+    <string name="matrix_agenda_description_event_label">Описание</string>
     <!-- Matrix Barcode Phone Analysis -->
-    <string name="matrix_phone_tel_number_label">Телефон:</string>
+    <string name="matrix_phone_tel_number_label">Телефон</string>
     <!-- Matrix Barcode Email Analysis -->
-    <string name="matrix_email_recipient_label">Получатель:</string>
-    <string name="matrix_email_cc_label">Копия:</string>
-    <string name="matrix_email_bcc_label">Скрытая копия:</string>
-    <string name="matrix_subject_label">Тема:</string>
-    <string name="matrix_body_label">Сообщение:</string>
+    <string name="matrix_email_recipient_label">Получатель</string>
+    <string name="matrix_email_cc_label">Копия</string>
+    <string name="matrix_email_bcc_label">Скрытая копия</string>
+    <string name="matrix_subject_label">Тема</string>
+    <string name="matrix_body_label">Сообщение</string>
     <!-- Matrix Barcode Wi-Fi Analysis -->
-    <string name="matrix_wifi_ssid_label">SSID:</string>
-    <string name="matrix_wifi_password_label">Пароль:</string>
-    <string name="matrix_wifi_encryption_label">Шифрование:</string>
-    <string name="matrix_wifi_is_hidden_label">Скрытая:</string>
-    <string name="matrix_wifi_anonymous_identity_label">Анонимная идентификация:</string>
-    <string name="matrix_wifi_identity_label">Идентификация:</string>
-    <string name="matrix_wifi_eap_method_label">EAP:</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2:</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_wifi_password_label">Пароль</string>
+    <string name="matrix_wifi_encryption_label">Шифрование</string>
+    <string name="matrix_wifi_is_hidden_label">Скрытая</string>
+    <string name="matrix_wifi_anonymous_identity_label">Анонимная идентификация</string>
+    <string name="matrix_wifi_identity_label">Идентификация</string>
+    <string name="matrix_wifi_eap_method_label">EAP</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase 2</string>
     <!-- Matrix Barcode URL Analysis -->
-    <string name="matrix_uri_url_label">URL:</string>
+    <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">URL может оказаться вредоносным…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">Анализ URI</string>
-    <string name="matrix_uri_upi_id_label">UPI ID:</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
     <string name="matrix_uri_upi_payee_name_label">Наименование получателя платежа:</string>
-    <string name="matrix_uri_upi_amount_label">Сумма:</string>
-    <string name="matrix_uri_upi_currency_label">Валюта:</string>
-    <string name="matrix_uri_upi_description_label">Описание:</string>
+    <string name="matrix_uri_upi_amount_label">Сумма</string>
+    <string name="matrix_uri_upi_currency_label">Валюта</string>
+    <string name="matrix_uri_upi_description_label">Описание</string>
     <!-- Matrix Barcode URL Localisation Analysis -->
-    <string name="matrix_localisation_latitude_label">Широта:</string>
-    <string name="matrix_localisation_longitude_label">Долгота:</string>
-    <string name="matrix_localisation_altitude_label">Высота:</string>
-    <string name="matrix_localisation_query_label">Запрос:</string>
+    <string name="matrix_localisation_latitude_label">Широта</string>
+    <string name="matrix_localisation_longitude_label">Долгота</string>
+    <string name="matrix_localisation_altitude_label">Высота</string>
+    <string name="matrix_localisation_query_label">Запрос</string>
     <string name="matrix_localisation_button_find_location">Создать из текущего положения</string>
     <string name="matrix_localisation_search_current_position_label">Поиск по текущему положению…</string>
     <string name="matrix_localisation_location_disabled_label">Вероятно, на вашем устройстве не активирована геолокация.</string>
@@ -296,7 +296,7 @@
     <string name="actions_label">Действия</string>
     <string name="intent_chooser_share_title">"Поделиться с…"</string>
     <string name="intent_chooser_mail_title">"Отправить email…"</string>
-    <string name="copy_label">Скопировать</string>
+    <string name="copy_barcode_label">Скопировать</string>
     <string name="barcode_copied_label">Штрих-код скопирован</string>
     <string name="barcode_search_error_label">URL не поддерживается</string>
     <string name="search_label">Поиск</string>

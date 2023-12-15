@@ -1,106 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixWifiFragment">
 
     <!-- SSID -->
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_wifi_ssid_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_ssid_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_wifi_ssid_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_ssid_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/standard_margin"
+        app:title_text="@string/matrix_wifi_ssid_label" />
 
     <!--- Password -->
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_wifi_password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_password_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_wifi_password_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_password_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_wifi_password_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
+        android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_layout"
+        android:paddingTop="@dimen/x_large_margin"
+        app:title_text="@string/matrix_wifi_password_label" />
 
     <!--- Encryption -->
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_wifi_encryption_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_password_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_encryption_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_wifi_encryption_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_encryption_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
+        android:layout_below="@id/fragment_barcode_matrix_wifi_password_layout"
+        android:paddingTop="@dimen/x_large_margin"
+        app:title_text="@string/matrix_wifi_encryption_label" />
 
     <!--- Is Hidden -->
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_layout">
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/matrix_wifi_is_hidden_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant" />
-
-        <TextView
-            android:id="@+id/fragment_barcode_matrix_wifi_is_hidden_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_barcode_matrix_wifi_is_hidden_label"
-            android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
-
-    </RelativeLayout>
+        android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_layout"
+        android:paddingTop="@dimen/x_large_margin"
+        app:title_text="@string/matrix_wifi_is_hidden_label" />
 
 </RelativeLayout>
