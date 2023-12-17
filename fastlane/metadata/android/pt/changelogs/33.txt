@@ -1,0 +1,15 @@
+1.16.0
+
+Tradução (usando Weblate):
+- Adiciona trad.: turco (graças a abfreeman).
+- Adic. norueguês bokmål (inacabado) (graças a Allan Nordhøy).
+- Atualiza trad.: espanhol (graças a J. Lavoie e gallegonovato).
+- Atual. trad.: chinês tradicional (graças a plum7x).
+- Atual. trad.: alemão (graças a J. Lavoie).
+- Atual. trad.: francês (graças a J. Lavoie).
+
+Novas funções:
+- Adic. tema preto.
+- Adic. exportar imagem de código de barra p/ JPG e SVG.
+- Algumas melhorias de código.
+- Corrige alguns bugs.

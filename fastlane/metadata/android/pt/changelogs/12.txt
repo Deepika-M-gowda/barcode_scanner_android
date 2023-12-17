@@ -1,0 +1,1 @@
+- Corrige o atalho "escanear de imagem".

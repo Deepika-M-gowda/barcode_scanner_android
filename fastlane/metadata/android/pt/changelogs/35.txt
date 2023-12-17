@@ -1,0 +1,17 @@
+1.17.0
+
+Novo:
+- Ad. buscador padrão do dispositivo.
+- Ad. conexão Wi-Fi com WPA3 (graças a Mateus J.).
+Trad. (usando Weblate):
+- Ad. trad. português brasileiro (graças a joaooliva).
+- Ad. trad. japonês (incompleto) (graças a しいたけ).
+- Ad. trad. ucraniano (inc.) (graças a MaSHiNiK).
+- Ad. trad. italiano (inc.) (graças a Tua madre).
+- Ad. trad. indonésio (inc.) (graças a Reza).
+- At. trad. alemão (graças a Fabian Rennebeck).
+- At. trad. norueguês bokmål (graças a Allan Nordhøy).
+- At. trad. chinês simplificado (graças a 御坂13766号 e Red Star Over Earth).
+- At. trad. polaco (graças a Eryk Michalak).
+- At. trad. turco (graças a abfreeman).
+- At. trad. espanhol (graças a gallegonovato).
