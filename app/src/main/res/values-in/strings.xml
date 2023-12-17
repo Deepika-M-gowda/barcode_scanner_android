@@ -125,4 +125,24 @@
     <string name="nutriscore_description_d">Kualitas nutrisi buruk</string>
     <string name="nutrition_facts_tab_label">Nutrisi</string>
     <string name="scan_error_message_label">Pesan error:</string>
+    <string name="country_kp">Korea Utara</string>
+    <string name="country_id">Indonesia</string>
+    <string name="country_kr">Korea Selatan</string>
+    <string name="country_tr">Turki</string>
+    <string name="country_nz">Selandia Baru</string>
+    <string name="country_mn">Mongol</string>
+    <string name="country_in">India</string>
+    <string name="country_cz">Republik Ceko</string>
+    <string name="country_au">Australia</string>
+    <string name="country_pk">Pakistan</string>
+    <string name="country_sg">Singapura</string>
+    <string name="country_mm">Myanmar</string>
+    <string name="country_th">Thailand</string>
+    <string name="country_my">Malaysia</string>
+    <string name="country_rs">Serbia</string>
+    <string name="country_at">Austria</string>
+    <string name="country_kh">Kamboja</string>
+    <string name="country_nl">Belanda</string>
+    <string name="country_mo">Makau</string>
+    <string name="country_vn">Vietnam</string>
 </resources>
