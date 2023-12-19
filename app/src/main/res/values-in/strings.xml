@@ -145,4 +145,15 @@
     <string name="country_nl">Belanda</string>
     <string name="country_mo">Makau</string>
     <string name="country_vn">Vietnam</string>
+    <string name="country_bg">Bulgaria</string>
+    <string name="dependency_color_picker_description_label">Perpustakaan pemilih warna untuk Android.</string>
+    <string name="country_kosovo">Kosovo</string>
+    <string name="country_hr">Kroasia</string>
+    <string name="country_si">Slovenia</string>
+    <string name="country_de">Jerman</string>
+    <string name="country_ca">Kanada</string>
+    <string name="country_me">Montenegro</string>
+    <string name="country_fr">Perancis</string>
+    <string name="country_ba">Bosnia-Herzegovina</string>
+    <string name="country_usa">Amerika Serikat</string>
 </resources>
