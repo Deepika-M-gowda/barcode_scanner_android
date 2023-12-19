@@ -41,7 +41,7 @@ abstract class AbstractCameraXBarcodeAnalyzer(
 
     private val reader = MultiFormatReader().apply {
         val map = mapOf(
-            DecodeHintType.POSSIBLE_FORMATS to BarcodeFormat.values().asList()
+            DecodeHintType.POSSIBLE_FORMATS to BarcodeFormat.entries
         )
         setHints(map)
     }

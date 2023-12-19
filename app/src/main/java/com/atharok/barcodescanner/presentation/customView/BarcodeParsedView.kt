@@ -33,10 +33,10 @@ class BarcodeParsedView @JvmOverloads constructor(
         contentsTextView = view.findViewById(R.id.template_barcode_parsed_view_contents)
         copyIconButton = view.findViewById(R.id.template_barcode_parsed_view_copy_button)
 
-        context.theme.obtainStyledAttributes(attrs, R.styleable.DisplayTemplate1, defStyleAttr, defStyleRes).apply {
+        context.theme.obtainStyledAttributes(attrs, R.styleable.BarcodeParsedView, defStyleAttr, defStyleRes).apply {
             try {
-                titleTextView.text = getString(R.styleable.DisplayTemplate1_title_text) ?: ""
-                contentsTextView.text = getString(R.styleable.DisplayTemplate1_contents_text) ?: ""
+                titleTextView.text = getString(R.styleable.BarcodeParsedView_title_text) ?: ""
+                contentsTextView.text = getString(R.styleable.BarcodeParsedView_contents_text) ?: ""
                 updateVisibility()
             } finally {
                 recycle()

@@ -38,7 +38,7 @@ import com.atharok.barcodescanner.R
 class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) {
 
     companion object {
-        private const val RATIO = 0.6f
+        private const val RATIO = 0.8f
     }
 
     //val viewfinderWidth: Float
@@ -131,13 +131,13 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
 
         viewfinderSize = overlayHeight.coerceAtMost(overlayWidth) * RATIO
 
-        val centerX = overlayWidth / 2
-        val centerY = overlayHeight / 2
+        val centerX = overlayWidth / 2f
+        val centerY = overlayHeight / 2f
 
-        val left = centerX - viewfinderSize / 2
-        val right = centerX + viewfinderSize / 2
-        val top = centerY - viewfinderSize / 2
-        val bottom = centerY + viewfinderSize / 2
+        val left = centerX - viewfinderSize / 2f
+        val right = centerX + viewfinderSize / 2f
+        val top = centerY - viewfinderSize / 2f
+        val bottom = centerY + viewfinderSize / 2f
 
         viewfinderRect.set(left, top, right, bottom)
     }

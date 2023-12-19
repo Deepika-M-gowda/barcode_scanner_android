@@ -17,7 +17,7 @@
         <attr name="overlay_mask_color" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="DisplayTemplate1">
+    <declare-styleable name="BarcodeParsedView">
         <attr name="title_text" format="string" />
         <attr name="contents_text" format="string" />
     </declare-styleable>

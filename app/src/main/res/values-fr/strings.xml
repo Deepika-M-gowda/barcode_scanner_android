@@ -713,4 +713,6 @@
     <string name="country_my">Malaisie</string>
     <string name="country_mo">Macao</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+
+    <string name="text_colon" translatable="false">%1$s :</string>
 </resources>

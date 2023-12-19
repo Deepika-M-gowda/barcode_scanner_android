@@ -2,10 +2,8 @@ package com.atharok.barcodescanner.domain.library.camera
 
 import android.content.Context
 import android.content.pm.PackageManager
-import android.content.res.Configuration
 import android.os.Build
 import android.util.Log
-import android.util.Size
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraInfoUnavailableException
 import androidx.camera.core.CameraSelector
@@ -14,7 +12,6 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
 import androidx.camera.core.SurfaceOrientedMeteringPointFactory
 import androidx.camera.core.resolutionselector.ResolutionSelector
-import androidx.camera.core.resolutionselector.ResolutionStrategy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
@@ -35,13 +32,7 @@ class CameraConfig(private val context: Context) {
         private set
 
     private val resolutionSelector: ResolutionSelector by lazy {
-        val orientation: Int = context.applicationContext.resources.configuration.orientation
-
-        val resolution: Size = if (orientation == Configuration.ORIENTATION_PORTRAIT)
-            Size(960, 1280) else Size(1280, 960)
-
-        val strategy = ResolutionStrategy(resolution, ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER)
-        ResolutionSelector.Builder().setResolutionStrategy(strategy).build()
+        ResolutionSelector.Builder().build()
     }
 
     private val cameraSelector: CameraSelector by lazy {
@@ -49,7 +40,7 @@ class CameraConfig(private val context: Context) {
     }
 
     private val preview: Preview by lazy {
-        Preview.Builder().setResolutionSelector(resolutionSelector).build()
+        Preview.Builder().build()
     }
 
     private val imageAnalysis: ImageAnalysis by lazy {
@@ -58,7 +49,6 @@ class CameraConfig(private val context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 setOutputImageRotationEnabled(true)
             }
-            setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
         }.build()
     }
 
@@ -72,7 +62,6 @@ class CameraConfig(private val context: Context) {
 
         cameraProviderFuture.addListener({
             cameraProvider = cameraProviderFuture.get().apply {
-
                 try {
                     unbindAll()
                     preview.setSurfaceProvider(previewView.surfaceProvider)
@@ -142,14 +131,14 @@ class CameraConfig(private val context: Context) {
     fun hasFlash(): Boolean =
         context.applicationContext.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)
 
-    fun switchFlash(){
+    fun switchFlash() {
         camera?.let {
             flashEnabled = !flashEnabled
             it.cameraControl.enableTorch(flashEnabled)
         }
     }
 
-    private fun switchOffFlash(){
+    private fun switchOffFlash() {
         if(flashEnabled){
             switchFlash()
         }

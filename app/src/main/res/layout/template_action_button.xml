@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/light_margin"
             android:gravity="center_horizontal"
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
 
             app:layout_constraintTop_toBottomOf="@id/template_action_button_icon"
             app:layout_constraintBottom_toBottomOf="parent"

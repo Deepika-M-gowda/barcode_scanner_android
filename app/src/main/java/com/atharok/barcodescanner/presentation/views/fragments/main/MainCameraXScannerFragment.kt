@@ -164,7 +164,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
                         menu.getItem(0).icon =
                             ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_off_24)
 
-                }else{
+                } else {
                     menu.getItem(0).isVisible = false
                 }
             }

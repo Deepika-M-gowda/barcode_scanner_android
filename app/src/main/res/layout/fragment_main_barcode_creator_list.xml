@@ -36,45 +36,34 @@
                     android:layout_height="match_parent"
                     android:padding="@dimen/standard_margin">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                    <ImageView
+                        android:id="@+id/fragment_main_create_barcode_list_bar_code_icon_image_view"
+                        android:layout_width="@dimen/icon_large_size"
+                        android:layout_height="@dimen/icon_large_size"
+                        android:background="@drawable/circle"
+                        app:tint="?colorOnPrimary"
+                        app:backgroundTint="?colorPrimary"
+                        android:src="@drawable/baseline_qr_code_24"
+                        android:contentDescription="@string/image_view_description_icon"
 
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_main_create_barcode_list_header_title_text_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standard_margin"
+                        android:textAlignment="viewStart"
+                        android:text="@string/barcode_qr_code_label"
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fragment_main_create_barcode_list_bar_code_icon_image_view"
                         app:layout_constraintEnd_toStartOf="@id/fragment_main_create_barcode_list_header_icon_image_view"
-                        app:layout_constraintWidth_default="spread">
-
-                        <ImageView
-                            android:id="@+id/fragment_main_create_barcode_list_bar_code_icon_image_view"
-                            android:layout_width="@dimen/icon_large_size"
-                            android:layout_height="@dimen/icon_large_size"
-                            android:background="@drawable/circle"
-                            app:tint="?colorOnPrimary"
-                            app:backgroundTint="?colorPrimary"
-                            android:src="@drawable/baseline_qr_code_24"
-                            android:contentDescription="@string/image_view_description_icon"
-
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            />
-
-                        <TextView
-                            android:id="@+id/fragment_main_create_barcode_list_header_title_text_view"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/standard_margin"
-                            android:text="@string/barcode_qr_code_label"
-                            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
-
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/fragment_main_create_barcode_list_bar_code_icon_image_view"
-                            />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintWidth_default="spread" />
 
                     <ImageView
                         android:id="@+id/fragment_main_create_barcode_list_header_icon_image_view"
@@ -86,8 +75,7 @@
 
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+                        app:layout_constraintEnd_toEndOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>

@@ -82,7 +82,7 @@ Dependencies:
 - [Gson](https://github.com/google/gson) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
 - [Retrofit](https://github.com/square/retrofit) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Square
 - [Room](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
-
+- [Color Picker](https://github.com/Atharok/ColorPicker) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Atharok
 Images:
 
 - [Material icons](https://fonts.google.com/icons) are licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)

@@ -79,6 +79,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_history, menu)
+        menu.removeItem(R.id.menu_history_export)
         return super.onCreateOptionsMenu(menu)
     }
 

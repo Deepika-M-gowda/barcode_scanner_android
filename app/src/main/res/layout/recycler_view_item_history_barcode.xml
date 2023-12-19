@@ -9,7 +9,8 @@
         android:id="@+id/recycler_view_item_history_barcode_background_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/standard_margin">
 
         <TextView
             android:id="@+id/recycler_view_item_history_barcode_delete_text_view"
@@ -17,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_history_barcode_delete_icon_image_view"
+            android:textAlignment="viewStart"
             android:text="@string/delete_label"
             style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
 
@@ -26,7 +28,6 @@
             android:layout_height="@dimen/icon_standard_size"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/standard_margin"
             android:src="@drawable/baseline_delete_forever_24"
             android:contentDescription="@string/image_view_description_icon" />
 
@@ -42,10 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingTop="@dimen/large_margin"
-            android:paddingBottom="@dimen/large_margin"
-            android:paddingStart="@dimen/large_margin"
-            android:paddingEnd="@dimen/large_margin">
+            android:padding="@dimen/large_margin">
 
             <ImageView
                 android:id="@+id/recycler_view_item_history_barcode_image_view"
@@ -74,10 +72,11 @@
                         android:id="@+id/recycler_view_item_history_barcode_entitled_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_marginEnd="@dimen/standard_margin"
+                        android:layout_centerVertical="true"
                         android:layout_alignParentStart="true"
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_format_text_view"
+                        android:textAlignment="viewStart"
                         android:ellipsize="end"
                         android:maxLines="1"
                         style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
@@ -122,6 +121,7 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentStart="true"
                             android:layout_marginEnd="@dimen/standard_margin"
+                            android:textAlignment="viewStart"
                             android:ellipsize="end"
                             android:maxLines="1"
                             style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />

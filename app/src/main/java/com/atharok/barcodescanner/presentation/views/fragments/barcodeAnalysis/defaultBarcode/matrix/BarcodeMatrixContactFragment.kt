@@ -24,10 +24,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixContactBinding
 import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
 import com.google.zxing.client.result.AddressBookParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
@@ -64,118 +65,71 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
         }
     }
 
-    private fun configureName(names: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixContactNameTextView,
-        layout = viewBinding.fragmentBarcodeMatrixContactNameLayout,
-        array = names
-    )
+    private fun configureName(names: Array<String?>?) {
+        viewBinding.fragmentBarcodeMatrixContactNameLayout.setContentsText(names?.convertToString())
+    }
 
-    private fun configureOrganization(org: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixContactOrganizationTextView,
-        layout = viewBinding.fragmentBarcodeMatrixContactOrganizationLayout,
-        text = org
-    )
+    private fun configureOrganization(org: String?) {
+        viewBinding.fragmentBarcodeMatrixContactOrganizationLayout.setContentsText(org)
+    }
 
-    private fun configureTitle(title: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixContactTitleTextView,
-        layout = viewBinding.fragmentBarcodeMatrixContactTitleLayout,
-        text = title
-    )
+    private fun configureTitle(title: String?) {
+        viewBinding.fragmentBarcodeMatrixContactTitleLayout.setContentsText(title)
+    }
 
     private fun configurePhone(phoneNumbers: Array<String?>?, phoneTypes: Array<String?>?){
-
-        if(phoneNumbers.isNullOrEmpty()){
-            viewBinding.fragmentBarcodeMatrixContactPhoneLayout.visibility = View.GONE
-        } else {
-
-            // Phone 1
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactPhone1TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactPhoneType1TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactPhone1Layout,
-                contact = if(phoneNumbers.isNotEmpty()) phoneNumbers[0] else null,
-                type = if(!phoneTypes.isNullOrEmpty()) phoneTypes[0] else null
-            )
-
-            // Phone 2
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactPhone2TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactPhoneType2TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactPhone2Layout,
-                contact = if(phoneNumbers.size>1) phoneNumbers[1] else null,
-                type = if(phoneTypes != null && phoneTypes.size>1) phoneTypes[1] else null
-            )
-
-            // Phone 3
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactPhone3TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactPhoneType3TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactPhone3Layout,
-                contact = if(phoneNumbers.size>2) phoneNumbers[2] else null,
-                type = if(phoneTypes != null && phoneTypes.size>2) phoneTypes[2] else null
-            )
-        }
+        configureContact(
+            view = viewBinding.fragmentBarcodeMatrixContactPhoneLayout,
+            contacts = phoneNumbers,
+            types = phoneTypes
+        )
     }
 
     private fun configureMail(mails: Array<String?>?, mailTypes: Array<String?>?){
-
-        if(mails.isNullOrEmpty()){
-            viewBinding.fragmentBarcodeMatrixContactEmailLayout.visibility = View.GONE
-        } else {
-
-            // Mail 1
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactEmail1TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactEmailType1TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactEmail1Layout,
-                contact = if(mails.isNotEmpty()) mails[0] else null,
-                type = if(!mailTypes.isNullOrEmpty()) mailTypes[0] else null
-            )
-
-            // Mail 2
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactEmail2TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactEmailType2TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactEmail2Layout,
-                contact = if(mails.size>1) mails[1] else null,
-                type = if(mailTypes != null && mailTypes.size>1) mailTypes[1] else null
-            )
-
-            // Mail 3
-            configureContact(
-                nameTextView = viewBinding.fragmentBarcodeMatrixContactEmail3TextView,
-                typeTextView = viewBinding.fragmentBarcodeMatrixContactEmailType3TextView,
-                layout = viewBinding.fragmentBarcodeMatrixContactEmail3Layout,
-                contact = if(mails.size>2) mails[2] else null,
-                type = if(mailTypes != null && mailTypes.size>2) mailTypes[2] else null
-            )
-        }
+        configureContact(
+            view = viewBinding.fragmentBarcodeMatrixContactEmailLayout,
+            contacts = mails,
+            types = mailTypes
+        )
     }
 
-    private fun configureAddress(addresses: Array<String?>?) = configureTextArray(
-        textView = viewBinding.fragmentBarcodeMatrixContactAddressTextView,
-        layout = viewBinding.fragmentBarcodeMatrixContactAddressLayout,
-        array = addresses
-    )
+    private fun configureAddress(addresses: Array<String?>?) {
+        viewBinding.fragmentBarcodeMatrixContactAddressLayout.setContentsText(addresses?.convertToString("\n"))
+    }
 
-    private fun configureNotes(notes: String?) = configureText(
-        textView = viewBinding.fragmentBarcodeMatrixContactNotesTextView,
-        layout = viewBinding.fragmentBarcodeMatrixContactNotesLayout,
-        text = notes
-    )
+    private fun configureNotes(notes: String?) {
+        viewBinding.fragmentBarcodeMatrixContactNotesLayout.setContentsText(notes)
+    }
 
     private fun configureContact(
-        nameTextView: TextView,
-        typeTextView: TextView,
-        layout: View,
-        contact: String?,
-        type: String?){
+        view: BarcodeParsedView,
+        contacts: Array<String?>?,
+        types: Array<String?>?){
 
-        configureText(nameTextView, layout, contact)
+        if(contacts.isNullOrEmpty()){
+            view.visibility = View.GONE
+        } else {
 
-        if(!type.isNullOrBlank()){
-            val typeConcat = "($type)"
-            typeTextView.text = typeConcat
-        } else typeTextView.visibility = View.GONE
+            val stringBuilder = StringBuilder()
+
+            for(i in contacts.indices) {
+                if(!contacts[i].isNullOrEmpty()) {
+                    stringBuilder.append(contacts[i])
+
+                    if(types != null && types.size > i) {
+                        stringBuilder.append(" (${types[i]})")
+                    }
+
+                    if(i<contacts.size-1) {
+                        stringBuilder.append("\n")
+                    }
+                }
+            }
+
+            val result = stringBuilder.toString()
+            if(result.isNotEmpty()) {
+                view.setContentsText(result)
+            }
+        }
     }
 }
