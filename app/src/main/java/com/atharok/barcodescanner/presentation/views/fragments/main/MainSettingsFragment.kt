@@ -124,6 +124,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 R.string.locale_language_it to LocaleListCompat.create(Locale.ITALIAN),
                 R.string.locale_language_nb_NO to LocaleListCompat.forLanguageTags("nb-NO"),
                 R.string.locale_language_pl to LocaleListCompat.forLanguageTags("pl"),
+                R.string.locale_language_pt to LocaleListCompat.forLanguageTags("pt"),
                 R.string.locale_language_pt_BR to LocaleListCompat.forLanguageTags("pt-BR"),
                 R.string.locale_language_ru to LocaleListCompat.forLanguageTags("ru"),
                 R.string.locale_language_tr to LocaleListCompat.forLanguageTags("tr"),

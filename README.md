@@ -42,7 +42,7 @@ Get information about a product during a scan:
 - Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
 - Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
+- Texts are entirely translated in English, Spanish, French, German, Polish, Italian, Portuguese, Arabic, Turkish, Russian and Chinese (Simplified and Traditional).
 
 ## Screenshots
 
@@ -83,6 +83,7 @@ Dependencies:
 - [Retrofit](https://github.com/square/retrofit) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Square
 - [Room](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
 - [Color Picker](https://github.com/Atharok/ColorPicker) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Atharok
+
 Images:
 
 - [Material icons](https://fonts.google.com/icons) are licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)

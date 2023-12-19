@@ -835,7 +835,8 @@
     <string name="locale_language_ja" translatable="false">日本語</string>
     <string name="locale_language_nb_NO" translatable="false">Norsk</string>
     <string name="locale_language_pl" translatable="false">Polski</string>
-    <string name="locale_language_pt_BR" translatable="false">Português</string>
+    <string name="locale_language_pt" translatable="false">Português</string>
+    <string name="locale_language_pt_BR" translatable="false">Português (Brasil)</string>
     <string name="locale_language_ru" translatable="false">Русский</string>
     <string name="locale_language_tr" translatable="false">Türkçe</string>
     <string name="locale_language_uk" translatable="false">Українська</string>
