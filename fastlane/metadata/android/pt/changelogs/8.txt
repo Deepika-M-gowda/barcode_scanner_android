@@ -1,0 +1,3 @@
+- Adicionado "intent-filter" que permite escanear um código de barras de um app externo.
+- Adiciona interruptor para desativar a rotação automática de ecrã durante escaneamento.
+- Atualizadas dependências.

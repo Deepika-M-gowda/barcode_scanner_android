@@ -1,0 +1,3 @@
+- Atualizadas dependências.
+- Corrige a abertura da aplicação com os atalhos que não funcionavam para "histórico" e "gerar".
+- Corrige escaneamento de imagem quando escaneando de app externo (intent-filter).

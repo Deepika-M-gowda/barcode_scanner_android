@@ -264,7 +264,7 @@
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">Анализ URI</string>
     <string name="matrix_uri_upi_id_label">UPI ID</string>
-    <string name="matrix_uri_upi_payee_name_label">Наименование получателя платежа:</string>
+    <string name="matrix_uri_upi_payee_name_label">Получатель платежа</string>
     <string name="matrix_uri_upi_amount_label">Сумма</string>
     <string name="matrix_uri_upi_currency_label">Валюта</string>
     <string name="matrix_uri_upi_description_label">Описание</string>
@@ -702,4 +702,17 @@
     <string name="export_label">Экспорт</string>
     <string name="snack_bar_message_file_import_success">Файл импортирован!</string>
     <string name="export_json_label">Экспортировать в формате JSON</string>
+    <string name="corners_radius">Радиус закругления углов</string>
+    <string name="dependency_color_picker_description_label">Библиотека выбора цвета для Android.</string>
+    <string name="barcode_color">Цвет штрих-кода</string>
+    <string name="color_shades_issue">Некоторые цветовые оттенки могут быть не распознаны.</string>
+    <string name="shapes_label">Формы</string>
+    <string name="keep_proportions">Сохранять пропорции</string>
+    <string name="dimensions_label">Размеры</string>
+    <string name="background_color">Цвет фона</string>
+    <string name="copy_label">Скопировать</string>
+    <string name="image_properties">Свойства изображения</string>
+    <string name="width_label">Ширина</string>
+    <string name="colors_label">Цвета</string>
+    <string name="height_label">Высота</string>
 </resources>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">Uygulamaya kamera izni vermediniz.\nBarkod taraması yapabilmek için kamera izni vermelisiniz.</string>
+    <string name="camera_permission_denied">Kameraya erişim izni vermediniz.
+\nBarkod taraması yapabilmek için kamera izni vermelisiniz.</string>
     <!-- AlertDialog -->
     <string name="close_dialog_label">Kapat</string>
     <string name="yes_label">Evet</string>
@@ -253,7 +254,7 @@
     <string name="matrix_wifi_ssid_label">SSID</string>
     <string name="matrix_wifi_password_label">Şifre</string>
     <string name="matrix_wifi_encryption_label">Şifreleme</string>
-    <string name="matrix_wifi_is_hidden_label">Gizli:</string>
+    <string name="matrix_wifi_is_hidden_label">Gizli</string>
     <string name="matrix_wifi_anonymous_identity_label">Anonim Kimlik</string>
     <string name="matrix_wifi_identity_label">Kimlik</string>
     <string name="matrix_wifi_eap_method_label">Eap Metodu</string>
@@ -698,4 +699,17 @@
     <string name="export_label">Dışarı Aktar</string>
     <string name="snack_bar_message_file_import_success">Dosya eklendi!</string>
     <string name="export_json_label">JSON olarak dışarı aktar</string>
+    <string name="corners_radius">Köşe yarıçapı</string>
+    <string name="dependency_color_picker_description_label">Android için bir renk seçici kitaplığı.</string>
+    <string name="barcode_color">Barkod rengi</string>
+    <string name="color_shades_issue">Bazı renk tonları algılanamayabilir.</string>
+    <string name="shapes_label">Şekiller</string>
+    <string name="keep_proportions">Ölçeği koru</string>
+    <string name="dimensions_label">Boyutlar</string>
+    <string name="background_color">Arkaplan rengi</string>
+    <string name="copy_label">Kopyala</string>
+    <string name="image_properties">Görüntü özellikleri</string>
+    <string name="width_label">Genişlik</string>
+    <string name="colors_label">Renkler</string>
+    <string name="height_label">Yükseklik</string>
 </resources>

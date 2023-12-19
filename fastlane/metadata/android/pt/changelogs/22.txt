@@ -1,0 +1,5 @@
+1.9.1
+
+- Redesign dos estilos para completa integração do Material3 e uma melhor implementação do Material You.
+- Mudada a cor dos ícones de atalhos.
+- Adicionada a logotipo nova da OpenFoodFacts.
