@@ -640,4 +640,17 @@
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="dependency_gson_description_label">Gson è una libreria Java che può essere utilizzata per convertire gli oggetti Java nella loro rappresentazione JSON. Può anche essere usata per convertire una stringa JSON in un oggetto Java equivalente. Gson può lavorare con oggetti Java arbitrari, compresi oggetti preesistenti dei quali non è dispone il codice sorgente.</string>
     <string name="dependency_kotlinx_coroutines_description_label">Fornisce Dispatcher. Contesto principale per applicazioni Android.</string>
+    <string name="corners_radius">Raggio degli angoli</string>
+    <string name="dependency_color_picker_description_label">Una libreria di selezione colori per Android.</string>
+    <string name="barcode_color">Colore del codice a barre</string>
+    <string name="color_shades_issue">Alcune sfumature di colore potrebbero non essere rilevate.</string>
+    <string name="shapes_label">Forme</string>
+    <string name="keep_proportions">Mantieni le proporzioni</string>
+    <string name="dimensions_label">Dimensioni</string>
+    <string name="background_color">Colore di sfondo</string>
+    <string name="copy_label">copia</string>
+    <string name="image_properties">Proprietà dell\'immagine</string>
+    <string name="width_label">Larghezza</string>
+    <string name="colors_label">Colori</string>
+    <string name="height_label">Altezza</string>
 </resources>
