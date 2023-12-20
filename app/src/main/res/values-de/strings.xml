@@ -720,4 +720,6 @@
     <string name="width_label">Breite</string>
     <string name="colors_label">Farben</string>
     <string name="height_label">Höhe</string>
+    <string name="shapes_label">Formen</string>
+    <string name="copy_label">Kopie</string>
 </resources>
