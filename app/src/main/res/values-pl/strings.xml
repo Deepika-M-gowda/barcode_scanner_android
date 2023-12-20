@@ -688,4 +688,27 @@
     <string name="country_nz">Nowa Zealanda</string>
     <string name="country_my">Malezja</string>
     <string name="country_mo">Macao</string>
+    <string name="corners_radius">Promień narożników</string>
+    <string name="dependency_color_picker_description_label">Biblioteka dla Androida.</string>
+    <string name="snack_bar_message_file_export_success">Plik zapisany!</string>
+    <string name="barcode_color">Kolor kodu kreskowego</string>
+    <string name="color_shades_issue">Niektóre kolorowe cień nie mogą być wykryte.</string>
+    <string name="shapes_label">Kształty</string>
+    <string name="import_json_label">Importuj (JSON)</string>
+    <string name="keep_proportions">Trzymać proporcje</string>
+    <string name="dimensions_label">Wymiary</string>
+    <string name="background_color">Kolor tła</string>
+    <string name="snack_bar_message_file_export_error">Wystąpił błąd! Plik nie został zapisany.</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="copy_label">Kopiuj</string>
+    <string name="export_csv_label">Eksportuj jako CSV</string>
+    <string name="image_properties">Właściwości obrazu</string>
+    <string name="snack_bar_message_file_import_error">Wystąpił błąd! Plik nie został zaimportowany.</string>
+    <string name="export_label">Eksport</string>
+    <string name="snack_bar_message_file_import_success">Plik zaimportowany!</string>
+    <string name="width_label">Width</string>
+    <string name="export_json_label">Eksportuj jako JSON</string>
+    <string name="preferences_default">Domyślny</string>
+    <string name="colors_label">Zabarwienie</string>
+    <string name="height_label">Uwaga</string>
 </resources>
