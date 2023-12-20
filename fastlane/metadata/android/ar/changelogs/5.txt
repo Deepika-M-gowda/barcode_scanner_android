@@ -1,0 +1,4 @@
+- تعديل مكتبة تسمح بمسح البركود
+- Updates of: Kotlin version (1.7.10), SDK (API 33) and dependencies.
+-تحسين القانون
+- أضف الكويكب رقم 13.
