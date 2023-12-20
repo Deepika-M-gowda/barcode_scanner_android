@@ -1,0 +1,11 @@
+1.19.0
+
+Mudança completa aqui: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Adicionado a tradução completa árabe (graças para testar150) (usando Weblate).
+- Traduções atualizadas (usando Weblate).
+- Atualizado em SDK 34 (Android 14) + dependências.
+- Adicionado a capacidade de mudar a cor e o tamanho de códigos de barras gerados.
+- Melhor desempenho durante a geração de códigos de barras.
+- Melhor estabilidade e fixou algumas falhas.
+- Algumas melhorias UX/UI.
