@@ -686,4 +686,36 @@
     <string name="export_label">匯出</string>
     <string name="snack_bar_message_file_import_success">檔案已匯入！</string>
     <string name="export_json_label">匯出為 JSON</string>
+    <string name="dependency_coil_description_label">由 Kotlin 協程支援的 Android 映像載入庫。</string>
+    <string name="corners_radius">轉角半徑</string>
+    <string name="dependency_color_picker_description_label">適用於 安卓 的顏色選擇器庫。</string>
+    <string name="barcode_color">條碼顏色</string>
+    <string name="dependency_zxing_description_label">ZXing（斑馬線）是一個開源的、多格式的一維/二維條碼影像處理庫。</string>
+    <string name="dependency_camera_x_description_label">Jetpack 的 CameraX 支援庫提供了易於使用且功能豐富的 Android 相機 API。</string>
+    <string name="dependency_live_data_description_label">LiveData 是一個可觀察的資料持有者類別。 與常規可觀察量不同，LiveData 具有生命週期感知能力，這意味著它尊重其他應用程式元件（例如活動、片段或服務）的生命週期。 這種意識確保 LiveData 僅更新處於活動生命週期狀態的應用程式元件觀察者。</string>
+    <string name="color_shades_issue">可能無法檢測到某些色調。</string>
+    <string name="shapes_label">形狀</string>
+    <string name="dependency_koin_description_label">面向 Kotlin 開發人員的實用輕量級依賴注入框架。
+\n
+\n 用純 Kotlin 編寫，僅使用函數解析：無代理程式、無程式碼產生、無反射。
+\n
+\n Koin 是一個 DSL、一個輕容器和一個實用的 API</string>
+    <string name="keep_proportions">保持比例</string>
+    <string name="dimensions_label">方面</string>
+    <string name="dependency_retrofit_description_label">適用於 Android 和 Java 的型別安全 HTTP 用戶端。</string>
+    <string name="background_color">背景顏色</string>
+    <string name="dependency_room_description_label">Room 在 SQLite 上提供了一個抽象層，以允許流暢的資料庫訪問，同時利用 SQLite 的全部功能。</string>
+    <string name="copy_label">複製</string>
+    <string name="dependency_ez_vcard_description_label">ez-vcard 是一個用 Java 寫的 vCard 函式庫。 它可以讀取和寫入多種不同格式的 vCard。</string>
+    <string name="image_properties">圖像屬性</string>
+    <string name="dependency_material_components_description_label">Android 的 Material Components (MDC-Android) 可協助開發人員執行 Material Design。 這些元件由 Google 的核心工程師和使用者體驗設計師團隊開發，支援可靠的開發工作流程來建立美觀且實用的 Android 應用程式。
+\n
+\n Android 的 Material Components 是 Android 設計支援庫的直接替代品。</string>
+    <string name="dependency_zxing_code_scanner_description_label">基於 ZXing 的 Android 程式碼掃描器函式庫。</string>
+    <string name="width_label">寬度</string>
+    <string name="colors_label">顏色</string>
+    <string name="dependency_android_image_cropper_description_label">Android Image Cropper 是一個適用於 Android 的影像裁剪庫。</string>
+    <string name="dependency_gson_description_label">Gson 是一個 Java 函式庫，可用於將 Java 物件轉換為其 JSON 表示形式。 它也可用於將 JSON 字串轉換為等效的 Java 物件。 Gson 可以處理任意 Java 對象，包括您沒有原始程式碼的現有物件。</string>
+    <string name="height_label">高度</string>
+    <string name="dependency_kotlinx_coroutines_description_label">為 Android 應用程式提供 Dispatchers.Main 上下文。</string>
 </resources>
