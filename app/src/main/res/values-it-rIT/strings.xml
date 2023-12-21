@@ -277,7 +277,7 @@
     <string name="action_wifi_connection_from_wifi_settings">Copia la password e vai alle impostazioni Wi-Fi</string>
     <string name="action_wifi_connection_error_wifi_not_activated">Devi attivare il Wi-Fi sul tuo dispositivo!</string>
     <string name="action_wifi_password_copy_label">Password copiata!</string>
-    <string name="action_wifi_success_added_label">Connessione Wi-Fi aggiunta</string>
+    <string name="action_wifi_success_added_label">Connessione Wi-Fi aggiunta!</string>
     <string name="action_wifi_failure_added_label">Errore durante l\'aggiunta della connessione Wi-Fi</string>
     <string name="action_wifi_already_added_label">Connessione Wi-Fi già aggiunta</string>
     <string name="action_wifi_add_network_refused">Connessione Wi-Fi rifiutata.</string>
