@@ -74,7 +74,7 @@
     <string name="qr_code_error_correction_level_name_medium">Середній (~15%)</string>
     <string name="qr_code_error_correction_level_name_quartile">Квартиль (~25%)</string>
     <string name="qr_code_error_correction_level_name_high">Високий (~30%)</string>
-    <string name="label_history_empty">Історія сканування пуста…</string>
+    <string name="label_history_empty">Історія сканування порожня…</string>
     <string name="snack_bar_message_item_deleted">Товар \"%1$s\" вилучено з історії.</string>
     <string name="popup_message_confirmation_delete_history">Видалити всю історію\?</string>
     <string name="menu_item_history_delete">Видалити історію</string>
@@ -91,7 +91,7 @@
     <string name="scan_error_short_information_label">Під час пошуку інформації виникла помилка!</string>
     <string name="warning_label">Увага</string>
     <string name="snack_bar_message_file_export_success">Файл збережено!</string>
-    <string name="barcode_scanned_label">%1$s скановано!</string>
+    <string name="barcode_scanned_label">%1$s відскановано!</string>
     <string name="import_json_label">Імпортувати (JSON)</string>
     <string name="barcode_found_on_label">Знайдено у %1$s!</string>
     <string name="no_product_found_label">Товару не знайдено!</string>
@@ -111,7 +111,7 @@
     <string name="scan_error_internet_information_label">Інформація про товар не знайдена, тому що ви, здається, не підключені до Інтернету!</string>
     <string name="snack_bar_message_file_import_success">Файл імпортований!</string>
     <string name="export_json_label">Експортувати як JSON</string>
-    <string name="scan_error_information_label">Трапилася помилка при пошуку інформації на віддаленому API… Переконайтеся, що у вас є доступ до Інтернету та застосунку видані дозволи. Якщо проблема залишиться, то мабуть помилка з серверами.</string>
+    <string name="scan_error_information_label">Трапилася помилка під час пошуку інформації на віддаленому API… Будь ласка, перевірте ваше інтернет-з\'єднання та дозволи застосунку! Якщо проблема залишається, ймовірно, це проблема з сервером.</string>
     <string name="about_barcode_information_label">Інформація про штрихкод</string>
     <string name="scan_error_message_label">Повідомлення про помилку:</string>
     <string name="no_internet_permission">У вас немає дозволу на доступ до Інтернету.</string>
