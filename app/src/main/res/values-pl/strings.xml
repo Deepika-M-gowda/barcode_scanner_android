@@ -95,7 +95,7 @@
     <string name="flash_label">Lampa</string>
     <string name="scan_from_image_label">Obraz</string>
     <string name="intent_filter_scan_by_image">Wybierz obraz</string>
-    <string name="scan_information_label">Zeskanuj coś! Umieść kod w ramce.</string>
+    <string name="scan_information_label">Zeskanuj coś! Umieść kod w ramce</string>
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">Szukanie…</string>
     <string name="scan_error_label">Błąd podczas skanowania!</string>
@@ -124,7 +124,7 @@
     <!-- Overview -->
     <string name="quality_label">Jakość produktu</string>
     <string name="nutriscore_entitled_label">Nutri-Score</string>
-    <string name="nutriscore_description">Nutri-Score to logo, które informuje o jakości odżywczej żywności z ocenami od A do E. Wynik uwzględnia składniki odżywcze polecane do spożycia (białka, owoce, warzywa, rośliny strączkowe, nasiona oleiste) i do ograniczenia (energia, nasycone kwasy tłuszczowe, cukry, sól).</string>
+    <string name="nutriscore_description">Nutri-Score to logo, które informuje o jakości odżywczej żywności z ocenami od A do E. Wynik uwzględnia składniki odżywcze <b>polecane do spożycia</b> (białka, owoce, warzywa, rośliny strączkowe, nasiona oleiste) i <b>do ograniczenia</b> (energia, nasycone kwasy tłuszczowe, cukry, sól).</string>
     <string name="nutriscore_description_a">Bardzo dobra jakość odżywcza</string>
     <string name="nutriscore_description_b">Dobra jakość odżywcza</string>
     <string name="nutriscore_description_c">Średnia jakość odżywcza</string>
@@ -323,7 +323,7 @@
     <string name="action_wifi_add_network_refused">Dodawanie połączenia WiFi odzyskane.</string>
     <string name="action_wifi_add_network_successful">WiFi dodane.</string>
     <string name="action_wifi_add_network_failed">Błąd podczas dodawania WiFi.</string>
-    <string name="action_wifi_add_network_already_exists">Już masz dodane te WiFi</string>
+    <string name="action_wifi_add_network_already_exists">Już masz dodane te WiFi.</string>
     <string name="action_wifi_add_network_unknown_error">Nieznany błąd podczas dodawania WiFi.</string>
     <!-- QR Code Generator -->
     <!-- Barcode Generator Errors -->
