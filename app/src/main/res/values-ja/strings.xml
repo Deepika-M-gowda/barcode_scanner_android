@@ -53,7 +53,7 @@
     <string name="action_web_search_label">テキストを検索</string>
     <string name="preferences_switch_light_theme_label">ライト</string>
     <string name="about_barcode_information_label">詳細</string>
-    <string name="preferences_color">メインの色</string>
+    <string name="preferences_color">テーマカラー</string>
     <string name="preferences_theme_label">テーマ</string>
     <string name="preferences_color_material_you">本体設定 (Material You)</string>
     <string name="preferences_color_blue">青色</string>
@@ -71,4 +71,27 @@
     <string name="cancel_label">キャンセル</string>
     <string name="actions_label">操作</string>
     <string name="bar_code_content_label">内容</string>
+    <string name="preferences_switch_scan_vibrate_label">スキャン成功時に振動する</string>
+    <string name="permission_location_label">位置情報</string>
+    <string name="permission_camera_description_label">コードのスキャンに必要です。</string>
+    <string name="preferences_about_title">このアプリについて</string>
+    <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">作成したコードを履歴に保存</string>
+    <string name="preferences_switch_scan_screen_rotation_label">スキャン中に画面の自動回転を無効化</string>
+    <string name="preferences_scan_title">スキャン</string>
+    <string name="permission_camera_label">カメラ</string>
+    <string name="preferences_about_bdd_label">データベース</string>
+    <string name="preferences_languages_title">言語</string>
+    <string name="preferences_search_title">検索</string>
+    <string name="preferences_about_permissions_label">権限</string>
+    <string name="preferences_source_code_label">ソースコード</string>
+    <string name="preferences_barcode_generation_title">コードの作成</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">CameraX API を使用</string>
+    <string name="preferences_about_library_third_label">依存関係</string>
+    <string name="permission_contact_label">連絡先</string>
+    <string name="preferences_switch_scan_barcode_copied_label">スキャンしたコードをコピー</string>
+    <string name="preferences_languages_change">言語を変更</string>
+    <string name="preferences_switch_scan_bip_label">スキャン成功時に音を鳴らす</string>
+    <string name="preferences_search_engine">検索エンジン</string>
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">スキャンしたコードを履歴に保存</string>
+    <string name="preferences_seek_bar_camera_default_zoom_value_label">デフォルトのズームの値</string>
 </resources>

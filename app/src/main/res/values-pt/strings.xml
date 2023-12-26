@@ -182,7 +182,7 @@
     <string name="nutriscore_description_e">Qualidade nutricional péssima</string>
     <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
     <string name="snack_bar_message_item_deleted">O produto \"%1$s\" foi removido do histórico.</string>
-    <string name="qr_code_text_input_edit_text_hint_phone_3">número de telefone 3</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_3">Número de telefone 3</string>
     <string name="preferences_switch_dark_theme_label">Escuro</string>
     <string name="preferences_appearance_title">Aparência</string>
     <string name="qr_code_text_input_edit_text_hint_epc_information">Informações</string>

@@ -95,7 +95,7 @@
     <string name="flash_label">Lampa</string>
     <string name="scan_from_image_label">Obraz</string>
     <string name="intent_filter_scan_by_image">Wybierz obraz</string>
-    <string name="scan_information_label">Zeskanuj coś! Umieść kod w ramce.</string>
+    <string name="scan_information_label">Zeskanuj coś! Umieść kod w ramce</string>
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">Szukanie…</string>
     <string name="scan_error_label">Błąd podczas skanowania!</string>
@@ -124,7 +124,7 @@
     <!-- Overview -->
     <string name="quality_label">Jakość produktu</string>
     <string name="nutriscore_entitled_label">Nutri-Score</string>
-    <string name="nutriscore_description">Nutri-Score to logo, które informuje o jakości odżywczej żywności z ocenami od A do E. Wynik uwzględnia składniki odżywcze polecane do spożycia (białka, owoce, warzywa, rośliny strączkowe, nasiona oleiste) i do ograniczenia (energia, nasycone kwasy tłuszczowe, cukry, sól).</string>
+    <string name="nutriscore_description">Nutri-Score to logo, które informuje o jakości odżywczej żywności z ocenami od A do E. Wynik uwzględnia składniki odżywcze <b>polecane do spożycia</b> (białka, owoce, warzywa, rośliny strączkowe, nasiona oleiste) i <b>do ograniczenia</b> (energia, nasycone kwasy tłuszczowe, cukry, sól).</string>
     <string name="nutriscore_description_a">Bardzo dobra jakość odżywcza</string>
     <string name="nutriscore_description_b">Dobra jakość odżywcza</string>
     <string name="nutriscore_description_c">Średnia jakość odżywcza</string>
@@ -323,7 +323,7 @@
     <string name="action_wifi_add_network_refused">Dodawanie połączenia WiFi odzyskane.</string>
     <string name="action_wifi_add_network_successful">WiFi dodane.</string>
     <string name="action_wifi_add_network_failed">Błąd podczas dodawania WiFi.</string>
-    <string name="action_wifi_add_network_already_exists">Już masz dodane te WiFi</string>
+    <string name="action_wifi_add_network_already_exists">Już masz dodane te WiFi.</string>
     <string name="action_wifi_add_network_unknown_error">Nieznany błąd podczas dodawania WiFi.</string>
     <!-- QR Code Generator -->
     <!-- Barcode Generator Errors -->
@@ -688,4 +688,27 @@
     <string name="country_nz">Nowa Zealanda</string>
     <string name="country_my">Malezja</string>
     <string name="country_mo">Macao</string>
+    <string name="corners_radius">Promień narożników</string>
+    <string name="dependency_color_picker_description_label">Biblioteka dla Androida.</string>
+    <string name="snack_bar_message_file_export_success">Plik zapisany!</string>
+    <string name="barcode_color">Kolor kodu kreskowego</string>
+    <string name="color_shades_issue">Niektóre kolorowe cień nie mogą być wykryte.</string>
+    <string name="shapes_label">Kształty</string>
+    <string name="import_json_label">Importuj (JSON)</string>
+    <string name="keep_proportions">Trzymać proporcje</string>
+    <string name="dimensions_label">Wymiary</string>
+    <string name="background_color">Kolor tła</string>
+    <string name="snack_bar_message_file_export_error">Wystąpił błąd! Plik nie został zapisany.</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="copy_label">Kopiuj</string>
+    <string name="export_csv_label">Eksportuj jako CSV</string>
+    <string name="image_properties">Właściwości obrazu</string>
+    <string name="snack_bar_message_file_import_error">Wystąpił błąd! Plik nie został zaimportowany.</string>
+    <string name="export_label">Eksport</string>
+    <string name="snack_bar_message_file_import_success">Plik zaimportowany!</string>
+    <string name="width_label">Width</string>
+    <string name="export_json_label">Eksportuj jako JSON</string>
+    <string name="preferences_default">Domyślny</string>
+    <string name="colors_label">Zabarwienie</string>
+    <string name="height_label">Uwaga</string>
 </resources>

@@ -391,7 +391,7 @@
     <string name="qr_code_text_input_edit_text_hint_mail_3">Mail address 3</string>
     <string name="qr_code_text_input_edit_text_hint_phone_1">Phone number 1</string>
     <string name="qr_code_text_input_edit_text_hint_phone_2">Phone number 2</string>
-    <string name="qr_code_text_input_edit_text_hint_phone_3">phone number 3</string>
+    <string name="qr_code_text_input_edit_text_hint_phone_3">Phone number 3</string>
     <string name="qr_code_text_input_edit_text_hint_street_address">Street</string>
     <string name="qr_code_text_input_edit_text_hint_postal_code">Postal code</string>
     <string name="qr_code_text_input_edit_text_hint_city">City</string>
@@ -716,7 +716,7 @@
     <!-- No translatable -->
     <string name="app_name" translatable="false">Barcode Scanner</string>
     <string name="text_colon" translatable="false">%1$s:</string>
-    <string name="empty" translatable="false" />
+    <string name="empty" translatable="false"/>
     <string name="png_label" translatable="false">PNG</string>
     <string name="jpg_label" translatable="false">JPG</string>
     <string name="svg_label" translatable="false">SVG</string>

@@ -62,7 +62,7 @@
     <string name="menu_item_history_add_in_history">أضف إلى التاريخ</string>
     <string name="qr_code_error_correction_level_name_quartile">رُبيّع (~25%)</string>
     <string name="bar_code_type_name_unknown">غير معروف</string>
-    <string name="qr_code_type_name_epc">EPC QR Code</string>
+    <string name="qr_code_type_name_epc">رمز الاستجابة السريعة EPC</string>
     <string name="bar_code_type_music">موسيقى</string>
     <string name="bar_code_type_book">كتاب</string>
     <string name="qr_code_type_name_web_site">موقع</string>
@@ -86,7 +86,7 @@
     <string name="popup_message_confirmation_delete_selected_items_history">حذف العناصر المختارة؟</string>
     <string name="qr_code_type_name_apps">تطبيق</string>
     <string name="export_label">تصدير</string>
-    <string name="qr_code_type_name_sms">SMS</string>
+    <string name="qr_code_type_name_sms">رسالة قصيرة</string>
     <string name="scan_cancel_label">لقد ألغي المسح!</string>
     <string name="snack_bar_message_file_import_success">تم استيراد الملف!</string>
     <string name="export_json_label">تصدير كلمف JSON</string>
@@ -644,4 +644,17 @@
     <string name="nova_group_description_2">المكونات المعالجة</string>
     <string name="error_barcode_none_character_message">يجب عليك إدخال قيمة صحيحة في حقل الإدخال.</string>
     <string name="off_risk_moderate_label">مشكوك فيه</string>
+    <string name="corners_radius">شعاع الزوايا</string>
+    <string name="dependency_color_picker_description_label">مكتبة لون المخلّص لـ(أندرويد).</string>
+    <string name="barcode_color">لون الباركود</string>
+    <string name="color_shades_issue">قد لا يتم اكتشاف بعض ظلال الألوان.</string>
+    <string name="shapes_label">الأشكال</string>
+    <string name="keep_proportions">والحفاظ على النسب</string>
+    <string name="dimensions_label">أبعاد</string>
+    <string name="background_color">لون الخلفية</string>
+    <string name="copy_label">نسخ</string>
+    <string name="image_properties">خصائص الصورة</string>
+    <string name="width_label">عرض</string>
+    <string name="colors_label">الوان</string>
+    <string name="height_label">ارتفاع</string>
 </resources>

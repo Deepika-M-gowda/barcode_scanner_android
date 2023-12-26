@@ -576,7 +576,7 @@
     <string name="dependency_room_description_label" translatable="false">Room 提供了一个SQLite之上的抽象层，允许流畅地访问数据库，同时利用 SQLite 的全部功能。</string>
     <string name="dependency_gson_description_label" translatable="false">Gson 是一个 Java 库，可用于将 Java 对象转换为其 JSON 表示形式，或将 JSON 字符串转换为等效的 Java 对象。Gson 可以处理任意的 Java 对象，包括您没有源代码的预先存在的对象。</string>
     <string name="dependency_retrofit_description_label" translatable="false">适用于 Android 和 Java 的类型安全 HTTP client。</string>
-    <string name="dependency_live_data_description_label" translatable="false">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
+    <string name="dependency_live_data_description_label" translatable="false">LiveData 是一个可观察的数据持有者类。 与常规可观察量不同，LiveData 具有生命周期感知能力，这意味着它尊重其他应用程序组件（例如活动、片段或服务）的生命周期。 这种意识确保 LiveData 仅更新处于活动生命周期状态的应用程序组件观察者。</string>
     <!-- Countries -->
     <string name="country_usa">美国</string>
     <string name="country_ca">加拿大</string>
@@ -702,4 +702,25 @@
     <string name="bing_label">必应</string>
     <string name="preferences_default">默认</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="corners_radius">拐角半径</string>
+    <string name="dependency_color_picker_description_label">安卓 的颜色选择器库</string>
+    <string name="snack_bar_message_file_export_success">文件已保存！</string>
+    <string name="barcode_color">条码颜色</string>
+    <string name="color_shades_issue">可能无法检测到某些色调。</string>
+    <string name="shapes_label">形状</string>
+    <string name="import_json_label">导入（JSON</string>
+    <string name="keep_proportions">保持比例</string>
+    <string name="dimensions_label">方面</string>
+    <string name="background_color">背景颜色</string>
+    <string name="snack_bar_message_file_export_error">发生了错误！ 文件未保存。</string>
+    <string name="copy_label">复制</string>
+    <string name="export_csv_label">导出为 CSV</string>
+    <string name="image_properties">图像属性</string>
+    <string name="snack_bar_message_file_import_error">发生了错误！ 文件未导入。</string>
+    <string name="export_label">出口</string>
+    <string name="snack_bar_message_file_import_success">文件已导入！</string>
+    <string name="width_label">宽度</string>
+    <string name="export_json_label">导出为 JSON</string>
+    <string name="colors_label">颜色</string>
+    <string name="height_label">高度</string>
 </resources>
