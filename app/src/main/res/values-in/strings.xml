@@ -156,4 +156,31 @@
     <string name="country_fr">Perancis</string>
     <string name="country_ba">Bosnia-Herzegovina</string>
     <string name="country_usa">Amerika Serikat</string>
+    <string name="nova_group_description_1">Makanan yang tidak diproses atau makanan yang diproses secara minimal</string>
+    <string name="categories_label">Kategori</string>
+    <string name="eco_score_entitled_label">Skor Ramah Lingkungan</string>
+    <string name="nova_group_description_4">Makanan dan minuman yang sangat diproses</string>
+    <string name="ingredients_analysis_label">Analisis bahan:</string>
+    <string name="eco_score_description_c">Dampak lingkungan yang sedang</string>
+    <string name="origins_label">Asal bahan</string>
+    <string name="nova_group_description_unknown">Tidak ada Grup NOVA</string>
+    <string name="details_label">Rincian</string>
+    <string name="labels_label">Label</string>
+    <string name="nova_group_description_3">Makanan olahan</string>
+    <string name="stores_label">Toko</string>
+    <string name="nova_group_description">NOVA Group adalah klasifikasi 4 kelompok untuk menyoroti tingkat makanan olahan: 
+\n1 - Makanan non olahan atau makanan yang diolah secara minimal 
+\n2 - Bahan olahan 
+\n3 - Makanan olahan 
+\n4 - Makanan dan minuman yang diolah secara berlebih</string>
+    <string name="packaging_label">Kemasan</string>
+    <string name="eco_score_description_e">Dampak lingkungan yang sangat tinggi</string>
+    <string name="eco_score_description">Eco-Score dibuat berdasarkan model yang serupa dengan Nutri-Score: ini adalah peringkat dari A (dampak sangat rendah) hingga E (dampak sangat tinggi).</string>
+    <string name="eco_score_description_a">Dampak lingkungan yang sangat rendah</string>
+    <string name="countries_label">Negara penjualan</string>
+    <string name="eco_score_description_b">Dampak lingkungan yang rendah</string>
+    <string name="eco_score_description_d">Dampak lingkungan yang tinggi</string>
+    <string name="scan_error_information_label">Terjadi error saat mencari informasi di API jarak jauh... Mohon pastikan koneksi internet dan izin aplikasi Anda! Jika masalah masih berlanjut, ini adalah masalah server.</string>
+    <string name="eco_score_description_unknown">Dampak lingkungan yang tidak diketahui</string>
+    <string name="nova_group_description_2">Bahan-bahan olahan</string>
 </resources>
