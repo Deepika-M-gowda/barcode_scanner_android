@@ -688,7 +688,7 @@
     <string name="export_json_label">匯出為 JSON</string>
     <string name="dependency_coil_description_label">由 Kotlin 協程支援的 Android 映像載入庫。</string>
     <string name="corners_radius">轉角半徑</string>
-    <string name="dependency_color_picker_description_label">適用於 安卓 的顏色選擇器庫。</string>
+    <string name="dependency_color_picker_description_label">適用於 Android 的色彩選擇器函式庫。</string>
     <string name="barcode_color">條碼顏色</string>
     <string name="dependency_zxing_description_label">ZXing（斑馬線）是一個開源的、多格式的一維/二維條碼影像處理庫。</string>
     <string name="dependency_camera_x_description_label">Jetpack 的 CameraX 支援庫提供了易於使用且功能豐富的 Android 相機 API。</string>
