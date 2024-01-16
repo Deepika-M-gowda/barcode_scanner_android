@@ -83,6 +83,7 @@
         <item name="cardUseCompatPadding">true</item>
         <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
         <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">?colorSurface</item>
     </style>
 
     <style name="AppTheme.CardView.Material3.BlackTheme" parent="@style/AppTheme.CardView.Material3">
@@ -94,7 +95,7 @@
     <style name="AppTheme.BottomNavigationView.Style" parent="Widget.Material3.BottomNavigationView">
         <item name="android:background">?colorSurface</item>
         <item name="itemActiveIndicatorStyle">@style/AppTheme.BottomNavigationView.ActiveIndicator.Style</item>
-        <item name="elevation">2dp</item>
+        <item name="elevation">1dp</item>
     </style>
 
     <style name="AppTheme.BottomNavigationView.ActiveIndicator.Style" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">

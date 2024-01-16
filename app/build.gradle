@@ -42,7 +42,7 @@ dependencies {
     // Android
     implementation 'androidx.activity:activity-ktx:1.8.2'
     implementation 'androidx.preference:preference-ktx:1.2.1'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.7.0"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // UI
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'com.vanniktech:android-image-cropper:4.5.0'
 
     // Coil permet d'afficher des images via des URL web dans des ImageView
