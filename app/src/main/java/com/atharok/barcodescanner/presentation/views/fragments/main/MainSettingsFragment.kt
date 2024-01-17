@@ -33,6 +33,7 @@ import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.preference.Preference
@@ -141,7 +142,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val items = localList.map { requireContext().getString(it.first) }.toTypedArray()
                 val savedIndex = selectedIndex
-                MaterialAlertDialogBuilder(requireContext())
+                AlertDialog.Builder(requireActivity())
                     .setTitle(R.string.preferences_languages_change)
                     .setSingleChoiceItems(items, selectedIndex) { dialogInterface, index ->
                         selectedIndex = index

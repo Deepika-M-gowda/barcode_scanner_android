@@ -155,7 +155,7 @@
         <service
             android:name=".presentation.views.services.QuickSettingsTileService"
             android:exported="true"
-            android:icon="@drawable/application_icon"
+            android:icon="@drawable/tile_icon_24"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>

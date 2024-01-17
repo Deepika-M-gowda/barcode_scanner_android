@@ -53,11 +53,11 @@ class QuickSettingsTileService: TileService() {
                 applicationContext,
                 0,
                 intent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
             startActivityAndCollapse(pendingIntent)
         } else {
-            @Suppress("DEPRECATION")
+            @Suppress("StartActivityAndCollapseDeprecated", "DEPRECATION")
             startActivityAndCollapse(intent)
         }
     }
