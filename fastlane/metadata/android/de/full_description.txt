@@ -1,6 +1,6 @@
-Barcode Scanner ist eine kostenlose und quelloffene App, die es erlaubt, Barcodes zu lesen und zu erzeugen. Es kann Informationen über Lebensmittel, Kosmetika, Bücher und Musik (CDs, Vinyls...) sammeln.
+Barcode Scanner ist eine kostenlose und quelloffene App, die es erlaubt, Barcodes zu lesen und zu erzeugen. Sie kann Informationen über Lebensmittel, Kosmetika, Bücher und Musik (CDs, Vinyls...) sammeln.
 
-Die App verwaltet verschiedene Barcode-Formate:
+Die App unterstützt verschiedene Barcode-Formate:
 - zweidimensionale Barcodes: QR Code, Data Matrix, PDF 417, AZTEC
 - eindimensionale Barcodes: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
 
@@ -12,9 +12,9 @@ Sammeln Sie während des Scannens Informationen über ein Produkt:
 - Musik-CDs, Vinyls... mit MusicBrainz
 
 App-Funktionen:
-- Richten Sie einfach die Kamera Ihres Smartphones auf einen Barcode und erhalten Sie sofort Informationen darüber. Sie können Barcodes auch über ein Bild in Ihrem Smartphone scannen.
-- Lesen Sie mit einem einfachen Scan Visitenkarten, fügen Sie neue Kontakte hinzu, fügen Sie neue Veranstaltungen zu Ihrer Agenda hinzu, öffnen Sie URLs oder stellen Sie sogar eine Wi-Fi-Verbindung her.
-- Scannen Sie Barcodes von Lebensmitteln, um dank der Datenbanken Open Food Facts und Open Beauty Facts Informationen über deren Zusammensetzung zu erhalten.
+- Richten Sie einfach die Kamera Ihres Smartphones auf einen Barcode und erhalten Sie sofort Informationen darüber. Sie können Barcodes auch in einem Bild auf Ihrem Smartphone scannen.
+- Lesen Sie mit einem einfachen Scan Visitenkarten, fügen Sie neue Kontakte hinzu, fügen Sie neue Veranstaltungen zu Ihrer Agenda hinzu, öffnen Sie URLs oder stellen Sie sogar eine WLAN-Verbindung her.
+- Scannen Sie Barcodes von Lebensmitteln, um dank der Datenbanken Open Food Facts und Open Beauty Facts Informationen über deren Inhaltsstoffe zu erhalten.
 - Suchen Sie auf verschiedenen Websites wie Amazon oder Fnac nach Informationen über das gescannte Produkt.
 - Behalten Sie mit dem Verlaufstool den Überblick über alle gescannten Barcodes.
 - Erstellen Sie Ihre eigenen Barcodes.
