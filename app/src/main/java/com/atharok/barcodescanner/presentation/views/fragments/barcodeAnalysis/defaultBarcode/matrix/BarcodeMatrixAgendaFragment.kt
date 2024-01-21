@@ -26,7 +26,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixAgendaBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.google.zxing.client.result.CalendarParsedResult
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType

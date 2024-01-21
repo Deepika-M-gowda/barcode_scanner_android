@@ -25,10 +25,9 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
-import com.google.zxing.client.result.ParsedResult
 
 class MusicActionsFragment: AbstractActionsFragment() {
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
+    override fun configureActions(barcode: Barcode): Array<ActionItem> {
         return when(barcode.getBarcodeType()){
             BarcodeType.MUSIC -> configureMusicActions(barcode)
             else -> configureDefaultActions(barcode)
@@ -38,7 +37,8 @@ class MusicActionsFragment: AbstractActionsFragment() {
     private fun configureMusicActions(barcode: Barcode) = arrayOf(
         ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, showUrlsAlertDialog(barcode.contents)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
+        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
+        ActionItem(R.string.action_modify_barcode, R.drawable.baseline_create_24, modifyBarcodeContents(barcode))
     )
 
     // Actions

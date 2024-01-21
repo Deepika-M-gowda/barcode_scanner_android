@@ -24,11 +24,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import com.atharok.barcodescanner.common.extensions.serializable
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
@@ -42,14 +42,14 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 
         arguments?.takeIf {
             // Si les données ResultScanData sont bien stockées en mémoire
-            it.containsKey(PRODUCT_KEY)// && it.getSerializable(PRODUCT_KEY) is BarcodeProduct
+            it.containsKey(BARCODE_ANALYSIS_KEY)// && it.getSerializable(PRODUCT_KEY) is BarcodeProduct
         }?.apply {
 
-            serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
+            serializable(BARCODE_ANALYSIS_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
                 try {
                     @Suppress("UNCHECKED_CAST")
                     start(barcodeAnalysis as T)
-                }catch (e: ClassCastException){
+                } catch (e: ClassCastException) {
                     e.printStackTrace()
                 }
             }
@@ -60,31 +60,28 @@ abstract class BarcodeAnalysisFragment<T: BarcodeAnalysis>: BaseFragment() {
 
     abstract fun start(product: T)
 
-    protected fun configureExpandableViewFragment(frameLayout: FrameLayout, title: String, contents: CharSequence?, iconDrawableResource: Int? = null){
-
+    protected fun configureExpandableViewFragment(frameLayout: FrameLayout, title: String, contents: CharSequence?, iconDrawableResource: Int? = null) {
         if(!contents.isNullOrBlank()) {
-
-            val fragment = ExpandableViewFragment.newInstance(
-                title = title,
-                contents = contents.trim(),
-                drawableResource = iconDrawableResource
+            applyFragment(
+                containerViewId = frameLayout.id,
+                fragment = ExpandableViewFragment.newInstance(
+                    title = title,
+                    contents = contents.trim(),
+                    drawableResource = iconDrawableResource
+                )
             )
-
-            applyFragment(frameLayout.id, fragment)
         } else {
             frameLayout.visibility = View.GONE
         }
     }
 
-    protected fun startBarcodeDetailsActivity(){
-
-        arguments?.serializable(PRODUCT_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
+    protected fun startBarcodeDetailsActivity() {
+        arguments?.serializable(BARCODE_ANALYSIS_KEY, BarcodeAnalysis::class.java)?.let { barcodeAnalysis ->
             val intent = createStartActivityIntent(requireContext(), BarcodeDetailsActivity::class).apply {
                 putExtra(BARCODE_CONTENTS_KEY, barcodeAnalysis.barcode.contents)
                 putExtra(BARCODE_FORMAT_KEY, barcodeAnalysis.barcode.formatName)
                 putExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, barcodeAnalysis.barcode.errorCorrectionLevel)
             }
-
             startActivity(intent)
         }
     }

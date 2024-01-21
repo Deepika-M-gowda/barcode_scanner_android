@@ -29,12 +29,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentMusicAnalysisBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.databinding.TemplateRecyclerViewBinding
+import com.atharok.barcodescanner.domain.entity.analysis.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
-import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.DateConverter
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ApiAnalysisFragment
@@ -116,7 +116,7 @@ class MusicAnalysisFragment : ApiAnalysisFragment<MusicBarcodeAnalysis>() {
     companion object {
         fun newInstance(musicProduct: MusicBarcodeAnalysis) = MusicAnalysisFragment().apply {
             arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, musicProduct)
+                putSerializable(BARCODE_ANALYSIS_KEY, musicProduct)
             }
         }
     }

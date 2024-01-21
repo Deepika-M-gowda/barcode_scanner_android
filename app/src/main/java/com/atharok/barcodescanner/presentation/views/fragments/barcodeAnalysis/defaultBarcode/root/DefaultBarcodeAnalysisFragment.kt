@@ -33,9 +33,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentDefaultBarcodeAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import org.koin.android.ext.android.get
 
@@ -79,10 +79,10 @@ class DefaultBarcodeAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAna
 
     override fun start(product: DefaultBarcodeAnalysis) {
         viewBinding.fragmentDefaultBarcodeAnalysisOuterView.fixAnimateLayoutChangesInNestedScroll()
-        configureAboutBarcodeFragment()
+        configureBarcodeAnalysisInformationFragment()
     }
 
-    private fun configureAboutBarcodeFragment() = applyFragment(
+    private fun configureBarcodeAnalysisInformationFragment() = applyFragment(
         containerViewId = viewBinding.fragmentDefaultBarcodeAnalysisAboutBarcodeFrameLayout.id,
         fragmentClass = BarcodeAnalysisInformationFragment::class,
         args = arguments
@@ -91,7 +91,7 @@ class DefaultBarcodeAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAna
     companion object {
         fun newInstance(barcodeAnalysis: DefaultBarcodeAnalysis) = DefaultBarcodeAnalysisFragment().apply {
             arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, barcodeAnalysis)
+                putSerializable(BARCODE_ANALYSIS_KEY, barcodeAnalysis)
             }
         }
     }

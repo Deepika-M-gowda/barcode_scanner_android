@@ -26,11 +26,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
-import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
 import com.atharok.barcodescanner.databinding.FragmentExpandableViewBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixAgendaFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixContactFragment
@@ -43,19 +41,13 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.d
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
-import org.koin.android.ext.android.getKoin
+import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 /**
  * A simple [Fragment] subclass.
  */
 class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>() {
-
-    private val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
-        BARCODE_ANALYSIS_SCOPE_SESSION_ID,
-        named(BARCODE_ANALYSIS_SCOPE_SESSION)
-    ) // close in BarcodeAnalysisActivity
 
     private var _binding: FragmentExpandableViewBinding? = null
     private val viewBinding get() = _binding!!
@@ -87,7 +79,7 @@ class BarcodeAnalysisContentsFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
 
         val barcode = product.barcode
 
-        val parsedResult = barcodeAnalysisScope.get<ParsedResult> {
+        val parsedResult: ParsedResult = get {
             parametersOf(barcode.contents, barcode.getBarcodeFormat())
         }
 

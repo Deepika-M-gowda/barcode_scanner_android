@@ -47,7 +47,6 @@ import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThir
 import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 import kotlin.reflect.KClass
 

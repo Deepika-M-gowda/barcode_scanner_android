@@ -22,10 +22,9 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.
 
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
-import com.google.zxing.client.result.ParsedResult
 
 class DefaultActionsFragment: AbstractActionsFragment() {
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
+    override fun configureActions(barcode: Barcode): Array<ActionItem> {
         return configureDefaultActions(barcode)
     }
 }

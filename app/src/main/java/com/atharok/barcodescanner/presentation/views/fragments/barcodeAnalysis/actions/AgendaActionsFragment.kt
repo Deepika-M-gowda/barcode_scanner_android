@@ -28,7 +28,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.A
 import com.google.zxing.client.result.CalendarParsedResult
 import com.google.zxing.client.result.ParsedResult
 
-class AgendaActionsFragment: AbstractActionsFragment() {
+class AgendaActionsFragment: AbstractParsedResultActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
             is CalendarParsedResult -> configureAgendaActions(barcode, parsedResult)

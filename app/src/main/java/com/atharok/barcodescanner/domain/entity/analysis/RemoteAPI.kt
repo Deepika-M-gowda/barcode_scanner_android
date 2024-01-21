@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.analysis
 
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType

@@ -20,21 +20,12 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
+
 class BarcodeFormCreatorAztecFragment: AbstractBarcodeFormCreatorBasicFragment() {
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.AZTEC)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkBlankError(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.AZTEC
 }

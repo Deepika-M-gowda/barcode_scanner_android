@@ -24,33 +24,20 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.InputType
 import android.view.View
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.common.utils.PDF_417_LENGTH
 import com.google.zxing.BarcodeFormat
+
 class BarcodeFormCreatorPDF417Fragment: AbstractBarcodeFormCreatorBasicFragment() {
-
-    companion object {
-        private const val MAX_LENGTH = 2710
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val inputEditText = viewBinding.fragmentBarcodeFormCreatorTextInputEditText
-        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(MAX_LENGTH))
+        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(PDF_417_LENGTH))
         inputEditText.inputType = InputType.TYPE_CLASS_TEXT
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.PDF_417)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkBlankError(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.PDF_417
 }

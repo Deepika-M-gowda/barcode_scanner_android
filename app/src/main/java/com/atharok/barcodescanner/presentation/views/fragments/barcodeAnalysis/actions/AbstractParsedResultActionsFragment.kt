@@ -18,20 +18,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product.musicProduct
+package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
-import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
+import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
+import com.google.zxing.client.result.ParsedResult
+import org.koin.android.ext.android.get
+import org.koin.core.parameter.parametersOf
 
-@Keep
-class MusicBarcodeAnalysis(barcode: Barcode,
-                           source: RemoteAPI,
-                           val id: String?,
-                           val artists: List<String>?,
-                           val album: String?,
-                           val date: String?,
-                           val trackCount: Int?,
-                           val coverUrl: String?,
-                           val albumTracks: List<AlbumTrack>?): BarcodeAnalysis(barcode, source)
+abstract class AbstractParsedResultActionsFragment: AbstractActionsFragment() {
+
+    override fun configureActions(barcode: Barcode): Array<ActionItem> {
+        return configureActions(
+            barcode = barcode,
+            parsedResult = get {
+                parametersOf(barcode.contents, barcode.getBarcodeFormat())
+            }
+        )
+    }
+
+    abstract fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem>
+}

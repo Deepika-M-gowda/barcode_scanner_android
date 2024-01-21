@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:padding="@dimen/x_large_margin"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.actions.BarcodeContentsModifierModalBottomSheetFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_entitled_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="@dimen/light_margin">
+        <TextView
+            android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="viewStart"
+            android:text="@string/action_modify_barcode"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_format_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_title_text_view"
+            android:layout_centerVertical="true"
+            android:textAlignment="viewEnd"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_entitled_layout"
+        android:hint="@string/bar_code_content_label"
+        style="@style/AppTheme.TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_error_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_text_input_layout"
+        android:visibility="gone"
+        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Error" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_modify_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/light_margin"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_error_text_view"
+        android:text="@string/action_modify_barcode"
+        style="@style/AppTheme.MaterialButton" />
+
+</RelativeLayout>

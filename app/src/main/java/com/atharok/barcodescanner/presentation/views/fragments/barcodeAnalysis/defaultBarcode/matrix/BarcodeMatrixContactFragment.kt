@@ -27,7 +27,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixContactBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
 import com.google.zxing.client.result.AddressBookParsedResult
 import com.google.zxing.client.result.ParsedResult

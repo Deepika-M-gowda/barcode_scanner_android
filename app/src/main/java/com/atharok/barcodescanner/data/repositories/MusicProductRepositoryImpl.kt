@@ -22,15 +22,16 @@ package com.atharok.barcodescanner.data.repositories
 
 import com.atharok.barcodescanner.data.api.CoverArtArchiveService
 import com.atharok.barcodescanner.data.api.MusicBrainzService
+import com.atharok.barcodescanner.domain.entity.analysis.MusicBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
-import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.MusicProductRepository
 
-class MusicProductRepositoryImpl(private val musicBrainzService: MusicBrainzService,
-                                 private val coverArtService: CoverArtArchiveService): MusicProductRepository {
-
+class MusicProductRepositoryImpl(
+    private val musicBrainzService: MusicBrainzService,
+    private val coverArtService: CoverArtArchiveService
+): MusicProductRepository {
     override suspend fun getMusicProduct(barcode: Barcode): MusicBarcodeAnalysis? {
         val musicAlbumInfoResponse = musicBrainzService.getAlbumInfoFromBarcode("barcode:${barcode.contents}")
 

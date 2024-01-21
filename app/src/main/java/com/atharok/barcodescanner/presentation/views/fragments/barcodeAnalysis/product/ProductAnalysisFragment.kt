@@ -34,30 +34,25 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.API_ERROR_KEY
-import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
-import com.atharok.barcodescanner.common.utils.IGNORE_USE_SEARCH_ON_API_SETTING_KEY
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentProductAnalysisBinding
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPIError
+import com.atharok.barcodescanner.domain.entity.analysis.UnknownProductBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPIError
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisErrorApiFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
 import org.koin.android.ext.android.get
 
 /**
  * A simple [Fragment] subclass.
  */
-class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>() {
+class ProductAnalysisFragment : BarcodeAnalysisFragment<UnknownProductBarcodeAnalysis>() {
 
-    private var barcode: Barcode? = null
+    private var product: UnknownProductBarcodeAnalysis? = null
 
     private var _binding: FragmentProductAnalysisBinding? = null
     private val viewBinding get() = _binding!!
@@ -85,7 +80,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
 
                 R.id.menu_activity_barcode_analysis_download_from_apis -> {
-                    barcode?.let { downloadFromRemoteAPI(it) }
+                    product?.let { downloadFromRemoteAPI(it) }
                     true
                 }
 
@@ -98,21 +93,21 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    override fun start(product: DefaultBarcodeAnalysis) {
+    override fun start(product: UnknownProductBarcodeAnalysis) {
 
-        this.barcode = product.barcode
+        this.product = product
 
         viewBinding.fragmentProductAnalysisOuterView.fixAnimateLayoutChangesInNestedScroll()
 
         configureAboutBarcodeFragment()
 
-        arguments?.serializable(API_ERROR_KEY, RemoteAPIError::class.java)?.let { apiError ->
+        product.apiError.let { apiError ->
             when(apiError){
                 RemoteAPIError.NO_INTERNET_PERMISSION, RemoteAPIError.ERROR -> {
                     configureProductSearchApiEntitledLayout()
                     configureBarcodeErrorApiFragment()
                 }
-                RemoteAPIError.NO_API_RESEARCH -> {
+                RemoteAPIError.AUTOMATIC_API_RESEARCH_DISABLED -> {
                     viewBinding.fragmentProductAnalysisSearchApiEntitledLayout.visibility = View.GONE
                     viewBinding.fragmentProductAnalysisSearchApiFrameLayout.visibility = View.GONE
                 }
@@ -140,7 +135,7 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
      */
     private fun configureBarcodeErrorApiFragment() = applyFragment(
         containerViewId = viewBinding.fragmentProductAnalysisSearchApiFrameLayout.id,
-        fragmentClass = BarcodeAnalysisErrorApiFragment::class,
+        fragmentClass = ProductAnalysisApiErrorFragment::class,
         args = arguments
     )
 
@@ -159,34 +154,33 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
         iconDrawableResource = R.drawable.outline_info_24
     )
 
-    private fun downloadFromRemoteAPI(barcode: Barcode) {
+    private fun downloadFromRemoteAPI(product: UnknownProductBarcodeAnalysis) {
         requireActivity().apply {
             if(this is BarcodeAnalysisActivity) {
-                val apiError: RemoteAPIError? = arguments?.serializable(API_ERROR_KEY, RemoteAPIError::class.java)
-                when(apiError) {
+                val barcode = product.barcode
+                when(product.apiError) {
                     RemoteAPIError.NO_RESULT -> {
                         if (!barcode.isBookBarcode()) {
                             createRemoteApiAlertDialog(barcode, this)
                         }
                     }
-                    RemoteAPIError.NO_API_RESEARCH -> {
-                        intent.putExtra(IGNORE_USE_SEARCH_ON_API_SETTING_KEY, true)
+                    RemoteAPIError.AUTOMATIC_API_RESEARCH_DISABLED -> {
                         when(barcode.getBarcodeType()) {
-                            BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
-                            BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
-                            BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
-                            BarcodeType.MUSIC -> this.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
-                            BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
+                            BarcodeType.FOOD -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                            BarcodeType.BEAUTY -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                            BarcodeType.PET_FOOD -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.MUSIC -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.MUSICBRAINZ)
+                            BarcodeType.BOOK -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_LIBRARY)
                             else -> createRemoteApiAlertDialog(barcode, this)
                         }
                     }
                     else -> {
                         when(barcode.getBarcodeType()) {
-                            BarcodeType.FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
-                            BarcodeType.BEAUTY -> this.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
-                            BarcodeType.PET_FOOD -> this.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
-                            BarcodeType.MUSIC -> this.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
-                            BarcodeType.BOOK -> this.restartApiResearch(barcode, RemoteAPI.OPEN_LIBRARY)
+                            BarcodeType.FOOD -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                            BarcodeType.BEAUTY -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                            BarcodeType.PET_FOOD -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                            BarcodeType.MUSIC -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.MUSICBRAINZ)
+                            BarcodeType.BOOK -> this.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_LIBRARY)
                             else -> createRemoteApiAlertDialog(barcode, this)
                         }
                     }
@@ -207,10 +201,10 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
             setTitle(R.string.preferences_remote_api_choose_label)
             setItems(items) { _, i ->
                 when(i) {
-                    0 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_FOOD_FACTS)
-                    1 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
-                    2 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
-                    3 -> barcodeAnalysisActivity.restartApiResearch(barcode, RemoteAPI.MUSICBRAINZ)
+                    0 -> barcodeAnalysisActivity.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_FOOD_FACTS)
+                    1 -> barcodeAnalysisActivity.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_BEAUTY_FACTS)
+                    2 -> barcodeAnalysisActivity.fetchProductFromRemoteAPI(barcode, RemoteAPI.OPEN_PET_FOOD_FACTS)
+                    3 -> barcodeAnalysisActivity.fetchProductFromRemoteAPI(barcode, RemoteAPI.MUSICBRAINZ)
                 }
             }
             setNegativeButton(R.string.close_dialog_label) {
@@ -223,14 +217,11 @@ class ProductAnalysisFragment : BarcodeAnalysisFragment<DefaultBarcodeAnalysis>(
     }
 
     companion object {
-        fun newInstance(defaultBarcodeAnalysis: DefaultBarcodeAnalysis, apiError: RemoteAPIError, errorMessage: String?) = ProductAnalysisFragment().apply {
-            arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, defaultBarcodeAnalysis)
-                putSerializable(API_ERROR_KEY, apiError)
-                errorMessage?.let {
-                    putString(BARCODE_MESSAGE_ERROR_KEY, it)
+        fun newInstance(barcodeAnalysis: UnknownProductBarcodeAnalysis) =
+            ProductAnalysisFragment().apply {
+                arguments = get<Bundle>().apply {
+                    putSerializable(BARCODE_ANALYSIS_KEY, barcodeAnalysis)
                 }
             }
-        }
     }
 }

@@ -34,7 +34,7 @@ import java.io.Serializable
 @Keep
 @Entity
 data class Barcode(
-    @ColumnInfo(name = "contents") val contents: String,
+    @ColumnInfo(name = "contents") var contents: String,
     @ColumnInfo(name = "format_name") val formatName: String,
     @PrimaryKey @ColumnInfo(name = "scan_date") val scanDate: Long,
     @ColumnInfo(name = "type") var type: String = BarcodeType.UNKNOWN.name,
@@ -43,7 +43,8 @@ data class Barcode(
 ): Serializable {
 
     @Ignore
-    val country: CountriesEnum? = determineBarcodeCountry(contents, getBarcodeFormat())
+    var country: CountriesEnum? = determineBarcodeCountry(contents, getBarcodeFormat())
+        private set
 
     @Ignore
     val is1DProductBarcodeFormat = getBarcodeFormat().is1DProductBarcode()
@@ -198,6 +199,11 @@ data class Barcode(
                 else -> null
             }
         } else null
+    }
+
+    @Ignore
+    fun updateCountry() {
+        country = determineBarcodeCountry(contents, getBarcodeFormat())
     }
 
     @Ignore

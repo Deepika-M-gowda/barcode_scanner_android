@@ -27,8 +27,8 @@ import android.view.ViewGroup
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisInformationBinding
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AbstractActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
@@ -56,9 +56,7 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         _binding=null
     }
 
-    override fun start(product: BarcodeAnalysis){
-
-        //viewBinding.fragmentBarcodeDefaultOuterView.fixAnimateLayoutChangesInNestedScroll()
+    override fun start(product: BarcodeAnalysis) {
         viewBinding.root.fixAnimateLayoutChangesInNestedScroll()
 
         configureAboutBarcodeEntitledLayout()
@@ -69,12 +67,12 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         configureActionsBarcodeFragment(product.barcode.getBarcodeType())
     }
 
-    private fun configureAboutBarcodeEntitledLayout(){
+    private fun configureAboutBarcodeEntitledLayout() {
         val entitled: String = getString(R.string.about_barcode_label)
         viewBinding.fragmentBarcodeAnalysisInformationAboutBarcodeEntitledTextViewTemplate.root.text = entitled
     }
 
-    private fun configureBarcodeActionsEntitledLayout(){
+    private fun configureBarcodeActionsEntitledLayout() {
         val entitled: String = getString(R.string.actions_label)
         viewBinding.fragmentBarcodeAnalysisInformationBarcodeActionsEntitledTextViewTemplate.root.text = entitled
     }
@@ -96,13 +94,4 @@ class BarcodeAnalysisInformationFragment: BarcodeAnalysisFragment<BarcodeAnalysi
         fragmentClass = get<KClass<out AbstractActionsFragment>> { parametersOf(barcodeType) },
         args = arguments
     )
-
-    /*companion object {
-        fun newInstance(barcodeAnalysis: BarcodeAnalysis) = BarcodeAnalysisInformationFragment()
-            .apply {
-            arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, barcodeAnalysis)
-            }
-        }
-    }*/
 }

@@ -18,10 +18,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.analysis
 
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 
 @Keep
-class DefaultBarcodeAnalysis(barcode: Barcode, source: RemoteAPI = RemoteAPI.NONE): BarcodeAnalysis(barcode, source)
+class BookBarcodeAnalysis(
+    barcode: Barcode,
+    source: RemoteAPI,
+    val url: String?,
+    val title: String?,
+    val subtitle: String?,
+    val originalTitle: String?,
+    val authors: List<String>?,
+    val coverUrl: String?,
+    val description: String?,
+    val publishDate: String?,
+    val numberPages: Int?,
+    val contributions: List<String>?,
+    val publishers: List<String>?,
+    val categories: List<String>?
+): BarcodeAnalysis(barcode, source)

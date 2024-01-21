@@ -24,55 +24,20 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.InputType
 import android.view.View
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.canBeConvertibleToLong
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.common.utils.UPC_E_LENGTH
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorUPCEFragment: AbstractBarcodeFormCreatorBasicFragment() {
-    companion object {
-        private const val MAX_LENGTH = 8
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val inputEditText = viewBinding.fragmentBarcodeFormCreatorTextInputEditText
-        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(MAX_LENGTH))
+        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(UPC_E_LENGTH))
         inputEditText.inputType = InputType.TYPE_CLASS_NUMBER
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        if(barcodeContents.length != MAX_LENGTH) {
-            configureErrorMessage(getString(R.string.error_barcode_wrong_length_message, MAX_LENGTH.toString()))
-            return
-        }
-
-        if(!barcodeContents.canBeConvertibleToLong()) {
-            configureErrorMessage(getString(R.string.error_barcode_not_a_number_message))
-            return
-        }
-
-        if(!barcodeContents.startsWith("0")){
-            configureErrorMessage(getString(R.string.error_barcode_upc_e_not_start_with_0_error_message))
-            return
-        }
-
-        val checkDigit: Int = barcodeFormatChecker.calculateUPCECheckDigit(barcodeContents)
-        if(checkDigit != Character.getNumericValue(barcodeContents.last())){
-            configureErrorMessage(getString(R.string.error_barcode_wrong_key_message, MAX_LENGTH.toString(), checkDigit.toString()))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.UPC_E)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkUPCEError(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.UNKNOWN_PRODUCT
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.UPC_E
 }

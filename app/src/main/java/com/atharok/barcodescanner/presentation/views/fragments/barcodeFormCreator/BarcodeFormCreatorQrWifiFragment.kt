@@ -28,7 +28,6 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrWifiBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 
 /**
  * A simple [Fragment] subclass.
@@ -84,6 +83,4 @@ class BarcodeFormCreatorQrWifiFragment : AbstractBarcodeFormCreatorQrFragment() 
         getString(R.string.spinner_wifi_encryption_none) -> "nopass"
         else -> "WEP"
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.WIFI
 }

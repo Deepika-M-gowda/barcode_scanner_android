@@ -30,8 +30,8 @@ import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisAboutBinding
 import com.atharok.barcodescanner.databinding.TemplateAboutBarcodeBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.google.zxing.BarcodeFormat
 

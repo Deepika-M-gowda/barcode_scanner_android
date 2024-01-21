@@ -24,38 +24,20 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.InputType
 import android.view.View
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.common.utils.CODE_93_LENGTH
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorCode93Fragment: AbstractBarcodeFormCreatorBasicFragment() {
-    companion object {
-        private const val MAX_LENGTH = 80
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val inputEditText = viewBinding.fragmentBarcodeFormCreatorTextInputEditText
-        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(MAX_LENGTH))
+        inputEditText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(CODE_93_LENGTH))
         inputEditText.inputType = InputType.TYPE_CLASS_TEXT
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        if(!barcodeFormatChecker.checkCode93Regex(barcodeContents)) {
-            configureErrorMessage(getString(R.string.error_barcode_93_regex_error_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.CODE_93)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkCode93Error(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.INDUSTRIAL
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.CODE_93
 }

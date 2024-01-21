@@ -20,19 +20,19 @@
 
 package com.atharok.barcodescanner.domain.usecases
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
+import androidx.lifecycle.MutableLiveData
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPIError
+import com.atharok.barcodescanner.domain.entity.analysis.UnknownProductBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
 import com.atharok.barcodescanner.domain.repositories.MusicProductRepository
 import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 import com.atharok.barcodescanner.domain.resources.Resource
-import kotlinx.coroutines.Dispatchers
 
 class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                      private val beautyProductRepository: BeautyProductRepository,
@@ -40,82 +40,37 @@ class ProductUseCase(private val foodProductRepository: FoodProductRepository,
                      private val musicProductRepository: MusicProductRepository,
                      private val bookProductRepository: BookProductRepository) {
 
-    fun getProduct(barcode: Barcode, apiRemote: RemoteAPI): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
+    val productObserver = MutableLiveData<Resource<BarcodeAnalysis>>()
 
-        emit(Resource.loading())
+    suspend fun fetchProduct(barcode: Barcode, remoteAPI: RemoteAPI) {
+        productObserver.postValue(Resource.loading())
 
-        var barcodeAnalysis: BarcodeAnalysis? = null
         try {
-            barcodeAnalysis = when(apiRemote) {
-                RemoteAPI.OPEN_FOOD_FACTS -> foodProductRepository.getFoodProduct(barcode)
-                RemoteAPI.OPEN_BEAUTY_FACTS -> beautyProductRepository.getBeautyProduct(barcode)
-                RemoteAPI.OPEN_PET_FOOD_FACTS -> petFoodProductRepository.getPetFoodProduct(barcode)
-                RemoteAPI.MUSICBRAINZ -> musicProductRepository.getMusicProduct(barcode)
-                RemoteAPI.OPEN_LIBRARY -> bookProductRepository.getBookProduct(barcode)
-                RemoteAPI.NONE -> null
+            val barcodeAnalysis: BarcodeAnalysis = when(remoteAPI) {
+                RemoteAPI.OPEN_FOOD_FACTS -> foodProductRepository.getFoodProduct(barcode) ?: UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.NO_RESULT, source = remoteAPI)
+                RemoteAPI.OPEN_BEAUTY_FACTS -> beautyProductRepository.getBeautyProduct(barcode) ?: UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.NO_RESULT, source = remoteAPI)
+                RemoteAPI.OPEN_PET_FOOD_FACTS -> petFoodProductRepository.getPetFoodProduct(barcode) ?: UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.NO_RESULT, source = remoteAPI)
+                RemoteAPI.MUSICBRAINZ -> musicProductRepository.getMusicProduct(barcode) ?: UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.NO_RESULT, source = remoteAPI)
+                RemoteAPI.OPEN_LIBRARY -> bookProductRepository.getBookProduct(barcode) ?: UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.NO_RESULT, source = remoteAPI)
+                RemoteAPI.NONE -> UnknownProductBarcodeAnalysis(
+                    barcode = barcode,
+                    apiError = RemoteAPIError.AUTOMATIC_API_RESEARCH_DISABLED,
+                    source = when(barcode.getBarcodeType()) {
+                        BarcodeType.FOOD -> RemoteAPI.OPEN_FOOD_FACTS
+                        BarcodeType.PET_FOOD -> RemoteAPI.OPEN_PET_FOOD_FACTS
+                        BarcodeType.BEAUTY -> RemoteAPI.OPEN_BEAUTY_FACTS
+                        BarcodeType.MUSIC -> RemoteAPI.MUSICBRAINZ
+                        BarcodeType.BOOK -> RemoteAPI.OPEN_LIBRARY
+                        else -> remoteAPI
+                    }
+                )
             }
 
-            if (barcodeAnalysis == null)
-                barcodeAnalysis = DefaultBarcodeAnalysis(barcode, apiRemote)
-
-            emit(Resource.success(barcodeAnalysis))
+            productObserver.postValue(Resource.success(barcodeAnalysis))
 
         } catch (e: Exception) {
-            emit(Resource.failure(e, barcodeAnalysis))
+            productObserver.postValue(Resource.failure(e, UnknownProductBarcodeAnalysis(barcode, RemoteAPIError.ERROR, e.toString(), remoteAPI)))
             e.printStackTrace()
         }
-    }
-
-    /*fun getProduct(barcode: Barcode): LiveData<Resource<BarcodeAnalysis>> = liveData(Dispatchers.IO) {
-
-        emit(Resource.loading())
-
-        var barcodeAnalysis: BarcodeAnalysis? = null
-        try {
-            barcodeAnalysis = when (barcode.getBarcodeType()) {
-                BarcodeType.FOOD -> foodProductRepository.getFoodProduct(barcode)
-                BarcodeType.BEAUTY -> beautyProductRepository.getBeautyProduct(barcode)
-                BarcodeType.PET_FOOD -> petFoodProductRepository.getPetFoodProduct(barcode)
-                BarcodeType.BOOK -> bookProductRepository.getBookProduct(barcode)
-
-                else -> {
-                    when {
-                        barcode.isBookBarcode() -> bookProductRepository.getBookProduct(barcode)
-                        //else -> searchEverywhere(barcode)
-                    }
-                }
-            }
-
-            if (barcodeAnalysis == null)
-                barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
-
-            emit(Resource.success(barcodeAnalysis))
-
-        } catch (e: Exception) {
-            emit(Resource.failure(e, barcodeAnalysis))
-        }
-    }*/
-
-    /*private suspend fun searchEverywhere(barcode: Barcode): FoodBarcodeAnalysis? {
-
-        var product: FoodBarcodeAnalysis? = null
-        for(i in 0..2){
-
-            product = when(i){
-                0 -> foodProductRepository.getFoodProduct(barcode)
-                1 -> beautyProductRepository.getBeautyProduct(barcode)
-                else -> petFoodProductRepository.getPetFoodProduct(barcode)
-            }
-
-            if(product != null){
-                break
-            }
-        }
-
-        return product
-    }*/
-
-    fun refresh(){
-        Resource.loading(null)
     }
 }

@@ -36,9 +36,8 @@ import com.atharok.barcodescanner.presentation.intent.createPickWifiNetworkInten
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.WifiParsedResult
-import org.koin.core.parameter.parametersOf
 
-class WifiActionsFragment: AbstractActionsFragment() {
+class WifiActionsFragment: AbstractParsedResultActionsFragment() {
 
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
@@ -93,8 +92,8 @@ class WifiActionsFragment: AbstractActionsFragment() {
 
     private fun connectToWifiFromApp(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val data: WifiSetupData = barcodeAnalysisScope.get { parametersOf(parsedResult) }
-            val wifiConnect: WifiConnect = barcodeAnalysisScope.get()
+            val data: WifiSetupData = configureWifiSetupData(parsedResult)
+            val wifiConnect = WifiConnect()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> wifiConnect.connectWithApiR(data, wifiPreviewRequest)
@@ -119,5 +118,18 @@ class WifiActionsFragment: AbstractActionsFragment() {
             val intent: Intent = createPickWifiNetworkIntent()
             startActivity(intent)
         }
+    }
+
+    private fun configureWifiSetupData(parsedResult: WifiParsedResult): WifiSetupData {
+        return WifiSetupData(
+            authType = parsedResult.networkEncryption ?: "",
+            name = parsedResult.ssid ?: "",
+            password = parsedResult.password ?: "",
+            isHidden = parsedResult.isHidden,
+            anonymousIdentity = "",
+            identity = "",
+            eapMethod = "",
+            phase2Method = ""
+        )
     }
 }

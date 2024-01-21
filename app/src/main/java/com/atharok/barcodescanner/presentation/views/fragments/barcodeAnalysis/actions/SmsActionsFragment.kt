@@ -30,7 +30,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.A
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.SMSParsedResult
 
-class SmsActionsFragment: AbstractActionsFragment() {
+class SmsActionsFragment: AbstractParsedResultActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
             is SMSParsedResult -> configureSmsActions(barcode, parsedResult)

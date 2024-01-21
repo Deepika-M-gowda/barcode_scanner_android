@@ -30,7 +30,6 @@ import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.RequiresApi
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
 import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT
 import com.atharok.barcodescanner.common.utils.KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING
 import com.atharok.barcodescanner.data.api.CoverArtArchiveService
@@ -81,10 +80,8 @@ import com.atharok.barcodescanner.domain.library.InternetChecker
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VCardReader
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
-import com.atharok.barcodescanner.domain.library.wifiSetup.WifiConnect
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithNewLibrary
 import com.atharok.barcodescanner.domain.library.wifiSetup.configuration.WifiSetupWithOldLibrary
-import com.atharok.barcodescanner.domain.library.wifiSetup.data.WifiSetupData
 import com.atharok.barcodescanner.domain.repositories.AdditiveClassRepository
 import com.atharok.barcodescanner.domain.repositories.AdditivesRepository
 import com.atharok.barcodescanner.domain.repositories.AllergensRepository
@@ -114,6 +111,7 @@ import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AbstractActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AgendaActionsFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BarcodeContentsModifierModalBottomSheetFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BeautyActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BookActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.ContactActionsFragment
@@ -164,7 +162,6 @@ import com.google.zxing.ResultMetadataType
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.ResultParser
-import com.google.zxing.client.result.WifiParsedResult
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -187,7 +184,6 @@ val appModules by lazy {
             useCaseModule,
             repositoryModule,
             dataModule,
-            scopesModule,
             fragmentsModule
         )
     } else {
@@ -198,7 +194,6 @@ val appModules by lazy {
             useCaseModule,
             repositoryModule,
             dataModule,
-            scopesModule,
             fragmentsModule
         )
     }
@@ -214,7 +209,50 @@ val androidModule: Module = module {
     single<LocationManager> { androidApplication().applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager }
 
     factory<Barcode> { (contents: String, formatName: String, qrErrorCorrectionLevel: QrCodeErrorCorrectionLevel) ->
-        Barcode(contents, formatName, System.currentTimeMillis(), errorCorrectionLevel = qrErrorCorrectionLevel.name)
+        Barcode(
+            contents = contents,
+            formatName = formatName,
+            scanDate = System.currentTimeMillis(),
+            errorCorrectionLevel = qrErrorCorrectionLevel.name
+        ).apply {
+            type = get<BarcodeType> {
+                parametersOf(this)
+            }.name
+        }
+    }
+
+    factory { (contents: String, format: BarcodeFormat) ->
+        val result = Result(contents, null, null, format)
+        ResultParser.parseResult(result)
+    }
+
+    factory<BarcodeType> { (barcode: Barcode) ->
+        when {
+            barcode.is1DProductBarcodeFormat -> {
+                if(barcode.isBookBarcode()) BarcodeType.BOOK else BarcodeType.UNKNOWN_PRODUCT
+            }
+            barcode.is1DIndustrialBarcodeFormat -> BarcodeType.INDUSTRIAL
+            else -> {
+                val parsedResult: ParsedResult = get {
+                    parametersOf(barcode.contents, barcode.getBarcodeFormat())
+                }
+                when(parsedResult.type){
+                    ParsedResultType.ADDRESSBOOK -> BarcodeType.CONTACT
+                    ParsedResultType.EMAIL_ADDRESS -> BarcodeType.MAIL
+                    ParsedResultType.PRODUCT -> BarcodeType.UNKNOWN_PRODUCT
+                    ParsedResultType.URI -> BarcodeType.URL
+                    ParsedResultType.TEXT -> BarcodeType.TEXT
+                    ParsedResultType.GEO -> BarcodeType.LOCALISATION
+                    ParsedResultType.TEL -> BarcodeType.PHONE
+                    ParsedResultType.SMS -> BarcodeType.SMS
+                    ParsedResultType.CALENDAR -> BarcodeType.AGENDA
+                    ParsedResultType.WIFI -> BarcodeType.WIFI
+                    ParsedResultType.ISBN -> BarcodeType.BOOK
+                    ParsedResultType.VIN -> BarcodeType.TEXT
+                    else -> BarcodeType.UNKNOWN
+                }
+            }
+        }
     }
 
     factory<QrCodeErrorCorrectionLevel>(named(KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING)) { (errorCorrectionLevel: String?) ->
@@ -244,7 +282,7 @@ val androidModule: Module = module {
 val libraryModule: Module = module {
     single<SettingsManager> { SettingsManager(androidContext()) }
     single<BarcodeBitmapAnalyser>{ BarcodeBitmapAnalyser() }
-    single<BarcodeFormatChecker> { BarcodeFormatChecker() }
+    single<BarcodeFormatChecker> { BarcodeFormatChecker(androidContext()) }
     single<VCardReader> { VCardReader(androidContext()) }
     single<WifiSetupWithOldLibrary> { WifiSetupWithOldLibrary() }
     single<Iban> { Iban() }
@@ -523,50 +561,8 @@ val fragmentsModule = module {
             BarcodeType.UNKNOWN_PRODUCT -> ProductActionsFragment::class
         }
     }
-}
 
-val scopesModule: Module = module {
-
-    scope(named(BARCODE_ANALYSIS_SCOPE_SESSION)) {
-
-        scoped { (contents: String, format: BarcodeFormat) ->
-            val result = Result(contents, null, null, format)
-            ResultParser.parseResult(result)
-        }
-
-        scoped<BarcodeType> { (contents: String, format: BarcodeFormat) ->
-            val parsedResult: ParsedResult = this@scoped.get { parametersOf(contents, format) }
-            when(parsedResult.type){
-                ParsedResultType.ADDRESSBOOK -> BarcodeType.CONTACT
-                ParsedResultType.EMAIL_ADDRESS -> BarcodeType.MAIL
-                ParsedResultType.PRODUCT -> BarcodeType.UNKNOWN_PRODUCT
-                ParsedResultType.URI -> BarcodeType.URL
-                ParsedResultType.TEXT -> BarcodeType.TEXT
-                ParsedResultType.GEO -> BarcodeType.LOCALISATION
-                ParsedResultType.TEL -> BarcodeType.PHONE
-                ParsedResultType.SMS -> BarcodeType.SMS
-                ParsedResultType.CALENDAR -> BarcodeType.AGENDA
-                ParsedResultType.WIFI -> BarcodeType.WIFI
-                ParsedResultType.ISBN -> BarcodeType.BOOK
-                ParsedResultType.VIN -> BarcodeType.TEXT
-                else -> BarcodeType.UNKNOWN
-            }
-        }
-
-        // ---- Action: Wi-Fi ----
-        scoped<WifiSetupData> { (parsedResult: WifiParsedResult) ->
-            WifiSetupData(
-                authType = parsedResult.networkEncryption ?: "",
-                name = parsedResult.ssid ?: "",
-                password = parsedResult.password ?: "",
-                isHidden = parsedResult.isHidden,
-                anonymousIdentity = "",
-                identity = "",
-                eapMethod = "",
-                phase2Method = ""
-            )
-        }
-
-        scoped { WifiConnect() }
+    factory { (barcode: Barcode) ->
+        BarcodeContentsModifierModalBottomSheetFragment.newInstance(barcode)
     }
 }

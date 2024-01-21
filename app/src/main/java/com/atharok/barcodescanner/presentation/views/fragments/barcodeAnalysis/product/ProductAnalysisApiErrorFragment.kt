@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part
+package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,11 +26,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.BARCODE_MESSAGE_ERROR_KEY
-import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisErrorApiBinding
+import com.atharok.barcodescanner.databinding.FragmentProductAnalysisApiErrorBinding
 import com.atharok.barcodescanner.databinding.TemplateEntitledViewBinding
 import com.atharok.barcodescanner.databinding.TemplateWarningViewBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.UnknownProductBarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.InternetChecker
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import org.koin.android.ext.android.inject
@@ -38,9 +37,9 @@ import org.koin.android.ext.android.inject
 /**
  * A simple [Fragment] subclass.
  */
-class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>() {
+class ProductAnalysisApiErrorFragment: BarcodeAnalysisFragment<UnknownProductBarcodeAnalysis>() {
 
-    private var _binding: FragmentBarcodeAnalysisErrorApiBinding? = null
+    private var _binding: FragmentProductAnalysisApiErrorBinding? = null
     private val viewBinding get() = _binding!!
 
     private lateinit var headerEntitledTemplateBinding: TemplateEntitledViewBinding
@@ -49,7 +48,7 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
     private val internetChecker: InternetChecker by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentBarcodeAnalysisErrorApiBinding.inflate(inflater, container, false)
+        _binding = FragmentProductAnalysisApiErrorBinding.inflate(inflater, container, false)
         configureWarningTemplates(inflater)
         return viewBinding.root
     }
@@ -71,10 +70,10 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         bodyWarningTemplateBinding = TemplateWarningViewBinding.inflate(inflater, parentBody, true)
     }
 
-    override fun start(product: BarcodeAnalysis) {
+    override fun start(product: UnknownProductBarcodeAnalysis) {
         configureHeaderEntitledAndIcon()
         configureInformationTextViewError()
-        configureMessageTextViewError()
+        configureMessageTextViewError(product.message)
     }
 
     private fun configureHeaderEntitledAndIcon(){
@@ -92,9 +91,9 @@ class BarcodeAnalysisErrorApiFragment: BarcodeAnalysisFragment<BarcodeAnalysis>(
         bodyWarningTemplateBinding.templateWarningViewInformationTextView.text = msg
     }
 
-    private fun configureMessageTextViewError() = displayText(
+    private fun configureMessageTextViewError(message: String?) = displayText(
         textView = bodyWarningTemplateBinding.templateWarningViewErrorMessageTextView,
         layout = bodyWarningTemplateBinding.templateWarningViewErrorMessageLayout,
-        text =  arguments?.getString(BARCODE_MESSAGE_ERROR_KEY)
+        text =  message
     )
 }

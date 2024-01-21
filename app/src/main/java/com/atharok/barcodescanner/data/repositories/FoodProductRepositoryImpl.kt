@@ -21,9 +21,9 @@
 package com.atharok.barcodescanner.data.repositories
 
 import com.atharok.barcodescanner.data.api.OpenFoodFactsService
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
 
 class FoodProductRepositoryImpl(private val service: OpenFoodFactsService): FoodProductRepository {

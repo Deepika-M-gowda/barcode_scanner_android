@@ -32,7 +32,7 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisLabelsBinding
 import com.atharok.barcodescanner.databinding.TemplateProductLabelsBinding
 import com.atharok.barcodescanner.databinding.TemplateTextViewTitleBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.images.ImageAdapter

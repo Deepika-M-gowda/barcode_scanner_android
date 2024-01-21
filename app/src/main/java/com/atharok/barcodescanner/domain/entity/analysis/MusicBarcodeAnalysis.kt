@@ -18,11 +18,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.analysis
 
-enum class RemoteAPIError {
-    ERROR,
-    NO_RESULT,
-    NO_INTERNET_PERMISSION,
-    NO_API_RESEARCH
-}
+import androidx.annotation.Keep
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
+import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
+
+@Keep
+class MusicBarcodeAnalysis(
+    barcode: Barcode,
+    source: RemoteAPI,
+    val id: String?,
+    val artists: List<String>?,
+    val album: String?,
+    val date: String?,
+    val trackCount: Int?,
+    val coverUrl: String?,
+    val albumTracks: List<AlbumTrack>?
+): BarcodeAnalysis(barcode, source)

@@ -113,7 +113,7 @@ class BarcodeImageEditorFragment : BaseFragment() {
         viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                closeVirtualKeyBoard(viewBinding.root) // Ferme le Keyboard si on change d'onglet
+                hideSoftKeyboard() // Ferme le Keyboard si on change d'onglet
             }
         })
 

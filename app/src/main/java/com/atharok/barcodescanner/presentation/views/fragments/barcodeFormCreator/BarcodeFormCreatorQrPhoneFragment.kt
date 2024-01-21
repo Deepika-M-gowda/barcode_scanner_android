@@ -25,10 +25,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrPhoneBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.google.zxing.BarcodeFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -54,18 +51,7 @@ class BarcodeFormCreatorQrPhoneFragment : AbstractBarcodeFormCreatorQrFragment()
         return if(number.isNotBlank()) "tel:$number" else ""
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if (barcodeContents.isBlank()) {
-            configureErrorMessage(getString(R.string.error_barcode_qr_phone_number_missing_message))
-            return
-        }
-
-        closeVirtualKeyBoard(viewBinding.fragmentBarcodeFormCreatorQrPhoneInputEditText)
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkQrPhoneNumberError(it) }
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.PHONE
 }

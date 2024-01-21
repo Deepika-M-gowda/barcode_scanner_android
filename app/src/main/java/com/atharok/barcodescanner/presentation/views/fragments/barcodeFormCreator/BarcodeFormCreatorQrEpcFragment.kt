@@ -34,7 +34,6 @@ import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.BANK_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrEpcBinding
 import com.atharok.barcodescanner.domain.entity.bank.Bank
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.library.Iban
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
@@ -173,6 +172,4 @@ class BarcodeFormCreatorQrEpcFragment: AbstractBarcodeFormCreatorQrFragment() {
             resultLauncher.launch(intent)
         }
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
 }

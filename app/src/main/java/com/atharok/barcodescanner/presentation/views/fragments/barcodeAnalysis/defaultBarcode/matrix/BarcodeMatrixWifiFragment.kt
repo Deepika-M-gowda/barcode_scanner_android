@@ -27,7 +27,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeMatrixWifiBinding
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.ParsedResultType
 import com.google.zxing.client.result.WifiParsedResult

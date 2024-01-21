@@ -23,8 +23,6 @@ package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreat
 import android.os.Bundle
 import android.text.InputType
 import android.view.View
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
 
 class BarcodeFormCreatorCodabarFragment: AbstractBarcodeFormCreatorBasicFragment() {
@@ -34,22 +32,9 @@ class BarcodeFormCreatorCodabarFragment: AbstractBarcodeFormCreatorBasicFragment
         inputEditText.inputType = InputType.TYPE_CLASS_TEXT
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        if(!barcodeFormatChecker.checkCodabarRegex(barcodeContents)) {
-            configureErrorMessage(getString(R.string.error_barcode_codabar_regex_error_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.CODABAR)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkCodabarError(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.INDUSTRIAL
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.CODABAR
 }

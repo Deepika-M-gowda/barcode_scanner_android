@@ -26,6 +26,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorBinding
+import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 
 /**
  * A simple [Fragment] subclass.
@@ -48,7 +49,9 @@ abstract class AbstractBarcodeFormCreatorBasicFragment: AbstractBarcodeFormCreat
 
     override fun getBarcodeTextFromForm(): String {
         val inputEditText = viewBinding.fragmentBarcodeFormCreatorTextInputEditText
-        closeVirtualKeyBoard(inputEditText)
+        hideSoftKeyboard()
         return inputEditText.text.toString()
     }
+
+    override fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel = QrCodeErrorCorrectionLevel.NONE
 }

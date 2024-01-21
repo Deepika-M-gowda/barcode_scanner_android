@@ -20,8 +20,8 @@
 
 package com.atharok.barcodescanner.domain.repositories
 
+import com.atharok.barcodescanner.domain.entity.analysis.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
 
 interface MusicProductRepository {
     suspend fun getMusicProduct(barcode: Barcode): MusicBarcodeAnalysis?

@@ -96,8 +96,13 @@ abstract class BaseFragment: Fragment() {
         return displayText(textView, layout, text)
     }
 
-    fun closeVirtualKeyBoard(view: View) {
-        val inputMethodManager: InputMethodManager = get()
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    fun hideSoftKeyboard() {
+        view?.let { currentView ->
+            val inputMethodManager: InputMethodManager = get()
+            inputMethodManager.hideSoftInputFromWindow(
+                currentView.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
+        }
     }
 }

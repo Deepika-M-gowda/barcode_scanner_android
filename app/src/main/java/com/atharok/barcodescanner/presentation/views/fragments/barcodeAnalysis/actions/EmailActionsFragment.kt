@@ -29,7 +29,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.A
 import com.google.zxing.client.result.EmailAddressParsedResult
 import com.google.zxing.client.result.ParsedResult
 
-class EmailActionsFragment: AbstractActionsFragment() {
+class EmailActionsFragment: AbstractParsedResultActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
             is EmailAddressParsedResult -> configureEmailActions(barcode, parsedResult)

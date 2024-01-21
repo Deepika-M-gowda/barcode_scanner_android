@@ -43,6 +43,9 @@ class DatabaseBarcodeUseCase(
 
     suspend fun insertBarcodes(barcodes: List<Barcode>) = barcodeRepository.insertBarcodes(barcodes)
 
+    suspend fun update(date: Long, contents: String, barcodeType: BarcodeType, name: String): Int =
+        barcodeRepository.update(date, contents, barcodeType, name)
+
     suspend fun updateType(date: Long, barcodeType: BarcodeType): Int =
         barcodeRepository.updateType(date, barcodeType)
 

@@ -26,9 +26,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.ActivityVeggieBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis
 import com.atharok.barcodescanner.presentation.views.recyclerView.veggie.VeggieItemAdapter
 
@@ -41,7 +41,7 @@ class VeggieActivity : BaseActivity() {
 
         configureToolbar()
 
-        val foodProduct: FoodBarcodeAnalysis? = intent.serializable(PRODUCT_KEY, FoodBarcodeAnalysis::class.java)
+        val foodProduct: FoodBarcodeAnalysis? = intent.serializable(BARCODE_ANALYSIS_KEY, FoodBarcodeAnalysis::class.java)
 
         val veggieIngredientsList = foodProduct?.veggieIngredientList
         if(veggieIngredientsList.isNullOrEmpty()) {

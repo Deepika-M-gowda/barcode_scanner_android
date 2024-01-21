@@ -22,9 +22,6 @@ package com.atharok.barcodescanner.common.utils
 
 // -------------------------------------- Scope Name Session ---------------------------------------
 
-const val BARCODE_ANALYSIS_SCOPE_SESSION = "barcodeAnalysisSession"
-const val BARCODE_ANALYSIS_SCOPE_SESSION_ID = "barcodeAnalysisSessionID"
-
 const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_RESULT = "koinNamedErrorCorrectionLevelByResult"
 const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING = "koinNamedErrorCorrectionLevelByString"
 
@@ -33,23 +30,14 @@ const val KOIN_NAMED_ERROR_CORRECTION_LEVEL_BY_STRING = "koinNamedErrorCorrectio
 // Clé du Bundle associé à l'URI d'une image.
 const val IMAGE_URI_KEY = "imageUriKey"
 
-// Clé du Bundle associé au type (et sous type) BarcodeProduct
-const val PRODUCT_KEY = "productKey"
+// Clé du Bundle associé au type (et sous type) BarcodeAnalysis
+const val BARCODE_ANALYSIS_KEY = "barcodeAnalysisKey"
 
 // Clé du Bundle associé au type Barcode
 const val BARCODE_KEY = "barcodeKey"
 
-// Clé du Bundle associé au au type d'erreur lors de la recherche sur une API.
-const val API_ERROR_KEY = "apiErrorKey"
-
 // Clé de l'intent permettant la récupération des données de Bank entre BarcodeFormCreatorQrEpcFragment et BarcodeEpcTemplateListActivity.
 const val BANK_KEY = "bankKey"
-
-// Clé de l'intent lors de la re-création de l'activity permettant de rechercher dans les APIs même lorsque désactivé dans les paramètres
-const val IGNORE_USE_SEARCH_ON_API_SETTING_KEY = "ignoreUseSearchOnApiSettingKey"
-
-// Clé du Bundle associé au message d'erreur lors de la recherche sur une API.
-const val BARCODE_MESSAGE_ERROR_KEY = "barcodeMessageErrorKey"
 
 // Clé du Bundle associé au type AllBarCodeCreatorType
 const val BARCODE_TYPE_ENUM_KEY = "barcodeTypeEnumKey" // Clé de l'intent contenant le type de code-barres à générer (AllBarCodeCreatorType: QR_TEXT, QR_AGENDA, AZTEC, EAN_13, EAN_8, UPC_A, etc...)
@@ -72,13 +60,6 @@ const val BARCODE_IMAGE_CORNER_RADIUS_KEY = "barcodeImageCornerRadiusKey"
 const val BARCODE_IMAGE_WIDTH_KEY = "barcodeImageWidthKey"
 const val BARCODE_IMAGE_HEIGHT_KEY = "barcodeImageHeightKey"
 
-
-// ---- Permet d'identifier le ViewPagerAdapter à instancier avec les bons paramètres dans Koin ----
-
-/*const val FOOD_PRODUCT_VIEW_PAGER_ADAPTER = "foodProductViewPagerAdapter"
-const val BOOK_PRODUCT_VIEW_PAGER_ADAPTER = "bookProductViewPagerAdapter"
-const val DEFAULT_PRODUCT_VIEW_PAGER_ADAPTER = "defaultProductViewPagerAdapter"*/
-
 // ------------------------------------------- API Links -------------------------------------------
 
 // ---- URL des fichiers complémentaires pour OpenFoodFacts ----
@@ -100,28 +81,6 @@ const val COUNTRIES_URL = "https://world.openfoodfacts.org/data/taxonomies/count
 /*const val INGREDIENTS_ANALYSIS_LOCALE_FILE_NAME = "ingredients_analysis.json"
 const val INGREDIENTS_ANALYSIS_URL = "https://world.openfoodfacts.org/data/taxonomies/ingredients_analysis.json"*/
 
-// ------------------- URL des images du Nutriscore, NovaGroup et EcoScore -------------------------
-
-/*const val NUTRISCORE_A_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-a.svg"
-const val NUTRISCORE_B_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-b.svg"
-const val NUTRISCORE_C_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-c.svg"
-const val NUTRISCORE_D_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-d.svg"
-const val NUTRISCORE_E_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-e.svg"
-const val NUTRISCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/misc/nutriscore-unknown.svg"
-
-const val NOVA_GROUP_1_URL = "https://static.openfoodfacts.org/images/misc/nova-group-1.svg"
-const val NOVA_GROUP_2_URL = "https://static.openfoodfacts.org/images/misc/nova-group-2.svg"
-const val NOVA_GROUP_3_URL = "https://static.openfoodfacts.org/images/misc/nova-group-3.svg"
-const val NOVA_GROUP_4_URL = "https://static.openfoodfacts.org/images/misc/nova-group-4.svg"
-const val NOVA_GROUP_UNKNOWN_URL = "https://static.openfoodfacts.org/images/misc/nova-group-unknown.svg"
-
-const val ECO_SCORE_A_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-a.svg"
-const val ECO_SCORE_B_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-b.svg"
-const val ECO_SCORE_C_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-c.svg"
-const val ECO_SCORE_D_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-d.svg"
-const val ECO_SCORE_E_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-e.svg"
-const val ECO_SCORE_UNKNOWN_URL = "https://static.openfoodfacts.org/images/attributes/ecoscore-unknown.svg"*/
-
 // ----------------------------------------- Static Values -----------------------------------------
 
 const val DATABASE_NAME = "scan_history.db"
@@ -130,6 +89,7 @@ const val ENCODING_ISO_8859_1 = "ISO-8859-1"
 const val BARCODE_IMAGE_DEFAULT_SIZE = 1024
 
 // ---- Valeures indicatives de la quantité des substances dans les produits alimentaires ----
+
 const val FAT_VALUE_LOW = 3.0f
 const val FAT_VALUE_HIGH = 20.0f
 
@@ -141,3 +101,15 @@ const val SUGAR_VALUE_HIGH = 12.5f
 
 const val SALT_VALUE_LOW = 0.3f
 const val SALT_VALUE_HIGH = 1.5f
+
+// ---- Barcode contents length ----
+
+const val EAN_13_LENGTH = 13
+const val EAN_8_LENGTH = 8
+const val UPC_A_LENGTH = 12
+const val UPC_E_LENGTH = 8
+const val CODE_39_LENGTH = 80
+const val CODE_93_LENGTH = 80
+const val CODE_128_LENGTH = 80
+const val ITF_LENGTH = 80
+const val PDF_417_LENGTH = 2710

@@ -18,17 +18,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product.foodProduct
+package com.atharok.barcodescanner.domain.entity.analysis
 
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.EcoScore
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.NovaGroup
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutriscore
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.NutritionFactsEnum
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.PalmOilStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeganStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.VegetarianStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.VeggieIngredientAnalysis
 
 @Keep
 class FoodBarcodeAnalysis(
-    override val barcode: Barcode,
-    override val source: RemoteAPI,
+    barcode: Barcode,
+    source: RemoteAPI,
     val name: String?,
     val brands: String?,
     val quantity: String?,
@@ -53,7 +60,8 @@ class FoodBarcodeAnalysis(
     val palmOilStatus: PalmOilStatus,
     val servingQuantity: Double?,
     val unit: String,
-    val nutrientsList: List<Nutrient>): BarcodeAnalysis(barcode, source) {
+    val nutrientsList: List<Nutrient>
+): BarcodeAnalysis(barcode, source) {
 
     val contains100gValues: Boolean = nutrientsList.any { it.values.value100g != null }
 

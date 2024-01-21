@@ -20,31 +20,18 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
-import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
 
-/**
- * A simple [Fragment] subclass.
- */
 abstract class AbstractBarcodeFormCreatorQrFragment: AbstractBarcodeFormCreatorFragment() {
-
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkBlankError(it) }
     }
 
-    protected fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel {
-        return get<SettingsManager>().getQrCodeErrorCorrectionLevel()
-    }
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.QR_CODE
+
+    override fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel =
+        get<SettingsManager>().getQrCodeErrorCorrectionLevel()
 }

@@ -20,26 +20,12 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.google.zxing.BarcodeFormat
+
 class BarcodeFormCreatorDataMatrixFragment: AbstractBarcodeFormCreatorBasicFragment() {
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if(barcodeContents.isBlank()){
-            configureErrorMessage(getString(R.string.error_barcode_none_character_message))
-            return
-        }
-
-        if(!barcodeFormatChecker.checkISO88591EncodingValue(barcodeContents)) {
-            configureErrorMessage(getString(R.string.error_barcode_encoding_iso_8859_1_error_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.DATA_MATRIX)
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkDataMatrixError(it) }
     }
 
-    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
+    override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.DATA_MATRIX
 }

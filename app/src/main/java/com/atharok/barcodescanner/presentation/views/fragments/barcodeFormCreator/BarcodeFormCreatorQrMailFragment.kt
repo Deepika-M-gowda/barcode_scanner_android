@@ -25,10 +25,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrMailBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.google.zxing.BarcodeFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -58,17 +55,7 @@ class BarcodeFormCreatorQrMailFragment : AbstractBarcodeFormCreatorQrFragment() 
             "" else "MATMSG:TO:$email;SUB:$subject;BODY:$message;;"
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if (barcodeContents.isBlank()) {
-            configureErrorMessage(getString(R.string.error_barcode_qr_email_missing_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkQrMailError(it) }
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.MAIL
 }

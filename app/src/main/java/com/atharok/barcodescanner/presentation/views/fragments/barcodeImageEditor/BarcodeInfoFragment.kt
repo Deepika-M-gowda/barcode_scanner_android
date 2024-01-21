@@ -27,14 +27,14 @@ import android.view.ViewGroup
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.extensions.serializable
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeInfoBinding
+import com.atharok.barcodescanner.domain.entity.analysis.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
-import com.atharok.barcodescanner.domain.entity.product.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
@@ -100,7 +100,7 @@ class BarcodeInfoFragment : BaseFragment() {
         val barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
 
         val args: Bundle = get<Bundle>().apply {
-            putSerializable(PRODUCT_KEY, barcodeAnalysis)
+            putSerializable(BARCODE_ANALYSIS_KEY, barcodeAnalysis)
         }
 
         applyFragment(

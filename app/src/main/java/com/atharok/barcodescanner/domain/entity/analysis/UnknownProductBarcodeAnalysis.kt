@@ -18,11 +18,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.domain.entity.product
+package com.atharok.barcodescanner.domain.entity.analysis
 
 import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import java.io.Serializable
 
 @Keep
-open class BarcodeAnalysis(open val barcode: Barcode, open val source: RemoteAPI): Serializable
+class UnknownProductBarcodeAnalysis(
+    barcode: Barcode,
+    val apiError: RemoteAPIError,
+    val message: String? = null,
+    source: RemoteAPI = RemoteAPI.NONE
+): BarcodeAnalysis(barcode, source)

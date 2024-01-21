@@ -1,10 +1,10 @@
 package com.atharok.barcodescanner.data.model.musicBrainzResponse.musicAlbumInfo
 
 import androidx.annotation.Keep
+import com.atharok.barcodescanner.domain.entity.analysis.MusicBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
-import com.atharok.barcodescanner.domain.entity.product.musicProduct.MusicBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.obtainAlbum
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.obtainArtists
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.obtainDate

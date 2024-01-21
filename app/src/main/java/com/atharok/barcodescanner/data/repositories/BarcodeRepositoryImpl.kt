@@ -36,6 +36,8 @@ class BarcodeRepositoryImpl(private val barcodeDao: BarcodeDao): BarcodeReposito
 
     override suspend fun insertBarcodes(barcodes: List<Barcode>) = barcodeDao.insert(barcodes)
 
+    override suspend fun update(date: Long, contents: String, barcodeType: BarcodeType, name: String): Int = barcodeDao.update(date, contents, barcodeType.name, name)
+
     override suspend fun updateType(date: Long, barcodeType: BarcodeType): Int = barcodeDao.updateType(date, barcodeType.name)
 
     override suspend fun updateName(date: Long, name: String): Int = barcodeDao.updateName(date, name)

@@ -36,8 +36,6 @@ import androidx.core.location.LocationListenerCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrLocalisationBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
-import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
 
 /**
@@ -80,16 +78,8 @@ class BarcodeFormCreatorQrLocalisationFragment : AbstractBarcodeFormCreatorQrFra
         }
     }
 
-    override fun generateBarcode() {
-        val barcodeContents: String = getBarcodeTextFromForm()
-
-        if (barcodeContents.isBlank()) {
-            configureErrorMessage(getString(R.string.error_barcode_qr_localisation_missing_message))
-            return
-        }
-
-        hideErrorMessage()
-        startBarcodeDetailsActivity(barcodeContents, BarcodeFormat.QR_CODE, getQrCodeErrorCorrectionLevel())
+    override val checkError: (contents: String) -> String? by lazy {
+        { barcodeFormatChecker.checkQrLocalisationError(it) }
     }
 
     // ---- Permissions ----
@@ -172,6 +162,4 @@ class BarcodeFormCreatorQrLocalisationFragment : AbstractBarcodeFormCreatorQrFra
             viewBinding.fragmentBarcodeFormCreatorQrLocalisationSearchInfoLayout.visibility = View.GONE
         }
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.LOCALISATION
 }

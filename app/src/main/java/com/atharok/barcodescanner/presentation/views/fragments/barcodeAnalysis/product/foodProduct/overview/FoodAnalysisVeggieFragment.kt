@@ -31,9 +31,9 @@ import com.atharok.barcodescanner.common.extensions.setChipBackgroundColorFromAt
 import com.atharok.barcodescanner.common.extensions.setChipIconTintFromAttrRes
 import com.atharok.barcodescanner.common.extensions.setChipStrokeColorFromAttrRes
 import com.atharok.barcodescanner.common.extensions.setChipTextColorFromAttrRes
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisVeggieBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.VeggieActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
@@ -104,7 +104,7 @@ class FoodAnalysisVeggieFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis>()
 
     private fun getVeggieOnClickListener(foodProduct: FoodBarcodeAnalysis) = View.OnClickListener {
         val intent = createStartActivityIntent(requireContext(), VeggieActivity::class).apply {
-            putExtra(PRODUCT_KEY, foodProduct)
+            putExtra(BARCODE_ANALYSIS_KEY, foodProduct)
         }
 
         startActivity(intent)

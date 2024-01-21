@@ -30,7 +30,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.A
 import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.TelParsedResult
 
-class PhoneActionsFragment: AbstractActionsFragment() {
+class PhoneActionsFragment: AbstractParsedResultActionsFragment() {
     override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
         return when(parsedResult){
             is TelParsedResult -> configurePhoneActions(barcode, parsedResult)

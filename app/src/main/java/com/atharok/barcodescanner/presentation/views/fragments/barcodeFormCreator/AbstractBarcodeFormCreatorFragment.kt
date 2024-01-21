@@ -31,7 +31,6 @@ import com.atharok.barcodescanner.common.utils.BARCODE_CONTENTS_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_FORMAT_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
 import com.atharok.barcodescanner.domain.library.SettingsManager
@@ -57,9 +56,11 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.menu_activity_confirm, menu)
             }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
-                R.id.menu_activity_confirm_item -> {generateBarcode(); true}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId) {
+                R.id.menu_activity_confirm_item -> {
+                    generateBarcode()
+                    true
+                }
                 else -> false
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
@@ -88,8 +89,6 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
             val barcode: Barcode = get {
                 parametersOf(contents, barcodeFormat.name, qrCodeErrorCorrectionLevel)
             }
-            barcode.type = getBarcodeType().name
-
             // Insert les informations du code-barres dans la base de données (de manière asynchrone)
             databaseBarcodeViewModel.insertBarcode(barcode)
         }
@@ -109,7 +108,19 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
         }
     }
 
+    protected fun generateBarcode() {
+        val contents = getBarcodeTextFromForm()
+        checkError(contents)?.let {
+            configureErrorMessage(it)
+        } ?: run {
+            hideSoftKeyboard()
+            hideErrorMessage()
+            startBarcodeDetailsActivity(contents, getBarcodeFormat(), getQrCodeErrorCorrectionLevel())
+        }
+    }
+
+    abstract val checkError: (contents: String) -> String?
     abstract fun getBarcodeTextFromForm(): String
-    abstract fun generateBarcode()
-    abstract fun getBarcodeType(): BarcodeType
+    abstract fun getBarcodeFormat(): BarcodeFormat
+    abstract fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel
 }

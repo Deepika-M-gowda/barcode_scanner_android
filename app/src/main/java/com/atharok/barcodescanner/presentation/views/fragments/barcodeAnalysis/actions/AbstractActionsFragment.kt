@@ -31,11 +31,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION
-import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_SCOPE_SESSION_ID
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisActionsBinding
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
@@ -44,19 +42,11 @@ import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisA
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
-import com.google.zxing.client.result.ParsedResult
 import org.koin.android.ext.android.get
-import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.parameter.parametersOf
-import org.koin.core.qualifier.named
 
 abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() {
-
-    protected val barcodeAnalysisScope get() = getKoin().getOrCreateScope(
-        BARCODE_ANALYSIS_SCOPE_SESSION_ID,
-        named(BARCODE_ANALYSIS_SCOPE_SESSION)
-    ) // close in BarcodeAnalysisActivity
 
     private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
 
@@ -82,18 +72,10 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     }
 
     override fun start(product: BarcodeAnalysis) {
-
         val barcode: Barcode = product.barcode
-
-        val parsedResult: ParsedResult = barcodeAnalysisScope.get {
-            parametersOf(barcode.contents, barcode.getBarcodeFormat())
-        }
-
-        val actionItems = configureActions(barcode, parsedResult)
-
+        val actionItems = configureActions(barcode)
         configureRecyclerView(actionItems)
-
-        configureDatabaseObserver(barcode, parsedResult)
+        configureDatabaseObserver(barcode)
     }
 
     /**
@@ -102,12 +84,12 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
      * Si le Barcode a été supprimé de la BDD via le bouton DeleteActionItem, on met à jour
      * automatiquement l'adapter permettant de ne plus afficher le bouton.
      */
-    private fun configureDatabaseObserver(barcode: Barcode, parsedResult: ParsedResult) {
+    private fun configureDatabaseObserver(barcode: Barcode) {
         databaseBarcodeViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
-            val items = if(it!=null){
-                configureActions(barcode, parsedResult) + configureDeleteBarcodeFromHistoryActionItem(barcode)
+            val items = if(it!=null) {
+                configureActions(barcode) + configureDeleteBarcodeFromHistoryActionItem(barcode)
             } else {
-                configureActions(barcode, parsedResult) + configureAddBarcodeInHistoryActionItem(barcode)
+                configureActions(barcode) + configureAddBarcodeInHistoryActionItem(barcode)
             }
             adapter.updateData(items)
         }
@@ -126,12 +108,13 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         adapter.updateData(actionItems)
     }
 
-    abstract fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem>
+    abstract fun configureActions(barcode: Barcode): Array<ActionItem>
 
     protected fun configureDefaultActions(barcode: Barcode) = arrayOf(
         ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openContentsWithSearchEngine(barcode.contents)),
         ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents))
+        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
+        ActionItem(R.string.action_modify_barcode, R.drawable.baseline_create_24, modifyBarcodeContents(barcode))
     )
 
     private fun configureDeleteBarcodeFromHistoryActionItem(barcode: Barcode): ActionItem {
@@ -172,6 +155,14 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         override fun onItemClick(view: View?) {
             val intent = createShareTextIntent(requireContext(), contents)
             startActivity(intent)
+        }
+    }
+
+    protected fun modifyBarcodeContents(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val bottomSheetFragment:
+                    BarcodeContentsModifierModalBottomSheetFragment = get { parametersOf(barcode) }
+            bottomSheetFragment.show(requireActivity().supportFragmentManager, "BarcodeContentsModifierModalBottomSheetFragment")
         }
     }
 

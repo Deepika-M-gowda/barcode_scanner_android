@@ -26,7 +26,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrTextBinding
-import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 
 /**
  * A simple [Fragment] subclass.
@@ -49,9 +48,7 @@ class BarcodeFormCreatorQrTextFragment : AbstractBarcodeFormCreatorQrFragment() 
 
     override fun getBarcodeTextFromForm(): String {
         val inputEditText = viewBinding.fragmentBarcodeFormCreatorQrTextInputEditText
-        closeVirtualKeyBoard(inputEditText)
+        hideSoftKeyboard()
         return inputEditText.text.toString()
     }
-
-    override fun getBarcodeType(): BarcodeType = BarcodeType.TEXT
 }

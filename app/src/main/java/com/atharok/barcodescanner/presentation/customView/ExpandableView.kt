@@ -52,7 +52,6 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
         }
     }
 
-
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 

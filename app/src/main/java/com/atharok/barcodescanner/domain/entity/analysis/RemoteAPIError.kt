@@ -18,13 +18,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.common.extensions
+package com.atharok.barcodescanner.domain.entity.analysis
 
-import android.os.Build
-import android.os.Bundle
-import android.os.Parcelable
-
-fun <T : Parcelable?> Bundle.parcelable(key: String?, clazz: Class<T>): T? = when {
-    Build.VERSION.SDK_INT >= 33 -> this.getParcelable(key, clazz)
-    else -> @Suppress("DEPRECATION") clazz.cast(this.getParcelable(key))
+enum class RemoteAPIError {
+    ERROR,
+    NO_RESULT,
+    NO_INTERNET_PERMISSION,
+    AUTOMATIC_API_RESEARCH_DISABLED
 }

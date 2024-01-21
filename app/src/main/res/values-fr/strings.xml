@@ -321,6 +321,7 @@
     <string name="action_add_to_contacts">Ajouter aux contacts</string>
     <string name="action_show_location">Montrer l\'emplacement</string>
     <string name="action_open_link">Ouvrir le lien</string>
+    <string name="action_modify_barcode">Modifier le code-barres</string>
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Connexion Wi-Fi</string>
     <string name="action_wifi_connection_from_app">Se connecter au Wi-Fi</string>

@@ -39,9 +39,9 @@ class ImageManagerUseCase(
     val bitmapObserver = MutableLiveData<Resource<Bitmap?>>()
 
     suspend fun createBitmap(properties: BarcodeImageGeneratorProperties) {
-        bitmapObserver.value = Resource.loading()
+        bitmapObserver.postValue(Resource.loading())
         val bitmap = imageGeneratorRepository.createBitmap(properties)
-        bitmapObserver.value = Resource.success(bitmap)
+        bitmapObserver.postValue(Resource.success(bitmap))
     }
 
     fun createSvg(properties: BarcodeImageGeneratorProperties): LiveData<String?> = liveData(Dispatchers.IO) {

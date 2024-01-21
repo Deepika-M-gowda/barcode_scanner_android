@@ -22,18 +22,23 @@ package com.atharok.barcodescanner.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.BarcodeAnalysis
-import com.atharok.barcodescanner.domain.entity.product.RemoteAPI
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
+import kotlinx.coroutines.launch
 
 class ProductViewModel(private val productUseCase: ProductUseCase): ViewModel() {
+    val product: LiveData<Resource<BarcodeAnalysis>> get() = productUseCase.productObserver
 
-    fun getProduct(barcode: Barcode, apiRemote: RemoteAPI): LiveData<Resource<BarcodeAnalysis>> =
-        productUseCase.getProduct(barcode, apiRemote)
+    fun fetchProduct(barcode: Barcode, apiRemote: RemoteAPI) = viewModelScope.launch {
+        productUseCase.fetchProduct(barcode, apiRemote)
+    }
 
-    fun refresh(){
-        productUseCase.refresh()
+    override fun onCleared() {
+        super.onCleared()
+        productUseCase.productObserver.value = null
     }
 }

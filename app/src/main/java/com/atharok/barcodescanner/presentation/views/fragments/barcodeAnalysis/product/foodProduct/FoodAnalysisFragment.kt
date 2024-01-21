@@ -27,9 +27,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ApiAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.ingredients.FoodAnalysisRootIngredientsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.nutritionFacts.FoodAnalysisRootNutritionFactsFragment
@@ -100,7 +100,7 @@ class FoodAnalysisFragment: ApiAnalysisFragment<FoodBarcodeAnalysis>() {
     companion object {
         fun newInstance(foodBarcodeAnalysis: FoodBarcodeAnalysis) = FoodAnalysisFragment().apply {
             arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, foodBarcodeAnalysis)
+                putSerializable(BARCODE_ANALYSIS_KEY, foodBarcodeAnalysis)
             }
         }
     }

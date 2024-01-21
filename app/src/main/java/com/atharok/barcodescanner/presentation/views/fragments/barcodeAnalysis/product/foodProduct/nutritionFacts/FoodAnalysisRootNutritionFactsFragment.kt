@@ -27,9 +27,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisRootNutritionFactsBinding
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.Nutrient
 import com.atharok.barcodescanner.domain.entity.product.foodProduct.NutritionFactsEnum
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
@@ -137,7 +137,7 @@ class FoodAnalysisRootNutritionFactsFragment : BarcodeAnalysisFragment<FoodBarco
     companion object {
         fun newInstance(foodProduct: FoodBarcodeAnalysis) = FoodAnalysisRootNutritionFactsFragment().apply {
             arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, foodProduct)
+                putSerializable(BARCODE_ANALYSIS_KEY, foodProduct)
             }
         }
     }

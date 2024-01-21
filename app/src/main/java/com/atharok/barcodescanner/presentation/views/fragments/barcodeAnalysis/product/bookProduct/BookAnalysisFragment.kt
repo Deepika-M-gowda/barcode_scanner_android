@@ -28,9 +28,9 @@ import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
-import com.atharok.barcodescanner.common.utils.PRODUCT_KEY
+import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentBookAnalysisBinding
-import com.atharok.barcodescanner.domain.entity.product.bookProduct.BookBarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.analysis.BookBarcodeAnalysis
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.BarcodeAnalysisInformationFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ApiAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.templates.ProductOverviewFragment
@@ -144,7 +144,7 @@ class BookAnalysisFragment : ApiAnalysisFragment<BookBarcodeAnalysis>() {
     companion object {
         fun newInstance(bookProduct: BookBarcodeAnalysis) = BookAnalysisFragment().apply {
             arguments = get<Bundle>().apply {
-                putSerializable(PRODUCT_KEY, bookProduct)
+                putSerializable(BARCODE_ANALYSIS_KEY, bookProduct)
             }
         }
     }

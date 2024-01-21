@@ -65,7 +65,7 @@ class BarcodeFormCreatorActivity : BaseActivity() {
         onBackPressedDispatcher.addCallback(this) {
 
             formCreateBarcodeFragment?.let { fragment ->
-                fragment.closeVirtualKeyBoard(viewBinding.root)
+                fragment.hideSoftKeyboard()
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     setCustomAnimations(R.anim.barcode_creator_enter, R.anim.barcode_creator_exit)
@@ -84,11 +84,9 @@ class BarcodeFormCreatorActivity : BaseActivity() {
     /**
      * Configure le Fragment contenant le Header de l'Activity.
      */
-    private fun configureHeader(barcodeFormatDetails: BarcodeFormatDetails){
-
+    private fun configureHeader(barcodeFormatDetails: BarcodeFormatDetails) {
         val imageView = viewBinding.activityBarcodeFormCreatorHeader.templateItemBarcodeCreatorImageView
         val textView = viewBinding.activityBarcodeFormCreatorHeader.templateItemBarcodeCreatorTextView
-
         textView.text = getString(barcodeFormatDetails.stringResource)
         imageView.setImageResource(barcodeFormatDetails.drawableResource)
     }
@@ -99,11 +97,9 @@ class BarcodeFormCreatorActivity : BaseActivity() {
      * Configure le Fragment contenant le formulaire de création.
      */
     private fun configureFormFragment(barcodeFormatDetails: BarcodeFormatDetails){
-
         formCreateBarcodeFragment = get<AbstractBarcodeFormCreatorFragment> {
             parametersOf(barcodeFormatDetails)
         }
-
         formCreateBarcodeFragment?.let { fragment ->
             supportFragmentManager.commit {
                 setReorderingAllowed(true)

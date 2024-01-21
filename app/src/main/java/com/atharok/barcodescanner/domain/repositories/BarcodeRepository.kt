@@ -37,6 +37,8 @@ interface BarcodeRepository {
 
     suspend fun insertBarcodes(barcodes: List<Barcode>)
 
+    suspend fun update(date: Long, contents: String, barcodeType: BarcodeType, name: String): Int
+
     suspend fun updateType(date: Long, barcodeType: BarcodeType): Int
 
     suspend fun updateName(date: Long, name: String): Int
