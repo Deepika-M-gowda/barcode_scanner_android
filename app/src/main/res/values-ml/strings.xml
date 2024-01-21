@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_more">കൂടുതൽ</string>
+    <string name="qr_code_type_name_contact">ബന്ധപ്പെടുക</string>
+    <string name="yes_label">അതെ</string>
+    <string name="no_label">അല്ല</string>
+    <string name="image_view_description_image">ചിത്രം</string>
+    <string name="bar_code_type_book">പുസ്തകം</string>
+    <string name="bar_code_type_unknown_book_title">പുസ്തകത്തിന്റെ പേര് അജ്ഞാതമാണ്</string>
+    <string name="bar_code_type_name_unknown">അജ്ഞാതം</string>
+    <string name="qr_code_error_correction_level_label">പിശക് തിരുത്തൽ നില</string>
+    <string name="popup_message_confirmation_delete_history">എല്ലാ ചരിത്രവും ഇല്ലാതാക്കണോ?</string>
+    <string name="popup_message_confirmation_delete_selected_items_history">തിരഞ്ഞെടുത്ത ഇനങ്ങൾ ഇല്ലാതാക്കണോ?</string>
+    <string name="menu_item_history_delete">ചരിത്രം ഇല്ലാതാക്കുക</string>
+    <string name="menu_item_history_removed_from_history">ചരിത്രത്തിൽ നിന്ന് നീക്കം ചെയ്തു!</string>
+    <string name="record_label">സംരക്ഷിക്കുക</string>
+    <string name="barcode_information_search_label">തിരയുന്നു…</string>
+    <string name="barcode_found_on_label">%1$s-ൽ കണ്ടെത്തി!</string>
+    <string name="barcode_not_found_on_api_label">%1$s-ൽ വിവരങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</string>
+    <string name="close_dialog_label">അടയ്ക്കുക</string>
+    <string name="image_view_description_flag">പതാക</string>
+    <string name="image_view_description_type_icon">തരം</string>
+    <string name="image_view_description_product_front">ഉൽപ്പന്നത്തിന്റെ ചിത്രം</string>
+    <string name="qr_code_type_name_text">വാചകം</string>
+    <string name="title_history">ചരിത്രം</string>
+    <string name="title_generate">സൃഷ്ടിക്കുക</string>
+    <string name="title_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="information_label">വിവരങ്ങൾ</string>
+    <string name="menu_item_history_added_in_history">ചരിത്രത്തിൽ ചേർത്തു!</string>
+    <string name="warning_label">മുന്നറിയിപ്പ്</string>
+    <string name="bar_code_type_food">ഭക്ഷ്യ ഉൽപ്പന്നം</string>
+    <string name="bar_code_type_pet_food">വളർത്തുമൃഗങ്ങളുടെ ഭക്ഷണം</string>
+    <string name="export_label">കയറ്റുമതി ചെയ്യുക</string>
+    <string name="bar_code_type_music">സംഗീതം</string>
+    <string name="delete_label">ഇല്ലാതാക്കുക</string>
+    <string name="cancel_label">റദ്ദാക്കുക</string>
+    <string name="menu_item_history_delete_from_history">ചരിത്രത്തിൽ നിന്ന് ഇല്ലാതാക്കുക</string>
+    <string name="menu_item_history_add_in_history">ചരിത്രത്തിൽ ചേർക്കുക</string>
+    <string name="scan_error_exception_label">ഒരു പിശക് സംഭവിച്ചു: %1$s</string>
+    <string name="scan_from_image_label">ചിത്രം</string>
+    <string name="no_product_found_label">ഒരു ഉൽപ്പന്നവും കണ്ടെത്തിയില്ല!</string>
+    <string name="about_barcode_origin_label">ഉത്ഭവം:</string>
+</resources>
