@@ -712,4 +712,5 @@
     <string name="width_label">Genişlik</string>
     <string name="colors_label">Renkler</string>
     <string name="height_label">Yükseklik</string>
+    <string name="action_modify_barcode">Barkodu düzenle</string>
 </resources>
