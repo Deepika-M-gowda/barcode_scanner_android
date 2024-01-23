@@ -27,7 +27,7 @@
 
         <!-- Barcode Information -->
         <FrameLayout
-            android:id="@+id/fragment_barcode_info_about_barcode_frame_layout"
+            android:id="@+id/fragment_barcode_info_more_info_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_info_contents_frame_layout" />

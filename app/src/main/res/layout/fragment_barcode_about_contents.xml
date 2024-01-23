@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.atharok.barcodescanner.presentation.customView.ExpandableCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:isOpen="true"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.about.BarcodeAboutContentsFragment">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_barcode_about_contents_icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:tint="?android:textColorPrimary"
+            android:contentDescription="@string/image_view_description_icon" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_about_contents_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/fragment_barcode_about_contents_icon_image_view"
+            android:layout_centerVertical="true"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+
+    </RelativeLayout>
+
+    <!-- Body -->
+    <FrameLayout
+        android:id="@+id/fragment_barcode_about_contents_frame_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</com.atharok.barcodescanner.presentation.customView.ExpandableCardView>

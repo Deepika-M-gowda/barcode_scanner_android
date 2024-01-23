@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.atharok.barcodescanner.presentation.customView.ExpandableCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_about_barcode_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:isOpen="true"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.about.BarcodeAboutMoreInfoFragment">
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_barcode_about_more_info_header_icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:tint="?android:textColorPrimary"
+            android:src="@drawable/outline_info_24"
+            android:contentDescription="@string/image_view_description_icon" />
+
+        <TextView
+            android:id="@+id/fragment_barcode_about_more_info_header_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/fragment_barcode_about_more_info_header_icon_image_view"
+            android:layout_centerVertical="true"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+
+    </RelativeLayout>
+
+    <!-- Body -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/fragment_barcode_about_more_info_body_format_origin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Format -->
+            <TextView
+                android:id="@+id/fragment_barcode_about_more_info_body_format_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/fragment_barcode_about_more_info_body_origin_layout"
+                android:text="@string/about_barcode_format_label"
+                android:textIsSelectable="true"
+                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+            <!-- Barcode origin -->
+            <RelativeLayout
+                android:id="@+id/fragment_barcode_about_more_info_body_origin_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:id="@+id/fragment_barcode_about_more_info_body_origin_country_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/about_barcode_origin_label"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+                <ImageView
+                    android:id="@+id/fragment_barcode_about_more_info_body_origin_flag_image_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:layout_toEndOf="@id/fragment_barcode_about_more_info_body_origin_country_label"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/image_view_description_flag" />
+
+                <TextView
+                    android:id="@+id/fragment_barcode_about_more_info_body_origin_country_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/fragment_barcode_about_more_info_body_origin_flag_image_view"
+                    android:layout_centerVertical="true"
+                    android:textIsSelectable="true"
+                    style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- Error Correction Level -->
+        <FrameLayout
+            android:id="@+id/fragment_barcode_about_more_info_body_error_correction_level_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_barcode_about_more_info_body_format_origin_layout">
+
+            <TextView
+                android:id="@+id/fragment_barcode_about_more_info_body_error_correction_level_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="true"
+                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+        </FrameLayout>
+
+        <!-- Description -->
+        <FrameLayout
+            android:id="@+id/fragment_barcode_about_more_info_body_description_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_below="@id/fragment_barcode_about_more_info_body_error_correction_level_layout">
+
+            <TextView
+                android:id="@+id/fragment_barcode_about_more_info_body_description_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="true"
+                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</com.atharok.barcodescanner.presentation.customView.ExpandableCardView>

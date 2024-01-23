@@ -24,7 +24,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.ActivityVeggieBinding
@@ -47,8 +46,7 @@ class VeggieActivity : BaseActivity() {
         if(veggieIngredientsList.isNullOrEmpty()) {
             viewBinding.activityVeggieIngredientsListLayout.visibility = View.GONE
             viewBinding.activityVeggieNoIngredientsTextView.visibility = View.VISIBLE
-        }else{
-            configureEntitled()
+        } else {
             configureRecyclerView(veggieIngredientsList)
             viewBinding.activityVeggieIngredientsListLayout.visibility = View.VISIBLE
             viewBinding.activityVeggieNoIngredientsTextView.visibility = View.GONE
@@ -57,17 +55,12 @@ class VeggieActivity : BaseActivity() {
         setContentView(viewBinding.root)
     }
 
-    private fun configureToolbar(){
+    private fun configureToolbar() {
         setSupportActionBar(viewBinding.activityVeggieToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
     }
 
-    private fun configureEntitled(){
-        val entitled: String = getString(R.string.ingredient_veggie_entitled_label)
-        viewBinding.activityVeggieIngredientsListEntitledTextViewTemplate.root.text = entitled
-    }
-
-    private fun configureRecyclerView(veggieIngredientList: List<VeggieIngredientAnalysis>){
+    private fun configureRecyclerView(veggieIngredientList: List<VeggieIngredientAnalysis>) {
         val linearLayoutManager = LinearLayoutManager(this)
         val dividerItemDecoration = DividerItemDecoration(this, linearLayoutManager.orientation)
         val adapter = VeggieItemAdapter(veggieIngredientList)

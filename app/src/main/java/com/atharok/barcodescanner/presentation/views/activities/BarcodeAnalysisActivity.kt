@@ -44,11 +44,11 @@ import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.root.DefaultBarcodeAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.ProductAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.bookProduct.BookAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.foodProduct.FoodAnalysisFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.product.musicProduct.MusicAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.bookProduct.BookAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.defaultAnalysis.DefaultBarcodeAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.FoodAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.musicProduct.MusicAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.unknownProduct.ProductAnalysisFragment
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel

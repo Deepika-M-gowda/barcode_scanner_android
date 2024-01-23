@@ -8,7 +8,7 @@
     android:paddingStart="@dimen/standard_margin"
     android:paddingEnd="@dimen/standard_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.bookProduct.BookAnalysisFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.bookProduct.BookAnalysisFragment">
 
     <RelativeLayout
         android:id="@+id/fragment_book_analysis_outer_view"
@@ -36,9 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_book_analysis_summary_frame_layout">
 
-            <include
-                layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_book_analysis_more_entitled_text_view_template" />
+            <TextView
+                android:id="@+id/fragment_book_analysis_more_entitled_text_view_template"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standard_margin"
+                android:text="@string/book_product_more_label"
+                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
         </FrameLayout>
 
@@ -80,7 +84,7 @@
         <!-- About Barcode -->
 
         <FrameLayout
-            android:id="@+id/fragment_book_analysis_about_barcode_frame_layout"
+            android:id="@+id/fragment_book_analysis_barcode_about_overview_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_book_analysis_original_title_frame_layout" />

@@ -27,7 +27,7 @@ import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
 
 class LibraryThirdItemAdapter: RecyclerView.Adapter<LibraryThirdItemHolder>() {
 
-    private val libraryThirdArray: Array<LibraryThird> = LibraryThird.values()
+    private val libraryThirdArray: Array<LibraryThird> = LibraryThird.entries.toTypedArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibraryThirdItemHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

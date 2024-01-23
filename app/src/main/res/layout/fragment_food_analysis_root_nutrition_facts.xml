@@ -8,7 +8,7 @@
     android:paddingStart="@dimen/standard_margin"
     android:paddingEnd="@dimen/standard_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.nutritionFacts.FoodAnalysisRootNutritionFactsFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.nutritionFacts.FoodAnalysisRootNutritionFactsFragment">
 
     <RelativeLayout
         android:id="@+id/fragment_food_analysis_root_nutrition_facts_outer_view"
@@ -32,9 +32,13 @@
             android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_no_information_text_view"
             android:visibility="gone">
 
-            <include
-                layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_food_analysis_root_nutrition_facts_table_entitled_text_view_template" />
+            <TextView
+                android:id="@+id/fragment_food_analysis_root_nutrition_facts_table_entitled_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standard_margin"
+                android:text="@string/nutrition_facts_entitled_label"
+                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
         </FrameLayout>
 
@@ -52,9 +56,13 @@
             android:layout_below="@id/fragment_food_analysis_root_nutrition_facts_table_frame_layout"
             android:visibility="gone">
 
-            <include
-                layout="@layout/template_text_view_subtitle"
-                android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_text_view_template" />
+            <TextView
+                android:id="@+id/fragment_food_analysis_root_nutrition_facts_nutrient_level_entitled_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standard_margin"
+                android:text="@string/nutrient_level_entitled_label"
+                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
         </FrameLayout>
 

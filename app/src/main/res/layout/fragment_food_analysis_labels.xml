@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<com.atharok.barcodescanner.presentation.customView.ExpandableCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/product_labels_card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisLabelsFragment">
+    app:isOpen="true"
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.overview.FoodAnalysisLabelsFragment">
 
-    <!-- Labels -->
-    <include
-        layout="@layout/template_expandable_view"
-        android:id="@+id/food_analysis_labels_expandable_view_template" />
+    <!-- Header -->
+    <TextView
+        android:id="@+id/fragment_food_analysis_labels_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
-</com.google.android.material.card.MaterialCardView>
+    <!-- Body -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fragment_food_analysis_labels_image_recycler_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/standard_margin">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_food_analysis_labels_image_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/fragment_food_analysis_labels_contents_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragment_food_analysis_labels_image_recycler_view_layout"
+            android:textIsSelectable="true"
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+
+    </RelativeLayout>
+
+</com.atharok.barcodescanner.presentation.customView.ExpandableCardView>

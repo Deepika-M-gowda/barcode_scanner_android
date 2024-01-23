@@ -38,9 +38,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <include
-                    layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/activity_veggie_ingredients_list_entitled_text_view_template" />
+                <TextView
+                    android:id="@+id/activity_veggie_ingredients_list_entitled_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:text="@string/ingredient_veggie_entitled_label"
+                    style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
             </FrameLayout>
 

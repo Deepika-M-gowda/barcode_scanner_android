@@ -21,9 +21,9 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.actionButton
 
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
+import com.atharok.barcodescanner.databinding.RecyclerViewItemActionButtonBinding
 
-class ActionButtonHolder(private val viewBinding: TemplateActionButtonBinding)
+class ActionButtonHolder(private val viewBinding: RecyclerViewItemActionButtonBinding)
     : RecyclerView.ViewHolder(viewBinding.root) {
 
     fun updateItem(item: ActionItem) {

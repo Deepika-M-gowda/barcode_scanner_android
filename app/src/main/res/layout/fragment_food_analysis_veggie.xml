@@ -8,7 +8,7 @@
     android:scrollbars="none"
     android:paddingStart="@dimen/standard_margin"
     android:paddingEnd="@dimen/standard_margin"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisVeggieFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.overview.FoodAnalysisVeggieFragment">
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/fragment_food_analysis_veggie_chip_group"

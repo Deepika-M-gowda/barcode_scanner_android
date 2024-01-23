@@ -29,7 +29,12 @@ import android.widget.LinearLayout
 import androidx.core.view.children
 import com.atharok.barcodescanner.R
 
-class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(context, attrs), View.OnClickListener {
+class ExpandableView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+    defStyleRes: Int = 0
+): LinearLayout(context, attrs, defStyleAttr, defStyleRes), View.OnClickListener {
 
     companion object {
         private const val MAX_ROTATION = 180f
@@ -42,7 +47,7 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
     private val iconIdHeaderResource: Int
 
     init {
-        context.theme.obtainStyledAttributes(attrs, R.styleable.ExpandableView, 0, 0).apply {
+        context.theme.obtainStyledAttributes(attrs, R.styleable.ExpandableView, defStyleAttr, defStyleRes).apply {
             try {
                 isOpen = getBoolean(R.styleable.ExpandableView_open, false)
                 iconIdHeaderResource = getResourceId(R.styleable.ExpandableView_iconHeaderId, -1)
@@ -75,14 +80,11 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
 
         val headerView = children.elementAt(0)
         headerView.setOnClickListener(this)
-        //setOnClickListener(this)
-
 
         val subView = children.elementAt(1)
         if(!isOpen) {
-
             subView.visibility = View.GONE
-        }else{
+        } else {
             // La vue est ouverte, donc l'icone doit être rotationné par défaut
             headerIconView?.rotation = MAX_ROTATION
             subView.visibility = View.VISIBLE
@@ -96,7 +98,7 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
             close(children.elementAt(1))
     }
 
-    private fun open(view: View){
+    private fun open(view: View) {
         isOpen = true
 
         // Rotation Icone Header
@@ -104,7 +106,7 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
         view.visibility = View.VISIBLE
     }
 
-    private fun close(view: View){
+    private fun close(view: View) {
         isOpen = false
 
         // Rotation Icone Header
@@ -112,12 +114,12 @@ class ExpandableView(context: Context, attrs: AttributeSet?): LinearLayout(conte
         view.visibility = View.GONE
     }
 
-    fun open(){
+    fun open() {
         if(!isOpen)
             open(children.elementAt(1))
     }
 
-    fun close(){
+    fun close() {
         if(isOpen)
             close(children.elementAt(1))
     }

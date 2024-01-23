@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixUriFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.contents.BarcodeMatrixUriFragment">
 
     <!-- Url -->
     <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView

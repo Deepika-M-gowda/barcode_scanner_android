@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.ingredients.FoodAnalysisAdditivesFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.ingredients.FoodAnalysisAdditivesFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/additives_card_view"
+    <com.atharok.barcodescanner.presentation.customView.ExpandableCardView
+        android:id="@+id/fragment_food_analysis_additives_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        app:isOpen="true"
         android:visibility="gone">
 
-        <include
-            layout="@layout/template_expandable_view"
-            android:id="@+id/additives_expandable_view_template" />
+        <!-- Header -->
+        <TextView
+            android:id="@+id/fragment_food_analysis_additives_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
-    </com.google.android.material.card.MaterialCardView>
+        <!-- Body -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_food_analysis_additives_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.atharok.barcodescanner.presentation.customView.ExpandableCardView>
 
     <ProgressBar
-        android:id="@+id/additives_progress_bar"
+        android:id="@+id/fragment_food_analysis_additives_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/standard_margin"
-        android:layout_below="@id/additives_card_view" />
+        android:layout_below="@id/fragment_food_analysis_additives_card_view" />
+
 </RelativeLayout>

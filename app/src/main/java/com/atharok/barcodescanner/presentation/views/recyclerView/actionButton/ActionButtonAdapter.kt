@@ -24,7 +24,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.TemplateActionButtonBinding
+import com.atharok.barcodescanner.databinding.RecyclerViewItemActionButtonBinding
 
 class ActionButtonAdapter: RecyclerView.Adapter<ActionButtonHolder>() {
 
@@ -32,7 +32,7 @@ class ActionButtonAdapter: RecyclerView.Adapter<ActionButtonHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionButtonHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val viewBinding = TemplateActionButtonBinding.inflate(layoutInflater, parent, false)
+        val viewBinding = RecyclerViewItemActionButtonBinding.inflate(layoutInflater, parent, false)
         return ActionButtonHolder(viewBinding)
     }
 

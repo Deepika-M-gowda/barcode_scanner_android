@@ -285,7 +285,7 @@ class MainScannerFragment : BaseFragment() {
             val slider = viewBinding.fragmentMainScannerCameraSlider.apply {
                 valueTo = maxZoom.toFloat()
                 value = defaultZoom
-                isVisible = true
+                visibility = View.VISIBLE
                 addOnChangeListener { v, value, _ ->
                     codeScanner.zoom = value.roundToInt()
                     // BZZZTT!!1!

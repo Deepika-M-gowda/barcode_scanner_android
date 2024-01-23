@@ -717,7 +717,7 @@
     <!-- No translatable -->
     <string name="app_name" translatable="false">Barcode Scanner</string>
     <string name="text_colon" translatable="false">%1$s:</string>
-    <string name="empty" translatable="false"/>
+    <string name="empty" translatable="false" />
     <string name="png_label" translatable="false">PNG</string>
     <string name="jpg_label" translatable="false">JPG</string>
     <string name="svg_label" translatable="false">SVG</string>

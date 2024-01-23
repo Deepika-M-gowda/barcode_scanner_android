@@ -39,7 +39,7 @@ import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.abstracts.BarcodeAnalysisFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 import org.koin.android.ext.android.get
@@ -71,8 +71,8 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         alertDialog?.dismiss()
     }
 
-    override fun start(product: BarcodeAnalysis) {
-        val barcode: Barcode = product.barcode
+    override fun start(analysis: BarcodeAnalysis) {
+        val barcode: Barcode = analysis.barcode
         val actionItems = configureActions(barcode)
         configureRecyclerView(actionItems)
         configureDatabaseObserver(barcode)
@@ -96,9 +96,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     }
 
     private fun configureRecyclerView(actionItems: Array<ActionItem>) {
-
         val layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.grid_layout_span_count))
-
         val recyclerView = viewBinding.fragmentBarcodeAnalysisActionRecyclerView
 
         recyclerView.isNestedScrollingEnabled = false

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisDetailsFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.overview.FoodAnalysisDetailsFragment">
 
     <!-- Origins Countries -->
     <FrameLayout

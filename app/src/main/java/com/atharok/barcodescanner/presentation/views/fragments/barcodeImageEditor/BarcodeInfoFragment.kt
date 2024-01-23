@@ -36,8 +36,8 @@ import com.atharok.barcodescanner.domain.entity.analysis.DefaultBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.defaultBarcode.part.BarcodeAnalysisAboutFragment
-import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableViewFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.about.BarcodeAboutMoreInfoFragment
+import com.atharok.barcodescanner.presentation.views.fragments.templates.ExpandableCardViewFragment
 import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
@@ -59,21 +59,21 @@ class BarcodeInfoFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewBinding.fragmentBarcodeInfoOuterView.fixAnimateLayoutChangesInNestedScroll()
-
         arguments?.let {
             val contents: String = it.getString(BARCODE_CONTENTS_KEY) ?: ""
             val format: BarcodeFormat = it.serializable(BARCODE_FORMAT_KEY, BarcodeFormat::class.java) ?: BarcodeFormat.QR_CODE
             val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel = it.serializable(QR_CODE_ERROR_CORRECTION_LEVEL_KEY, QrCodeErrorCorrectionLevel::class.java) ?: QrCodeErrorCorrectionLevel.NONE
 
-            configureContentsExpandableViewFragment(contents, format)
-            configureAboutBarcodeFragment(contents, format, qrCodeErrorCorrectionLevel)
+            configureBarcodeContentsExpandableCardViewFragment(contents, format)
+            configureBarcodeAboutMoreInfoFragment(contents, format, qrCodeErrorCorrectionLevel)
         }
     }
 
-    private fun configureContentsExpandableViewFragment(contents: String, format: BarcodeFormat) {
-
+    private fun configureBarcodeContentsExpandableCardViewFragment(
+        contents: String,
+        format: BarcodeFormat
+    ) {
         val iconResource: Int = when(format) {
             BarcodeFormat.QR_CODE -> R.drawable.baseline_qr_code_24
             BarcodeFormat.AZTEC -> R.drawable.ic_aztec_code_24
@@ -82,20 +82,21 @@ class BarcodeInfoFragment : BaseFragment() {
             else -> R.drawable.ic_bar_code_24
         }
 
-        val contentsFragment = ExpandableViewFragment.newInstance(
-            title = getString(R.string.bar_code_content_label),
-            contents = contents,
-            drawableResource = iconResource
-        )
-
         applyFragment(
             containerViewId = viewBinding.fragmentBarcodeInfoContentsFrameLayout.id,
-            fragment = contentsFragment
+            fragment = ExpandableCardViewFragment.newInstance(
+                title = getString(R.string.bar_code_content_label),
+                contents = contents,
+                drawableResource = iconResource
+            )
         )
     }
 
-    private fun configureAboutBarcodeFragment(contents: String, format: BarcodeFormat, qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel) {
-
+    private fun configureBarcodeAboutMoreInfoFragment(
+        contents: String,
+        format: BarcodeFormat,
+        qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
+    ) {
         val barcode: Barcode = get { parametersOf(contents, format.name, qrCodeErrorCorrectionLevel) }
         val barcodeAnalysis = DefaultBarcodeAnalysis(barcode)
 
@@ -104,8 +105,8 @@ class BarcodeInfoFragment : BaseFragment() {
         }
 
         applyFragment(
-            containerViewId = viewBinding.fragmentBarcodeInfoAboutBarcodeFrameLayout.id,
-            fragmentClass = BarcodeAnalysisAboutFragment::class,
+            containerViewId = viewBinding.fragmentBarcodeInfoMoreInfoFrameLayout.id,
+            fragmentClass = BarcodeAboutMoreInfoFragment::class,
             args = args
         )
     }

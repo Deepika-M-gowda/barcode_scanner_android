@@ -27,7 +27,7 @@ import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
 
 class BddItemAdapter: RecyclerView.Adapter<BddItemHolder>() {
 
-    private val bddArray: Array<Bdd> = Bdd.values()
+    private val bddArray: Array<Bdd> = Bdd.entries.toTypedArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BddItemHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

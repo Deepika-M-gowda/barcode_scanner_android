@@ -27,7 +27,7 @@ import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
 
 class PermissionsDescriptionItemAdapter: RecyclerView.Adapter<PermissionsDescriptionItemHolder>() {
 
-    private val permissionsDescriptionArray: Array<PermissionsDescription> = PermissionsDescription.values()
+    private val permissionsDescriptionArray: Array<PermissionsDescription> = PermissionsDescription.entries.toTypedArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PermissionsDescriptionItemHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.defaultBarcode.matrix.BarcodeMatrixEmailFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.contents.BarcodeMatrixEmailFragment">
 
     <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_email_address_layout"

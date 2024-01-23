@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.views.fragments.barcodeAnalysis.product.foodProduct.overview.FoodAnalysisRootOverviewFragment">
+    tools:context=".presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.overview.FoodAnalysisRootOverviewFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -39,9 +39,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout">
 
-                <include
-                    layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view_template" />
+                <TextView
+                    android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:text="@string/quality_label"
+                    style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
             </FrameLayout>
 
@@ -72,9 +76,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_food_analysis_root_overview_quality_eco_score_frame_layout">
 
-                <include
-                    layout="@layout/template_text_view_subtitle"
-                    android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view_template" />
+                <TextView
+                    android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:text="@string/details_label"
+                    style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
 
             </FrameLayout>
 
@@ -94,7 +102,7 @@
 
             <!-- About Barcode -->
             <FrameLayout
-                android:id="@+id/fragment_food_analysis_root_overview_about_barcode_frame_layout"
+                android:id="@+id/fragment_food_analysis_root_overview_barcode_about_overview_frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_food_analysis_root_overview_details_frame_layout" />
