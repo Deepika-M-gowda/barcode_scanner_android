@@ -1,0 +1,11 @@
+1.20.0
+
+Full changelog here: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Added Ukrainian translation (thanks to Сергій).
+- Updated translations (using Weblate).
+- Dependencies updated.
+- Fixed tile not working on some Android 14 devices.
+- Added the ability to modify a scanned barcode.
+- Some graphic changes.
+- A few code improvements and optimizations.
