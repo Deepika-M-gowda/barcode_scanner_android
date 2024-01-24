@@ -35,14 +35,17 @@ import android.view.View
 import androidx.core.graphics.toRect
 import com.atharok.barcodescanner.R
 
-class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) {
+class ScanOverlay @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+    defStyleRes: Int = 0
+): View(context, attrs, defStyleAttr, defStyleRes) {
 
     companion object {
         private const val RATIO = 0.8f
     }
 
-    //val viewfinderWidth: Float
-    //val viewfinderHeight: Float
     private val viewfinderRadius: Float
 
     private val backgroundPaint: Paint
@@ -60,7 +63,7 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
 
     init{
         setLayerType(LAYER_TYPE_SOFTWARE, null)
-        context.theme.obtainStyledAttributes(attrs, R.styleable.ScanOverlay, 0, 0).apply {
+        context.theme.obtainStyledAttributes(attrs, R.styleable.ScanOverlay, defStyleAttr, defStyleRes).apply {
             try {
                 viewfinderRadius = getDimension(R.styleable.ScanOverlay_viewfinder_radius, getDP(40f))
                 viewfinderCornerPaint = Paint(ANTI_ALIAS_FLAG).apply {
@@ -72,8 +75,6 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
                     color = getColor(R.styleable.ScanOverlay_overlay_mask_color, Color.parseColor("#80000000"))
                     style = Paint.Style.FILL
                 }
-
-
             } finally {
                 recycle()
             }
@@ -111,16 +112,6 @@ class ScanOverlay(context: Context, attrs: AttributeSet?): View(context, attrs) 
         // Bottom Left
         canvas.drawArc(viewfinderRect.left, viewfinderRect.bottom-cornerSize, viewfinderRect.left+cornerSize, viewfinderRect.bottom, 90f, 90f, false, viewfinderCornerPaint)
     }
-
-    /*private fun calculateRectangleDimension(width: Int, height: Int) {
-        if (width > 0 && height > 0) {
-            val left = (width - viewfinderWidth) / 2f
-            val right = left + viewfinderWidth
-            val top = (height - viewfinderHeight) / 2f
-            val bottom = top + viewfinderHeight
-            viewfinderRect.set(left, top, right, bottom)
-        }
-    }*/
 
     var viewfinderSize: Float = 0f
         private set
