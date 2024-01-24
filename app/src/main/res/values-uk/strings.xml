@@ -657,4 +657,5 @@
     <string name="country_vn">В\'єтнам</string>
     <string name="country_sn">Сенегал</string>
     <string name="country_ch">Швейцарія</string>
+    <string name="action_modify_barcode">Змінити штрихкод</string>
 </resources>

@@ -713,4 +713,5 @@
     <string name="colors_label">Colores</string>
     <string name="height_label">Altura</string>
     <string name="copy_label">Copiar</string>
+    <string name="action_modify_barcode">Modificar el código de barras</string>
 </resources>
