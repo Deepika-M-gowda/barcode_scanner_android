@@ -715,4 +715,5 @@
     <string name="width_label">Ширина</string>
     <string name="colors_label">Цвета</string>
     <string name="height_label">Высота</string>
+    <string name="action_modify_barcode">Изменить штрих-код</string>
 </resources>
