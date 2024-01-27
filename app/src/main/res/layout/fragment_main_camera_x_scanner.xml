@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="24dp"
+        android:layout_margin="@dimen/x_large_margin"
         android:value="0.5"
         android:valueFrom="0.0"
         android:valueTo="1"
@@ -50,7 +50,7 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_margin="@dimen/x_large_margin"
         android:layout_gravity="top|center_horizontal">
 
         <TextView
