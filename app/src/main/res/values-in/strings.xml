@@ -183,4 +183,16 @@
     <string name="scan_error_information_label">Terjadi error saat mencari informasi di API jarak jauh... Mohon pastikan koneksi internet dan izin aplikasi Anda! Jika masalah masih berlanjut, ini adalah masalah server.</string>
     <string name="eco_score_description_unknown">Dampak lingkungan yang tidak diketahui</string>
     <string name="nova_group_description_2">Bahan-bahan olahan</string>
+    <string name="off_additive_info_label">Info</string>
+    <string name="off_risk_low_label">Aman</string>
+    <string name="off_risk_moderate_label">Meragukan</string>
+    <string name="off_risk_high_label">Hindari</string>
+    <string name="off_overexposure_risk_moderate_label">Risiko moderat dari paparan berlebih</string>
+    <string name="ingredients_no_information_found_label">Tidak ditemukan bahan untuk produk ini…</string>
+    <string name="traces_label">Jejak</string>
+    <string name="off_overexposure_risk_low_label">Risiko paparan berlebih yang rendah</string>
+    <string name="allergens_label">Alergen</string>
+    <string name="additives_label">Aditif</string>
+    <string name="veggie_label">Sayuran</string>
+    <string name="off_risk_none_label">Risiko yang tidak diketahui</string>
 </resources>
