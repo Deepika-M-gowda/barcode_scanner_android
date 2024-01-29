@@ -37,7 +37,7 @@
     <string name="bar_code_type_book">書籍</string>
     <string name="bar_code_type_unknown_book_title">書籍名不明</string>
     <string name="bar_code_type_name_unknown">不明</string>
-    <string name="label_history_empty">スキャン履歴はありません</string>
+    <string name="label_history_empty">スキャン履歴がありません</string>
     <string name="menu_item_history_delete_from_history">履歴から削除</string>
     <string name="close_dialog_label">閉じる</string>
     <string name="bar_code_type_pet_food">ペットフード</string>
@@ -94,4 +94,5 @@
     <string name="preferences_search_engine">検索エンジン</string>
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">スキャンしたコードを履歴に保存</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">デフォルトのズームの値</string>
+    <string name="copy_label">テキストをコピー</string>
 </resources>
