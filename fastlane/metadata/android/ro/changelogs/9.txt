@@ -1,0 +1,3 @@
+- O actualizare a dependențelor.
+- Remediați deschiderea aplicației cu comenzile rapide care nu au funcționat pentru "history” și "generate”.
+- Remediați scanarea din imagine când scanați dintr-o aplicație externă (filtru de intenție).

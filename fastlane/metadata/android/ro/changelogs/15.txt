@@ -1,0 +1,4 @@
+- Remediați eroarea "java.lang.NumberFormatException: empty String" când căutați pe OpenFoodFacts.
+- Corectarea valorilor incorecte din tabelul nutrițional pentru "per serving".
+- Câteva îmbunătățiri.
+- Actualizarea dependențelor.

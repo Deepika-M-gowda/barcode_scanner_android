@@ -1,0 +1,5 @@
+1.8.0
+
+- Implementarea API-ului CameraX.
+- Vizualizări îmbunătățite în modul landscape.
+- Câteva îmbunătățiri ale traducerii în limba rusă (Mulțumită s s).

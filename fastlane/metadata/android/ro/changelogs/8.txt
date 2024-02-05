@@ -1,0 +1,3 @@
+- Sa adăugat „filtru de intenție” care permite scanarea unui cod de bare din aplicația externă.
+- S-a adăugat o comutare pentru dezactivarea rotației automate a ecranului în timpul scanării.
+- O actualizare a dependențelor.

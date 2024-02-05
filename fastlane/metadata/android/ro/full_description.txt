@@ -1,0 +1,3 @@
+Barcode Scanner este o aplicație gratuită și open source care permite citirea și generarea codurilor de bare. Poate colecta informații despre produse alimentare, cărți de cosmetică și muzică (CD-uri, viniluri…).
+
+În aplicație sunt diferite forme pentru codurile de bare :

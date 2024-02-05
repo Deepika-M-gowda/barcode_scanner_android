@@ -1,0 +1,4 @@
+1.8.1
+
+- Remediere: S-a adăugat implementarea API cameraX la scanarea printrun Intent.
+- Actualizarea dependențelor.

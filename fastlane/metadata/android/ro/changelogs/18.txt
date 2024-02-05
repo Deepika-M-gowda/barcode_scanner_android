@@ -1,0 +1,5 @@
+1.7.0
+
+- S-a adăugat traducere în germană (Mulțumită lui konwin).
+- Mici modificări în traducerea limbi ruse (Mulțumită lui s s).
+- Câteva îmbunătățiri grafice.

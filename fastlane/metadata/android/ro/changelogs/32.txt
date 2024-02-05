@@ -1,0 +1,8 @@
+1.15.0
+
+- Traducerea poloneză a fost actualizată (Mulțumită lui phyrz91).
+- Traducerea Chineză Tradițională a fost actualizată (Mulțumită lui plum7x).
+- S-a adăugat un nivel de corectare a erorilor pentru codurile QR.
+- S-a adăugat opțiunea de a adăuga coduri de bare generate la istoric (trebuie să fie activată în setări).
+- Modificarea managementului API-urilor de la distanță.
+- S-a adăugat API-ul MusicBrainz.

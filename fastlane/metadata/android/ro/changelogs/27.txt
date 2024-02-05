@@ -1,0 +1,10 @@
+1.13.0
+
+- Adăugarea textului în partea de jos a unei imagini cu cod de bare.
+- S-a adăugat o setare pentru a dezactiva istoricul.
+- S-a adăugat generarea unui cod QR din ID-ul unei aplicații instalate.
+- Ștergerea îmbunătățită a elementelor din istoricul acțiunilor.
+- S-a adăugat un buton „adăugați la istoric” în acțiuni, dacă articolul nu este prezent în istoric.
+- Remediați detectarea unui cod de bare de culoare deschisă pe un fundal întunecat printr-o imagine.
+- S-a adăugat generarea unui cod Qr din locație.
+- Adăugarea unei apăsări lungi pe textele analizelor pentru codurilor de bare.

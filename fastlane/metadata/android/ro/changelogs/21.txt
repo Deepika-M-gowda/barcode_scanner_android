@@ -1,0 +1,9 @@
+1.9.0
+
+- Iconița nouă + iconița animată în Splash Screen.
+- S-au adăugat animații de tranziție între vederi în generarea codului de bare.
+- S-a adăugat animație pentru iconițe în BottomNavigationView.
+- Îmbunătățirea stilului si codului. Componentele Spinner au fost înlocuite cu MaterialAutoCompleteTextView.
+- Eliminarea fonturilor Roboto. Acum aplicația folosește fontul din sistem.
+- Adăugarea caracteristicilor sistemului.
+- Traducerea în limba rusă a fost actualizată (Mulțumită lui s s).

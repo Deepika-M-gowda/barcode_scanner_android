@@ -1,0 +1,5 @@
+1.11.0
+
+- S-a adăugat traducere chineză (de către Hu Shenghao).
+- Adăugat zoom-ul camerei prin gesturi (cu 2 degete și cu o atingere dublă) (de către Hu Shenghao).
+- Câteva mici îmbunătățiri.

@@ -1,0 +1,9 @@
+1.12.0
+
+- S-a adăugat traducerea tradițională chineză (de către plum7x).
+- Actualizare Kotlin (1.8.0). Actualizarea dependențelor.
+- S-a adăugat ștergerea imaginilor generate de vizualizarea decupată la scanarea dintr-o imagine.
+- S-a adăugat selecția și ștergerea mai multor elemente din istoric.
+- S-a adăugat ștergerea unui articol din vizualizarea rezultatelor.
+- Îmbunătățirea culorilor și stilului.
+- Îmbunătățiri ale codul.

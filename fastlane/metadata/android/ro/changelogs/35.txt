@@ -1,0 +1,17 @@
+1.17.0
+
+Funcții noi:
+- A fost adăugat motorul de căutare implicit al browserului.
+- S-a adăugat conexiune Wi-Fi cu securitate WPA3 (Mulțumită lui Mateus J.).
+Traducere (folosind Weblate):
+- S-a adăugat traducere în limba portugheză (Brazilia) (Mulțumită lui joaooliva).
+- S-a adăugat traducere în limba japoneză (nu completă) (Mulțumită lui しいたけ).
+- S-a adăugat traducere în limba ucraineană (nu este completă) (Mulțumită lui MaSHiNiK).
+- S-a adăugat traducere în limba italiană (nu este completă) (Mulțumită lui Tua madre).
+- S-a adăugat traducere în limba indoneziană (nu este completă) (Mulțumită lui Reza).
+- Traducere în limba germană actualizată (Mulțumită lui Fabian Rennebeck).
+- Traducere actualizată în norvegiană bokmål (Mulțumită lui Allan Nordhøy).
+- Traducere în chineză (simplificată) actualizată (Mulțumită lui 御坂13766号 și Red Star Over Earth).
+- Traducere în limba poloneză actualizată (Mulțumită lui Eryk Michalak).
+- Traducere în limba turceasca actualizată (Mulțumită lui abfreeman).
+- Traducere în limba spaniolă actualizată (Mulțumită lui gallegonovato).

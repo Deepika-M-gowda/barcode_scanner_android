@@ -1,0 +1,6 @@
+- S-a adăugat traducere în spaniolă (Mulțumită lui zgll2022).
+- S-a adăugat Brave Search ca motor de căutare.
+- Schimbați iconița Eco-Score.
+- S-a schimbat iconița pentru acțiunea „deschide cu un browser”.
+- Îmbunătățirea temei luminoase.
+- Îmbunătățiri ale codului.

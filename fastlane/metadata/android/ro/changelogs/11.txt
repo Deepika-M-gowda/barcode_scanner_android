@@ -1,0 +1,2 @@
+- Îmbunătățirea codului.
+- Remediați o problemă cu camera care uneori nu se oprește atunci când scanați dintr-o imagine.

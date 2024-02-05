@@ -1,0 +1,4 @@
+- Modificarea unei biblioteci care permite scanarea codurilor de bare.
+- Actualizări ale: versiunea Kotlin (1.7.10), SDK (API 33) și dependențelor.
+- Îmbunătățirea codului.
+- Adăugarea pictogramei monocrome pentru Android 13.
