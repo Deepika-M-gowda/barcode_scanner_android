@@ -232,7 +232,6 @@
     <string name="book_product_publish_date_label">Data publicării</string>
     <string name="book_product_pages_number">%1$s pagini</string>
     <string name="book_product_original_title_label">Titlul original</string>
-    <string name="music_product_tracks_label"></string>
     <string name="bar_code_content_label">Conținutul codului de bare</string>
     <string name="bar_code_analysis_label">Analiza codurilor de bare</string>
     <string name="matrix_contact_name_label">Nume</string>
