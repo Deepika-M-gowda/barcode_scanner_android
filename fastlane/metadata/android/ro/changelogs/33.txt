@@ -1,0 +1,15 @@
+1.16.0
+
+Traducere (folosind Weblate):
+- S-a adăugat traducere în turcă (Mulțumita lui abfreeman).
+- S-a adăugat Norvegiana Bokmål (nu este complet) (Mulțumita lui Allan Nordhøy).
+- Traducere în limba spaniolă actualizată (Mulțumitalui J. Lavoie și gallegonovato).
+- Traducere în chineză tradițională actualizată (Mulțumitalui plum7x).
+- Traducere în limba germană actualizată (Mulțumita lui J. Lavoie).
+- Traducere în limba franceză actualizată (Mulțumita lui J. Lavoie).
+
+Funcții noi:
+- S-a adăugat tema neagră.
+- S-a adăugat exportul JPG și SVG imaginilor cu codurilor de bare.
+- Unele îmbunătățiri ale codului.
+- S-au rezolvat unele erori.

@@ -1,0 +1,7 @@
+1.14.0
+
+- S-a adăugat traducerea poloneză (Mulțumită lui phyrz91).
+- Remedierea crashului pe Android 7.
+- S-a adăugat un parametru pentru a seta valoarea implicită de zoom a camerei.
+- S-a adăugat analiza codului QR UPI.
+- S-a adăugat un istoric pentru crearea codului Qr EPC.

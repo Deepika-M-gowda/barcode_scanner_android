@@ -1,0 +1,11 @@
+1.20.0
+
+Jurnalul complet al modificărilor aici: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- S-a adăugat traducerea ucraineană (Mulțumită lui Сергій).
+- Traduceri actualizate (folosind Weblate).
+- Dependențe actualizate.
+- S-a rezolvat țigla care nu funcționează pe unele dispozitive Android 14.
+- S-a adăugat posibilitatea de a modifica un cod de bare scanat.
+- Câteva modificări grafice.
+- Câteva îmbunătățiri și optimizări ale codului.

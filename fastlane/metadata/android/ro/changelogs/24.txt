@@ -1,0 +1,6 @@
+1.10.1
+
+- Îmbunătățirea implementării CameraX și remedierea erorilor.
+- S-a remediat o eroare la afișarea temei implicite pe Android 6 până la 11.
+- S-a remediat filtrul de intenție care a permis obținerea unui eveniment în format .ics.
+- Actualizarea dependențelor.

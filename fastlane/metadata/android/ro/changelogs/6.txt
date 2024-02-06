@@ -1,0 +1,2 @@
+- Adăugați posibilitatea de a schimba limba pentru Android 13.
+- Adăugați acces la codul sursă în setări.

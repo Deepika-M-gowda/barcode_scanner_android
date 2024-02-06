@@ -1,0 +1,7 @@
+1.10.0
+
+- Îmbunătățirea codului.
+- Acces simplificat la acțiuni după scanarea unui cod de bare.
+- Implementarea CameraX îmbunătățită.
+- Actualizarea dependențelor.
+- Câteva îmbunătățiri și remedieri de erori.

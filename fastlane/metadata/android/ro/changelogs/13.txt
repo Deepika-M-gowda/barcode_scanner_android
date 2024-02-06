@@ -1,0 +1,7 @@
+- Actualizați versiunea Kotlin (1.7.20).
+- Unele îmbunătățiri ale șirurilor (Engleză).
+- S-a adăugat un buton de comutare în setări pentru a copia automat conținutul codului de bare scanat în clipboard.
+- Îmbunătățiri ale codului.
+- S-a adăugat posibilitatea de a interoga manual API-urile de la distanță.
+- S-a adăugat suport pentru generarea de coduri EPC QR .
+- S-a adăugat un buton de căutare în bara de instrumente pentru codurile QR care conțin o adresă URL.

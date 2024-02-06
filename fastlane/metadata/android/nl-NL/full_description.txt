@@ -1,0 +1,24 @@
+Barcode Scanner is een gratis en open source app waarmee je barcodes kunt lezen en genereren. Het kan informatie verzamelen over voedselproducten, cosmetica, boeken en muziek (CD's, vinyl...).
+
+De app beheert verschillende barcodeformaten:
+• Tweedimensionale barcodes: QR-code, Datamatrix, PDF 417, AZTEC
+• Eendimensionale barcodes: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
+
+Verzamel informatie over een product tijdens het scannen:
+• Voedingsmiddelen met Open Food Facts
+• Cosmetica met Open Beauty Facts
+• Voedingsproducten voor huisdieren met Open Pet Food Facts
+• Boeken met Open Bibliotheek
+• Muziek CD's, vinyls... met MusicBrainz
+
+Functionaliteit:
+• Richt de camera op een barcode en ontvang er onmiddellijk informatie over. Je kunt barcodes ook scannen van een foto.
+• Met een simpele scan kun je visitekaartjes lezen, nieuwe contacten toevoegen, nieuwe evenementen in je agenda zetten, URL's openen of zelfs verbinding maken met Wi-Fi.
+• Scan barcodes van voedingsmiddelen en cosmetische producten om informatie te krijgen over hun samenstelling dankzij de databases Open Food Facts en Open Beauty Facts.
+• Zoek informatie over het product dat je scant, met een snel onderzoek op verschillende websites zoals Amazon of Fnac.
+• Houd al je gescande barcodes bij in de geschiedenis.
+• Genereer je eigen barcodes
+• Pas de interface aan met verschillende kleuren, met een licht thema of een donker thema. De app integreert de functies van Android 12, waardoor je de kleuren kunt aanpassen aan je achtergrond.
+• Teksten zijn volledig vertaald in het Engels, Spaans, Frans, Duits, Nederlands, Pools, Turks, Russisch en Chinees.
+
+Deze app respecteert je privacy: het bevat geen trackers en verzamelt geen gegevens.

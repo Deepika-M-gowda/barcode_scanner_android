@@ -1,0 +1,5 @@
+1.9.1
+
+- Reproiectarea stilurilor pentru o integrare completă a Material3 și o mai bună implementare a Material You.
+- S-a schimbat culoarea iconițelor comenzilor rapide.
+- S-a adăugat noul logo OpenFoodFacts.
