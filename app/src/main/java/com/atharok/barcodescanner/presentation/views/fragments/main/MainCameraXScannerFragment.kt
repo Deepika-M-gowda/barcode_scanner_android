@@ -124,7 +124,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     override fun onAttach(context: Context) {
         super.onAttach(context)
         val activity: Activity = requireActivity()
-        if(activity is BaseActivity){
+        if(activity is BaseActivity) {
             if(activity.settingsManager.isAutoScreenRotationScanDisabled) {
                 activity.lockDeviceRotation(true)
             }
@@ -140,7 +140,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
                 menuInflater.inflate(R.menu.menu_scanner, menu)
             }
 
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId) {
                 R.id.menu_scanner_flash -> {
                     cameraConfig?.switchFlash()
                     requireActivity().invalidateOptionsMenu()
@@ -157,12 +157,19 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
                 super.onPrepareMenu(menu)
 
                 if(cameraConfig?.hasFlash()==true && allPermissionsGranted()) {
-                    if (cameraConfig?.flashEnabled == true)
+                    if (cameraConfig?.flashEnabled == true) {
                         menu.getItem(0).icon =
-                            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_on_24)
-                    else
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.baseline_flash_on_24
+                            )
+                    } else {
                         menu.getItem(0).icon =
-                            ContextCompat.getDrawable(requireContext(), R.drawable.baseline_flash_off_24)
+                            ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.baseline_flash_off_24
+                            )
+                    }
 
                 } else {
                     menu.getItem(0).isVisible = false
@@ -213,17 +220,17 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     private fun configureCamera() {
         cameraConfig = CameraConfig(requireContext()).apply {
 
-            val previewView = viewBinding.fragmentMainCameraXScannerPreviewView
-            val scanOverlay = viewBinding.fragmentMainCameraXScannerScanOverlay
-
             val analyzer: AbstractCameraXBarcodeAnalyzer = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                CameraXBarcodeAnalyzer(previewView, scanOverlay, this@MainCameraXScannerFragment)
+                CameraXBarcodeAnalyzer(this@MainCameraXScannerFragment)
             } else {
-                CameraXBarcodeLegacyAnalyzer(previewView, scanOverlay, this@MainCameraXScannerFragment)
+                CameraXBarcodeLegacyAnalyzer(this@MainCameraXScannerFragment)
             }
 
             this.setAnalyzer(analyzer)
-            this.startCamera(this@MainCameraXScannerFragment as LifecycleOwner, previewView)
+            this.startCamera(
+                lifecycleOwner = this@MainCameraXScannerFragment as LifecycleOwner,
+                previewView = viewBinding.fragmentMainCameraXScannerPreviewView
+            )
             this@MainCameraXScannerFragment.configureZoom(this)
         }
     }
@@ -273,7 +280,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
             val settingsManager = get<SettingsManager>()
 
-            if(settingsManager.shouldCopyBarcodeScan){
+            if(settingsManager.shouldCopyBarcodeScan) {
                 copyToClipboard("contents", contents)
                 showToastText(R.string.barcode_copied_label)
             }
@@ -309,7 +316,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
             // Si l'application a été ouverte via une application tierce
             if (requireActivity().intent?.action == ZXING_SCAN_INTENT_ACTION) {
                 sendResultToAppIntent(result.toIntent())
-            }else{
+            } else {
                 startBarcodeAnalysisActivity(barcode)
             }
         }
@@ -318,7 +325,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     /**
      * Démarre l'Activity: BarcodeAnalysisActivity.
      */
-    private fun startBarcodeAnalysisActivity(barcode: Barcode){
+    private fun startBarcodeAnalysisActivity(barcode: Barcode) {
         val intent = createStartActivityIntent(requireContext(), BarcodeAnalysisActivity::class).apply {
             putExtra(BARCODE_KEY, barcode)
         }
@@ -357,7 +364,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
         }
     }
 
-    private fun startBarcodeScanFromImageActivity(){
+    private fun startBarcodeScanFromImageActivity() {
         cameraConfig?.stopCamera()
         resultBarcodeScanFromImageActivity?.let { result ->
             val intent = createStartActivityIntent(requireContext(), BarcodeScanFromImageGalleryActivity::class)

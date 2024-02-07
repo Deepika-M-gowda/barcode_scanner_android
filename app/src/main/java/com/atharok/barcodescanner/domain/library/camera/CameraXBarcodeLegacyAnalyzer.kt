@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.domain.library.camera
 
 import androidx.camera.core.ImageProxy
-import androidx.camera.view.PreviewView
 import com.atharok.barcodescanner.common.extensions.toByteArray
 import com.atharok.barcodescanner.presentation.customView.ScanOverlay
 import kotlin.math.roundToInt
@@ -30,54 +29,36 @@ import kotlin.math.roundToInt
  * For API 21 and 22.
  */
 class CameraXBarcodeLegacyAnalyzer(
-    private val previewView: PreviewView,
-    private val scanOverlay: ScanOverlay,
     barcodeDetector: BarcodeDetector
 ) : AbstractCameraXBarcodeAnalyzer(barcodeDetector) {
 
     override fun analyze(image: ImageProxy) {
-        if(previewView.width == 0 || previewView.height==0)
-            return
-
         val plane = image.planes[0]
-        val imageData = plane.buffer.toByteArray()
         val rotationDegrees = image.imageInfo.rotationDegrees
 
-        val values: Values = if (rotationDegrees == 0 || rotationDegrees == 180) {
-            Values(
-                byteArray = imageData,
-                imageWidth = image.width,
-                imageHeight = image.height,
-                previewViewWidth = previewView.height,
-                previewViewHeight = previewView.width,
-                viewfinderSize = scanOverlay.viewfinderSize
-            )
+        val byteArray: ByteArray
+        val imageWidth: Int
+        val imageHeight: Int
+
+        if (rotationDegrees == 0 || rotationDegrees == 180) {
+            byteArray = plane.buffer.toByteArray()
+            imageWidth = image.width
+            imageHeight = image.height
         } else {
-            Values(
-                byteArray = rotateImageArray(imageData, image.width, image.height, rotationDegrees),
-                imageWidth = image.height,
-                imageHeight = image.width,
-                previewViewWidth = previewView.width,
-                previewViewHeight = previewView.height,
-                viewfinderSize = scanOverlay.viewfinderSize
-            )
+            byteArray = rotateImageArray(plane.buffer.toByteArray(), image.width, image.height, rotationDegrees)
+            imageWidth = image.height
+            imageHeight = image.width
         }
 
-        val scale = if (values.previewViewHeight < values.previewViewWidth) {
-            (values.imageWidth / values.previewViewWidth.toFloat())
-        }else{
-            (values.imageHeight / values.previewViewHeight.toFloat())
-        }
+        val size = imageWidth.coerceAtMost(imageHeight) * ScanOverlay.RATIO
 
-        val size = values.viewfinderSize * scale
-
-        val left = (values.imageWidth - size) / 2f
-        val top = (values.imageHeight - size) / 2f
+        val left = (imageWidth - size) / 2f
+        val top = (imageHeight - size) / 2f
 
         analyse(
-            yuvData = values.byteArray,
-            dataWidth = values.imageWidth,
-            dataHeight = values.imageHeight,
+            yuvData = byteArray,
+            dataWidth = imageWidth,
+            dataHeight = imageHeight,
             left = left.roundToInt(),
             top = top.roundToInt(),
             width = size.roundToInt(),
@@ -106,13 +87,10 @@ class CameraXBarcodeLegacyAnalyzer(
         return rotatedByteArray
     }
 
-    private data class Values(
+    /*private data class Values(
         val byteArray: ByteArray,
         val imageWidth: Int,
-        val imageHeight: Int,
-        val previewViewWidth: Int,
-        val previewViewHeight: Int,
-        val viewfinderSize: Float
+        val imageHeight: Int
     ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
@@ -123,21 +101,15 @@ class CameraXBarcodeLegacyAnalyzer(
             if (!byteArray.contentEquals(other.byteArray)) return false
             if (imageWidth != other.imageWidth) return false
             if (imageHeight != other.imageHeight) return false
-            if (previewViewWidth != other.previewViewWidth) return false
-            if (previewViewHeight != other.previewViewHeight) return false
-            if (viewfinderSize != other.viewfinderSize) return false
 
             return true
         }
 
-        override fun hashCode(): Int {
+        /*override fun hashCode(): Int {
             var result = byteArray.contentHashCode()
             result = 31 * result + imageWidth
             result = 31 * result + imageHeight
-            result = 31 * result + previewViewWidth
-            result = 31 * result + previewViewHeight
-            result = 31 * result + viewfinderSize.hashCode()
             return result
-        }
-    }
+        }*/
+    }*/
 }

@@ -43,7 +43,7 @@ class ScanOverlay @JvmOverloads constructor(
 ): View(context, attrs, defStyleAttr, defStyleRes) {
 
     companion object {
-        private const val RATIO = 0.8f
+        const val RATIO = 0.7f
     }
 
     private val viewfinderRadius: Float
@@ -113,14 +113,11 @@ class ScanOverlay @JvmOverloads constructor(
         canvas.drawArc(viewfinderRect.left, viewfinderRect.bottom-cornerSize, viewfinderRect.left+cornerSize, viewfinderRect.bottom, 90f, 90f, false, viewfinderCornerPaint)
     }
 
-    var viewfinderSize: Float = 0f
-        private set
-
     private fun calculateRectangleDimension(width: Int, height: Int) {
         val overlayWidth = width.toFloat()
         val overlayHeight = height.toFloat()
 
-        viewfinderSize = overlayHeight.coerceAtMost(overlayWidth) * RATIO
+        val viewfinderSize = overlayHeight.coerceAtMost(overlayWidth) * RATIO
 
         val centerX = overlayWidth / 2f
         val centerY = overlayHeight / 2f

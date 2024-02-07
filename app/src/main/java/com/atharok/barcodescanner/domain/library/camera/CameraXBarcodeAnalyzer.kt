@@ -27,37 +27,14 @@ import com.atharok.barcodescanner.presentation.customView.ScanOverlay
 import kotlin.math.roundToInt
 
 class CameraXBarcodeAnalyzer(
-    private val previewView: PreviewView,
-    private val scanOverlay: ScanOverlay,
     barcodeDetector: BarcodeDetector
 ) : AbstractCameraXBarcodeAnalyzer(barcodeDetector) {
 
     override fun analyze(image: ImageProxy) {
-        if(previewView.width == 0 || previewView.height==0)
-            return
-
         val plane = image.planes[0]
         val imageData = plane.buffer.toByteArray()
-        val rotationDegrees = image.imageInfo.rotationDegrees
 
-        val previewWidth: Int
-        val previewHeight: Int
-
-        if (rotationDegrees == 0 || rotationDegrees == 180) {
-            previewWidth = previewView.width
-            previewHeight = previewView.height
-        } else {
-            previewWidth = previewView.height
-            previewHeight = previewView.width
-        }
-
-        val scale = if (previewWidth < previewHeight) {
-            image.width / previewWidth.toFloat()
-        }else{
-            image.height / previewHeight.toFloat()
-        }
-
-        val size = scanOverlay.viewfinderSize * scale
+        val size = image.width.coerceAtMost(image.height) * ScanOverlay.RATIO
 
         val left = (image.width - size) / 2f
         val top = (image.height - size) / 2f
