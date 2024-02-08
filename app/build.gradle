@@ -11,8 +11,8 @@ android {
         applicationId "com.atharok.barcodescanner"
         minSdk 21
         targetSdk 34
-        versionCode 38
-        versionName "1.20.0"
+        versionCode 39
+        versionName "1.21.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,7 +62,7 @@ dependencies {
     implementation("io.coil-kt:coil-svg:2.4.0")
 
     // Koin - Dependency Injection with AndroidX, ViewModel & Fragment features
-    implementation 'io.insert-koin:koin-android:3.4.3'
+    implementation 'io.insert-koin:koin-android:3.5.3'
 
     // Room - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.6.1"
