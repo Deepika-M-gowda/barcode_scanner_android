@@ -547,9 +547,9 @@
     <string name="permission_query_all_packages_label">Запрос всех пакетов</string>
     <string name="permission_query_all_packages_description_label">Используется для генерации QR-кода из установленного приложения.</string>
     <!-- About BDD -->
-    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных о пищевых продуктах, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
-    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных о кормах для домашних животных.</string>
-    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных о косметических средствах.</string>
+    <string name="bdd_open_food_facts_description_label">Open Food Facts - это свободная база данных пищевых продуктов, в которой перечислены ингредиенты, аллергены, питательный состав и вся информация, присутствующая на этикетках продуктов.</string>
+    <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts - это свободная база данных кормов для домашних животных.</string>
+    <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts - это свободная база данных косметических средств.</string>
     <string name="bdd_music_brainz_description_label">MusicBrainz - это свободная музыкальная энциклопедия, которая собирает музыкальные метаданные и делает их доступными для всех.</string>
     <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг независимо от их языка.</string>
     <!-- About Library Third -->

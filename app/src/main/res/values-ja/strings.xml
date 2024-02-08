@@ -95,4 +95,5 @@
     <string name="preferences_switch_scan_add_barcode_to_the_history_label">スキャンしたコードを履歴に保存</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">デフォルトのズームの値</string>
     <string name="copy_label">テキストをコピー</string>
+    <string name="action_modify_barcode">テキストを編集</string>
 </resources>
