@@ -55,14 +55,14 @@
     <string name="about_barcode_information_label">詳細</string>
     <string name="preferences_color">テーマカラー</string>
     <string name="preferences_theme_label">テーマ</string>
-    <string name="preferences_color_material_you">本体設定 (Material You)</string>
+    <string name="preferences_color_material_you">システムに従う (Material You)</string>
     <string name="preferences_color_blue">青色</string>
     <string name="preferences_color_orange">オレンジ色</string>
     <string name="preferences_color_green">緑色</string>
     <string name="preferences_color_red">赤色</string>
     <string name="preferences_color_purple">紫色</string>
     <string name="preferences_switch_dark_theme_label">ダーク</string>
-    <string name="preferences_switch_black_theme_label">黒</string>
+    <string name="preferences_switch_black_theme_label">ブラック</string>
     <string name="popup_message_confirmation_delete_selected_items_history">選択した履歴を削除しますか\?</string>
     <string name="popup_message_confirmation_delete_history">全ての履歴を削除しますか\?</string>
     <string name="about_barcode_format_label">形式: %1$s</string>
@@ -181,4 +181,5 @@
     <string name="country_sv">エルサルバドル共和国</string>
     <string name="about_barcode_origin_label">販売国:</string>
     <string name="scan_information_label">コードを写してスキャン</string>
+    <string name="preferences_switch_system_theme_label">システムに従う</string>
 </resources>
