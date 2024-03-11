@@ -2,14 +2,14 @@
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/state_on"
-        android:drawable="@drawable/baseline_history_24_avd_anim"
+        android:drawable="@drawable/baseline_history_24_avd"
         android:state_checked="true"/>
 
     <item android:id="@+id/state_off"
         android:drawable="@drawable/baseline_history_24"/>
 
     <transition
-        android:drawable="@drawable/baseline_history_24_avd_anim"
+        android:drawable="@drawable/baseline_history_24_avd"
         android:fromId="@id/state_off"
         android:toId="@id/state_on" />
 

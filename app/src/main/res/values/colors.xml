@@ -4,7 +4,7 @@
     <!-- Commons -->
 
     <color name="overlay_mask">#bf000000</color>
-    <color name="icon_background">#ff34353a</color>
+    <color name="icon_background">#ff22272f</color>
 
     <!-- Indicative Color -->
     <color name="light_color_positive">#46c705</color>

@@ -109,7 +109,7 @@
 
     <style name="SplashScreenTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowSplashScreenBackground">@color/icon_background</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen_icon_avd_anim</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen_icon_avd</item>
         <item name="android:windowSplashScreenAnimationDuration">1000</item>
     </style>
 </resources>
