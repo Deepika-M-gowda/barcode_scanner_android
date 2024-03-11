@@ -18,7 +18,9 @@ Fonctionnalités de l'appli :
 • Recherchez des informations sur les produits que vous scannez, avec une recherche rapide sur différents sites comme Amazon ou Fnac...
 • Conservez une trace de tous vos code-barres scannés grâce à l'historique.
 • Générez vos propres code-barres.
-• Personnalisez l'interface avec différents choix de couleurs, que ce soit en thème clair ou sombre. L'application intègre en plus les dernières fonctionnalités d'Android 12, permettant d'adapter les couleurs de l'interface en fonction de votre fond d'écran.
-• Les textes sont entièrement traduits en français, anglais, espagnol, allemand, polonais, russe, turque, chinois simplifié et chinois traditionnel.
+• Personnalisez l'interface avec différents choix de couleurs, que ce soit en thème clair ou sombre. L'interface est construite avec Material 3 et est compatible avec Material You, permettant d'adapter les couleurs de l'interface en fonction de votre fond d'écran pour les appareils fonctionnant sur Android 12 ou plus.
+• Les textes sont entièrement traduits en Français, Anglais, Arabe, Espagnol, Portugais, Russe, Allemand, Turc, Italien, Ukrainien, Polonais, Néerlandais, Roumain, Chinois Simplifié et Chinois Traditionnel.
 
 L'application respecte votre vie privée. Elle ne contient aucun tracker et ne collecte aucune donnée.
+
+Le code source est disponible ici: https://gitlab.com/Atharok/BarcodeScanner

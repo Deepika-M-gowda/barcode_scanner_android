@@ -1,1 +1,1 @@
-A free app which allow to read and generate barcodes.
+An open-source app that allows you to read and generate barcodes.

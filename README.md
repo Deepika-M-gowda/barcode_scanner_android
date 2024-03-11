@@ -2,7 +2,7 @@
 
 ## <div align="center">Barcode Scanner</div>
 
-<div align="center"><h4>A free app which allow to read and generate barcodes for Android.</h4></div>
+<div align="center"><h4>An open-source app that allows you to read and generate barcodes for Android.</h4></div>
 
 <div align="center">
     <a href="https://f-droid.org/packages/com.atharok.barcodescanner/" target="_blank"><img src="assets/get-it-on-f-droid-badge.png" alt="Get it on F-Droid" height="90"></a>
@@ -14,7 +14,7 @@
 
 ## Overview
 
-Barcode Scanner is a free and open source app which allow to read and generate barcodes. This app respects your privacy. It does not contain any trackers and does not collect any data.
+Barcode Scanner is a free and open-source app that allows you to read and generate barcodes. This app respects your privacy. It does not contain any trackers and does not collect any data.
 
 ## Formats
 
@@ -41,8 +41,8 @@ Get information about a product during a scan:
 - Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
 - Keep track of all your scanned barcodes with the history tool.
 - Generate your own barcodes
-- Customize the interface with different colours, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colours depending on your wallpaper.
-- Texts are entirely translated in English, Spanish, French, German, Polish, Italian, Portuguese, Arabic, Turkish, Russian and Chinese (Simplified and Traditional).
+- Customize the interface with different colors, with a light theme or a dark one. The interface is built with Material 3 and is compatible with Material You, allowing you to adjust colors based on your wallpaper for devices running on Android 12 or later.
+- Texts are entirely translated in English, Arabic, Spanish, French, Portuguese, Russian, German, Turkish, Italian, Ukrainian, Polish, Dutch, Romanian and Chinese (Simplified and Traditional).
 
 ## Screenshots
 

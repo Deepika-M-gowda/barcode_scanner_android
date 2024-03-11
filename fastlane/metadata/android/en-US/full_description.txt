@@ -1,4 +1,4 @@
-Barcode Scanner is a free and open source app which allow to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls…).
+Barcode Scanner is a free and open-source app that allows you to read and generate barcodes. It can collect information about food products, cosmetics books and music (CDs, Vinyls…).
 
 Different barcodes formats are managed by the app :
 • 2 dimensions bar codes: QR Code, Data Matrix, PDF 417, AZTEC
@@ -18,7 +18,9 @@ App features :
 • Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
 • Keep track of all your scanned barcodes with the history tool.
 • Generate your own barcodes
-• Customize the interface with different colors, with a light theme or a dark one. The app integrates the Android 12's features, allowing to adjust colors depending on your wallpaper.
-• Texts are entirely translated in English, Spanish, French, German, Polish, Turkish, Russian and Chinese.
+• Customize the interface with different colors, with a light theme or a dark one. The interface is built with Material 3 and is compatible with Material You, allowing you to adjust colors based on your wallpaper for devices running on Android 12 or later.
+• Texts are entirely translated in English, Arabic, Spanish, French, Portuguese, Russian, German, Turkish, Italian, Ukrainian, Polish, Dutch, Romanian and Chinese (Simplified and Traditional).
 
 This app respects your privacy. It does not contain any trackers and does not collect any data.
+
+The source code is available here: https://gitlab.com/Atharok/BarcodeScanner
