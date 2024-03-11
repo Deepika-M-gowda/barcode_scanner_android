@@ -723,4 +723,5 @@
     <string name="export_json_label">导出为 JSON</string>
     <string name="colors_label">颜色</string>
     <string name="height_label">高度</string>
+    <string name="action_modify_barcode">修改条形码</string>
 </resources>
