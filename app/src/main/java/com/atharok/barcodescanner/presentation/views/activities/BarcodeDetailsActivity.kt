@@ -20,6 +20,8 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -28,11 +30,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
 import androidx.lifecycle.LiveData
+import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.common.extensions.parcelable
@@ -139,7 +143,31 @@ class BarcodeDetailsActivity : BaseActivity() {
                 "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
+        } else if(intent?.action == "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD") {
+            // Intent to generate a QR from clipboard
+            val text = getClipboardContent()
+            if (text == null) {
+                Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
+            }
+            text ?: ""
         } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
+    }
+
+    private fun getClipboardContent(): String? {
+        val clipboard = applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+//        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        if (clipboard.hasPrimaryClip()) {
+            val data = clipboard.primaryClip
+            if ((data?.itemCount ?: 0) > 0) {
+                val text = data?.getItemAt(0)?.coerceToText(this)?.trim() ?: ""
+                if (text.isNotEmpty()) {
+                    return text.toString()
+                }
+            }
+        }
+
+        // The clipboard is empty
+        return null
     }
 
     private fun getBarcodeFormat(): BarcodeFormat {
