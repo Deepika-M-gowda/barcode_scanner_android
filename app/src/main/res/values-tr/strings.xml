@@ -713,4 +713,6 @@
     <string name="colors_label">Renkler</string>
     <string name="height_label">Yükseklik</string>
     <string name="action_modify_barcode">Barkodu düzenle</string>
+    <string name="preferences_additional_options">Ek seçenekler</string>
+    <string name="preferences_display_barcode_image_results_view">Barkod görselini sonuçlar görünümünde görüntüle</string>
 </resources>
