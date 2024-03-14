@@ -549,6 +549,9 @@
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Recherche</string>
     <string name="preferences_search_engine">Moteur de recherche</string>
+    <!-- Settings: Additional options -->
+    <string name="preferences_additional_options">Options supplémentaires</string>
+    <string name="preferences_display_barcode_image_results_view">Afficher l\'image du code-barres dans la vue des résultats</string>
     <!-- About Settings -->
     <string name="preferences_about_title">À propos</string>
     <string name="preferences_about_permissions_label">Permissions</string>

@@ -33,7 +33,6 @@ import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KE
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BarcodeFormatChecker
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity
@@ -85,7 +84,7 @@ abstract class AbstractBarcodeFormCreatorFragment: BaseFragment() {
         barcodeFormat: BarcodeFormat,
         qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel
     ) {
-        if(get<SettingsManager>().shouldAddBarcodeGenerateToHistory) {
+        if(settingsManager.shouldAddBarcodeGenerateToHistory) {
             val barcode: Barcode = get {
                 parametersOf(contents, barcodeFormat.name, qrCodeErrorCorrectionLevel)
             }

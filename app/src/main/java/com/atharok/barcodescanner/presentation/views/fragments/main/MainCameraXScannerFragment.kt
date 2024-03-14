@@ -54,7 +54,6 @@ import com.atharok.barcodescanner.databinding.FragmentMainCameraXScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BeepManager
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.domain.library.camera.AbstractCameraXBarcodeAnalyzer
 import com.atharok.barcodescanner.domain.library.camera.CameraConfig
@@ -125,7 +124,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
         super.onAttach(context)
         val activity: Activity = requireActivity()
         if(activity is BaseActivity) {
-            if(activity.settingsManager.isAutoScreenRotationScanDisabled) {
+            if(settingsManager.isAutoScreenRotationScanDisabled) {
                 activity.lockDeviceRotation(true)
             }
         }
@@ -254,7 +253,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
     private fun configureZoom(cameraConfig: CameraConfig) {
         val slider = viewBinding.fragmentMainCameraXScannerSlider
-        slider.value = get<SettingsManager>().getDefaultZoomValue()/100f
+        slider.value = settingsManager.getDefaultZoomValue()/100f
         cameraConfig.setLinearZoom(slider.value)
         slider.addOnChangeListener { v, value, _ ->
             cameraConfig.setLinearZoom(value)
@@ -277,8 +276,6 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
     ) = requireActivity().runOnUiThread {
 
         if(contents != null && formatName != null) {
-
-            val settingsManager = get<SettingsManager>()
 
             if(settingsManager.shouldCopyBarcodeScan) {
                 copyToClipboard("contents", contents)

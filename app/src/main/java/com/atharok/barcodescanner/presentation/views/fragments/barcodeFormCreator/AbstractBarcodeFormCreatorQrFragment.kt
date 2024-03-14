@@ -21,9 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.google.zxing.BarcodeFormat
-import org.koin.android.ext.android.get
 
 abstract class AbstractBarcodeFormCreatorQrFragment: AbstractBarcodeFormCreatorFragment() {
     override val checkError: (contents: String) -> String? by lazy {
@@ -33,5 +31,5 @@ abstract class AbstractBarcodeFormCreatorQrFragment: AbstractBarcodeFormCreatorF
     override fun getBarcodeFormat(): BarcodeFormat = BarcodeFormat.QR_CODE
 
     override fun getQrCodeErrorCorrectionLevel(): QrCodeErrorCorrectionLevel =
-        get<SettingsManager>().getQrCodeErrorCorrectionLevel()
+        settingsManager.getQrCodeErrorCorrectionLevel()
 }

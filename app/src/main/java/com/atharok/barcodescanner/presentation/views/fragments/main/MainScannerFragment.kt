@@ -53,7 +53,6 @@ import com.atharok.barcodescanner.databinding.FragmentMainScannerBinding
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BeepManager
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.domain.library.VibratorAppCompat
 import com.atharok.barcodescanner.domain.library.camera.CameraZoomGestureDetector
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
@@ -178,7 +177,7 @@ class MainScannerFragment : BaseFragment() {
         super.onAttach(context)
         val activity: Activity = requireActivity()
         if(activity is BaseActivity){
-            if(activity.settingsManager.isAutoScreenRotationScanDisabled) {
+            if(settingsManager.isAutoScreenRotationScanDisabled) {
                 activity.lockDeviceRotation(true)
             }
         }
@@ -280,7 +279,7 @@ class MainScannerFragment : BaseFragment() {
         lifecycleScope.launchWhenResumed {
             val maxZoom: Int = codeScanner.getMaxZoom()
             if (maxZoom <= 0) return@launchWhenResumed
-            codeScanner.zoom = get<SettingsManager>().getDefaultZoomValue()
+            codeScanner.zoom = settingsManager.getDefaultZoomValue()
             val defaultZoom: Float = codeScanner.zoom.toFloat()
             val slider = viewBinding.fragmentMainScannerCameraSlider.apply {
                 valueTo = maxZoom.toFloat()
@@ -305,8 +304,6 @@ class MainScannerFragment : BaseFragment() {
         val formatName = result.barcodeFormat?.name
 
         if(contents != null && formatName != null) {
-
-            val settingsManager = get<SettingsManager>()
 
             if(settingsManager.shouldCopyBarcodeScan){
                 copyToClipboard("contents", contents)
@@ -349,8 +346,6 @@ class MainScannerFragment : BaseFragment() {
         val formatName = intentResult.getStringExtra(SCAN_RESULT_FORMAT)
 
         if(contents != null && formatName != null) {
-
-            val settingsManager = get<SettingsManager>()
 
             if(settingsManager.shouldCopyBarcodeScan){
                 copyToClipboard("contents", contents)

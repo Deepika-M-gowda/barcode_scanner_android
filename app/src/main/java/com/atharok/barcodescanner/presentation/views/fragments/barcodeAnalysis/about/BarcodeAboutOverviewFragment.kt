@@ -20,16 +20,22 @@
 
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.about
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_DEFAULT_SIZE
+import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_GENERATOR_PROPERTIES_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAboutOverviewBinding
 import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
+import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
+import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AbstractActionsFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageFragment
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import kotlin.reflect.KClass
@@ -57,9 +63,33 @@ class BarcodeAboutOverviewFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
 
     override fun start(analysis: BarcodeAnalysis) {
         viewBinding.root.fixAnimateLayoutChangesInNestedScroll()
+        configureBarcodeAboutImageFragment(analysis.barcode)
         configureBarcodeAboutContentsFragment()
         configureBarcodeAboutMoreInfoFragment()
         configureBarcodeActionsFragment(analysis.barcode.getBarcodeType())
+    }
+
+    private fun configureBarcodeAboutImageFragment(barcode: Barcode) {
+        if(settingsManager.shouldDisplayBarcodeInResultsView) {
+            val properties = BarcodeImageGeneratorProperties(
+                contents = barcode.contents,
+                format = barcode.getBarcodeFormat(),
+                qrCodeErrorCorrectionLevel = barcode.getQrCodeErrorCorrectionLevel(),
+                size = BARCODE_IMAGE_DEFAULT_SIZE,
+                frontColor = Color.BLACK,
+                backgroundColor = Color.WHITE
+            )
+
+            applyFragment(
+                containerViewId = viewBinding.fragmentBarcodeAboutOverviewBarcodeImageFrameLayout.id,
+                fragmentClass = BarcodeImageFragment::class,
+                args = Bundle().apply {
+                    putSerializable(BARCODE_IMAGE_GENERATOR_PROPERTIES_KEY, properties)
+                }
+            )
+        } else {
+            viewBinding.fragmentBarcodeAboutOverviewBarcodeImageFrameLayout.visibility = View.GONE
+        }
     }
 
     private fun configureBarcodeAboutContentsFragment() = applyFragment(

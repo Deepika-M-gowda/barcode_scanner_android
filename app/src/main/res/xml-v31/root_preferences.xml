@@ -140,6 +140,17 @@
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/preferences_additional_options">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_display_barcode_image_results_view_key"
+            android:title="@string/preferences_display_barcode_image_results_view"
+            android:defaultValue="false"
+            app:singleLineTitle="false"/>
+
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
         android:title="@string/preferences_about_title">
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference

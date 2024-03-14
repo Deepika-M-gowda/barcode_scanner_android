@@ -34,7 +34,6 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAnalysisActionsBinding
 import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.library.SettingsManager
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
@@ -137,7 +136,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
      */
     protected fun openContentsWithSearchEngine(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val intent = get<SettingsManager>().getSearchEngineIntent(contents)
+            val intent = settingsManager.getSearchEngineIntent(contents)
             mStartActivity(intent)
         }
     }
