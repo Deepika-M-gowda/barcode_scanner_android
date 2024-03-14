@@ -658,4 +658,6 @@
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
+    <string name="preferences_display_barcode_image_results_view">Afbeelding van de barcode in de resultaten tonen</string>
+    <string name="preferences_additional_options">Overige opties</string>
 </resources>
