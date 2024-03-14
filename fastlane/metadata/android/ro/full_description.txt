@@ -4,6 +4,13 @@ Barcode Scanner este o aplicație gratuită și open source care permite citirea
 • Coduri de bare cu2 dimensiuni: Coduri QR, Data Matrix, PDF 417, AZTEC
 • Coduri de bare cu o dimensiune: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
 
+Colectați informații despre un produs în timpul unei scanări:
+• Produse alimentare cu Open Food Facts
+• Cosmetice cu Open Beauty Facts
+• Produse alimentare pentru animale de companie cu Open Pet Food Facts
+• Cărți cu Open Library
+• CD-uri de muzică, viniluri... cu MusicBrainz
+
 Caracteristicile aplicației:
 • Îndreptați pur și simplu camera smartphone-ului către un cod de bare și primiți instantaneu informații despre acesta. De asemenea, puteți scana coduri de bare printr-o imagine din smartphone-ul dvs.
 • Cu o simplă scanare, citiți cărți de vizită, adăugați contacte noi, adăugați evenimente noi la agenda dvs., deschideți adresa URL sau chiar conectați-vă la Wi-Fi.
@@ -15,3 +22,5 @@ Caracteristicile aplicației:
 • Textele sunt traduse integral în engleză, spaniolă, franceză, germană, poloneză, turcă, rusă și chineză.
 
 Această aplicație vă respectă confidențialitatea. Nu conține niciun tracker și nu colectează date.
+
+Codul sursă: https://gitlab.com/Atharok/BarcodeScanner
