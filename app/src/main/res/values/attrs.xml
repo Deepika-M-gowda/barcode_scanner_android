@@ -8,8 +8,6 @@
     <!-- For Nutrition Table -->
     <attr name="colorRow" format="color"/>
 
-    <attr name="dialogBackgroundColor" format="color"/>
-
     <declare-styleable name="ScanOverlay">
         <attr name="viewfinder_radius" format="dimension" />
         <attr name="viewfinder_corner_thickness" format="dimension" />

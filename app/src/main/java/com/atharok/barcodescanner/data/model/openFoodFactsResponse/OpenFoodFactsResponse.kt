@@ -25,7 +25,14 @@ import com.atharok.barcodescanner.common.extensions.polishText
 import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.foodProduct.*
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.createNutrientsList
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getEcoScore
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getNovaGroup
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getNutriscore
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getPalmOilStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getVeganStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getVegetarianStatus
+import com.atharok.barcodescanner.domain.entity.product.foodProduct.getVeggieIngredientAnalysisList
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

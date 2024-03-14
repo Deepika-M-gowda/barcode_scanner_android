@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.atharok.barcodescanner.presentation.customView.ActivityLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_barcode_details_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.views.activities.BarcodeDetailsActivity">
 
-    <include
-        layout="@layout/template_toolbar"
-        android:id="@+id/activity_barcode_details_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/activity_barcode_details_toolbar"
         android:paddingStart="@dimen/standard_margin"
         android:paddingEnd="@dimen/standard_margin">
 
@@ -71,4 +67,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</com.atharok.barcodescanner.presentation.customView.ActivityLayout>

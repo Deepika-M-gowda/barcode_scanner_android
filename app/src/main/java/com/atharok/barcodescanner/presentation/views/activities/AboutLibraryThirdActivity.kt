@@ -35,7 +35,7 @@ class AboutLibraryThirdActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityAboutLibraryThirdToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityAboutLibraryThirdActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
 
         configureRecyclerView()

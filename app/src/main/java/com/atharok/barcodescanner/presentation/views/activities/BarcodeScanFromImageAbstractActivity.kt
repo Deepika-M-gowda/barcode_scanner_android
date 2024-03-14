@@ -51,7 +51,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeScanFromImageToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeScanFromImageToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         viewBinding.activityBarcodeScanFromImageCropImageView.clearImage()
         configureProgressBarColor()

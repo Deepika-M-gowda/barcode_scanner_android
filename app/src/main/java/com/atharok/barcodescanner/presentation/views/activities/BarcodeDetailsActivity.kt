@@ -98,7 +98,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeDetailsToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeDetailsActivityLayout.toolbar)
         supportActionBar?.title = format.getDisplayName(this)
 
         savedInstanceState?.let {
@@ -129,7 +129,6 @@ class BarcodeDetailsActivity : BaseActivity() {
         outState.putInt(BARCODE_IMAGE_HEIGHT_KEY, properties.height)
         super.onSaveInstanceState(outState)
     }
-
 
     private fun getIntentStringValue(): String? {
         return if(intent?.action == Intent.ACTION_SEND){

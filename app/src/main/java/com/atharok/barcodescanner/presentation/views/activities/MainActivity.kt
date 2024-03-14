@@ -65,7 +65,7 @@ class MainActivity: BaseActivity() {
             titleRes = it.getInt(TITLE_RES_KEY, R.string.title_scan)
         }
 
-        setSupportActionBar(viewBinding.activityMainToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityMainActivityLayout.toolbar)
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(false)// On n'affiche pas l'icone "retour" dans la MainActivity
             it.setTitle(titleRes)
@@ -86,21 +86,13 @@ class MainActivity: BaseActivity() {
         super.onSaveInstanceState(outState)
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
     // ---- Configuration ----
 
     /**
      * Permet de coloriser la bar de navigation (en bas) de la même couleur que la BottomNavigationView.
      */
     private fun configureNavigationBarColor(bottomNavigationView: BottomNavigationView) {
-        if (Build.VERSION.SDK_INT >= 24 || settingsManager.useDarkTheme()) {
+        if (Build.VERSION.SDK_INT >= 27 || settingsManager.useDarkTheme()) {
             val bottomNavigationViewBackground = bottomNavigationView.background
             if (bottomNavigationViewBackground is MaterialShapeDrawable) {
                 this.window.navigationBarColor = bottomNavigationViewBackground.resolvedTintColor
@@ -110,8 +102,8 @@ class MainActivity: BaseActivity() {
 
     private fun configureBottomNavigationMenu() {
         viewBinding.activityMainMenuBottomNavigation?.let { bottomNavigationView ->
-            bottomNavigationView.selectedItemId = currentItemId
             configureNavigationBarColor(bottomNavigationView)
+            bottomNavigationView.selectedItemId = currentItemId
             bottomNavigationView.setOnItemSelectedListener {
                 changeView(it.itemId)
             }

@@ -23,7 +23,7 @@ package com.atharok.barcodescanner.data.model.openFoodFactsDependenciesResponse.
 import androidx.annotation.Keep
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import java.util.Locale
 
 @Keep
 data class LanguageValue(

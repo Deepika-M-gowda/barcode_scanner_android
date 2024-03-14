@@ -5,11 +5,6 @@
 
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
 
-        <item name="colorError">@color/light_error</item>
-        <item name="colorErrorContainer">@color/light_errorContainer</item>
-        <item name="colorOnError">@color/light_onError</item>
-        <item name="colorOnErrorContainer">@color/light_onErrorContainer</item>
-
         <!-- Text Font / Size / Style -->
         <item name="fontFamily">@string/default_font</item>
         <item name="android:fontFamily">@string/default_font</item>
@@ -48,6 +43,51 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="colorControlNormal">?android:attr/textColorPrimary</item>
+
+        <!-- Text Font / Size / Style -->
+        <item name="fontFamily">@string/default_font</item>
+        <item name="android:fontFamily">@string/default_font</item>
+        <item name="textSize">@dimen/standard_text_size</item>
+        <item name="android:textSize">@dimen/standard_text_size</item>
+        <item name="android:textStyle">normal</item>
+
+        <!-- Custom colors -->
+        <item name="colorPositive">@color/dark_color_positive</item>
+        <item name="colorMedium">@color/dark_color_medium</item>
+        <item name="colorNegative">@color/dark_color_negative</item>
+        <item name="colorUnknown">@color/dark_color_unknown</item>
+        <item name="colorRow">@color/dark_table_row</item>
+
+        <!-- Components -->
+        <item name="cardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialCardViewStyle">@style/AppTheme.CardView.Material3</item>
+        <item name="materialButtonStyle">@style/AppTheme.MaterialButton</item>
+        <item name="bottomNavigationStyle">@style/AppTheme.BottomNavigationView.Style</item>
+        <item name="navigationRailStyle">@style/AppTheme.NavigationRailView.Style</item>
+        <item name="switchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="materialSwitchStyle">@style/AppTheme.Switch.Material3</item>
+        <item name="switchPreferenceCompatStyle">@style/AppTheme.SwitchPreferenceCompat.Material3</item>
+        <item name="seekBarPreferenceStyle">@style/AppTheme.SeekBarPreferenceCompat.Material3</item>
+        <item name="chipStyle">@style/AppTheme.Chip</item>
+        <item name="sliderStyle">@style/AppTheme.Slider</item>
+        <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+
+        <!-- System -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
         <item name="android:windowFullscreen">false</item>
     </style>
 </resources>

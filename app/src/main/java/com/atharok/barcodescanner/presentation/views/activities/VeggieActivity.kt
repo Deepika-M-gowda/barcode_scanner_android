@@ -56,7 +56,7 @@ class VeggieActivity : BaseActivity() {
     }
 
     private fun configureToolbar() {
-        setSupportActionBar(viewBinding.activityVeggieToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityVeggieActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
     }
 

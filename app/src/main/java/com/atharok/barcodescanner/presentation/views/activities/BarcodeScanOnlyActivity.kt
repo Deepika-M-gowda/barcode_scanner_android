@@ -39,7 +39,7 @@ class BarcodeScanOnlyActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityMainToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityMainActivityLayout.toolbar)
 
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(false)// On n'affiche pas l'icone "retour" dans la MainActivity

@@ -54,7 +54,7 @@ class BarcodeFormCreatorActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeFormCreatorToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeFormCreatorActivityLayout.toolbar)
 
         lifecycleScope.launch(Dispatchers.Main) {
             allBarcodeFormat?.apply(::configureHeader)

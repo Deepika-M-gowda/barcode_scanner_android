@@ -28,6 +28,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.convertToString
+import com.atharok.barcodescanner.common.extensions.getColorInt
 import com.atharok.barcodescanner.common.extensions.serializable
 import com.atharok.barcodescanner.common.utils.BARCODE_KEY
 import com.atharok.barcodescanner.databinding.ActivityBarcodeAnalysisBinding
@@ -72,7 +73,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeInformationToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeAnalysisActivityLayout.toolbar)
 
         intent?.serializable(BARCODE_KEY, Barcode::class.java)?.let { barcode: Barcode ->
             configureContentsView(barcode)
@@ -118,11 +119,11 @@ class BarcodeAnalysisActivity: BaseActivity() {
             when (it) {
 
                 is Resource.Progress -> {
-                    viewBinding.activityBarcodeInformationProgressBar.visibility = View.VISIBLE
+                    viewBinding.activityBarcodeAnalysisProgressBar.visibility = View.VISIBLE
                 }
 
                 is Resource.Failure -> {
-                    viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
+                    viewBinding.activityBarcodeAnalysisProgressBar.visibility = View.GONE
                     configureUnknownProductAnalysisView(
                         barcodeAnalysis = it.data as? UnknownProductBarcodeAnalysis
                             ?: UnknownProductBarcodeAnalysis(
@@ -135,7 +136,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 }
 
                 is Resource.Success -> {
-                    viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
+                    viewBinding.activityBarcodeAnalysisProgressBar.visibility = View.GONE
                     when (it.data) {
                         is FoodBarcodeAnalysis -> configureFoodAnalysisView(it.data)
                         is MusicBarcodeAnalysis -> configureMusicAnalysisView(it.data)
@@ -152,7 +153,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
                 }
 
                 else -> {
-                    viewBinding.activityBarcodeInformationProgressBar.visibility = View.GONE
+                    viewBinding.activityBarcodeAnalysisProgressBar.visibility = View.GONE
                 }
             }
         }
@@ -172,6 +173,9 @@ class BarcodeAnalysisActivity: BaseActivity() {
     private fun configureFoodAnalysisView(
         barcodeAnalysis: FoodBarcodeAnalysis
     ) {
+        // On supprime le comportement de changement de couleur de la Top Bar lors du scroll, car cette vue contient un TabLayout qui crée un contraste étrange.
+        viewBinding.activityBarcodeAnalysisActivityLayout.appBarLayout.setBackgroundColor(this.getColorInt(android.R.attr.colorBackground))
+
         updateTypeIntoDatabase(barcodeAnalysis = barcodeAnalysis)
         configureContentFragment(
             fragment = FoodAnalysisFragment.newInstance(barcodeAnalysis),
@@ -217,7 +221,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
     private fun configureContentFragment(fragment: Fragment, barcodeAnalysis: BarcodeAnalysis) {
         replaceFragment(
-            containerViewId = viewBinding.activityBarcodeInformationContent.id,
+            containerViewId = viewBinding.activityBarcodeAnalysisContent.id,
             fragment = fragment
         )
 
