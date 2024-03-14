@@ -71,4 +71,7 @@
     <string name="title_scan">Skann</string>
     <string name="qr_code_type_name_web_site">Nettside</string>
     <string name="qr_code_type_name_contact">Kontakt</string>
+    <string name="import_json_label">Importer (JSON)</string>
+    <string name="snack_bar_message_file_export_success">Fil lagret.</string>
+    <string name="snack_bar_message_file_import_success">Fil importert.</string>
 </resources>
