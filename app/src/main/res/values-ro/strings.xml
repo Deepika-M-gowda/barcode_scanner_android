@@ -658,4 +658,6 @@
     <string name="music_product_tracks_number">%1$s piese</string>
     <string name="preferences_information_about_remote_api_foreword">Înainte</string>
     <string name="image_view_description_flag">Drapel</string>
+    <string name="preferences_additional_options">Opțiuni suplimentare</string>
+    <string name="preferences_display_barcode_image_results_view">Afișați imaginea codului de bare când vizualizați rezultatele</string>
 </resources>
