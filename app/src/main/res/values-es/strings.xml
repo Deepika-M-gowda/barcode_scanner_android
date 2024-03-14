@@ -714,4 +714,6 @@
     <string name="height_label">Altura</string>
     <string name="copy_label">Copiar</string>
     <string name="action_modify_barcode">Modificar el código de barras</string>
+    <string name="preferences_additional_options">Opciones adicionales</string>
+    <string name="preferences_display_barcode_image_results_view">Mostrar la imagen del código de barras en la vista de resultados</string>
 </resources>
