@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -70,6 +69,7 @@ import java.util.Date
 class BarcodeDetailsActivity : BaseActivity() {
 
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
+    private var intentOpenClipboardText = false
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
@@ -133,6 +133,15 @@ class BarcodeDetailsActivity : BaseActivity() {
         setContentView(viewBinding.root)
     }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus && intentOpenClipboardText) {
+            // An intent was sent to open the clipboard as a QR code
+            intentOpenClipboardText = false
+            changeContentsToClipboard()
+        }
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(BARCODE_IMAGE_FRONT_COLOR_KEY, properties.frontColor)
         outState.putInt(BARCODE_IMAGE_BACKGROUND_COLOR_KEY, properties.backgroundColor)
@@ -151,32 +160,11 @@ class BarcodeDetailsActivity : BaseActivity() {
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
             "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> {
-                // Intent to generate a QR from clipboard
-                val text = getClipboardContent()
-                if (text.isNullOrEmpty()) {
-                    Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
-                }
-                // For now, default to empty string so the app doesn't throw an exception
-                text ?: ""
+                intentOpenClipboardText = true
+                ""
             }
             else -> intent.getStringExtra(BARCODE_CONTENTS_KEY)
         }
-    }
-
-    private fun getClipboardContent(): String? {
-        val clipboard: ClipboardManager = get()
-        if (clipboard.hasPrimaryClip()) {
-            val data = clipboard.primaryClip
-            if ((data?.itemCount ?: 0) > 0) {
-                val text = data?.getItemAt(0)?.coerceToText(this)?.trim() ?: ""
-                if (text.isNotEmpty()) {
-                    return text.toString()
-                }
-            }
-        }
-
-        // The clipboard is empty
-        return null
     }
 
     private fun getBarcodeFormat(): BarcodeFormat {
@@ -312,4 +300,38 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun show(@StringRes stringRes: Int) =
         Snackbar.make(viewBinding.root, getString(stringRes), Snackbar.LENGTH_SHORT).show()
+
+    // ---- Clipboard ----
+
+    private fun changeContentsToClipboard() {
+        val text = getClipboardContent()
+
+        if (text.isNullOrEmpty()) {
+            Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
+            // TODO: Should I call this.finish() here? I think so
+            this.finish()
+        } else {
+            properties.apply {
+                this.contents = text
+            }
+            regenerateBitmap()
+            // TODO: Regenerate the text somehow
+        }
+    }
+
+    private fun getClipboardContent(): String? {
+        val clipboard: ClipboardManager = get()
+        if (clipboard.hasPrimaryClip()) {
+            val data = clipboard.primaryClip
+            if ((data?.itemCount ?: 0) > 0) {
+                val text = data?.getItemAt(0)?.coerceToText(this)?.trim() ?: ""
+                if (text.isNotEmpty()) {
+                    return text.toString()
+                }
+            }
+        }
+
+        // The clipboard is empty, or we do not have access to see it
+        return null
+    }
 }
