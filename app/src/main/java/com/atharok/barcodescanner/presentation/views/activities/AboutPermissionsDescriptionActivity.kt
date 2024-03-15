@@ -34,7 +34,7 @@ class AboutPermissionsDescriptionActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityAboutPermissionsDescriptionToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityAboutPermissionsDescriptionActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
 
         configureRecyclerView()

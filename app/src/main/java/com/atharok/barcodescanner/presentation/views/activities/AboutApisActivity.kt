@@ -33,7 +33,7 @@ class AboutApisActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityAboutApisToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityAboutApisActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
         configureViews()
 

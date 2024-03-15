@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.atharok.barcodescanner.presentation.customView.ActivityLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about_apis_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.views.activities.AboutApisActivity">
 
-    <include
-        layout="@layout/template_toolbar"
-        android:id="@+id/activity_about_apis_toolbar"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/activity_about_apis_toolbar">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -295,6 +289,6 @@
 
         </RelativeLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
+</com.atharok.barcodescanner.presentation.customView.ActivityLayout>

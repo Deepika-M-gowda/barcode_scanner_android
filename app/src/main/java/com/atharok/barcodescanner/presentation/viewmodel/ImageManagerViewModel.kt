@@ -59,4 +59,9 @@ class ImageManagerViewModel(private val imageManagerUseCase: ImageManagerUseCase
     fun shareBitmap(bitmap: Bitmap?): LiveData<Resource<Uri?>> {
         return imageManagerUseCase.shareBitmap(bitmap)
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        imageManagerUseCase.bitmapObserver.value = null
+    }
 }

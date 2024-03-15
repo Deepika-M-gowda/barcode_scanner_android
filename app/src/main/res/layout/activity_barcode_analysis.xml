@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.views.activities.BarcodeAnalysisActivity">
 
-    <RelativeLayout
+    <com.atharok.barcodescanner.presentation.customView.ActivityLayout
+        android:id="@+id/activity_barcode_analysis_activity_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            layout="@layout/template_toolbar"
-            android:id="@+id/activity_barcode_information_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"/>
-
         <FrameLayout
-            android:id="@+id/activity_barcode_information_content"
+            android:id="@+id/activity_barcode_analysis_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/activity_barcode_information_toolbar"/>
+            android:layout_height="wrap_content"/>
 
-        <ProgressBar
-            android:id="@+id/activity_barcode_information_progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="gone"/>
+    </com.atharok.barcodescanner.presentation.customView.ActivityLayout>
 
-    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/activity_barcode_analysis_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

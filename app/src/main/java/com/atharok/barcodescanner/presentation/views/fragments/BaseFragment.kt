@@ -30,10 +30,14 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.common.extensions.convertToString
+import com.atharok.barcodescanner.domain.library.SettingsManager
 import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 import kotlin.reflect.KClass
 
 abstract class BaseFragment: Fragment() {
+
+    val settingsManager: SettingsManager by inject()
 
     protected fun applyFragment(containerViewId: Int, fragment: Fragment) {
         childFragmentManager

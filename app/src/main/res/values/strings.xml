@@ -550,6 +550,9 @@
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
     <string name="preferences_search_engine">Search engine</string>
+    <!-- Settings: Additional options -->
+    <string name="preferences_additional_options">Additional options</string>
+    <string name="preferences_display_barcode_image_results_view">Display the barcode image in the results view</string>
     <!-- About Settings -->
     <string name="preferences_about_title">About</string>
     <string name="preferences_about_permissions_label">Permissions</string>
@@ -759,6 +762,7 @@
     <string name="preferences_barcode_generation_error_correction_level_key" translatable="false">preferences_barcode_generation_error_correction_level_key</string>
     <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_key" translatable="false">preferences_switch_barcode_generation_add_barcode_to_the_history_key</string>
     <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
+    <string name="preferences_display_barcode_image_results_view_key" translatable="false">preferences_display_barcode_image_results_view_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>
     <string name="preferences_about_bdd_key" translatable="false">preferences_about_bdd_key</string>

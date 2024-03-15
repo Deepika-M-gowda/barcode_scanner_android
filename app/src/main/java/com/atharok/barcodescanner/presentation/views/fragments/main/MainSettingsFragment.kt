@@ -102,7 +102,8 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 getString(R.string.preferences_switch_scan_search_on_api_key),
                 getString(R.string.preferences_barcode_generation_error_correction_level_key),
                 getString(R.string.preferences_switch_barcode_generation_add_barcode_to_the_history_key),
-                getString(R.string.preferences_search_engine_key)
+                getString(R.string.preferences_search_engine_key),
+                getString(R.string.preferences_display_barcode_image_results_view_key)
                 -> mActivity.settingsManager.reload()
             }
         }
@@ -209,21 +210,6 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             }
         }
     }
-
-    /**
-     * Configure la positon du Switch du Dark Theme en fonction de ce qui est inscrit dans les
-     * Preferences. Cela sert surtout lors du premier démarrage de l'application, où l'application
-     * se met automatiquement dans le même thème que celui du système. On doit donc configurer la
-     * position du Switch en fonction de ça.
-     */
-    /*private fun configureThemePreference(){
-
-        val mActivity = requireActivity()
-        if(mActivity is MainActivity){
-            val pref = findPreference(getString(R.string.preferences_switch_dark_theme_key)) as CustomSwitchPreferenceCompat?
-            pref?.isChecked = mActivity.settingsManager.useDarkTheme
-        }
-    }*/
 
     private fun startAboutActivity(activityKClass: KClass<out Activity>): Boolean {
         val intent = createStartActivityIntent(requireContext(), activityKClass)

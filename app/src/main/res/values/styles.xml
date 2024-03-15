@@ -82,8 +82,6 @@
     <style name="AppTheme.CardView.Material3" parent="@style/Widget.Material3.CardView.Elevated">
         <item name="cardUseCompatPadding">true</item>
         <item name="cardCornerRadius">@dimen/card_standard_corner_radius</item>
-        <item name="cardElevation">@dimen/card_elevation</item>
-        <item name="cardBackgroundColor">?colorSurface</item>
     </style>
 
     <style name="AppTheme.CardView.Material3.BlackTheme" parent="@style/AppTheme.CardView.Material3">
@@ -91,26 +89,22 @@
         <item name="strokeWidth">@dimen/stroke_width</item>
     </style>
 
+    <!-- AppBarLayout -->
+    <style name="AppTheme.AppBarLayout.Style" parent="Widget.Material3.AppBarLayout" />
+
     <!-- BottomNavigationView -->
     <style name="AppTheme.BottomNavigationView.Style" parent="Widget.Material3.BottomNavigationView">
-        <item name="android:background">?colorSurface</item>
         <item name="itemActiveIndicatorStyle">@style/AppTheme.BottomNavigationView.ActiveIndicator.Style</item>
-        <item name="elevation">1dp</item>
     </style>
 
-    <style name="AppTheme.BottomNavigationView.ActiveIndicator.Style" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">?colorSecondaryContainer</item>
-    </style>
+    <style name="AppTheme.BottomNavigationView.ActiveIndicator.Style" parent="Widget.Material3.BottomNavigationView.ActiveIndicator" />
 
     <!-- NavigationRailView -->
     <style name="AppTheme.NavigationRailView.Style" parent="Widget.Material3.NavigationRailView">
-        <item name="android:background">?android:colorBackground</item>
         <item name="itemActiveIndicatorStyle">@style/AppTheme.NavigationRailView.ActiveIndicator.Style</item>
     </style>
 
-    <style name="AppTheme.NavigationRailView.ActiveIndicator.Style" parent="Widget.Material3.NavigationRailView.ActiveIndicator">
-        <item name="android:color">?colorSecondaryContainer</item>
-    </style>
+    <style name="AppTheme.NavigationRailView.ActiveIndicator.Style" parent="Widget.Material3.NavigationRailView.ActiveIndicator" />
 
     <!-- Slider -->
     <style name="AppTheme.Slider" parent="Widget.Material3.Slider">
@@ -145,23 +139,6 @@
     <!-- TextInputLayout -->
     <style name="AppTheme.TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="startIconTint">?android:textColorSecondary</item>
-        <!--<item name="materialThemeOverlay">@style/AppTheme.ThemeOverlay.App.TextInputLayout</item>-->
-    </style>
-
-    <style name="AppTheme.ThemeOverlay.App.TextInputLayout" parent="">
-
-        <!-- Normal -->
-        <item name="colorOnSurface">?android:textColorSecondary</item>
-
-        <!-- Error -->
-        <item name="colorError">?colorError</item>
-
-        <!-- Text Appearance styles -->
-        <item name="textAppearanceSubtitle1">@style/AppTheme.TextView.Appearance.Subtitle.Secondary</item>
-        <item name="textAppearanceCaption">@style/AppTheme.InputEditTextCaptionFont</item>
-
-        <!-- Style -->
-        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox</item>
     </style>
 
     <style name="AppTheme.InputEditTextCaptionFont" parent="">
@@ -183,7 +160,6 @@
         <item name="textSize">@dimen/standard_text_size</item>
         <item name="android:textSize">@dimen/standard_text_size</item>
         <item name="android:textStyle">normal</item>
-
         <item name="autoCompleteTextViewStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu</item>
     </style>
 
@@ -205,12 +181,10 @@
 
     <!-- AlertDialog -->
     <style name="AppTheme.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered">
-
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <!--<item name="android:colorBackground">?dialogBackgroundColor</item>-->
-        <item name="android:colorBackground">?colorSurface</item>
+        <item name="android:colorBackground">?colorSurfaceContainer</item>
 
         <!-- Title Text -->
         <item name="android:textSize">@dimen/title_text_size</item>
@@ -228,21 +202,14 @@
     </style>
 
     <style name="AppTheme.MaterialAlertDialog.BlackTheme" parent="@style/AppTheme.MaterialAlertDialog">
-        <!--<item name="strokeColor">#40ffffff</item>
-        <item name="strokeWidth">@dimen/stroke_width</item>-->
         <item name="android:windowBackground">@drawable/dialog_background_stroke</item>
-        <!--<item name="android:colorBackground">?colorPrimary</item>-->
-
-
     </style>
 
     <!-- DateTimePicker -->
     <style name="AppTheme.DateTimePickerTheme" parent="ThemeOverlay.Material3.Dialog">
-
         <!-- Overlay -->
         <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
         <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <!--<item name="android:background">@drawable/dialog_background</item>-->
         <item name="android:windowBackground">@drawable/dialog_background</item>
 
         <!-- Date / Time Style -->

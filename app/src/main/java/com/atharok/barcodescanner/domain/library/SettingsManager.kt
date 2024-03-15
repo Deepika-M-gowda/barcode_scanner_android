@@ -85,6 +85,11 @@ class SettingsManager(private val context: Context) {
     private val searchEngineKey = context.getString(R.string.preferences_search_engine_key)
     private var defaultSearchEngine = prefs.getString(searchEngineKey, "google")
 
+    // Additional options
+    private val displayBarcodeInResultsViewKey = context.getString(R.string.preferences_display_barcode_image_results_view_key)
+    var shouldDisplayBarcodeInResultsView = prefs.getBoolean(displayBarcodeInResultsViewKey, false)
+        private set
+
     fun reload() {
         prefs = PreferenceManager.getDefaultSharedPreferences(context)
 
@@ -101,33 +106,8 @@ class SettingsManager(private val context: Context) {
         errorCorrectionLevelEntry = prefs.getString(errorCorrectionLevelKey, "low")
         shouldAddBarcodeGenerateToHistory = prefs.getBoolean(addBarcodeToHistoryGenerateKey, false)
         defaultSearchEngine = prefs.getString(searchEngineKey, "google")
+        shouldDisplayBarcodeInResultsView = prefs.getBoolean(displayBarcodeInResultsViewKey, false)
     }
-
-    /*fun getTheme(): Int {
-        return if(useDarkTheme()) {
-            //R.style.DarkTheme
-            when(color){
-                "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouDarkTheme else R.style.BlueDarkTheme
-                "blue" -> R.style.BlueDarkTheme
-                "orange" -> R.style.OrangeDarkTheme
-                "green" -> R.style.GreenDarkTheme
-                "red" -> R.style.RedDarkTheme
-                "purple" -> R.style.PurpleDarkTheme
-                else -> R.style.BlueDarkTheme
-            }
-        } else {
-            //R.style.LightTheme
-            when(color){
-                "material_you" -> if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) R.style.MaterialYouLightTheme else R.style.BlueLightTheme
-                "blue" -> R.style.BlueLightTheme
-                "orange" -> R.style.OrangeLightTheme
-                "green" -> R.style.GreenLightTheme
-                "red" -> R.style.RedLightTheme
-                "purple" -> R.style.PurpleLightTheme
-                else -> R.style.BlueLightTheme
-            }
-        }
-    }*/
 
     fun getTheme(): Int {
         return when(theme) {

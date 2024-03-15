@@ -23,13 +23,11 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -60,6 +58,7 @@ import com.atharok.barcodescanner.presentation.intent.createShareImageIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageEditorFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import org.koin.android.ext.android.get
@@ -73,8 +72,6 @@ class BarcodeDetailsActivity : BaseActivity() {
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
-
-    private var bitmap: Bitmap? = null
 
     private val contents: String by lazy {
         getIntentStringValue() ?: throw Exception("Barcode contents (String) is missing")
@@ -99,10 +96,18 @@ class BarcodeDetailsActivity : BaseActivity() {
         )
     }
 
+    private val barcodeImageFragment: BarcodeImageFragment by lazy {
+        BarcodeImageFragment.newInstance(properties)
+    }
+
+    private val barcodeImageEditorFragment: BarcodeImageEditorFragment by lazy {
+        BarcodeImageEditorFragment.newInstance(properties)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityBarcodeDetailsToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBarcodeDetailsActivityLayout.toolbar)
         supportActionBar?.title = format.getDisplayName(this)
 
         savedInstanceState?.let {
@@ -115,11 +120,14 @@ class BarcodeDetailsActivity : BaseActivity() {
             }
         }
 
-        createBarcodeBitmap(properties)
+        replaceFragment(
+            containerViewId = viewBinding.activityBarcodeDetailsImageLayout.id,
+            fragment = barcodeImageFragment,
+        )
 
         replaceFragment(
             containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
-            fragment = BarcodeImageEditorFragment.newInstance(properties),
+            fragment = barcodeImageEditorFragment,
         )
 
         setContentView(viewBinding.root)
@@ -133,7 +141,6 @@ class BarcodeDetailsActivity : BaseActivity() {
         outState.putInt(BARCODE_IMAGE_HEIGHT_KEY, properties.height)
         super.onSaveInstanceState(outState)
     }
-
 
     private fun getIntentStringValue(): String? {
         return when(intent?.action) {
@@ -193,25 +200,6 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     // ---- Barcode Bitmap Creator ----
 
-    private fun createBarcodeBitmap(properties: BarcodeImageGeneratorProperties) {
-        val progressBar = viewBinding.activityBarcodeDetailsProgressBar
-        val barcodeImageView = viewBinding.activityBarcodeDetailsImageView
-        imageManagerViewModel.getBitmap().observe(this) {
-            when(it) {
-                is Resource.Progress -> progressBar.visibility = View.VISIBLE
-                is Resource.Success -> {
-                    bitmap = it.data
-                    bitmap?.let { localBitmap ->
-                        barcodeImageView.setImageBitmap(localBitmap)
-                    }
-                    progressBar.visibility = View.GONE
-                }
-                is Resource.Failure -> progressBar.visibility = View.GONE
-            }
-        }
-        imageManagerViewModel.createBitmap(properties)
-    }
-
     // Call by Fragments
     fun regenerateBitmap(
         width: Int = properties.width,
@@ -220,7 +208,7 @@ class BarcodeDetailsActivity : BaseActivity() {
         @ColorInt backgroundColor: Int = properties.backgroundColor,
         cornerRadius: Float = properties.cornerRadius
     ) {
-        imageManagerViewModel.createBitmap(
+        barcodeImageFragment.generateNewBarcodeBitmap(
             properties.apply {
                 this.width = width
                 this.height = height
@@ -289,8 +277,8 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun export(uri: Uri): LiveData<Resource<Boolean>> {
         return when(imageFormat) {
-            ImageFormat.PNG -> imageManagerViewModel.exportAsPng(bitmap, uri)
-            ImageFormat.JPG -> imageManagerViewModel.exportAsJpg(bitmap, uri)
+            ImageFormat.PNG -> imageManagerViewModel.exportAsPng(barcodeImageFragment.bitmap, uri)
+            ImageFormat.JPG -> imageManagerViewModel.exportAsJpg(barcodeImageFragment.bitmap, uri)
             ImageFormat.SVG -> imageManagerViewModel.exportAsSvg(properties, uri)
         }
     }
@@ -298,7 +286,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     // ---- Share image / text ----
 
     private fun shareImage() {
-        imageManagerViewModel.shareBitmap(bitmap).observe(this) {
+        imageManagerViewModel.shareBitmap(barcodeImageFragment.bitmap).observe(this) {
             when(it) {
                 is Resource.Progress -> {}
                 is Resource.Success -> {

@@ -6,7 +6,6 @@
         android:bottomRightRadius="@dimen/dialog_corner_radius"
         android:topLeftRadius="@dimen/dialog_corner_radius"
         android:topRightRadius="@dimen/dialog_corner_radius" />
-
     <stroke
         android:color="?colorOutline"
         android:width="2dp" />

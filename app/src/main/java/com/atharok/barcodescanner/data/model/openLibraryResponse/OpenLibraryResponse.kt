@@ -24,7 +24,6 @@ import androidx.annotation.Keep
 import com.atharok.barcodescanner.domain.entity.analysis.BookBarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.analysis.RemoteAPI
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.domain.entity.product.*
 import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainAuthorsStringList
 import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainCategories
 import com.atharok.barcodescanner.domain.entity.product.bookProduct.obtainContributions

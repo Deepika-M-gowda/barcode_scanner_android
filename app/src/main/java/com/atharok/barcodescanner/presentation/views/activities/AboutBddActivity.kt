@@ -37,7 +37,7 @@ class AboutBddActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityAboutBddToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityAboutBddActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
 
         configureRecyclerView()

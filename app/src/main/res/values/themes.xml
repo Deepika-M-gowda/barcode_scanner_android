@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar" />
 
     <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
 
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
-
-        <item name="colorError">@color/light_error</item>
-        <item name="colorErrorContainer">@color/light_errorContainer</item>
-        <item name="colorOnError">@color/light_onError</item>
-        <item name="colorOnErrorContainer">@color/light_onErrorContainer</item>
 
         <!-- Text Font / Size / Style -->
         <item name="fontFamily">@string/default_font</item>
@@ -55,11 +50,6 @@
 
         <item name="colorControlNormal">?android:attr/textColorPrimary</item>
 
-        <item name="colorError">@color/dark_error</item>
-        <item name="colorErrorContainer">@color/dark_errorContainer</item>
-        <item name="colorOnError">@color/dark_onError</item>
-        <item name="colorOnErrorContainer">@color/dark_onErrorContainer</item>
-
         <!-- Text Font / Size / Style -->
         <item name="fontFamily">@string/default_font</item>
         <item name="android:fontFamily">@string/default_font</item>
@@ -96,8 +86,6 @@
         <!-- System -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
         <item name="android:windowFullscreen">false</item>
     </style>
 
@@ -114,6 +102,10 @@
         <item name="colorOnTertiary">@color/blue_light_onTertiary</item>
         <item name="colorTertiaryContainer">@color/blue_light_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/blue_light_onTertiaryContainer</item>
+        <item name="colorError">@color/blue_light_error</item>
+        <item name="colorOnError">@color/blue_light_onError</item>
+        <item name="colorErrorContainer">@color/blue_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/blue_light_onErrorContainer</item>
         <item name="android:colorBackground">@color/blue_light_background</item>
         <item name="colorOnBackground">@color/blue_light_onBackground</item>
         <item name="colorSurface">@color/blue_light_surface</item>
@@ -121,10 +113,29 @@
         <item name="colorSurfaceVariant">@color/blue_light_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/blue_light_onSurfaceVariant</item>
         <item name="colorOutline">@color/blue_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/blue_light_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/blue_light_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/blue_light_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/blue_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/blue_light_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/blue_light_dialog</item>
+        <item name="colorPrimaryFixed">@color/blue_light_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/blue_light_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/blue_light_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/blue_light_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/blue_light_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/blue_light_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/blue_light_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/blue_light_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/blue_light_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/blue_light_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/blue_light_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/blue_light_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/blue_light_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/blue_light_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/blue_light_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/blue_light_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/blue_light_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/blue_light_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/blue_light_surfaceContainerHighest</item>
     </style>
 
     <style name="BlueDarkTheme" parent="DarkTheme">
@@ -140,6 +151,10 @@
         <item name="colorOnTertiary">@color/blue_dark_onTertiary</item>
         <item name="colorTertiaryContainer">@color/blue_dark_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/blue_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/blue_dark_error</item>
+        <item name="colorOnError">@color/blue_dark_onError</item>
+        <item name="colorErrorContainer">@color/blue_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/blue_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/blue_dark_background</item>
         <item name="colorOnBackground">@color/blue_dark_onBackground</item>
         <item name="colorSurface">@color/blue_dark_surface</item>
@@ -147,10 +162,29 @@
         <item name="colorSurfaceVariant">@color/blue_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/blue_dark_onSurfaceVariant</item>
         <item name="colorOutline">@color/blue_dark_outline</item>
-        <item name="colorOnSurfaceInverse">@color/blue_dark_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/blue_dark_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/blue_dark_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/blue_dark_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/blue_dark_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/blue_dark_dialog</item>
+        <item name="colorPrimaryFixed">@color/blue_dark_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/blue_dark_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/blue_dark_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/blue_dark_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/blue_dark_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/blue_dark_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/blue_dark_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/blue_dark_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/blue_dark_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/blue_dark_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/blue_dark_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/blue_dark_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/blue_dark_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/blue_dark_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/blue_dark_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/blue_dark_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/blue_dark_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/blue_dark_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/blue_dark_surfaceContainerHighest</item>
     </style>
 
     <style name="BlueBlackTheme" parent="BlueDarkTheme">
@@ -162,9 +196,15 @@
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
         <item name="elevationOverlayEnabled">false</item>
 
-        <item name="android:colorBackground">@color/black_theme_background</item>
-        <item name="colorSurface">@color/black_theme_surface</item>
-        <item name="colorOutline">@color/black_theme_outline</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">@android:color/black</item>
+        <item name="colorSurfaceContainerHighest">@android:color/black</item>
     </style>
 
     <style name="OrangeLightTheme" parent="LightTheme">
@@ -180,6 +220,10 @@
         <item name="colorOnTertiary">@color/orange_light_onTertiary</item>
         <item name="colorTertiaryContainer">@color/orange_light_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/orange_light_onTertiaryContainer</item>
+        <item name="colorError">@color/orange_light_error</item>
+        <item name="colorOnError">@color/orange_light_onError</item>
+        <item name="colorErrorContainer">@color/orange_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/orange_light_onErrorContainer</item>
         <item name="android:colorBackground">@color/orange_light_background</item>
         <item name="colorOnBackground">@color/orange_light_onBackground</item>
         <item name="colorSurface">@color/orange_light_surface</item>
@@ -187,10 +231,29 @@
         <item name="colorSurfaceVariant">@color/orange_light_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/orange_light_onSurfaceVariant</item>
         <item name="colorOutline">@color/orange_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/orange_light_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/orange_light_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/orange_light_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/orange_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/orange_light_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/orange_light_dialog</item>
+        <item name="colorPrimaryFixed">@color/orange_light_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/orange_light_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/orange_light_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/orange_light_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/orange_light_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/orange_light_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/orange_light_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/orange_light_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/orange_light_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/orange_light_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/orange_light_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/orange_light_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/orange_light_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/orange_light_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/orange_light_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/orange_light_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/orange_light_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/orange_light_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/orange_light_surfaceContainerHighest</item>
     </style>
 
     <style name="OrangeDarkTheme" parent="DarkTheme">
@@ -206,6 +269,10 @@
         <item name="colorOnTertiary">@color/orange_dark_onTertiary</item>
         <item name="colorTertiaryContainer">@color/orange_dark_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/orange_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/orange_dark_error</item>
+        <item name="colorOnError">@color/orange_dark_onError</item>
+        <item name="colorErrorContainer">@color/orange_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/orange_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/orange_dark_background</item>
         <item name="colorOnBackground">@color/orange_dark_onBackground</item>
         <item name="colorSurface">@color/orange_dark_surface</item>
@@ -213,10 +280,29 @@
         <item name="colorSurfaceVariant">@color/orange_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/orange_dark_onSurfaceVariant</item>
         <item name="colorOutline">@color/orange_dark_outline</item>
-        <item name="colorOnSurfaceInverse">@color/orange_dark_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/orange_dark_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/orange_dark_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/orange_dark_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/orange_dark_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/orange_dark_dialog</item>
+        <item name="colorPrimaryFixed">@color/orange_dark_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/orange_dark_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/orange_dark_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/orange_dark_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/orange_dark_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/orange_dark_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/orange_dark_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/orange_dark_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/orange_dark_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/orange_dark_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/orange_dark_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/orange_dark_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/orange_dark_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/orange_dark_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/orange_dark_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/orange_dark_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/orange_dark_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/orange_dark_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/orange_dark_surfaceContainerHighest</item>
     </style>
 
     <style name="OrangeBlackTheme" parent="OrangeDarkTheme">
@@ -228,9 +314,15 @@
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
         <item name="elevationOverlayEnabled">false</item>
 
-        <item name="android:colorBackground">@color/black_theme_background</item>
-        <item name="colorSurface">@color/black_theme_surface</item>
-        <item name="colorOutline">@color/black_theme_outline</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">@android:color/black</item>
+        <item name="colorSurfaceContainerHighest">@android:color/black</item>
     </style>
 
     <style name="GreenLightTheme" parent="LightTheme">
@@ -246,6 +338,10 @@
         <item name="colorOnTertiary">@color/green_light_onTertiary</item>
         <item name="colorTertiaryContainer">@color/green_light_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/green_light_onTertiaryContainer</item>
+        <item name="colorError">@color/green_light_error</item>
+        <item name="colorOnError">@color/green_light_onError</item>
+        <item name="colorErrorContainer">@color/green_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/green_light_onErrorContainer</item>
         <item name="android:colorBackground">@color/green_light_background</item>
         <item name="colorOnBackground">@color/green_light_onBackground</item>
         <item name="colorSurface">@color/green_light_surface</item>
@@ -253,10 +349,29 @@
         <item name="colorSurfaceVariant">@color/green_light_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/green_light_onSurfaceVariant</item>
         <item name="colorOutline">@color/green_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/green_light_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/green_light_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/green_light_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/green_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/green_light_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/green_light_dialog</item>
+        <item name="colorPrimaryFixed">@color/green_light_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/green_light_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/green_light_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/green_light_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/green_light_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/green_light_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/green_light_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/green_light_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/green_light_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/green_light_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/green_light_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/green_light_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/green_light_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/green_light_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/green_light_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/green_light_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/green_light_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/green_light_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/green_light_surfaceContainerHighest</item>
     </style>
 
     <style name="GreenDarkTheme" parent="DarkTheme">
@@ -272,6 +387,10 @@
         <item name="colorOnTertiary">@color/green_dark_onTertiary</item>
         <item name="colorTertiaryContainer">@color/green_dark_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/green_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/green_dark_error</item>
+        <item name="colorOnError">@color/green_dark_onError</item>
+        <item name="colorErrorContainer">@color/green_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/green_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/green_dark_background</item>
         <item name="colorOnBackground">@color/green_dark_onBackground</item>
         <item name="colorSurface">@color/green_dark_surface</item>
@@ -279,10 +398,29 @@
         <item name="colorSurfaceVariant">@color/green_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/green_dark_onSurfaceVariant</item>
         <item name="colorOutline">@color/green_dark_outline</item>
-        <item name="colorOnSurfaceInverse">@color/green_dark_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/green_dark_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/green_dark_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/green_dark_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/green_dark_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/green_dark_dialog</item>
+        <item name="colorPrimaryFixed">@color/green_dark_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/green_dark_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/green_dark_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/green_dark_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/green_dark_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/green_dark_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/green_dark_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/green_dark_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/green_dark_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/green_dark_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/green_dark_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/green_dark_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/green_dark_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/green_dark_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/green_dark_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/green_dark_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/green_dark_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/green_dark_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/green_dark_surfaceContainerHighest</item>
     </style>
 
     <style name="GreenBlackTheme" parent="GreenDarkTheme">
@@ -294,9 +432,15 @@
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
         <item name="elevationOverlayEnabled">false</item>
 
-        <item name="android:colorBackground">@color/black_theme_background</item>
-        <item name="colorSurface">@color/black_theme_surface</item>
-        <item name="colorOutline">@color/black_theme_outline</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">@android:color/black</item>
+        <item name="colorSurfaceContainerHighest">@android:color/black</item>
     </style>
 
     <style name="RedLightTheme" parent="LightTheme">
@@ -312,6 +456,10 @@
         <item name="colorOnTertiary">@color/red_light_onTertiary</item>
         <item name="colorTertiaryContainer">@color/red_light_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/red_light_onTertiaryContainer</item>
+        <item name="colorError">@color/red_light_error</item>
+        <item name="colorOnError">@color/red_light_onError</item>
+        <item name="colorErrorContainer">@color/red_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/red_light_onErrorContainer</item>
         <item name="android:colorBackground">@color/red_light_background</item>
         <item name="colorOnBackground">@color/red_light_onBackground</item>
         <item name="colorSurface">@color/red_light_surface</item>
@@ -319,10 +467,29 @@
         <item name="colorSurfaceVariant">@color/red_light_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/red_light_onSurfaceVariant</item>
         <item name="colorOutline">@color/red_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/red_light_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/red_light_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/red_light_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/red_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/red_light_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/red_light_dialog</item>
+        <item name="colorPrimaryFixed">@color/red_light_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/red_light_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/red_light_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/red_light_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/red_light_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/red_light_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/red_light_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/red_light_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/red_light_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/red_light_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/red_light_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/red_light_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/red_light_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/red_light_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/red_light_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/red_light_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/red_light_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/red_light_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/red_light_surfaceContainerHighest</item>
     </style>
 
     <style name="RedDarkTheme" parent="DarkTheme">
@@ -338,6 +505,10 @@
         <item name="colorOnTertiary">@color/red_dark_onTertiary</item>
         <item name="colorTertiaryContainer">@color/red_dark_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/red_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/red_dark_error</item>
+        <item name="colorOnError">@color/red_dark_onError</item>
+        <item name="colorErrorContainer">@color/red_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/red_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/red_dark_background</item>
         <item name="colorOnBackground">@color/red_dark_onBackground</item>
         <item name="colorSurface">@color/red_dark_surface</item>
@@ -345,10 +516,29 @@
         <item name="colorSurfaceVariant">@color/red_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/red_dark_onSurfaceVariant</item>
         <item name="colorOutline">@color/red_dark_outline</item>
-        <item name="colorOnSurfaceInverse">@color/red_dark_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/red_dark_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/red_dark_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/red_dark_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/red_dark_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/red_dark_dialog</item>
+        <item name="colorPrimaryFixed">@color/red_dark_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/red_dark_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/red_dark_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/red_dark_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/red_dark_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/red_dark_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/red_dark_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/red_dark_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/red_dark_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/red_dark_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/red_dark_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/red_dark_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/red_dark_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/red_dark_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/red_dark_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/red_dark_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/red_dark_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/red_dark_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/red_dark_surfaceContainerHighest</item>
     </style>
 
     <style name="RedBlackTheme" parent="RedDarkTheme">
@@ -360,35 +550,19 @@
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
         <item name="elevationOverlayEnabled">false</item>
 
-        <item name="android:colorBackground">@color/black_theme_background</item>
-        <item name="colorSurface">@color/black_theme_surface</item>
-        <item name="colorOutline">@color/black_theme_outline</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">@android:color/black</item>
+        <item name="colorSurfaceContainerHighest">@android:color/black</item>
     </style>
 
     <style name="PurpleLightTheme" parent="LightTheme">
-        <item name="colorPrimary">@color/purple_light_primary</item>
-        <item name="colorOnPrimary">@color/purple_light_onPrimary</item>
-        <item name="colorPrimaryContainer">@color/purple_light_primaryContainer</item>
-        <item name="colorOnPrimaryContainer">@color/purple_light_onPrimaryContainer</item>
-        <item name="colorSecondary">@color/purple_light_secondary</item>
-        <item name="colorOnSecondary">@color/purple_light_onSecondary</item>
-        <item name="colorSecondaryContainer">@color/purple_light_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/purple_light_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/purple_light_tertiary</item>
-        <item name="colorOnTertiary">@color/purple_light_onTertiary</item>
-        <item name="colorTertiaryContainer">@color/purple_light_tertiaryContainer</item>
-        <item name="colorOnTertiaryContainer">@color/purple_light_onTertiaryContainer</item>
-        <item name="android:colorBackground">@color/purple_light_background</item>
-        <item name="colorOnBackground">@color/purple_light_onBackground</item>
-        <item name="colorSurface">@color/purple_light_surface</item>
-        <item name="colorOnSurface">@color/purple_light_onSurface</item>
-        <item name="colorSurfaceVariant">@color/purple_light_surfaceVariant</item>
-        <item name="colorOnSurfaceVariant">@color/purple_light_onSurfaceVariant</item>
-        <item name="colorOutline">@color/purple_light_outline</item>
-        <item name="colorOnSurfaceInverse">@color/purple_light_inverseOnSurface</item>
-        <item name="colorSurfaceInverse">@color/purple_light_inverseSurface</item>
-        <item name="colorPrimaryInverse">@color/purple_light_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/purple_light_dialog</item>
+
     </style>
 
     <style name="PurpleDarkTheme" parent="DarkTheme">
@@ -404,6 +578,10 @@
         <item name="colorOnTertiary">@color/purple_dark_onTertiary</item>
         <item name="colorTertiaryContainer">@color/purple_dark_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/purple_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/purple_dark_error</item>
+        <item name="colorOnError">@color/purple_dark_onError</item>
+        <item name="colorErrorContainer">@color/purple_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/purple_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/purple_dark_background</item>
         <item name="colorOnBackground">@color/purple_dark_onBackground</item>
         <item name="colorSurface">@color/purple_dark_surface</item>
@@ -411,10 +589,29 @@
         <item name="colorSurfaceVariant">@color/purple_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/purple_dark_onSurfaceVariant</item>
         <item name="colorOutline">@color/purple_dark_outline</item>
-        <item name="colorOnSurfaceInverse">@color/purple_dark_inverseOnSurface</item>
+        <item name="colorOutlineVariant">@color/purple_dark_outlineVariant</item>
         <item name="colorSurfaceInverse">@color/purple_dark_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/purple_dark_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/purple_dark_inversePrimary</item>
-        <item name="dialogBackgroundColor">@color/purple_dark_dialog</item>
+        <item name="colorPrimaryFixed">@color/purple_dark_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/purple_dark_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/purple_dark_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/purple_dark_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/purple_dark_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/purple_dark_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/purple_dark_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/purple_dark_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/purple_dark_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/purple_dark_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/purple_dark_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/purple_dark_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/purple_dark_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/purple_dark_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/purple_dark_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/purple_dark_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/purple_dark_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/purple_dark_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/purple_dark_surfaceContainerHighest</item>
     </style>
 
     <style name="PurpleBlackTheme" parent="PurpleDarkTheme">
@@ -426,8 +623,14 @@
         <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme.BlackTheme</item>
         <item name="elevationOverlayEnabled">false</item>
 
-        <item name="android:colorBackground">@color/black_theme_background</item>
-        <item name="colorSurface">@color/black_theme_surface</item>
-        <item name="colorOutline">@color/black_theme_outline</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">@android:color/black</item>
+        <item name="colorSurfaceContainerHighest">@android:color/black</item>
     </style>
 </resources>

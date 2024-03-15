@@ -65,7 +65,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
         viewBinding.activityBankListEmptyTextView.visibility = View.GONE
         viewBinding.activityBankListHistoryRecyclerView.visibility = View.GONE
 
-        setSupportActionBar(viewBinding.activityBankListToolbar.toolbar)
+        setSupportActionBar(viewBinding.activityBankListActivityLayout.toolbar)
         configureRecyclerView()
         observeDatabase()
 
