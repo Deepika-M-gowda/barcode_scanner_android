@@ -321,7 +321,13 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         changeToolbarText(barcode)
         when {
-            barcode.is1DProductBarcodeFormat -> fetchProductFromRemoteAPI(barcode)
+            barcode.is1DProductBarcodeFormat -> {
+                if(settingsManager.useSearchOnApi) {
+                    fetchProductFromRemoteAPI(barcode)
+                } else {
+                    fetchProductFromRemoteAPI(barcode, RemoteAPI.NONE)
+                }
+            }
             else -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode))
         }
     }
