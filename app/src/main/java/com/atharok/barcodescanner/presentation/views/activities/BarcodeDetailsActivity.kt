@@ -315,7 +315,12 @@ class BarcodeDetailsActivity : BaseActivity() {
                 this.contents = text
             }
             regenerateBitmap()
-            // TODO: Regenerate the text somehow
+
+            // TODO: This cannot be the right way to do this, but it does work
+            replaceFragment(
+                containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
+                fragment = BarcodeImageEditorFragment.newInstance(properties),
+            )
         }
     }
 
