@@ -136,21 +136,24 @@ class BarcodeDetailsActivity : BaseActivity() {
 
 
     private fun getIntentStringValue(): String? {
-        return if(intent?.action == Intent.ACTION_SEND){
-            when (intent.type) {
+        return when(intent?.action) {
+            Intent.ACTION_SEND -> when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
                 "text/x-vcard" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
-        } else if(intent?.action == "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD") {
-            // Intent to generate a QR from clipboard
-            val text = getClipboardContent()
-            if (text == null) {
-                Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
+            "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> {
+                // Intent to generate a QR from clipboard
+                val text = getClipboardContent()
+                if (text.isNullOrEmpty()) {
+                    Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
+                }
+                // For now, default to empty string so the app doesn't throw an exception
+                text ?: ""
             }
-            text ?: ""
-        } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
+            else -> intent.getStringExtra(BARCODE_CONTENTS_KEY)
+        }
     }
 
     private fun getClipboardContent(): String? {
