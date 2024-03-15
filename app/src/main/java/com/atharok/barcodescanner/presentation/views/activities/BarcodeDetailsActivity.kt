@@ -154,8 +154,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     }
 
     private fun getClipboardContent(): String? {
-        val clipboard = applicationContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-//        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipboard: ClipboardManager = get()
         if (clipboard.hasPrimaryClip()) {
             val data = clipboard.primaryClip
             if ((data?.itemCount ?: 0) > 0) {
