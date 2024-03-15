@@ -140,7 +140,6 @@ class MainActivity: BaseActivity() {
                 "${BuildConfig.APPLICATION_ID}.SCAN" -> R.id.menu_navigation_bottom_view_scan
                 "${BuildConfig.APPLICATION_ID}.HISTORY" -> R.id.menu_navigation_bottom_view_history
                 "${BuildConfig.APPLICATION_ID}.CREATE" -> R.id.menu_navigation_bottom_view_create
-                "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> R.id.menu_navigation_bottom_view_create
                 "android.intent.action.APPLICATION_PREFERENCES" -> R.id.menu_navigation_bottom_view_settings
                 else -> currentItemId
             }
