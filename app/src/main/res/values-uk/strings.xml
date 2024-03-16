@@ -658,4 +658,6 @@
     <string name="country_sn">Сенегал</string>
     <string name="country_ch">Швейцарія</string>
     <string name="action_modify_barcode">Змінити штрихкод</string>
+    <string name="preferences_additional_options">Додаткові налаштування</string>
+    <string name="preferences_display_barcode_image_results_view">Показувати зображення штрихкоду на екрані результатів</string>
 </resources>
