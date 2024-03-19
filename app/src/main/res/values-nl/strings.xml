@@ -660,4 +660,12 @@
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
     <string name="preferences_display_barcode_image_results_view">Afbeelding van de barcode in de resultaten tonen</string>
     <string name="preferences_additional_options">Overige opties</string>
+    <string name="custom_url_updated">URL is bijgewerkt!</string>
+    <string name="custom_search_urls_error_url">Plaats de term \"%1$s\" op de plek van de zoekopdracht in de URL.</string>
+    <string name="error_empty_fields">Invoervelden mogen niet leeg zijn.</string>
+    <string name="examples">Voorbeelden:</string>
+    <string name="custom_search_urls_add_info">Gebruik de term \"%1$s\" in de URL. Dit zal bij het zoeken worden vervangen door de inhoud van de barcode.</string>
+    <string name="custom_url_added">URL is toegevoegd!</string>
+    <string name="custom_url_deleted">URL is verwijderd!</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Alle aangepaste URL\'s verwijderen?</string>
 </resources>
