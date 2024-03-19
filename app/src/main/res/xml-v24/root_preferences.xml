@@ -137,6 +137,10 @@
             android:entryValues="@array/preference_search_engine_values"
             app:defaultValue="google"/>
 
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
+            app:key="@string/preferences_custom_search_urls_key"
+            app:title="@string/custom_search_urls"/>
+
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
 
     <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory

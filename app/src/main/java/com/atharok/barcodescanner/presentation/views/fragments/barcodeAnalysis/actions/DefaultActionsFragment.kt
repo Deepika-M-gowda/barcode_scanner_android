@@ -21,10 +21,12 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
 
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
 
 class DefaultActionsFragment: AbstractActionsFragment() {
-    override fun configureActions(barcode: Barcode): Array<ActionItem> {
-        return configureDefaultActions(barcode)
+    override fun configureActionItems(barcode: Barcode) {
+        addActionItem(configureSearchOnWebActionItem(barcode))
+        addActionItem(configureShareTextActionItem(barcode))
+        addActionItem(configureCopyTextActionItem(barcode))
+        addActionItem(configureModifyBarcodeActionItem(barcode))
     }
 }

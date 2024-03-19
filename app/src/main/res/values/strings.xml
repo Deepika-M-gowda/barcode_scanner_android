@@ -309,6 +309,7 @@
     <string name="copy_label">Copy</string>
     <string name="barcode_copied_label">Barcode copied</string>
     <string name="barcode_search_error_label">Url not supported</string>
+    <string name="barcode_search_error_no_compatible_application_found">No compatible application found</string>
     <string name="search_label">Search</string>
     <string name="action_title_dialog_label">What do you want to do?</string>
     <string name="action_go_to_url_label">Go to URL</string>
@@ -444,6 +445,21 @@
     <string name="begin_label">Begin</string>
     <string name="end_label">End</string>
     <!-- URL -->
+    <!-- Custom search URL -->
+    <string name="custom_search_urls">Custom search URLs</string>
+    <string name="custom_urls">Custom URLs</string>
+    <string name="custom_search_urls_add_url">Add a URL</string>
+    <string name="custom_search_urls_modify_url">Modify the URL</string>
+    <string name="custom_search_urls_list">URLs list</string>
+    <string name="custom_search_urls_list_is_empty_message">No item…\nYou haven\'t generated a custom URL yet.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Do you want to delete all custom URLs?</string>
+    <string name="custom_url_deleted">Custom URL deleted!</string>
+    <string name="custom_url_added">Custom URL added!</string>
+    <string name="custom_url_updated">Custom URL updated!</string>
+    <string name="custom_search_urls_add_info">Use the term \"%1$s\" in the URL. This term will be replaced by the content of the barcode during the search.</string>
+    <string name="examples">Examples:</string>
+    <string name="custom_search_urls_error_url">The term \"%1$s\" must be present in the URL.</string>
+    <string name="error_empty_fields">Input fields must not be empty.</string>
     <!-- API Base URL -->
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
@@ -762,6 +778,7 @@
     <string name="preferences_barcode_generation_error_correction_level_key" translatable="false">preferences_barcode_generation_error_correction_level_key</string>
     <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_key" translatable="false">preferences_switch_barcode_generation_add_barcode_to_the_history_key</string>
     <string name="preferences_search_engine_key" translatable="false">preferences_search_engine_key</string>
+    <string name="preferences_custom_search_urls_key" translatable="false">preferences_custom_search_urls_key</string>
     <string name="preferences_display_barcode_image_results_view_key" translatable="false">preferences_display_barcode_image_results_view_key</string>
     <string name="preferences_about_permissions_key" translatable="false">preferences_about_permissions_key</string>
     <string name="preferences_about_library_third_key" translatable="false">preferences_about_library_third_key</string>

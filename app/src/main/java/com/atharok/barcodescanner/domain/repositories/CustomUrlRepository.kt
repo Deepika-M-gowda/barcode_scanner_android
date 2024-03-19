@@ -18,23 +18,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
+package com.atharok.barcodescanner.domain.repositories
 
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.google.zxing.client.result.ParsedResult
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
+import androidx.lifecycle.LiveData
+import com.atharok.barcodescanner.domain.entity.customUrl.CustomUrl
 
-abstract class AbstractParsedResultActionsFragment: AbstractActionsFragment() {
+/**
+ * Repository permettant les interactions avec la BDD et la TABLE CustomUrl.
+ */
+interface CustomUrlRepository {
 
-    override fun configureActionItems(barcode: Barcode) {
-        configureActionItems(
-            barcode = barcode,
-            parsedResult = get {
-                parametersOf(barcode.contents, barcode.getBarcodeFormat())
-            }
-        )
-    }
+    fun getCustomUrlList(): LiveData<List<CustomUrl>>
 
-    abstract fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult)
+    suspend fun insertCustomUrl(customUrl: CustomUrl): Long
+
+    suspend fun updateCustomUrl(customUrl: CustomUrl): Int
+
+    suspend fun deleteAllCustomUrl(): Int
+
+    suspend fun deleteCustomUrls(customUrls: List<CustomUrl>): Int
+
+    suspend fun deleteCustomUrl(customUrl: CustomUrl): Int
 }

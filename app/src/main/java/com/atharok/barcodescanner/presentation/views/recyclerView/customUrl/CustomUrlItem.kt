@@ -18,23 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
+package com.atharok.barcodescanner.presentation.views.recyclerView.customUrl
 
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.google.zxing.client.result.ParsedResult
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
+import com.atharok.barcodescanner.domain.entity.customUrl.CustomUrl
 
-abstract class AbstractParsedResultActionsFragment: AbstractActionsFragment() {
-
-    override fun configureActionItems(barcode: Barcode) {
-        configureActionItems(
-            barcode = barcode,
-            parsedResult = get {
-                parametersOf(barcode.contents, barcode.getBarcodeFormat())
-            }
-        )
-    }
-
-    abstract fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult)
-}
+data class CustomUrlItem(val customUrl: CustomUrl, var isSelected: Boolean = false)

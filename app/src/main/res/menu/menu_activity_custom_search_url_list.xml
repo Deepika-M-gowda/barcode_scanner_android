@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_activity_custom_search_url_list_add_item"
+        android:icon="@drawable/baseline_add_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/custom_search_urls_add_url">
+    </item>
+
+    <item
+        android:id="@+id/menu_activity_custom_search_url_list_delete_item"
+        android:icon="@drawable/baseline_delete_forever_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/delete_label">
+    </item>
+
+</menu>

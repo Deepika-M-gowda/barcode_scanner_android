@@ -45,6 +45,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.atharok.barcodescanner.R
+import com.google.android.material.card.MaterialCardView
 
 class ExpandableCardView @JvmOverloads constructor(
     context: Context,
@@ -61,6 +62,7 @@ class ExpandableCardView @JvmOverloads constructor(
     init {
         val view = LayoutInflater.from(context).inflate(R.layout.template_expandable_card_view, this, true)
 
+        val materialCardView: MaterialCardView = view.findViewById(R.id.template_expandable_card_view_material_card_view)
         val expandableView: ExpandableView = view.findViewById(R.id.template_expandable_card_view_expandable_view)
         headerFrameLayout = view.findViewById(R.id.template_expandable_card_view_header_frame_layout)
         bodyFrameLayout = view.findViewById(R.id.template_expandable_card_view_body_frame_layout)
@@ -69,6 +71,9 @@ class ExpandableCardView @JvmOverloads constructor(
             try {
                 getBoolean(R.styleable.ExpandableCardView_isOpen, false).let { isOpen ->
                     if(isOpen) expandableView.open() else expandableView.close()
+                }
+                getBoolean(R.styleable.ExpandableCardView_cardUseCompatPadding, true).let { cardUseCompatPadding ->
+                    materialCardView.useCompatPadding = cardUseCompatPadding
                 }
             } finally {
                 recycle()

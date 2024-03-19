@@ -46,6 +46,7 @@ import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
+import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlListActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import java.util.Locale
 import kotlin.reflect.KClass
@@ -68,10 +69,11 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
 
         //configureThemePreference()
-        configureAboutPreference(R.string.preferences_remote_api_information_about_api_key, AboutApisActivity::class)
-        configureAboutPreference(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
-        configureAboutPreference(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)
-        configureAboutPreference(R.string.preferences_about_bdd_key, AboutBddActivity::class)
+        configureStartActivity(R.string.preferences_custom_search_urls_key, CustomSearchUrlListActivity::class)
+        configureStartActivity(R.string.preferences_remote_api_information_about_api_key, AboutApisActivity::class)
+        configureStartActivity(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
+        configureStartActivity(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)
+        configureStartActivity(R.string.preferences_about_bdd_key, AboutBddActivity::class)
         configureSourceCodePreference()
     }
 
@@ -188,12 +190,12 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         Uri.fromParts("package", requireActivity().packageName, null)
     )*/
 
-    private fun configureAboutPreference(keyResource: Int, activityKClass: KClass<out Activity>) {
+    private fun configureStartActivity(keyResource: Int, activityKClass: KClass<out Activity>) {
         val pref = findPreference(getString(keyResource)) as Preference?
 
         if (pref != null) {
             pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                startAboutActivity(activityKClass)
+                startActivity(activityKClass)
             }
         }
     }
@@ -211,7 +213,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         }
     }
 
-    private fun startAboutActivity(activityKClass: KClass<out Activity>): Boolean {
+    private fun startActivity(activityKClass: KClass<out Activity>): Boolean {
         val intent = createStartActivityIntent(requireContext(), activityKClass)
         startActivity(intent)
         return true

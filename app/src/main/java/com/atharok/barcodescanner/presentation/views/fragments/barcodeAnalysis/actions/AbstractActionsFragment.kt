@@ -37,6 +37,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseCustomUrlViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
@@ -48,12 +49,14 @@ import org.koin.core.parameter.parametersOf
 abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() {
 
     private val databaseBarcodeViewModel: DatabaseBarcodeViewModel by activityViewModel()
+    private val databaseCustomUrlViewModel: DatabaseCustomUrlViewModel by activityViewModel()
 
     private var _binding: FragmentBarcodeAnalysisActionsBinding? = null
     private val viewBinding get() = _binding!!
 
     private var alertDialog: AlertDialog? = null
     private val adapter = ActionButtonAdapter()
+    private val actionItems = mutableListOf<ActionItem>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeAnalysisActionsBinding.inflate(inflater, container, false)
@@ -71,30 +74,15 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
     }
 
     override fun start(analysis: BarcodeAnalysis) {
-        val barcode: Barcode = analysis.barcode
-        val actionItems = configureActions(barcode)
-        configureRecyclerView(actionItems)
-        configureDatabaseObserver(barcode)
+        actionItems.clear()
+        val barcode = analysis.barcode
+        configureActionItems(barcode)
+        configureRecyclerView()
+        configureCustomUrlDatabaseObserver(barcode)
+        configureBarcodeDatabaseObserver(barcode)
     }
 
-    /**
-     * On ajoute le bouton DeleteActionItem si le Barcode est présent dans la BDD. Sinon on ne
-     * l'affiche pas.
-     * Si le Barcode a été supprimé de la BDD via le bouton DeleteActionItem, on met à jour
-     * automatiquement l'adapter permettant de ne plus afficher le bouton.
-     */
-    private fun configureDatabaseObserver(barcode: Barcode) {
-        databaseBarcodeViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
-            val items = if(it!=null) {
-                configureActions(barcode) + configureDeleteBarcodeFromHistoryActionItem(barcode)
-            } else {
-                configureActions(barcode) + configureAddBarcodeInHistoryActionItem(barcode)
-            }
-            adapter.updateData(items)
-        }
-    }
-
-    private fun configureRecyclerView(actionItems: Array<ActionItem>) {
+    private fun configureRecyclerView() {
         val layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.grid_layout_span_count))
         val recyclerView = viewBinding.fragmentBarcodeAnalysisActionRecyclerView
 
@@ -105,21 +93,123 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         adapter.updateData(actionItems)
     }
 
-    abstract fun configureActions(barcode: Barcode): Array<ActionItem>
+    abstract fun configureActionItems(barcode: Barcode)
 
-    protected fun configureDefaultActions(barcode: Barcode) = arrayOf(
-        ActionItem(R.string.action_web_search_label, R.drawable.baseline_search_24, openContentsWithSearchEngine(barcode.contents)),
-        ActionItem(R.string.share_text_label, R.drawable.baseline_share_24, shareTextContents(barcode.contents)),
-        ActionItem(R.string.copy_barcode_label, R.drawable.baseline_content_copy_24, copyContents(barcode.contents)),
-        ActionItem(R.string.action_modify_barcode, R.drawable.baseline_create_24, modifyBarcodeContents(barcode))
-    )
+    protected fun addActionItem(actionItem: ActionItem): Boolean = actionItems.add(actionItem)
+    protected fun addActionItem(index: Int, actionItem: ActionItem) = actionItems.add(index, actionItem)
+    private fun removeActionItem(actionItem: ActionItem) = actionItems.remove(actionItem)
 
-    private fun configureDeleteBarcodeFromHistoryActionItem(barcode: Barcode): ActionItem {
-        return ActionItem(R.string.menu_item_history_delete_from_history, R.drawable.baseline_delete_forever_24, deleteBarcodeFromHistory(barcode))
+    // ---- Database observers ----
+
+    private fun configureCustomUrlDatabaseObserver(barcode: Barcode) {
+        databaseCustomUrlViewModel.customUrlList.observe(viewLifecycleOwner) { urls ->
+            if(urls.isNotEmpty()) {
+                val items: Array<Pair<String, ActionItem.OnActionItemListener>> = urls.map {
+                    getString(R.string.action_product_search_label, it.name) to openUrl(it.getUrlWithContents(barcode.contents))
+                }.toTypedArray()
+
+                addActionItem(configureCustomUrlActionItem(items))
+
+                adapter.updateData(actionItems)
+            }
+        }
     }
 
+    private var deleteBarcodeFromHistoryActionItem: ActionItem? = null
+    private var addBarcodeInHistoryActionItem: ActionItem? = null
+
+    /**
+     * On ajoute le bouton DeleteActionItem si le Barcode est présent dans la BDD. Sinon on ne
+     * l'affiche pas.
+     * Si le Barcode a été supprimé de la BDD via le bouton DeleteActionItem, on met à jour
+     * automatiquement l'adapter permettant de ne plus afficher le bouton.
+     */
+    private fun configureBarcodeDatabaseObserver(barcode: Barcode) {
+        databaseBarcodeViewModel.getBarcodeByDate(barcode.scanDate).observe(viewLifecycleOwner) {
+            addBarcodeInHistoryActionItem?.let { actionItem -> removeActionItem(actionItem) }
+            deleteBarcodeFromHistoryActionItem?.let { actionItem -> removeActionItem(actionItem) }
+
+            if(it!=null) {
+                if(deleteBarcodeFromHistoryActionItem == null)
+                    deleteBarcodeFromHistoryActionItem = configureDeleteBarcodeFromHistoryActionItem(barcode)
+                deleteBarcodeFromHistoryActionItem?.let { actionItem -> addActionItem(actionItem) }
+            } else {
+                if(addBarcodeInHistoryActionItem == null)
+                    addBarcodeInHistoryActionItem = configureAddBarcodeInHistoryActionItem(barcode)
+                addBarcodeInHistoryActionItem?.let { actionItem -> addActionItem(actionItem) }
+            }
+
+            adapter.updateData(actionItems)
+        }
+    }
+
+    // ---- ActionItem Configuration ----
+
+    // Search on the Web
+    protected fun configureSearchOnWebActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_web_search_label,
+            imageRes = R.drawable.baseline_search_24,
+            listener = openContentsWithSearchEngine(barcode.contents)
+        )
+    }
+
+    // Share text
+    protected fun configureShareTextActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.share_text_label,
+            imageRes = R.drawable.baseline_share_24,
+            listener = shareTextContents(barcode.contents)
+        )
+    }
+
+    // Copy text
+    protected fun configureCopyTextActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.copy_barcode_label,
+            imageRes = R.drawable.baseline_content_copy_24,
+            listener = copyContents(barcode.contents)
+        )
+    }
+
+    // Modify barcode
+    protected fun configureModifyBarcodeActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_modify_barcode,
+            imageRes = R.drawable.baseline_create_24,
+            listener = modifyBarcodeContents(barcode)
+        )
+    }
+
+    // Delete from history
+    private fun configureDeleteBarcodeFromHistoryActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.menu_item_history_delete_from_history,
+            imageRes = R.drawable.baseline_delete_forever_24,
+            listener = deleteBarcodeFromHistory(barcode)
+        )
+    }
+
+    // Add to history
     private fun configureAddBarcodeInHistoryActionItem(barcode: Barcode): ActionItem {
-        return ActionItem(R.string.menu_item_history_add_in_history, R.drawable.baseline_add_24, addBarcodeInHistory(barcode))
+        return ActionItem(
+            textRes = R.string.menu_item_history_add_in_history,
+            imageRes = R.drawable.baseline_add_24,
+            listener = addBarcodeInHistory(barcode)
+        )
+    }
+
+    // Search on custom URL
+    private fun configureCustomUrlActionItem(items: Array<Pair<String, ActionItem.OnActionItemListener>>): ActionItem {
+        return ActionItem(
+            textRes = R.string.custom_urls,
+            imageRes = R.drawable.baseline_search_24,
+            listener = object : ActionItem.OnActionItemListener {
+                override fun onItemClick(view: View?) {
+                    createAlertDialog(requireContext(), getString(R.string.custom_urls), items).show()
+                }
+            }
+        )
     }
 
     // ---- Actions ----
@@ -141,21 +231,21 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         }
     }
 
-    protected fun copyContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+    private fun copyContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             copyToClipboard("contents", contents)
             showToastText(R.string.barcode_copied_label)
         }
     }
 
-    protected fun shareTextContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+    private fun shareTextContents(contents: String): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             val intent = createShareTextIntent(requireContext(), contents)
             startActivity(intent)
         }
     }
 
-    protected fun modifyBarcodeContents(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+    private fun modifyBarcodeContents(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             val bottomSheetFragment:
                     BarcodeContentsModifierModalBottomSheetFragment = get { parametersOf(barcode) }
@@ -190,9 +280,9 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         try {
             startActivity(intent)
         } catch (e: ActivityNotFoundException) {
-            showToastText(R.string.barcode_search_error_label)//Aucune application compatible trouvé
+            showToastText(R.string.barcode_search_error_no_compatible_application_found)
         } catch (e: Exception) {
-            showToastText(e.toString())//Url not supported
+            showToastText("${getString(R.string.barcode_search_error_label)} : $e")
         }
     }
 
@@ -205,8 +295,8 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
         alertDialog = AlertDialog.Builder(context).apply {
             setTitle(title)
-            setNegativeButton(R.string.close_dialog_label) {
-                    dialogInterface, _ -> dialogInterface.cancel()
+            setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->
+                dialogInterface.cancel()
             }
             setItems(itemsLabel, onClickListener)
         }.create()

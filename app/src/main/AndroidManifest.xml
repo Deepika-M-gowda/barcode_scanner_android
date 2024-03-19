@@ -10,8 +10,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- Pour AddSuggestion -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Pour activer wifi (DEPREACATED) -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> --><!-- -> Refused by Google Play -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> -->
+    <!-- -> Refused by Google Play -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -28,6 +28,14 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="34">
+        <activity
+            android:name=".presentation.views.activities.CustomSearchUrlCreatorActivity"
+            android:label="@string/custom_search_urls_add_url"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.views.activities.CustomSearchUrlListActivity"
+            android:label="@string/custom_search_urls_list"
+            android:exported="false" />
         <activity
             android:name=".presentation.views.activities.MainActivity"
             android:exported="true">
@@ -75,16 +83,16 @@
         </activity>
         <activity
             android:name=".presentation.views.activities.BarcodeAnalysisActivity"
-            android:label="@string/information_label"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:label="@string/information_label" />
         <activity
             android:name=".presentation.views.activities.VeggieActivity"
             android:label="@string/veggie_label" />
         <activity
             android:name=".presentation.views.activities.BarcodeDetailsActivity"
-            android:windowSoftInputMode="adjustPan"
             android:exported="true"
-            android:label="@string/title_bar_code_creator">
+            android:label="@string/title_bar_code_creator"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter android:label="@string/title_qr_code_creator">
                 <action android:name="android.intent.action.SEND" />
 

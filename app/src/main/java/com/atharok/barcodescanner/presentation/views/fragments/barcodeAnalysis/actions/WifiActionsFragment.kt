@@ -39,18 +39,23 @@ import com.google.zxing.client.result.WifiParsedResult
 
 class WifiActionsFragment: AbstractParsedResultActionsFragment() {
 
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
-        return when(parsedResult){
-            is WifiParsedResult -> configureWifiActions(barcode, parsedResult)
-            else -> configureDefaultActions(barcode)
+    override fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult) {
+        if(parsedResult is WifiParsedResult) {
+            configureWifiActionItem(parsedResult)
         }
+        addActionItem(configureSearchOnWebActionItem(barcode))
+        addActionItem(configureShareTextActionItem(barcode))
+        addActionItem(configureCopyTextActionItem(barcode))
+        addActionItem(configureModifyBarcodeActionItem(barcode))
     }
 
-    private fun configureWifiActions(barcode: Barcode, parsedResult: WifiParsedResult) = arrayOf(
-        ActionItem(R.string.qr_code_type_name_wifi, R.drawable.baseline_wifi_24, showWifiAlertDialog(parsedResult))
-    ) + configureDefaultActions(barcode)
-
-    // Actions
+    private fun configureWifiActionItem(parsedResult: WifiParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.qr_code_type_name_wifi,
+            imageRes = R.drawable.baseline_wifi_24,
+            listener = showWifiAlertDialog(parsedResult)
+        )
+    }
 
     private fun showWifiAlertDialog(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {

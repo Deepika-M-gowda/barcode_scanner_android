@@ -41,8 +41,10 @@ import com.atharok.barcodescanner.data.api.OpenPetFoodFactsService
 import com.atharok.barcodescanner.data.database.AppDatabase
 import com.atharok.barcodescanner.data.database.BankDao
 import com.atharok.barcodescanner.data.database.BarcodeDao
+import com.atharok.barcodescanner.data.database.CustomUrlDao
 import com.atharok.barcodescanner.data.database.createBankDao
 import com.atharok.barcodescanner.data.database.createBarcodeDao
+import com.atharok.barcodescanner.data.database.createCustomUrlDao
 import com.atharok.barcodescanner.data.database.createDatabase
 import com.atharok.barcodescanner.data.file.FileFetcher
 import com.atharok.barcodescanner.data.file.FileStream
@@ -59,6 +61,7 @@ import com.atharok.barcodescanner.data.repositories.BarcodeRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.BeautyProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.BookProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.CountriesRepositoryImpl
+import com.atharok.barcodescanner.data.repositories.CustomUrlRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.FileStreamRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.FoodProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.ImageExportRepositoryImpl
@@ -90,6 +93,7 @@ import com.atharok.barcodescanner.domain.repositories.BarcodeRepository
 import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.CountriesRepository
+import com.atharok.barcodescanner.domain.repositories.CustomUrlRepository
 import com.atharok.barcodescanner.domain.repositories.FileStreamRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
 import com.atharok.barcodescanner.domain.repositories.ImageExportRepository
@@ -100,11 +104,13 @@ import com.atharok.barcodescanner.domain.repositories.MusicProductRepository
 import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 import com.atharok.barcodescanner.domain.usecases.DatabaseBankUseCase
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
+import com.atharok.barcodescanner.domain.usecases.DatabaseCustomUrlUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
 import com.atharok.barcodescanner.domain.usecases.ImageManagerUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DatabaseCustomUrlViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
@@ -304,11 +310,15 @@ val viewModelModule: Module = module {
     }
 
     viewModel {
-        DatabaseBankViewModel(get<DatabaseBankUseCase>())
+        DatabaseBarcodeViewModel(get<DatabaseBarcodeUseCase>())
     }
 
     viewModel {
-        DatabaseBarcodeViewModel(get<DatabaseBarcodeUseCase>())
+        DatabaseCustomUrlViewModel(get<DatabaseCustomUrlUseCase>())
+    }
+
+    viewModel {
+        DatabaseBankViewModel(get<DatabaseBankUseCase>())
     }
 
     viewModel {
@@ -325,7 +335,7 @@ val viewModelModule: Module = module {
 }
 
 val useCaseModule: Module = module {
-    single<ProductUseCase> {
+    factory<ProductUseCase> {
         ProductUseCase(
             foodProductRepository = get<FoodProductRepository>(),
             beautyProductRepository = get<BeautyProductRepository>(),
@@ -335,15 +345,19 @@ val useCaseModule: Module = module {
         )
     }
 
-    single<DatabaseBankUseCase> {
-        DatabaseBankUseCase(get<BankRepository>())
-    }
-
-    single<DatabaseBarcodeUseCase> {
+    factory<DatabaseBarcodeUseCase> {
         DatabaseBarcodeUseCase(get<BarcodeRepository>(), get<FileStreamRepository>())
     }
 
-    single<ExternalFoodProductDependencyUseCase> {
+    factory<DatabaseCustomUrlUseCase> {
+        DatabaseCustomUrlUseCase(get<CustomUrlRepository>())
+    }
+
+    factory<DatabaseBankUseCase> {
+        DatabaseBankUseCase(get<BankRepository>())
+    }
+
+    factory<ExternalFoodProductDependencyUseCase> {
         ExternalFoodProductDependencyUseCase(
             labelsRepository = get<LabelsRepository>(),
             additivesRepository = get<AdditivesRepository>(),
@@ -352,7 +366,7 @@ val useCaseModule: Module = module {
         )
     }
 
-    single { ImageManagerUseCase(get<ImageGeneratorRepository>(), get<ImageExportRepository>()) }
+    factory { ImageManagerUseCase(get<ImageGeneratorRepository>(), get<ImageExportRepository>()) }
 }
 
 val repositoryModule: Module = module {
@@ -377,12 +391,16 @@ val repositoryModule: Module = module {
         BookProductRepositoryImpl(get<OpenLibraryService>())
     }
 
-    single<BankRepository> {
-        BankRepositoryImpl(get<BankDao>())
-    }
-
     single<BarcodeRepository> {
         BarcodeRepositoryImpl(get<BarcodeDao>())
+    }
+
+    single<CustomUrlRepository> {
+        CustomUrlRepositoryImpl(get<CustomUrlDao>())
+    }
+
+    single<BankRepository> {
+        BankRepositoryImpl(get<BankDao>())
     }
 
     single<LabelsRepository> {
@@ -466,6 +484,10 @@ val dataModule: Module = module {
 
     single<BankDao> {
         createBankDao(get<AppDatabase>())
+    }
+
+    single<CustomUrlDao> {
+        createCustomUrlDao(get<AppDatabase>())
     }
 
     single<FileFetcher> { FileFetcher(androidContext()) }

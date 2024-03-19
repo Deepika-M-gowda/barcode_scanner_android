@@ -27,7 +27,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.atharok.barcodescanner.common.extensions.fixAnimateLayoutChangesInNestedScroll
 import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_DEFAULT_SIZE
-import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_GENERATOR_PROPERTIES_KEY
 import com.atharok.barcodescanner.databinding.FragmentBarcodeAboutOverviewBinding
 import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
@@ -80,12 +79,17 @@ class BarcodeAboutOverviewFragment : BarcodeAnalysisFragment<BarcodeAnalysis>() 
                 backgroundColor = Color.WHITE
             )
 
-            applyFragment(
+            /*applyFragment(
                 containerViewId = viewBinding.fragmentBarcodeAboutOverviewBarcodeImageFrameLayout.id,
                 fragmentClass = BarcodeImageFragment::class,
                 args = Bundle().apply {
                     putSerializable(BARCODE_IMAGE_GENERATOR_PROPERTIES_KEY, properties)
                 }
+            )*/
+
+            applyFragment(
+                containerViewId = viewBinding.fragmentBarcodeAboutOverviewBarcodeImageFrameLayout.id,
+                fragment = BarcodeImageFragment.newInstance(properties)
             )
         } else {
             viewBinding.fragmentBarcodeAboutOverviewBarcodeImageFrameLayout.visibility = View.GONE

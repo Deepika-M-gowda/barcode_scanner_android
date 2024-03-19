@@ -29,18 +29,23 @@ import com.google.zxing.client.result.AddressBookParsedResult
 import com.google.zxing.client.result.ParsedResult
 
 class ContactActionsFragment: AbstractParsedResultActionsFragment() {
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
-        return when(parsedResult){
-            is AddressBookParsedResult -> configureContactActions(barcode, parsedResult)
-            else -> configureDefaultActions(barcode)
+    override fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult) {
+        if(parsedResult is AddressBookParsedResult) {
+            addActionItem(configureContactActionItem(parsedResult))
         }
+        addActionItem(configureSearchOnWebActionItem(barcode))
+        addActionItem(configureShareTextActionItem(barcode))
+        addActionItem(configureCopyTextActionItem(barcode))
+        addActionItem(configureModifyBarcodeActionItem(barcode))
     }
 
-    private fun configureContactActions(barcode: Barcode, parsedResult: AddressBookParsedResult) = arrayOf(
-        ActionItem(R.string.action_add_to_contacts, R.drawable.baseline_contacts_24, addToContact(parsedResult))
-    ) + configureDefaultActions(barcode)
-
-    // Actions
+    private fun configureContactActionItem(parsedResult: AddressBookParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_add_to_contacts,
+            imageRes = R.drawable.baseline_contacts_24,
+            listener = addToContact(parsedResult)
+        )
+    }
 
     private fun addToContact(parsedResult: AddressBookParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {

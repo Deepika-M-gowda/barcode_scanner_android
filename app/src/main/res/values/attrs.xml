@@ -37,6 +37,7 @@
 
     <declare-styleable name="ExpandableCardView">
         <attr name="isOpen" format="boolean" />
+        <attr name="cardUseCompatPadding" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="FloatingActionMenu">

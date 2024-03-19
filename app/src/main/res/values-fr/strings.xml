@@ -309,6 +309,7 @@
     <string name="copy_label">Copier</string>
     <string name="barcode_copied_label">Code-barres copié</string>
     <string name="barcode_search_error_label">Url non pris en charge</string>
+    <string name="barcode_search_error_no_compatible_application_found">Aucune application compatible trouvée</string>
     <string name="search_label">Rechercher</string>
     <string name="action_title_dialog_label">Que souhaitez-vous faire ?</string>
     <string name="action_go_to_url_label">Aller à l\'adresse</string>
@@ -443,6 +444,21 @@
     <string name="begin_label">Début</string>
     <string name="end_label">Fin</string>
     <!-- URL -->
+    <!-- Custom search URL -->
+    <string name="custom_search_urls">URL de recherche personnalisées</string>
+    <string name="custom_urls">URL personnelles</string>
+    <string name="custom_search_urls_add_url">Ajouter une URL</string>
+    <string name="custom_search_urls_modify_url">Modifier l\'URL</string>
+    <string name="custom_search_urls_list">Liste des URL</string>
+    <string name="custom_search_urls_list_is_empty_message">Aucun élément…\nVous n\'avez pas encore généré d\'URL personnalisée.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Souhaitez-vous supprimer toutes les URL personnalisées ?</string>
+    <string name="custom_url_deleted">URL personnalisée supprimée !</string>
+    <string name="custom_url_added">URL personnalisée ajoutée !</string>
+    <string name="custom_url_updated">Mise à jour de l\'URL personnalisée !</string>
+    <string name="custom_search_urls_add_info">Utilisez le terme \"%1$s\" dans l\'URL. Ce terme sera remplacé par le contenu du code-barres lors de la recherche.</string>
+    <string name="examples">Exemples :</string>
+    <string name="custom_search_urls_error_url">Le terme \"%1$s\" doit être présent dans l\'URL.</string>
+    <string name="error_empty_fields">Les champs de saisie ne doivent pas être vides.</string>
     <!-- API Base URL -->
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>

@@ -18,23 +18,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions
+package com.atharok.barcodescanner.presentation.views.recyclerView.customUrl
 
-import com.atharok.barcodescanner.domain.entity.barcode.Barcode
-import com.google.zxing.client.result.ParsedResult
-import org.koin.android.ext.android.get
-import org.koin.core.parameter.parametersOf
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import com.atharok.barcodescanner.presentation.customView.CustomItemTouchHelperCallback
 
-abstract class AbstractParsedResultActionsFragment: AbstractActionsFragment() {
+interface CustomUrlItemTouchHelperListener: CustomItemTouchHelperCallback.ItemTouchHelperListener {
 
-    override fun configureActionItems(barcode: Barcode) {
-        configureActionItems(
-            barcode = barcode,
-            parsedResult = get {
-                parametersOf(barcode.contents, barcode.getBarcodeFormat())
-            }
-        )
+    override fun getForegroundView(viewHolder: RecyclerView.ViewHolder?): View? {
+        return if (viewHolder is CustomUrlItemHolder) viewHolder.getForegroundLayout() else null
     }
-
-    abstract fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult)
 }

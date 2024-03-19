@@ -43,8 +43,8 @@ class ActionButtonAdapter: RecyclerView.Adapter<ActionButtonHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateData(actionItemArray: Array<ActionItem>){
-        items = actionItemArray.map { it }
+    fun updateData(actionItems: List<ActionItem>){
+        items = actionItems
         this.notifyDataSetChanged()
     }
 }

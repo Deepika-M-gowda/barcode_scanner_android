@@ -39,6 +39,8 @@ const val BARCODE_KEY = "barcodeKey"
 // Clé de l'intent permettant la récupération des données de Bank entre BarcodeFormCreatorQrEpcFragment et BarcodeEpcTemplateListActivity.
 const val BANK_KEY = "bankKey"
 
+const val CUSTOM_URL_KEY = "customUrlKey"
+
 // Clé du Bundle associé au type AllBarCodeCreatorType
 const val BARCODE_TYPE_ENUM_KEY = "barcodeTypeEnumKey" // Clé de l'intent contenant le type de code-barres à générer (AllBarCodeCreatorType: QR_TEXT, QR_AGENDA, AZTEC, EAN_13, EAN_8, UPC_A, etc...)
 
@@ -113,3 +115,7 @@ const val CODE_93_LENGTH = 80
 const val CODE_128_LENGTH = 80
 const val ITF_LENGTH = 80
 const val PDF_417_LENGTH = 2710
+
+// ----
+
+const val CUSTOM_SEARCH_URL_BARCODE_KEY_WORD = "{barcode}"

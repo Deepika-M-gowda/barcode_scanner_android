@@ -29,18 +29,24 @@ import com.google.zxing.client.result.CalendarParsedResult
 import com.google.zxing.client.result.ParsedResult
 
 class AgendaActionsFragment: AbstractParsedResultActionsFragment() {
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
-        return when(parsedResult){
-            is CalendarParsedResult -> configureAgendaActions(barcode, parsedResult)
-            else -> configureDefaultActions(barcode)
+
+    override fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult) {
+        if(parsedResult is CalendarParsedResult) {
+            addActionItem(configureAddToAgendaActionItem(parsedResult))
         }
+        addActionItem(configureSearchOnWebActionItem(barcode))
+        addActionItem(configureShareTextActionItem(barcode))
+        addActionItem(configureCopyTextActionItem(barcode))
+        addActionItem(configureModifyBarcodeActionItem(barcode))
     }
 
-    private fun configureAgendaActions(barcode: Barcode, parsedResult: CalendarParsedResult) = arrayOf(
-        ActionItem(R.string.action_add_to_calendar, R.drawable.baseline_event_note_24, addToAgenda(parsedResult))
-    ) + configureDefaultActions(barcode)
-
-    // Actions
+    private fun configureAddToAgendaActionItem(parsedResult: CalendarParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_add_to_calendar,
+            imageRes = R.drawable.baseline_event_note_24,
+            listener = addToAgenda(parsedResult)
+        )
+    }
 
     private fun addToAgenda(parsedResult: CalendarParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {

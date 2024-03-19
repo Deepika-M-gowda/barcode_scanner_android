@@ -31,20 +31,41 @@ import com.google.zxing.client.result.ParsedResult
 import com.google.zxing.client.result.TelParsedResult
 
 class PhoneActionsFragment: AbstractParsedResultActionsFragment() {
-    override fun configureActions(barcode: Barcode, parsedResult: ParsedResult): Array<ActionItem> {
-        return when(parsedResult){
-            is TelParsedResult -> configurePhoneActions(barcode, parsedResult)
-            else -> configureDefaultActions(barcode)
+    override fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult) {
+        if(parsedResult is TelParsedResult) {
+            addActionItem(configureCallPhoneActionItem(parsedResult))
+            addActionItem(configureSendSmsActionItem(parsedResult))
+            addActionItem(configureAddToContactsActionItem(parsedResult))
         }
+        addActionItem(configureSearchOnWebActionItem(barcode))
+        addActionItem(configureShareTextActionItem(barcode))
+        addActionItem(configureCopyTextActionItem(barcode))
+        addActionItem(configureModifyBarcodeActionItem(barcode))
     }
 
-    private fun configurePhoneActions(barcode: Barcode, parsedResult: TelParsedResult) = arrayOf(
-        ActionItem(R.string.action_call_phone_label, R.drawable.baseline_call_24, callPhone(parsedResult)),
-        ActionItem(R.string.action_send_sms_label, R.drawable.baseline_textsms_24, sendSmsToPhoneNumber(parsedResult)),
-        ActionItem(R.string.action_add_to_contacts, R.drawable.baseline_contacts_24, addPhoneNumberToContact(parsedResult))
-    ) + configureDefaultActions(barcode)
+    private fun configureCallPhoneActionItem(parsedResult: TelParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_call_phone_label,
+            imageRes = R.drawable.baseline_call_24,
+            listener = callPhone(parsedResult)
+        )
+    }
 
-    // Actions
+    private fun configureSendSmsActionItem(parsedResult: TelParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_send_sms_label,
+            imageRes = R.drawable.baseline_textsms_24,
+            listener = sendSmsToPhoneNumber(parsedResult)
+        )
+    }
+
+    private fun configureAddToContactsActionItem(parsedResult: TelParsedResult): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_add_to_contacts,
+            imageRes = R.drawable.baseline_contacts_24,
+            listener = addPhoneNumberToContacts(parsedResult)
+        )
+    }
 
     private fun callPhone(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
@@ -60,7 +81,7 @@ class PhoneActionsFragment: AbstractParsedResultActionsFragment() {
         }
     }
 
-    private fun addPhoneNumberToContact(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+    private fun addPhoneNumberToContacts(parsedResult: TelParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
             val intent = createAddPhoneNumberIntent(parsedResult)
             mStartActivity(intent)
