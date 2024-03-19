@@ -715,4 +715,20 @@
     <string name="action_modify_barcode">Barkodu düzenle</string>
     <string name="preferences_additional_options">Ek seçenekler</string>
     <string name="preferences_display_barcode_image_results_view">Barkod görselini sonuçlar görünümünde görüntüle</string>
+    <string name="barcode_search_error_no_compatible_application_found">Uyumlu uygulama bulunamadı</string>
+    <string name="custom_search_urls">Özel arama URL\'leri</string>
+    <string name="custom_urls">Özel URL\'ler</string>
+    <string name="custom_search_urls_add_url">URL ekle</string>
+    <string name="custom_search_urls_list">URL listesi</string>
+    <string name="custom_search_urls_modify_url">URL\'yi değiştir</string>
+    <string name="custom_search_urls_list_is_empty_message">Öge yok…
+\nHenüz özel bir URL oluşturmadınız.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Tüm özel URL\'leri silmek istiyor musunuz?</string>
+    <string name="custom_search_urls_add_info">URL\'de \"%1$s\" terimini kullanın. Bu terim, arama sırasında barkodun içeriği ile değiştirilecektir.</string>
+    <string name="custom_url_deleted">Özel URL silindi!</string>
+    <string name="custom_url_added">Özel URL eklendi!</string>
+    <string name="custom_url_updated">Özel URL güncellendi!</string>
+    <string name="examples">Örnekler:</string>
+    <string name="custom_search_urls_error_url">URL\'de \"%1$s\" terimi bulunmalıdır.</string>
+    <string name="error_empty_fields">Giriş alanları boş olmamalıdır.</string>
 </resources>
