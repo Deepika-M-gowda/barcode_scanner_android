@@ -32,8 +32,11 @@ import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.utils.showSimpleDialog
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrContactBinding
 import com.atharok.barcodescanner.domain.library.EzvcardBuilder
 import com.atharok.barcodescanner.domain.library.VCardReader
@@ -59,6 +62,8 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
     private var _binding: FragmentBarcodeFormCreatorQrContactBinding? = null
     private val viewBinding get() = _binding!!
 
+    private var alertDialog: AlertDialog? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentBarcodeFormCreatorQrContactBinding.inflate(inflater, container, false)
         configureMenu()
@@ -68,6 +73,7 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+        alertDialog?.dismiss()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -335,13 +341,22 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
             val uri: Uri? = result?.data?.data
             if (result.resultCode == Activity.RESULT_OK && uri != null){
 
-                // Convertit l'uri du contact en String
+                // Convertie l'uri du contact en String
                 val vCardStr = vCardReader.readVCardFromContactUri(uri)
-
-                val vCard = Ezvcard.parse(vCardStr).first()
-
-                if (vCard != null) {
-                    fillAllField(vCard)
+                try {
+                    Ezvcard.parse(vCardStr).first()?.let { vCard ->
+                        fillAllField(vCard)
+                    }
+                } catch (e: NoClassDefFoundError) {
+                    showDialog(
+                        titleRes = R.string.error,
+                        message = getString(R.string.scan_error_exception_label, e.toString())
+                    )
+                } catch (e: Exception) {
+                    showDialog(
+                        titleRes = R.string.error,
+                        message = getString(R.string.scan_error_exception_label, e.toString())
+                    )
                 }
             }
         }
@@ -399,5 +414,11 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
         viewBinding.fragmentBarcodeFormCreatorQrContactCountryInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactRegionInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactNotesInputEditText.setText("")
+    }
+
+    // ---- AlertDialog ----
+
+    private fun showDialog(@StringRes titleRes: Int, message: String) {
+        alertDialog = showSimpleDialog(requireActivity(), titleRes, message)
     }
 }

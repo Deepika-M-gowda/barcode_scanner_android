@@ -26,10 +26,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.LiveData
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.getDisplayName
@@ -44,6 +46,7 @@ import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_FRONT_COLOR_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_HEIGHT_KEY
 import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_WIDTH_KEY
 import com.atharok.barcodescanner.common.utils.QR_CODE_ERROR_CORRECTION_LEVEL_KEY
+import com.atharok.barcodescanner.common.utils.showSimpleDialog
 import com.atharok.barcodescanner.databinding.ActivityBarcodeDetailsBinding
 import com.atharok.barcodescanner.domain.entity.ImageFormat
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
@@ -57,6 +60,8 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEdito
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
+import ezvcard.Ezvcard
+import ezvcard.VCard
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -70,7 +75,14 @@ class BarcodeDetailsActivity : BaseActivity() {
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
     private val contents: String by lazy {
-        getIntentStringValue() ?: throw Exception("Barcode contents (String) is missing")
+        getIntentStringValue() ?: error()
+    }
+
+    private var alertDialog: AlertDialog? = null
+
+    private fun error(): String {
+        Toast.makeText(this, getString(R.string.scan_error_exception_label, "Barcode contents (String) is missing"), Toast.LENGTH_LONG).show()
+        return "ERROR"
     }
 
     private val format: BarcodeFormat by lazy {
@@ -129,6 +141,11 @@ class BarcodeDetailsActivity : BaseActivity() {
         setContentView(viewBinding.root)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        alertDialog?.dismiss()
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(BARCODE_IMAGE_FRONT_COLOR_KEY, properties.frontColor)
         outState.putInt(BARCODE_IMAGE_BACKGROUND_COLOR_KEY, properties.backgroundColor)
@@ -142,7 +159,28 @@ class BarcodeDetailsActivity : BaseActivity() {
         return if(intent?.action == Intent.ACTION_SEND){
             when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
-                "text/x-vcard" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
+                "text/x-vcard" -> {
+                    intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)?.let { vCardText: String ->
+                        try {
+                            Ezvcard.parse(vCardText).first()?.let { vCard ->
+                                vCard.photos?.clear()
+                                Ezvcard.write(vCard).prodId(false).go()
+                            }
+                        } catch (e: NoClassDefFoundError) {
+                            showDialog(
+                                titleRes = R.string.error,
+                                message = getString(R.string.scan_error_exception_label, e.toString())
+                            )
+                            vCardText
+                        } catch (e: Exception) {
+                            showDialog(
+                                titleRes = R.string.error,
+                                message = getString(R.string.scan_error_exception_label, e.toString())
+                            )
+                            vCardText
+                        }
+                    }
+                }
                 "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
@@ -282,4 +320,10 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun show(@StringRes stringRes: Int) =
         Snackbar.make(viewBinding.root, getString(stringRes), Snackbar.LENGTH_SHORT).show()
+
+    // ---- AlertDialog ----
+
+    private fun showDialog(@StringRes titleRes: Int, message: String) {
+        alertDialog = showSimpleDialog(this, titleRes, message)
+    }
 }

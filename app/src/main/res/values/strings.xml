@@ -7,6 +7,7 @@
     <string name="yes_label">Yes</string>
     <string name="no_label">No</string>
     <string name="go_to_dialog_label">Enter website</string>
+    <string name="error">Error</string>
     <!-- ImageView Description -->
     <string name="image_view_description_flag">Flag</string>
     <string name="image_view_description_logo">Logo</string>
