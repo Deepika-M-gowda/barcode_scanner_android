@@ -23,13 +23,22 @@
         android:layout_below="@id/fragment_barcode_matrix_contact_name_layout"
         app:title_text="@string/matrix_contact_organisation_label" />
 
+    <!-- URL -->
+    <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
+        android:id="@+id/fragment_barcode_matrix_contact_url_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/x_large_margin"
+        android:layout_below="@id/fragment_barcode_matrix_contact_organization_layout"
+        app:title_text="@string/matrix_uri_url_label" />
+
     <!-- Title -->
     <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_contact_title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/x_large_margin"
-        android:layout_below="@id/fragment_barcode_matrix_contact_organization_layout"
+        android:layout_below="@id/fragment_barcode_matrix_contact_url_layout"
         app:title_text="@string/matrix_contact_title_label" />
 
     <!-- Phone -->

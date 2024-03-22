@@ -55,6 +55,7 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
         if(parsedResult is AddressBookParsedResult && parsedResult.type == ParsedResultType.ADDRESSBOOK) {
             configureName(parsedResult.names ?: parsedResult.nicknames)
             configureOrganization(parsedResult.org)
+            configureURLs(parsedResult.urLs)
             configureTitle(parsedResult.title)
             configurePhone(parsedResult.phoneNumbers, parsedResult.phoneTypes)
             configureMail(parsedResult.emails, parsedResult.emailTypes)
@@ -71,6 +72,10 @@ class BarcodeMatrixContactFragment : AbstractBarcodeMatrixFragment() {
 
     private fun configureOrganization(org: String?) {
         viewBinding.fragmentBarcodeMatrixContactOrganizationLayout.setContentsText(org)
+    }
+
+    private fun configureURLs(urls: Array<String?>?) {
+        viewBinding.fragmentBarcodeMatrixContactUrlLayout.setContentsText(urls?.convertToString("\n"))
     }
 
     private fun configureTitle(title: String?) {
