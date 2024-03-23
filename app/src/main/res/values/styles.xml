@@ -2,14 +2,18 @@
 
     <!-- Toolbar -->
     <style name="AppTheme.ToolBar.TextAppearance" parent="AppTheme.TextView.Appearance.Title.Primary.Max">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="textSize">@dimen/toolbar_text_size</item>
         <item name="android:textSize">@dimen/toolbar_text_size</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- TabLayout -->
     <style name="AppTheme.TabLayout.TextAppearance" parent="AppTheme.TextView.Appearance.Title.Primary.Max">
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
         <item name="tabIndicatorColor">?colorPrimary</item>
         <item name="tabSelectedTextColor">?colorPrimary</item>
     </style>
@@ -25,14 +29,10 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="AppTheme.TextView.Appearance.Title.Primary.Min" parent="AppTheme.TextView.Appearance.Title.Primary.Max">
-        <item name="textSize">@dimen/sub_title_text_size</item>
-        <item name="android:textSize">@dimen/sub_title_text_size</item>
-    </style>
-
-    <style name="AppTheme.TextView.Appearance.Title.Variant" parent="AppTheme.TextView.Appearance.Title.Primary.Min">
+    <style name="AppTheme.TextView.Appearance.Title.Variant" parent="AppTheme.TextView.Appearance.Standard.Primary">
         <item name="textColor">?colorPrimary</item>
         <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- TextView: Subtitle -->
@@ -42,8 +42,9 @@
     </style>
 
     <style name="AppTheme.TextView.Appearance.Subtitle.Secondary" parent="AppTheme.TextView.Appearance.Standard.Secondary">
-        <item name="textSize">@dimen/sub_title_text_size</item>
-        <item name="android:textSize">@dimen/sub_title_text_size</item>
+        <!--<item name="textSize">@dimen/sub_title_text_size</item>
+        <item name="android:textSize">@dimen/sub_title_text_size</item>-->
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- TextView: Standard Text -->
@@ -58,9 +59,12 @@
     </style>
 
     <style name="AppTheme.TextView.Appearance.Standard.Primary.Italic" parent="AppTheme.TextView.Appearance.Standard.Primary">
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="AppTheme.TextView.Appearance.Standard.Primary.Min" parent="AppTheme.TextView.Appearance.Standard.Primary">
+        <item name="textSize">@dimen/min_text_size</item>
+        <item name="android:textSize">@dimen/min_text_size</item>
     </style>
 
     <style name="AppTheme.TextView.Appearance.Standard.Secondary" parent="AppTheme.TextView.Appearance.Standard.Primary">
@@ -69,8 +73,6 @@
     </style>
 
     <style name="AppTheme.TextView.Appearance.Standard.Secondary.Italic" parent="AppTheme.TextView.Appearance.Standard.Secondary">
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textStyle">italic</item>
     </style>
 

@@ -33,21 +33,27 @@ class NutritionFactsHolder(private val viewBinding: RecyclerViewItemNutritionFac
     private val context = itemView.context
 
     fun updateItem(nutrient: Nutrient, showServing: Boolean) {
+        val entitledTextView = viewBinding.recyclerViewItemNutritionFactsEntitledTextView
+
         // Pour les sous-nutriments
         if(nutrient.entitled == NutritionFactsEnum.SATURATED_FAT ||
             nutrient.entitled == NutritionFactsEnum.SUGARS ||
             nutrient.entitled == NutritionFactsEnum.STARCH ||
             nutrient.entitled == NutritionFactsEnum.SODIUM){
 
-            viewBinding.root.setBackground(R.attr.colorRow)
-            val leftPadding = context.resources.getDimension(R.dimen.standard_margin).toInt()
-            viewBinding.recyclerViewItemNutritionFactsEntitledTextView.setPadding(leftPadding,
-                viewBinding.recyclerViewItemNutritionFactsEntitledTextView.paddingTop,
-                viewBinding.recyclerViewItemNutritionFactsEntitledTextView.paddingRight,
-                viewBinding.recyclerViewItemNutritionFactsEntitledTextView.paddingBottom)
+            viewBinding.root.setBackground(R.attr.colorSurfaceContainerLow)
+            val leftPadding = context.resources.getDimension(R.dimen.x_large_margin).toInt()
+            entitledTextView.setPadding(
+                leftPadding,
+                entitledTextView.paddingTop,
+                entitledTextView.paddingRight,
+                entitledTextView.paddingBottom
+            )
+        } else {
+            viewBinding.root.setBackground(R.attr.colorSurfaceContainer)
         }
 
-        viewBinding.recyclerViewItemNutritionFactsEntitledTextView.text = context.getString(nutrient.entitled.stringResource)
+        entitledTextView.text = context.getString(nutrient.entitled.stringResource)
 
         viewBinding.recyclerViewItemNutritionFacts100gValueTextView.text = nutrient.values.getValue100gString()
 

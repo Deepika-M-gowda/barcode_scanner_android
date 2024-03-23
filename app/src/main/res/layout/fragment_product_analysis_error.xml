@@ -44,7 +44,7 @@
             android:id="@+id/fragment_product_analysis_error_information_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
         <RelativeLayout
             android:id="@+id/fragment_product_analysis_error_message_layout"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
             </FrameLayout>
 

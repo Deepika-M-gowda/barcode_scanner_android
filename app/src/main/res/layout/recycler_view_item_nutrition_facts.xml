@@ -14,7 +14,7 @@
         android:id="@+id/recycler_view_item_nutrition_facts_entitled_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight=".3"
+        android:layout_weight=".4"
         android:textAlignment="textStart"
         android:textIsSelectable="true"
         style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
@@ -26,7 +26,7 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Italic" />
+        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
     <TextView
         android:id="@+id/recycler_view_item_nutrition_facts_serving_value_text_view"
@@ -35,5 +35,5 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Italic" />
+        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 </LinearLayout>

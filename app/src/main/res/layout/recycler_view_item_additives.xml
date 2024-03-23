@@ -68,7 +68,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary.Italic" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
     </RelativeLayout>
 

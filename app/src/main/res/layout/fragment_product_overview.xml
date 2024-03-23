@@ -55,7 +55,7 @@
                 android:layout_below="@id/fragment_product_overview_title_text_view"
                 android:layout_alignStart="@id/fragment_product_overview_title_text_view"
                 android:textIsSelectable="true"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
             <TextView
                 android:id="@+id/fragment_product_overview_subtitle_2_text_view"

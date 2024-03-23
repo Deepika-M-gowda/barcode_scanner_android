@@ -57,7 +57,7 @@
                         android:layout_marginStart="@dimen/standard_margin"
                         android:textAlignment="viewStart"
                         android:text="@string/barcode_qr_code_label"
-                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"
 
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"

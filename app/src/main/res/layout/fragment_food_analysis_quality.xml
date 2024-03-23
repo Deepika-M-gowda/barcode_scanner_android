@@ -34,7 +34,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/fragment_food_product_quality_title_text_view"
-                            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+                            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
                 </RelativeLayout>
 
@@ -57,6 +57,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
 </com.atharok.barcodescanner.presentation.customView.ExpandableCardView>

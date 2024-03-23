@@ -6,21 +6,16 @@
     <color name="overlay_mask">#bf000000</color>
     <color name="icon_background">#ff22272f</color>
 
-    <color name="lightColorSurfaceContainer">#0D000000</color>
-    <color name="darkColorSurfaceContainer">#0DFFFFFF</color>
-
     <!-- Indicative Color -->
     <color name="light_color_positive">#46c705</color>
     <color name="light_color_medium">#e4be00</color>
     <color name="light_color_negative">#e40000</color>
     <color name="light_color_unknown">#808080</color>
-    <color name="light_table_row">#0d000000</color>
 
     <color name="dark_color_positive">#88d867</color>
     <color name="dark_color_medium">#e7ca3f</color>
     <color name="dark_color_negative">#ff795b</color>
     <color name="dark_color_unknown">#bfbfbf</color>
-    <color name="dark_table_row">#33000000</color>
 
     <!-- Theme Color -->
 

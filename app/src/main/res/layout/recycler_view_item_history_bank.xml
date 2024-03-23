@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_history_bank_delete_icon_image_view"
             android:text="@string/delete_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
         <ImageView
             android:id="@+id/recycler_view_item_history_bank_delete_icon_image_view"

@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_food_analysis_labels_image_recycler_view_layout"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
     </RelativeLayout>
 

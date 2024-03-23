@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recycler_view_item_applications_title_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
 
     </RelativeLayout>
 

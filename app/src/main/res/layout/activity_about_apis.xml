@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_what_is_an_api_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_what_is_api_description_text_view"
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_barcode_types_concerned_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_barcode_types_concerned_description_text_view"
@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_product_types_supported_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_product_types_supported_food_text_view"
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_some_additional_information_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_some_additional_information_description_1_text_view"
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_automatic_search_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_automatic_search_description_text_view"
@@ -249,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_manual_search_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_manual_search_description_text_view"
@@ -275,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/thin_margin"
                     android:text="@string/preferences_information_about_remote_api_about_books_title"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Min"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
 
                 <TextView
                     android:id="@+id/activity_about_apis_about_books_description_text_view"

@@ -5,8 +5,6 @@
     <attr name="colorMedium" format="color"/>
     <attr name="colorNegative" format="color"/>
     <attr name="colorUnknown" format="color"/>
-    <!-- For Nutrition Table -->
-    <attr name="colorRow" format="color"/>
 
     <declare-styleable name="ScanOverlay">
         <attr name="viewfinder_radius" format="dimension" />

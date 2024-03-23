@@ -20,7 +20,7 @@
             android:layout_toStartOf="@id/recycler_view_item_history_barcode_delete_icon_image_view"
             android:textAlignment="viewStart"
             android:text="@string/delete_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
         <ImageView
             android:id="@+id/recycler_view_item_history_barcode_delete_icon_image_view"
@@ -79,7 +79,7 @@
                         android:textAlignment="viewStart"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
                     <TextView
                         android:id="@+id/recycler_view_item_history_barcode_format_text_view"
@@ -124,7 +124,7 @@
                             android:textAlignment="viewStart"
                             android:ellipsize="end"
                             android:maxLines="1"
-                            style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+                            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
                         <ImageView
                             android:id="@+id/recycler_view_item_history_barcode_origin_flag_image_view"

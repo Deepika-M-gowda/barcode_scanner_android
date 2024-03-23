@@ -31,7 +31,7 @@
             android:layout_toEndOf="@id/template_item_barcode_creator_image_view"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
 
     </RelativeLayout>
 
