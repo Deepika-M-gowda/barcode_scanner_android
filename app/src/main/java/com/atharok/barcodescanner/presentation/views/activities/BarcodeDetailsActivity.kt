@@ -20,6 +20,7 @@
 
 package com.atharok.barcodescanner.presentation.views.activities
 
+import android.content.ClipboardManager
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -33,6 +34,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.LiveData
+import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.extensions.getDisplayName
 import com.atharok.barcodescanner.common.extensions.parcelable
@@ -70,6 +72,7 @@ import java.util.Date
 class BarcodeDetailsActivity : BaseActivity() {
 
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
+    private var intentOpenClipboardText = false
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
@@ -145,6 +148,15 @@ class BarcodeDetailsActivity : BaseActivity() {
         alertDialog?.dismiss()
     }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus && intentOpenClipboardText) {
+            // An intent was sent to open the clipboard as a QR code
+            intentOpenClipboardText = false
+            changeContentsToClipboard()
+        }
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(BARCODE_IMAGE_FRONT_COLOR_KEY, properties.frontColor)
         outState.putInt(BARCODE_IMAGE_BACKGROUND_COLOR_KEY, properties.backgroundColor)
@@ -155,8 +167,8 @@ class BarcodeDetailsActivity : BaseActivity() {
     }
 
     private fun getIntentStringValue(): String? {
-        return if(intent?.action == Intent.ACTION_SEND){
-            when (intent.type) {
+        return when(intent?.action) {
+            Intent.ACTION_SEND -> when (intent.type) {
                 "text/plain" -> intent.getStringExtra(Intent.EXTRA_TEXT)
                 "text/x-vcard" -> {
                     intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)?.let { vCardText: String ->
@@ -183,7 +195,12 @@ class BarcodeDetailsActivity : BaseActivity() {
                 "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
-        } else intent.getStringExtra(BARCODE_CONTENTS_KEY)
+            "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> {
+                intentOpenClipboardText = true
+                ""
+            }
+            else -> intent.getStringExtra(BARCODE_CONTENTS_KEY)
+        }
     }
 
     private fun getBarcodeFormat(): BarcodeFormat {
@@ -324,5 +341,44 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     private fun showDialog(@StringRes titleRes: Int, message: String) {
         alertDialog = showSimpleDialog(this, titleRes, message)
+    }
+
+    // ---- Clipboard ----
+
+    private fun changeContentsToClipboard() {
+        val text = getClipboardContent()
+
+        if (text.isNullOrEmpty()) {
+            Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
+            // TODO: Should I call this.finish() here? I think so
+            this.finish()
+        } else {
+            properties.apply {
+                this.contents = text
+            }
+            regenerateBitmap()
+
+            // TODO: This cannot be the right way to do this, but it does work
+            replaceFragment(
+                containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
+                fragment = BarcodeImageEditorFragment.newInstance(properties),
+            )
+        }
+    }
+
+    private fun getClipboardContent(): String? {
+        val clipboard: ClipboardManager = get()
+        if (clipboard.hasPrimaryClip()) {
+            val data = clipboard.primaryClip
+            if ((data?.itemCount ?: 0) > 0) {
+                val text = data?.getItemAt(0)?.coerceToText(this)?.trim() ?: ""
+                if (text.isNotEmpty()) {
+                    return text.toString()
+                }
+            }
+        }
+
+        // The clipboard is empty, or we do not have access to see it
+        return null
     }
 }

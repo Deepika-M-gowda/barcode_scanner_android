@@ -15,15 +15,15 @@
     </shortcut>
 
     <shortcut
-        android:shortcutId="scanFromImage"
+        android:shortcutId="qr_clipboard"
         android:enabled="true"
-        android:icon="@drawable/ic_shortcut_scan_from_image"
-        android:shortcutShortLabel="@string/intent_filter_scan_by_image"
-        android:shortcutLongLabel="@string/intent_filter_scan_by_image">
+        android:icon="@drawable/ic_shortcut_create"
+        android:shortcutShortLabel="@string/title_qr_code_creator"
+        android:shortcutLongLabel="@string/title_qr_code_creator">
         <intent
-            android:action="android.intent.action.VIEW"
+            android:action="com.atharok.barcodescanner.CREATE_FROM_CLIPBOARD"
             android:targetPackage="com.atharok.barcodescanner"
-            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeScanFromImageShortcutActivity"
+            android:targetClass="com.atharok.barcodescanner.presentation.views.activities.BarcodeDetailsActivity"
             />
     </shortcut>
 
