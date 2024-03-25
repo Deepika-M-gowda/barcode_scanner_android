@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.content.ClipboardManager
+import android.content.DialogInterface.OnClickListener
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -72,7 +73,6 @@ import java.util.Date
 class BarcodeDetailsActivity : BaseActivity() {
 
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
-    private var intentOpenClipboardText = false
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
 
@@ -130,6 +130,14 @@ class BarcodeDetailsActivity : BaseActivity() {
             }
         }
 
+        if(!shouldCreateFromClipboard()) {
+            configureFragments()
+        }
+
+        setContentView(viewBinding.root)
+    }
+
+    private fun configureFragments() {
         replaceFragment(
             containerViewId = viewBinding.activityBarcodeDetailsImageLayout.id,
             fragment = barcodeImageFragment,
@@ -139,9 +147,9 @@ class BarcodeDetailsActivity : BaseActivity() {
             containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
             fragment = barcodeImageEditorFragment,
         )
-
-        setContentView(viewBinding.root)
     }
+
+    private fun shouldCreateFromClipboard(): Boolean = intent?.action == "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD"
 
     override fun onDestroy() {
         super.onDestroy()
@@ -150,9 +158,7 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        if (hasFocus && intentOpenClipboardText) {
-            // An intent was sent to open the clipboard as a QR code
-            intentOpenClipboardText = false
+        if (hasFocus && shouldCreateFromClipboard()) {
             changeContentsToClipboard()
         }
     }
@@ -195,10 +201,7 @@ class BarcodeDetailsActivity : BaseActivity() {
                 "text/calendar" -> intent.parcelable(Intent.EXTRA_STREAM, Uri::class.java)?.read(this)
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
-            "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> {
-                intentOpenClipboardText = true
-                ""
-            }
+            "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> getClipboardContent()
             else -> intent.getStringExtra(BARCODE_CONTENTS_KEY)
         }
     }
@@ -212,7 +215,7 @@ class BarcodeDetailsActivity : BaseActivity() {
         return when(barcodeFormat) {
             BarcodeFormat.QR_CODE -> {
                 val qrCodeErrorCorrectionLevelString: String? = intent.getStringExtra(QR_CODE_ERROR_CORRECTION_LEVEL_KEY)
-                if(qrCodeErrorCorrectionLevelString!=null) {
+                if(qrCodeErrorCorrectionLevelString != null) {
                     QrCodeErrorCorrectionLevel.valueOf(qrCodeErrorCorrectionLevelString)
                 } else {
                     settingsManager.getQrCodeErrorCorrectionLevel()
@@ -339,8 +342,8 @@ class BarcodeDetailsActivity : BaseActivity() {
 
     // ---- AlertDialog ----
 
-    private fun showDialog(@StringRes titleRes: Int, message: String) {
-        alertDialog = showSimpleDialog(this, titleRes, message)
+    private fun showDialog(@StringRes titleRes: Int, message: String, listener: OnClickListener? = null) {
+        alertDialog = showSimpleDialog(this, titleRes, message, listener)
     }
 
     // ---- Clipboard ----
@@ -349,20 +352,20 @@ class BarcodeDetailsActivity : BaseActivity() {
         val text = getClipboardContent()
 
         if (text.isNullOrEmpty()) {
-            Toast.makeText(applicationContext, "Error: Empty clipboard", Toast.LENGTH_SHORT).show()
-            // TODO: Should I call this.finish() here? I think so
-            this.finish()
-        } else {
-            properties.apply {
-                this.contents = text
-            }
-            regenerateBitmap()
-
-            // TODO: This cannot be the right way to do this, but it does work
-            replaceFragment(
-                containerViewId = viewBinding.activityBarcodeDetailsSettingsLayout.id,
-                fragment = BarcodeImageEditorFragment.newInstance(properties),
+            showDialog(
+                titleRes = R.string.error,
+                message = getString(R.string.clipboard_empty),
+                listener = { _, _ -> finishAndRemoveTask() }
             )
+        } else {
+            // Avoid errors when rotating the screen triggered by savedInstanceState: Bundle? in onCreate(savedInstanceState: Bundle?).
+            // Also, avoid having to retrieve the clipboard content again by passing through onWindowFocusChanged(hasFocus: Boolean).
+            intent.apply {
+                action = null
+                putExtra(BARCODE_CONTENTS_KEY, text)
+            }
+
+            configureFragments()
         }
     }
 

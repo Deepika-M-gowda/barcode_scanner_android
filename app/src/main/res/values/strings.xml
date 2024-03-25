@@ -362,6 +362,7 @@
     <string name="share_image_label">Share image</string>
     <string name="share_text_label">Share text</string>
     <string name="popup_message_confirmation_save_image">Save image?</string>
+    <string name="clipboard_empty">The clipboard is empty.</string>
     <!-- Barcode Image Editor -->
     <string name="image_properties">Image properties</string>
     <string name="colors_label">Colors</string>

@@ -32,7 +32,7 @@ import com.google.zxing.EncodeHintType
 import java.io.Serializable
 
 data class BarcodeImageGeneratorProperties(
-    var contents: String,
+    val contents: String,
     val format: BarcodeFormat,
     val qrCodeErrorCorrectionLevel: QrCodeErrorCorrectionLevel? = null,
     private val size: Int = BARCODE_IMAGE_DEFAULT_SIZE,
