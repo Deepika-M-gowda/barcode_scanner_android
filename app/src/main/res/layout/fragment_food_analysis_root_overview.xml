@@ -25,19 +25,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <!-- Ingredients Analysis (Veggie and Palm Oil) -->
-            <FrameLayout
-                android:id="@+id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_overview_frame_layout" />
-
             <!-- Product Quality -->
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout">
+                android:layout_below="@id/fragment_food_analysis_root_overview_overview_frame_layout">
 
                 <TextView
                     android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view"
@@ -70,11 +63,18 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_food_analysis_root_overview_quality_nova_group_frame_layout" />
 
+            <!-- Ingredients Analysis (Veggie and Palm Oil) -->
+            <FrameLayout
+                android:id="@+id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fragment_food_analysis_root_overview_quality_eco_score_frame_layout" />
+
             <FrameLayout
                 android:id="@+id/fragment_food_analysis_root_overview_details_entitled_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fragment_food_analysis_root_overview_quality_eco_score_frame_layout">
+                android:layout_below="@id/fragment_food_analysis_root_overview_veggie_analysis_frame_layout">
 
                 <TextView
                     android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view"

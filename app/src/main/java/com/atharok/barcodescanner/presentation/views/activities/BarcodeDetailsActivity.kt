@@ -61,7 +61,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEdito
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import ezvcard.Ezvcard
-import ezvcard.VCard
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf

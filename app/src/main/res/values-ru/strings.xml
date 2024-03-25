@@ -148,7 +148,7 @@
     <string name="eco_score_description_unknown">Воздействие на окружающую среду неизвестно</string>
     <!-- Details -->
     <string name="details_label">Подробности</string>
-    <string name="ingredients_analysis_label">Анализ ингредиентов: </string>
+    <string name="ingredients_analysis_label">Анализ ингредиентов</string>
     <string name="labels_label">Этикетки</string>
     <string name="origins_label">Происхождение ингредиентов</string>
     <string name="categories_label">Категории</string>

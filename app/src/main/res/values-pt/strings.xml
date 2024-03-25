@@ -159,7 +159,7 @@
     <string name="country_nz">Nova Zelândia</string>
     <string name="preferences_color_purple">Roxo</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
-    <string name="ingredients_analysis_label">Análise dos ingredientes:</string>
+    <string name="ingredients_analysis_label">Análise dos ingredientes</string>
     <string name="barcode_ean_8_label">EAN 8</string>
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="barcode_search_error_label">URL não suportada</string>

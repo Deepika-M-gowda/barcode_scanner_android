@@ -483,7 +483,7 @@
     <string name="eco_score_description_e">Zeer hoge impact op het milieu</string>
     <string name="details_label">Details</string>
     <string name="eco_score_description_unknown">Onbekend milieueffect</string>
-    <string name="ingredients_analysis_label">Analyse van ingrediënten:</string>
+    <string name="ingredients_analysis_label">Analyse van ingrediënten</string>
     <string name="labels_label">Labels</string>
     <string name="origins_label">Oorsprong ingrediënten</string>
     <string name="categories_label">Categorieën</string>

@@ -76,7 +76,7 @@
     <string name="eco_score_description_c">Impact moderat asupra mediului</string>
     <string name="eco_score_description_d">Impact ridicat asupra mediului</string>
     <string name="eco_score_description_e">Impact foarte mare asupra mediului</string>
-    <string name="ingredients_analysis_label">Analiza ingredientelor:</string>
+    <string name="ingredients_analysis_label">Analiza ingredientelor</string>
     <string name="details_label">Detalii</string>
     <string name="labels_label">Etichete</string>
     <string name="origins_label">Originea ingredientelor</string>

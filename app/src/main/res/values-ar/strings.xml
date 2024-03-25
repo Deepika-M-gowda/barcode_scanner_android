@@ -231,7 +231,7 @@
     <string name="country_nz">نيوزيلندا</string>
     <string name="preferences_color_purple">أرجواني</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
-    <string name="ingredients_analysis_label">تحليل المكونات:</string>
+    <string name="ingredients_analysis_label">تحليل المكونات</string>
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="barcode_search_error_label">عنوان URL غير مدعوم</string>
     <string name="qr_code_text_input_edit_text_hint_epc_amount">كمية</string>

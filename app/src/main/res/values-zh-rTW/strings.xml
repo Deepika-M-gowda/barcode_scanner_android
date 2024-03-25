@@ -148,7 +148,7 @@
     <string name="eco_score_description_unknown">未知環境影響</string>
     <!-- Details -->
     <string name="details_label">詳情</string>
-    <string name="ingredients_analysis_label">原料分析：</string>
+    <string name="ingredients_analysis_label">原料分析</string>
     <string name="labels_label">標籤</string>
     <string name="origins_label">原料</string>
     <string name="categories_label">分類</string>

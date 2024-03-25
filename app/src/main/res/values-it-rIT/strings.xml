@@ -130,7 +130,7 @@
     <string name="eco_score_description_e">Impatto ambientale molto alto</string>
     <string name="eco_score_description_unknown">Impatto ambientale sconosciuto</string>
     <string name="details_label">Dettagli</string>
-    <string name="ingredients_analysis_label">Analisi degli ingredienti:</string>
+    <string name="ingredients_analysis_label">Analisi degli ingredienti</string>
     <string name="labels_label">Etichette</string>
     <string name="origins_label">Origine degli ingredienti</string>
     <string name="categories_label">Categorie</string>

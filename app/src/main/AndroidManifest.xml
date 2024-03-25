@@ -87,7 +87,7 @@
             android:label="@string/information_label" />
         <activity
             android:name=".presentation.views.activities.VeggieActivity"
-            android:label="@string/veggie_label" />
+            android:label="@string/ingredients_analysis_label" />
         <activity
             android:name=".presentation.views.activities.BarcodeDetailsActivity"
             android:exported="true"

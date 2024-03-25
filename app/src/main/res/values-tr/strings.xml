@@ -149,7 +149,7 @@
     <string name="eco_score_description_unknown">Çevresel etki bilinmiyor</string>
     <!-- Details -->
     <string name="details_label">Detaylar</string>
-    <string name="ingredients_analysis_label">İçindekilerin analizi: </string>
+    <string name="ingredients_analysis_label">İçindekilerin analizi</string>
     <string name="labels_label">Etiketler</string>
     <string name="origins_label">İçindekilerin menşei</string>
     <string name="categories_label">Kategoriler</string>

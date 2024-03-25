@@ -148,7 +148,7 @@
     <string name="eco_score_description_unknown">Nieznany wpływ na środowisko</string>
     <!-- Details -->
     <string name="details_label">Szczegóły</string>
-    <string name="ingredients_analysis_label">Anazliza składników: </string>
+    <string name="ingredients_analysis_label">Anazliza składników</string>
     <string name="labels_label">Etykiety</string>
     <string name="origins_label">Pochodzenie składników</string>
     <string name="categories_label">Kategorie</string>
