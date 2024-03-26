@@ -109,8 +109,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         configureRecyclerView()
 
         databaseBarcodeViewModel.barcodeList.observe(viewLifecycleOwner) {
-
-            barcodeItemSelected.clear()
+            barcodeItemsSelected.clear()
             barcodes = it
             adapter.updateData(it)
 
@@ -141,9 +140,9 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when(menuItem.itemId){
                 R.id.menu_history_delete_all -> {
-                    if(barcodeItemSelected.isEmpty()){
+                    if(barcodeItemsSelected.isEmpty()){
                         showDeleteAllConfirmationDialog()
-                    }else{
+                    } else {
                         showDeleteSelectedItemsConfirmationDialog()
                     }
                     true
@@ -156,7 +155,6 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-
     private fun configureRecyclerView() {
         val recyclerView = viewBinding.fragmentMainHistoryRecyclerView
 
@@ -166,7 +164,6 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
         recyclerView.addItemDecoration(decoration)
-
 
         val itemTouchHelperCallback =
             CustomItemTouchHelperCallback(
@@ -187,7 +184,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     // ---- HistoryItemAdapter.OnItemClickListener Implementation ----
 
-    private val barcodeItemSelected by lazy { mutableListOf<Barcode>() }
+    private val barcodeItemsSelected by lazy { mutableListOf<Barcode>() }
 
     override fun onItemClick(view: View?, barcode: Barcode) {
         startBarcodeAnalysisActivity(barcode)
@@ -195,13 +192,13 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     override fun onItemSelect(view: View?, barcode: Barcode, isSelected: Boolean) {
         if(isSelected){
-            barcodeItemSelected.add(barcode)
+            barcodeItemsSelected.add(barcode)
         }else{
-            barcodeItemSelected.remove(barcode)
+            barcodeItemsSelected.remove(barcode)
         }
     }
 
-    override fun isSelectedMode(): Boolean = barcodeItemSelected.isNotEmpty()
+    override fun isSelectedMode(): Boolean = barcodeItemsSelected.isNotEmpty()
 
     // ---- HistoryItemTouchHelperListener Implementation ----
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
@@ -228,7 +225,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     private fun showDeleteSelectedItemsConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
-            databaseBarcodeViewModel.deleteBarcodes(barcodeItemSelected)
+            databaseBarcodeViewModel.deleteBarcodes(barcodeItemsSelected)
         }
     }
 
@@ -272,7 +269,9 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
     }
 
     private fun export(uri: Uri, fileFormat: FileFormat) {
-        barcodes?.let { barcodes ->
+        val barcodesToExport = if(barcodeItemsSelected.isEmpty()) barcodes else barcodeItemsSelected
+
+        barcodesToExport?.let { barcodes ->
             databaseBarcodeViewModel.exportToFile(barcodes, fileFormat, uri).observe(viewLifecycleOwner) {
                 when(it) {
                     is Resource.Progress -> {}
@@ -280,6 +279,10 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
                         when(it.data) {
                             true -> showSnackbar(getString(R.string.snack_bar_message_file_export_success))
                             else -> showSnackbar(getString(R.string.snack_bar_message_file_export_error))
+                        }
+                        if(barcodeItemsSelected.isNotEmpty()) {
+                            barcodeItemsSelected.clear()
+                            adapter.unselectAll()
                         }
                     }
                     is Resource.Failure -> showSnackbar(getString(R.string.snack_bar_message_file_export_error))

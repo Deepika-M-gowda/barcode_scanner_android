@@ -57,4 +57,12 @@ class BarcodeHistoryItemAdapter(private val callback: OnBarcodeItemListener): Re
     }
     
     fun getBarcode(position: Int): Barcode = this.items[position].barcode
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun unselectAll() {
+        items.forEach {
+            it.isSelected = false
+        }
+        this.notifyDataSetChanged()
+    }
 }
