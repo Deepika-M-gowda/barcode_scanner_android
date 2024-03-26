@@ -28,6 +28,7 @@
     <string name="title_settings">Paramètres</string>
     <string name="title_qr_code_creator">Générer un QR Code</string>
     <string name="title_bar_code_creator">Générer un code-barres</string>
+    <string name="create_qr_from_clipboard">Générer un QR Code à partir du presse-papiers</string>
     <string name="information_label">Informations</string>
     <string name="barcode_label">Code-barres</string>
     <string name="download_from_api_label">Télécharger à partir des API</string>
@@ -570,6 +571,9 @@
     <!-- Settings: Additional options -->
     <string name="preferences_additional_options">Options supplémentaires</string>
     <string name="preferences_display_barcode_image_results_view">Afficher l\'image du code-barres dans la vue des résultats</string>
+    <!-- Shortcuts -->
+    <string name="shortcuts">Raccourcis</string>
+    <string name="shortcuts_info">Organisez l\'ordre des raccourcis selon vos préférences.</string>
     <!-- About Settings -->
     <string name="preferences_about_title">À propos</string>
     <string name="preferences_about_permissions_label">Permissions</string>

@@ -62,6 +62,7 @@ import com.atharok.barcodescanner.data.repositories.BeautyProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.BookProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.CountriesRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.CustomUrlRepositoryImpl
+import com.atharok.barcodescanner.data.repositories.DynamicShortcutRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.FileStreamRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.FoodProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.ImageExportRepositoryImpl
@@ -70,6 +71,7 @@ import com.atharok.barcodescanner.data.repositories.InstalledAppsRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.LabelsRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.MusicProductRepositoryImpl
 import com.atharok.barcodescanner.data.repositories.PetFoodProductRepositoryImpl
+import com.atharok.barcodescanner.data.shortcuts.DynamicShortcutsHandler
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeFormatDetails
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
@@ -94,6 +96,7 @@ import com.atharok.barcodescanner.domain.repositories.BeautyProductRepository
 import com.atharok.barcodescanner.domain.repositories.BookProductRepository
 import com.atharok.barcodescanner.domain.repositories.CountriesRepository
 import com.atharok.barcodescanner.domain.repositories.CustomUrlRepository
+import com.atharok.barcodescanner.domain.repositories.DynamicShortcutRepository
 import com.atharok.barcodescanner.domain.repositories.FileStreamRepository
 import com.atharok.barcodescanner.domain.repositories.FoodProductRepository
 import com.atharok.barcodescanner.domain.repositories.ImageExportRepository
@@ -105,12 +108,14 @@ import com.atharok.barcodescanner.domain.repositories.PetFoodProductRepository
 import com.atharok.barcodescanner.domain.usecases.DatabaseBankUseCase
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
 import com.atharok.barcodescanner.domain.usecases.DatabaseCustomUrlUseCase
+import com.atharok.barcodescanner.domain.usecases.DynamicShortcutUseCase
 import com.atharok.barcodescanner.domain.usecases.ExternalFoodProductDependencyUseCase
 import com.atharok.barcodescanner.domain.usecases.ImageManagerUseCase
 import com.atharok.barcodescanner.domain.usecases.ProductUseCase
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseCustomUrlViewModel
+import com.atharok.barcodescanner.presentation.viewmodel.DynamicShortcutViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.InstalledAppsViewModel
@@ -332,6 +337,10 @@ val viewModelModule: Module = module {
     viewModel {
         ImageManagerViewModel(get<ImageManagerUseCase>())
     }
+
+    viewModel {
+        DynamicShortcutViewModel(get<DynamicShortcutUseCase>())
+    }
 }
 
 val useCaseModule: Module = module {
@@ -367,6 +376,8 @@ val useCaseModule: Module = module {
     }
 
     factory { ImageManagerUseCase(get<ImageGeneratorRepository>(), get<ImageExportRepository>()) }
+
+    factory { DynamicShortcutUseCase(get<DynamicShortcutRepository>()) }
 }
 
 val repositoryModule: Module = module {
@@ -440,6 +451,10 @@ val repositoryModule: Module = module {
     }
 
     single<FileStreamRepository> { FileStreamRepositoryImpl(get<FileStream>()) }
+
+    single<DynamicShortcutRepository> {
+        DynamicShortcutRepositoryImpl(get<DynamicShortcutsHandler>())
+    }
 }
 
 val dataModule: Module = module {
@@ -499,6 +514,8 @@ val dataModule: Module = module {
     single { BitmapSharer(androidContext()) }
 
     single { FileStream(androidContext()) }
+
+    single { DynamicShortcutsHandler(androidContext()) }
 }
 
 val fragmentsModule = module {

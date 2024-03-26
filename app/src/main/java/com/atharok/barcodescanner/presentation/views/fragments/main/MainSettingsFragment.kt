@@ -48,6 +48,7 @@ import com.atharok.barcodescanner.presentation.views.activities.AboutPermissions
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlListActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
+import com.atharok.barcodescanner.presentation.views.activities.ShortcutsActivity
 import java.util.Locale
 import kotlin.reflect.KClass
 
@@ -68,8 +69,8 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             configureChangeLanguagePreference()
         }
 
-        //configureThemePreference()
         configureStartActivity(R.string.preferences_custom_search_urls_key, CustomSearchUrlListActivity::class)
+        configureStartActivity(R.string.preferences_shortcuts_key, ShortcutsActivity::class)
         configureStartActivity(R.string.preferences_remote_api_information_about_api_key, AboutApisActivity::class)
         configureStartActivity(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
         configureStartActivity(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)

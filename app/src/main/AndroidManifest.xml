@@ -10,8 +10,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- Pour AddSuggestion -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Pour activer wifi (DEPREACATED) -->
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> -->
-    <!-- -> Refused by Google Play -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> --><!-- -> Refused by Google Play -->
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -29,13 +30,17 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="34">
         <activity
+            android:name=".presentation.views.activities.ShortcutsActivity"
+            android:exported="false"
+            android:label="@string/shortcuts"/>
+        <activity
             android:name=".presentation.views.activities.CustomSearchUrlCreatorActivity"
-            android:label="@string/custom_search_urls_add_url"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/custom_search_urls_add_url" />
         <activity
             android:name=".presentation.views.activities.CustomSearchUrlListActivity"
-            android:label="@string/custom_search_urls_list"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/custom_search_urls_list" />
         <activity
             android:name=".presentation.views.activities.MainActivity"
             android:exported="true">
@@ -49,10 +54,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
         </activity>
         <activity
             android:name=".presentation.views.activities.BarcodeScanOnlyActivity"
