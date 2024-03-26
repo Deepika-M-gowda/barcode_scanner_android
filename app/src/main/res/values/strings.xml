@@ -186,7 +186,7 @@
     <string name="stabilizer_description_label">Stabilizers, thickeners and gelling agents, like agar or pectin (used in jam for example) give foods a firmer texture. While they are not true emulsifiers, they help to stabilize emulsions.</string>
     <string name="additive_no_information_found_label">No information found on this additive!</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Ingredients in terms of vegetarian and vegan status</string>
+    <string name="ingredient_veggie_entitled_label">Ingredients according to vegetarian and vegan status.</string>
     <string name="palm_oil_free_label">Palm oil free</string>
     <string name="contain_palm_oil_label">Contain palm oil</string>
     <string name="may_contain_palm_oil_label">May contain palm oil</string>

@@ -44,11 +44,11 @@ class VeggieActivity : BaseActivity() {
 
         val veggieIngredientsList = foodProduct?.veggieIngredientList
         if(veggieIngredientsList.isNullOrEmpty()) {
-            viewBinding.activityVeggieIngredientsListLayout.visibility = View.GONE
+            viewBinding.activityVeggieNestedScrollView.visibility = View.GONE
             viewBinding.activityVeggieNoIngredientsTextView.visibility = View.VISIBLE
         } else {
             configureRecyclerView(veggieIngredientsList)
-            viewBinding.activityVeggieIngredientsListLayout.visibility = View.VISIBLE
+            viewBinding.activityVeggieNestedScrollView.visibility = View.VISIBLE
             viewBinding.activityVeggieNoIngredientsTextView.visibility = View.GONE
         }
 
@@ -64,8 +64,11 @@ class VeggieActivity : BaseActivity() {
         val linearLayoutManager = LinearLayoutManager(this)
         val dividerItemDecoration = DividerItemDecoration(this, linearLayoutManager.orientation)
         val adapter = VeggieItemAdapter(veggieIngredientList)
-        viewBinding.activityVeggieRecyclerView.adapter = adapter
-        viewBinding.activityVeggieRecyclerView.layoutManager = linearLayoutManager
-        viewBinding.activityVeggieRecyclerView.addItemDecoration(dividerItemDecoration)
+        viewBinding.activityVeggieRecyclerView.let { recyclerView ->
+            recyclerView.isNestedScrollingEnabled = false
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = linearLayoutManager
+            recyclerView.addItemDecoration(dividerItemDecoration)
+        }
     }
 }

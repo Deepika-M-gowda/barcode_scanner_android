@@ -186,7 +186,7 @@
     <string name="stabilizer_description_label">Les stabilisants sont ajoutés à une denrée alimentaire pour permettre de maintenir son état physico-chimique. Les stabilisants comprennent les substances qui permettent de maintenir la dispersion homogène de deux ou plusieurs substances non miscibles, ainsi que les substances qui stabilisent, conservent ou intensifient la couleur d’une denrée alimentaire.</string>
     <string name="additive_no_information_found_label">Aucune information n\'a été trouvée sur cet additif !</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Ingrédients en fonction du caractère végétalien et végétarien</string>
+    <string name="ingredient_veggie_entitled_label">Ingrédients en fonction du caractère végétalien et végétarien.</string>
     <string name="palm_oil_free_label">Sans huile de palme</string>
     <string name="contain_palm_oil_label">Contient de l\'huile de palme</string>
     <string name="may_contain_palm_oil_label">Pourrait contenir de l\'huile de palme</string>

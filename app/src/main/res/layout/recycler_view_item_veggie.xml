@@ -3,10 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/light_margin"
-    android:paddingBottom="@dimen/light_margin"
-    android:paddingStart="@dimen/standard_margin"
-    android:paddingEnd="@dimen/standard_margin"
+    android:paddingVertical="@dimen/standard_margin"
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -28,7 +25,7 @@
         android:textIsSelectable="true"
         style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
 
-    <Space
+    <View
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".1" />
