@@ -732,4 +732,6 @@
     <string name="custom_url_updated">¡URL personalizada actualizada!</string>
     <string name="custom_search_urls_error_url">El término \"%1$s\" debe estar presente en la URL.</string>
     <string name="error_empty_fields">Los campos no deben estar vacíos.</string>
+    <string name="error">Error</string>
+    <string name="create_qr_from_clipboard">Genera un código QR desde el portapapeles</string>
 </resources>
