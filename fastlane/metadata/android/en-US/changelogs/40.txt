@@ -1,0 +1,12 @@
+1.22.0
+
+Full changelog here: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Replacing static shortcuts with dynamic shortcuts (you can configure this in the settings).
+- Added a shortcut to generate a QR code from the clipboard (thanks to Austen).
+- Added the ability to create and use custom search URLs.
+- Added an option to display the barcode image in the results view.
+- Bug fixes.
+- Improved themes, styles, and views.
+- Updated translations (Weblate).
+- Dependencies updated.

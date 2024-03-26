@@ -1,0 +1,12 @@
+1.22.0
+
+Liste complète des modifications ici: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Remplacement des raccourcis statiques par des raccourcis dynamiques (à configurer dans les paramètres).
+- Ajout d'un raccourci pour générer un QR Code à partir du presse-papiers (merci à Austen).
+- Ajout de la possibilité de créer et d'utiliser des URL de recherche personnalisées.
+- Ajout d'une option permettant d'afficher l'image du code-barres dans la vue des résultats.
+- Correction de bugs.
+- Thèmes, styles et vues améliorés.
+- Mise à jour des traductions (Weblate).
+- Mise à jour des dépendances.
