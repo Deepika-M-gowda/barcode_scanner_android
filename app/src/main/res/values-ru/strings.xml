@@ -175,7 +175,7 @@
     <string name="stabilizer_description_label">Стабилизаторы, загустители и желирующие агенты, такие как агар или пектин (используемый, например, в джеме), придают продуктам более упругую текстуру. Хотя они и не являются настоящими эмульгаторами, они способствуют стабилизации эмульсий.</string>
     <string name="additive_no_information_found_label">Информация об этой добавке не найдена!</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Ингредиенты с точки зрения вегетарианского и веганского статуса</string>
+    <string name="ingredient_veggie_entitled_label">Ингредиенты в соответствии с вегетарианским и веганским статусом.</string>
     <string name="palm_oil_free_label">Без пальмового масла</string>
     <string name="contain_palm_oil_label">Содержит пальмовое масло</string>
     <string name="may_contain_palm_oil_label">Может содержать пальмовое масло</string>
@@ -716,4 +716,27 @@
     <string name="colors_label">Цвета</string>
     <string name="height_label">Высота</string>
     <string name="action_modify_barcode">Изменить штрих-код</string>
+    <string name="barcode_search_error_no_compatible_application_found">Не найдено совместимое приложение</string>
+    <string name="preferences_additional_options">Дополнительные параметры</string>
+    <string name="preferences_display_barcode_image_results_view">Показать изображение штрих-кода при просмотре результатов</string>
+    <string name="custom_search_urls">Пользовательские поисковые URL</string>
+    <string name="custom_urls">Пользовательские URL</string>
+    <string name="custom_search_urls_add_url">Добавить URL</string>
+    <string name="custom_search_urls_modify_url">Изменить URL</string>
+    <string name="custom_search_urls_list">Список URL</string>
+    <string name="custom_search_urls_list_is_empty_message">Нет элемента...
+\nВы еще не создали пользовательский URL.</string>
+    <string name="custom_url_deleted">Пользовательский URL удален!</string>
+    <string name="custom_url_added">Пользовательский URL добавлен!</string>
+    <string name="custom_url_updated">Пользовательский URL обновлен!</string>
+    <string name="custom_search_urls_error_url">В URL должно присутствовать выражение \"%1$s\".</string>
+    <string name="error_empty_fields">Поля ввода не должны быть пустыми.</string>
+    <string name="shortcuts">Ярлыки</string>
+    <string name="shortcuts_info">Расположите ярлыки в удобном для вас порядке.</string>
+    <string name="custom_search_urls_add_info">Используйте в URL выражение \"%1$s\". При поиске оно будет заменено содержимым штрих-кода.</string>
+    <string name="examples">Примеры:</string>
+    <string name="error">Ошибка</string>
+    <string name="create_qr_from_clipboard">Создать QR-код из буфера обмена</string>
+    <string name="clipboard_empty">Буфер обмена пуст.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Вы хотите удалить все пользовательские URL?</string>
 </resources>
