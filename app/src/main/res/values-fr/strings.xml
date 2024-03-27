@@ -322,6 +322,7 @@
     <string name="action_call_phone_label">Appeler le numéro</string>
     <string name="action_add_to_calendar">Ajouter à l\'agenda</string>
     <string name="action_add_to_contacts">Ajouter aux contacts</string>
+    <string name="action_share_vcf_file">Partager au format VCF</string>
     <string name="action_show_location">Montrer l\'emplacement</string>
     <string name="action_open_link">Ouvrir le lien</string>
     <string name="action_modify_barcode">Modifier le code-barres</string>

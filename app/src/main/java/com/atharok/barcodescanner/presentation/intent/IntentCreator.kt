@@ -108,6 +108,16 @@ fun createShareTextIntent(context: Context, text: String): Intent {
     return Intent.createChooser(intent, context.getString(R.string.intent_chooser_share_title))
 }
 
+fun createShareVcfFileIntent(context: Context, uri: Uri): Intent {
+    val intent: Intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/x-vcard"
+        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        putExtra(Intent.EXTRA_STREAM, uri)
+    }
+
+    return Intent.createChooser(intent, context.getString(R.string.intent_chooser_share_title))
+}
+
 fun createShareImageIntent(context: Context, uri: Uri): Intent {
     val intent: Intent = Intent(Intent.ACTION_SEND).apply {
         type = "image/png"

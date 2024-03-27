@@ -33,14 +33,10 @@ import java.io.OutputStream
  */
 class BitmapSharer(private val context: Context) {
 
-    companion object {
-        private const val AUTHORITY = "com.atharok.barcodescanner.fileprovider"
-    }
-
     fun share(bitmap: Bitmap): Uri? {
         val file = configureFile()
         val successful = writeBitmap(file, bitmap)
-        return if (successful) FileProvider.getUriForFile(context, AUTHORITY, file) else null
+        return if (successful) FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file) else null
     }
 
     /**
