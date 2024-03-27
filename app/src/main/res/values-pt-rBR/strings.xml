@@ -681,4 +681,5 @@
     <string name="create_qr_from_clipboard">Gerar um código QR da área de transferência</string>
     <string name="clipboard_empty">A área de transferência está vazia.</string>
     <string name="shortcuts_info">Arranje os atalhos na ordem de sua preferência.</string>
+    <string name="action_share_vcf_file">Compartilhar como VCF</string>
 </resources>
