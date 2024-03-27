@@ -130,7 +130,7 @@
     <string name="off_overexposure_risk_high_label">Risco alto de superexposição</string>
     <string name="off_overexposure_risk_none_label">Risco desconhecido de superexposição</string>
     <string name="additive_no_information_found_label">Nenhuma informação encontrada sobre este aditivo!</string>
-    <string name="ingredient_veggie_entitled_label">Ingredientes em termos de estado vegetariano ou vegano</string>
+    <string name="ingredient_veggie_entitled_label">Ingredientes em termos de estado vegetariano ou vegano.</string>
     <string name="palm_oil_free_label">Livre de óleo de palma</string>
     <string name="may_contain_palm_oil_label">Pode conter óleo de palma</string>
     <string name="palm_oil_content_unknown_label">Conteúdo de óleo de palma desconhecido</string>
@@ -676,4 +676,9 @@
     <string name="examples">Exemplos:</string>
     <string name="custom_search_urls_list">Lista de URLs</string>
     <string name="error_empty_fields">Os campos de entrada não podem estar vazios.</string>
+    <string name="error">Erro</string>
+    <string name="shortcuts">Atalhos</string>
+    <string name="create_qr_from_clipboard">Gerar um código QR da área de transferência</string>
+    <string name="clipboard_empty">A área de transferência está vazia.</string>
+    <string name="shortcuts_info">Arranje os atalhos na ordem de sua preferência.</string>
 </resources>
