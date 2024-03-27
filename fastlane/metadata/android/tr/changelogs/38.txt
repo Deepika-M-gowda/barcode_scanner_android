@@ -1,0 +1,11 @@
+1.20.0
+
+Değişiklik günlüğünün tamamı: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Ukraynaca çeviri eklendi (teşekkürler Сергій).
+- Çeviriler güncellendi (Weblate).
+- Bağımlılıklar güncellendi.
+- Bazı Android 14 aygıtlarda kutucukların çalışmaması düzeltildi.
+- Taranan barkodu değiştirme özelliği eklendi.
+- Bazı grafiksel değişiklikler.
+- Birkaç kod geliştirmesi ve iyileştirmesi.

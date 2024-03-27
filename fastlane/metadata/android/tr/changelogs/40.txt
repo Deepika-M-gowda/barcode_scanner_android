@@ -1,0 +1,12 @@
+1.22.0
+
+Değişiklik günlüğünün tamamı: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Sabit kısayollar değişken kısayollarla değiştirildi (bunu ayarlardan yapılandırabilirsiniz).
+- Panodan QR kodu oluşturmak için kısayol eklendi (teşekkürler Austen).
+- Özel arama URL'leri oluşturma ve kullanma özelliği eklendi.
+- Sonuçlar görünümünde barkod görselini görüntülemek için seçenek eklendi.
+- Hata düzeltmeleri.
+- Temalar, biçimler ve görünümler iyileştirildi.
+- Çeviriler güncellendi (Weblate).
+- Bağımlılıklar güncellendi.
