@@ -2,7 +2,7 @@
 <resources>
     <!-- Permission Denied -->
     <string name="camera_permission_denied">Sie haben den Zugriff auf die Kamera verweigert.
-\nSie müssen diese Berechtigung zulassen um einen Barcode scannen zu können.</string>
+\nZum Scannen eines Barcodes ist diese Berechtigung allerdings erforderlich.</string>
     <!-- AlertDialog -->
     <string name="close_dialog_label">Schließen</string>
     <string name="yes_label">Ja</string>
@@ -180,7 +180,7 @@
     <string name="stabilizer_description_label">Stabilisatoren, Verdickungsmittel und Geliermittel, welche Beschaffenheit, Handhabbarkeit, Aroma oder andere Parameter in definierter Weise erhalten.</string>
     <string name="additive_no_information_found_label">Keine Informationen zu diesem Stabilisator gefunden!</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Inhaltsstoffe bezüglich des vegetarischen und veganen Zustands</string>
+    <string name="ingredient_veggie_entitled_label">Zutaten entsprechen dem vegetarischen und veganen Status.</string>
     <string name="palm_oil_free_label">Palmölfrei</string>
     <string name="contain_palm_oil_label">Enthält Palmöl</string>
     <string name="may_contain_palm_oil_label">Kann Palmöl enthalten</string>
@@ -722,4 +722,29 @@
     <string name="height_label">Höhe</string>
     <string name="shapes_label">Formen</string>
     <string name="copy_label">Kopie</string>
+    <string name="custom_search_urls">Benutzerdefinierte Such-URLs</string>
+    <string name="custom_search_urls_add_url">URL hinzufügen</string>
+    <string name="custom_search_urls_modify_url">URL ändern</string>
+    <string name="custom_url_added">Benutzerdefinierte URL hinzugefügt!</string>
+    <string name="custom_url_updated">Benutzerdefinierte URL aktualisiert!</string>
+    <string name="custom_search_urls_add_info">Verwende den Begriff \"%1$s\" in der URL. Dieser Begriff wird bei der Suche durch den Inhalt des Barcodes ersetzt.</string>
+    <string name="examples">Beispiele:</string>
+    <string name="error_empty_fields">Eingabefelder dürfen nicht leer sein.</string>
+    <string name="preferences_additional_options">Zusätzliche Optionen</string>
+    <string name="action_modify_barcode">Barcode ändern</string>
+    <string name="error">Fehler</string>
+    <string name="create_qr_from_clipboard">Erzeugen eines QR-Codes aus der Zwischenablage</string>
+    <string name="shortcuts_info">Ordne die Kürzel in der Reihenfolge an, die du bevorzugst.</string>
+    <string name="custom_urls">Benutzerdefinierte URLs</string>
+    <string name="custom_search_urls_list">URLs Liste</string>
+    <string name="custom_search_urls_list_is_empty_message">Kein Eintrag...
+\nDu hast noch keine benutzerdefinierte URL erstellt.</string>
+    <string name="shortcuts">Kürzel</string>
+    <string name="barcode_search_error_no_compatible_application_found">Keine kompatible Anwendung gefunden</string>
+    <string name="clipboard_empty">Die Zwischenablage ist leer.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Willst du alle benutzerdefinierten URLs löschen?</string>
+    <string name="custom_url_deleted">Benutzerdefinierte URL gelöscht!</string>
+    <string name="custom_search_urls_error_url">Der Begriff \"%1$s\" muss in der URL enthalten sein.</string>
+    <string name="action_share_vcf_file">Teilen als VCF</string>
+    <string name="preferences_display_barcode_image_results_view">Anzeige des Barcode-Bildes in der Ergebnisansicht</string>
 </resources>
