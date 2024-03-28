@@ -1,0 +1,9 @@
+1.12.0
+
+- Traditionelle chinesische Übersetzung hinzugefügt (von plum7x).
+- Aktualisierung von Kotlin (1.8.0). Aktualisierung der Abhängigkeiten.
+- Hinzufügen des Löschens von Bildern, die von der Zuschneideansicht beim Scannen eines Bildes erzeugt werden.
+- Auswahl und Löschen von mehreren Elementen aus der Historie hinzugefügt.
+- Hinzufügen des Löschens eines Elements aus der Ergebnisansicht.
+- Verbesserte Farben und Stile.
+- Der Code wurde verbessert.

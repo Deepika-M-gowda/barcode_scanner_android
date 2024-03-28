@@ -1,0 +1,5 @@
+1.11.0
+
+- Chinesische Übersetzung hinzugefügt (von Hu Shenghao).
+- Kamera-Zoom durch Gesten (mit 2 Fingern und mit Doppeltippen) hinzugefügt (von Hu Shenghao).
+- Verschiedene andere kleine Verbesserungen.
