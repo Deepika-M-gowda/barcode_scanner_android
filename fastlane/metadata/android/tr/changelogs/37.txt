@@ -1,0 +1,11 @@
+1.19.0
+
+Değişiklik günlüğünün tamamı: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Tam Arapça çeviri eklendi (teşekkürler testing150) (Weblate).
+- Çeviriler güncellendi (Weblate).
+- SDK 34 (Android 14) ve bağımlılıklar güncellendi.
+- Oluşturulan barkodların rengini ve boyutunu değiştirme özelliği eklendi.
+- Barkod oluşturma performansı iyileştirildi.
+- Kararlılık iyileştirildi ve birkaç çökme düzeltildi.
+- Birkaç kullanıcı deneyimi/arayüzü iyileştirmesi.

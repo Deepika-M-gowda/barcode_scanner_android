@@ -18,7 +18,9 @@ Funções do app:
 • Busque informações sobre o produto que você escaneou com uma rápida pesquisa em sites diversos como Amazon ou Fnac.
 • Acompanhe todos os seus códigos de barras com a função de histórico.
 • Gere seus próprios códigos de barras
-• Personalize a interface com cores diversas, com um tema escuro ou claro. O app integra funções do Android 12, permitindo ajustar as cores com base em seu papel de parede.
-• Os textos são totalmente traduzidos em português, inglês, espanhol, francês, alemão, polaco, turco, russo e chinês.
+• Personalize a interface com cores diversas, com um tema escuro ou claro. A interface é feita com Material 3 e é compatível com o Material You, permitindo ajustar as cores com base no papel de parede em dispositivos rodando Android 12 e posterior.
+• Os textos são totalmente traduzidos em português, inglês, árabe, espanhol, francês, russo, alemão, turco, italiano, ucraniano, polaco, holandês, romeno e chinês (simplificado e tradicional).
 
 Este app respeita sua privacidade. Ele não contém rastreadores e não coleta seus dados.
+
+O código-fonte está disponível aqui: https://gitlab.com/Atharok/BarcodeScanner

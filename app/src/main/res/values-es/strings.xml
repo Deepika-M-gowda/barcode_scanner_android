@@ -175,7 +175,7 @@
     <string name="stabilizer_description_label">Los estabilizadores, espesantes y gelificantes, como el agar o la pectina (utilizados en la mermelada, por ejemplo) dan a los alimentos una textura más firme. Aunque no son verdaderos emulsionantes, ayudan a estabilizar las emulsiones.</string>
     <string name="additive_no_information_found_label">¡No se ha encontrado información sobre este aditivo!</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">Ingredientes en términos vegetarianos y estado vegano</string>
+    <string name="ingredient_veggie_entitled_label">Ingredientes según seas vegetariano o vegano.</string>
     <string name="palm_oil_free_label">Libre de aceite de palma</string>
     <string name="contain_palm_oil_label">Contiene aceite de palma</string>
     <string name="may_contain_palm_oil_label">Puede contener aceite de palma</string>
@@ -714,4 +714,27 @@
     <string name="height_label">Altura</string>
     <string name="copy_label">Copiar</string>
     <string name="action_modify_barcode">Modificar el código de barras</string>
+    <string name="preferences_additional_options">Opciones adicionales</string>
+    <string name="preferences_display_barcode_image_results_view">Mostrar la imagen del código de barras en la vista de resultados</string>
+    <string name="custom_search_urls">URL de búsqueda personalizada</string>
+    <string name="custom_search_urls_list_is_empty_message">Ningún elemento...
+\nAún no has generado una URL personalizada.</string>
+    <string name="custom_url_added">¡URL personalizada añadida!</string>
+    <string name="examples">Ejemplos:</string>
+    <string name="custom_urls">URL personalizadas</string>
+    <string name="barcode_search_error_no_compatible_application_found">No se ha encontrado ninguna aplicación compatible</string>
+    <string name="custom_search_urls_add_url">Añadir una URL</string>
+    <string name="custom_search_urls_modify_url">Modificar la URL</string>
+    <string name="custom_search_urls_list">Lista de URLs</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">¿Desea eliminar todas las URL personalizadas?</string>
+    <string name="custom_search_urls_add_info">Utilice el término \"%1$s\" en la URL. Este término será sustituido por el contenido del código de barras durante la búsqueda.</string>
+    <string name="custom_url_deleted">¡URL personalizada eliminada!</string>
+    <string name="custom_url_updated">¡URL personalizada actualizada!</string>
+    <string name="custom_search_urls_error_url">El término \"%1$s\" debe estar presente en la URL.</string>
+    <string name="error_empty_fields">Los campos no deben estar vacíos.</string>
+    <string name="error">Error</string>
+    <string name="create_qr_from_clipboard">Genera un código QR desde el portapapeles</string>
+    <string name="clipboard_empty">El portapapeles está vacío.</string>
+    <string name="shortcuts">Atajos</string>
+    <string name="shortcuts_info">Organice los atajos según sus preferencias.</string>
 </resources>

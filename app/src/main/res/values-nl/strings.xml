@@ -641,4 +641,31 @@
     <string name="preferences_color_green">Groen</string>
     <string name="preferences_color_red">Rood</string>
     <string name="preferences_languages_title">Talen</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+    <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
+    <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
+    <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
+    <string name="base_api_open_library_url">https://openlibrary.org</string>
+    <string name="search_engine_google_url">https://www.google.nl/search?q=%1$s</string>
+    <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_amazon_url">https://www.amazon.nl/s?k=%1$s</string>
+    <string name="search_engine_ebay_url">https://www.ebay.nl/sch/i.html?_nkw=%1$s</string>
+    <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
+    <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+    <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
+    <string name="preferences_display_barcode_image_results_view">Afbeelding van de barcode in de resultaten tonen</string>
+    <string name="preferences_additional_options">Overige opties</string>
+    <string name="custom_url_updated">URL is bijgewerkt!</string>
+    <string name="custom_search_urls_error_url">Plaats de term \"%1$s\" op de plek van de zoekopdracht in de URL.</string>
+    <string name="error_empty_fields">Invoervelden mogen niet leeg zijn.</string>
+    <string name="examples">Voorbeelden:</string>
+    <string name="custom_search_urls_add_info">Gebruik de term \"%1$s\" in de URL. Dit zal bij het zoeken worden vervangen door de inhoud van de barcode.</string>
+    <string name="custom_url_added">URL is toegevoegd!</string>
+    <string name="custom_url_deleted">URL is verwijderd!</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Alle aangepaste URL\'s verwijderen?</string>
 </resources>

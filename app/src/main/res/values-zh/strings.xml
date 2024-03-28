@@ -708,7 +708,7 @@
     <string name="barcode_color">条码颜色</string>
     <string name="color_shades_issue">可能无法检测到某些色调。</string>
     <string name="shapes_label">形状</string>
-    <string name="import_json_label">导入（JSON</string>
+    <string name="import_json_label">导入（JSON）</string>
     <string name="keep_proportions">保持比例</string>
     <string name="dimensions_label">方面</string>
     <string name="background_color">背景颜色</string>

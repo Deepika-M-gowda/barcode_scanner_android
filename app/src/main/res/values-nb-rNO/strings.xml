@@ -71,4 +71,15 @@
     <string name="title_scan">Skann</string>
     <string name="qr_code_type_name_web_site">Nettside</string>
     <string name="qr_code_type_name_contact">Kontakt</string>
+    <string name="import_json_label">Importer (JSON)</string>
+    <string name="snack_bar_message_file_export_success">Fil lagret.</string>
+    <string name="snack_bar_message_file_import_success">Fil importert.</string>
+    <string name="off_risk_none_label">Ukjent risiko</string>
+    <string name="off_overexposure_risk_moderate_label">Moderat risiko for overeksponering</string>
+    <string name="off_overexposure_risk_high_label">Høy risiko for overeksponering</string>
+    <string name="stabilizer_description_label">Stabilisatorer, fortykningsmidler og geleringsmidler, som agar og pektin (for eksempel brukt i syltetøy) gir mat fastere form. Selv om de ikke er egentlige emulgatorer, bidrar de til å stabilisere emulsjoner.</string>
+    <string name="off_overexposure_risk_none_label">Ukjent risiko for overeksponering</string>
+    <string name="stabilizer_label">Stabilisator</string>
+    <string name="palm_oil_free_label">Fri for palmeolje</string>
+    <string name="off_overexposure_risk_low_label">Lav risiko for overeksponering</string>
 </resources>

@@ -1,1 +1,1 @@
-﻿Barkod okuyabilen ve oluşturabilen ücretsiz bir uygulamadır.
+Barkod okumanızı ve oluşturmanızı sağlayan açık kaynaklı bir uygulama.

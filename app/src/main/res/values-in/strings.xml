@@ -195,4 +195,18 @@
     <string name="additives_label">Aditif</string>
     <string name="veggie_label">Sayuran</string>
     <string name="off_risk_none_label">Risiko yang tidak diketahui</string>
+    <string name="stabilizer_description_label">Bahan penstabil, pengental dan pembentuk gel, seperti agar-agar atau pektin (yang digunakan dalam selai misalnya) memberikan tekstur yang lebih kencang pada makanan. Meskipun bukan pengemulsi sejati, bahan ini membantu menstabilkan emulsi.</string>
+    <string name="additive_no_information_found_label">Tidak ada informasi yang ditemukan tentang aditif ini!</string>
+    <string name="ingredient_veggie_entitled_label">Bahan-bahan dalam hal istilah vegetarian dan vegan</string>
+    <string name="palm_oil_free_label">Bebas minyak sawit</string>
+    <string name="contain_palm_oil_label">Mengandung minyak kelapa sawit</string>
+    <string name="may_contain_palm_oil_label">Mungkin mengandung minyak kelapa sawit</string>
+    <string name="palm_oil_content_unknown_label">Kandungan minyak sawit tidak diketahui</string>
+    <string name="is_vegan_label">Vegan</string>
+    <string name="no_vegan_label">Bukan vegan</string>
+    <string name="maybe_vegan_label">Mungkin vegan</string>
+    <string name="vegan_status_unknown_label">Status vegan tidak diketahui</string>
+    <string name="off_overexposure_risk_high_label">Risiko tinggi paparan berlebih</string>
+    <string name="off_overexposure_risk_none_label">Risiko paparan berlebih yang tidak diketahui</string>
+    <string name="stabilizer_label">Penstabil</string>
 </resources>

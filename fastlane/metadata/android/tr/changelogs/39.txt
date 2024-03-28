@@ -1,0 +1,9 @@
+1.21.0
+
+Değişiklik günlüğünün tamamı: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Rumence çeviri eklendi (teşekkürler richard01000).
+- Felemenkçe çeviri eklendi (teşekkürler Guillaume).
+- Çeviriler güncellendi (Weblate).
+- Bazı aygıtlarda kamera ile tarama yapılırken tetiklenen istisna düzeltildi.
+- Kotlin sürümü güncellendi.

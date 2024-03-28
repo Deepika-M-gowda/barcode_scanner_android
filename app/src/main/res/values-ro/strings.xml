@@ -658,4 +658,22 @@
     <string name="music_product_tracks_number">%1$s piese</string>
     <string name="preferences_information_about_remote_api_foreword">Înainte</string>
     <string name="image_view_description_flag">Drapel</string>
+    <string name="preferences_additional_options">Opțiuni suplimentare</string>
+    <string name="preferences_display_barcode_image_results_view">Afișați imaginea codului de bare când vizualizați rezultatele</string>
+    <string name="custom_search_urls">Adrese de căutare URL personalizate</string>
+    <string name="custom_urls">Adresă URL personalizată</string>
+    <string name="custom_search_urls_add_url">Adăugați o adresă URL</string>
+    <string name="custom_search_urls_modify_url">Modificați adresa URL</string>
+    <string name="custom_search_urls_list">Listă de adrese URL</string>
+    <string name="custom_search_urls_list_is_empty_message">Nici un articol…
+\nNu ați generat adresa URL personalizată.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Doriți să ștergeți toate adresele URL personalizate?</string>
+    <string name="custom_url_deleted">Adresa URL personalizată a fost ștearsă!</string>
+    <string name="custom_url_added">Adresa URL personalizată a fost adăugată!</string>
+    <string name="custom_url_updated">Adresa URL personalizată a fost actualizată!</string>
+    <string name="custom_search_urls_add_info">Folosiți termenul \"%1$s\" în adresa URL. Acest termen va fi înlocuit cu conținutul codului de bare în timpul căutării.</string>
+    <string name="examples">Exemple:</string>
+    <string name="custom_search_urls_error_url">Termenul \"%1$s\" trebuie să fie prezent în adresa URL.</string>
+    <string name="barcode_search_error_no_compatible_application_found">Nu a fost găsită nicio aplicație compatibilă</string>
+    <string name="error_empty_fields">Câmpurile de intrare nu trebuie să fie goale.</string>
 </resources>

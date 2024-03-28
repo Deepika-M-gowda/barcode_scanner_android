@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Permission Denied -->
-    <string name="camera_permission_denied">您已拒絕存取相機。\n您必須同意授權它以掃描條碼。</string>
+    <string name="camera_permission_denied">您已拒絕存取相機。
+\n您必須授權它以掃描條碼。</string>
     <!-- AlertDialog -->
     <string name="close_dialog_label">關閉</string>
     <string name="yes_label">是</string>
@@ -14,7 +15,7 @@
     <string name="image_view_description_bar_code">條碼</string>
     <string name="image_view_description_icon">圖示</string>
     <string name="image_view_description_product_front">產品圖片</string>
-    <string name="image_view_description_nutriscore">NUTRI-SCORE</string>
+    <string name="image_view_description_nutriscore">營養分數</string>
     <string name="image_view_description_nova_group">NOVA GROUP</string>
     <string name="image_view_description_eco_score">ECO SCORE</string>
     <string name="image_view_description_background">背景</string>
@@ -63,7 +64,7 @@
     <string name="bar_code_type_pet_food">寵物食品</string>
     <string name="bar_code_type_beauty">美容產品</string>
     <string name="bar_code_type_music">音樂</string>
-    <string name="bar_code_type_unknown_music_album_title">未知專輯標題</string>
+    <string name="bar_code_type_unknown_music_album_title">未知專輯名稱</string>
     <string name="bar_code_type_book">書籍</string>
     <string name="bar_code_type_unknown_book_title">未知書名</string>
     <string name="bar_code_type_industrial">工業代碼</string>
@@ -78,12 +79,12 @@
     <string name="qr_code_error_correction_level_name_high">高 (~30%)</string>
     <!-- History -->
     <string name="label_history_empty">沒有掃描紀錄…</string>
-    <string name="snack_bar_message_item_deleted">\"%1$s\" 已被從歷史紀錄中刪除。</string>
+    <string name="snack_bar_message_item_deleted">產品「%1$s」已從歷史紀錄中刪除。</string>
     <string name="popup_message_confirmation_delete_history">刪除所有歷史紀錄？</string>
     <string name="popup_message_confirmation_delete_selected_items_history">刪除選取的項目？</string>
     <string name="menu_item_history_delete">刪除歷史紀錄</string>
     <string name="menu_item_history_delete_from_history">從歷史紀錄中刪除</string>
-    <string name="menu_item_history_removed_from_history">從歷史紀錄中移除！</string>
+    <string name="menu_item_history_removed_from_history">已從歷史紀錄中移除！</string>
     <string name="menu_item_history_add_in_history">加入至歷史紀錄</string>
     <string name="menu_item_history_added_in_history">已加入至歷史紀錄！</string>
     <string name="delete_label">刪除</string>
@@ -98,7 +99,7 @@
     <string name="scan_information_label">對準條碼以掃描</string>
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">搜尋中…</string>
-    <string name="scan_error_label">搜尋時錯誤！</string>
+    <string name="scan_error_label">掃描時發生錯誤！</string>
     <string name="scan_error_short_information_label">搜尋資訊時發生錯誤！</string>
     <string name="barcode_scanned_label">%1$s 已掃描！</string>
     <string name="barcode_found_on_label">發現 %1$s！</string>
@@ -107,14 +108,14 @@
     <string name="about_barcode_information_label">條碼資訊</string>
     <string name="about_barcode_label">關於條碼</string>
     <string name="about_barcode_format_label">格式：%1$s</string>
-    <string name="about_barcode_content_label">內容：%1$s</string>
+    <string name="about_barcode_content_label">條碼：%1$s</string>
     <string name="about_barcode_origin_label">來源：</string>
     <!-- Product -->
     <string name="product_search_label">產品搜尋</string>
     <string name="no_product_found_label">沒有發現產品！</string>
     <!-- Barcode Searching Error -->
     <string name="warning_label">警告</string>
-    <string name="scan_error_information_label">在遠端 API 搜尋資訊時發生錯誤…請檢查您的網連接與應用程式的權限！如果問題依然存在，應該是伺服器問題。</string>
+    <string name="scan_error_information_label">在遠端 API 搜尋資訊時發生錯誤…請檢查您的網路連接和應用程式的權限！如果問題仍然存在，則應該是伺服器問題。</string>
     <string name="scan_error_internet_information_label">沒有產品檢索的資訊，您似乎沒有連接到網路！</string>
     <string name="scan_error_message_label">錯誤訊息：</string>
     <!-- Food Beauty and Pet Food Product -->
@@ -123,14 +124,14 @@
     <string name="nutrition_facts_tab_label">營養</string>
     <!-- Overview -->
     <string name="quality_label">產品品質</string>
-    <string name="nutriscore_entitled_label">Nutri-Score</string>
+    <string name="nutriscore_entitled_label">營養分數</string>
     <string name="nutriscore_description">Nutri-Score 是一個標示告知食物的營養價值，評級從 A 到 E。此分數考慮了營養成分、<b>推廣食物</b> (纖維、蛋白質、水果、蔬菜、豆類、油籽) 與<b>限制食物</b> (能量、飽和脂肪酸、糖、鹽)。</string>
     <string name="nutriscore_description_a">非常高營養價值</string>
     <string name="nutriscore_description_b">高營養價值</string>
     <string name="nutriscore_description_c">普通營養價值</string>
     <string name="nutriscore_description_d">低營養價值</string>
     <string name="nutriscore_description_e">非常低營養價值</string>
-    <string name="nutriscore_description_unknown">沒有 Nutri-Score</string>
+    <string name="nutriscore_description_unknown">沒有營養分數</string>
     <string name="nova_group_entitled_label">NOVA Group</string>
     <string name="nova_group_description">NOVA Group 是一個 4 組分類以突出加工食物的等級：\n1 - 非加工食品或最低限度加工食品\n2 - 加工原料\n3 - 加工食品\n4 - 精緻食品與飲料</string>
     <string name="nova_group_description_1">非加工食品或最低限度加工食品</string>
@@ -352,7 +353,7 @@
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">輸入文字…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">輸入電話號碼…</string>
-    <string name="qr_code_text_generator_hint_url_input_edit_text">輸入網站位址…</string>
+    <string name="qr_code_text_generator_hint_url_input_edit_text">輸入網址…</string>
     <string name="qr_code_text_input_edit_text_hint_message">訊息</string>
     <!-- Contact Creator -->
     <string name="qr_code_type_name_generate_from_contact">從通訊錄產生</string>
@@ -678,7 +679,7 @@
     <string name="country_mo">澳門</string>
     <string name="preferences_default">預設</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
-    <string name="snack_bar_message_file_export_success">檔案已儲存!</string>
+    <string name="snack_bar_message_file_export_success">檔案已儲存！</string>
     <string name="import_json_label">匯入 (JSON)</string>
     <string name="snack_bar_message_file_export_error">發生了錯誤！檔案未儲存。</string>
     <string name="export_csv_label">匯出為 CSV</string>
@@ -718,4 +719,10 @@
     <string name="dependency_gson_description_label">Gson 是一個 Java 函式庫，可用於將 Java 物件轉換為其 JSON 表示形式。 它也可用於將 JSON 字串轉換為等效的 Java 物件。 Gson 可以處理任意 Java 對象，包括您沒有原始程式碼的現有物件。</string>
     <string name="height_label">高度</string>
     <string name="dependency_kotlinx_coroutines_description_label">為 Android 應用程式提供 Dispatchers.Main 上下文。</string>
+    <string name="action_modify_barcode">修改條碼</string>
+    <string name="preferences_additional_options">其他選項</string>
+    <string name="error">錯誤</string>
+    <string name="clipboard_empty">剪貼簿是空的。</string>
+    <string name="shortcuts">捷徑</string>
+    <string name="create_qr_from_clipboard">從剪貼簿產生 QR Code</string>
 </resources>
