@@ -49,7 +49,7 @@
     <string name="qr_code_type_name_text">文字</string>
     <string name="qr_code_type_name_web_site">网址</string>
     <string name="qr_code_type_name_contact">联系人</string>
-    <string name="qr_code_type_name_epc">EPC</string>
+    <string name="qr_code_type_name_epc">EPC 二维码</string>
     <string name="qr_code_type_name_mail">邮件</string>
     <string name="qr_code_type_name_sms">短信</string>
     <string name="qr_code_type_name_phone">电话</string>
@@ -93,7 +93,7 @@
     <string name="scan_cancel_label">扫描取消！</string>
     <string name="scan_error_exception_label">发生错误：%1$s</string>
     <string name="flash_label">闪光灯</string>
-    <string name="scan_from_image_label">图库</string>
+    <string name="scan_from_image_label">图片</string>
     <string name="intent_filter_scan_by_image">扫描图片</string>
     <string name="scan_information_label">对准条码进行扫描</string>
     <!-- BarcodeAnalysisActivity -->
@@ -122,7 +122,7 @@
     <string name="ingredients_label">成分</string>
     <string name="nutrition_facts_tab_label">营养</string>
     <!-- Overview -->
-    <string name="quality_label">产品品质</string>
+    <string name="quality_label">产品质量</string>
     <string name="nutriscore_entitled_label">Nutri-Score</string>
     <string name="nutriscore_description">Nutri-Score 是一个显示食品的营养健康状态的标志，从A到E的评级。 该评分考虑了食品的营养物质、<b>提倡食物</b>(纤维、蛋白质、水果、蔬菜、豆类、油籽)和<b>限定食物</b>(能量、饱和脂肪酸、糖、盐)。</string>
     <string name="nutriscore_description_a">营养价值非常高</string>
@@ -175,7 +175,7 @@
     <string name="stabilizer_description_label">稳定剂、增稠剂和凝胶剂，如琼脂或果胶(例如用于果酱)，可以使食物质地更坚固。虽然它们不是真正的乳化剂，但它们有助于稳定乳化剂。</string>
     <string name="additive_no_information_found_label">没有找到关于此添加剂的信息！</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">素食和素食主义者的状态</string>
+    <string name="ingredient_veggie_entitled_label">根据素食和纯素食状态的成分。</string>
     <string name="palm_oil_free_label">不含棕榈油</string>
     <string name="contain_palm_oil_label">含有棕榈油</string>
     <string name="may_contain_palm_oil_label">可能含有棕榈油</string>
@@ -208,7 +208,7 @@
     <string name="off_salt_label">盐</string>
     <string name="off_sodium_label">钠</string>
     <!-- For 100g -->
-    <string name="nutrient_level_entitled_label">营养成分每100g</string>
+    <string name="nutrient_level_entitled_label">营养成分每 100g</string>
     <string name="off_quantity_low_label">低</string>
     <string name="off_quantity_moderate_label">适中</string>
     <string name="off_quantity_high_label">高</string>
@@ -260,7 +260,7 @@
     <string name="matrix_wifi_phase_2_method_label">Phase 2 类型</string>
     <!-- Matrix Barcode URL Analysis -->
     <string name="matrix_uri_url_label">URL</string>
-    <string name="matrix_uri_malicious_label">可能是恶意URL…</string>
+    <string name="matrix_uri_malicious_label">可能是恶意 URL…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI 分析</string>
     <string name="matrix_uri_upi_id_label">UPI ID</string>
@@ -294,15 +294,15 @@
 \n可能是存储空间不足？</string>
     <string name="snack_bar_message_share_bitmap_error">配置共享时出错。</string>
     <!-- Actions -->
-    <string name="actions_label">功能</string>
+    <string name="actions_label">操作</string>
     <string name="intent_chooser_share_title">分享…</string>
     <string name="intent_chooser_mail_title">发送邮件…</string>
     <string name="copy_barcode_label">复制内容</string>
     <string name="barcode_copied_label">条码已复制</string>
-    <string name="barcode_search_error_label">Url不支持</string>
+    <string name="barcode_search_error_label">Url 不支持</string>
     <string name="search_label">搜索</string>
-    <string name="action_title_dialog_label">你想做什么？</string>
-    <string name="action_go_to_url_label">打开URL</string>
+    <string name="action_title_dialog_label">您想做什么？</string>
+    <string name="action_go_to_url_label">打开 URL</string>
     <string name="action_web_search_label">在网络上搜索</string>
     <string name="action_product_search_label">搜索 %1$s</string>
     <string name="action_send_mail_label">发送邮件</string>
@@ -313,10 +313,10 @@
     <string name="action_show_location">显示位置</string>
     <string name="action_open_link">打开链接</string>
     <!-- Wi-Fi Connection -->
-    <string name="action_wifi_connection_title_label">Wi-Fi连接</string>
-    <string name="action_wifi_connection_from_app">连接Wi-F1</string>
-    <string name="action_wifi_connection_from_wifi_settings">复制密码并打开Wi-Fi设置</string>
-    <string name="action_wifi_connection_error_wifi_not_activated">您必须开启Wi-Fi !</string>
+    <string name="action_wifi_connection_title_label">Wi-Fi 连接</string>
+    <string name="action_wifi_connection_from_app">连接 Wi-Fi</string>
+    <string name="action_wifi_connection_from_wifi_settings">复制密码并打开 Wi-Fi 设置</string>
+    <string name="action_wifi_connection_error_wifi_not_activated">您必须开启 Wi-Fi!</string>
     <string name="action_wifi_password_copy_label">密码已复制！</string>
     <string name="action_wifi_success_added_label">Wi-Fi连接已添加！</string>
     <string name="action_wifi_failure_added_label">添加Wi-Fi连接失败</string>
@@ -337,19 +337,19 @@
     <string name="error_barcode_93_regex_error_message">"Code 93" 条码类型可以编码26个大写字母，10个数字(0到9)以及8个特殊字符«-，.，空格，*，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
     <string name="error_barcode_39_regex_error_message">"Code 39" 条码类型可以编码26个大写字母，10个数字(0到9)以及7个特殊字符«-，.，空格，$，/，+，%»。小写字母和其他特殊字符不能用这种条形码类型进行编码。</string>
     <string name="error_barcode_codabar_regex_error_message">"Codabar" 条码类型可以编码10位数字(0到9)以及6个特殊字符«-，$，:，/，.，+»。它还可以包含字符A、B、C或D作为第一个和最后一个字符，以指定字符串的开始和结束。</string>
-    <string name="error_barcode_itf_error_message">"ITF" 条码必须是偶数个字符。</string>
-    <string name="error_barcode_upc_e_not_start_with_0_error_message">"UPC-E" 条码开头必须是 0.</string>
-    <string name="error_barcode_qr_url_format_message">网址的开头必须是 "http://" 或 "https://"</string>
+    <string name="error_barcode_itf_error_message">ITF 条形码类型必须包含偶数个字符。</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">UPC-E 条形码类型必须以 0 开头。</string>
+    <string name="error_barcode_qr_url_format_message">网址必须以 http:// 或 https:// 开头</string>
     <string name="error_barcode_qr_phone_number_missing_message">您必须输入一个电话号码</string>
     <string name="error_barcode_qr_email_missing_message">您必须输入至少一个字段</string>
-    <string name="error_barcode_qr_localisation_missing_message">你必须告知纬度和经度</string>
+    <string name="error_barcode_qr_localisation_missing_message">你必须告知经纬度</string>
     <!-- Action Barcode Generated -->
     <string name="barcode_creator_confirm_text_label">生成</string>
     <string name="save_label">保存</string>
     <string name="share_label">分享</string>
     <string name="share_image_label">分享图片</string>
     <string name="share_text_label">分享内容</string>
-    <string name="popup_message_confirmation_save_image">保存图片？</string>
+    <string name="popup_message_confirmation_save_image">保存图片吗？</string>
     <!-- Form -->
     <string name="qr_code_text_generator_hint_text_input_edit_text">输入内容…</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">输入电话号码…</string>
@@ -361,10 +361,10 @@
     <string name="qr_code_text_radio_button_label_mrs">女士</string>
     <string name="qr_code_text_radio_button_label_miss">小姐</string>
     <string name="qr_code_text_radio_button_label_none">无</string>
-    <string name="qr_code_text_input_edit_text_hint_name">姓氏</string>
+    <string name="qr_code_text_input_edit_text_hint_name">姓名</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">名称</string>
     <string name="qr_code_text_input_edit_text_hint_organisation">公司</string>
-    <string name="qr_code_text_input_edit_text_hint_web_site">网站</string>
+    <string name="qr_code_text_input_edit_text_hint_web_site">网址</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">电子邮件 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">电子邮件 2</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">电子邮件 3</string>
@@ -413,7 +413,7 @@
     <string name="qr_code_text_input_edit_text_hint_wifi_hide">隐藏</string>
     <string name="spinner_wifi_encryption_wep">WEP</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
-    <string name="spinner_wifi_encryption_none">无</string>
+    <string name="spinner_wifi_encryption_none">无密码</string>
     <!-- Event Creator -->
     <string name="qr_code_text_input_edit_text_hint_agenda_event_name">事件名</string>
     <string name="qr_code_text_input_edit_text_hint_agenda_place">地点</string>
@@ -468,7 +468,7 @@
     <string name="preferences_switch_system_theme_label">跟随系统</string>
     <string name="preferences_switch_light_theme_label">浅色</string>
     <string name="preferences_switch_dark_theme_label">深色</string>
-    <string name="preferences_switch_black_theme_label">Black</string>
+    <string name="preferences_switch_black_theme_label">黑色</string>
     <string name="preferences_color">主题色</string>
     <string name="preferences_color_material_you">跟随系统 (Material You)</string>
     <string name="preferences_color_blue">蓝色</string>
@@ -515,7 +515,7 @@
     <string name="preferences_information_about_remote_api_about_books_description">如果你扫描的产品是书籍，则无需指定用于搜索信息的 API。书籍的条形码是可识别的，因为它总是以数字“978”开头。将自动在 Open Library 上搜索。</string>
     <!-- Scan Settings -->
     <string name="preferences_scan_title">扫描</string>
-    <string name="preferences_switch_scan_use_camera_x_api_label">使用CameraX API</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">使用 CameraX API</string>
     <string name="preferences_switch_scan_vibrate_label">扫描成功后振动</string>
     <string name="preferences_switch_scan_bip_label">扫描成功后播放声音</string>
     <string name="preferences_switch_scan_screen_rotation_label">扫描时禁止旋转屏幕</string>
@@ -544,7 +544,7 @@
     <string name="permission_location_label">定位</string>
     <string name="permission_location_description_label">根据设备位置生成二维码所需要的。</string>
     <string name="permission_wifi_label">Wi-Fi</string>
-    <string name="permission_wifi_description_label">用于通过扫描Wi-Fi二维码连接到Wi-Fi时。</string>
+    <string name="permission_wifi_description_label">需要扫描包含 Wi-Fi 访问的二维码以连接到 Wi-Fi。</string>
     <string name="permission_vibrate_label">振动</string>
     <string name="permission_vibrate_description_label">用于扫描成功时振动提醒。</string>
     <string name="permission_query_all_packages_label">查询所有软件包</string>
@@ -558,22 +558,22 @@
     <!-- About Library Third -->
     <string name="dependency_by" translatable="false">by %1$s</string>
     <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label" translatable="false">ZXing （zebra crossing）是一个开源、多格式的1D/2D条码图像处理库。</string>
-    <string name="dependency_camera_x_description_label" translatable="false">Jetpack出品的 CameraX support library 提供了一个易于使用和功能丰富的Android相机 API。</string>
+    <string name="dependency_zxing_description_label" translatable="false">ZXing（zebra crossing）是一个开源、多格式的 1D/2D 条码图像处理库。</string>
+    <string name="dependency_camera_x_description_label" translatable="false">Jetpack 出品的 CameraX 支持库提供了一个易于使用和功能丰富的 Android 相机 API。</string>
     <string name="dependency_zxing_code_scanner_description_label" translatable="false">基于 ZXing 的 Android 条码识别库。</string>
     <string name="dependency_ez_vcard_description_label" translatable="false">Ez-vCard 是一个用 Java 编写的 vCard 库，它可以读写多种不同格式的 vCard。</string>
-    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper是一个 Android图像裁剪库。</string>
+    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper 是一个 Android 图像裁剪库。</string>
     <string name="dependency_coil_description_label" translatable="false">一个由 Kotlin Coroutines 支持的 Android 图像加载库。</string>
-    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) 帮助开发者贯彻Material Design。这些组件由Google的核心工程师和UX设计师团队开发，可实现可靠的开发工作流程，以构建美丽且功能齐全的Android应用程序。
+    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) 帮助开发者贯彻 Material Design。这些组件由 Google 的核心工程师和 UX 设计师团队开发，可实现可靠的开发工作流程，以构建美丽且功能齐全的 Android 应用程序。
 \n
-\nMaterial Components for Android是Android\'s Design Support Library的无缝替代品。</string>
-    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">提供Dispatchers。Android应用程序的主上下文。</string>
+\nMaterial Components for Android 是 Android\'s Design Support Library 的无缝替代品。</string>
+    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">提供 Dispatchers。Android 应用程序的主上下文。</string>
     <string name="dependency_koin_description_label" translatable="false">为 Kotlin 开发者提供的实用的轻量级依赖注入框架。
 \n
 \n完全由 Kotlin 编写，仅使用函数解析：没有代理，没有代码生成，没有反射。
 \n
-\nKoin 是一个 DSL、一个轻量级容器和一个实用的 API。</string>
-    <string name="dependency_room_description_label" translatable="false">Room 提供了一个SQLite之上的抽象层，允许流畅地访问数据库，同时利用 SQLite 的全部功能。</string>
+\nKoin 是一个 DSL、一个轻量级容器和一个实用的 API</string>
+    <string name="dependency_room_description_label" translatable="false">Room 提供了一个 SQLite 之上的抽象层，允许流畅地访问数据库，同时利用 SQLite 的全部功能。</string>
     <string name="dependency_gson_description_label" translatable="false">Gson 是一个 Java 库，可用于将 Java 对象转换为其 JSON 表示形式，或将 JSON 字符串转换为等效的 Java 对象。Gson 可以处理任意的 Java 对象，包括您没有源代码的预先存在的对象。</string>
     <string name="dependency_retrofit_description_label" translatable="false">适用于 Android 和 Java 的类型安全 HTTP client。</string>
     <string name="dependency_live_data_description_label" translatable="false">LiveData 是一个可观察的数据持有者类。 与常规可观察量不同，LiveData 具有生命周期感知能力，这意味着它尊重其他应用程序组件（例如活动、片段或服务）的生命周期。 这种意识确保 LiveData 仅更新处于活动生命周期状态的应用程序组件观察者。</string>
@@ -607,7 +607,7 @@
     <string name="country_ge">格鲁吉亚</string>
     <string name="country_kz">哈萨克斯坦</string>
     <string name="country_tj">塔吉克斯坦</string>
-    <string name="country_hk">香港</string>
+    <string name="country_hk">中国香港</string>
     <string name="country_gb">英国</string>
     <string name="country_gr">希腊</string>
     <string name="country_lb">黎巴嫩</string>
@@ -703,25 +703,48 @@
     <string name="preferences_default">默认</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="corners_radius">拐角半径</string>
-    <string name="dependency_color_picker_description_label">安卓 的颜色选择器库</string>
+    <string name="dependency_color_picker_description_label">适用于 Android 的颜色选择器库。</string>
     <string name="snack_bar_message_file_export_success">文件已保存！</string>
     <string name="barcode_color">条码颜色</string>
-    <string name="color_shades_issue">可能无法检测到某些色调。</string>
+    <string name="color_shades_issue">某些色调可能无法被检测到。</string>
     <string name="shapes_label">形状</string>
     <string name="import_json_label">导入（JSON）</string>
     <string name="keep_proportions">保持比例</string>
-    <string name="dimensions_label">方面</string>
+    <string name="dimensions_label">尺寸规格</string>
     <string name="background_color">背景颜色</string>
     <string name="snack_bar_message_file_export_error">发生了错误！ 文件未保存。</string>
     <string name="copy_label">复制</string>
     <string name="export_csv_label">导出为 CSV</string>
     <string name="image_properties">图像属性</string>
     <string name="snack_bar_message_file_import_error">发生了错误！ 文件未导入。</string>
-    <string name="export_label">出口</string>
+    <string name="export_label">导出</string>
     <string name="snack_bar_message_file_import_success">文件已导入！</string>
     <string name="width_label">宽度</string>
     <string name="export_json_label">导出为 JSON</string>
     <string name="colors_label">颜色</string>
     <string name="height_label">高度</string>
     <string name="action_modify_barcode">修改条形码</string>
+    <string name="custom_search_urls_list_is_empty_message">没有内容...
+\n您尚未生成自定义 URL。</string>
+    <string name="preferences_display_barcode_image_results_view">在结果视图中显示条形码图像</string>
+    <string name="error">错误</string>
+    <string name="barcode_search_error_no_compatible_application_found">未找到兼容的应用程序</string>
+    <string name="action_share_vcf_file">以 VCF 分享</string>
+    <string name="clipboard_empty">剪贴板为空。</string>
+    <string name="custom_urls">自定义 URL</string>
+    <string name="custom_search_urls_add_url">添加 URL</string>
+    <string name="custom_search_urls_modify_url">修改 URL</string>
+    <string name="custom_search_urls_list">URL 列表</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">是否要删除所有自定义 URL?</string>
+    <string name="custom_url_deleted">自定义 URL 已删除！</string>
+    <string name="custom_url_added">自定义 URL 已添加！</string>
+    <string name="custom_url_updated">自定义 URL 已更新！</string>
+    <string name="custom_search_urls_add_info">在 URL 中使用术语“%1$s”。在搜索过程中，此术语将被条形码的内容替换。</string>
+    <string name="examples">示例：</string>
+    <string name="custom_search_urls_error_url">URL 中必须存在术语“%1$s”。</string>
+    <string name="error_empty_fields">输入框不能为空。</string>
+    <string name="preferences_additional_options">其他选项</string>
+    <string name="shortcuts">快捷方式</string>
+    <string name="shortcuts_info">按您的偏好顺序排列快捷方式。</string>
+    <string name="custom_search_urls">自定义搜索 URL</string>
 </resources>
