@@ -736,4 +736,5 @@
     <string name="create_qr_from_clipboard">Panodan QR kodu oluştur</string>
     <string name="clipboard_empty">Pano boş.</string>
     <string name="shortcuts_info">Kısayolları tercihinize göre sıralayın.</string>
+    <string name="action_share_vcf_file">VCF olarak paylaş</string>
 </resources>

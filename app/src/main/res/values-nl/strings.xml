@@ -117,7 +117,7 @@
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Veilig</string>
     <string name="additive_no_information_found_label">Geen informatie gevonden over deze hulpstof!</string>
-    <string name="ingredient_veggie_entitled_label">Ingrediënten in relatie tot de vegetarische en veganistische status</string>
+    <string name="ingredient_veggie_entitled_label">Ingrediënten volgens vegetarische en veganistische status.</string>
     <string name="palm_oil_free_label">Zonder palmolie</string>
     <string name="contain_palm_oil_label">Bevat palmolie</string>
     <string name="may_contain_palm_oil_label">Bevat mogelijk palmolie</string>
@@ -668,4 +668,18 @@
     <string name="custom_url_added">URL is toegevoegd!</string>
     <string name="custom_url_deleted">URL is verwijderd!</string>
     <string name="popup_message_confirmation_deleted_all_custom_urls">Alle aangepaste URL\'s verwijderen?</string>
+    <string name="custom_search_urls_modify_url">Link wijzigen</string>
+    <string name="custom_search_urls_list">Lijst met links</string>
+    <string name="error">Fout</string>
+    <string name="create_qr_from_clipboard">QR-code genereren van klembordgegevens</string>
+    <string name="barcode_search_error_no_compatible_application_found">Geen compatibele app gevonden</string>
+    <string name="action_share_vcf_file">Als VCF delen</string>
+    <string name="clipboard_empty">Het klembord is leeg.</string>
+    <string name="custom_search_urls">Eigen zoeklinks</string>
+    <string name="custom_search_urls_add_url">Link toevoegen</string>
+    <string name="custom_search_urls_list_is_empty_message">Geen item...
+\nEr zijn nog geen eigen links opgegeven.</string>
+    <string name="shortcuts_info">Rangschik de snelkoppelingen naar voorkeur.</string>
+    <string name="shortcuts">Snelkoppelingen</string>
+    <string name="custom_urls">Eigen links</string>
 </resources>

@@ -1,6 +1,6 @@
-Barcode Scanner ist eine kostenlose und quelloffene App, die es erlaubt, Barcodes zu lesen und zu erzeugen. Sie kann Informationen über Lebensmittel, Kosmetika, Bücher und Musik (CDs, Vinyls...) sammeln.
+Barcode Scanner ist eine kostenlose und quelloffene App, mit der Sie Strichcodes lesen und erzeugen können. Es kann Informationen über Lebensmittel, Kosmetika, Bücher und Musik (CDs, Vinyls...) sammeln.
 
-Die App unterstützt verschiedene Barcode-Formate:
+Verschiedene Barcodeformate werden von der App unterstützt:
 - zweidimensionale Barcodes: QR Code, Data Matrix, PDF 417, AZTEC
 - eindimensionale Barcodes: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
 
@@ -18,7 +18,9 @@ App-Funktionen:
 - Suchen Sie auf verschiedenen Websites wie Amazon oder Fnac nach Informationen über das gescannte Produkt.
 - Behalten Sie mit dem Verlaufstool den Überblick über alle gescannten Barcodes.
 - Erstellen Sie Ihre eigenen Barcodes.
-- Passen Sie die Benutzeroberfläche mit verschiedenen Farben an, mit einem hellen oder einem dunklen Thema. Die App integriert die Funktionen von Android 12 und ermöglicht es, die Farben je nach Hintergrundbild anzupassen (Material You).
-- Die Texte sind vollständig in Deutsch, Englisch, Spanisch, Französisch, Polnisch, Türkisch, Russisch und Chinesisch übersetzt.
+- Passen Sie die Benutzeroberfläche mit verschiedenen Farben an, mit einem hellen oder einem dunklen Thema. Die Benutzeroberfläche wurde mit Material 3 erstellt und ist mit Material You kompatibel, sodass Sie die Farben basierend auf Ihrem Hintergrundbild für Geräte mit Android 12 oder höher anpassen können.
+- Die Texte sind vollständig in Englisch, Arabisch, Spanisch, Französisch, Portugiesisch, Russisch, Deutsch, Türkisch, Italienisch, Ukrainisch, Polnisch, Niederländisch, Rumänisch und Chinesisch (vereinfacht und traditionell) übersetzt
 
 Diese App respektiert Ihre Privatsphäre. Sie enthält keine Tracker und sammelt keine Daten.
+
+Der Quellcode ist hier verfügbar: https://gitlab.com/Atharok/BarcodeScanner

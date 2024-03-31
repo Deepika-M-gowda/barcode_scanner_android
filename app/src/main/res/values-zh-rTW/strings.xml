@@ -50,7 +50,7 @@
     <string name="qr_code_type_name_text">文字</string>
     <string name="qr_code_type_name_web_site">網站</string>
     <string name="qr_code_type_name_contact">聯絡人</string>
-    <string name="qr_code_type_name_epc">EPC QR Code</string>
+    <string name="qr_code_type_name_epc">EPC QR 圖碼</string>
     <string name="qr_code_type_name_mail">郵件</string>
     <string name="qr_code_type_name_sms">簡訊</string>
     <string name="qr_code_type_name_phone">電話號碼</string>
@@ -176,7 +176,7 @@
     <string name="stabilizer_description_label">穩定劑、增稠劑與膠凝劑，像是洋菜或果膠 (例如用於果醬) 使食物質地更堅固，雖然它們不是真正的乳化劑，但它們有助於穩定乳化劑。</string>
     <string name="additive_no_information_found_label">沒有找到關於此添加物資訊！</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">素食與素食主義者狀態</string>
+    <string name="ingredient_veggie_entitled_label">成分依據素食者和純素食者的狀況而定。</string>
     <string name="palm_oil_free_label">不含棕櫚油</string>
     <string name="contain_palm_oil_label">含有棕櫚油</string>
     <string name="may_contain_palm_oil_label">可能含有棕櫚油</string>
@@ -725,4 +725,23 @@
     <string name="clipboard_empty">剪貼簿是空的。</string>
     <string name="shortcuts">捷徑</string>
     <string name="create_qr_from_clipboard">從剪貼簿產生 QR Code</string>
+    <string name="custom_search_urls">自訂搜尋網址</string>
+    <string name="examples">例子：</string>
+    <string name="error_empty_fields">輸入欄位不得為空白。</string>
+    <string name="preferences_display_barcode_image_results_view">在結果視圖中顯示條碼圖片</string>
+    <string name="barcode_search_error_no_compatible_application_found">找不到相容的應用程式</string>
+    <string name="action_share_vcf_file">分享為 VCF</string>
+    <string name="custom_search_urls_add_url">新增網址</string>
+    <string name="custom_urls">自訂網址</string>
+    <string name="custom_search_urls_modify_url">修改網址</string>
+    <string name="custom_search_urls_list">網址列表</string>
+    <string name="custom_search_urls_list_is_empty_message">沒有項目…
+\n您尚未產生自訂網址。</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">您想刪除所有自訂網址嗎？</string>
+    <string name="custom_url_updated">已更新自訂網址！</string>
+    <string name="shortcuts_info">按照您的偏好順序排列捷徑。</string>
+    <string name="custom_url_deleted">已刪除自訂網址！</string>
+    <string name="custom_url_added">已增加自訂網址！</string>
+    <string name="custom_search_urls_error_url">網址中必須包含術語「%1$s」。</string>
+    <string name="custom_search_urls_add_info">在網址中使用術語「%1$s」。該術語將會在搜尋過程中被條碼的內容取代。</string>
 </resources>

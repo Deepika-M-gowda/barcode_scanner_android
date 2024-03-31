@@ -426,7 +426,7 @@
     <string name="action_open_link">Відкрити посилання</string>
     <string name="off_per_serving_no_quantity_label">На порцію</string>
     <string name="preferences_color_orange">Помаранчевий</string>
-    <string name="ingredient_veggie_entitled_label">Інгредієнти з точки зору вегетаріанського та веганського статусу</string>
+    <string name="ingredient_veggie_entitled_label">Інгредієнти відповідно до вегетаріанського та веганського статусу.</string>
     <string name="eco_score_description_e">Дуже високий вплив на довкілля</string>
     <string name="off_sugars_label">Цукри</string>
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
@@ -661,4 +661,25 @@
     <string name="preferences_additional_options">Додаткові налаштування</string>
     <string name="preferences_display_barcode_image_results_view">Показувати зображення штрихкоду на екрані результатів</string>
     <string name="barcode_search_error_no_compatible_application_found">Сумісних застосунків не знайдено</string>
+    <string name="custom_search_urls">Користувацькі пошукові URL-адреси</string>
+    <string name="custom_urls">Користувацькі URL-адреси</string>
+    <string name="custom_url_updated">Користувацьку URL-адресу оновлено!</string>
+    <string name="examples">Приклади:</string>
+    <string name="custom_search_urls_error_url">В URL-адресі обов\'язково має бути присутній вираз \"%1$s\".</string>
+    <string name="error">Помилка</string>
+    <string name="custom_url_deleted">Користувацьку URL-адресу видалено!</string>
+    <string name="custom_search_urls_add_info">Використовуйте в URL-адресі вираз \"%1$s\". Під час пошуку цей вираз буде замінено вмістом штрих-коду.</string>
+    <string name="shortcuts">Ярлики</string>
+    <string name="action_share_vcf_file">Поділитися файлом VCF</string>
+    <string name="clipboard_empty">Буфер обміну порожній.</string>
+    <string name="custom_search_urls_add_url">Додати URL-адресу</string>
+    <string name="custom_search_urls_modify_url">Редагувати URL-адресу</string>
+    <string name="custom_search_urls_list">Перелік URL-адрес</string>
+    <string name="custom_search_urls_list_is_empty_message">Немає елементів…
+\nВи ще не згенерували користувацьку URL-адресу.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Хочете видалити всі користувацькі URL-адреси?</string>
+    <string name="custom_url_added">Користувацьку URL-адресу додано!</string>
+    <string name="shortcuts_info">Розташуйте ярлики в бажаному порядку.</string>
+    <string name="error_empty_fields">Поля введення повинні бути заповнені.</string>
+    <string name="create_qr_from_clipboard">Згенерувати QR-код з буфера обміну</string>
 </resources>

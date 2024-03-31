@@ -737,4 +737,5 @@
     <string name="clipboard_empty">El portapapeles está vacío.</string>
     <string name="shortcuts">Atajos</string>
     <string name="shortcuts_info">Organice los atajos según sus preferencias.</string>
+    <string name="action_share_vcf_file">Compartir como VCF</string>
 </resources>
