@@ -50,7 +50,7 @@
     <string name="qr_code_type_name_text">文字</string>
     <string name="qr_code_type_name_web_site">網站</string>
     <string name="qr_code_type_name_contact">聯絡人</string>
-    <string name="qr_code_type_name_epc">EPC QR Code</string>
+    <string name="qr_code_type_name_epc">EPC QR 圖碼</string>
     <string name="qr_code_type_name_mail">郵件</string>
     <string name="qr_code_type_name_sms">簡訊</string>
     <string name="qr_code_type_name_phone">電話號碼</string>
@@ -176,7 +176,7 @@
     <string name="stabilizer_description_label">穩定劑、增稠劑與膠凝劑，像是洋菜或果膠 (例如用於果醬) 使食物質地更堅固，雖然它們不是真正的乳化劑，但它們有助於穩定乳化劑。</string>
     <string name="additive_no_information_found_label">沒有找到關於此添加物資訊！</string>
     <!-- Veggie -->
-    <string name="ingredient_veggie_entitled_label">素食與素食主義者狀態</string>
+    <string name="ingredient_veggie_entitled_label">成分依據素食者和純素食者的狀況而定。</string>
     <string name="palm_oil_free_label">不含棕櫚油</string>
     <string name="contain_palm_oil_label">含有棕櫚油</string>
     <string name="may_contain_palm_oil_label">可能含有棕櫚油</string>
@@ -742,4 +742,6 @@
     <string name="shortcuts_info">按照您的偏好順序排列捷徑。</string>
     <string name="custom_url_deleted">已刪除自訂網址！</string>
     <string name="custom_url_added">已增加自訂網址！</string>
+    <string name="custom_search_urls_error_url">網址中必須包含術語「%1$s」。</string>
+    <string name="custom_search_urls_add_info">在網址中使用術語「%1$s」。該術語將會在搜尋過程中被條碼的內容取代。</string>
 </resources>
