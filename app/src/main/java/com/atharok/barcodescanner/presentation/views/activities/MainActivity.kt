@@ -23,12 +23,14 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commitNow
 import com.atharok.barcodescanner.BuildConfig
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityMainBinding
+import com.atharok.barcodescanner.presentation.viewmodel.DynamicShortcutViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
@@ -38,6 +40,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity: BaseActivity() {
 
@@ -59,6 +62,10 @@ class MainActivity: BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+            configureShortcuts()
+        }
 
         savedInstanceState?.let {
             currentItemId = it.getInt(ITEM_ID_KEY, R.id.menu_navigation_bottom_view_scan)
@@ -179,6 +186,15 @@ class MainActivity: BaseActivity() {
             //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back
         }
         return true
+    }
+
+    // ---- Shortcuts ----
+
+    private val shortcutViewModel: DynamicShortcutViewModel by viewModel()
+
+    @RequiresApi(Build.VERSION_CODES.N_MR1)
+    private fun configureShortcuts() {
+        shortcutViewModel.createShortcuts() // Create shortcuts if they don't exist
     }
 
     // ---- UI ----
