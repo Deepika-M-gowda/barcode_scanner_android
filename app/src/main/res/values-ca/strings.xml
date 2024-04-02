@@ -1,2 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="image_view_description_logo">Logo</string>
+    <string name="image_view_description_nutriscore">NUTRI-SCORE</string>
+    <string name="image_view_description_nova_group">NOVA GROUP</string>
+    <string name="qr_code_type_name_text">Text</string>
+    <string name="qr_code_type_name_sms">SMS</string>
+    <string name="qr_code_type_name_wifi">Wi-Fi</string>
+    <string name="off_fat_label">Fat</string>
+    <string name="off_fiber_label">Fiber</string>
+    <string name="matrix_contact_notes_label">Notes</string>
+    <string name="matrix_email_cc_label">CC</string>
+    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_wifi_ssid_label">SSID</string>
+    <string name="matrix_uri_url_label">URL</string>
+    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="qr_code_text_radio_button_label_m">M</string>
+    <string name="spinner_type_fax">Fax</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_bic">BIC</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
+    <string name="spinner_wifi_encryption_wep">WEP</string>
+    <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
+    <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+    <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
+    <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
+    <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
+    <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
+    <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
+    <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
+    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+    <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
+    <string name="permission_wifi_label">Wi-Fi</string>
+    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
+    <string name="country_ca">Canada</string>
+    <string name="country_kosovo">Kosovo</string>
+    <string name="country_tw">Taiwan</string>
+    <string name="country_lk">Sri Lanka</string>
+    <string name="country_am">Armenia</string>
+    <string name="country_hk">Hong Kong</string>
+    <string name="country_al">Albania</string>
+    <string name="country_mt">Malta</string>
+    <string name="country_pt">Portugal</string>
+    <string name="country_ro">Romania</string>
+    <string name="country_bj">Benin</string>
+    <string name="country_sn">Senegal</string>
+    <string name="country_dz">Algeria</string>
+    <string name="country_ng">Nigeria</string>
+    <string name="country_tz">Tanzania</string>
+    <string name="country_ir">Iran</string>
+    <string name="country_kw">Kuwait</string>
+    <string name="country_qa">Qatar</string>
+    <string name="country_gt">Guatemala</string>
+    <string name="country_sv">El Salvador</string>
+    <string name="country_hn">Honduras</string>
+    <string name="country_cr">Costa Rica</string>
+    <string name="country_pa">Panama</string>
+    <string name="country_ve">Venezuela</string>
+    <string name="country_ch">Swiss</string>
+    <string name="country_li">Liechtenstein</string>
+    <string name="country_co">Colombia</string>
+    <string name="country_uy">Uruguay</string>
+    <string name="country_cu">Cuba</string>
+    <string name="country_mn">Mongolia</string>
+    <string name="country_mm">Myanmar</string>
+    <string name="country_in">India</string>
+    <string name="country_vn">Vietnam</string>
+    <string name="country_id">Indonesia</string>
+    <string name="country_at">Austria</string>
+    <string name="country_au">Australia</string>
+    <string name="error">Error</string>
+    <string name="qr_code_type_name_agenda">Agenda</string>
+    <string name="ingredients_label">Ingredients</string>
+    <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
+    <string name="country_bg">Bulgaria</string>
+    <string name="country_me">Montenegro</string>
+    <string name="country_il">Israel</string>
+    <string name="country_pe">Peru</string>
+    <string name="country_ar">Argentina</string>
+    <string name="country_ec">Ecuador</string>
+    <string name="country_rs">Serbia</string>
+    <string name="country_mo">Macao</string>
+</resources>
