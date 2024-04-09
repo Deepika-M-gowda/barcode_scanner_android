@@ -185,7 +185,7 @@
     <string name="matrix_subject_label">Assunto</string>
     <string name="matrix_body_label">Mensagem</string>
     <string name="matrix_email_cc_label">CC</string>
-    <string name="matrix_email_bcc_label">BCC</string>
+    <string name="matrix_email_bcc_label">CCO</string>
     <string name="matrix_wifi_ssid_label">SSID</string>
     <string name="matrix_wifi_password_label">Senha</string>
     <string name="matrix_wifi_encryption_label">Criptografia</string>
