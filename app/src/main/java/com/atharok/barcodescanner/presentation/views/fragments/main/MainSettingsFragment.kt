@@ -120,6 +120,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             val localList = arrayListOf(
                 R.string.preferences_default to LocaleListCompat.getEmptyLocaleList(),
                 R.string.locale_language_ar to LocaleListCompat.forLanguageTags("ar"),
+                R.string.locale_language_ca to LocaleListCompat.forLanguageTags("ca"),
                 R.string.locale_language_de to LocaleListCompat.create(Locale.GERMAN),
                 R.string.locale_language_en to LocaleListCompat.create(Locale.ENGLISH),
                 R.string.locale_language_es to LocaleListCompat.forLanguageTags("es"),
