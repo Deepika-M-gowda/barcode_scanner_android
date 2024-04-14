@@ -109,11 +109,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_barcode_form_creator_qr_contact_first_name_input_layout"
-        android:hint="@string/qr_code_text_input_edit_text_hint_organisation"
+        android:hint="@string/matrix_contact_organisation_label"
         style="@style/AppTheme.TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fragment_barcode_form_creator_qr_contact_organisation_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/fragment_barcode_form_creator_qr_contact_job_title_input_edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_barcode_form_creator_qr_contact_job_title_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fragment_barcode_form_creator_qr_contact_organisation_input_layout"
+        android:hint="@string/matrix_contact_job_title_label"
+        style="@style/AppTheme.TextInputLayoutStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_barcode_form_creator_qr_contact_job_title_input_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -128,7 +148,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/fragment_barcode_form_creator_qr_contact_organisation_input_layout"
+        android:layout_below="@id/fragment_barcode_form_creator_qr_contact_job_title_input_layout"
         android:hint="@string/qr_code_text_input_edit_text_hint_web_site"
         app:startIconDrawable="@drawable/baseline_web_24"
         app:startIconTintFocused="?colorPrimary"

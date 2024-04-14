@@ -247,7 +247,6 @@
     <string name="error_barcode_39_regex_error_message">O tipo de código de barras Código 39 pode codificar as 26 letras maiúsculas, os 10 dígitos (0 a 9) assim como os 7 caracteres especiais « -, ., espaço, $, /, +, % ». Letras minúsculas e outros caracteres especiais não podem ser codificado por este tipo de código de barras.</string>
     <string name="barcode_upc_e_description_label">Código UPC-E (Universal Product Code) é um código de barras condensado do código UPC-A usado principalmente nos EUA e no Canadá para identificar produtos vendidos em lojas. É também usado em embalagens pequenas demais para receberem o código UPC-A.</string>
     <string name="country_ee">Estônia</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organização</string>
     <string name="preferences_source_code_label">Código-fonte</string>
     <string name="preferences_barcode_generation_title">Geração de códigos de barras</string>
     <string name="matrix_localisation_location_disabled_label">A localização no seu dispositivo parece não estar ativada.</string>
@@ -393,7 +392,6 @@
     <string name="stabilizer_description_label">Estabilizadores, espessantes e agentes gelatinosos, como ágar ou pectina (usados na geleia, por exemplo) dão aos alimentos uma textura mais firme. Embora não sejam emulsificantes verdadeiros, ajudam a estabilizar as emulsões.</string>
     <string name="off_per_100_label">Por 100%1$s</string>
     <string name="record_label">Gravar</string>
-    <string name="matrix_contact_title_label">Título</string>
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="qr_code_text_radio_button_label_none">Nenhum</string>
     <string name="book_product_original_title_label">Título original</string>

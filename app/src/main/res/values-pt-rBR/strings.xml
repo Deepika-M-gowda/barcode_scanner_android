@@ -170,7 +170,6 @@
     <string name="bar_code_analysis_label">Análise do código de barras</string>
     <string name="matrix_contact_name_label">Nome</string>
     <string name="matrix_contact_organisation_label">Organização</string>
-    <string name="matrix_contact_title_label">Título</string>
     <string name="matrix_contact_phone_label">Telefone</string>
     <string name="matrix_contact_mail_label">E-mail</string>
     <string name="matrix_contact_address_label">Endereço</string>
@@ -270,7 +269,6 @@
     <string name="qr_code_text_radio_button_label_miss">Srta.</string>
     <string name="qr_code_text_input_edit_text_hint_name">Nome</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Primeiro nome</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organização</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">Endereço de correio 3</string>
     <string name="qr_code_text_input_edit_text_hint_phone_1">Número de telefone 1</string>
     <string name="qr_code_text_input_edit_text_hint_phone_2">Número de telefone 2</string>

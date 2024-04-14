@@ -231,7 +231,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">İsim</string>
     <string name="matrix_contact_organisation_label">Kurum</string>
-    <string name="matrix_contact_title_label">Ünvan</string>
     <string name="matrix_contact_phone_label">Telefon</string>
     <string name="matrix_contact_mail_label">E-posta</string>
     <string name="matrix_contact_address_label">Adres</string>
@@ -363,7 +362,6 @@
     <string name="qr_code_text_radio_button_label_none">Yok</string>
     <string name="qr_code_text_input_edit_text_hint_name">Soyad</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Ad</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Kurum</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Web Sitesi</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">E-posta Adresi 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">E-posta Adresi 2</string>

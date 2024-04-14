@@ -32,6 +32,7 @@ import ezvcard.property.Note
 import ezvcard.property.Organization
 import ezvcard.property.StructuredName
 import ezvcard.property.Telephone
+import ezvcard.property.Title
 import ezvcard.property.Url
 
 class EzvcardBuilder {
@@ -39,6 +40,7 @@ class EzvcardBuilder {
     private var mStructuredName: StructuredName? = null
     private var mFormattedName: FormattedName? = null
     private var mOrganization: Organization? = null
+    private var mJobTitle: Title? = null
     private var mUrl: Url? = null
     private val mEmailList = mutableListOf<Email>()
     private val mPhoneList = mutableListOf<Telephone>()
@@ -52,6 +54,8 @@ class EzvcardBuilder {
             formattedName=mFormattedName
         if(mOrganization!=null)
             organization = mOrganization
+        if(mJobTitle!=null)
+            titles.add(mJobTitle)
         if(mUrl!=null)
             urls.add(mUrl)
         if(mEmailList.isNotEmpty())
@@ -90,6 +94,12 @@ class EzvcardBuilder {
             mOrganization = Organization().apply {
                 values.add(organization.trim())
             }
+        }
+    }
+
+    fun createJobTitle(jobTitle: String) {
+        if(jobTitle.isNotBlank()) {
+            mJobTitle = Title(jobTitle.trim())
         }
     }
 

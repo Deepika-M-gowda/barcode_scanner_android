@@ -242,7 +242,7 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Name</string>
     <string name="matrix_contact_organisation_label">Organisation</string>
-    <string name="matrix_contact_title_label">Title</string>
+    <string name="matrix_contact_job_title_label">Job title</string>
     <string name="matrix_contact_phone_label">Phone</string>
     <string name="matrix_contact_mail_label">Email</string>
     <string name="matrix_contact_address_label">Address</string>
@@ -391,7 +391,6 @@
     <string name="qr_code_text_radio_button_label_none">None</string>
     <string name="qr_code_text_input_edit_text_hint_name">Name</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">First name</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organisation</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Web Site</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Mail address 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">Mail address 2</string>

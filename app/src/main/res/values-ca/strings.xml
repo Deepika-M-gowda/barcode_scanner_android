@@ -164,7 +164,6 @@
     <string name="off_quantity_low_label">Baixa quantitat</string>
     <string name="off_quantity_moderate_label">Quantitat moderada</string>
     <string name="book_product_pages_number_label">Nombre de Pàgina</string>
-    <string name="matrix_contact_title_label">Títol</string>
     <string name="matrix_contact_phone_label">Telèfon</string>
     <string name="matrix_contact_mail_label">Correu electrònic</string>
     <string name="matrix_contact_address_label">Adreça</string>
@@ -214,7 +213,7 @@
     <string name="custom_url_updated">S\'ha actualitzat l\'URL personalitzada!</string>
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="preferences_default">Per omissió</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, vinils,...)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, vinils,…)</string>
     <string name="preferences_remote_api_book_label">Open Library (Llibres)</string>
     <string name="preferences_information_about_remote_api_title">Informació quant a l\'API</string>
     <string name="preferences_information_about_remote_api_foreword">Prefaci</string>
@@ -300,7 +299,7 @@
     <string name="about_barcode_label">Quant al codi de barres</string>
     <string name="about_barcode_content_label">Codi de barres: %1$s</string>
     <string name="warning_label">Avís</string>
-    <string name="scan_error_information_label">S\'ha produït un error en cercar informació a l\'API remota... Verifiqueu-hola vostra connexió a internet i els permisos de l\'aplicació! Si el problema persisteix,podria ser un problema del servidor.</string>
+    <string name="scan_error_information_label">S\'ha produït un error en cercar informació a l\'API remota… Verifiqueu-hola vostra connexió a internet i els permisos de l\'aplicació! Si el problema persisteix,podria ser un problema del servidor.</string>
     <string name="scan_error_internet_information_label">No s\'ha trobat cap informació sobre el producte perquè sembla que no esteu connectata internet!</string>
     <string name="nutrition_facts_tab_label">Nutrició</string>
     <string name="quality_label">Qualitat del producte</string>
@@ -420,8 +419,7 @@
     <string name="barcode_upc_e_description_label">El codi UPC-E (Universal Product Code) és un codi de barres condensat del codi UPC-As\'utilitza principalment als EUA i Canadà per identificar els productes venuts als comerços. S\'utilitza en envasos massa petits per posar-hi el codi UPC-A.</string>
     <string name="barcode_ean_13_description_label">El codi EAN-13 (Numeració d\'articles europeus 13) és un codi de barres moltutilitzat per identificar els productes venuts a les botigues a Europa i arreudel món. Està format per 13 dígits.</string>
     <string name="barcode_ean_8_description_label">El codi EAN-8 (numeració europea d\'articles 8) és un codi de barres EAN-13 condensat utilitzat per identificar els productes venuts a les botigues d\'Europai a tot arreu del món. S\'utilitza en embalatges massa petits per posar-hi elcodi EAN-13.</string>
-    <string name="snack_bar_message_save_bitmap_error">La imatge no s\'ha desat...
-\nPotser la memòria és insuficient?</string>
+    <string name="snack_bar_message_save_bitmap_error">La imatge no s\'ha desat…\nPotser la memòria és insuficient?</string>
     <string name="snack_bar_message_share_bitmap_error">S\'ha produït un error al configurar la compartició.</string>
     <string name="barcode_search_error_no_compatible_application_found">No s\'ha trobat cap aplicació compatible</string>
     <string name="action_title_dialog_label">Què voleu fer?</string>
@@ -476,7 +474,6 @@
     <string name="qr_code_type_name_generate_from_contact">Genera-ho a partir del contacte</string>
     <string name="qr_code_text_radio_button_label_miss">Senyora</string>
     <string name="qr_code_text_radio_button_label_none">Cap</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organització</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Lloc web</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Adreça de correu 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">Adreça de correu 2</string>
@@ -502,8 +499,7 @@
     <string name="qr_code_text_input_edit_text_hint_epc_name">Nom</string>
     <string name="qr_code_text_input_edit_text_epc_name_error">El nom és obligatori</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">El codi IBAN és incorrecte</string>
-    <string name="list_bank_empty_message">No hi ha cap element...
-\nEncara no heu generat cap codi QR EPC.</string>
+    <string name="list_bank_empty_message">No hi ha cap element…\nEncara no heu generat cap codi QR EPC.</string>
     <string name="qr_code_text_input_edit_text_hint_email">Correu electrònic</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Assumpte</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / Nom de la xarxa</string>
@@ -518,8 +514,7 @@
     <string name="custom_urls">URL personalitzatdes</string>
     <string name="custom_search_urls_modify_url">Modifica l\'URL</string>
     <string name="custom_search_urls_list">Llista dels URLs</string>
-    <string name="custom_search_urls_list_is_empty_message">No hi ha cap element...
-\nEncara no heu generat cap URL personalitzada.</string>
+    <string name="custom_search_urls_list_is_empty_message">No hi ha cap element…\nEncara no heu generat cap URL personalitzada.</string>
     <string name="popup_message_confirmation_deleted_all_custom_urls">Esteu segur que voleu suprimir totes les URLs personalitzades?</string>
     <string name="custom_url_deleted">S\'ha suprimit la URL personalitzada!</string>
     <string name="preferences_remote_api_food_label">Open Food Facts (productes alimentaris)</string>
@@ -564,7 +559,7 @@
     <string name="preferences_information_about_remote_api_product_types_supported_food">• Productes alimentaris (amb l\'API Open Food Facts)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Productes cosmètics (amb l\'API Open Beauty Facts)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Productes d\'alimentació per a mascotes (amb l\'API Open Pet Food Facts)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CD, vinils,... (amb l\'API MusicBrainz)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CD, vinils,… (amb l\'API MusicBrainz)</string>
     <string name="preferences_information_about_remote_api_product_types_supported_book">• Llibres (amb l\'API Open Library API)</string>
     <string name="preferences_information_about_remote_api_some_additional_information_title">Informació addicional</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_1">• És possible que alguns productes no s\'incloguin en determinades bases de dades.</string>

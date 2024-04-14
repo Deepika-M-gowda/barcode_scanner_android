@@ -305,7 +305,6 @@
     <string name="error_barcode_39_regex_error_message">"يمكن لنوع الرمز الشريطي Code 39 ترميز الأحرف الكبيرة البالغ عددها 26 حرفًا والأرقام العشرة (من 0 إلى 9) بالإضافة إلى الأحرف السبعة الخاصة «-، .، مسافة، $، /، +، %».  لا يمكن ترميز الأحرف الصغيرة والأحرف الخاصة الأخرى بواسطة هذا النوع من الباركود."</string>
     <string name="barcode_upc_e_description_label">"رمز UPC-E (رمز المنتج العالمي) هو رمز شريطي مكثف لرمز UPC-A يستخدم بشكل رئيسي في الولايات المتحدة الأمريكية وكندا لتحديد المنتجات المباعة في المتاجر والمحلات التجارية.  يتم استخدامه في عبوات صغيرة جدًا بحيث لا يمكنها الحصول على رمز UPC-A."</string>
     <string name="country_ee">إستونيا</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">منظمة</string>
     <string name="preferences_source_code_label">مصدر الرمز</string>
     <string name="preferences_barcode_generation_title">مولد الباركود</string>
     <string name="matrix_localisation_location_disabled_label">يبدو أن الموقع على جهازك غير نشط.</string>
@@ -425,7 +424,6 @@
     <string name="additive_no_information_found_label">لم يتم العثور على معلومات عن هذه المادة المضافة!</string>
     <string name="stabilizer_description_label">"المثبتات والمكثفات وعوامل التبلور، مثل الأجار أو البكتين (المستخدمة في المربى على سبيل المثال) تعطي الأطعمة قوامًا أكثر صلابة.  على الرغم من أنها ليست مستحلبات حقيقية، إلا أنها تساعد على استقرار المستحلبات."</string>
     <string name="off_per_100_label">100%1$s مقابل </string>
-    <string name="matrix_contact_title_label">عنوان:</string>
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="qr_code_text_radio_button_label_none">لا أحد</string>
     <string name="book_product_original_title_label">العنوان الأصلي</string>

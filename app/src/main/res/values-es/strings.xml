@@ -230,7 +230,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Nombre</string>
     <string name="matrix_contact_organisation_label">Organización</string>
-    <string name="matrix_contact_title_label">Título</string>
     <string name="matrix_contact_phone_label">Teléfono</string>
     <string name="matrix_contact_mail_label">Correo electrónico</string>
     <string name="matrix_contact_address_label">Dirección</string>
@@ -362,7 +361,6 @@
     <string name="qr_code_text_radio_button_label_none">Ninguna</string>
     <string name="qr_code_text_input_edit_text_hint_name">Nombre</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Nombre de pila</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organización</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Sitio web</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Dirección de correo 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">Dirección de correo 2</string>
@@ -397,7 +395,7 @@
     <string name="qr_code_text_input_edit_text_hint_epc_information">Información</string>
     <string name="qr_code_text_input_edit_text_epc_name_error">El campo \"Nombre\" es obligatorio</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN incorrecto</string>
-    <string name="list_bank_empty_message">Ningún artículo...
+    <string name="list_bank_empty_message">Ningún artículo…
 \nAún no ha generado un código QR EPC.</string>
     <!-- Mail Creator -->
     <string name="qr_code_text_input_edit_text_hint_email">Correo electrónico</string>
@@ -486,7 +484,7 @@
     <string name="preferences_remote_api_food_label">Abrir información nutricional (productos alimenticios)</string>
     <string name="preferences_remote_api_cosmetic_label">Abrir Datos de Belleza (Productos cosméticos)</string>
     <string name="preferences_remote_api_pet_food_label">Abrir datos sobre alimentos para mascotas (productos alimenticios para mascotas)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinilos, ...)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinilos, …)</string>
     <string name="preferences_remote_api_book_label">Biblioteca abierta (Libros)</string>
     <!-- About Remote API -->
     <string name="preferences_information_about_remote_api_title">Información sobre las API</string>
@@ -717,7 +715,7 @@
     <string name="preferences_additional_options">Opciones adicionales</string>
     <string name="preferences_display_barcode_image_results_view">Mostrar la imagen del código de barras en la vista de resultados</string>
     <string name="custom_search_urls">URL de búsqueda personalizada</string>
-    <string name="custom_search_urls_list_is_empty_message">Ningún elemento...
+    <string name="custom_search_urls_list_is_empty_message">Ningún elemento…
 \nAún no has generado una URL personalizada.</string>
     <string name="custom_url_added">¡URL personalizada añadida!</string>
     <string name="examples">Ejemplos:</string>

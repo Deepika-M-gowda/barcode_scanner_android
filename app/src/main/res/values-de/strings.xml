@@ -235,7 +235,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Name</string>
     <string name="matrix_contact_organisation_label">Organisation</string>
-    <string name="matrix_contact_title_label">Titel</string>
     <string name="matrix_contact_phone_label">Telefonnummer</string>
     <string name="matrix_contact_mail_label">E-Mail</string>
     <string name="matrix_contact_address_label">Adresse</string>
@@ -367,7 +366,6 @@
     <string name="qr_code_text_radio_button_label_none">keine</string>
     <string name="qr_code_text_input_edit_text_hint_name">Name</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Vorname</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organisation</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Webseite</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">E-Mail-Adresse 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">E-Mail-Adresse 2</string>
@@ -737,8 +735,7 @@
     <string name="shortcuts_info">Ordne die Kürzel in der Reihenfolge an, die du bevorzugst.</string>
     <string name="custom_urls">Benutzerdefinierte URLs</string>
     <string name="custom_search_urls_list">URLs Liste</string>
-    <string name="custom_search_urls_list_is_empty_message">Kein Eintrag...
-\nDu hast noch keine benutzerdefinierte URL erstellt.</string>
+    <string name="custom_search_urls_list_is_empty_message">Kein Eintrag…\nDu hast noch keine benutzerdefinierte URL erstellt.</string>
     <string name="shortcuts">Kürzel</string>
     <string name="barcode_search_error_no_compatible_application_found">Keine kompatible Anwendung gefunden</string>
     <string name="clipboard_empty">Die Zwischenablage ist leer.</string>

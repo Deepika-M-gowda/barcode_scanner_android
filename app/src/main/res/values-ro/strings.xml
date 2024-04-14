@@ -55,7 +55,7 @@
     <string name="country_mo">Macao</string>
     <string name="camera_permission_denied">Ați refuzat accesul la cameră.
 \nTrebuie să îl autorizați pentru a scana un cod de bare.</string>
-    <string name="scan_error_information_label">A apărut o eroare la căutarea informațiilor despre API-ul de la distanță... Vă rugăm să verificați conexiunea la internet și permisiunile aplicației! Dacă problema persistă, ar trebui să fie o problemă de server.</string>
+    <string name="scan_error_information_label">A apărut o eroare la căutarea informațiilor despre API-ul de la distanță… Vă rugăm să verificați conexiunea la internet și permisiunile aplicației! Dacă problema persistă, ar trebui să fie o problemă de server.</string>
     <string name="scan_error_internet_information_label">Nu s-a găsit nicio informație despre produs deoarece nu sunteți conectat la internet!</string>
     <string name="nutrition_facts_tab_label">Nutriție</string>
     <string name="scan_error_message_label">Mesaj de eroare:</string>
@@ -237,7 +237,6 @@
     <string name="matrix_contact_name_label">Nume</string>
     <string name="matrix_contact_phone_label">Telefon</string>
     <string name="matrix_contact_organisation_label">Organizație</string>
-    <string name="matrix_contact_title_label">Titlu</string>
     <string name="matrix_contact_mail_label">Email</string>
     <string name="matrix_contact_address_label">Adresa</string>
     <string name="matrix_contact_notes_label">Note</string>
@@ -587,7 +586,6 @@
     <string name="qr_code_text_radio_button_label_none">Nici unul</string>
     <string name="qr_code_text_input_edit_text_hint_name">Nume</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Nume</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organizație</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Site Web</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Adresa de mail 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">Adresa de mail 3</string>

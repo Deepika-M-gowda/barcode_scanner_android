@@ -231,7 +231,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">名稱</string>
     <string name="matrix_contact_organisation_label">公司</string>
-    <string name="matrix_contact_title_label">標題</string>
     <string name="matrix_contact_phone_label">電話</string>
     <string name="matrix_contact_mail_label">電子郵件</string>
     <string name="matrix_contact_address_label">地址</string>
@@ -363,7 +362,6 @@
     <string name="qr_code_text_radio_button_label_none">無</string>
     <string name="qr_code_text_input_edit_text_hint_name">姓氏</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">名稱</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">公司</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">網站</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">郵件位址 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">郵件位址 2</string>

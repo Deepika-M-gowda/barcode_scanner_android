@@ -102,7 +102,7 @@
     <string name="product_search_label">Ricerca prodotto</string>
     <string name="no_product_found_label">Nessun prodotto è stato trovato!</string>
     <string name="warning_label">Attenzione</string>
-    <string name="scan_error_information_label">C\'è stato un errore durante la ricerca delle informazioni tramite API... Verifica la connessione ad internet e i permessi dell\'applicazione! Se il problema persiste, potrebbe essere un problema del server.</string>
+    <string name="scan_error_information_label">C\'è stato un errore durante la ricerca delle informazioni tramite API… Verifica la connessione ad internet e i permessi dell\'applicazione! Se il problema persiste, potrebbe essere un problema del server.</string>
     <string name="scan_error_internet_information_label">Nessuna informazione sul prodotto perché sembra che non sei collegato ad internet!</string>
     <string name="scan_error_message_label">Messaggio di errore:</string>
     <string name="overview_tab_label">Panoramica</string>
@@ -200,7 +200,6 @@
     <string name="bar_code_analysis_label">Analisi codice a barre</string>
     <string name="matrix_contact_name_label">Nome</string>
     <string name="matrix_contact_organisation_label">Organizzazione</string>
-    <string name="matrix_contact_title_label">Titolo</string>
     <string name="matrix_contact_phone_label">Telefono</string>
     <string name="matrix_contact_mail_label">Email</string>
     <string name="matrix_contact_address_label">Indirizzo</string>
@@ -314,7 +313,6 @@
     <string name="qr_code_text_radio_button_label_none">Nessuno</string>
     <string name="qr_code_text_input_edit_text_hint_name">Cognome</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Nome</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organizzazione</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Sito Web</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Indirizzo mail 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">Indirizzo mail 2</string>
@@ -348,7 +346,7 @@
     <string name="qr_code_text_input_edit_text_hint_epc_information">Informazione</string>
     <string name="qr_code_text_input_edit_text_epc_name_error">Campo \"Nome\" obbligatorio</string>
     <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN non corretto</string>
-    <string name="list_bank_empty_message">Nessun elemento...
+    <string name="list_bank_empty_message">Nessun elemento…
 \nNon hai ancora creato un Codice QR EPC.</string>
     <string name="qr_code_text_input_edit_text_hint_email">Email</string>
     <string name="qr_code_text_input_edit_text_hint_email_subject">Oggetto</string>

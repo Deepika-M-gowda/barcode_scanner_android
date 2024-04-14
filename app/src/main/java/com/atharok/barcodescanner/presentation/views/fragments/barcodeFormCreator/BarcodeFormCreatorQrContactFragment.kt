@@ -36,6 +36,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.R
+import com.atharok.barcodescanner.common.extensions.convertToString
 import com.atharok.barcodescanner.common.utils.showSimpleDialog
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrContactBinding
 import com.atharok.barcodescanner.domain.library.EzvcardBuilder
@@ -95,6 +96,7 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
             )
 
             createOrganization(viewBinding.fragmentBarcodeFormCreatorQrContactOrganisationInputEditText.text.toString())
+            createJobTitle(viewBinding.fragmentBarcodeFormCreatorQrContactJobTitleInputEditText.text.toString())
             createUrl(viewBinding.fragmentBarcodeFormCreatorQrContactWebSiteInputEditText.text.toString())
             addEmail(requireContext(),
                 viewBinding.fragmentBarcodeFormCreatorQrContactMail1InputEditText.text.toString(),
@@ -203,17 +205,23 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
             )
         }
 
-        if (vCard.organization != null && vCard.organization.values.isNotEmpty())
+        if (vCard.organization != null && vCard.organization.values?.isNotEmpty() == true)
             viewBinding.fragmentBarcodeFormCreatorQrContactOrganisationInputEditText.setText(
-                vCard.organization.values.first()
+                vCard.organization.values.map { it }.convertToString()
             )
 
-        if (vCard.urls.isNotEmpty())
+        if (vCard.titles?.isNotEmpty() == true) {
+            viewBinding.fragmentBarcodeFormCreatorQrContactJobTitleInputEditText.setText(
+                vCard.titles.map { it.value }.convertToString()
+            )
+        }
+
+        if (vCard.urls?.isNotEmpty() == true)
             viewBinding.fragmentBarcodeFormCreatorQrContactWebSiteInputEditText.setText(
-                vCard.urls.first().value
+                vCard.urls.map { it.value }.convertToString()
             )
 
-        if (vCard.emails.isNotEmpty())
+        if (vCard.emails?.isNotEmpty() == true)
             fillEmailField(
                 viewBinding.fragmentBarcodeFormCreatorQrContactMail1InputEditText,
                 viewBinding.contactMail1AutoCompleteTextView,
@@ -234,7 +242,7 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
                 vCard.emails[2]
             )
 
-        if (vCard.telephoneNumbers.isNotEmpty())
+        if (vCard.telephoneNumbers?.isNotEmpty() == true)
             fillPhoneField(
                 viewBinding.fragmentBarcodeFormCreatorQrContactPhone1InputEditText,
                 viewBinding.contactPhone1AutoCompleteTextView,
@@ -255,22 +263,28 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
                 vCard.telephoneNumbers[2]
             )
 
-        if (vCard.addresses.isNotEmpty()) {
+        if (vCard.addresses?.isNotEmpty() == true) {
             viewBinding.fragmentBarcodeFormCreatorQrContactStreetAddressInputEditText.setText(
-                vCard.addresses.first().streetAddress
+                vCard.addresses.map { it.streetAddress }.convertToString()
             )
             viewBinding.fragmentBarcodeFormCreatorQrContactPostalCodeInputEditText.setText(
-                vCard.addresses.first().postalCode
+                vCard.addresses.map { it.postalCode }.convertToString()
             )
-            viewBinding.fragmentBarcodeFormCreatorQrContactCityInputEditText.setText(vCard.addresses.first().locality)
+            viewBinding.fragmentBarcodeFormCreatorQrContactCityInputEditText.setText(
+                vCard.addresses.map { it.locality }.convertToString()
+            )
             viewBinding.fragmentBarcodeFormCreatorQrContactCountryInputEditText.setText(
-                vCard.addresses.first().country
+                vCard.addresses.map { it.country }.convertToString()
             )
-            viewBinding.fragmentBarcodeFormCreatorQrContactRegionInputEditText.setText(vCard.addresses.first().region)
+            viewBinding.fragmentBarcodeFormCreatorQrContactRegionInputEditText.setText(
+                vCard.addresses.map { it.region }.convertToString()
+            )
         }
 
-        if (vCard.notes.isNotEmpty())
-            viewBinding.fragmentBarcodeFormCreatorQrContactNotesInputEditText.setText(vCard.notes.first().value)
+        if (vCard.notes?.isNotEmpty() == true)
+            viewBinding.fragmentBarcodeFormCreatorQrContactNotesInputEditText.setText(
+                vCard.notes.map { it.value }.convertToString()
+            )
     }
 
     private fun fillEmailField(editText: TextInputEditText, autoCompleteTextView: MaterialAutoCompleteTextView, email: Email){
@@ -392,6 +406,7 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
         viewBinding.fragmentBarcodeFormCreatorQrContactNameInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactFirstNameInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactOrganisationInputEditText.setText("")
+        viewBinding.fragmentBarcodeFormCreatorQrContactJobTitleInputEditText.setText("")
         viewBinding.fragmentBarcodeFormCreatorQrContactWebSiteInputEditText.setText("")
 
         viewBinding.fragmentBarcodeFormCreatorQrContactMail1InputEditText.setText("")

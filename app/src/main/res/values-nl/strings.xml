@@ -148,7 +148,6 @@
     <string name="bar_code_analysis_label">Barcode-analyse</string>
     <string name="matrix_contact_name_label">Naam</string>
     <string name="matrix_contact_organisation_label">Organisatie</string>
-    <string name="matrix_contact_title_label">Titel</string>
     <string name="matrix_contact_phone_label">Telefoon</string>
     <string name="matrix_contact_mail_label">E-mail</string>
     <string name="matrix_contact_address_label">Adres</string>
@@ -546,7 +545,6 @@
     <string name="qr_code_spinner_prompt_none">Geen</string>
     <string name="search_engine_open_food_facts_url">https://nl.openfoodfacts.org/</string>
     <string name="preferences_switch_system_theme_label">Systeem volgen</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Organisatie</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Website</string>
     <string name="search_engine_open_pet_food_facts_url">https://nl.openpetfoodfacts.org/</string>
     <string name="search_engine_startpage_url">https://eu.startpage.com/do/metasearch.pl?query=%1$s</string>
@@ -677,7 +675,7 @@
     <string name="clipboard_empty">Het klembord is leeg.</string>
     <string name="custom_search_urls">Eigen zoeklinks</string>
     <string name="custom_search_urls_add_url">Link toevoegen</string>
-    <string name="custom_search_urls_list_is_empty_message">Geen item...
+    <string name="custom_search_urls_list_is_empty_message">Geen item…
 \nEr zijn nog geen eigen links opgegeven.</string>
     <string name="shortcuts_info">Rangschik de snelkoppelingen naar voorkeur.</string>
     <string name="shortcuts">Snelkoppelingen</string>

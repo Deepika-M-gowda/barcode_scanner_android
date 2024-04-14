@@ -180,7 +180,7 @@
     <string name="countries_label">Negara penjualan</string>
     <string name="eco_score_description_b">Dampak lingkungan yang rendah</string>
     <string name="eco_score_description_d">Dampak lingkungan yang tinggi</string>
-    <string name="scan_error_information_label">Terjadi error saat mencari informasi di API jarak jauh... Mohon pastikan koneksi internet dan izin aplikasi Anda! Jika masalah masih berlanjut, ini adalah masalah server.</string>
+    <string name="scan_error_information_label">Terjadi error saat mencari informasi di API jarak jauh… Mohon pastikan koneksi internet dan izin aplikasi Anda! Jika masalah masih berlanjut, ini adalah masalah server.</string>
     <string name="eco_score_description_unknown">Dampak lingkungan yang tidak diketahui</string>
     <string name="nova_group_description_2">Bahan-bahan olahan</string>
     <string name="off_additive_info_label">Info</string>

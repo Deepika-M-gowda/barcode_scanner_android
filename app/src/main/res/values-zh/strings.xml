@@ -230,7 +230,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">名字</string>
     <string name="matrix_contact_organisation_label">公司</string>
-    <string name="matrix_contact_title_label">标题</string>
     <string name="matrix_contact_phone_label">电话</string>
     <string name="matrix_contact_mail_label">电子邮件</string>
     <string name="matrix_contact_address_label">地址</string>
@@ -363,7 +362,6 @@
     <string name="qr_code_text_radio_button_label_none">无</string>
     <string name="qr_code_text_input_edit_text_hint_name">姓名</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">名称</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">公司</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">网址</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">电子邮件 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">电子邮件 2</string>
@@ -724,7 +722,7 @@
     <string name="colors_label">颜色</string>
     <string name="height_label">高度</string>
     <string name="action_modify_barcode">修改条形码</string>
-    <string name="custom_search_urls_list_is_empty_message">没有内容...
+    <string name="custom_search_urls_list_is_empty_message">没有内容…
 \n您尚未生成自定义 URL。</string>
     <string name="preferences_display_barcode_image_results_view">在结果视图中显示条形码图像</string>
     <string name="error">错误</string>

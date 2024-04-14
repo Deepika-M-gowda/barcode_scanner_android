@@ -230,7 +230,6 @@
     <!-- Matrix Barcode Contact Analysis -->
     <string name="matrix_contact_name_label">Имя</string>
     <string name="matrix_contact_organisation_label">Организация</string>
-    <string name="matrix_contact_title_label">Название</string>
     <string name="matrix_contact_phone_label">Телефон</string>
     <string name="matrix_contact_mail_label">Email</string>
     <string name="matrix_contact_address_label">Адрес</string>
@@ -362,7 +361,6 @@
     <string name="qr_code_text_radio_button_label_none">Нет</string>
     <string name="qr_code_text_input_edit_text_hint_name">Фамилия</string>
     <string name="qr_code_text_input_edit_text_hint_first_name">Имя</string>
-    <string name="qr_code_text_input_edit_text_hint_organisation">Организация</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Сайт</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Почтовый адрес 1</string>
     <string name="qr_code_text_input_edit_text_hint_mail_2">Почтовый адрес 2</string>
@@ -724,7 +722,7 @@
     <string name="custom_search_urls_add_url">Добавить URL</string>
     <string name="custom_search_urls_modify_url">Изменить URL</string>
     <string name="custom_search_urls_list">Список URL</string>
-    <string name="custom_search_urls_list_is_empty_message">Нет элемента...
+    <string name="custom_search_urls_list_is_empty_message">Нет элемента…
 \nВы еще не создали пользовательский URL.</string>
     <string name="custom_url_deleted">Пользовательский URL удален!</string>
     <string name="custom_url_added">Пользовательский URL добавлен!</string>
