@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Scanner de code-barres</string>
     <!-- Permission Denied -->
     <string name="camera_permission_denied">Vous avez refusé l\'accès à la caméra.\nVous devez l\'autoriser pour scanner un code-barres.</string>
     <!-- AlertDialog -->

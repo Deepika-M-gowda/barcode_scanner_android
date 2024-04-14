@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Barcode Scanner</string>
     <!-- Permission Denied -->
     <string name="camera_permission_denied">You have denied access to the camera.\nYou must authorize it to scan a barcode.</string>
     <!-- AlertDialog -->
@@ -741,7 +742,6 @@
     <string name="country_my">Malaysia</string>
     <string name="country_mo">Macao</string>
     <!-- No translatable -->
-    <string name="app_name" translatable="false">Barcode Scanner</string>
     <string name="text_colon" translatable="false">%1$s:</string>
     <string name="empty" translatable="false" />
     <string name="png_label" translatable="false">PNG</string>
@@ -856,6 +856,7 @@
     <string name="locale_language_zh" translatable="false">简体中文</string>
     <string name="locale_language_zh_Tw" translatable="false">繁體中文</string>
     <string name="locale_language_ar" translatable="false">العربية</string>
+    <string name="locale_language_ca" translatable="false">Català</string>
     <string name="locale_language_en" translatable="false">English</string>
     <string name="locale_language_de" translatable="false">Deutsch</string>
     <string name="locale_language_es" translatable="false">Español</string>
