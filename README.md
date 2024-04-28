@@ -40,7 +40,7 @@ Get information about a product during a scan:
 - Scan Food products barcodes to receive information about their composition thanks to the databases Open Food Facts and Open Beauty Facts.
 - Search information about the product you scan, with a quick research on different websites such as Amazon or Fnac.
 - Keep track of all your scanned barcodes with the history tool.
-- Generate your own barcodes
+- Generate your own barcodes.
 - Customize the interface with different colors, with a light theme or a dark one. The interface is built with Material 3 and is compatible with Material You, allowing you to adjust colors based on your wallpaper for devices running on Android 12 or later.
 - Texts are entirely translated in English, Arabic, Spanish, French, Portuguese, Russian, German, Turkish, Italian, Ukrainian, Polish, Dutch, Romanian and Chinese (Simplified and Traditional).
 
@@ -59,7 +59,8 @@ Get information about a product during a scan:
 
 If you like Barcode Scanner, you can support me via [Liberapay](https://liberapay.com/Atharok/donate) or [Ko-fi](https://ko-fi.com/atharok).
 
-[![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Atharok/donate)
+[![Donate](assets/liberapay-badge.png)](https://liberapay.com/Atharok/donate)
+[![Donate](assets/ko-fi-badge.png)](https://ko-fi.com/atharok)
 
 ## Translation
 
