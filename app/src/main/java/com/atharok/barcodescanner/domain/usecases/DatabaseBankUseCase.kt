@@ -30,6 +30,8 @@ class DatabaseBankUseCase(private val bankRepository: BankRepository) {
 
     suspend fun insertBank(bank: Bank): Long = bankRepository.insertBank(bank)
 
+    suspend fun insertBanks(banks: List<Bank>) = bankRepository.insertBanks(banks)
+
     suspend fun deleteBank(bank: Bank) = bankRepository.deleteBank(bank)
 
     suspend fun deleteBanks(banks: List<Bank>) = bankRepository.deleteBanks(banks)

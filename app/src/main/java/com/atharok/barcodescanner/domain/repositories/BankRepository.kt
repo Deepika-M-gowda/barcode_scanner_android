@@ -32,6 +32,8 @@ interface BankRepository {
 
     suspend fun insertBank(bank: Bank): Long
 
+    suspend fun insertBanks(banks: List<Bank>)
+
     suspend fun deleteAllBank(): Int
 
     suspend fun deleteBanks(banks: List<Bank>): Int

@@ -32,6 +32,8 @@ interface CustomUrlRepository {
 
     suspend fun insertCustomUrl(customUrl: CustomUrl): Long
 
+    suspend fun insertCustomUrls(customUrls: List<CustomUrl>)
+
     suspend fun updateCustomUrl(customUrl: CustomUrl): Int
 
     suspend fun deleteAllCustomUrl(): Int

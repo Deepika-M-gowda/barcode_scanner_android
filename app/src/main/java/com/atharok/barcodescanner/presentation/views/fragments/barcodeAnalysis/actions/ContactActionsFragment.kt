@@ -24,7 +24,6 @@ import android.content.Intent
 import android.view.View
 import androidx.core.content.FileProvider
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.data.file.image.BitmapSharer
 import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.presentation.intent.createAddContactIntent
 import com.atharok.barcodescanner.presentation.intent.createShareVcfFileIntent

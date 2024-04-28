@@ -35,6 +35,10 @@ class DatabaseBankViewModel(private val databaseBankUseCase: DatabaseBankUseCase
         databaseBankUseCase.insertBank(bank)
     }
 
+    fun insertBanks(banks: List<Bank>) = viewModelScope.launch {
+        databaseBankUseCase.insertBanks(banks)
+    }
+
     fun deleteBank(bank: Bank) = viewModelScope.launch {
         databaseBankUseCase.deleteBank(bank)
     }

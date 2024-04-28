@@ -41,6 +41,10 @@ class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarco
         databaseBarcodeUseCase.insertBarcode(barcode)
     }
 
+    fun insertBarcodes(barcodes: List<Barcode>) = viewModelScope.launch {
+        databaseBarcodeUseCase.insertBarcodes(barcodes)
+    }
+
     fun update(date: Long, contents: String, barcodeType: BarcodeType, name: String) = viewModelScope.launch {
         databaseBarcodeUseCase.update(date, contents, barcodeType, name)
     }

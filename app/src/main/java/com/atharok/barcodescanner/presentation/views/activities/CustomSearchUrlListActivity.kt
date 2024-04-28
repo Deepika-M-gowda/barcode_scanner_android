@@ -129,7 +129,13 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
         val customUrl: CustomUrl = adapter.getCustomUrl(position)
         databaseCustomUrlViewModel.deleteCustomUrl(customUrl)
-        Snackbar.make(viewBinding.root, getString(R.string.custom_url_deleted), Snackbar.LENGTH_SHORT).show()
+        showSnackbar(
+            text = getString(R.string.custom_url_deleted),
+            actionText = getString(R.string.cancel_label),
+            action = {
+                databaseCustomUrlViewModel.insertCustomUrl(customUrl)
+            }
+        )
     }
 
     // ---- Delete custom URL From Menu ----
@@ -142,7 +148,15 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
 
     private fun showDeleteSelectedItemsConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
-            databaseCustomUrlViewModel.deleteCustomUrls(customUrlItemSelected)
+            val customUrlsDeleted: List<CustomUrl> = customUrlItemSelected.toList()
+            databaseCustomUrlViewModel.deleteCustomUrls(customUrlsDeleted)
+            showSnackbar(
+                text = getString(R.string.snack_bar_message_items_deleted),
+                actionText = getString(R.string.cancel_label),
+                action = {
+                    databaseCustomUrlViewModel.insertCustomUrls(customUrlsDeleted)
+                }
+            )
         }
     }
 
@@ -187,5 +201,11 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
     private fun updateIntoDatabase(customUrl: CustomUrl) {
         databaseCustomUrlViewModel.updateCustomUrl(customUrl)
         Snackbar.make(viewBinding.root, getString(R.string.custom_url_updated), Snackbar.LENGTH_SHORT).show()
+    }
+
+    // ---- UI ----
+
+    private fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
+        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).setAction(actionText, action).show()
     }
 }

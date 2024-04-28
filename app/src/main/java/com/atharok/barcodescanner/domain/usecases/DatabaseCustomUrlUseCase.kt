@@ -30,6 +30,8 @@ class DatabaseCustomUrlUseCase(private val customUrlRepository: CustomUrlReposit
 
     suspend fun insertCustomUrl(customUrl: CustomUrl): Long = customUrlRepository.insertCustomUrl(customUrl)
 
+    suspend fun insertCustomUrls(customUrls: List<CustomUrl>) = customUrlRepository.insertCustomUrls(customUrls)
+
     suspend fun updateCustomUrl(customUrl: CustomUrl): Int = customUrlRepository.updateCustomUrl(customUrl)
 
     suspend fun deleteCustomUrl(customUrl: CustomUrl) = customUrlRepository.deleteCustomUrl(customUrl)

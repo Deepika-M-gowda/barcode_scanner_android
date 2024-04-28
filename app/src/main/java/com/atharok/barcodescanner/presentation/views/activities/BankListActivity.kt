@@ -153,11 +153,13 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
         val bank: Bank = adapter.getBank(position)
         databaseBankViewModel.deleteBank(bank)
-        Snackbar.make(
-            viewBinding.root,
-            getString(R.string.menu_item_history_removed_from_history),
-            Snackbar.LENGTH_SHORT
-        ).show()
+        showSnackbar(
+            text = getString(R.string.menu_item_history_removed_from_history),
+            actionText = getString(R.string.cancel_label),
+            action = {
+                databaseBankViewModel.insertBank(bank)
+            }
+        )
     }
 
     // ---- Delete History From Menu ----
@@ -170,7 +172,15 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
 
     private fun showDeleteSelectedItemsConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
-            databaseBankViewModel.deleteBanks(bankItemSelected)
+            val banksDeleted: List<Bank> = bankItemSelected.toList()
+            databaseBankViewModel.deleteBanks(banksDeleted)
+            showSnackbar(
+                text = getString(R.string.snack_bar_message_items_deleted),
+                actionText = getString(R.string.cancel_label),
+                action = {
+                    databaseBankViewModel.insertBanks(banksDeleted)
+                }
+            )
         }
     }
 
@@ -183,5 +193,9 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
             }
             .setNegativeButton(R.string.cancel_label, null)
             .show()
+    }
+
+    private fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
+        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).setAction(actionText, action).show()
     }
 }

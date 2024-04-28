@@ -37,6 +37,9 @@ interface BankDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(bank: Bank): Long
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(banks: List<Bank>)
+
     @Query("DELETE FROM Bank")
     suspend fun deleteAll(): Int
 

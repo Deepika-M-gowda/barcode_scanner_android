@@ -23,6 +23,7 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -200,9 +201,15 @@ class MainActivity: BaseActivity() {
     // ---- UI ----
 
     fun showSnackbar(text: String) {
-        val snackbar = Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT)
-        snackbar.anchorView = viewBinding.activityMainMenuBottomNavigation
-        snackbar.show()
+        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).apply {
+            anchorView = viewBinding.activityMainMenuBottomNavigation
+        }.show()
+    }
+
+    fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
+        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).apply {
+            anchorView = viewBinding.activityMainMenuBottomNavigation
+        }.setAction(actionText, action).show()
     }
 
     // ---- Theme ----

@@ -82,6 +82,7 @@
     <!-- History -->
     <string name="label_history_empty">No elements scanned…</string>
     <string name="snack_bar_message_item_deleted">The product \"%1$s\" has been deleted from history.</string>
+    <string name="snack_bar_message_items_deleted">Items deleted from history.</string>
     <string name="popup_message_confirmation_delete_history">Delete all history?</string>
     <string name="popup_message_confirmation_delete_selected_items_history">Delete selected items?</string>
     <string name="menu_item_history_delete">Delete history</string>

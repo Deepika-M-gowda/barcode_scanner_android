@@ -212,7 +212,13 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         } else
             "${barcode.contents.substring(0, 16).substringBefore('\n')}..."
 
-        showSnackbar(getString(R.string.snack_bar_message_item_deleted, content))
+        showSnackbar(
+            text = getString(R.string.snack_bar_message_item_deleted, content),
+            actionText = getString(R.string.cancel_label),
+            action = {
+                databaseBarcodeViewModel.insertBarcode(barcode)
+            }
+        )
     }
 
     // ---- Delete History ----
@@ -225,7 +231,15 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
 
     private fun showDeleteSelectedItemsConfirmationDialog() {
         showDeleteConfirmationDialog(R.string.popup_message_confirmation_delete_selected_items_history) {
-            databaseBarcodeViewModel.deleteBarcodes(barcodeItemsSelected)
+            val barcodesDeleted: List<Barcode> = barcodeItemsSelected.toList()
+            databaseBarcodeViewModel.deleteBarcodes(barcodesDeleted)
+            showSnackbar(
+                text = getString(R.string.snack_bar_message_items_deleted),
+                actionText = getString(R.string.cancel_label),
+                action = {
+                    databaseBarcodeViewModel.insertBarcodes(barcodesDeleted)
+                }
+            )
         }
     }
 
@@ -329,6 +343,13 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         val activity = requireActivity()
         if(activity is MainActivity) {
             activity.showSnackbar(text)
+        }
+    }
+
+    private fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
+        val activity = requireActivity()
+        if(activity is MainActivity) {
+            activity.showSnackbar(text, actionText, action)
         }
     }
 }

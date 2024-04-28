@@ -35,6 +35,10 @@ class DatabaseCustomUrlViewModel(private val databaseCustomUrlUseCase: DatabaseC
         databaseCustomUrlUseCase.insertCustomUrl(customUrl)
     }
 
+    fun insertCustomUrls(customUrls: List<CustomUrl>) = viewModelScope.launch {
+        databaseCustomUrlUseCase.insertCustomUrls(customUrls)
+    }
+
     fun updateCustomUrl(customUrl: CustomUrl) = viewModelScope.launch {
         databaseCustomUrlUseCase.updateCustomUrl(customUrl)
     }

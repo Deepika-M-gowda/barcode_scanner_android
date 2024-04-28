@@ -31,6 +31,8 @@ class CustomUrlRepositoryImpl(private val customUrlDao: CustomUrlDao): CustomUrl
 
     override suspend fun insertCustomUrl(customUrl: CustomUrl): Long = customUrlDao.insert(customUrl)
 
+    override suspend fun insertCustomUrls(customUrls: List<CustomUrl>) = customUrlDao.insert(customUrls)
+
     override suspend fun updateCustomUrl(customUrl: CustomUrl): Int = customUrlDao.update(customUrl.id, customUrl.name, customUrl.url)
 
     override suspend fun deleteAllCustomUrl(): Int = customUrlDao.deleteAll()

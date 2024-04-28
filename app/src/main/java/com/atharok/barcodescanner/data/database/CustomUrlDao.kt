@@ -37,6 +37,9 @@ interface CustomUrlDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(customUrl: CustomUrl): Long
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(customUrls: List<CustomUrl>)
+
     @Query("UPDATE CustomUrl SET name = :name, url = :url WHERE id = :id")
     suspend fun update(id: Int, name: String, url: String): Int
 

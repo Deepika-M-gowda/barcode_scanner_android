@@ -31,6 +31,8 @@ class BankRepositoryImpl(private val bankDao: BankDao): BankRepository {
 
     override suspend fun insertBank(bank: Bank): Long = bankDao.insert(bank)
 
+    override suspend fun insertBanks(banks: List<Bank>) = bankDao.insert(banks)
+
     override suspend fun deleteAllBank(): Int = bankDao.deleteAll()
 
     override suspend fun deleteBanks(banks: List<Bank>): Int = bankDao.deleteBanks(banks)
