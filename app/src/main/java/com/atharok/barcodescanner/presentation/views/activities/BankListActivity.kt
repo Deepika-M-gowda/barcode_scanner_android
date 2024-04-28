@@ -39,7 +39,6 @@ import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.views.recyclerView.bankHistory.BankHistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.bankHistory.BankHistoryItemTouchHelperListener
-import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -52,6 +51,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
     private val viewBinding: ActivityBankListBinding by lazy {
         ActivityBankListBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     private val databaseBankViewModel by viewModel<DatabaseBankViewModel>()
 
@@ -69,7 +69,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
         configureRecyclerView()
         observeDatabase()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     override fun onDestroy() {
@@ -193,9 +193,5 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
             }
             .setNegativeButton(R.string.cancel_label, null)
             .show()
-    }
-
-    private fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).setAction(actionText, action).show()
     }
 }

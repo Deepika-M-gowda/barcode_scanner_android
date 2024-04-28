@@ -28,6 +28,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -61,7 +62,6 @@ import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.ImageManagerViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageEditorFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeImageEditor.BarcodeImageFragment
-import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import ezvcard.Ezvcard
 import org.koin.android.ext.android.get
@@ -75,6 +75,7 @@ class BarcodeDetailsActivity : BaseActivity() {
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     private val contents: String by lazy {
         getIntentStringValue() ?: error()
@@ -134,7 +135,7 @@ class BarcodeDetailsActivity : BaseActivity() {
             configureFragments()
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureFragments() {
@@ -293,11 +294,11 @@ class BarcodeDetailsActivity : BaseActivity() {
                 is Resource.Progress -> {}
                 is Resource.Success -> {
                     when(response.data) {
-                        true -> show(R.string.snack_bar_message_save_bitmap_ok)
-                        else-> show(R.string.snack_bar_message_save_bitmap_error)
+                        true -> showSnackbar(R.string.snack_bar_message_save_bitmap_ok)
+                        else-> showSnackbar(R.string.snack_bar_message_save_bitmap_error)
                     }
                 }
-                is Resource.Failure -> show(R.string.snack_bar_message_save_bitmap_error)
+                is Resource.Failure -> showSnackbar(R.string.snack_bar_message_save_bitmap_error)
             }
         }
     }
@@ -318,14 +319,14 @@ class BarcodeDetailsActivity : BaseActivity() {
                 is Resource.Progress -> {}
                 is Resource.Success -> {
                     when(it.data) {
-                        null -> show(R.string.snack_bar_message_share_bitmap_error)
+                        null -> showSnackbar(R.string.snack_bar_message_share_bitmap_error)
                         else -> {
                             val intent: Intent = createShareImageIntent(applicationContext, it.data)
                             startActivity(intent)
                         }
                     }
                 }
-                is Resource.Failure -> show(R.string.snack_bar_message_share_bitmap_error)
+                is Resource.Failure -> showSnackbar(R.string.snack_bar_message_share_bitmap_error)
             }
         }
     }
@@ -334,11 +335,6 @@ class BarcodeDetailsActivity : BaseActivity() {
         val intent: Intent = createShareTextIntent(applicationContext, contents)
         startActivity(intent)
     }
-
-    // ---- Snackbar ----
-
-    private fun show(@StringRes stringRes: Int) =
-        Snackbar.make(viewBinding.root, getString(stringRes), Snackbar.LENGTH_SHORT).show()
 
     // ---- AlertDialog ----
 

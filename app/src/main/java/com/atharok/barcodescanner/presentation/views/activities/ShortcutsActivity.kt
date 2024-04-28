@@ -36,6 +36,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class ShortcutsActivity : BaseActivity(), CustomItemTouchHelperCallback.ItemTouchHelperListener {
 
     private val viewBinding: ActivityShortcutsBinding by lazy { ActivityShortcutsBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
     private val shortcutViewModel: DynamicShortcutViewModel by viewModel()
 
     private val adapter: ShortcutItemAdapter = ShortcutItemAdapter()
@@ -45,7 +46,7 @@ class ShortcutsActivity : BaseActivity(), CustomItemTouchHelperCallback.ItemTouc
         setSupportActionBar(viewBinding.activityShortcutsActivityLayout.toolbar)
         shortcutViewModel.createShortcuts()
         configureRecyclerView()
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureRecyclerView() {

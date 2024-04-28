@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import com.atharok.barcodescanner.R
@@ -35,6 +36,7 @@ class BarcodeScanOnlyActivity : BaseActivity() {
     private val mainScannerFragment: MainScannerFragment by inject()
 
     private val viewBinding: ActivityBarcodeScanOnlyBinding by lazy { ActivityBarcodeScanOnlyBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +55,6 @@ class BarcodeScanOnlyActivity : BaseActivity() {
             //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 }

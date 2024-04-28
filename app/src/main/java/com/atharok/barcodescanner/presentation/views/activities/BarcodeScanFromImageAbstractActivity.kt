@@ -24,6 +24,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ProgressBar
 import androidx.lifecycle.lifecycleScope
 import com.atharok.barcodescanner.R
@@ -47,6 +48,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
     private val viewBinding: ActivityBarcodeScanFromImageBinding by lazy {
         ActivityBarcodeScanFromImageBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +58,7 @@ abstract class BarcodeScanFromImageAbstractActivity: BaseActivity() {
         viewBinding.activityBarcodeScanFromImageCropImageView.clearImage()
         configureProgressBarColor()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     // ---- Menu ----

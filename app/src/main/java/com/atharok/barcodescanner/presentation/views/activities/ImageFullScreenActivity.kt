@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.os.Bundle
+import android.view.View
 import com.atharok.barcodescanner.common.extensions.setImageFromWeb
 import com.atharok.barcodescanner.common.utils.IMAGE_URI_KEY
 import com.atharok.barcodescanner.databinding.ActivityImageFullScreenBinding
@@ -28,6 +29,7 @@ import com.atharok.barcodescanner.databinding.ActivityImageFullScreenBinding
 class ImageFullScreenActivity : BaseActivity() {
 
     private val viewBinding: ActivityImageFullScreenBinding by lazy { ActivityImageFullScreenBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,6 @@ class ImageFullScreenActivity : BaseActivity() {
 
         viewBinding.activityImageFullScreenImageView.setImageFromWeb(imageUri)
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 }

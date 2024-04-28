@@ -50,7 +50,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.a
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.FoodAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.musicProduct.MusicAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.unknownProduct.ProductAnalysisFragment
-import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -62,6 +61,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
     private val viewBinding: ActivityBarcodeAnalysisBinding by lazy {
         ActivityBarcodeAnalysisBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     // ---- ViewModel ----
 
@@ -79,7 +79,7 @@ class BarcodeAnalysisActivity: BaseActivity() {
             configureContentsView(barcode)
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureContentsView(barcode: Barcode) {
@@ -257,10 +257,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
         }
 
     // ---- UI ----
-
-    fun showSnackbar(text: String) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).show()
-    }
 
     private fun changeToolbarText(barcode: Barcode) {
         val tabText = getString(barcode.getBarcodeType().stringResource)

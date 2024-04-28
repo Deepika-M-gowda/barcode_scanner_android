@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atharok.barcodescanner.R
@@ -31,6 +32,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.aboutLibraryTh
 class AboutLibraryThirdActivity : BaseActivity() {
 
     private val viewBinding: ActivityAboutLibraryThirdBinding by lazy { ActivityAboutLibraryThirdBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +42,7 @@ class AboutLibraryThirdActivity : BaseActivity() {
 
         configureRecyclerView()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureRecyclerView(){

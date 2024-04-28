@@ -50,6 +50,7 @@ class BarcodeFormCreatorActivity : BaseActivity() {
     }
 
     private val viewBinding: ActivityBarcodeFormCreatorBinding by lazy { ActivityBarcodeFormCreatorBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +77,7 @@ class BarcodeFormCreatorActivity : BaseActivity() {
             finishAfterTransition()
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     // ---- Header ----

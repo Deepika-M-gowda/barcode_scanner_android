@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.activities
 
 import android.os.Bundle
+import android.view.View
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityAboutApisBinding
 
@@ -29,6 +30,7 @@ class AboutApisActivity : BaseActivity() {
     private val viewBinding: ActivityAboutApisBinding by lazy {
         ActivityAboutApisBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +39,7 @@ class AboutApisActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
         configureViews()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureViews() {

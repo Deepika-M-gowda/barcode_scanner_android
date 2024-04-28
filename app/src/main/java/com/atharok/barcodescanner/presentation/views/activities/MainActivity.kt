@@ -39,7 +39,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerF
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -60,6 +59,7 @@ class MainActivity: BaseActivity() {
     private val mainSettingsFragment: MainSettingsFragment by inject()
 
     private val viewBinding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,7 +85,7 @@ class MainActivity: BaseActivity() {
             configureBottomNavigationMenu()
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -201,15 +201,19 @@ class MainActivity: BaseActivity() {
     // ---- UI ----
 
     fun showSnackbar(text: String) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).apply {
+        showSnackbar(
+            text = text,
             anchorView = viewBinding.activityMainMenuBottomNavigation
-        }.show()
+        )
     }
 
     fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).apply {
+        showSnackbar(
+            text = text,
+            actionText = actionText,
+            action = action,
             anchorView = viewBinding.activityMainMenuBottomNavigation
-        }.setAction(actionText, action).show()
+        )
     }
 
     // ---- Theme ----

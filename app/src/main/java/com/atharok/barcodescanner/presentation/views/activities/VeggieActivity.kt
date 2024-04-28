@@ -34,6 +34,7 @@ import com.atharok.barcodescanner.presentation.views.recyclerView.veggie.VeggieI
 class VeggieActivity : BaseActivity() {
 
     private val viewBinding: ActivityVeggieBinding by lazy { ActivityVeggieBinding.inflate(layoutInflater) }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +53,7 @@ class VeggieActivity : BaseActivity() {
             viewBinding.activityVeggieNoIngredientsTextView.visibility = View.GONE
         }
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     private fun configureToolbar() {

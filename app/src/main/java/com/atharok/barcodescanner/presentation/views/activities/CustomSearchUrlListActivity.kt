@@ -23,7 +23,6 @@ import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlC
 import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlCreatorActivity.Companion.RESULT_CODE_UPDATE
 import com.atharok.barcodescanner.presentation.views.recyclerView.customUrl.CustomUrlItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.customUrl.CustomUrlItemTouchHelperListener
-import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCustomUrlItemListener, CustomUrlItemTouchHelperListener {
@@ -31,6 +30,7 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
     private val viewBinding: ActivityCustomSearchUrlListBinding by lazy {
         ActivityCustomSearchUrlListBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     private val databaseCustomUrlViewModel by viewModel<DatabaseCustomUrlViewModel>()
 
@@ -49,7 +49,7 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
         configureRecyclerView()
         observeDatabase()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     override fun onDestroy() {
@@ -195,17 +195,11 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
 
     private fun saveIntoDatabase(customUrl: CustomUrl) {
         databaseCustomUrlViewModel.insertCustomUrl(customUrl)
-        Snackbar.make(viewBinding.root, getString(R.string.custom_url_added), Snackbar.LENGTH_SHORT).show()
+        showSnackbar(R.string.custom_url_added)
     }
 
     private fun updateIntoDatabase(customUrl: CustomUrl) {
         databaseCustomUrlViewModel.updateCustomUrl(customUrl)
-        Snackbar.make(viewBinding.root, getString(R.string.custom_url_updated), Snackbar.LENGTH_SHORT).show()
-    }
-
-    // ---- UI ----
-
-    private fun showSnackbar(text: String, actionText: String, action: (View) -> Unit) {
-        Snackbar.make(viewBinding.root, text, Snackbar.LENGTH_SHORT).setAction(actionText, action).show()
+        showSnackbar(R.string.custom_url_updated)
     }
 }

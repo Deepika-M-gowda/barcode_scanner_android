@@ -23,17 +23,22 @@ package com.atharok.barcodescanner.presentation.views.activities
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.atharok.barcodescanner.domain.library.SettingsManager
+import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 import kotlin.reflect.KClass
 
 abstract class BaseActivity: AppCompatActivity() {
 
     val settingsManager: SettingsManager by inject()
+
+    abstract val rootView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val theme = settingsManager.getTheme()
@@ -73,6 +78,33 @@ abstract class BaseActivity: AppCompatActivity() {
             ActivityInfo.SCREEN_ORIENTATION_FULL_USER
         }
     }
+
+    // ---- UI ----
+
+    fun showSnackbar(
+        text: String,
+        anchorView: View? = null
+    ) {
+        Snackbar.make(rootView, text, Snackbar.LENGTH_SHORT).apply {
+            this.anchorView = anchorView
+        }.show()
+    }
+
+    fun showSnackbar(
+        text: String,
+        actionText: String,
+        action: (View) -> Unit,
+        anchorView: View? = null
+    ) {
+        Snackbar.make(rootView, text, Snackbar.LENGTH_SHORT).apply {
+            this.anchorView = anchorView
+        }.setAction(actionText, action).show()
+    }
+
+    fun showSnackbar(
+        @StringRes stringRes: Int,
+        anchorView: View? = null
+    ) = showSnackbar(getString(stringRes), anchorView)
 
     // -------------------------------
     // ------ Activity Override ------

@@ -23,6 +23,7 @@ class CustomSearchUrlCreatorActivity : BaseActivity() {
     private val viewBinding: ActivityCustomSearchUrlCreatorBinding by lazy {
         ActivityCustomSearchUrlCreatorBinding.inflate(layoutInflater)
     }
+    override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +40,7 @@ class CustomSearchUrlCreatorActivity : BaseActivity() {
         configureInfoMessageTextView()
         configureExampleMessageTextView()
 
-        setContentView(viewBinding.root)
+        setContentView(rootView)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
