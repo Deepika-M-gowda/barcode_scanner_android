@@ -20,6 +20,11 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+-keep,includedescriptorclasses class ezvcard.** { *; }
+-keep enum ezvcard.VCardVersion { *; }
+-dontwarn ezvcard.io.json.**
+-dontwarn freemarker.**
+
 -dontwarn okhttp3.internal.platform.**
 -dontwarn org.conscrypt.**
 -dontwarn org.bouncycastle.**
