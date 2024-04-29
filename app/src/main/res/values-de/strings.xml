@@ -562,7 +562,6 @@
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra crossing") ist eine quelloffene Bibliothek zur Verarbeitung von 1D/2D-Barcodes in verschiedenen Formaten.</string>
     <string name="dependency_camera_x_description_label">Jetpack\'s CameraX Hilfsbibliothek bietet eine einfach zu bedienende und funktionsreiche Android Kamera-Schnittstelle (API).</string>
-    <string name="dependency_zxing_code_scanner_description_label">Code-Scanner-Bibliothek für Android, die auf ZXing basiert.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard ist eine in Java geschriebene vCard-Bibliothek. Sie kann vCards in vielen verschiedenen Formaten lesen und schreiben.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper ist eine Bibliothek zum Zuschneiden von Bildern für Android.</string>
     <string name="dependency_coil_description_label">Eine Bildladebibliothek für Android, die von Kotlin Coroutines unterstützt wird.</string>

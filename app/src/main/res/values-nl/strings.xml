@@ -629,7 +629,6 @@
 \nKoin is a DSL, a light container and a pragmatic API</string>
     <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
     <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Code scanner library for Android, based on ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
     <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>

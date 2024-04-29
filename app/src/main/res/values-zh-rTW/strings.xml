@@ -710,7 +710,6 @@
     <string name="dependency_material_components_description_label">Android 的 Material Components (MDC-Android) 可協助開發人員執行 Material Design。 這些元件由 Google 的核心工程師和使用者體驗設計師團隊開發，支援可靠的開發工作流程來建立美觀且實用的 Android 應用程式。
 \n
 \n Android 的 Material Components 是 Android 設計支援庫的直接替代品。</string>
-    <string name="dependency_zxing_code_scanner_description_label">基於 ZXing 的 Android 程式碼掃描器函式庫。</string>
     <string name="width_label">寬度</string>
     <string name="colors_label">顏色</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper 是一個適用於 Android 的影像裁剪庫。</string>

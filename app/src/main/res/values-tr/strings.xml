@@ -556,7 +556,6 @@
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label">ZXing ("zebra geçidi"), açık kaynaklı, çok formatlı bir 1D/2D barkod görüntü işleme kitaplığıdır.</string>
     <string name="dependency_camera_x_description_label">Jetpack\'in CameraX destek kitaplığı, kullanımı kolay ve zengin özelliklere sahip bir Android kamera API\'si sağlar.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Android için kod tarayıcı kitaplığı, ZXing\'e dayalıdır.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard, Java ile yazılmış bir vCard kitaplığıdır. Birçok farklı formatta vCard okuyabilir ve yazabilir.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper, Android için bir resim kırpma kitaplığıdır.</string>
     <string name="dependency_coil_description_label">Android için Kotlin Coroutines tarafından desteklenen bir resim yükleme kitaplığıdır.</string>

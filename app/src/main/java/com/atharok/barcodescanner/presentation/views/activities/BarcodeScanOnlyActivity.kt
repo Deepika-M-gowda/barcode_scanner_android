@@ -27,13 +27,11 @@ import androidx.fragment.app.commit
 import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityBarcodeScanOnlyBinding
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import org.koin.android.ext.android.inject
 
 class BarcodeScanOnlyActivity : BaseActivity() {
 
     private val mainCameraXScannerFragment: MainCameraXScannerFragment by inject()
-    private val mainScannerFragment: MainScannerFragment by inject()
 
     private val viewBinding: ActivityBarcodeScanOnlyBinding by lazy { ActivityBarcodeScanOnlyBinding.inflate(layoutInflater) }
     override val rootView: View get() = viewBinding.root
@@ -51,7 +49,7 @@ class BarcodeScanOnlyActivity : BaseActivity() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
             setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-            replace(viewBinding.activityBarcodeScanOnlyFrameLayout.id, if(settingsManager.useCameraXApi) mainCameraXScannerFragment else mainScannerFragment)
+            replace(viewBinding.activityBarcodeScanOnlyFrameLayout.id, mainCameraXScannerFragment)
             //addToBackStack(null) // Permet de revenir aux fragments affichés précédement via le bouton back
         }
 

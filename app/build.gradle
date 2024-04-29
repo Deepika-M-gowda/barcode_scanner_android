@@ -83,7 +83,6 @@ dependencies {
     implementation "androidx.camera:camera-view:${camerax_version}"
 
     // Zxing permet d'avoir toutes les fonctionnalités liées aux code-barres
-    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
     implementation 'com.google.zxing:core:3.3.3' //3.4.1 pour api 24 ou plus
 
     // VCard Parser

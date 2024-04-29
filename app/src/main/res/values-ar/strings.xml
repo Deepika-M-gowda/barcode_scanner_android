@@ -518,7 +518,6 @@
     <string name="book_product_publish_date_label">تاريخ النشر</string>
     <string name="country_mm">ميانمار</string>
     <string name="action_wifi_add_network_successful">تمت إضافة شبكة Wi-Fi.</string>
-    <string name="dependency_zxing_code_scanner_description_label">مكتبة ماسح الأكواد لنظام Android، استنادًا إلى ZXing.</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="open_library_source_description_label">معلومات الكتاب مأخوذة من قاعدة بيانات Open Library المجانية.</string>
     <string name="eco_score_description_a">تأثير بيئي منخفض للغاية</string>

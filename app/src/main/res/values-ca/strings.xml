@@ -660,7 +660,6 @@
     <string name="bdd_open_library_description_label">Open Library és una base de dades gratuïta destinada a catalogar tots els llibres publicats, sigui quina sigui la seva llengua.</string>
     <string name="dependency_by">per %1$s</string>
     <string name="dependency_camera_x_description_label">La biblioteca de suport CameraX de Jetpack ofereix una API de la càmera d\'Android amb moltes funcions fàcil d\'utilitzar.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Biblioteca d\'escaneig de codis per a Android, basada en ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard és una biblioteca de vCard escrita en Java. Pot llegir i escriure vCards en molts formats diferents.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper és una biblioteca Android per escapçar i girar les imatges.</string>
     <string name="dependency_coil_description_label">Una biblioteca per a Android per carregar imatges amb el suport de Kotlin Coroutines.</string>

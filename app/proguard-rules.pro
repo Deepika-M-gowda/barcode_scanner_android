@@ -20,12 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-# Reflection access
--keepclassmembernames class com.budiyev.android.codescanner.CodeScanner {
-    private com.budiyev.android.codescanner.DecoderWrapper mDecoderWrapper;
-    private android.view.SurfaceHolder mSurfaceHolder;
-}
-
 -dontwarn okhttp3.internal.platform.**
 -dontwarn org.conscrypt.**
 -dontwarn org.bouncycastle.**

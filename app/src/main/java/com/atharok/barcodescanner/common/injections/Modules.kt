@@ -164,7 +164,6 @@ import com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreato
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
@@ -521,7 +520,6 @@ val dataModule: Module = module {
 val fragmentsModule = module {
 
     factory { MainCameraXScannerFragment() }
-    factory { MainScannerFragment() }
     factory { MainBarcodeHistoryFragment() }
     factory { MainBarcodeCreatorListFragment() }
     factory { MainSettingsFragment() }

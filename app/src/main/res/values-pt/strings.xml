@@ -504,7 +504,6 @@
     <string name="book_product_publish_date_label">Data de publicação</string>
     <string name="country_mm">Birmânia</string>
     <string name="action_wifi_add_network_successful">Rede Wi-Fi adicionada.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Biblioteca de escâner de código para Android, baseado em ZXing.</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="open_library_source_description_label">As informações sobre livros são do banco de dados livre Open Library.</string>
     <string name="title_generate">Gerar</string>

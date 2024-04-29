@@ -464,7 +464,6 @@
     <string name="preferences_information_about_remote_api_manual_search_title">Ручний пошук</string>
     <string name="book_product_publish_date_label">Дата публікації</string>
     <string name="action_wifi_add_network_successful">Мережа Wi-Fi додана.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Бібліотека сканера кодів для Android на основі ZXing.</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="open_library_source_description_label">Інформація про книгу взята з вільної бази даних Open Library.</string>
     <string name="eco_score_description_a">Дуже низький вплив на довкілля</string>

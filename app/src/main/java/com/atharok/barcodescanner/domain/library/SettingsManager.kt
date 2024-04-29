@@ -52,7 +52,6 @@ class SettingsManager(private val context: Context) {
         private set
 
     // Scan
-    private val useCameraXApiKey = context.getString(R.string.preferences_switch_scan_use_camera_x_api_key)
     private val vibrateScanKey = context.getString(R.string.preferences_switch_scan_vibrate_key)
     private val bipScanKey = context.getString(R.string.preferences_switch_scan_bip_key)
     private val autoScreenRotationScanDisabledKey = context.getString(R.string.preferences_switch_scan_screen_rotation_key)
@@ -60,8 +59,6 @@ class SettingsManager(private val context: Context) {
     private val addBarcodeToHistoryScanKey = context.getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key)
     private val defaultZoomValueKey = context.getString(R.string.preferences_seek_bar_camera_default_zoom_value_key)
 
-    var useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
-        private set
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         private set
     var useBipScan = prefs.getBoolean(bipScanKey, false)
@@ -97,7 +94,6 @@ class SettingsManager(private val context: Context) {
         theme = prefs.getString(themeKey, "system")
         useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         apiChoose = prefs.getString(apiChooseKey, context.getString(R.string.preferences_entry_value_food))
-        useCameraXApi = prefs.getBoolean(useCameraXApiKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)

@@ -491,7 +491,6 @@
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
     <string name="bdd_open_library_description_label">Open Library este o bază de date gratuită care are ca scop catalogarea tuturor cărților publicate, indiferent de limba lor.</string>
     <string name="dependency_zxing_description_label">ZXing (zebra crossing) este o bibliotecă de procesare a imaginilor cu coduri de bare 1D/2D, open-source și multiformat.</string>
-    <string name="dependency_zxing_code_scanner_description_label">Biblioteca de scanare de cod pentru Android, bazată pe ZXing.</string>
     <string name="dependency_ez_vcard_description_label">ez-vcard este o bibliotecă vCard scrisă în Java. Poate citi și scrie vCard-uri în multe formate diferite.</string>
     <string name="dependency_android_image_cropper_description_label">Android Image Cropper este o bibliotecă de tăiere a imaginilor pentru Android.</string>
     <string name="dependency_coil_description_label">O bibliotecă de încărcare a imaginilor pentru Android susținută de Kotlin Coroutines.</string>

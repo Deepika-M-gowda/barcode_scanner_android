@@ -625,7 +625,6 @@
     <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
     <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
     <string name="export_label">Esporta</string>
-    <string name="dependency_zxing_code_scanner_description_label">Libreria per la scansione di codici per Android, basata su ZXing.</string>
     <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
     <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
     <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>

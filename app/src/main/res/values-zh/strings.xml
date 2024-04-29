@@ -558,7 +558,6 @@
     <!-- About Library Third Description -->
     <string name="dependency_zxing_description_label" translatable="false">ZXing（zebra crossing）是一个开源、多格式的 1D/2D 条码图像处理库。</string>
     <string name="dependency_camera_x_description_label" translatable="false">Jetpack 出品的 CameraX 支持库提供了一个易于使用和功能丰富的 Android 相机 API。</string>
-    <string name="dependency_zxing_code_scanner_description_label" translatable="false">基于 ZXing 的 Android 条码识别库。</string>
     <string name="dependency_ez_vcard_description_label" translatable="false">Ez-vCard 是一个用 Java 编写的 vCard 库，它可以读写多种不同格式的 vCard。</string>
     <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper 是一个 Android 图像裁剪库。</string>
     <string name="dependency_coil_description_label" translatable="false">一个由 Kotlin Coroutines 支持的 Android 图像加载库。</string>

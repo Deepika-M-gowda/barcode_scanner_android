@@ -35,7 +35,6 @@ import com.atharok.barcodescanner.presentation.viewmodel.DynamicShortcutViewMode
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeCreatorListFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainBarcodeHistoryFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainCameraXScannerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.main.MainScannerFragment
 import com.atharok.barcodescanner.presentation.views.fragments.main.MainSettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -53,7 +52,6 @@ class MainActivity: BaseActivity() {
     private var titleRes: Int = R.string.title_scan
 
     private val mainCameraXScannerFragment: MainCameraXScannerFragment by inject()
-    private val mainScannerFragment: MainScannerFragment by inject()
     private val mainHistoryFragment: MainBarcodeHistoryFragment by inject()
     private val mainBarcodeCreatorListFragment: MainBarcodeCreatorListFragment by inject()
     private val mainSettingsFragment: MainSettingsFragment by inject()
@@ -154,7 +152,7 @@ class MainActivity: BaseActivity() {
         currentItemId = id
         return when (id) {
             R.id.menu_navigation_bottom_view_scan -> changeFragment(
-                if (settingsManager.useCameraXApi) mainCameraXScannerFragment else mainScannerFragment,
+                mainCameraXScannerFragment,
                 R.string.title_scan
             )
 
