@@ -679,4 +679,7 @@
     <string name="clipboard_empty">A área de transferência está vazia.</string>
     <string name="shortcuts_info">Arranje os atalhos na ordem de sua preferência.</string>
     <string name="action_share_vcf_file">Compartilhar como VCF</string>
+    <string name="matrix_contact_job_title_label">Cargo</string>
+    <string name="app_name">Escaneador de Código de Barras</string>
+    <string name="snack_bar_message_items_deleted">Itens removidos do histórico.</string>
 </resources>
