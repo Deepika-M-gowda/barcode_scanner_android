@@ -676,4 +676,6 @@
     <string name="dependency_material_components_description_label">Material Components per a Android (MDC-Android) ajuda els desenvolupadors a fer el Material de Disseny. Desenvolupada per un equip d\'enginyers i dissenyadors UX del nucli de Google, aquests components permeten un flux de treball de desenvolupament fiable per crear aplicacions d\'Android maques i funcionals.
 \n
 \nMaterial Components per a Android és un substitut de la Biblioteca de Suport del Disseny d\'Android.</string>
+    <string name="matrix_contact_job_title_label">Títol del treball</string>
+    <string name="app_name">Escàner de codis de barres</string>
 </resources>
