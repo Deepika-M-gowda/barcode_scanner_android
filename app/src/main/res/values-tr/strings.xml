@@ -734,4 +734,7 @@
     <string name="clipboard_empty">Pano boş.</string>
     <string name="shortcuts_info">Kısayolları tercihinize göre sıralayın.</string>
     <string name="action_share_vcf_file">VCF olarak paylaş</string>
+    <string name="matrix_contact_job_title_label">İş başlığı</string>
+    <string name="app_name">Barkod Tarayıcı</string>
+    <string name="snack_bar_message_items_deleted">Ögeler geçmişten silindi.</string>
 </resources>
