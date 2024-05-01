@@ -679,4 +679,7 @@
     <string name="shortcuts_info">Rangschik de snelkoppelingen naar voorkeur.</string>
     <string name="shortcuts">Snelkoppelingen</string>
     <string name="custom_urls">Eigen links</string>
+    <string name="app_name">Barcodescanner</string>
+    <string name="matrix_contact_job_title_label">Functie</string>
+    <string name="snack_bar_message_items_deleted">Items verwijderd uit de geschiedenis.</string>
 </resources>
