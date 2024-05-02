@@ -49,7 +49,7 @@ open class BarcodeScanFromImageGalleryActivity: BarcodeScanFromImageAbstractActi
      */
     private val resultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            val uri: Uri? = result?.data?.data
+            val uri: Uri? = result.data?.data
             if (result.resultCode == Activity.RESULT_OK && uri != null) {
                 if (!intent.hasExtra(URI_INTENT_KEY))
                     intent.putExtra(URI_INTENT_KEY, uri)

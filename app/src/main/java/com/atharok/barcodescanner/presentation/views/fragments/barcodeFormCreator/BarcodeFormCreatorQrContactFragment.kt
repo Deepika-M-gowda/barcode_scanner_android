@@ -352,7 +352,7 @@ class BarcodeFormCreatorQrContactFragment : AbstractBarcodeFormCreatorQrFragment
      */
     private val resultContactActivity: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            val uri: Uri? = result?.data?.data
+            val uri: Uri? = result.data?.data
             if (result.resultCode == Activity.RESULT_OK && uri != null){
 
                 // Convertie l'uri du contact en String
