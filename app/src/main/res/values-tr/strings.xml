@@ -737,4 +737,7 @@
     <string name="matrix_contact_job_title_label">İş başlığı</string>
     <string name="app_name">Barkod Tarayıcı</string>
     <string name="snack_bar_message_items_deleted">Ögeler geçmişten silindi.</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Yinelenenler geçmişe eklenecek</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Yinelenenler geçmişe eklenmeyecek</string>
+    <string name="preferences_switch_history_save_duplicates_label">Yinelenenleri kaydet</string>
 </resources>
