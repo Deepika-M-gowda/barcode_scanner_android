@@ -262,7 +262,7 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
 
     private fun addBarcodeInHistory(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            databaseBarcodeViewModel.insertBarcode(barcode)
+            databaseBarcodeViewModel.insertBarcode(barcode, true)
             showSnackbar(getString(R.string.menu_item_history_added_in_history))
         }
     }

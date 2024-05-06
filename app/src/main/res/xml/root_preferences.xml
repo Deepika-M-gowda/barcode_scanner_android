@@ -75,12 +75,6 @@
             android:defaultValue="false"
             app:singleLineTitle="false"/>
 
-        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
-            android:key="@string/preferences_switch_scan_add_barcode_to_the_history_key"
-            android:title="@string/preferences_switch_scan_add_barcode_to_the_history_label"
-            android:defaultValue="true"
-            app:singleLineTitle="false"/>
-
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomSeekBarPreference
             android:key="@string/preferences_seek_bar_camera_default_zoom_value_key"
             android:title="@string/slider_description_zoom"
@@ -103,10 +97,29 @@
             app:defaultValue="low"
             app:singleLineTitle="false"/>
 
+    </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>
+
+    <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory
+        android:title="@string/title_history">
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_scan_add_barcode_to_the_history_key"
+            android:title="@string/preferences_switch_scan_add_barcode_to_the_history_label"
+            android:defaultValue="true"
+            app:singleLineTitle="false"/>
+
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
             android:key="@string/preferences_switch_barcode_generation_add_barcode_to_the_history_key"
             android:title="@string/preferences_switch_barcode_generation_add_barcode_to_the_history_label"
             android:defaultValue="false"
+            app:singleLineTitle="false"/>
+
+        <com.atharok.barcodescanner.presentation.customView.preferences.CustomSwitchPreferenceCompat
+            android:key="@string/preferences_switch_history_save_duplicates_key"
+            android:title="@string/preferences_switch_history_save_duplicates_label"
+            android:summaryOn="@string/preferences_switch_history_save_duplicates_summary_on"
+            android:summaryOff="@string/preferences_switch_history_save_duplicates_summary_off"
+            android:defaultValue="true"
             app:singleLineTitle="false"/>
 
     </com.atharok.barcodescanner.presentation.customView.preferences.CustomPreferenceCategory>

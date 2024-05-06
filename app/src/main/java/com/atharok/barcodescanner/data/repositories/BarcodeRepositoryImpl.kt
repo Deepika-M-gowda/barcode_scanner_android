@@ -32,6 +32,8 @@ class BarcodeRepositoryImpl(private val barcodeDao: BarcodeDao): BarcodeReposito
 
     override fun getBarcodeByDate(date: Long): LiveData<Barcode?> = barcodeDao.getBarcodeByDate(date)
 
+    override suspend fun isExists(contents: String, format: String): Boolean = barcodeDao.isExists(contents, format)
+
     override suspend fun insertBarcode(barcode: Barcode): Long = barcodeDao.insert(barcode)
 
     override suspend fun insertBarcodes(barcodes: List<Barcode>) = barcodeDao.insert(barcodes)

@@ -33,6 +33,8 @@ interface BarcodeRepository {
 
     fun getBarcodeByDate(date: Long): LiveData<Barcode?>
 
+    suspend fun isExists(contents: String, format: String): Boolean
+
     suspend fun insertBarcode(barcode: Barcode): Long
 
     suspend fun insertBarcodes(barcodes: List<Barcode>)

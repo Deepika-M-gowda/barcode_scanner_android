@@ -37,6 +37,9 @@ interface BarcodeDao {
     @Query("SELECT * FROM Barcode WHERE scan_date = :date LIMIT 1")
     fun getBarcodeByDate(date: Long): LiveData<Barcode?>
 
+    @Query("SELECT EXISTS(SELECT * FROM Barcode WHERE contents = :contents AND format_name = :format LIMIT 1)")
+    fun isExists(contents: String, format: String): Boolean
+
     @Insert
     suspend fun insert(barcode: Barcode): Long
 

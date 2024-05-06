@@ -29,6 +29,7 @@ import com.atharok.barcodescanner.domain.entity.barcode.Barcode
 import com.atharok.barcodescanner.domain.entity.barcode.BarcodeType
 import com.atharok.barcodescanner.domain.resources.Resource
 import com.atharok.barcodescanner.domain.usecases.DatabaseBarcodeUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarcodeUseCase): ViewModel() {
@@ -37,8 +38,14 @@ class DatabaseBarcodeViewModel(private val databaseBarcodeUseCase: DatabaseBarco
 
     fun getBarcodeByDate(date: Long): LiveData<Barcode?> = databaseBarcodeUseCase.getBarcodeByDate(date)
 
-    fun insertBarcode(barcode: Barcode) = viewModelScope.launch {
-        databaseBarcodeUseCase.insertBarcode(barcode)
+    fun insertBarcode(barcode: Barcode, saveDuplicates: Boolean) = viewModelScope.launch(Dispatchers.IO) {
+        if(saveDuplicates) {
+            databaseBarcodeUseCase.insertBarcode(barcode)
+        } else {
+            if(!databaseBarcodeUseCase.isExists(barcode.contents, barcode.formatName)) {
+                databaseBarcodeUseCase.insertBarcode(barcode)
+            }
+        }
     }
 
     fun insertBarcodes(barcodes: List<Barcode>) = viewModelScope.launch {

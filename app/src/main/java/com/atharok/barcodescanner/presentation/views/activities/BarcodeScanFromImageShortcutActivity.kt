@@ -50,7 +50,7 @@ class BarcodeScanFromImageShortcutActivity: BarcodeScanFromImageGalleryActivity(
                 val barcode: Barcode = get { parametersOf(contents, formatName, errorCorrectionLevel) }
 
                 if(settingsManager.shouldAddBarcodeScanToHistory) {
-                    databaseBarcodeViewModel.insertBarcode(barcode)
+                    databaseBarcodeViewModel.insertBarcode(barcode, settingsManager.saveDuplicates)
                 }
 
                 val intent = createStartActivityIntent(this, BarcodeAnalysisActivity::class).apply {

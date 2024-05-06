@@ -39,6 +39,8 @@ class DatabaseBarcodeUseCase(
 
     fun getBarcodeByDate(date: Long): LiveData<Barcode?> = barcodeRepository.getBarcodeByDate(date)
 
+    suspend fun isExists(contents: String, format: String): Boolean = barcodeRepository.isExists(contents, format)
+
     suspend fun insertBarcode(barcode: Barcode): Long = barcodeRepository.insertBarcode(barcode)
 
     suspend fun insertBarcodes(barcodes: List<Barcode>) = barcodeRepository.insertBarcodes(barcodes)

@@ -563,11 +563,15 @@
     <string name="preferences_switch_scan_bip_label">Play sound when scan is successful</string>
     <string name="preferences_switch_scan_screen_rotation_label">Disable automatic rotation during scan</string>
     <string name="preferences_switch_scan_barcode_copied_label">Copy scanned barcodes to clipboard</string>
-    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
     <string name="preferences_seek_bar_camera_default_zoom_value_label">Default value of the camera zoom</string>
     <!-- Barcode Generation Settings -->
     <string name="preferences_barcode_generation_title">Barcode generation</string>
+    <!-- History settings-->
+    <string name="preferences_switch_scan_add_barcode_to_the_history_label">Add scanned barcodes to the history</string>
     <string name="preferences_switch_barcode_generation_add_barcode_to_the_history_label">Add generated barcodes to the history</string>
+    <string name="preferences_switch_history_save_duplicates_label">Save duplicates</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Duplicates will be added to the history</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Duplicates will not be added to the history</string>
     <!-- Search Engine Settings -->
     <string name="preferences_search_title">Search</string>
     <string name="preferences_search_engine">Search engine</string>
@@ -774,6 +778,7 @@
     <string name="preferences_switch_scan_search_on_api_key" translatable="false">preferences_switch_scan_search_on_api_key</string>
     <string name="preferences_remote_api_choose_key" translatable="false">preferences_remote_api_choose_key</string>
     <string name="preferences_remote_api_information_about_api_key" translatable="false">preferences_remote_api_information_about_api_key</string>
+    <string name="preferences_switch_history_save_duplicates_key" translatable="false">preferences_switch_history_save_duplicates_key</string>
     <string name="preferences_switch_scan_vibrate_key" translatable="false">preferences_switch_scan_vibrate_key</string>
     <string name="preferences_switch_scan_bip_key" translatable="false">preferences_switch_scan_bip_key</string>
     <string name="preferences_switch_scan_screen_rotation_key" translatable="false">preferences_switch_scan_screen_rotation_key</string>

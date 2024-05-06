@@ -292,7 +292,7 @@ class MainCameraXScannerFragment : BaseFragment(), AbstractCameraXBarcodeAnalyze
 
             if(settingsManager.shouldAddBarcodeScanToHistory) {
                 // Insert les informations du code-barres dans la base de données (de manière asynchrone)
-                databaseBarcodeViewModel.insertBarcode(barcode)
+                databaseBarcodeViewModel.insertBarcode(barcode, settingsManager.saveDuplicates)
             }
 
             onResult(barcode)

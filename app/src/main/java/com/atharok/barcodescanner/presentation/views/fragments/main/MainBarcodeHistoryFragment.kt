@@ -216,7 +216,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
             text = getString(R.string.snack_bar_message_item_deleted, content),
             actionText = getString(R.string.cancel_label),
             action = {
-                databaseBarcodeViewModel.insertBarcode(barcode)
+                databaseBarcodeViewModel.insertBarcode(barcode, true)
             }
         )
     }
