@@ -746,4 +746,7 @@
     <string name="app_name">Barcode-Scanner</string>
     <string name="matrix_contact_job_title_label">Berufsbezeichnung</string>
     <string name="snack_bar_message_items_deleted">Aus dem Verlauf gelöschte Elemente.</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Duplikate werden nicht in den Verlauf hinzugefügt</string>
+    <string name="preferences_switch_history_save_duplicates_label">Duplikate speichern</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Duplikate werden dem Verlauf hinzugefügt</string>
 </resources>
