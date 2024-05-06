@@ -496,7 +496,7 @@
     <string name="dependency_kotlinx_coroutines_description_label">Oferece o contexto Dispatchers.Main para aplicativos Android.</string>
     <string name="dependency_koin_description_label">Um framework pragmático e leve para injeção de dependências para desenvolvedores Kotlin.
 \n
-\nEscrito em Kotlin puro, usando resolução funcional apenas: sem proxy, em geração de código, sem reflexão.
+\nEscrito em Kotlin puro, usando resolução funcional apenas: sem proxy, sem geração de código, sem reflexão.
 \n
 \nKoin é um DSL, um contêiner leve e uma API pragmática</string>
     <string name="dependency_gson_description_label">Gson é uma biblioteca Java que pode ser usada para converter objetos Java em suas representações JSON. Pode também ser usada para converter uma string JSON em um objeto Java equivalente. Gson pode funcionar com objetos Java arbitrários, incluindo objetos pré-existentes dos quais você não tem acesso ao código-fonte.</string>
@@ -682,4 +682,7 @@
     <string name="matrix_contact_job_title_label">Cargo</string>
     <string name="app_name">Escaneador de Código de Barras</string>
     <string name="snack_bar_message_items_deleted">Itens removidos do histórico.</string>
+    <string name="preferences_switch_history_save_duplicates_label">Salvar cópias</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">As cópias não serão adicionadas ao histórico</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">As cópias serão adicionadas ao histórico</string>
 </resources>
