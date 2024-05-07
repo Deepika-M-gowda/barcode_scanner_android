@@ -529,7 +529,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">关于</string>
     <string name="preferences_about_permissions_label">权限</string>
-    <string name="preferences_about_library_third_label">第三方库</string>
+    <string name="preferences_about_third_party_libraries_label">第三方库</string>
     <string name="preferences_about_bdd_label">数据库</string>
     <string name="preferences_source_code_label">源码</string>
     <!-- About Permissions -->
@@ -555,25 +555,6 @@
     <string name="bdd_open_library_description_label">Open Library 是一个免费资料库，旨在对所有出版的书籍进行编目，无论什么语言。</string>
     <!-- About Library Third -->
     <string name="dependency_by" translatable="false">by %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label" translatable="false">ZXing（zebra crossing）是一个开源、多格式的 1D/2D 条码图像处理库。</string>
-    <string name="dependency_camera_x_description_label" translatable="false">Jetpack 出品的 CameraX 支持库提供了一个易于使用和功能丰富的 Android 相机 API。</string>
-    <string name="dependency_ez_vcard_description_label" translatable="false">Ez-vCard 是一个用 Java 编写的 vCard 库，它可以读写多种不同格式的 vCard。</string>
-    <string name="dependency_android_image_cropper_description_label" translatable="false">Android Image Cropper 是一个 Android 图像裁剪库。</string>
-    <string name="dependency_coil_description_label" translatable="false">一个由 Kotlin Coroutines 支持的 Android 图像加载库。</string>
-    <string name="dependency_material_components_description_label" translatable="false">Material Components for Android (MDC-Android) 帮助开发者贯彻 Material Design。这些组件由 Google 的核心工程师和 UX 设计师团队开发，可实现可靠的开发工作流程，以构建美丽且功能齐全的 Android 应用程序。
-\n
-\nMaterial Components for Android 是 Android\'s Design Support Library 的无缝替代品。</string>
-    <string name="dependency_kotlinx_coroutines_description_label" translatable="false">提供 Dispatchers。Android 应用程序的主上下文。</string>
-    <string name="dependency_koin_description_label" translatable="false">为 Kotlin 开发者提供的实用的轻量级依赖注入框架。
-\n
-\n完全由 Kotlin 编写，仅使用函数解析：没有代理，没有代码生成，没有反射。
-\n
-\nKoin 是一个 DSL、一个轻量级容器和一个实用的 API</string>
-    <string name="dependency_room_description_label" translatable="false">Room 提供了一个 SQLite 之上的抽象层，允许流畅地访问数据库，同时利用 SQLite 的全部功能。</string>
-    <string name="dependency_gson_description_label" translatable="false">Gson 是一个 Java 库，可用于将 Java 对象转换为其 JSON 表示形式，或将 JSON 字符串转换为等效的 Java 对象。Gson 可以处理任意的 Java 对象，包括您没有源代码的预先存在的对象。</string>
-    <string name="dependency_retrofit_description_label" translatable="false">适用于 Android 和 Java 的类型安全 HTTP client。</string>
-    <string name="dependency_live_data_description_label" translatable="false">LiveData 是一个可观察的数据持有者类。 与常规可观察量不同，LiveData 具有生命周期感知能力，这意味着它尊重其他应用程序组件（例如活动、片段或服务）的生命周期。 这种意识确保 LiveData 仅更新处于活动生命周期状态的应用程序组件观察者。</string>
     <!-- Countries -->
     <string name="country_usa">美国</string>
     <string name="country_ca">加拿大</string>
@@ -700,7 +681,6 @@
     <string name="preferences_default">默认</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="corners_radius">拐角半径</string>
-    <string name="dependency_color_picker_description_label">适用于 Android 的颜色选择器库。</string>
     <string name="snack_bar_message_file_export_success">文件已保存！</string>
     <string name="barcode_color">条码颜色</string>
     <string name="color_shades_issue">某些色调可能无法被检测到。</string>

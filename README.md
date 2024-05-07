@@ -72,16 +72,23 @@ The code is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0).
 
 Dependencies:
 
-- [ZXing](https://github.com/zxing/zxing) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Zxing
-- [CameraX](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/camera) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
-- [ez-vcard](https://github.com/mangstadt/ez-vcard) is licensed under [FreeBSD](https://www.freebsd.org/copyright/freebsd-license/) by Michael Angstadt
-- [Android Image Cropper](https://github.com/CanHub/Android-Image-Cropper) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by CanHub
-- [Coil](https://github.com/coil-kt/coil) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by coil-kt
+
+- [Activity KTX](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [Preference KTX](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [Lifecycle Livedata KTX](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [AppCompat](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [ConstraintLayout](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [RecyclerView](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
 - [Material Components for Android](https://github.com/material-components/material-components-android) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Material Components
-- [Koin](https://github.com/InsertKoinIO/koin) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by insert-koin.io
-- [Gson](https://github.com/google/gson) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [CameraX](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [Room](https://github.com/androidx/androidx) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
 - [Retrofit](https://github.com/square/retrofit) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Square
-- [Room](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [Gson](https://github.com/google/gson) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Google
+- [Coil](https://github.com/coil-kt/coil) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by coil-kt
+- [Koin](https://github.com/InsertKoinIO/koin) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by insert-koin.io
+- [ZXing](https://github.com/zxing/zxing) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Zxing
+- [Android Image Cropper](https://github.com/CanHub/Android-Image-Cropper) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by CanHub
+- [ez-vcard](https://github.com/mangstadt/ez-vcard) is licensed under [FreeBSD](https://www.freebsd.org/copyright/freebsd-license/) by Michael Angstadt
 - [Color Picker](https://github.com/Atharok/ColorPicker) is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) by Atharok
 
 Images:

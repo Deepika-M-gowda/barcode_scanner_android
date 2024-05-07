@@ -43,8 +43,8 @@ import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.intent.createStartActivityIntent
 import com.atharok.barcodescanner.presentation.views.activities.AboutApisActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutBddActivity
-import com.atharok.barcodescanner.presentation.views.activities.AboutLibraryThirdActivity
 import com.atharok.barcodescanner.presentation.views.activities.AboutPermissionsDescriptionActivity
+import com.atharok.barcodescanner.presentation.views.activities.AboutThirdPartyLibrariesActivity
 import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlListActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
@@ -73,7 +73,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
         configureStartActivity(R.string.preferences_shortcuts_key, ShortcutsActivity::class)
         configureStartActivity(R.string.preferences_remote_api_information_about_api_key, AboutApisActivity::class)
         configureStartActivity(R.string.preferences_about_permissions_key, AboutPermissionsDescriptionActivity::class)
-        configureStartActivity(R.string.preferences_about_library_third_key, AboutLibraryThirdActivity::class)
+        configureStartActivity(R.string.preferences_about_library_third_key, AboutThirdPartyLibrariesActivity::class)
         configureStartActivity(R.string.preferences_about_bdd_key, AboutBddActivity::class)
         configureSourceCodePreference()
     }

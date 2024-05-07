@@ -114,7 +114,6 @@
     <string name="nutrition_facts_entitled_label">حقائق غذائية</string>
     <string name="action_wifi_already_added_label">تمت إضافة اتصال Wi-Fi بالفعل</string>
     <string name="country_bg">بلغاريا</string>
-    <string name="dependency_coil_description_label">مكتبة تحميل الصور لنظام Android مدعومة من Kotlin Coroutines.</string>
     <string name="no_vegetarian_label">لا نباتي</string>
     <string name="off_risk_low_label">آمن</string>
     <string name="matrix_contact_mail_label">بريد إلكتروني:</string>
@@ -160,7 +159,6 @@
     <string name="preferences_switch_scan_screen_rotation_label">تعطيل التدوير التلقائي أثناء الفحص</string>
     <string name="country_si">سلوفينيا</string>
     <string name="preferences_scan_title">مسح</string>
-    <string name="dependency_zxing_description_label">ZXing (معبر الحمار الوحشي) هي مكتبة مفتوحة المصدر ومتعددة التنسيقات لمعالجة صور الباركود 1D/2D.</string>
     <string name="preferences_information_about_remote_api_product_types_supported_book">• الكتب (مع Open Library API)</string>
     <string name="permission_camera_label">الكاميرا</string>
     <string name="off_per_serving_label">لكل حصة (%1$s%2$s)</string>
@@ -170,7 +168,6 @@
     <string name="preferences_color_red">أحمر</string>
     <string name="country_by">بيلاروسيا</string>
     <string name="country_cn">الصين</string>
-    <string name="dependency_camera_x_description_label">توفر مكتبة دعم CameraX الخاصة بـ Jetpack واجهة برمجة التطبيقات (API) لكاميرا Android سهلة الاستخدام وتتميز بميزات غنية.</string>
     <string name="action_wifi_add_network_already_exists">لقد قمت بالفعل بإضافة شبكة Wi-Fi هذه.</string>
     <string name="preferences_about_bdd_label">‐قاعدة البيانات</string>
     <string name="country_py">باراجواي</string>
@@ -181,7 +178,6 @@
     <string name="qr_code_spinner_prompt_none">لا أحد</string>
     <string name="nova_group_description_1">الأطعمة غير المصنعة أو الأطعمة المعالجة بالحد الأدنى</string>
     <string name="matrix_uri_malicious_label">قد يكون عنوان URL ضارًا…</string>
-    <string name="dependency_live_data_description_label">LiveData هي فئة حامل بيانات يمكن ملاحظتها. على عكس العناصر العادية التي يمكن ملاحظتها، فإن LiveData تدرك دورة الحياة، مما يعني أنها تحترم دورة حياة مكونات التطبيق الأخرى، مثل الأنشطة أو الأجزاء أو الخدمات. يضمن هذا الوعي أن LiveData يقوم فقط بتحديث مراقبي مكونات التطبيق الموجودين في حالة دورة حياة نشطة.</string>
     <string name="error_barcode_not_a_number_message">يجب أن يتكون الباركود من أرقام فقط.</string>
     <string name="categories_label">فئات</string>
     <string name="country_pl">بولندا</string>
@@ -237,11 +233,6 @@
     <string name="qr_code_text_input_edit_text_hint_epc_amount">كمية</string>
     <string name="country_mt">مالطة</string>
     <string name="action_wifi_connection_from_app">الاتصال بشبكة Wi-Fi</string>
-    <string name="dependency_koin_description_label">إطار عمل عملي وخفيف الوزن لحقن التبعية لمطوري Kotlin.
-\n
-\nتمت كتابته بلغة Kotlin النقية، باستخدام الدقة الوظيفية فقط: لا يوجد وكيل، ولا إنشاء تعليمات برمجية، ولا انعكاس.
-\n
-\nKoin عبارة عن DSL وحاوية خفيفة وواجهة برمجة تطبيقات عملية</string>
     <string name="eco_score_description_c">تأثير بيئي معتدل</string>
     <string name="permission_wifi_description_label">مطلوب للاتصال بشبكة Wi-Fi عن طريق مسح رمز الاستجابة السريعة الذي يحتوي على الوصول إلى شبكة Wi-Fi.</string>
     <string name="off_quantity_none_label">كمية غير معروفة</string>
@@ -290,7 +281,6 @@
     <string name="qr_code_text_input_edit_text_hint_phone_2">رقم الهاتف 2</string>
     <string name="off_risk_high_label">لتجنب</string>
     <string name="share_image_label">مشاركة الصورة</string>
-    <string name="dependency_retrofit_description_label">عميل HTTP آمن للنوع لنظامي Android وJava.</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
     <string name="spinner_type_home">البيت</string>
     <string name="contain_palm_oil_label">تحتوي على زيت النخيل</string>
@@ -308,7 +298,6 @@
     <string name="preferences_source_code_label">مصدر الرمز</string>
     <string name="preferences_barcode_generation_title">مولد الباركود</string>
     <string name="matrix_localisation_location_disabled_label">يبدو أن الموقع على جهازك غير نشط.</string>
-    <string name="dependency_room_description_label">توفر الغرفة طبقة تجريد عبر SQLite للسماح بالوصول السلس إلى قاعدة البيانات مع الاستفادة من القوة الكاملة لـ SQLite.</string>
     <string name="is_vegan_label">نباتي</string>
     <string name="vegan_status_unknown_label">الحالة النباتية غير معروفة</string>
     <string name="qr_code_text_input_edit_text_hint_message">رسالة</string>
@@ -327,7 +316,7 @@
     <string name="nova_group_description_3">المكونات المعالجة</string>
     <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (الأقراص المضغوطة، الفينيل، …)</string>
     <string name="error_barcode_upc_e_not_start_with_0_error_message">يجب أن يبدأ نوع الرمز الشريطي UPC-E بالرقم 0.</string>
-    <string name="preferences_about_library_third_label">مكتبة الطرف الثالث</string>
+    <string name="preferences_about_third_party_libraries_label">مكتبة الطرف الثالث</string>
     <string name="preferences_switch_light_theme_label">فاتح</string>
     <string name="country_dz">الجزائر</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">أدخل رقم الهاتف…</string>
@@ -436,7 +425,6 @@
     <string name="country_ly">ليبيا</string>
     <string name="matrix_email_cc_label">نسخة:</string>
     <string name="music_product_tracks_number">%1$s مسارات</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard هي مكتبة vCard مكتوبة بلغة Java. يمكنه قراءة وكتابة vCards بالعديد من التنسيقات المختلفة.</string>
     <string name="preferences_information_about_remote_api_title">معلومات حول واجهات برمجة التطبيقات</string>
     <string name="action_title_dialog_label">ماذا تريد أن تفعل؟</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">عنوان البريد 3</string>
@@ -444,9 +432,6 @@
     <string name="no_vegan_label">لا نباتي</string>
     <string name="off_starch_label">نشاء</string>
     <string name="country_tw">تايوان</string>
-    <string name="dependency_material_components_description_label">تساعد المكونات المادية لنظام Android (MDC-Android) المطورين على تنفيذ تصميم المواد. تم تطوير هذه المكونات بواسطة فريق أساسي من المهندسين ومصممي تجربة المستخدم في Google، وهي تتيح سير عمل تطوير موثوقًا لإنشاء تطبيقات Android جميلة وعملية.
-\n
-\nتعد Material Components لنظام Android بديلاً مباشرًا لمكتبة دعم التصميم الخاصة بنظام Android.</string>
     <string name="product_search_label">بحث منتوج</string>
     <string name="preferences_information_about_remote_api_automatic_search_description">إذا تم تمكين الخيار \"%1$s\"، عند قيامك بمسح الرمز الشريطي للمنتج ضوئيًا، فسيتم إجراء البحث تلقائيًا على واجهة برمجة التطبيقات المحددة في الإعدادات. إذا لم يتم العثور على معلومات في واجهة برمجة التطبيقات، فيمكنك دائمًا إجراء بحث يدوي على واجهة برمجة تطبيقات أخرى بعد الفحص.</string>
     <string name="matrix_email_recipient_label">متلقي:</string>
@@ -578,7 +563,6 @@
     <string name="maybe_vegetarian_label">ربما نباتي</string>
     <string name="qr_code_type_name_generate_from_contact">توليد من الاتصال</string>
     <string name="spinner_type_other">أخرى</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper هي مكتبة لاقتصاص الصور لنظام Android.</string>
     <string name="country_tm">تركمانستان</string>
     <string name="about_barcode_information_label">معلومات عن الباركود</string>
     <string name="preferences_information_about_remote_api_foreword">مقدمة</string>
@@ -602,7 +586,6 @@
     <string name="qr_code_text_input_edit_text_hint_web_site">موقع إلكتروني</string>
     <string name="country_no">النرويج</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_password">كلمة المرور</string>
-    <string name="dependency_gson_description_label">Gson هي مكتبة Java يمكن استخدامها لتحويل كائنات Java إلى تمثيل JSON الخاص بها. يمكن استخدامه أيضًا لتحويل سلسلة JSON إلى كائن Java مكافئ. يمكن لـ Gson العمل مع كائنات Java التعسفية بما في ذلك الكائنات الموجودة مسبقًا والتي ليس لديك كود مصدر لها.</string>
     <string name="country_at">النمسا</string>
     <string name="permission_internet_description_label">مطلوب لاسترداد المعلومات من API البعيد.</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">عنوان البريد 1</string>
@@ -633,7 +616,6 @@
     <string name="country_ch">سويسرا</string>
     <string name="country_ph">فيلبيني</string>
     <string name="about_barcode_origin_label">أصل:</string>
-    <string name="dependency_kotlinx_coroutines_description_label">يوفر السياق المرسلين.الرئيسية لتطبيقات الروبوت.</string>
     <string name="country_usa">الولايات المتحدة</string>
     <string name="permission_contact_description_label">مطلوب لاستيراد جهة اتصال لإنشاء رمز الاستجابة السريعة من هذا.</string>
     <string name="about_barcode_content_label">الرمز الشريطي: %1$s</string>
@@ -642,7 +624,6 @@
     <string name="error_barcode_none_character_message">يجب عليك إدخال قيمة صحيحة في حقل الإدخال.</string>
     <string name="off_risk_moderate_label">مشكوك فيه</string>
     <string name="corners_radius">شعاع الزوايا</string>
-    <string name="dependency_color_picker_description_label">مكتبة لون المخلّص لـ(أندرويد).</string>
     <string name="barcode_color">لون الباركود</string>
     <string name="color_shades_issue">قد لا يتم اكتشاف بعض ظلال الألوان.</string>
     <string name="shapes_label">الأشكال</string>

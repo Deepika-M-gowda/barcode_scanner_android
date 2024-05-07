@@ -533,7 +533,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">Über</string>
     <string name="preferences_about_permissions_label">Berechtigungen</string>
-    <string name="preferences_about_library_third_label">Fremde Bibliotheken</string>
+    <string name="preferences_about_third_party_libraries_label">Fremde Bibliotheken</string>
     <string name="preferences_about_bdd_label">Datenbank</string>
     <string name="preferences_source_code_label">Quellcode</string>
     <!-- About Permissions -->
@@ -559,23 +559,6 @@
     <string name="bdd_open_library_description_label">Open Library ist eine freie, Online-Crowdsourcing-Datenbank welche zum Ziel hat alle veröffentlichten Bücher weltweit aufzulisten, egal in welcher Sprache.</string>
     <!-- About Library Third -->
     <string name="dependency_by">abhängig von %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") ist eine quelloffene Bibliothek zur Verarbeitung von 1D/2D-Barcodes in verschiedenen Formaten.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX Hilfsbibliothek bietet eine einfach zu bedienende und funktionsreiche Android Kamera-Schnittstelle (API).</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard ist eine in Java geschriebene vCard-Bibliothek. Sie kann vCards in vielen verschiedenen Formaten lesen und schreiben.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper ist eine Bibliothek zum Zuschneiden von Bildern für Android.</string>
-    <string name="dependency_coil_description_label">Eine Bildladebibliothek für Android, die von Kotlin Coroutines unterstützt wird.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) unterstützen Entwickler bei der Umsetzung von Material Design. Diese Komponenten wurden von einem Kernteam von Ingenieuren und UX-Designern bei Google entwickelt und ermöglichen einen zuverlässigen Entwicklungs-Workflow, um schöne und funktionale Android-Apps zu erstellen.\n\nMaterial Components for Android ist ein Drop-in-Ersatz für die Design Support Library von Android.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Stellt den Dispatchers.Main-Kontext für Android-Anwendungen bereit.</string>
-    <string name="dependency_koin_description_label">Ein pragmatisches, leichtgewichtiges abhängiges eingespeistes Rahmenprogramm(Dependency Injection Framework) für Kotlin-Entwickler.
-\n
-\nGeschrieben in reinem Kotlin, nur mit funktionaler Auflösung: kein Proxy, keine Code-Generierung, keine Reflektion.
-\n
-\nKoin ist eine domänenspezifische Sprache (DSL), ein leichter Behälter (Container) und eine pragmatische Schnittstelle (API)</string>
-    <string name="dependency_room_description_label">Room bietet eine Abstraktionsschicht über SQLite, um einen flüssigen Datenbankzugriff zu ermöglichen und gleichzeitig die volle Leistungsfähigkeit von SQLite zu nutzen.</string>
-    <string name="dependency_gson_description_label">Gson ist eine Java-Bibliothek die verwendet werden kann um Java-Objekte in ihre JSON-Darstellung zu konvertieren. Sie kann auch verwendet werden um einen JSON-String in ein entsprechendes Java-Objekt zu konvertieren. Gson kann mit beliebigen Java-Objekten arbeiten, einschließlich bereits vorhandener Objekte für die Sie keinen Quellcode haben.</string>
-    <string name="dependency_retrofit_description_label">Ein typsicherer HTTP-Client für Android und Java.</string>
-    <string name="dependency_live_data_description_label">LiveData ist eine beobachtbare Datenhalterklasse. Im Gegensatz zu einem normalen Observable ist LiveData lebenszyklusorientiert, d.h. es berücksichtigt den Lebenszyklus anderer Anwendungskomponenten, wie z. B. Aktivitäten, Fragmente oder Dienste. Dadurch wird sichergestellt, dass LiveData nur Beobachter von Anwendungskomponenten aktualisiert, die sich in einem aktiven Lebenszykluszustand befinden.</string>
     <!-- Countries -->
     <string name="country_usa">Vereinigte Staaten von Amerika</string>
     <string name="country_ca">Kanada</string>
@@ -707,7 +690,6 @@
     <string name="snack_bar_message_file_import_success">Datei importiert!</string>
     <string name="export_json_label">Als JSON exportieren</string>
     <string name="corners_radius">Eckradius</string>
-    <string name="dependency_color_picker_description_label">Eine Farbwählerbibliothek für Android.</string>
     <string name="barcode_color">Barcode-Farbe</string>
     <string name="color_shades_issue">Einige Farbnuabcen werden möglicherweise nicht erkannt.</string>
     <string name="keep_proportions">Seitenverhältnis bewahren</string>

@@ -170,7 +170,7 @@
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
             app:key="@string/preferences_about_library_third_key"
-            app:title="@string/preferences_about_library_third_label" />
+            app:title="@string/preferences_about_third_party_libraries_label" />
 
         <com.atharok.barcodescanner.presentation.customView.preferences.CustomPreference
             app:key="@string/preferences_about_bdd_key"

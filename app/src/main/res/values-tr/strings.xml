@@ -527,7 +527,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">Hakkında</string>
     <string name="preferences_about_permissions_label">İzinler</string>
-    <string name="preferences_about_library_third_label">Üçüncü taraf kütüphaneler</string>
+    <string name="preferences_about_third_party_libraries_label">Üçüncü taraf kütüphaneler</string>
     <string name="preferences_about_bdd_label">Veri tabanı</string>
     <string name="preferences_source_code_label">Kaynak kodu</string>
     <!-- About Permissions -->
@@ -553,19 +553,6 @@
     <string name="bdd_open_library_description_label">Open Library, dili ne olursa olsun yayınlanan tüm kitapları kataloglamayı amaçlayan ücretsiz bir veritabanıdır.</string>
     <!-- About Library Third -->
     <string name="dependency_by">%1$s tarafından</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra geçidi"), açık kaynaklı, çok formatlı bir 1D/2D barkod görüntü işleme kitaplığıdır.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'in CameraX destek kitaplığı, kullanımı kolay ve zengin özelliklere sahip bir Android kamera API\'si sağlar.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard, Java ile yazılmış bir vCard kitaplığıdır. Birçok farklı formatta vCard okuyabilir ve yazabilir.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper, Android için bir resim kırpma kitaplığıdır.</string>
-    <string name="dependency_coil_description_label">Android için Kotlin Coroutines tarafından desteklenen bir resim yükleme kitaplığıdır.</string>
-    <string name="dependency_material_components_description_label">Android için Materyal Bileşenleri (MDC-Android), geliştiricilerin Materyal Tasarımı yürütmesine yardımcı olur. Google\'daki çekirdek mühendisler ve UX tasarımcıları ekibi tarafından geliştirilen bu bileşenler, güzel ve işlevsel Android uygulamaları oluşturmak için güvenilir bir geliştirme iş akışı sağlar.\n\nAndroid için Materyal Bileşenleri, Android\'in Tasarım Destek Kitaplığı\'nın yerine geçen bir eklentidir.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Dağıtıcılar sağlar. Android uygulamaları için ana bağlam.</string>
-    <string name="dependency_koin_description_label">Kotlin geliştiricileri için pragmatik, hafif bir bağımlılık enjeksiyon çerçevesi.\n\nYalnızca işlevsel çözünürlük kullanılarak saf Kotlin ile yazılmıştır: proxy yok, kod üretimi yok, yansıma yok.\n\nKoin bir DSL, hafif bir kapsayıcı ve pragmatik bir API\'dir</string>
-    <string name="dependency_room_description_label">Room, SQLite\'ın tüm gücünden yararlanırken akıcı veritabanı erişimine izin vermek için SQLite üzerinde bir soyutlama katmanı sağlar.</string>
-    <string name="dependency_gson_description_label">Gson, Java Nesnelerini JSON temsillerine dönüştürmek için kullanılabilen bir Java kitaplığıdır. Bir JSON dizesini eşdeğer bir Java nesnesine dönüştürmek için de kullanılabilir. Gson, kaynak koduna sahip olmadığınız önceden var olan nesneler de dahil olmak üzere rastgele Java nesneleri ile çalışabilir.</string>
-    <string name="dependency_retrofit_description_label">Android ve Java için tür açısından güvenli bir HTTP istemcisi.</string>
-    <string name="dependency_live_data_description_label">LiveData, gözlemlenebilir bir veri tutucu sınıfıdır. Normal bir gözlemlenebilirden farklı olarak, LiveData yaşam döngüsünün farkındadır, yani etkinlikler, parçalar veya hizmetler gibi diğer uygulama bileşenlerinin yaşam döngüsüne saygı duyar. Bu farkındalık, LiveData\'nın yalnızca aktif bir yaşam döngüsü durumunda olan uygulama bileşeni gözlemcilerini güncellemesini sağlar.</string>
     <!-- Countries -->
     <string name="country_usa">Amerika Birleşik Devletleri</string>
     <string name="country_ca">Kanada</string>
@@ -697,7 +684,6 @@
     <string name="snack_bar_message_file_import_success">Dosya eklendi!</string>
     <string name="export_json_label">JSON olarak dışarı aktar</string>
     <string name="corners_radius">Köşe yarıçapı</string>
-    <string name="dependency_color_picker_description_label">Android için bir renk seçici kitaplığı.</string>
     <string name="barcode_color">Barkod rengi</string>
     <string name="color_shades_issue">Bazı renk tonları algılanamayabilir.</string>
     <string name="shapes_label">Şekiller</string>

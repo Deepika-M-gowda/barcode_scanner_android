@@ -140,8 +140,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.views.activities.AboutLibraryThirdActivity"
-            android:label="@string/preferences_about_library_third_label" />
+            android:name=".presentation.views.activities.AboutThirdPartyLibrariesActivity"
+            android:label="@string/preferences_about_third_party_libraries_label" />
         <activity
             android:name=".presentation.views.activities.AboutBddActivity"
             android:label="@string/preferences_about_bdd_label" />

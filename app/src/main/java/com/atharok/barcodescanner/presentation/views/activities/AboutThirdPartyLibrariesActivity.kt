@@ -24,20 +24,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.databinding.ActivityAboutLibraryThirdBinding
-import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
-import com.atharok.barcodescanner.presentation.views.recyclerView.aboutLibraryThird.LibraryThirdItemAdapter
+import com.atharok.barcodescanner.databinding.ActivityAboutThirdPartyLibrariesBinding
+import com.atharok.barcodescanner.presentation.views.recyclerView.aboutThirdPartyLibrary.ThirdPartyLibraryItemAdapter
 
-class AboutLibraryThirdActivity : BaseActivity() {
+class AboutThirdPartyLibrariesActivity : BaseActivity() {
 
-    private val viewBinding: ActivityAboutLibraryThirdBinding by lazy { ActivityAboutLibraryThirdBinding.inflate(layoutInflater) }
+    private val viewBinding: ActivityAboutThirdPartyLibrariesBinding by lazy { ActivityAboutThirdPartyLibrariesBinding.inflate(layoutInflater) }
     override val rootView: View get() = viewBinding.root
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(viewBinding.activityAboutLibraryThirdActivityLayout.toolbar)
+        setSupportActionBar(viewBinding.activityAboutThirdPartyLibrariesActivityLayout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)// On affiche l'icone "retour"
 
         configureRecyclerView()
@@ -47,15 +45,15 @@ class AboutLibraryThirdActivity : BaseActivity() {
 
     private fun configureRecyclerView(){
 
-        val recyclerView = viewBinding.activityAboutLibraryThirdRecyclerView
+        val recyclerView = viewBinding.activityAboutThirdPartyLibrariesRecyclerView
 
         val linearLayoutManager = LinearLayoutManager(this)
         val dividerItemDecoration = DividerItemDecoration(this, linearLayoutManager.orientation)
-        val adapter = LibraryThirdItemAdapter()
+        val adapter = ThirdPartyLibraryItemAdapter()
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.addItemDecoration(dividerItemDecoration)
-        recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin)))
+        //recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.large_margin)))
     }
 }

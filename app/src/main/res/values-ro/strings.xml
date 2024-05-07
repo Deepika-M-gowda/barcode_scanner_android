@@ -375,7 +375,6 @@
     <string name="permission_location_label">Locație</string>
     <string name="permission_vibrate_label">Vibrare</string>
     <string name="dependency_by">de la %1$s</string>
-    <string name="dependency_camera_x_description_label">Biblioteca de asistență CameraX de la Jetpack oferă un API pentru camere Android ușor de utilizat și cu caracteristici bogate.</string>
     <string name="country_fr">Franța</string>
     <string name="country_jp">Japonia</string>
     <string name="country_ru">Russia</string>
@@ -470,7 +469,7 @@
     <string name="preferences_search_title">Caută</string>
     <string name="preferences_about_title">Despre</string>
     <string name="preferences_about_permissions_label">Permisiuni</string>
-    <string name="preferences_about_library_third_label">Bibliotecă Third-party</string>
+    <string name="preferences_about_third_party_libraries_label">Bibliotecă Third-party</string>
     <string name="preferences_about_bdd_label">Bază de date</string>
     <string name="preferences_source_code_label">Cod sursa</string>
     <string name="permission_camera_label">Cameră</string>
@@ -490,16 +489,7 @@
     <string name="bdd_music_brainz_description_label">MusicBrainz este o enciclopedie muzicală deschisă care colectează date meta muzicale și le pune la dispoziția publicului.</string>
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
     <string name="bdd_open_library_description_label">Open Library este o bază de date gratuită care are ca scop catalogarea tuturor cărților publicate, indiferent de limba lor.</string>
-    <string name="dependency_zxing_description_label">ZXing (zebra crossing) este o bibliotecă de procesare a imaginilor cu coduri de bare 1D/2D, open-source și multiformat.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard este o bibliotecă vCard scrisă în Java. Poate citi și scrie vCard-uri în multe formate diferite.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper este o bibliotecă de tăiere a imaginilor pentru Android.</string>
-    <string name="dependency_coil_description_label">O bibliotecă de încărcare a imaginilor pentru Android susținută de Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) ajută dezvoltatorii să execute Material Design. Dezvoltate de o echipă de bază de ingineri și designeri UX de la Google, aceste componente permit un flux de lucru de dezvoltare fiabil pentru a construi aplicații Android frumoase și funcționale.
-\n
-\nMaterial Components for Android este un înlocuitor pentru biblioteca Android\'s Design Support.</string>
-    <string name="dependency_retrofit_description_label">Un client HTTP sigur pentru Android și Java.</string>
     <string name="country_de">Germania</string>
-    <string name="dependency_color_picker_description_label">O bibliotecă de selectare a culorilor pentru Android.</string>
     <string name="country_usa">Statele Unite</string>
     <string name="country_si">Slovenia</string>
     <string name="country_tw">Taiwan</string>
@@ -625,15 +615,6 @@
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
     <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
     <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Oferă Dispatchers.Main în contextul principal pentru aplicațiile Android.</string>
-    <string name="dependency_room_description_label">Room oferă un strat de abstractizare peste SQLite pentru a permite accesul fluent la baza de date, valorificând în același timp întreaga putere a SQLite.</string>
-    <string name="dependency_koin_description_label">Un cadru pragmatic de injectare a dependențelor pentru dezvoltatorii Kotlin.
-\n
-\nScris în Kotlin pur, folosind doar rezoluția funcțională: fără proxy, fără generare de cod, fără reflectare.
-\n
-\nKoin este un DSL, un container ușor și un API pragmatic</string>
-    <string name="dependency_gson_description_label">Gson este o bibliotecă Java care poate fi folosită pentru a converti obiectele Java în reprezentarea lor JSON. Poate fi folosit și pentru a converti un șir JSON într-un obiect Java echivalent. Gson poate lucra cu obiecte Java arbitrare, inclusiv obiecte preexistente pentru care nu este un cod sursă prezent.</string>
-    <string name="dependency_live_data_description_label">LiveData este o clasă de deținător de date observabilă. Spre deosebire de un observabil obișnuit, LiveData este conștient de ciclul de viață, ceea ce înseamnă că respectă ciclul de viață al altor componente ale aplicației, cum ar fi activități, fragmente sau servicii. Această conștientizare asigură că LiveData actualizează doar observatorii componentelor aplicației care se află într-o stare activă a ciclului de viață.</string>
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>

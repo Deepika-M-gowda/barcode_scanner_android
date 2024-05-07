@@ -528,7 +528,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">Acerca de</string>
     <string name="preferences_about_permissions_label">Permisos</string>
-    <string name="preferences_about_library_third_label">Librerías de terceros</string>
+    <string name="preferences_about_third_party_libraries_label">Librerías de terceros</string>
     <string name="preferences_about_bdd_label">Base de datos</string>
     <string name="preferences_source_code_label">Código fuente</string>
     <!-- About Permissions -->
@@ -554,19 +554,6 @@
     <string name="bdd_open_library_description_label">Open Library es una base de datos libre destinada a catalogar todos los libros publicados, sea cual sea su idioma.</string>
     <!-- About Library Third -->
     <string name="dependency_by">por %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") es una biblioteca de procesamiento de imágenes de códigos de barras 1D/2D de código abierto y multiformato.</string>
-    <string name="dependency_camera_x_description_label">La biblioteca de soporte CameraX de Jetpack proporciona una API de cámara para Android fácil de usar y rica en funciones.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard es una biblioteca de vCard escrita en Java. Puede leer y escribir vCards en muchos formatos diferentes.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper es una biblioteca de recorte de imágenes para Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) ayudan a los desarrolladores a ejecutar Material Design. Desarrollados por un equipo central de ingenieros y diseñadores de UX en Google, estos componentes permiten un flujo de trabajo de desarrollo fiable para construir aplicaciones Android hermosas y funcionales.\n\nMaterial Components for Android es un sustituto de la biblioteca de soporte de diseño de Android.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Contexto principal para las aplicaciones Android.</string>
-    <string name="dependency_koin_description_label">Un marco pragmático y ligero de inyección de dependencias para los desarrolladores de Kotlin.\n\nEscrito en Kotlin puro, utilizando sólo resolución funcional: sin proxy, sin generación de código, sin reflexión.\n\nKoin es un DSL, un contenedor ligero y una API pragmática</string>
-    <string name="dependency_room_description_label">Room proporciona una capa de abstracción sobre SQLite para permitir un acceso fluido a la base de datos mientras se aprovecha toda la potencia de SQLite.</string>
-    <string name="dependency_gson_description_label">Gson es una librería Java que se puede utilizar para convertir objetos Java en su representación JSON. También puede utilizarse para convertir una cadena JSON en un objeto Java equivalente. Gson puede trabajar con objetos Java arbitrarios, incluyendo objetos preexistentes de los que no se tiene el código fuente.</string>
-    <string name="dependency_retrofit_description_label">Un cliente HTTP de tipo seguro para Android y Java.</string>
-    <string name="dependency_live_data_description_label">LiveData es una clase de soporte de datos observable. A diferencia de un observable normal, LiveData es consciente del ciclo de vida, lo que significa que respeta el ciclo de vida de otros componentes de la aplicación, como actividades, fragmentos o servicios. Este conocimiento asegura que LiveData sólo actualiza los observadores de los componentes de la aplicación que están en un estado de ciclo de vida activo.</string>
     <!-- Countries -->
     <string name="country_usa">Estados Unidos</string>
     <string name="country_ca">Canadá</string>
@@ -698,7 +685,6 @@
     <string name="snack_bar_message_file_import_success">¡Archivo importado!</string>
     <string name="export_json_label">Exportar como un JSON</string>
     <string name="corners_radius">Radio de las esquinas</string>
-    <string name="dependency_color_picker_description_label">Biblioteca de selección de colores para Android.</string>
     <string name="barcode_color">Color del código de barras</string>
     <string name="color_shades_issue">Es posible que no se detecten algunos matices de color.</string>
     <string name="shapes_label">Formas</string>

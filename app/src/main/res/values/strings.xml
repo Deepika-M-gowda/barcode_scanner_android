@@ -584,7 +584,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">About</string>
     <string name="preferences_about_permissions_label">Permissions</string>
-    <string name="preferences_about_library_third_label">Third-party library</string>
+    <string name="preferences_about_third_party_libraries_label">Third-party libraries</string>
     <string name="preferences_about_bdd_label">Database</string>
     <string name="preferences_source_code_label">Source code</string>
     <!-- About Permissions -->
@@ -610,20 +610,6 @@
     <string name="bdd_open_library_description_label">Open Library is a free database aimed at cataloging all published books, whatever their language.</string>
     <!-- About Library Third -->
     <string name="dependency_by">by %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
-    <string name="dependency_koin_description_label">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
-    <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
-    <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
-    <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
-    <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
-    <string name="dependency_color_picker_description_label">A color picker library for Android.</string>
     <!-- Countries -->
     <string name="country_usa">United States</string>
     <string name="country_ca">Canada</string>
@@ -801,55 +787,82 @@
     <string name="preferences_entry_value_pet_food" translatable="false">pet_food</string>
     <string name="preferences_entry_value_musicbrainz" translatable="false">musicbrainz</string>
     <!-- About Library Third -->
-    <string name="dependency_zxing_title_label" translatable="false">ZXing</string>
-    <string name="dependency_zxing_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
-    <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
-    <string name="dependency_camera_x_title_label" translatable="false">CameraX</string>
-    <string name="dependency_camera_x_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_camera_x_author_label" translatable="false">Google</string>
-    <string name="dependency_camera_x_github_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/camera</string>
-    <string name="dependency_ez_vcard_title_label" translatable="false">ez-vcard</string>
-    <string name="dependency_ez_vcard_license_label" translatable="false">FreeBSD</string>
-    <string name="dependency_ez_vcard_author_label" translatable="false">Michael Angstadt</string>
-    <string name="dependency_ez_vcard_github_link_label" translatable="false">https://github.com/mangstadt/ez-vcard</string>
-    <string name="dependency_android_image_cropper_title_label" translatable="false">Android Image Cropper</string>
-    <string name="dependency_android_image_cropper_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_android_image_cropper_author_label" translatable="false">CanHub</string>
-    <string name="dependency_android_image_cropper_github_link_label" translatable="false">https://github.com/CanHub/Android-Image-Cropper</string>
-    <string name="dependency_coil_title_label" translatable="false">Coil</string>
-    <string name="dependency_coil_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_coil_author_label" translatable="false">coil-kt</string>
-    <string name="dependency_coil_github_link_label" translatable="false">https://github.com/coil-kt/coil</string>
+    <string name="github" translatable="false">Github</string>
+    <string name="apache_license_2.0" translatable="false">Apache License 2.0</string>
+    <string name="apache_license_2.0_url" translatable="false">http://www.apache.org/licenses/LICENSE-2.0</string>
+    <string name="free_bsd" translatable="false">FreeBSD</string>
+    <string name="free_bsd_url" translatable="false">https://www.freebsd.org/copyright/freebsd-license/</string>
+    <string name="dependency_android_x_github_link_label" translatable="false">https://github.com/androidx/androidx</string>
+    <!-- Activity KTX -->
+    <string name="dependency_activity_ktx_title_label" translatable="false">Activity KTX</string>
+    <string name="dependency_activity_ktx_id_label" translatable="false">androidx.activity:activity-ktx</string>
+    <!-- Preference KTX -->
+    <string name="dependency_preference_ktx_title_label" translatable="false">Preference KTX</string>
+    <string name="dependency_preference_ktx_id_label" translatable="false">androidx.preference:preference-ktx</string>
+    <!-- Lifecycle Livedata KTX -->
+    <string name="dependency_lifecycle_livedata_ktx_title_label" translatable="false">Lifecycle Livedata KTX</string>
+    <string name="dependency_lifecycle_livedata_ktx_id_label" translatable="false">androidx.lifecycle:lifecycle-livedata-ktx</string>
+    <!-- AppCompat -->
+    <string name="dependency_appcompat_title_label" translatable="false">AppCompat</string>
+    <string name="dependency_appcompat_id_label" translatable="false">androidx.appcompat:appcompat</string>
+    <!-- ConstraintLayout -->
+    <string name="dependency_constraintlayout_title_label" translatable="false">ConstraintLayout</string>
+    <string name="dependency_constraintlayout_id_label" translatable="false">androidx.constraintlayout:constraintlayout</string>
+    <!-- RecyclerView -->
+    <string name="dependency_recyclerview_title_label" translatable="false">RecyclerView</string>
+    <string name="dependency_recyclerview_id_label" translatable="false">androidx.recyclerview:recyclerview</string>
+    <!-- Material Components for Android -->
     <string name="dependency_material_components_title_label" translatable="false">Material Components for Android</string>
-    <string name="dependency_material_components_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_material_components_author_label" translatable="false">Material Components</string>
+    <string name="dependency_material_components_id_label" translatable="false">com.google.android.material:material</string>
     <string name="dependency_material_components_github_link_label" translatable="false">https://github.com/material-components/material-components-android</string>
-    <!--<string name="dependency_kotlinx_coroutines_title_label" translatable="false">Module kotlinx-coroutines-android</string>
-    <string name="dependency_kotlinx_coroutines_github_link_label" translatable="false">https://github.com/Kotlin/kotlinx.coroutines/tree/master/ui/kotlinx-coroutines-android</string>-->
-    <string name="dependency_koin_title_label" translatable="false">Koin</string>
-    <string name="dependency_koin_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_koin_author_label" translatable="false">insert-koin.io</string>
-    <string name="dependency_koin_github_link_label" translatable="false">https://github.com/InsertKoinIO/koin</string>
-    <string name="dependency_gson_title_label" translatable="false">Gson</string>
-    <string name="dependency_gson_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_gson_author_label" translatable="false">Google</string>
-    <string name="dependency_gson_github_link_label" translatable="false">https://github.com/google/gson</string>
-    <string name="dependency_retrofit_title_label" translatable="false">Retrofit</string>
-    <string name="dependency_retrofit_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_retrofit_author_label" translatable="false">Square</string>
-    <string name="dependency_retrofit_github_link_label" translatable="false">https://github.com/square/retrofit</string>
+    <!-- CameraX -->
+    <string name="dependency_camera_x_title_label" translatable="false">CameraX</string>
+    <string name="dependency_camera_x_id_label" translatable="false">androidx.camera:camera-core</string>
+    <!-- Room -->
     <string name="dependency_room_title_label" translatable="false">Room</string>
-    <string name="dependency_room_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_room_author_label" translatable="false">Google</string>
-    <string name="dependency_room_remote_link_label" translatable="false">https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/room</string>
-    <string name="dependency_live_data_title_label" translatable="false">LiveData</string>
-    <string name="dependency_live_data_license_label" translatable="false">Apache License 2.0</string>
-    <string name="dependency_live_data_github_link_label" translatable="false">https://github.com/androidx/androidx/tree/androidx-master-dev/lifecycle/lifecycle-livedata-ktx</string>
+    <string name="dependency_room_id_label" translatable="false">androidx.room:room-ktx</string>
+    <!-- Retrofit -->
+    <string name="dependency_retrofit_title_label" translatable="false">Retrofit</string>
+    <string name="dependency_retrofit_author_label" translatable="false">Square</string>
+    <string name="dependency_retrofit_id_label" translatable="false">com.squareup.retrofit2:retrofit</string>
+    <string name="dependency_retrofit_github_link_label" translatable="false">https://github.com/square/retrofit</string>
+    <!-- Gson -->
+    <string name="dependency_gson_title_label" translatable="false">Gson</string>
+    <string name="dependency_gson_id_label" translatable="false">com.google.code.gson</string>
+    <string name="dependency_gson_github_link_label" translatable="false">https://github.com/google/gson</string>
+    <!-- Coil -->
+    <string name="dependency_coil_title_label" translatable="false">Coil</string>
+    <string name="dependency_coil_author_label" translatable="false">coil-kt</string>
+    <string name="dependency_coil_id_label" translatable="false">io.coil-kt:coil</string>
+    <string name="dependency_coil_github_link_label" translatable="false">https://github.com/coil-kt/coil</string>
+    <!-- Koin -->
+    <string name="dependency_koin_title_label" translatable="false">Koin</string>
+    <string name="dependency_koin_author_label" translatable="false">insert-koin.io</string>
+    <string name="dependency_koin_id_label" translatable="false">io.insert-koin:koin-android</string>
+    <string name="dependency_koin_github_link_label" translatable="false">https://github.com/InsertKoinIO/koin</string>
+    <!-- Zxing -->
+    <string name="dependency_zxing_title_label" translatable="false">ZXing</string>
+    <string name="dependency_zxing_author_label" translatable="false">Zxing</string>
+    <string name="dependency_zxing_id_label" translatable="false">com.google.zxing:core</string>
+    <string name="dependency_zxing_github_link_label" translatable="false">https://github.com/zxing/zxing</string>
+    <!-- Android Image Cropper -->
+    <string name="dependency_android_image_cropper_title_label" translatable="false">Android Image Cropper</string>
+    <string name="dependency_android_image_cropper_author_label" translatable="false">CanHub</string>
+    <string name="dependency_android_image_cropper_id_label" translatable="false">com.vanniktech:android-image-cropper</string>
+    <string name="dependency_android_image_cropper_github_link_label" translatable="false">https://github.com/CanHub/Android-Image-Cropper</string>
+    <!-- ez-vcard -->
+    <string name="dependency_ez_vcard_title_label" translatable="false">ez-vcard</string>
+    <string name="dependency_ez_vcard_author_label" translatable="false">Michael Angstadt</string>
+    <string name="dependency_ez_vcard_id_label" translatable="false">com.googlecode.ez-vcard:ez-vcard</string>
+    <string name="dependency_ez_vcard_github_link_label" translatable="false">https://github.com/mangstadt/ez-vcard</string>
+    <!-- Color Picker -->
     <string name="dependency_color_picker_title_label" translatable="false">Color Picker</string>
-    <string name="dependency_color_picker_license_label" translatable="false">Apache License 2.0</string>
     <string name="dependency_color_picker_author_label" translatable="false">Atharok</string>
+    <string name="dependency_color_picker_id_label" translatable="false">com.github.Atharok:ColorPicker</string>
     <string name="dependency_color_picker_github_link_label" translatable="false">https://github.com/Atharok/ColorPicker</string>
+    <!-- Link -->
+    <string name="web_site_link" translatable="false">https://atharok.gitlab.io/site/projects/barcode-scanner/</string>
     <string name="source_code_link" translatable="false">https://gitlab.com/Atharok/BarcodeScanner</string>
     <!-- Local Language text -->
     <string name="locale_language_zh" translatable="false">简体中文</string>

@@ -43,7 +43,6 @@
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
     <string name="permission_wifi_label">Wi-Fi</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers. Context principal per a aplicacions d\'Android.</string>
     <string name="country_ca">Canadà</string>
     <string name="country_kosovo">Kosovo</string>
     <string name="country_tw">Taiwan</string>
@@ -606,7 +605,6 @@
     <string name="open_beauty_facts_source_description_label">La informació sobre els productes prové de la base de dades gratuïta Open Beauty Facts.</string>
     <string name="preferences_information_about_remote_api_barcode_types_concerned_description">La funció de cerca API només està activada per als codis de barres EAN 13, EAN 8, UPC A i UPC E.</string>
     <string name="permission_contact_description_label">Necessari per importar el contacte per generar el codi QR a partir d\'aquest.</string>
-    <string name="dependency_zxing_description_label">ZXing (zebra crossing) és una biblioteca de processament d\'imatges de codis de barres 1D/2D, de codi obert i multi-format.</string>
     <string name="camera_permission_denied">Heu denegat l\'accés a la càmera.
 \nL\'heu d\'autoritzar per escanejar un codi de barres.</string>
     <string name="barcode_found_on_label">S\'ha trobat a %1$s!</string>
@@ -641,7 +639,7 @@
     <string name="shortcuts_info">Ordeneu les dreceres en l\'ordre que preferiu.</string>
     <string name="preferences_about_title">Quant a</string>
     <string name="preferences_about_permissions_label">Permisos</string>
-    <string name="preferences_about_library_third_label">Biblioteques de tercers</string>
+    <string name="preferences_about_third_party_libraries_label">Biblioteques de tercers</string>
     <string name="preferences_about_bdd_label">Base de dades</string>
     <string name="preferences_source_code_label">Codi font</string>
     <string name="permission_camera_label">Càmera</string>
@@ -651,7 +649,6 @@
     <string name="permission_contact_label">Contacte</string>
     <string name="permission_wifi_description_label">Necessari per connectar-se al Wi-Fi escanejant un codi QR que conté accés al Wi-Fi.</string>
     <string name="permission_query_all_packages_description_label">Útil per generar un codi QR des d\'una aplicació instal·lada.</string>
-    <string name="dependency_color_picker_description_label">És una biblioteca per a Android per a triar el color.</string>
     <string name="country_fr">França</string>
     <string name="bdd_open_food_facts_description_label">Open Food Facts és una base de dades gratuïta sobre aliments que inclou ingredients,al·lergògens, composició nutricional i tota la informació present a les etiquetes dels productes.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts és una base de dades gratuïta sobre aliments per a mascotes.</string>
@@ -659,21 +656,5 @@
     <string name="bdd_music_brainz_description_label">MusicBrainz és una enciclopèdia musical oberta que recull metadades musicalsi la posa a disposició del públic.</string>
     <string name="bdd_open_library_description_label">Open Library és una base de dades gratuïta destinada a catalogar tots els llibres publicats, sigui quina sigui la seva llengua.</string>
     <string name="dependency_by">per %1$s</string>
-    <string name="dependency_camera_x_description_label">La biblioteca de suport CameraX de Jetpack ofereix una API de la càmera d\'Android amb moltes funcions fàcil d\'utilitzar.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard és una biblioteca de vCard escrita en Java. Pot llegir i escriure vCards en molts formats diferents.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper és una biblioteca Android per escapçar i girar les imatges.</string>
-    <string name="dependency_coil_description_label">Una biblioteca per a Android per carregar imatges amb el suport de Kotlin Coroutines.</string>
-    <string name="dependency_gson_description_label">Gson és una biblioteca de Java que es pot utilitzar per convertir objectes Java a la sevaRepresentació JSON. També es pot utilitzar per convertir una cadena JSON en una cadenaobjecte Java equivalent. Gson pot treballar amb objectes Java arbitraris, inclòsobjectes preexistents dels quals no teniu el codi font.</string>
-    <string name="dependency_retrofit_description_label">Un client HTTP segur per a Android i Java.</string>
-    <string name="dependency_koin_description_label">Un marc de treball lleuger pragmàtic d\'injecció de dependències per a desenvolupadors de Kotlin.
-\n
-\nEscrit en Kotlin pur, utilitzant només una resolució funcional: sense proxy, sense generació de codi, sense reflexió.
-\n
-\nKoin és un contenidor lleuger i una API pragmàtica de DSL</string>
-    <string name="dependency_room_description_label">Room proporciona una capa d\'abstracció sobre SQLite que permet un accés fluid a una base de dades mentre aprofita tot el poder del SQLite.</string>
-    <string name="dependency_live_data_description_label">LiveData és una classe contenidora de dades observables. A diferència d\'un observable normal, LiveData és conscient del cicle de vida, és a dir, respecta el cicle de vida dels components d\'una altra aplicació, com ara activitats, fragments o serveis. Aquesta consciència assegura que LiveData només actualitza els observadors dels components d\'aplicacions que es troben en un estat del cicle de vida actiu.</string>
     <string name="country_cm">Camerun</string>
-    <string name="dependency_material_components_description_label">Material Components per a Android (MDC-Android) ajuda els desenvolupadors a fer el Material de Disseny. Desenvolupada per un equip d\'enginyers i dissenyadors UX del nucli de Google, aquests components permeten un flux de treball de desenvolupament fiable per crear aplicacions d\'Android maques i funcionals.
-\n
-\nMaterial Components per a Android és un substitut de la Biblioteca de Suport del Disseny d\'Android.</string>
 </resources>

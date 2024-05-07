@@ -428,7 +428,7 @@
     <string name="preferences_search_engine">Motore di ricerca</string>
     <string name="preferences_about_title">Informazioni</string>
     <string name="preferences_about_permissions_label">Permessi</string>
-    <string name="preferences_about_library_third_label">Librerie di terze parti</string>
+    <string name="preferences_about_third_party_libraries_label">Librerie di terze parti</string>
     <string name="preferences_about_bdd_label">Base Dati</string>
     <string name="preferences_source_code_label">Codice sorgente</string>
     <string name="permission_camera_label">Fotocamera</string>
@@ -583,31 +583,20 @@
     <string name="preferences_default">Predefinito</string>
     <string name="spinner_wifi_encryption_sae">WPA3</string>
     <string name="dependency_by">di %1$s</string>
-    <string name="dependency_zxing_description_label">ZXing (Zebra Crossing) è una libreria per l\'elaborazione di codici a barre multi-formato 1D e 2D.</string>
-    <string name="dependency_coil_description_label">Una libreria Android per il caricamento di immagini supportata da Kotlin Coroutines.</string>
     <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
     <string name="snack_bar_message_file_export_success">File salvato!</string>
     <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
     <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
-    <string name="dependency_camera_x_description_label">CameraX è una libreria Jetpack di supporto che fornisce un\'API per fotocamera Android ricca di funzioni e facile da usare.</string>
-    <string name="dependency_live_data_description_label">LiveData è una classe di osservatori di dati. A differenza di altri, LiveData riconosce il ciclo di vita, ovvero rispetta il ciclo di vita di altri componenti dell\'app, come attività, frammenti o servizi. Questa consapevolezza assicura che LiveData informi solo gli osservatori attivi dei componenti dell\'app.</string>
     <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
     <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
     <string name="base_api_open_library_url">https://openlibrary.org</string>
     <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
     <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
     <string name="import_json_label">Importa (JSON)</string>
-    <string name="dependency_koin_description_label">Un framework leggero e pratico per la gestione delle dipendenze per sviluppare in Kotlin.
-\n
-\nScritto in puro Kotlin, utilizza solo la risoluzione funzionale: nessun proxy, nessuna generazione di codice, nessuna riflessione.
-\n
-\nKoin è un DSL, un contenitore leggero e un\'API pragmatica</string>
     <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
     <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
     <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
-    <string name="dependency_retrofit_description_label">Un client HTTP \"type-safe\" per Android e Java.</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
-    <string name="dependency_room_description_label">Room fornisce un livello di astrazione per SQLite consentendo un accesso fluente al database, sfruttando al contempo tutta la potenza di SQLite.</string>
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
     <string name="snack_bar_message_file_export_error">Si è verificato un errore! File non salvato.</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
@@ -615,12 +604,8 @@
     <string name="export_csv_label">Esporta come CSV</string>
     <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
     <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard è una libreria vCard scritta in Java. Può leggere e scrivere vCard in molti formati.</string>
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="snack_bar_message_file_import_error">Si è verificato un errore! File non importato.</string>
-    <string name="dependency_material_components_description_label">I Material Component di Android (MDC-Android) aiutano gli sviluppatori a realizzare il Material Design. Sviluppati da un team di ingegneri e UX designer di Google, questi componenti consentono un flusso di sviluppo affidabile per realizzare applicazioni Android belle e funzionali.
-\n
-\nI Material Component sostituiscono la Design Support Library di Android.</string>
     <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
     <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
     <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
@@ -632,13 +617,9 @@
     <string name="export_json_label">Esporta come JSON</string>
     <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
     <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper è una libreria Android per il ritaglio di immagini.</string>
     <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
-    <string name="dependency_gson_description_label">Gson è una libreria Java che può essere utilizzata per convertire gli oggetti Java nella loro rappresentazione JSON. Può anche essere usata per convertire una stringa JSON in un oggetto Java equivalente. Gson può lavorare con oggetti Java arbitrari, compresi oggetti preesistenti dei quali non è dispone il codice sorgente.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Fornisce Dispatcher. Contesto principale per applicazioni Android.</string>
     <string name="corners_radius">Raggio degli angoli</string>
-    <string name="dependency_color_picker_description_label">Una libreria di selezione colori per Android.</string>
     <string name="barcode_color">Colore del codice a barre</string>
     <string name="color_shades_issue">Alcune sfumature di colore potrebbero non essere rilevate.</string>
     <string name="shapes_label">Forme</string>

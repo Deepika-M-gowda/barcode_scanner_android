@@ -45,7 +45,6 @@
     <string name="qr_code_text_input_edit_text_hint_agenda_description">Descrição</string>
     <string name="preferences_switch_light_theme_label">Claro</string>
     <string name="end_label">Fim</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper é uma biblioteca de recorte de imagens para Android.</string>
     <string name="open_beauty_facts_source_description_label">As informações sobre produtos são do banco de dados livre Open Beauty Facts.</string>
     <string name="close_dialog_label">Fechar</string>
     <string name="yes_label">Sim</string>
@@ -359,7 +358,7 @@
     <string name="preferences_search_title">Busca</string>
     <string name="preferences_about_title">Sobre</string>
     <string name="preferences_about_permissions_label">Permissões</string>
-    <string name="preferences_about_library_third_label">Biblioteca de terceiros</string>
+    <string name="preferences_about_third_party_libraries_label">Biblioteca de terceiros</string>
     <string name="permission_internet_description_label">Necessário para obter informações da API remota.</string>
     <string name="permission_contact_label">Contato</string>
     <string name="permission_contact_description_label">Necessário para importar contato para gerar código QR deste.</string>
@@ -372,14 +371,8 @@
     <string name="bdd_music_brainz_description_label">MusicBrainz é uma enciclopédia musical aberta que coleta metadados sobre músicas e os torna disponíveis ao público.</string>
     <string name="bdd_open_library_description_label">Open Library é um banco de dados livre focado em catalogar todos os livros publicados, seja qual for seu idioma.</string>
     <string name="dependency_by">por %1$s</string>
-    <string name="dependency_zxing_description_label">ZXing (zebra crossing) é uma biblioteca de código aberto e multiformato de processamento de imagens de códigos de barra 1D/2D.</string>
-    <string name="dependency_camera_x_description_label">A biblioteca de suporte CameraX da Jetpack oferece uma API de câmera Android fácil de usar e rica em funções.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard é uma biblioteca de vCard escrita em Java. Pode ler e escrever vCards em vários formatos diferentes.</string>
-    <string name="dependency_coil_description_label">Uma biblioteca de carregamento de imagens para Android apoiada por Kotlin Coroutines.</string>
     <string name="permission_internet_label">Internet</string>
     <string name="permission_wifi_label">Wi-Fi</string>
-    <string name="dependency_room_description_label">Room oferece uma camada de abstração sobre o SQLite para permitir acesso fluido ao banco de dados enquanto aproveita o poder inteiro do SQLite.</string>
-    <string name="dependency_retrofit_description_label">Um cliente HTTP type-safe para Android e Java.</string>
     <string name="country_usa">Estados Unidos</string>
     <string name="country_ca">Canadá</string>
     <string name="country_fr">França</string>
@@ -479,9 +472,6 @@
     <string name="country_id">Indonésia</string>
     <string name="country_at">Áustria</string>
     <string name="country_au">Austrália</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) ajuda os desenvolvedores a executar o Material Design. Desenvolvido por um núcleo de engenheiros e designers de experiência de usuário no Google, estes componentes permitem um workflow de desenvolvimento confiável para construir apps Android lindos e funcionais.
-\n
-\nMaterial Components for Android é um substituto ao Design Support Library do Android.</string>
     <string name="go_to_dialog_label">Insira o site</string>
     <string name="camera_permission_denied">Você negou acesso à câmera.
 \nVocê deve autorizar o acesso para escanear um código de barras.</string>
@@ -493,14 +483,6 @@
     <string name="preferences_switch_scan_search_on_api_label">Consultar API remota automaticamente</string>
     <string name="preferences_information_about_remote_api_title">Informações sobre APIs</string>
     <string name="preferences_remote_api_book_label">Open Library (Livros)</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Oferece o contexto Dispatchers.Main para aplicativos Android.</string>
-    <string name="dependency_koin_description_label">Um framework pragmático e leve para injeção de dependências para desenvolvedores Kotlin.
-\n
-\nEscrito em Kotlin puro, usando resolução funcional apenas: sem proxy, em geração de código, sem reflexão.
-\n
-\nKoin é um DSL, um contêiner leve e uma API pragmática</string>
-    <string name="dependency_gson_description_label">Gson é uma biblioteca Java que pode ser usada para converter objetos Java em suas representações JSON. Pode também ser usada para converter uma string JSON em um objeto Java equivalente. Gson pode funcionar com objetos Java arbitrários, incluindo objetos pré-existentes dos quais você não tem acesso ao código-fonte.</string>
-    <string name="dependency_live_data_description_label">LiveData é uma classe de detentores de dados observável. Diferentemente de um observável comum, LiveData é ciente em relação ao ciclo de vida, o que significa que ele respeita o ciclo de vida de outros componentes do app, como atividades, fragmentos ou serviços. Esta ciência permite que LiveData atualize apenas os observadores de componentes de apps que estejam em estado de ciclo de vida ativo.</string>
     <string name="country_lt">Lituânia</string>
     <string name="preferences_information_about_remote_api_what_is_an_api_description">Uma API é uma biblioteca de software usada para acessar um serviço. No caso deste aplicativo, uma API é usada para acessar um serviço web. Este serviço web obtém informações de um banco de dados.
 \nPor exemplo, o Open Food Facts é um banco de dados de produtos alimentícios e oferece uma API para acessar seu banco de dados. Eu uso esta API para exibir informações sobre produtos alimentícios.</string>
@@ -642,7 +624,6 @@
     <string name="snack_bar_message_file_import_success">Arquivo importado!</string>
     <string name="export_json_label">Exportar como JSON</string>
     <string name="corners_radius">Raio das bordas</string>
-    <string name="dependency_color_picker_description_label">Uma biblioteca de seleção de cores para o Android.</string>
     <string name="barcode_color">Cor do código de barras</string>
     <string name="color_shades_issue">Alguns tons de cor podem não ser detectados.</string>
     <string name="shapes_label">Formas</string>

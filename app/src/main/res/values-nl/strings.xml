@@ -340,7 +340,7 @@
     <string name="preferences_about_bdd_label">Database</string>
     <string name="preferences_about_permissions_label">Rechten</string>
     <string name="preferences_about_title">Over</string>
-    <string name="preferences_about_library_third_label">Third-party library</string>
+    <string name="preferences_about_third_party_libraries_label">Third-party libraries</string>
     <string name="permission_wifi_label">Wi-Fi</string>
     <string name="permission_query_all_packages_label">Alle pakketten opvragen</string>
     <string name="permission_vibrate_description_label">Om het apparaat te laten trillen bij een scan.</string>
@@ -350,11 +350,6 @@
     <string name="permission_contact_label">Contacten</string>
     <string name="permission_internet_description_label">Vereist om informatie van externe API\'s op te halen.</string>
     <string name="dependency_by">by %1$s</string>
-    <string name="dependency_zxing_description_label">ZXing (zebra crossing) is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
-    <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
-    <string name="dependency_color_picker_description_label">A color picker library for Android.</string>
     <string name="country_usa">Verenigde Staten</string>
     <string name="country_ca">Canada</string>
     <string name="country_fr">Frankrijk</string>
@@ -618,20 +613,6 @@
     <string name="preferences_information_about_remote_api_what_is_an_api_description">Een API is een softwarebibliotheek die wordt gebruikt om toegang te krijgen tot een service. In het geval van deze toepassing wordt een API gebruikt om toegang te krijgen tot een webservice. Deze webservice haalt informatie op uit een database.
 \nOpen Food Facts is bijvoorbeeld een database van voedingsmiddelen en biedt een API om toegang te krijgen tot de database. De app gebruikt deze API om informatie over voedingsmiddelen weer te geven.</string>
     <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Betrokken barcodetypes</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.
-\n
-\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
-    <string name="dependency_koin_description_label">A pragmatic lightweight dependency injection framework for Kotlin developers.
-\n
-\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.
-\n
-\nKoin is a DSL, a light container and a pragmatic API</string>
-    <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
-    <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
     <string name="barcode_code_128_description_label">Code 128 is een barcode die vaak wordt gebruikt in de industrie, zoals in de transportsector en voor productidentificatie in toeleveringsketens. Het kan ook worden gebruikt in de automobielsector of voor productmarkering in apotheken. Code 128 wordt dus breed ingezet en kan ook voor vele andere doeleinden worden gebruikt.</string>
     <string name="barcode_upc_e_description_label">Code UPC-E (Universal Product Code) is een verkorte barcode van code UPC-A die vooral in de VS en Canada wordt gebruikt om producten te identificeren die in winkels worden verkocht. Het wordt gebruikt op verpakkingen die te klein zijn om code UPC-A te bevatten.</string>
     <string name="barcode_ean_8_description_label">Code EAN-8 (European Article Numbering 8) is een verkorte barcode van code EAN-13 die wordt gebruikt om producten te identificeren die worden verkocht in winkels in Europa en vrijwel overal ter wereld. Het wordt gebruikt op verpakkingen die te klein zijn voor EAN-13.</string>

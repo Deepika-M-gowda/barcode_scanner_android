@@ -127,7 +127,6 @@
     <string name="nutrition_facts_entitled_label">Поживні властивості</string>
     <string name="action_wifi_already_added_label">З\'єднання Wi-Fi вже додано</string>
     <string name="country_bg">Болгарія</string>
-    <string name="dependency_coil_description_label">Бібліотека завантаження зображень для Android на основі Kotlin Coroutines.</string>
     <string name="no_vegetarian_label">Не вегетаріанський</string>
     <string name="off_risk_low_label">Безпечно</string>
     <string name="matrix_contact_mail_label">Email</string>
@@ -137,7 +136,6 @@
     <string name="permission_camera_description_label">Необхідний для сканування штрихкоду.</string>
     <string name="barcode_code_39_description_label">Code 39 – це штрихкод, який використовується для маркування текстильних виробів та ліків в аптеках. Він також використовується у військовому секторі та автомобільній промисловості.</string>
     <string name="preferences_information_about_remote_api_product_types_supported_food">• Харчові продукти (з API Open Food Facts)</string>
-    <string name="dependency_color_picker_description_label">Бібліотека вибору кольорів для Android.</string>
     <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Інформація про переказ (неструктурований текст)</string>
     <string name="off_energy_kcal_label">Енергетична цінність (ккал)</string>
     <string name="qr_code_text_input_edit_text_hint_localisation_longitude">Довгота</string>
@@ -166,7 +164,6 @@
     <string name="preferences_switch_scan_screen_rotation_label">Вимкнути автообертання під час сканування</string>
     <string name="country_si">Словенія</string>
     <string name="preferences_scan_title">Сканування</string>
-    <string name="dependency_zxing_description_label">ZXing (zebra crossing) – це багатоформатна бібліотека для обробки зображень 1D/2D штрихкодів з відкритим вихідним кодом.</string>
     <string name="preferences_information_about_remote_api_product_types_supported_book">• Книги (з API Open Library)</string>
     <string name="permission_camera_label">Камера</string>
     <string name="off_per_serving_label">На порцію (%1$s%2$s)</string>
@@ -174,7 +171,6 @@
     <string name="qr_code_text_input_edit_text_hint_wifi_hide">Прихована</string>
     <string name="preferences_color_red">Червоний</string>
     <string name="country_by">Білорусь</string>
-    <string name="dependency_camera_x_description_label">Бібліотека підтримки CameraX від Jetpack надає простий у використанні та багатофункціональний API камери Android.</string>
     <string name="action_wifi_add_network_already_exists">Ви вже додали цю мережу Wi-Fi.</string>
     <string name="preferences_about_bdd_label">Бази даних</string>
     <string name="stabilizer_label">Стабілізатор</string>
@@ -182,7 +178,6 @@
     <string name="qr_code_spinner_prompt_none">Немає</string>
     <string name="nova_group_description_1">Необроблена їжа або мінімально оброблена їжа</string>
     <string name="matrix_uri_malicious_label">URL-адреса може бути зловмисною…</string>
-    <string name="dependency_live_data_description_label">LiveData – це спостережуваний клас зберігання даних. На відміну від звичайного спостережуваного, LiveData є обізнаним щодо життєвого циклу, тобто він враховує життєвий цикл інших компонентів застосунку, таких як дії, фрагменти або сервіси. Ця обізнаність гарантує, що LiveData оновлює лише ті спостерігачі компонентів застосунку, які перебувають в активному стані життєвого циклу.</string>
     <string name="error_barcode_not_a_number_message">Штрихкод має складатися лише з цифр.</string>
     <string name="categories_label">Категорії</string>
     <string name="may_contain_palm_oil_label">Може містити пальмову олію</string>
@@ -233,11 +228,6 @@
     <string name="barcode_search_error_label">URL-адреса не підтримується</string>
     <string name="qr_code_text_input_edit_text_hint_epc_amount">Сума</string>
     <string name="action_wifi_connection_from_app">Підключитися до Wi-Fi</string>
-    <string name="dependency_koin_description_label">Прагматичний легкий фреймворк ін\'єкції залежностей для розробників на Kotlin.
-\n
-\nНаписаний на чистому Kotlin, з використанням лише функціонального підходу: без проксі, без генерації коду, без рефлексії.
-\n
-\nKoin - це DSL, легкий контейнер і прагматичний API</string>
     <string name="eco_score_description_c">Помірний вплив на довкілля</string>
     <string name="permission_wifi_description_label">Необхідний для підключення до Wi-Fi шляхом сканування QR-коду, що містить інформацію про доступ до Wi-Fi.</string>
     <string name="off_quantity_none_label">Невідома кількість</string>
@@ -275,7 +265,6 @@
     <string name="qr_code_text_input_edit_text_hint_phone_2">Номер телефону 2</string>
     <string name="off_risk_high_label">Уникати</string>
     <string name="share_image_label">Поділитися зображенням</string>
-    <string name="dependency_retrofit_description_label">HTTP-клієнт для Android та Java з безпечною типізацією.</string>
     <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
     <string name="spinner_type_home">Домашній</string>
     <string name="contain_palm_oil_label">Містить пальмову олію</string>
@@ -292,7 +281,6 @@
     <string name="preferences_source_code_label">Вихідний код</string>
     <string name="preferences_barcode_generation_title">Генерування штрихкоду</string>
     <string name="matrix_localisation_location_disabled_label">Схоже, місцезнаходження на вашому пристрої не активоване.</string>
-    <string name="dependency_room_description_label">Room забезпечує рівень абстракції над SQLite, щоб забезпечити комфортний доступ до баз даних, використовуючи при цьому всю потужність SQLite.</string>
     <string name="is_vegan_label">Веганський</string>
     <string name="vegan_status_unknown_label">Веганський статус невідомий</string>
     <string name="qr_code_text_input_edit_text_hint_message">Повідомлення</string>
@@ -309,7 +297,7 @@
     <string name="nova_group_description_3">Оброблена їжа</string>
     <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (компакт-диски, вінілові платівки, …)</string>
     <string name="error_barcode_upc_e_not_start_with_0_error_message">Штрихкод UPC-E має починатися з 0.</string>
-    <string name="preferences_about_library_third_label">Сторонні бібліотеки</string>
+    <string name="preferences_about_third_party_libraries_label">Сторонні бібліотеки</string>
     <string name="preferences_switch_light_theme_label">Світла</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Введіть номер телефону…</string>
     <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
@@ -393,7 +381,6 @@
     <string name="off_carbohydrates_label">Вуглеводи</string>
     <string name="matrix_email_cc_label">Копія</string>
     <string name="music_product_tracks_number">%1$s доріжок</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard – це бібліотека vCard, написана на Java. Вона може читати і створювати vCard у різних форматах.</string>
     <string name="preferences_information_about_remote_api_title">Інформація про API</string>
     <string name="action_title_dialog_label">Що ви хочете зробити?</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">Email-адреса 3</string>
@@ -402,9 +389,6 @@
     <string name="off_starch_label">Крохмаль</string>
     <string name="image_properties">Властивості зображення</string>
     <string name="country_tw">Тайвань</string>
-    <string name="dependency_material_components_description_label">Material Components для Android (MDC-Android) допомагають розробникам реалізовувати Material Design. Розроблені основною командою інженерів і UX-дизайнерів Google, ці компоненти забезпечують надійний робочий процес розробки для створення красивих і функціональних застосунків для Android.
-\n
-\nMaterial Components для Android - це прозора заміна бібліотеки Android Design Support.</string>
     <string name="preferences_information_about_remote_api_automatic_search_description">Якщо опція \"%1$s\" увімкнена, при скануванні штрихкоду товару автоматично виконується пошук за API, обраним у налаштуваннях. Якщо інформація не знайдена за API, ви завжди можете виконати пошук вручну за іншим API після сканування.</string>
     <string name="matrix_email_recipient_label">Одержувач</string>
     <string name="nutriscore_description_b">Хороша поживна якість</string>
@@ -515,7 +499,6 @@
     <string name="maybe_vegetarian_label">Можливо вегетаріанський</string>
     <string name="qr_code_type_name_generate_from_contact">Згенерувати з контакту</string>
     <string name="spinner_type_other">Інший</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper – бібліотека для обрізання зображень для Android.</string>
     <string name="country_tm">Туркменістан</string>
     <string name="preferences_information_about_remote_api_foreword">Передмова</string>
     <string name="country_lv">Латвія</string>
@@ -536,7 +519,6 @@
     <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
     <string name="qr_code_text_input_edit_text_hint_web_site">Вебсайт</string>
     <string name="qr_code_text_input_edit_text_hint_wifi_password">Пароль</string>
-    <string name="dependency_gson_description_label">Gson – це бібліотека Java, яку можна використовувати для перетворення об\'єктів Java у їхнє представлення у форматі JSON. Її також можна використовувати для перетворення рядка JSON в еквівалентний об\'єкт Java. Gson може працювати з довільними об\'єктами Java, включаючи вже існуючі об\'єкти, для яких у вас немає вихідного коду.</string>
     <string name="permission_internet_description_label">Необхідний для отримання інформації з віддаленого API.</string>
     <string name="qr_code_text_input_edit_text_hint_mail_1">Email-адреса 1</string>
     <string name="book_product_more_label">Більше</string>
@@ -554,7 +536,6 @@
     <string name="qr_code_text_input_edit_text_hint_epc_iban">IBAN</string>
     <string name="height_label">Висота</string>
     <string name="country_ph">Філіппіни</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Забезпечує контекст Dispatchers.Main для застосунків Android.</string>
     <string name="country_usa">Сполучені Штати</string>
     <string name="permission_contact_description_label">Необхідний для імпорту контакту, щоб згенерувати з нього QR-код.</string>
     <string name="matrix_body_label">Повідомлення</string>

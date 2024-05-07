@@ -526,7 +526,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">Informacje</string>
     <string name="preferences_about_permissions_label">Uprawnienia</string>
-    <string name="preferences_about_library_third_label">Inne bilbioteki</string>
+    <string name="preferences_about_third_party_libraries_label">Inne bilbioteki</string>
     <string name="preferences_about_bdd_label">Database</string>
     <string name="preferences_source_code_label">Kod źródłowy</string>
     <!-- About Permissions -->
@@ -552,19 +552,6 @@
     <string name="bdd_open_library_description_label">Open Library to bezpłatna baza danych mająca na celu skatalogowanie wszystkich opublikowanych książek, niezależnie od ich języka.</string>
     <!-- About Library Third -->
     <string name="dependency_by">by %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image processing library.</string>
-    <string name="dependency_camera_x_description_label">Jetpack\'s CameraX support library provides an easy to use and feature rich Android camera API.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard is a vCard library written in Java. It can read and write vCards in many different formats.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper is an image cropping library for Android.</string>
-    <string name="dependency_coil_description_label">An image loading library for Android backed by Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components for Android (MDC-Android) help developers execute Material Design. Developed by a core team of engineers and UX designers at Google, these components enable a reliable development workflow to build beautiful and functional Android apps.\n\nMaterial Components for Android is a drop-in replacement for Android\'s Design Support Library.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Provides Dispatchers.Main context for Android applications.</string>
-    <string name="dependency_koin_description_label">A pragmatic lightweight dependency injection framework for Kotlin developers.\n\nWritten in pure Kotlin, using functional resolution only: no proxy, no code generation, no reflection.\n\nKoin is a DSL, a light container and a pragmatic API</string>
-    <string name="dependency_room_description_label">Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.</string>
-    <string name="dependency_gson_description_label">Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of.</string>
-    <string name="dependency_retrofit_description_label">A type-safe HTTP client for Android and Java.</string>
-    <string name="dependency_live_data_description_label">LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.</string>
     <!-- Countries -->
     <string name="country_usa">USA</string>
     <string name="country_ca">Kanda</string>
@@ -686,7 +673,6 @@
     <string name="country_my">Malezja</string>
     <string name="country_mo">Macao</string>
     <string name="corners_radius">Promień narożników</string>
-    <string name="dependency_color_picker_description_label">Biblioteka dla Androida.</string>
     <string name="snack_bar_message_file_export_success">Plik zapisany!</string>
     <string name="barcode_color">Kolor kodu kreskowego</string>
     <string name="color_shades_issue">Niektóre kolorowe cień nie mogą być wykryte.</string>

@@ -86,7 +86,7 @@
     <string name="preferences_source_code_label">ソースコード</string>
     <string name="preferences_barcode_generation_title">コードの作成</string>
     <string name="preferences_switch_scan_use_camera_x_api_label">CameraX API を使用</string>
-    <string name="preferences_about_library_third_label">依存関係</string>
+    <string name="preferences_about_third_party_libraries_label">依存関係</string>
     <string name="permission_contact_label">連絡先</string>
     <string name="preferences_switch_scan_barcode_copied_label">スキャンしたコードをコピー</string>
     <string name="preferences_languages_change">言語を変更</string>

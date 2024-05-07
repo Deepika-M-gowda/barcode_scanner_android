@@ -526,7 +526,7 @@
     <!-- About Settings -->
     <string name="preferences_about_title">О приложении</string>
     <string name="preferences_about_permissions_label">Разрешения</string>
-    <string name="preferences_about_library_third_label">Сторонние библиотеки</string>
+    <string name="preferences_about_third_party_libraries_label">Сторонние библиотеки</string>
     <string name="preferences_about_bdd_label">База данных</string>
     <string name="preferences_source_code_label">Исходный код</string>
     <!-- About Permissions -->
@@ -552,23 +552,6 @@
     <string name="bdd_open_library_description_label">Open Library - это свободная база данных, предназначенная для каталогизации всех опубликованных книг независимо от их языка.</string>
     <!-- About Library Third -->
     <string name="dependency_by">от %1$s</string>
-    <!-- About Library Third Description -->
-    <string name="dependency_zxing_description_label">ZXing ("zebra crossing") - это многоформатная библиотека обработки изображений 1D/2D штрих-кодов с открытым исходным кодом.</string>
-    <string name="dependency_camera_x_description_label">Библиотека поддержки CameraX от Jetpack обеспечивает удобный в использовании и многофункциональный API камеры для Android.</string>
-    <string name="dependency_ez_vcard_description_label">ez-vcard - это библиотека vCard, написанная на Java. Она может считывать и записывать vCard в различных форматах.</string>
-    <string name="dependency_android_image_cropper_description_label">Android Image Cropper - это библиотека обрезки изображений для Android.</string>
-    <string name="dependency_coil_description_label">Библиотека загрузки изображений для Android, поддерживаемая Kotlin Coroutines.</string>
-    <string name="dependency_material_components_description_label">Material Components для Android (MDC-Android) помогают разработчикам реализовывать Material Design. Разработанные основной командой инженеров и UX-дизайнеров Google, эти компоненты обеспечивают надежный рабочий процесс разработки для создания красивых и функциональных приложений для Android.\n\nMaterial Components для Android - это полноценная замена библиотеки Android Design Support.</string>
-    <string name="dependency_kotlinx_coroutines_description_label">Обеспечивает контекст Dispatchers.Main для приложений Android.</string>
-    <string name="dependency_koin_description_label">Прагматичный легкий фреймворк внедрения зависимостей для разработчиков на Kotlin.
-\n
-\nНаписано на чистом Kotlin, с использованием только функционального разрешения: без прокси, без генерации кода, без рефлексии.
-\n
-\nKoin - это DSL, легкий контейнер и прагматичный API</string>
-    <string name="dependency_room_description_label">Room предоставляет слой абстракции над SQLite, который позволяет получить свободный доступ к базе данных, используя при этом всю мощь SQLite.</string>
-    <string name="dependency_gson_description_label">Gson - это библиотека Java, которую можно использовать для преобразования объектов Java в их представление JSON. Кроме того, ее можно использовать для преобразования строки JSON в эквивалентный объект Java. Gson может работать с произвольными объектами Java, включая уже существующие, исходный код которых у вас отсутствует.</string>
-    <string name="dependency_retrofit_description_label">Безопасный с точки зрения типов HTTP-клиент для Android и Java.</string>
-    <string name="dependency_live_data_description_label">LiveData - это наблюдаемый класс держателя данных. В отличие от обычного наблюдаемого, LiveData учитывает жизненный цикл, то есть учитывает жизненный цикл других компонентов приложения, таких как действия, фрагменты или службы. Эта осведомленность гарантирует, что LiveData обновляет только те наблюдатели компонентов приложения, которые находятся в активном состоянии жизненного цикла.</string>
     <!-- Countries -->
     <string name="country_usa">Соединенные Штаты</string>
     <string name="country_ca">Канада</string>
@@ -700,7 +683,6 @@
     <string name="snack_bar_message_file_import_success">Файл импортирован!</string>
     <string name="export_json_label">Экспортировать в формате JSON</string>
     <string name="corners_radius">Радиус закругления углов</string>
-    <string name="dependency_color_picker_description_label">Библиотека выбора цвета для Android.</string>
     <string name="barcode_color">Цвет штрих-кода</string>
     <string name="color_shades_issue">Некоторые цветовые оттенки могут быть не распознаны.</string>
     <string name="shapes_label">Формы</string>

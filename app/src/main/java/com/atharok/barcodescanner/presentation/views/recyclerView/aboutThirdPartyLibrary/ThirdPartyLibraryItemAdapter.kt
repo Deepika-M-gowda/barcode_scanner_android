@@ -18,28 +18,28 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.recyclerView.aboutLibraryThird
+package com.atharok.barcodescanner.presentation.views.recyclerView.aboutThirdPartyLibrary
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
+import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutThirdPartyLibrariesBinding
 
-class LibraryThirdItemAdapter: RecyclerView.Adapter<LibraryThirdItemHolder>() {
+class ThirdPartyLibraryItemAdapter: RecyclerView.Adapter<ThirdPartyLibraryItemHolder>() {
 
-    private val libraryThirdArray: Array<LibraryThird> = LibraryThird.entries.toTypedArray()
+    private val thirdPartyLibraryArrays: Array<ThirdPartyLibrary> = ThirdPartyLibrary.entries.toTypedArray()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibraryThirdItemHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThirdPartyLibraryItemHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
-        val viewBinding = RecyclerViewItemAboutBinding.inflate(layoutInflater, parent, false)
-
-        return LibraryThirdItemHolder(viewBinding)
+        return ThirdPartyLibraryItemHolder(
+            RecyclerViewItemAboutThirdPartyLibrariesBinding.inflate(layoutInflater, parent, false)
+        )
     }
 
-    override fun getItemCount(): Int = libraryThirdArray.size
+    override fun getItemCount(): Int = thirdPartyLibraryArrays.size
 
-    override fun onBindViewHolder(holder: LibraryThirdItemHolder, position: Int) {
-        holder.updateItem(libraryThirdArray[position])
+    override fun onBindViewHolder(holder: ThirdPartyLibraryItemHolder, position: Int) {
+        holder.updateItem(thirdPartyLibraryArrays[position])
     }
 }
