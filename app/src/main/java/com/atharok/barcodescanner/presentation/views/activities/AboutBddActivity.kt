@@ -24,9 +24,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.databinding.ActivityAboutBddBinding
-import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.views.recyclerView.aboutBdd.BddItemAdapter
 
 class AboutBddActivity : BaseActivity() {
@@ -58,6 +56,5 @@ class AboutBddActivity : BaseActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.addItemDecoration(dividerItemDecoration)
-        recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin)))
     }
 }

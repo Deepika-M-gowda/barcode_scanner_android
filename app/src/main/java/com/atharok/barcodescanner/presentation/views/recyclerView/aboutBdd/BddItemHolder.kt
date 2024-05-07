@@ -21,7 +21,6 @@
 package com.atharok.barcodescanner.presentation.views.recyclerView.aboutBdd
 
 import android.content.Intent
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.RecyclerViewItemAboutBinding
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
@@ -33,8 +32,6 @@ class BddItemHolder(private val viewBinding: RecyclerViewItemAboutBinding)
 
     fun updateItem(bdd: Bdd) {
         viewBinding.recyclerViewItemAboutTitleTextView.text = context.getString(bdd.nameResource)
-        viewBinding.recyclerViewItemAboutLicenseTextView.visibility = View.GONE
-        viewBinding.recyclerViewItemAboutAuthorTextView.visibility = View.GONE
         viewBinding.recyclerViewItemAboutDescriptionTextView.text = context.getString(bdd.descriptionResource)
 
         itemView.setOnClickListener {
