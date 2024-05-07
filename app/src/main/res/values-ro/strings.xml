@@ -195,7 +195,7 @@
     <string name="is_vegan_label">Vegan</string>
     <string name="additive_no_information_found_label">Nu s-au găsit informații despre acest aditiv!</string>
     <string name="no_vegan_label">Fără vegan</string>
-    <string name="ingredient_veggie_entitled_label">Ingrediente din punct de vedere al statutului vegetarian și vegan</string>
+    <string name="ingredient_veggie_entitled_label">Ingrediente conform statutului vegetarian și vegan.</string>
     <string name="maybe_vegetarian_label">Poate vegetarian</string>
     <string name="palm_oil_free_label">Fără ulei de palmier</string>
     <string name="contain_palm_oil_label">Conține ulei de palmier</string>
@@ -654,4 +654,13 @@
     <string name="custom_search_urls_error_url">Termenul \"%1$s\" trebuie să fie prezent în adresa URL.</string>
     <string name="barcode_search_error_no_compatible_application_found">Nu a fost găsită nicio aplicație compatibilă</string>
     <string name="error_empty_fields">Câmpurile de intrare nu trebuie să fie goale.</string>
+    <string name="snack_bar_message_items_deleted">Articole șterse din istoric.</string>
+    <string name="shortcuts">Taste rapide</string>
+    <string name="shortcuts_info">Aranjați tastele rapide în ordinea preferințelor dvs.</string>
+    <string name="app_name">Barcode Scanner</string>
+    <string name="error">Eroare</string>
+    <string name="action_share_vcf_file">Distribuiți ca VCF</string>
+    <string name="clipboard_empty">Clipboard-ul este gol.</string>
+    <string name="create_qr_from_clipboard">Generați un cod QR din clipboard</string>
+    <string name="matrix_contact_job_title_label">Denumirea funcției</string>
 </resources>

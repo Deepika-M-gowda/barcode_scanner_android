@@ -660,4 +660,10 @@
     <string name="shortcuts_info">Rangschik de snelkoppelingen naar voorkeur.</string>
     <string name="shortcuts">Snelkoppelingen</string>
     <string name="custom_urls">Eigen links</string>
+    <string name="app_name">Barcodescanner</string>
+    <string name="matrix_contact_job_title_label">Functie</string>
+    <string name="snack_bar_message_items_deleted">Items verwijderd uit de geschiedenis.</string>
+    <string name="preferences_switch_history_save_duplicates_label">Dubbele items opslaan</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Dubbele items worden niet toegevoegd aan de geschiedenis</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Dubbele items worden toegevoegd aan de geschiedenis</string>
 </resources>

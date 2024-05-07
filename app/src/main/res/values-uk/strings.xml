@@ -660,4 +660,7 @@
     <string name="shortcuts_info">Розташуйте ярлики в бажаному порядку.</string>
     <string name="error_empty_fields">Поля введення повинні бути заповнені.</string>
     <string name="create_qr_from_clipboard">Згенерувати QR-код з буфера обміну</string>
+    <string name="app_name">Сканер штрихкодів</string>
+    <string name="matrix_contact_job_title_label">Посада</string>
+    <string name="snack_bar_message_items_deleted">Елементи видалені з історії.</string>
 </resources>

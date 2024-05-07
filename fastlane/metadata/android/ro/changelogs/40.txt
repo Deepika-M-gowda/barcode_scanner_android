@@ -1,0 +1,12 @@
+1.22.0
+
+Jurnalul complet al modificărilor aici: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Înlocuirea comenzilor rapide statice cu comenzi rapide dinamice (puteți configura acest lucru în setări).
+- S-a adăugat o comandă rapidă pentru a genera un cod QR din clipboard (mulțumită lui Austen).
+- S-a adăugat posibilitatea de a crea și de a utiliza adrese URL de căutare personalizate.
+- S-a adăugat o opțiune pentru afișarea imaginii codului de bare în vizualizarea rezultatelor.
+- Corectarea erorilor.
+- Teme, stiluri și vizualizări îmbunătățite.
+- Traduceri actualizate (Weblate).
+- Dependențe actualizate.

@@ -657,4 +657,6 @@
     <string name="bdd_open_library_description_label">Open Library és una base de dades gratuïta destinada a catalogar tots els llibres publicats, sigui quina sigui la seva llengua.</string>
     <string name="dependency_by">per %1$s</string>
     <string name="country_cm">Camerun</string>
+    <string name="matrix_contact_job_title_label">Títol del treball</string>
+    <string name="app_name">Escàner de codis de barres</string>
 </resources>

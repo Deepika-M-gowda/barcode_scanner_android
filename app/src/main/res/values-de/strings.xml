@@ -725,4 +725,10 @@
     <string name="custom_search_urls_error_url">Der Begriff \"%1$s\" muss in der URL enthalten sein.</string>
     <string name="action_share_vcf_file">Teilen als VCF</string>
     <string name="preferences_display_barcode_image_results_view">Anzeige des Barcode-Bildes in der Ergebnisansicht</string>
+    <string name="app_name">Barcode-Scanner</string>
+    <string name="matrix_contact_job_title_label">Berufsbezeichnung</string>
+    <string name="snack_bar_message_items_deleted">Aus dem Verlauf gelöschte Elemente.</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Duplikate werden nicht in den Verlauf hinzugefügt</string>
+    <string name="preferences_switch_history_save_duplicates_label">Duplikate speichern</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Duplikate werden dem Verlauf hinzugefügt</string>
 </resources>
