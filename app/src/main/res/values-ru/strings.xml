@@ -718,4 +718,11 @@
     <string name="create_qr_from_clipboard">Создать QR-код из буфера обмена</string>
     <string name="clipboard_empty">Буфер обмена пуст.</string>
     <string name="popup_message_confirmation_deleted_all_custom_urls">Вы хотите удалить все пользовательские URL?</string>
+    <string name="preferences_switch_history_save_duplicates_label">Сохранить дубликаты</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Дубликаты будут добавлены в историю</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Дубликаты не будут добавлены в историю</string>
+    <string name="app_name">Сканер штрих-кодов</string>
+    <string name="action_share_vcf_file">Поделиться в формате VCF</string>
+    <string name="snack_bar_message_items_deleted">Элементы удалены из истории.</string>
+    <string name="matrix_contact_job_title_label">Должность</string>
 </resources>
