@@ -663,4 +663,7 @@
     <string name="app_name">Сканер штрихкодів</string>
     <string name="matrix_contact_job_title_label">Посада</string>
     <string name="snack_bar_message_items_deleted">Елементи видалені з історії.</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">Дублікати не будуть потрапляти в історію</string>
+    <string name="preferences_switch_history_save_duplicates_label">Зберігати дублікати</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">Дублікати будуть потрапляти в історію</string>
 </resources>
