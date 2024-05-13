@@ -61,7 +61,7 @@ class SettingsManager(private val context: Context) {
     private val addBarcodeToHistoryScanKey = context.getString(R.string.preferences_switch_scan_add_barcode_to_the_history_key)
     private val defaultZoomValueKey = context.getString(R.string.preferences_seek_bar_camera_default_zoom_value_key)
 
-    var saveDuplicates = prefs.getBoolean(saveDuplicateKey, false)
+    var saveDuplicates = prefs.getBoolean(saveDuplicateKey, true)
         private set
 
     var useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
@@ -99,7 +99,7 @@ class SettingsManager(private val context: Context) {
         theme = prefs.getString(themeKey, "system")
         useSearchOnApi = prefs.getBoolean(searchOnApiKey, true)
         apiChoose = prefs.getString(apiChooseKey, context.getString(R.string.preferences_entry_value_food))
-        saveDuplicates = prefs.getBoolean(saveDuplicateKey, false)
+        saveDuplicates = prefs.getBoolean(saveDuplicateKey, true)
         useVibrateScan = prefs.getBoolean(vibrateScanKey, false)
         useBipScan = prefs.getBoolean(bipScanKey, false)
         isAutoScreenRotationScanDisabled = prefs.getBoolean(autoScreenRotationScanDisabledKey, true)

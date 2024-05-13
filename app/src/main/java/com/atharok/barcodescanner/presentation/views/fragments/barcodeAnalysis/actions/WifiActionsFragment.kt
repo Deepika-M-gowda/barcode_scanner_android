@@ -41,7 +41,7 @@ class WifiActionsFragment: AbstractParsedResultActionsFragment() {
 
     override fun configureActionItems(barcode: Barcode, parsedResult: ParsedResult) {
         if(parsedResult is WifiParsedResult) {
-            configureWifiActionItem(parsedResult)
+            addActionItem(configureWifiActionItem(parsedResult))
         }
         addActionItem(configureSearchOnWebActionItem(barcode))
         addActionItem(configureShareTextActionItem(barcode))
