@@ -21,7 +21,6 @@
         layout="@layout/template_ingredients_analysis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin"
         android:layout_below="@id/fragment_food_analysis_veggie_entitled_text_view"
         />
 
@@ -30,7 +29,6 @@
         layout="@layout/template_ingredients_analysis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin"
         android:layout_below="@id/fragment_food_analysis_veggie_vegan"
         />
 
@@ -39,7 +37,6 @@
         layout="@layout/template_ingredients_analysis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin"
         android:layout_below="@id/fragment_food_analysis_veggie_vegetarian"
         />
 
