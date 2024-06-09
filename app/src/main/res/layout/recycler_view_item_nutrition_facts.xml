@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/light_margin"
-    android:paddingBottom="@dimen/light_margin"
-    android:paddingStart="@dimen/standard_margin"
-    android:paddingEnd="@dimen/standard_margin"
+    android:paddingTop="@dimen/small_margin"
+    android:paddingBottom="@dimen/small_margin"
+    android:paddingStart="@dimen/normal_margin"
+    android:paddingEnd="@dimen/normal_margin"
     android:gravity="center"
     android:orientation="horizontal">
 

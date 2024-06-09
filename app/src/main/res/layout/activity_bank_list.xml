@@ -16,7 +16,7 @@
             android:id="@+id/activity_bank_list_empty_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:layout_gravity="start|top"
             android:text="@string/list_bank_empty_message"
             android:visibility="gone"

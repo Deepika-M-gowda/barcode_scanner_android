@@ -26,7 +26,7 @@
                             android:id="@+id/fragment_food_product_quality_title_text_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/light_margin"
+                            android:layout_marginBottom="@dimen/small_margin"
                             style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
                         <!-- Quality -->
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:maxHeight="@dimen/image_label_max_height"
                     android:adjustViewBounds="true"
-                    android:layout_marginStart="@dimen/standard_margin"
+                    android:layout_marginStart="@dimen/normal_margin"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:contentDescription="@string/image_view_description_image" />

@@ -6,20 +6,20 @@
     android:id="@+id/template_action_button_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/standard_margin"
+    android:layout_margin="@dimen/normal_margin"
     app:cardElevation="1dp"
     app:cardUseCompatPadding="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/large_margin"
+        android:padding="@dimen/medium_margin"
         android:layout_gravity="center">
         <ImageView
             android:id="@+id/template_action_button_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/light_margin"
+            android:paddingBottom="@dimen/small_margin"
             android:contentDescription="@string/image_view_description_icon"
             app:tint="?colorSecondary"
 
@@ -31,7 +31,7 @@
             android:id="@+id/template_action_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/light_margin"
+            android:paddingTop="@dimen/small_margin"
             android:gravity="center_horizontal"
             android:textColor="?colorSecondary"
             style="@style/AppTheme.TextView.Appearance.Normal.Primary"

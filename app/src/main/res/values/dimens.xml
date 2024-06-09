@@ -17,10 +17,10 @@
 
     <!-- Margin -->
     <dimen name="thin_margin">2dp</dimen>
-    <dimen name="light_margin">4dp</dimen>
-    <dimen name="standard_margin">8dp</dimen>
-    <dimen name="large_margin">12dp</dimen>
-    <dimen name="x_large_margin">16dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="medium_margin">12dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
     <dimen name="history_item_margin">32dp</dimen>
 
     <!-- Text -->

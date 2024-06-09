@@ -17,7 +17,7 @@
             android:id="@+id/fragment_barcode_about_overview_about_barcode_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:text="@string/about_barcode_label"
             style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
@@ -55,7 +55,7 @@
             android:id="@+id/fragment_barcode_about_overview_barcode_actions_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:text="@string/actions_label"
             style="@style/AppTheme.TextView.Appearance.Subtitle" />
 

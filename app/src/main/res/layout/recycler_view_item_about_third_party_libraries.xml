@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/large_margin"
+    android:layout_margin="@dimen/medium_margin"
     android:orientation="horizontal">
 
     <!-- Row 1 -->
@@ -44,7 +44,7 @@
         android:id="@+id/recycler_view_item_about_third_party_libraries_source_code_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginTop="@dimen/small_margin"
         style="@style/AppTheme.TextView.Appearance.Normal.Link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recycler_view_item_about_third_party_libraries_id_text_view" />
@@ -53,8 +53,8 @@
         android:id="@+id/recycler_view_item_about_third_party_libraries_link_separator_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/light_margin"
-        android:paddingHorizontal="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:paddingHorizontal="@dimen/normal_margin"
         android:text="|"
         style="@style/AppTheme.TextView.Appearance.Normal.Primary"
         app:layout_constraintStart_toEndOf="@id/recycler_view_item_about_third_party_libraries_source_code_text_view"
@@ -65,7 +65,7 @@
         android:id="@+id/recycler_view_item_about_third_party_libraries_license_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginTop="@dimen/small_margin"
         style="@style/AppTheme.TextView.Appearance.Normal.Link"
         app:layout_constraintStart_toEndOf="@id/recycler_view_item_about_third_party_libraries_link_separator_text_view"
         app:layout_constraintTop_toBottomOf="@id/recycler_view_item_about_third_party_libraries_id_text_view" />

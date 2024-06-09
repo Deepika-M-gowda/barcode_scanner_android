@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/stroke_width"
         android:background="?colorOutline"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_centerHorizontal="true"/>
 
     <!-- UPI ID -->
@@ -19,7 +19,7 @@
         android:id="@+id/fragment_barcode_matrix_upi_parsed_upi_id_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_upi_parsed_separator"
         app:title_text="@string/matrix_uri_upi_id_label" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/fragment_barcode_matrix_upi_parsed_payee_name_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_upi_parsed_upi_id_layout"
         app:title_text="@string/matrix_uri_upi_payee_name_label" />
 
@@ -37,7 +37,7 @@
         android:id="@+id/fragment_barcode_matrix_upi_parsed_amount_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_upi_parsed_payee_name_layout"
         app:title_text="@string/matrix_uri_upi_amount_label" />
 
@@ -46,7 +46,7 @@
         android:id="@+id/fragment_barcode_matrix_upi_parsed_currency_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_upi_parsed_amount_layout"
         app:title_text="@string/matrix_uri_upi_currency_label" />
 
@@ -55,7 +55,7 @@
         android:id="@+id/fragment_barcode_matrix_upi_parsed_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_upi_parsed_currency_layout"
         app:title_text="@string/matrix_uri_upi_description_label" />
 

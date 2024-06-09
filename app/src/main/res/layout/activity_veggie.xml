@@ -17,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top|start"
-            android:paddingVertical="@dimen/standard_margin"
-            android:paddingHorizontal="@dimen/x_large_margin"
+            android:paddingVertical="@dimen/normal_margin"
+            android:paddingHorizontal="@dimen/large_margin"
             android:text="@string/ingredients_no_information_found_label"
             style="@style/AppTheme.TextView.Appearance.Subtitle"
             android:visibility="gone" />
@@ -36,8 +36,8 @@
                     android:id="@+id/activity_veggie_ingredients_list_entitled_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="@dimen/standard_margin"
-                    android:paddingHorizontal="@dimen/x_large_margin"
+                    android:paddingVertical="@dimen/normal_margin"
+                    android:paddingHorizontal="@dimen/large_margin"
                     android:text="@string/ingredient_veggie_entitled_label"
                     style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
 
@@ -49,8 +49,8 @@
                     android:id="@+id/activity_veggie_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="@dimen/standard_margin"
-                    android:paddingHorizontal="@dimen/x_large_margin"
+                    android:paddingVertical="@dimen/normal_margin"
+                    android:paddingHorizontal="@dimen/large_margin"
 
                     app:layout_constraintTop_toBottomOf="@id/activity_veggie_ingredients_list_entitled_text_view"
                     app:layout_constraintBottom_toBottomOf="parent"

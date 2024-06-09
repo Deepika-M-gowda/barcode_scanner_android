@@ -53,7 +53,7 @@ class ShortcutsActivity : BaseActivity(), CustomItemTouchHelperCallback.ItemTouc
         val recyclerView = viewBinding.activityShortcutsRecyclerView
 
         val layoutManager = LinearLayoutManager(this)
-        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
+        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.normal_margin))
 
         recyclerView.isNestedScrollingEnabled = false
         recyclerView.adapter = adapter

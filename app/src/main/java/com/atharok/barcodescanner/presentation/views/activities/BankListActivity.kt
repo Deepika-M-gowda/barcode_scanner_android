@@ -100,7 +100,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
         val recyclerView = viewBinding.activityBankListHistoryRecyclerView
 
         val layoutManager = LinearLayoutManager(this)
-        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
+        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.normal_margin))
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager

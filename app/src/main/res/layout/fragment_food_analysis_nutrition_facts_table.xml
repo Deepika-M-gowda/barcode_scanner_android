@@ -16,10 +16,10 @@
             android:id="@+id/fragment_food_analysis_nutrition_facts_table_entitled_row_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/light_margin"
-            android:paddingBottom="@dimen/light_margin"
-            android:paddingStart="@dimen/standard_margin"
-            android:paddingEnd="@dimen/standard_margin"
+            android:paddingTop="@dimen/small_margin"
+            android:paddingBottom="@dimen/small_margin"
+            android:paddingStart="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:background="?colorPrimary"
             android:orientation="horizontal">
 

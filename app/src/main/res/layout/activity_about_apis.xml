@@ -14,15 +14,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/standard_margin">
+            android:paddingHorizontal="@dimen/normal_margin">
 
             <!-- Foreground -->
             <RelativeLayout
                 android:id="@+id/activity_about_apis_foreword_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:layout_marginTop="@dimen/x_large_margin">
+                android:layout_margin="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/large_margin">
 
                 <TextView
                     android:id="@+id/activity_about_apis_foreword_title_text_view"
@@ -45,14 +45,14 @@
                 android:id="@+id/activity_about_apis_what_is_api_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_foreword_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_what_is_api_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_what_is_an_api_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -71,14 +71,14 @@
                 android:id="@+id/activity_about_apis_barcode_types_concerned_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_what_is_api_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_barcode_types_concerned_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_barcode_types_concerned_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -97,14 +97,14 @@
                 android:id="@+id/activity_about_apis_product_types_supported_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_barcode_types_concerned_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_product_types_supported_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_product_types_supported_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -155,14 +155,14 @@
                 android:id="@+id/activity_about_apis_some_additional_information_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_product_types_supported_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_some_additional_information_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_some_additional_information_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -189,15 +189,15 @@
                 android:id="@+id/activity_about_apis_how_it_works_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:layout_marginTop="@dimen/x_large_margin"
+                android:layout_margin="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/large_margin"
                 android:layout_below="@id/activity_about_apis_some_additional_information_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_how_it_works_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_how_it_works"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
@@ -214,14 +214,14 @@
                 android:id="@+id/activity_about_apis_automatic_search_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_how_it_works_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_automatic_search_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_automatic_search_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -240,14 +240,14 @@
                 android:id="@+id/activity_about_apis_manual_search_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_automatic_search_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_manual_search_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_manual_search_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 
@@ -266,14 +266,14 @@
                 android:id="@+id/activity_about_apis_about_books_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:layout_below="@id/activity_about_apis_manual_search_layout">
 
                 <TextView
                     android:id="@+id/activity_about_apis_about_books_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/normal_margin"
                     android:text="@string/preferences_information_about_remote_api_about_books_title"
                     style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
 

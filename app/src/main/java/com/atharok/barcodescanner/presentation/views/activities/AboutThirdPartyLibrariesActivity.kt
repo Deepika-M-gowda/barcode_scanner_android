@@ -54,6 +54,6 @@ class AboutThirdPartyLibrariesActivity : BaseActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.addItemDecoration(dividerItemDecoration)
-        //recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.large_margin)))
+        //recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.medium_margin)))
     }
 }

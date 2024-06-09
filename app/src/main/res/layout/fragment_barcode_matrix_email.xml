@@ -10,14 +10,14 @@
         android:id="@+id/fragment_barcode_matrix_email_address_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_email_recipient_label" />
 
     <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_email_cc_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_email_address_layout"
         app:title_text="@string/matrix_email_cc_label" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/fragment_barcode_matrix_email_bcc_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_email_cc_layout"
         app:title_text="@string/matrix_email_bcc_label" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/fragment_barcode_matrix_email_subject_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_email_bcc_layout"
         app:title_text="@string/matrix_subject_label" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/fragment_barcode_matrix_email_body_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_email_subject_layout"
         app:title_text="@string/matrix_body_label" />
 

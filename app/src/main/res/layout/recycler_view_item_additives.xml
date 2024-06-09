@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/x_large_margin"
-    android:layout_marginBottom="@dimen/x_large_margin"
+    android:layout_marginTop="@dimen/large_margin"
+    android:layout_marginBottom="@dimen/large_margin"
     android:orientation="horizontal">
 
     <RelativeLayout
@@ -17,7 +17,7 @@
             android:id="@+id/recycler_view_item_additives_entitled_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/x_large_margin"
+            android:layout_marginEnd="@dimen/large_margin"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@id/recycler_view_item_additives_info_button"
             android:layout_centerVertical="true"
@@ -36,7 +36,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:drawableStart="@drawable/outline_info_24"
-            android:drawablePadding="@dimen/light_margin"
+            android:drawablePadding="@dimen/small_margin"
             app:drawableTint="?colorPrimary"
             android:text="@string/off_additive_info_label"
             android:textColor="?colorPrimary"
@@ -49,8 +49,8 @@
         android:id="@+id/recycler_view_item_additives_overexposure_risk_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/standard_margin"
-        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
         android:layout_below="@id/recycler_view_item_additives_header_layout">
 
         <ImageView
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/recycler_view_item_additives_overexposure_risk_image_view"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginStart="@dimen/normal_margin"
             android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
@@ -77,10 +77,10 @@
         android:id="@+id/recycler_view_item_additives_type_chip_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/normal_margin"
         android:layout_below="@id/recycler_view_item_additives_overexposure_risk_layout"
         app:singleLine="false"
-        app:chipSpacingHorizontal="@dimen/standard_margin"
-        app:chipSpacingVertical="@dimen/standard_margin" />
+        app:chipSpacingHorizontal="@dimen/normal_margin"
+        app:chipSpacingVertical="@dimen/normal_margin" />
 
 </RelativeLayout>

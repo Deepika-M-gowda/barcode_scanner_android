@@ -10,7 +10,7 @@
         android:id="@+id/fragment_barcode_matrix_phone_number_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_phone_tel_number_label" />
 
 </FrameLayout>

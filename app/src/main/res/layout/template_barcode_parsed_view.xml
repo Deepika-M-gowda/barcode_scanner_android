@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingStart="0dp"
-        android:paddingEnd="@dimen/standard_margin"
+        android:paddingEnd="@dimen/normal_margin"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/template_barcode_parsed_view_copy_button"

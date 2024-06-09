@@ -11,7 +11,7 @@
         android:id="@+id/fragment_barcode_matrix_sms_number_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_phone_tel_number_label" />
 
     <!-- Subject -->
@@ -19,7 +19,7 @@
         android:id="@+id/fragment_barcode_matrix_sms_subject_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_sms_number_layout"
         app:title_text="@string/matrix_subject_label" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/fragment_barcode_matrix_sms_body_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_sms_subject_layout"
         app:title_text="@string/matrix_body_label" />
 

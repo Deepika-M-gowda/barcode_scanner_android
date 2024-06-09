@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/x_large_margin"
-    android:layout_marginBottom="@dimen/x_large_margin"
+    android:layout_marginTop="@dimen/large_margin"
+    android:layout_marginBottom="@dimen/large_margin"
     android:orientation="horizontal">
 
     <ImageView
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/recycler_view_item_applications_image_view"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/standard_margin">
+        android:layout_marginStart="@dimen/normal_margin">
 
         <TextView
             android:id="@+id/recycler_view_item_applications_title_text_view"

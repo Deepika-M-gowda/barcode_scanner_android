@@ -11,7 +11,7 @@
         android:id="@+id/fragment_food_analysis_veggie_entitled_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin"
+        android:layout_margin="@dimen/normal_margin"
         android:layout_alignParentTop="true"
         android:text="@string/ingredients_analysis_label"
         style="@style/AppTheme.TextView.Appearance.Subtitle" />

@@ -42,7 +42,7 @@ class NutritionFactsHolder(private val viewBinding: RecyclerViewItemNutritionFac
             nutrient.entitled == NutritionFactsEnum.SODIUM){
 
             viewBinding.root.setBackground(R.attr.colorSurfaceContainerLow)
-            val leftPadding = context.resources.getDimension(R.dimen.x_large_margin).toInt()
+            val leftPadding = context.resources.getDimension(R.dimen.large_margin).toInt()
             entitledTextView.setPadding(
                 leftPadding,
                 entitledTextView.paddingTop,

@@ -24,7 +24,7 @@
             android:id="@+id/fragment_food_analysis_labels_image_recycler_view_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/standard_margin">
+            android:layout_marginBottom="@dimen/normal_margin">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/fragment_food_analysis_labels_image_recycler_view"

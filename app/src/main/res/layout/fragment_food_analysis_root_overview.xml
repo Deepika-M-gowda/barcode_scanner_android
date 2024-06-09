@@ -10,8 +10,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="@dimen/standard_margin"
-        android:paddingEnd="@dimen/standard_margin"
+        android:paddingStart="@dimen/normal_margin"
+        android:paddingEnd="@dimen/normal_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
@@ -36,7 +36,7 @@
                     android:id="@+id/fragment_food_analysis_root_overview_quality_entitled_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/standard_margin"
+                    android:layout_margin="@dimen/normal_margin"
                     android:text="@string/quality_label"
                     style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
@@ -80,7 +80,7 @@
                     android:id="@+id/fragment_food_analysis_root_overview_details_entitled_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/standard_margin"
+                    android:layout_margin="@dimen/normal_margin"
                     android:text="@string/details_label"
                     style="@style/AppTheme.TextView.Appearance.Subtitle" />
 

@@ -26,7 +26,7 @@
             android:layout_height="@dimen/icon_standard_size"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:src="@drawable/baseline_delete_forever_24"
             android:contentDescription="@string/image_view_description_icon" />
 
@@ -42,10 +42,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingTop="@dimen/large_margin"
-            android:paddingBottom="@dimen/large_margin"
-            android:paddingStart="@dimen/large_margin"
-            android:paddingEnd="@dimen/large_margin">
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            android:paddingStart="@dimen/medium_margin"
+            android:paddingEnd="@dimen/medium_margin">
 
             <TextView
                 android:id="@+id/recycler_view_item_custom_url_name_text_view"

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/light_margin"
+        android:padding="@dimen/small_margin"
         android:animateLayoutChanges="true"
         app:open="true"
         app:iconHeaderId="@id/template_expandable_card_view_header_icon_image_view">
@@ -21,10 +21,10 @@
             android:id="@+id/template_expandable_card_view_header_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/x_large_margin"
-            android:paddingEnd="@dimen/x_large_margin"
-            android:paddingTop="@dimen/x_large_margin"
-            android:paddingBottom="@dimen/standard_margin"
+            android:paddingStart="@dimen/large_margin"
+            android:paddingEnd="@dimen/large_margin"
+            android:paddingTop="@dimen/large_margin"
+            android:paddingBottom="@dimen/normal_margin"
             android:clipToPadding="false">
 
             <FrameLayout
@@ -39,7 +39,7 @@
                 android:id="@+id/template_expandable_card_view_header_icon_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standard_margin"
+                android:layout_marginStart="@dimen/normal_margin"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/baseline_keyboard_arrow_down_24"
@@ -52,9 +52,9 @@
             android:id="@+id/template_expandable_card_view_body_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/x_large_margin"
-            android:paddingEnd="@dimen/x_large_margin"
-            android:paddingBottom="@dimen/x_large_margin"
+            android:paddingStart="@dimen/large_margin"
+            android:paddingEnd="@dimen/large_margin"
+            android:paddingBottom="@dimen/large_margin"
             android:paddingTop="0dp"
             android:clipToPadding="false"
             android:layout_below="@id/template_expandable_card_view_header_layout" />

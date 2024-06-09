@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/standard_margin">
+    android:padding="@dimen/normal_margin">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:backgroundTint="@android:color/white"
             app:cardUseCompatPadding="false"
             app:cardElevation="0dp">
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/standard_margin"
+                android:layout_margin="@dimen/normal_margin"
                 android:backgroundTint="@android:color/white"
                 android:src="@drawable/music_brainz_logo"
                 android:contentDescription="@string/image_view_description_logo" />
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/out_quote_musicbrainz_layout_card_view"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:text="@string/music_brainz_source_description_label"
             android:textIsSelectable="true"
             style="@style/AppTheme.TextView.Appearance.Normal.Primary" />

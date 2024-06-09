@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/large_margin">
+        android:padding="@dimen/medium_margin">
 
         <ImageView
             android:id="@+id/template_card_icon_text_view_icon"
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="viewEnd"
-            android:paddingStart="@dimen/standard_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingEnd="0dp"
             style="@style/AppTheme.TextView.Appearance.Title.Variant"
 

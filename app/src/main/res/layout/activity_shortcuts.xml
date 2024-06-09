@@ -20,8 +20,8 @@
                 android:id="@+id/activity_shortcuts_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/standard_margin"
-                android:paddingHorizontal="@dimen/x_large_margin"
+                android:paddingVertical="@dimen/normal_margin"
+                android:paddingHorizontal="@dimen/large_margin"
                 android:text="@string/shortcuts_info"
                 style="@style/AppTheme.TextView.Appearance.Normal.Primary"
 

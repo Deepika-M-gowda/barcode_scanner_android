@@ -11,13 +11,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin">
+        android:layout_margin="@dimen/normal_margin">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/fragment_product_overview_image_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             app:cardCornerRadius="@dimen/card_standard_corner_radius"
             app:cardElevation="0dp"
             app:cardUseCompatPadding="false"
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/standard_margin"
+            android:layout_margin="@dimen/normal_margin"
             android:layout_toEndOf="@id/fragment_product_overview_image_layout">
 
             <TextView

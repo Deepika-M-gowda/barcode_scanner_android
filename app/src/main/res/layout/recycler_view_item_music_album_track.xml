@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/standard_margin">
+    android:layout_margin="@dimen/normal_margin">
 
     <RelativeLayout
         android:id="@+id/recycler_view_item_music_album_track_top_layout"
@@ -24,7 +24,7 @@
             style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginStart="@dimen/normal_margin"
             android:layout_toEndOf="@id/recycler_view_item_music_album_track_number_text_view"
             android:layout_toStartOf="@id/recycler_view_item_music_album_track_length_text_view"
             android:textIsSelectable="true" />
@@ -43,7 +43,7 @@
         style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/light_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_below="@id/recycler_view_item_music_album_track_top_layout"
         android:textIsSelectable="true" />
 

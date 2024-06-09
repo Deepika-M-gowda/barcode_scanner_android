@@ -10,14 +10,14 @@
         android:id="@+id/fragment_barcode_matrix_agenda_name_event_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_agenda_name_event_label" />
 
     <com.atharok.barcodescanner.presentation.customView.BarcodeParsedView
         android:id="@+id/fragment_barcode_matrix_agenda_start_date_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_agenda_name_event_layout"
         app:title_text="@string/matrix_agenda_start_date_event_label" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/fragment_barcode_matrix_agenda_end_date_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_agenda_start_date_layout"
         app:title_text="@string/matrix_agenda_end_date_event_label" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/fragment_barcode_matrix_agenda_place_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_agenda_end_date_layout"
         app:title_text="@string/matrix_agenda_place_event_label" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/fragment_barcode_matrix_agenda_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_agenda_place_layout"
         app:title_text="@string/matrix_agenda_description_event_label" />
 

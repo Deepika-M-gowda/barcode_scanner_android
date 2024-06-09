@@ -11,7 +11,7 @@
         android:id="@+id/fragment_barcode_matrix_localisation_latitude_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_localisation_latitude_label" />
 
     <!--- Longitude -->
@@ -19,7 +19,7 @@
         android:id="@+id/fragment_barcode_matrix_localisation_longitude_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_localisation_latitude_layout"
         app:title_text="@string/matrix_localisation_longitude_label" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/fragment_barcode_matrix_localisation_altitude_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_localisation_longitude_layout"
         app:title_text="@string/matrix_localisation_altitude_label" />
 
@@ -37,7 +37,7 @@
         android:id="@+id/fragment_barcode_matrix_localisation_query_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         android:layout_below="@id/fragment_barcode_matrix_localisation_altitude_layout"
         app:title_text="@string/matrix_localisation_query_label" />
 

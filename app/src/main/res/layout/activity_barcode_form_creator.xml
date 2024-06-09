@@ -16,9 +16,9 @@
             android:id="@+id/activity_barcode_form_creator_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/light_margin"
-            android:layout_marginStart="@dimen/light_margin"
-            android:layout_marginEnd="@dimen/light_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
             android:layout_alignParentTop="true">
             <include
                 layout="@layout/template_item_barcode_creator"
@@ -29,13 +29,13 @@
             android:id="@+id/activity_barcode_form_creator_body_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/light_margin"
+            android:layout_marginHorizontal="@dimen/small_margin"
             android:layout_below="@id/activity_barcode_form_creator_frame_layout">
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="@dimen/standard_margin">
+                android:layout_marginHorizontal="@dimen/normal_margin">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                         android:id="@+id/activity_barcode_form_creator_error_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/standard_margin"
+                        android:layout_marginTop="@dimen/normal_margin"
                         android:layout_below="@id/activity_barcode_form_creator_fragment"
                         android:visibility="gone">
 
@@ -58,7 +58,7 @@
                             android:id="@+id/activity_barcode_form_creator_error_icon_image_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/standard_margin"
+                            android:layout_margin="@dimen/normal_margin"
                             android:layout_centerVertical="true"
                             android:src="@drawable/baseline_warning_24"
                             android:contentDescription="@string/image_view_description_icon" />

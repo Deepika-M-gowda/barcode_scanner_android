@@ -199,7 +199,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -246,7 +246,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -293,7 +293,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -341,7 +341,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -389,7 +389,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -437,7 +437,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".35"
-            android:layout_marginStart="@dimen/light_margin"
+            android:layout_marginStart="@dimen/small_margin"
             style="@style/AppTheme.AutoCompleteTextView.TextInputLayoutStyle">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView

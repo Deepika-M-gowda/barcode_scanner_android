@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
         android:text="@string/title_history" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_barcode_form_creator_qr_epc_name_input_layout"
-        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/small_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_name_error"
         android:visibility="gone"
         style="@style/AppTheme.TextView.Appearance.Normal.Error" />
@@ -88,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_barcode_form_creator_qr_epc_iban_input_layout"
-        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/small_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_iban_error"
         android:visibility="gone"
         style="@style/AppTheme.TextView.Appearance.Normal.Error" />

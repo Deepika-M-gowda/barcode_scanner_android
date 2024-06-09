@@ -17,7 +17,7 @@
             android:id="@+id/fragment_product_analysis_error_header_icon_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             app:tint="?android:textColorPrimary"
@@ -50,7 +50,7 @@
             android:id="@+id/fragment_product_analysis_error_message_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/normal_margin"
             android:layout_below="@id/fragment_product_analysis_error_information_text_view">
 
             <TextView
@@ -64,8 +64,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fragment_product_analysis_error_message_label"
-                android:layout_marginTop="@dimen/light_margin"
-                android:padding="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:padding="@dimen/normal_margin"
                 android:background="?android:windowBackground">
 
                 <TextView

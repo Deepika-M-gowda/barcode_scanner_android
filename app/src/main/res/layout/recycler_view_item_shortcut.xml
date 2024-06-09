@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/standard_margin">
+        android:padding="@dimen/normal_margin">
 
         <ImageView
             android:id="@+id/recycler_view_item_shortcut_image_view"
@@ -29,7 +29,7 @@
             android:id="@+id/recycler_view_item_shortcut_label_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/standard_margin"
+            android:paddingHorizontal="@dimen/normal_margin"
             style="@style/AppTheme.TextView.Appearance.Normal.Primary"
 
             app:layout_constraintStart_toEndOf="@id/recycler_view_item_shortcut_image_view"

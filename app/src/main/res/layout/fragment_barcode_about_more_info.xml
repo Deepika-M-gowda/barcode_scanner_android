@@ -19,7 +19,7 @@
             android:id="@+id/fragment_barcode_about_more_info_header_icon_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             app:tint="?android:textColorPrimary"
@@ -78,8 +78,8 @@
                     android:id="@+id/fragment_barcode_about_more_info_body_origin_flag_image_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standard_margin"
-                    android:layout_marginEnd="@dimen/standard_margin"
+                    android:layout_marginStart="@dimen/normal_margin"
+                    android:layout_marginEnd="@dimen/normal_margin"
                     android:layout_toEndOf="@id/fragment_barcode_about_more_info_body_origin_country_label"
                     android:layout_centerVertical="true"
                     android:contentDescription="@string/image_view_description_flag" />
@@ -118,7 +118,7 @@
             android:id="@+id/fragment_barcode_about_more_info_body_description_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/normal_margin"
             android:layout_below="@id/fragment_barcode_about_more_info_body_error_correction_level_layout">
 
             <TextView

@@ -82,7 +82,7 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
         val recyclerView = viewBinding.activityCustomSearchUrlListRecyclerView
 
         val layoutManager = LinearLayoutManager(this)
-        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
+        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.normal_margin))
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
-    android:padding="@dimen/x_large_margin"
+    android:padding="@dimen/large_margin"
     tools:context=".presentation.views.fragments.barcodeAnalysis.actions.BarcodeContentsModifierModalBottomSheetFragment">
 
     <RelativeLayout
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="@dimen/standard_margin">
+        android:layout_marginBottom="@dimen/normal_margin">
         <TextView
             android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_title_text_view"
             android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
         android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/light_margin"
+        android:layout_marginVertical="@dimen/small_margin"
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_entitled_layout"
         android:hint="@string/bar_code_content_label"
@@ -58,7 +58,7 @@
         android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_error_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/light_margin"
+        android:layout_marginBottom="@dimen/small_margin"
         android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_text_input_layout"
         android:visibility="gone"
         style="@style/AppTheme.TextView.Appearance.Normal.Error" />
@@ -67,7 +67,7 @@
         android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_modify_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/normal_margin"
         android:layout_alignParentStart="true"
         android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_error_text_view"
         android:text="@string/action_modify_barcode"

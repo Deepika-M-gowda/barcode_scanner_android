@@ -160,7 +160,7 @@ class MainBarcodeHistoryFragment : BaseFragment(), BarcodeHistoryItemAdapter.OnB
         val recyclerView = viewBinding.fragmentMainHistoryRecyclerView
 
         val layoutManager = LinearLayoutManager(requireContext())
-        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.standard_margin))
+        val decoration = MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.normal_margin))
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager

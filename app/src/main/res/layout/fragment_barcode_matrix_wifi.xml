@@ -11,7 +11,7 @@
         android:id="@+id/fragment_barcode_matrix_wifi_ssid_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/standard_margin"
+        android:paddingTop="@dimen/normal_margin"
         app:title_text="@string/matrix_wifi_ssid_label" />
 
     <!--- Password -->
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_barcode_matrix_wifi_ssid_layout"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         app:title_text="@string/matrix_wifi_password_label" />
 
     <!--- Encryption -->
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_barcode_matrix_wifi_password_layout"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         app:title_text="@string/matrix_wifi_encryption_label" />
 
     <!--- Is Hidden -->
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_barcode_matrix_wifi_encryption_layout"
-        android:paddingTop="@dimen/x_large_margin"
+        android:paddingTop="@dimen/large_margin"
         app:title_text="@string/matrix_wifi_is_hidden_label" />
 
 </RelativeLayout>
