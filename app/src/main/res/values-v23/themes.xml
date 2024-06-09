@@ -32,8 +32,6 @@
         <item name="sliderStyle">@style/AppTheme.Slider</item>
         <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
-        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
-        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
 
@@ -74,8 +72,6 @@
         <item name="sliderStyle">@style/AppTheme.Slider</item>
         <item name="alertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
         <item name="materialAlertDialogTheme">@style/AppTheme.MaterialAlertDialog</item>
-        <item name="android:datePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
-        <item name="android:timePickerDialogTheme">@style/AppTheme.DateTimePickerTheme</item>
 
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
 

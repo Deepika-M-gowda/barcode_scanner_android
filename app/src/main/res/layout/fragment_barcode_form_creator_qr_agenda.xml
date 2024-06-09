@@ -46,20 +46,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_form_creator_qr_agenda_begin_label">
 
-            <TextView
+            <com.atharok.barcodescanner.presentation.customView.CardIconTextView
                 android:id="@+id/fragment_barcode_form_creator_qr_agenda_begin_date_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+                app:iconRes="@drawable/baseline_event_note_24"
+                />
 
-            <TextView
+            <com.atharok.barcodescanner.presentation.customView.CardIconTextView
                 android:id="@+id/fragment_barcode_form_creator_qr_agenda_begin_time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                app:iconRes="@drawable/outline_schedule_24"
                 android:layout_toEndOf="@id/fragment_barcode_form_creator_qr_agenda_begin_date_picker"
-                style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+                />
 
         </RelativeLayout>
 
@@ -84,20 +84,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_barcode_form_creator_qr_agenda_end_label">
 
-            <TextView
+            <com.atharok.barcodescanner.presentation.customView.CardIconTextView
                 android:id="@+id/fragment_barcode_form_creator_qr_agenda_end_date_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+                app:iconRes="@drawable/baseline_event_note_24"
+                />
 
-            <TextView
+            <com.atharok.barcodescanner.presentation.customView.CardIconTextView
                 android:id="@+id/fragment_barcode_form_creator_qr_agenda_end_time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
+                app:iconRes="@drawable/outline_schedule_24"
                 android:layout_toEndOf="@id/fragment_barcode_form_creator_qr_agenda_end_date_picker"
-                style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+                />
 
         </RelativeLayout>
 

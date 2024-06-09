@@ -21,6 +21,7 @@
 package com.atharok.barcodescanner.presentation.views.fragments.barcodeFormCreator
 
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,11 +29,15 @@ import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import com.atharok.barcodescanner.databinding.FragmentBarcodeFormCreatorQrAgendaBinding
 import com.atharok.barcodescanner.domain.library.VEventBuilder
-import com.atharok.barcodescanner.presentation.views.fragments.android.DatePickerFragment
-import com.atharok.barcodescanner.presentation.views.fragments.android.TimePickerFragment
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_CALENDAR
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_CLOCK
+import com.google.android.material.timepicker.TimeFormat
 import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 
 /**
@@ -62,10 +67,10 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text = simpleDateFormat.format(date)
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text = simpleTimeFormat.format(date)
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.text = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.setContent(simpleDateFormat.format(date))
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.setContent(simpleTimeFormat.format(date))
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.setContent(viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.getContent())
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.setContent(viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.getContent())
 
         configureOnClickAllOfDayCheckBox(viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox)
         configureOnClickDateTimePicker()
@@ -76,13 +81,13 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
         val dtEnd: String
 
         if(viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked) {
-            dtStart = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text.toString().replace("-", "")
-            dtEnd = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text.toString().replace("-", "")
+            dtStart = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.getContent().replace("-", "")
+            dtEnd = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.getContent().replace("-", "")
         } else {
-            val dateStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text.toString()
-            val dateEndStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text.toString()
-            val timeStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text.toString()
-            val timeEndStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.text.toString()
+            val dateStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.getContent()
+            val dateEndStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.getContent()
+            val timeStartStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.getContent()
+            val timeEndStr = viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.getContent()
 
             val dateStartTimestamp = simpleDateFormat.parse(dateStartStr)?.time ?: 0L
             val dateEndTimestamp = simpleDateFormat.parse(dateEndStr)?.time ?: 0L
@@ -116,55 +121,71 @@ class BarcodeFormCreatorQrAgendaFragment : AbstractBarcodeFormCreatorQrFragment(
 
     // ---- Date Time Picker ----
 
-    private val beginDatePickerFragment: DatePickerFragment by lazy {
-        DatePickerFragment.newInstance(
-            { viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.text = it },
-            simpleDateFormat
-        )
-    }
-
-    private val endDatePickerFragment: DatePickerFragment by lazy {
-        DatePickerFragment.newInstance(
-            { viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.text = it },
-            simpleDateFormat
-        )
-    }
-
-    private val beginTimePickerFragment: TimePickerFragment by lazy {
-        TimePickerFragment.newInstance(
-            { viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.text = it },
-            simpleTimeFormat
-        )
-    }
-
-    private val endTimePickerFragment: TimePickerFragment by lazy {
-        TimePickerFragment.newInstance(
-            { viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.text = it },
-            simpleTimeFormat
-        )
-    }
-
     private fun configureOnClickDateTimePicker(){
         // Begin Date
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.setOnClickListener {
-            beginDatePickerFragment.show(requireActivity().supportFragmentManager, "beginDateTag")
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginDatePicker.let { cardIconTextView ->
+            cardIconTextView.getRoot().setOnClickListener {
+                showDatePickerDialog({ cardIconTextView.setContent(it) }, "Begin Date")
+            }
         }
 
         // BeginTime
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.setOnClickListener {
-            if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked)
-                beginTimePickerFragment.show(requireActivity().supportFragmentManager, "beginTimeTag")
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaBeginTimePicker.let { cardIconTextView ->
+            cardIconTextView.getRoot().setOnClickListener {
+                if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked) {
+                    showTimePickerDialog({ cardIconTextView.setContent(it) }, "Begin Time")
+                }
+            }
         }
 
         // End Date
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.setOnClickListener {
-            endDatePickerFragment.show(requireActivity().supportFragmentManager, "endDateTag")
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndDatePicker.let { cardIconTextView ->
+            cardIconTextView.getRoot().setOnClickListener {
+                showDatePickerDialog({ cardIconTextView.setContent(it) }, "End Date")
+            }
         }
 
         // End Time
-        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.setOnClickListener {
-            if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked)
-                endTimePickerFragment.show(requireActivity().supportFragmentManager, "endTimeTag")
+        viewBinding.fragmentBarcodeFormCreatorQrAgendaEndTimePicker.let { cardIconTextView ->
+            cardIconTextView.getRoot().setOnClickListener {
+                if(!viewBinding.fragmentBarcodeFormCreatorQrAgendaAllOfDayCheckBox.isChecked){
+                    showTimePickerDialog({ cardIconTextView.setContent(it) }, "End Time")
+                }
+            }
         }
+    }
+
+    private val calendar: Calendar by lazy { Calendar.getInstance() }
+
+    private fun showDatePickerDialog(onPositiveClick: (String) -> Unit, tag: String) {
+        val datePicker = MaterialDatePicker.Builder.datePicker()
+            .setInputMode(INPUT_MODE_CALENDAR)
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .build()
+
+        datePicker.addOnPositiveButtonClickListener {
+            onPositiveClick(simpleDateFormat.format(it))
+        }
+
+        datePicker.show(requireActivity().supportFragmentManager, tag)
+    }
+
+    private fun showTimePickerDialog(onPositiveClick: (String) -> Unit, tag: String) {
+        val timePicker = MaterialTimePicker.Builder()
+            .setInputMode(INPUT_MODE_CLOCK)
+            .setTimeFormat(
+                if(DateFormat.is24HourFormat(requireContext())) TimeFormat.CLOCK_24H else TimeFormat.CLOCK_12H
+            )
+            .setHour(calendar.get(Calendar.HOUR_OF_DAY))
+            .setMinute(calendar.get(Calendar.MINUTE))
+            .build()
+
+        timePicker.addOnPositiveButtonClickListener {
+            calendar.set(Calendar.HOUR_OF_DAY, timePicker.hour)
+            calendar.set(Calendar.MINUTE, timePicker.minute)
+            onPositiveClick(simpleTimeFormat.format(calendar.time))
+        }
+
+        timePicker.show(requireActivity().supportFragmentManager, tag)
     }
 }

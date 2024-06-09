@@ -168,24 +168,6 @@
         <item name="buttonBarNeutralButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
     </style>
 
-    <!-- DateTimePicker -->
-    <style name="AppTheme.DateTimePickerTheme" parent="ThemeOverlay.Material3.Dialog">
-        <!-- Overlay -->
-        <item name="android:dialogCornerRadius" tools:targetApi="p">@dimen/dialog_corner_radius</item>
-        <item name="dialogCornerRadius">@dimen/dialog_corner_radius</item>
-        <item name="android:windowBackground">@drawable/dialog_background</item>
-        <item name="android:windowElevation">6dp</item>
-
-        <!-- Date / Time Style -->
-        <item name="android:datePickerStyle">@style/ThemeOverlay.Material3.MaterialCalendar</item>
-        <item name="android:timePickerStyle">@style/ThemeOverlay.Material3.MaterialTimePicker</item>
-
-        <!-- Buttons -->
-        <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.MaterialButton</item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
-        <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Dialog.TextButton.Style</item>
-    </style>
-
     <!-- Overflow Menu (Placement de Item Menu) -->
     <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
         <item name="android:overlapAnchor">false</item>
