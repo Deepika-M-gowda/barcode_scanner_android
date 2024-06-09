@@ -1,6 +1,6 @@
-Barcode Scanner é um app livre e de código aberto que permite gerar e ler códigos de barras. Ele pode coletar informações sobre produtos alimentícios, cosméticos, livros e músicas (CDs, vinis…)
+Escaneador de Código de Barras é um app livre e de código aberto que permite gerar e ler códigos de barras. Ele pode coletar informações sobre produtos alimentícios, cosméticos, livros e músicas (CDs, vinis…)
 
-Formatos diversos de códigos de barra são geridos pelo apps:
+Formatos diversos de códigos de barra são geridos pelo app:
 • Códigos de barra bidimensionais: Código QR, Matriz de Dados, PDF 417, AZTEC
 • Códigos de barra unidimensionais: EAN 13, EAN 8, UPC A, UPC E, Código 128, Código 93, Código 39, Codabar, ITF
 
