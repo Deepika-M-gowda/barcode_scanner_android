@@ -1,0 +1,7 @@
+1.24.0
+
+- Mise à jour de la traduction en chinois traditionnel (merci à hugoalh).
+- Correction de quelques erreurs graphiques.
+- Modification des styles de texte pour améliorer la lisibilité.
+- Modification du thème noir OLED.
+- Quelques améliorations mineures.
