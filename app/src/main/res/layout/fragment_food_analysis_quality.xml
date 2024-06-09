@@ -26,7 +26,8 @@
                             android:id="@+id/fragment_food_product_quality_title_text_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+                            android:layout_marginBottom="@dimen/light_margin"
+                            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
                         <!-- Quality -->
                         <TextView
@@ -34,7 +35,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/fragment_food_product_quality_title_text_view"
-                            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
                 </RelativeLayout>
 
@@ -57,6 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
 </com.atharok.barcodescanner.presentation.customView.ExpandableCardView>

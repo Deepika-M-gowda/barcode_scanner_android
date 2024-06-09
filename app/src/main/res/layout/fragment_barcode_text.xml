@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         android:textAlignment="viewStart"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
 </FrameLayout>

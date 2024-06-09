@@ -17,7 +17,7 @@
         android:layout_weight=".4"
         android:textAlignment="textStart"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
     <TextView
         android:id="@+id/recycler_view_item_nutrition_facts_100g_value_text_view"
@@ -26,7 +26,7 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     <TextView
         android:id="@+id/recycler_view_item_nutrition_facts_serving_value_text_view"
@@ -35,5 +35,5 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 </LinearLayout>

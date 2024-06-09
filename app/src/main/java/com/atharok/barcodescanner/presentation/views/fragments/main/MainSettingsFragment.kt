@@ -33,7 +33,6 @@ import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.preference.Preference
@@ -49,6 +48,7 @@ import com.atharok.barcodescanner.presentation.views.activities.BaseActivity
 import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlListActivity
 import com.atharok.barcodescanner.presentation.views.activities.MainActivity
 import com.atharok.barcodescanner.presentation.views.activities.ShortcutsActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 import kotlin.reflect.KClass
 
@@ -148,7 +148,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             pref.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val items = localList.map { requireContext().getString(it.first) }.toTypedArray()
                 val savedIndex = selectedIndex
-                AlertDialog.Builder(requireActivity())
+                MaterialAlertDialogBuilder(requireActivity())
                     .setTitle(R.string.preferences_languages_change)
                     .setSingleChoiceItems(items, selectedIndex) { dialogInterface, index ->
                         selectedIndex = index

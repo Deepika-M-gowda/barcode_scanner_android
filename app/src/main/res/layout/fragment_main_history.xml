@@ -14,7 +14,7 @@
         android:layout_gravity="start|top"
         android:text="@string/label_history_empty"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+        style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_history_recycler_view"

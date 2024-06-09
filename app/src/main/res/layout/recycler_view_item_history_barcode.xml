@@ -20,7 +20,7 @@
             android:layout_toStartOf="@id/recycler_view_item_history_barcode_delete_icon_image_view"
             android:textAlignment="viewStart"
             android:text="@string/delete_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <ImageView
             android:id="@+id/recycler_view_item_history_barcode_delete_icon_image_view"
@@ -79,7 +79,7 @@
                         android:textAlignment="viewStart"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+                        style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
                     <TextView
                         android:id="@+id/recycler_view_item_history_barcode_format_text_view"
@@ -88,7 +88,7 @@
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_centerVertical="true"
                         android:layout_toStartOf="@id/recycler_view_item_history_barcode_icon_image_view"
-                        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+                        style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
                     <ImageView
                         android:id="@+id/recycler_view_item_history_barcode_icon_image_view"
@@ -124,7 +124,7 @@
                             android:textAlignment="viewStart"
                             android:ellipsize="end"
                             android:maxLines="1"
-                            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
                         <ImageView
                             android:id="@+id/recycler_view_item_history_barcode_origin_flag_image_view"
@@ -152,7 +152,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/light_margin"
                         android:layout_alignParentEnd="true"
-                        style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+                        style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
                 </RelativeLayout>
 

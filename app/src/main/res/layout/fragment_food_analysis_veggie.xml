@@ -14,7 +14,7 @@
         android:layout_margin="@dimen/standard_margin"
         android:layout_alignParentTop="true"
         android:text="@string/ingredients_analysis_label"
-        style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+        style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
     <include
         android:id="@+id/fragment_food_analysis_veggie_vegan"

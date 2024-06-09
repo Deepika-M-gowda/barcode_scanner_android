@@ -33,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/standard_margin"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -16,6 +16,9 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:contentDescription="@string/image_view_description_icon"
+            android:background="@drawable/circle"
+            app:backgroundTint="?colorPrimary"
+            app:tint="?colorOnPrimary"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/standard_margin"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary"
 
             app:layout_constraintStart_toEndOf="@id/recycler_view_item_shortcut_image_view"
             app:layout_constraintEnd_toStartOf="@id/recycler_view_item_shortcut_swipe_image_view"

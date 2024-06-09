@@ -72,6 +72,6 @@
         android:layout_below="@id/fragment_barcode_form_creator_qr_wifi_encryption_layout"
         android:text="@string/qr_code_text_input_edit_text_hint_wifi_hide"
         app:buttonTint="?android:attr/textColorPrimary"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
 </RelativeLayout>

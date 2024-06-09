@@ -61,7 +61,7 @@
         android:layout_marginBottom="@dimen/light_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_name_error"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Error" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Error" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fragment_barcode_form_creator_qr_epc_iban_input_layout"
@@ -91,7 +91,7 @@
         android:layout_marginBottom="@dimen/light_margin"
         android:text="@string/qr_code_text_input_edit_text_epc_iban_error"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Error" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Error" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fragment_barcode_form_creator_qr_epc_amount_input_layout"

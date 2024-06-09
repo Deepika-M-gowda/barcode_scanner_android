@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/fragment_barcode_about_contents_icon_image_view"
             android:layout_centerVertical="true"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
     </RelativeLayout>
 

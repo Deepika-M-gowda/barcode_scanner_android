@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/nutrition_facts_no_information_found_label"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+            style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
         <!-- Table -->
         <FrameLayout
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
                 android:text="@string/nutrition_facts_entitled_label"
-                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+                style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
         </FrameLayout>
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
                 android:text="@string/nutrient_level_entitled_label"
-                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+                style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
         </FrameLayout>
 

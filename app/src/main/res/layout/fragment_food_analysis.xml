@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_layout_height"
         app:tabTextAppearance="@style/AppTheme.TabLayout.TextAppearance"
-        app:tabGravity="center"
-        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabMode="auto"
         android:background="?android:colorBackground" />
 
     <androidx.viewpager2.widget.ViewPager2

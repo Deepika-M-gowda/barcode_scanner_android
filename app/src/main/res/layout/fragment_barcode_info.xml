@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Subtitle"
             android:text="@string/about_barcode_label" />
 
         <!-- Barcode Contents -->

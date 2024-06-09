@@ -27,6 +27,7 @@ data class DynamicShortcut(
     val id: String,
     @StringRes val label: Int,
     @DrawableRes val drawable: Int,
+    @DrawableRes val icon: Int,
     val targetClass: Class<*>,
     val action: String
 )

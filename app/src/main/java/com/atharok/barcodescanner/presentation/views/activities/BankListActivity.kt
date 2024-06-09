@@ -39,6 +39,7 @@ import com.atharok.barcodescanner.presentation.customView.MarginItemDecoration
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBankViewModel
 import com.atharok.barcodescanner.presentation.views.recyclerView.bankHistory.BankHistoryItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.bankHistory.BankHistoryItemTouchHelperListener
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -185,7 +186,7 @@ class BankListActivity : BaseActivity(), BankHistoryItemAdapter.OnBankItemListen
     }
 
     private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
-        alertDialog = AlertDialog.Builder(this)
+        alertDialog = MaterialAlertDialogBuilder(this)
             .setTitle(R.string.delete_label)
             .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->

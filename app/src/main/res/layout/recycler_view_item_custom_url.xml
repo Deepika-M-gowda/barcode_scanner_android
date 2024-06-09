@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/recycler_view_item_custom_url_delete_icon_image_view"
             android:text="@string/delete_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
         <ImageView
             android:id="@+id/recycler_view_item_custom_url_delete_icon_image_view"
@@ -54,7 +54,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:maxLines="1"
-                style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+                style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
             <TextView
                 android:id="@+id/recycler_view_item_custom_url_link_text_view"
@@ -63,7 +63,7 @@
                 android:layout_below="@id/recycler_view_item_custom_url_name_text_view"
                 android:layout_alignParentStart="true"
                 android:maxLines="1"
-                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>

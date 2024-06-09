@@ -50,6 +50,7 @@ class DynamicShortcutsHandler(
                 id = SCAN_ID,
                 label = R.string.title_scan,
                 drawable = R.drawable.ic_shortcut_scan,
+                icon = R.drawable.baseline_qr_code_scanner_24,
                 targetClass = MainActivity::class.java,
                 action = "${BuildConfig.APPLICATION_ID}.SCAN"
             ),
@@ -57,6 +58,7 @@ class DynamicShortcutsHandler(
                 id = SCAN_FROM_IMAGE_ID,
                 label = R.string.intent_filter_scan_by_image,
                 drawable = R.drawable.ic_shortcut_scan_from_image,
+                icon = R.drawable.baseline_image_24,
                 targetClass = BarcodeScanFromImageShortcutActivity::class.java,
                 action = Intent.ACTION_VIEW
             ),
@@ -64,6 +66,7 @@ class DynamicShortcutsHandler(
                 id = HISTORY_ID,
                 label = R.string.title_history,
                 drawable = R.drawable.ic_shortcut_history,
+                icon = R.drawable.baseline_history_24,
                 targetClass = MainActivity::class.java,
                 action = "${BuildConfig.APPLICATION_ID}.HISTORY"
             ),
@@ -71,6 +74,7 @@ class DynamicShortcutsHandler(
                 id = CREATE_ID,
                 label = R.string.title_bar_code_creator,
                 drawable = R.drawable.ic_shortcut_create,
+                icon = R.drawable.baseline_create_24,
                 targetClass = MainActivity::class.java,
                 action = "${BuildConfig.APPLICATION_ID}.CREATE"
             ),
@@ -78,6 +82,7 @@ class DynamicShortcutsHandler(
                 id = CREATE_FROM_CLIPBOARD_ID,
                 label = R.string.create_qr_from_clipboard,
                 drawable = R.drawable.ic_shortcut_create_from_clipboard,
+                icon = R.drawable.outline_content_paste_go_24,
                 targetClass = BarcodeDetailsActivity::class.java,
                 action = "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD"
             )

@@ -69,7 +69,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toEndOf="@id/activity_barcode_form_creator_error_icon_image_view"
-                            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
                     </RelativeLayout>
 

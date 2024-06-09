@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:textAlignment="viewStart"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Subtitle"
             android:text="@string/corners_radius" />
 
         <com.google.android.material.slider.Slider

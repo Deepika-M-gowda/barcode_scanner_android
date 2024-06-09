@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_m"
             app:buttonTint="?android:attr/textColorPrimary"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_barcode_form_creator_qr_contact_civil_radio_button_mrs"
@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_mrs"
             app:buttonTint="?android:attr/textColorPrimary"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_barcode_form_creator_qr_contact_civil_radio_button_miss"
@@ -49,7 +49,7 @@
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_miss"
             app:buttonTint="?android:attr/textColorPrimary"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/fragment_barcode_form_creator_qr_contact_civil_radio_button_none"
@@ -58,7 +58,7 @@
             android:layout_weight="1"
             android:text="@string/qr_code_text_radio_button_label_none"
             app:buttonTint="?android:attr/textColorPrimary"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     </RadioGroup>
 

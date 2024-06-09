@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/standard_margin"
                     android:text="@string/quality_label"
-                    style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+                    style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
             </FrameLayout>
 
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/standard_margin"
                     android:text="@string/details_label"
-                    style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+                    style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
             </FrameLayout>
 

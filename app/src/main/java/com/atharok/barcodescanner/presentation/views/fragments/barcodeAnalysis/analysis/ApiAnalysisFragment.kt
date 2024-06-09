@@ -32,6 +32,7 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.entity.analysis.BarcodeAnalysis
 import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<T>() {
 
@@ -43,7 +44,7 @@ abstract class ApiAnalysisFragment<T: BarcodeAnalysis>: BarcodeAnalysisFragment<
     }
 
     private fun configureSourceApiInfoAlertDialog(titleResource: Int, layout: Int, urlResource: Int, barcodeContents: String) {
-        sourceApiInfoAlertDialog = AlertDialog.Builder(requireActivity()).apply {
+        sourceApiInfoAlertDialog = MaterialAlertDialogBuilder(requireActivity()).apply {
             setTitle(getString(titleResource))
             setView(layout)
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ -> dialogInterface.cancel() }

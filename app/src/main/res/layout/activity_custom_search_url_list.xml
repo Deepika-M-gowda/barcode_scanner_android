@@ -20,7 +20,7 @@
             android:layout_gravity="start|top"
             android:text="@string/custom_search_urls_list_is_empty_message"
             android:visibility="gone"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+            style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/activity_custom_search_url_list_recycler_view"

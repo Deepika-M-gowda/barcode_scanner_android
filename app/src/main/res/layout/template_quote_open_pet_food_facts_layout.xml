@@ -38,7 +38,7 @@
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/open_pet_food_facts_source_description_label"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

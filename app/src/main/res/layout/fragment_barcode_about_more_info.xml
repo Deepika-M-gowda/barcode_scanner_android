@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/fragment_barcode_about_more_info_header_icon_image_view"
             android:layout_centerVertical="true"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
     </RelativeLayout>
 
@@ -56,7 +56,7 @@
                 android:layout_toStartOf="@id/fragment_barcode_about_more_info_body_origin_layout"
                 android:text="@string/about_barcode_format_label"
                 android:textIsSelectable="true"
-                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
             <!-- Barcode origin -->
             <RelativeLayout
@@ -72,7 +72,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:text="@string/about_barcode_origin_label"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
                 <ImageView
                     android:id="@+id/fragment_barcode_about_more_info_body_origin_flag_image_view"
@@ -91,7 +91,7 @@
                     android:layout_toEndOf="@id/fragment_barcode_about_more_info_body_origin_flag_image_view"
                     android:layout_centerVertical="true"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
             </RelativeLayout>
 
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textIsSelectable="true"
-                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
         </FrameLayout>
 
@@ -126,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textIsSelectable="true"
-                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
         </FrameLayout>
 

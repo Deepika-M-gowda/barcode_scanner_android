@@ -23,6 +23,7 @@ import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlC
 import com.atharok.barcodescanner.presentation.views.activities.CustomSearchUrlCreatorActivity.Companion.RESULT_CODE_UPDATE
 import com.atharok.barcodescanner.presentation.views.recyclerView.customUrl.CustomUrlItemAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.customUrl.CustomUrlItemTouchHelperListener
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCustomUrlItemListener, CustomUrlItemTouchHelperListener {
@@ -161,7 +162,7 @@ class CustomSearchUrlListActivity : BaseActivity(), CustomUrlItemAdapter.OnCusto
     }
 
     private inline fun showDeleteConfirmationDialog(messageRes: Int, crossinline positiveAction: () -> Unit) {
-        alertDialog = AlertDialog.Builder(this)
+        alertDialog = MaterialAlertDialogBuilder(this)
             .setTitle(R.string.delete_label)
             .setMessage(messageRes)
             .setPositiveButton(R.string.delete_label) { _, _ ->

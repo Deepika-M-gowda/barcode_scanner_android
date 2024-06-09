@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/begin_label"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/standard_margin"
             android:text="@string/end_label"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -110,7 +110,7 @@
         android:layout_below="@id/fragment_barcode_form_creator_qr_agenda_end_layout"
         android:text="@string/check_box_event_all_of_day"
         app:buttonTint="?android:attr/textColorPrimary"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     <com.atharok.barcodescanner.presentation.customView.CustomTextInputLayout
         android:id="@+id/fragment_barcode_form_creator_qr_agenda_place_input_layout"

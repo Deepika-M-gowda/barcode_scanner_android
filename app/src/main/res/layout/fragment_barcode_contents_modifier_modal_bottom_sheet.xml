@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:textAlignment="viewStart"
             android:text="@string/action_modify_barcode"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
         <TextView
             android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_format_text_view"
@@ -33,7 +33,7 @@
             android:layout_toEndOf="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_title_text_view"
             android:layout_centerVertical="true"
             android:textAlignment="viewEnd"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
     </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -61,7 +61,7 @@
         android:layout_marginBottom="@dimen/light_margin"
         android:layout_below="@id/fragment_barcode_contents_modifier_modal_bottom_sheet_text_input_layout"
         android:visibility="gone"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary.Error" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Error" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/fragment_barcode_contents_modifier_modal_bottom_sheet_modify_button"

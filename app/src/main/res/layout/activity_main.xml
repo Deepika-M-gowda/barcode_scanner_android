@@ -28,10 +28,11 @@
         android:id="@+id/activity_main_menu_bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:itemTextAppearanceActive="@style/AppTheme.TextView.Appearance.Standard.Primary"
-        app:itemTextAppearanceInactive="@style/AppTheme.TextView.Appearance.Standard.Primary"
+        app:itemTextAppearanceActive="@style/AppTheme.TextView.Appearance.Normal.Primary"
+        app:itemTextAppearanceInactive="@style/AppTheme.TextView.Appearance.Normal.Secondary"
         app:menu="@menu/menu_bottom_navigation_view"
         app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActiveBoldEnabled="false"
 
         app:layout_constraintTop_toBottomOf="@id/activity_main_activity_layout"
         app:layout_constraintStart_toStartOf="parent"

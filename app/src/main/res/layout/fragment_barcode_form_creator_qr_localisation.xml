@@ -113,7 +113,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
             android:text="@string/matrix_localisation_search_current_position_label"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     </RelativeLayout>
 

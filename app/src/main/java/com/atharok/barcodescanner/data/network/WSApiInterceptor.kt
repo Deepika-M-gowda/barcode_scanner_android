@@ -20,13 +20,9 @@
 
 package com.atharok.barcodescanner.data.network
 
-import android.accounts.NetworkErrorException
-import com.atharok.barcodescanner.common.exceptions.NoInternetConnectionException
 import com.atharok.barcodescanner.common.exceptions.WSException
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.io.IOException
-import java.util.concurrent.ExecutionException
 
 class WSApiInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {

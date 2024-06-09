@@ -14,7 +14,7 @@
         android:layout_weight=".3"
         android:textAlignment="textStart"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     <TextView
         android:id="@+id/recycler_view_item_veggie_vegan_text_view"
@@ -23,7 +23,7 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     <View
         android:layout_width="0dp"
@@ -37,5 +37,5 @@
         android:layout_weight=".3"
         android:textAlignment="textEnd"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 </LinearLayout>

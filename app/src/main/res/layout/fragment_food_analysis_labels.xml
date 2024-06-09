@@ -13,7 +13,7 @@
         android:id="@+id/fragment_food_analysis_labels_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+        style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
     <!-- Body -->
     <RelativeLayout
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fragment_food_analysis_labels_image_recycler_view_layout"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
     </RelativeLayout>
 

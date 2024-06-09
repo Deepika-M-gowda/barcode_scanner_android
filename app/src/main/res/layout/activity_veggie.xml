@@ -20,7 +20,7 @@
             android:paddingVertical="@dimen/standard_margin"
             android:paddingHorizontal="@dimen/x_large_margin"
             android:text="@string/ingredients_no_information_found_label"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Subtitle"
             android:visibility="gone" />
 
         <androidx.core.widget.NestedScrollView
@@ -39,7 +39,7 @@
                     android:paddingVertical="@dimen/standard_margin"
                     android:paddingHorizontal="@dimen/x_large_margin"
                     android:text="@string/ingredient_veggie_entitled_label"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
 
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

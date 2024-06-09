@@ -56,7 +56,7 @@
                     android:layout_toEndOf="@id/fragment_music_analysis_tracks_icon_image_view"
                     android:layout_centerVertical="true"
                     android:text="@string/music_product_tracks_label"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
             </RelativeLayout>
 

@@ -27,14 +27,14 @@
             android:id="@+id/recycler_view_item_applications_title_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <TextView
             android:id="@+id/recycler_view_item_applications_pkg_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recycler_view_item_applications_title_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
     </RelativeLayout>
 

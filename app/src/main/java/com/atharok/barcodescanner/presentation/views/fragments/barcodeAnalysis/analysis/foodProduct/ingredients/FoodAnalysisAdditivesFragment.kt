@@ -36,6 +36,7 @@ import com.atharok.barcodescanner.presentation.intent.createSearchUrlIntent
 import com.atharok.barcodescanner.presentation.viewmodel.ExternalFileViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.additives.AdditivesItemAdapter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 /**
@@ -102,7 +103,7 @@ class FoodAnalysisAdditivesFragment: BarcodeAnalysisFragment<FoodBarcodeAnalysis
     }
 
     private val showAdditiveInfoDialog = { additiveName: String, description: String ->
-        alertDialog = AlertDialog.Builder(requireActivity()).apply {
+        alertDialog = MaterialAlertDialogBuilder(requireActivity()).apply {
             setTitle(additiveName)
             setMessage(description)
             setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->

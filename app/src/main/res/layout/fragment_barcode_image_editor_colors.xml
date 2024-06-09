@@ -19,7 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:textAlignment="viewStart"
-            style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Subtitle"
             android:text="@string/colors_label" />
 
         <com.google.android.material.card.MaterialCardView
@@ -47,7 +47,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/standard_margin"
                     android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_background_image_view"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                    style="@style/AppTheme.TextView.Appearance.Normal.Primary"
                     android:text="@string/background_color" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -77,7 +77,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/standard_margin"
                     android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_foreground_image_view"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+                    style="@style/AppTheme.TextView.Appearance.Normal.Primary"
                     android:text="@string/barcode_color" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -104,7 +104,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/standard_margin"
                 android:layout_toEndOf="@id/fragment_barcode_image_editor_colors_warning_image_view"
-                style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
+                style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
                 android:text="@string/color_shades_issue" />
 
         </RelativeLayout>

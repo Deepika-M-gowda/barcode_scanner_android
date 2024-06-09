@@ -21,13 +21,12 @@
 package com.atharok.barcodescanner.presentation.customView.preferences
 
 import android.content.Context
-import android.graphics.Typeface
+import android.os.Build
 import android.util.AttributeSet
 import android.widget.TextView
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceViewHolder
 import com.atharok.barcodescanner.R
-import com.atharok.barcodescanner.common.extensions.setTextColorFromAttrRes
 
 class CustomPreferenceCategory: PreferenceCategory {
 
@@ -41,12 +40,11 @@ class CustomPreferenceCategory: PreferenceCategory {
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
 
-        val font: Typeface? = Typeface.create("sans-serif-black", Typeface.NORMAL)//ResourcesCompat.getFont(context, R.font.roboto_black)
-        val textSizeInDP = context.resources.getDimension(R.dimen.sub_title_text_size) / context.resources.displayMetrics.density
-
-        val titleView: TextView? = holder.itemView.findViewById(android.R.id.title)
-        titleView?.typeface = font
-        titleView?.textSize = textSizeInDP
-        titleView?.setTextColorFromAttrRes(R.attr.colorPrimary)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            holder.itemView.let {
+                val titleView: TextView? = it.findViewById(android.R.id.title)
+                titleView?.setTextAppearance(R.style.AppTheme_TextView_Appearance_Title_Variant)
+            }
+        }
     }
 }

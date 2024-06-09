@@ -38,7 +38,7 @@ class ShortcutItemHolder(private val viewBinding: RecyclerViewItemShortcutBindin
             }
         }
 
-        viewBinding.recyclerViewItemShortcutImageView.setImageResource(shortcut.drawable)
+        viewBinding.recyclerViewItemShortcutImageView.setImageResource(shortcut.icon)
         viewBinding.recyclerViewItemShortcutLabelTextView.text = context.getString(shortcut.label)
     }
 }

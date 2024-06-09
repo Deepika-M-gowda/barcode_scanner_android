@@ -65,7 +65,7 @@
 
             android:visibility="gone"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary.Error"
+            style="@style/AppTheme.TextView.Appearance.Normal.Error"
 
             app:layout_constraintTop_toBottomOf="@id/activity_custom_search_url_creator_url_text_input_layout"
             app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +106,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/standard_margin"
                     android:text="@string/information_label"
-                    style="@style/AppTheme.TextView.Appearance.Title.Primary.Max"/>
+                    style="@style/AppTheme.TextView.Appearance.Title.Primary"/>
             </RelativeLayout>
 
             <!-- Body -->
@@ -121,18 +121,18 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"/>
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary"/>
 
                 <TextView
                     android:id="@+id/activity_custom_search_url_creator_info_example_title_text_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/light_margin"
+                    android:paddingVertical="@dimen/light_margin"
                     android:layout_alignParentStart="true"
                     android:layout_below="@id/activity_custom_search_url_creator_info_message_text_view"
                     android:text="@string/examples"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Primary"/>
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary"/>
 
                 <TextView
                     android:id="@+id/activity_custom_search_url_creator_info_example_message_text_view"
@@ -140,9 +140,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_below="@id/activity_custom_search_url_creator_info_example_title_text_view"
-                    android:text="@string/custom_search_urls_add_url"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic"/>
+                    android:textStyle="italic"
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary"/>
 
             </RelativeLayout>
 

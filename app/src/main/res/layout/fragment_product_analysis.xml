@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/standard_margin"
                 android:text="@string/product_search_label"
-                style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+                style="@style/AppTheme.TextView.Appearance.Subtitle" />
 
         </FrameLayout>
 

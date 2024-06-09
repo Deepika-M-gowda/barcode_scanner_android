@@ -12,7 +12,7 @@
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_number_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -21,7 +21,7 @@
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_title_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standard_margin"
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/recycler_view_item_music_album_track_length_text_view"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/recycler_view_item_music_album_track_artist_text_view"
-        style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+        style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/light_margin"

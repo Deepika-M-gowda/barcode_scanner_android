@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
-            style="@style/AppTheme.TextView.Appearance.Title.Variant"
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
             android:textAlignment="viewStart"
             android:textIsSelectable="true"
             android:paddingTop="@dimen/thin_margin"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary"
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/template_barcode_parsed_view_title"

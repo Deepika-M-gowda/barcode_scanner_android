@@ -31,7 +31,7 @@
             android:layout_toEndOf="@id/fragment_product_analysis_error_header_icon_image_view"
             android:layout_centerVertical="true"
             android:text="@string/warning_label"
-            style="@style/AppTheme.TextView.Appearance.Title.Primary.Max" />
+            style="@style/AppTheme.TextView.Appearance.Title.Primary" />
 
     </RelativeLayout>
 
@@ -44,7 +44,7 @@
             android:id="@+id/fragment_product_analysis_error_information_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <RelativeLayout
             android:id="@+id/fragment_product_analysis_error_message_layout"
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/scan_error_message_label"
-                style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+                style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textIsSelectable="true"
-                    style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+                    style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
             </FrameLayout>
 

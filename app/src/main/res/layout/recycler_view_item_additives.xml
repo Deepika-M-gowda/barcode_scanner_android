@@ -22,7 +22,7 @@
             android:layout_toStartOf="@id/recycler_view_item_additives_info_button"
             android:layout_centerVertical="true"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/recycler_view_item_additives_info_button"
@@ -36,11 +36,12 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:drawableStart="@drawable/outline_info_24"
-            android:drawablePadding="@dimen/thin_margin"
+            android:drawablePadding="@dimen/light_margin"
             app:drawableTint="?colorPrimary"
             android:text="@string/off_additive_info_label"
             android:textColor="?colorPrimary"
-            style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+            android:textAllCaps="true"
+            style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
 
     </RelativeLayout>
 
@@ -68,7 +69,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/standard_margin"
             android:textIsSelectable="true"
-            style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+            style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
     </RelativeLayout>
 
