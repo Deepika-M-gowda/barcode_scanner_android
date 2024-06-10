@@ -18,7 +18,9 @@ Functionaliteit:
 • Zoek informatie over het product dat je scant, met een snel onderzoek op verschillende websites zoals Amazon of Fnac.
 • Houd al je gescande barcodes bij in de geschiedenis.
 • Genereer je eigen barcodes
-• Pas de interface aan met verschillende kleuren, met een licht thema of een donker thema. De app integreert de functies van Android 12, waardoor je de kleuren kunt aanpassen aan je achtergrond.
-• Teksten zijn volledig vertaald in het Engels, Spaans, Frans, Duits, Nederlands, Pools, Turks, Russisch en Chinees.
+• Pas de interface aan met verschillende kleuren, met een licht thema of een donker thema. De interface is gemaakt met Material 3, en is compatibel met Material You, waardoor kleuren in de app de stijl van je ingestelde achtergrond kunnen volgen op toestellen uitgerust met Android 12 of nieuwer.
+• Teksten zijn volledig vertaald in het Engels, Arabisch, Spaans, Frans, Portugees, Duits, Nederlands, Pools, Turks, Italiaans, Oekraïens, Roemeens, Russisch en Chinees.
 
 Deze app respecteert je privacy: het bevat geen trackers en verzamelt geen gegevens.
+
+De broncode is hier beschikbaar: https://gitlab.com/Atharok/BarcodeScanner
