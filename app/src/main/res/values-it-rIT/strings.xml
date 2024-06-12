@@ -492,7 +492,7 @@
     <string name="nova_group_description_3">Alimenti trasformati</string>
     <string name="nova_group_description_4">Alimenti ultra-trasformati</string>
     <string name="stabilizer_description_label">Stabilizzatori, addensanti e agenti gelificanti, come agar o pectina (usati nelle confetture per esempio) danno al cibo una consistenza più solida. Mentre non sono propriamente emulsionanti, aiutano a stabilizzare le emulsioni.</string>
-    <string name="ingredient_veggie_entitled_label">Ingredienti in termini di stato vegetariano o vegano</string>
+    <string name="ingredient_veggie_entitled_label">Ingredienti secondo lo stato vegetariano e vegano.</string>
     <string name="qr_code_text_radio_button_label_m">Sig.</string>
     <string name="qr_code_text_radio_button_label_mrs">Sig.Ra</string>
     <string name="qr_code_text_radio_button_label_miss">Sig.Na</string>
@@ -631,4 +631,35 @@
     <string name="width_label">Larghezza</string>
     <string name="colors_label">Colori</string>
     <string name="height_label">Altezza</string>
+    <string name="custom_search_urls_list_is_empty_message">Nessun articolo…
+\nNon hai ancora generato un URL personalizzato.</string>
+    <string name="custom_search_urls_add_info">Utilizza il termine \"%1$s\" nell\'URL. Questo termine verrà sostituito dal contenuto del codice a barre durante la ricerca.</string>
+    <string name="examples">Esempi:</string>
+    <string name="error_empty_fields">I campi di input non devono essere vuoti.</string>
+    <string name="custom_search_urls">URL di ricerca personalizzati</string>
+    <string name="custom_urls">URL personalizzati</string>
+    <string name="custom_search_urls_add_url">Aggiungi un URL</string>
+    <string name="custom_search_urls_modify_url">Modifica l\'URL</string>
+    <string name="app_name">Barcode Scanner</string>
+    <string name="preferences_switch_history_save_duplicates_label">Salva duplicati</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">I duplicati verranno aggiunti alla cronologia</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">I duplicati non verranno aggiunti alla cronologia</string>
+    <string name="custom_search_urls_list">Elenco URL</string>
+    <string name="error">Errore</string>
+    <string name="clipboard_empty">Gli appunti sono vuoti.</string>
+    <string name="custom_url_updated">URL personalizzato aggiornato!</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Vuoi eliminare tutti gli URL personalizzati?</string>
+    <string name="custom_url_added">URL personalizzato aggiunto!</string>
+    <string name="create_qr_from_clipboard">Genera un codice QR dagli appunti</string>
+    <string name="barcode_search_error_no_compatible_application_found">Nessuna applicazione compatibile trovata</string>
+    <string name="action_share_vcf_file">Condividi come VCF</string>
+    <string name="matrix_contact_job_title_label">Titolo di lavoro</string>
+    <string name="snack_bar_message_items_deleted">Elementi eliminati dalla cronologia.</string>
+    <string name="action_modify_barcode">Modifica codice a barre</string>
+    <string name="custom_url_deleted">URL personalizzato eliminato!</string>
+    <string name="custom_search_urls_error_url">Il termine \"%1$s\" deve essere presente nell\'URL.</string>
+    <string name="preferences_additional_options">Opzioni aggiuntive</string>
+    <string name="preferences_display_barcode_image_results_view">Visualizza l\'immagine del codice a barre nella vista dei risultati</string>
+    <string name="shortcuts">Scorciatoie</string>
+    <string name="shortcuts_info">Disponi le scorciatoie nell\'ordine che preferisci.</string>
 </resources>
