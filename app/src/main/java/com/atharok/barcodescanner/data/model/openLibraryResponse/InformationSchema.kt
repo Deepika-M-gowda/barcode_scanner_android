@@ -36,5 +36,5 @@ data class InformationSchema(
     @Expose
     val items: List<Item>? = null) {
 
-    fun getBook(): Book? = if(records?.isNullOrEmpty() == true) null else records.values.first()
+    fun getBook(): Book? = records?.values?.firstOrNull()
 }
