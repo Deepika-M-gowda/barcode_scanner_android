@@ -88,7 +88,7 @@
     <string name="record_label">Salvar</string>
     <string name="scan_cancel_label">Escaneamento cancelado!</string>
     <string name="flash_label">Flash</string>
-    <string name="scan_information_label">Mire no código de barras para escanear</string>
+    <string name="scan_information_label">Aponte ao código para escanear</string>
     <string name="barcode_information_search_label">Buscando…</string>
     <string name="scan_error_label">Erro durante o escaneamento!</string>
     <string name="barcode_scanned_label">%1$s escaneado!</string>
