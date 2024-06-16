@@ -1,6 +1,8 @@
 1.24.0
 
-- Mise à jour de la traduction en chinois traditionnel (merci à hugoalh).
+Liste complète des modifications ici: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Mise à jours des traductions (Weblate).
 - Correction de quelques erreurs graphiques.
 - Modification des styles de texte pour améliorer la lisibilité.
 - Modification du thème noir OLED.
