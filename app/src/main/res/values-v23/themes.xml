@@ -57,6 +57,7 @@
         <item name="colorPositive">@color/dark_color_positive</item>
         <item name="colorMedium">@color/dark_color_medium</item>
         <item name="colorNegative">@color/dark_color_negative</item>
+        <item name="colorUnknown">@color/dark_color_unknown</item>
 
         <!-- Components -->
         <item name="cardViewStyle">@style/AppTheme.CardView.Material3</item>
