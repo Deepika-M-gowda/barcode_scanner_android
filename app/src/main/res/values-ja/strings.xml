@@ -182,7 +182,7 @@
     <string name="about_barcode_origin_label">販売国:</string>
     <string name="scan_information_label">コードを写してスキャン</string>
     <string name="preferences_switch_system_theme_label">システムに従う</string>
-    <string name="custom_urls">カスタムURL</string>
+    <string name="custom_urls">カスタムURLで検索</string>
     <string name="custom_search_urls_modify_url">URLを編集</string>
     <string name="custom_url_added">カスタムURLを追加しました</string>
     <string name="examples">例:</string>
@@ -231,4 +231,6 @@
     <string name="custom_url_updated">カスタムURLを更新しました</string>
     <string name="error_empty_fields">入力欄を空にすることはできません。</string>
     <string name="preferences_appearance_title">外観</string>
+    <string name="action_product_search_label">%1$s で検索</string>
+    <string name="barcode_information_search_label">検索中…</string>
 </resources>
