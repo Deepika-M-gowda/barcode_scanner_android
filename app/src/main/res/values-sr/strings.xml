@@ -238,4 +238,5 @@
     <string name="matrix_agenda_place_event_label">Место</string>
     <string name="matrix_agenda_description_event_label">Опис</string>
     <string name="matrix_phone_tel_number_label">Телефон</string>
+    <string name="matrix_wifi_password_label">Лозинка</string>
 </resources>
