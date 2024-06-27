@@ -382,4 +382,109 @@
     <string name="error_barcode_qr_localisation_missing_message">Морате да унесете ширину и дужину</string>
     <string name="share_text_label">Дели текст</string>
     <string name="qr_code_text_input_edit_text_hint_mail_3">Адреса поште 3</string>
+    <string name="preferences_color">Главна боја</string>
+    <string name="preferences_switch_light_theme_label">Светла</string>
+    <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
+    <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_library_url">https://openlibrary.org</string>
+    <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
+    <string name="search_engine_open_pet_food_facts_product_url">https://world.openpetfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_url">https://world.openbeautyfacts.org/</string>
+    <string name="custom_search_urls_add_info">У овој URL адреси употребите израз „%1$s”. Приликом претраге, он ће се заменити садржајем баркода.</string>
+    <string name="custom_search_urls_error_url">Израз „%1$s” мора да буде присутан у URL адреси.</string>
+    <string name="open_pet_food_facts_source_description_label">Информације о производу су преузете из Open Pet Food Facts слободне базе података.</string>
+    <string name="preferences_switch_dark_theme_label">Тамна</string>
+    <string name="preferences_color_material_you">Системска (Material You)</string>
+    <string name="preferences_color_red">Црвена</string>
+    <string name="preferences_color_purple">Пурпурна</string>
+    <string name="preferences_color_blue">Плава</string>
+    <string name="preferences_languages_change">Промени језик</string>
+    <string name="preferences_color_orange">Наранџаста</string>
+    <string name="preferences_color_green">Зелена</string>
+    <string name="preferences_languages_title">Језици</string>
+    <string name="spinner_wifi_encryption_sae">WPA3</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_place">Место</string>
+    <string name="end_label">Крај</string>
+    <string name="spinner_wifi_encryption_none">Без лозинке</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_event_name">Назив догађаја</string>
+    <string name="qr_code_text_input_edit_text_hint_agenda_description">Опис</string>
+    <string name="check_box_event_all_of_day">Целодневни</string>
+    <string name="begin_label">Почетак</string>
+    <string name="custom_search_urls_add_url">Додај URL</string>
+    <string name="custom_search_urls">Произвољне URL адресе за претраге</string>
+    <string name="custom_urls">Произвољне URL адресе</string>
+    <string name="custom_search_urls_modify_url">Измени URL</string>
+    <string name="custom_search_urls_list">Листа URL адреса</string>
+    <string name="open_library_source_description_label">Информације о књизи су преузете из Open Library слободне базе података.</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_description">API је софтверска библиотека која се користи за приступ сервису. У случају ове апликације, API се користи за приступ веб сервису. Тај веб сервис преузима информације из базе података.
+\nНа пример, Open Food Facts је база података о прехрамбеним производима која обезбеђује API за приступ подацима у бази. Користим тај API да прикажем информације у вези са прехрамбеним производима.</string>
+    <string name="preferences_switch_black_theme_label">Црна</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_ref">Новчана пошиљка (референца)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_remittance_text">Новчана пошиљка (текст)</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_information">Информације</string>
+    <string name="qr_code_text_input_edit_text_epc_name_error">Поље „Име” је обавезно</string>
+    <string name="qr_code_text_input_edit_text_epc_iban_error">IBAN није исправан</string>
+    <string name="list_bank_empty_message">Нема ниједне ставке…
+\nЈош увек нисте генерисали EPC QR код.</string>
+    <string name="qr_code_text_input_edit_text_hint_email">И-мејл</string>
+    <string name="qr_code_text_input_edit_text_hint_email_subject">Тема</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_latitude">Ширина</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_longitude">Дужина</string>
+    <string name="qr_code_text_input_edit_text_hint_localisation_request">Захтев</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_ssid">SSID / Име мреже</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_password">Лозинка</string>
+    <string name="qr_code_text_input_edit_text_hint_wifi_hide">Скривено</string>
+    <string name="spinner_wifi_encryption_wep">WEP</string>
+    <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
+    <string name="custom_search_urls_list_is_empty_message">Нема ниједне ставке…
+\nЈош увек нисте генерисали произвољну URL адресу.</string>
+    <string name="popup_message_confirmation_deleted_all_custom_urls">Желите ли да обришете све произвољне URL адресе?</string>
+    <string name="custom_url_deleted">Произвољна URL адреса је обрисана!</string>
+    <string name="custom_url_added">Додата је произвољна URL адреса!</string>
+    <string name="custom_url_updated">Ажурирана је произвољна URL адреса!</string>
+    <string name="examples">Примери:</string>
+    <string name="error_empty_fields">Поља за унос не смеју да остану празна.</string>
+    <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
+    <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
+    <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
+    <string name="search_engine_duck_duck_go_url">https://duckduckgo.com/?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+    <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
+    <string name="search_engine_fnac_url">https://www.fnac.com/SearchResult/ResultList.aspx?Search=%1$s</string>
+    <string name="search_engine_open_food_facts_product_url">https://world.openfoodfacts.org/product/%1$s</string>
+    <string name="search_engine_open_beauty_facts_product_url">https://world.openbeautyfacts.org/product/%1$s</string>
+    <string name="search_engine_musicbrainz_product_url">https://musicbrainz.org/search?query=%1$s&amp;type=release</string>
+    <string name="search_engine_open_library_product_url">https://openlibrary.org/search?q=%1$s</string>
+    <string name="search_engine_additive_url">https://world.openfoodfacts.org/additive/%1$s</string>
+    <string name="search_engine_open_food_facts_url">https://world.openfoodfacts.org/</string>
+    <string name="search_engine_open_pet_food_facts_url">https://world.openpetfoodfacts.org/</string>
+    <string name="search_engine_open_library_url">https://openlibrary.org/</string>
+    <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
+    <string name="open_food_facts_source_description_label">Информације о производу су преузете из Open Food Facts слободне базе података.</string>
+    <string name="open_beauty_facts_source_description_label">Информације о производу су преузете из Open Beauty Facts слободне базе података.</string>
+    <string name="music_brainz_source_description_label">Информације о музичким производима се преузимају из слободне MusicBrainz базе података.</string>
+    <string name="preferences_default">Подразумевано</string>
+    <string name="preferences_appearance_title">Изглед</string>
+    <string name="preferences_theme_label">Шема боја</string>
+    <string name="preferences_switch_system_theme_label">Прати систем</string>
+    <string name="preferences_remote_api_title">Производи и API</string>
+    <string name="preferences_switch_scan_search_on_api_label">Аутоматски шаљи упит удаљеном API-ју</string>
+    <string name="preferences_remote_api_to_use_label">Подразумевани API</string>
+    <string name="preferences_remote_api_choose_label">Изаберите API</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts (прехрамбени производи)</string>
+    <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (козметички производи)</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (прехрамбени производи за љубимце)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CD-и, винил плоче, …)</string>
+    <string name="preferences_remote_api_book_label">Open Library (књиге)</string>
+    <string name="preferences_information_about_remote_api_title">Информације у вези са API</string>
+    <string name="preferences_information_about_remote_api_foreword">Предговор</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">Шта је API?</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Типови баркодова од интереса</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Функција API претраге се активира само за EAN 13, EAN 8, UPC A и UPC E баркодове.</string>
 </resources>
