@@ -23,4 +23,4 @@ Fonctionnalités de l'appli :
 
 L'application respecte votre vie privée. Elle ne contient aucun tracker et ne collecte aucune donnée.
 
-Le code source est disponible ici: https://gitlab.com/Atharok/BarcodeScanner
+Le code source est disponible ici : https://gitlab.com/Atharok/BarcodeScanner
