@@ -1,0 +1,1 @@
+- Risolto il problema con il collegamento "scansiona da immagine".

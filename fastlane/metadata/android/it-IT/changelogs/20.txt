@@ -1,0 +1,4 @@
+1.8.1
+
+- Risolto: Aggiunta implementazione dell'API CameraX durante la scansione tramite Intent.
+- Aggiornate le dipendenze.

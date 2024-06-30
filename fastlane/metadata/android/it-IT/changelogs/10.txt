@@ -1,0 +1,1 @@
+- Risolto il problema della scansione da un'immagine quando l'immagine viene condivisa.
