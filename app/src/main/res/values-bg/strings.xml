@@ -24,7 +24,6 @@
     <string name="create_qr_from_clipboard">Генерирайте QR код от клипборда</string>
     <string name="barcode_label">Баркод</string>
     <string name="menu_more">Още</string>
-    <string name="barcode_qr_code_label"></string>
     <string name="qr_code_error_correction_level_settings_label">Ниво на коригиране на грешки (QR код)</string>
     <string name="qr_code_error_correction_level_name_low">Ниска (~7%)</string>
     <string name="qr_code_error_correction_level_name_medium">Среден (~15%)</string>
