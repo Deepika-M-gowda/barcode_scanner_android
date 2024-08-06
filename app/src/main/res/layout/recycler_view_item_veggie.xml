@@ -14,7 +14,7 @@
         android:layout_weight=".3"
         android:textAlignment="textStart"
         android:textIsSelectable="true"
-        style="@style/AppTheme.TextView.Appearance.Normal.Primary" />
+        style="@style/AppTheme.TextView.Appearance.Normal.Secondary" />
 
     <TextView
         android:id="@+id/recycler_view_item_veggie_vegan_text_view"

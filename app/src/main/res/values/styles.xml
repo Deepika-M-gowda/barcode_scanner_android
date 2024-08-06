@@ -7,7 +7,7 @@
     </style>
 
     <!-- TabLayout -->
-    <style name="AppTheme.TabLayout.TextAppearance" parent="TextAppearance.Material3.TitleMedium">
+    <style name="AppTheme.TabLayout.TextAppearance" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/medium_text_size</item>
     </style>

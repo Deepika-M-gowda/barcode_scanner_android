@@ -23,7 +23,7 @@
                 android:paddingVertical="@dimen/normal_margin"
                 android:paddingHorizontal="@dimen/large_margin"
                 android:text="@string/shortcuts_info"
-                style="@style/AppTheme.TextView.Appearance.Normal.Primary"
+                style="@style/AppTheme.TextView.Appearance.Subtitle"
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
