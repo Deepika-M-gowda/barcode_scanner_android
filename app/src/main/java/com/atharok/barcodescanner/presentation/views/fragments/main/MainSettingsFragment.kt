@@ -120,6 +120,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
             val localList = arrayListOf(
                 R.string.preferences_default to LocaleListCompat.getEmptyLocaleList(),
                 R.string.locale_language_ar to LocaleListCompat.forLanguageTags("ar"),
+                R.string.locale_language_bg to LocaleListCompat.forLanguageTags("bg"),
                 R.string.locale_language_ca to LocaleListCompat.forLanguageTags("ca"),
                 R.string.locale_language_de to LocaleListCompat.create(Locale.GERMAN),
                 R.string.locale_language_en to LocaleListCompat.create(Locale.ENGLISH),
@@ -134,6 +135,7 @@ class MainSettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSha
                 R.string.locale_language_pt_BR to LocaleListCompat.forLanguageTags("pt-BR"),
                 R.string.locale_language_ro to LocaleListCompat.forLanguageTags("ro"),
                 R.string.locale_language_ru to LocaleListCompat.forLanguageTags("ru"),
+                R.string.locale_language_sr to LocaleListCompat.forLanguageTags("sr"),
                 R.string.locale_language_tr to LocaleListCompat.forLanguageTags("tr"),
                 R.string.locale_language_uk to LocaleListCompat.forLanguageTags("uk"),
                 R.string.locale_language_zh to LocaleListCompat.create(Locale.SIMPLIFIED_CHINESE),

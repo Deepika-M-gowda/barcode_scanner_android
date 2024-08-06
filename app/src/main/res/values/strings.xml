@@ -868,6 +868,7 @@
     <string name="locale_language_zh" translatable="false">简体中文</string>
     <string name="locale_language_zh_Tw" translatable="false">繁體中文</string>
     <string name="locale_language_ar" translatable="false">العربية</string>
+    <string name="locale_language_bg" translatable="false">български</string>
     <string name="locale_language_ca" translatable="false">Català</string>
     <string name="locale_language_en" translatable="false">English</string>
     <string name="locale_language_de" translatable="false">Deutsch</string>
@@ -883,6 +884,7 @@
     <string name="locale_language_pt_BR" translatable="false">Português (Brasil)</string>
     <string name="locale_language_ro" translatable="false">Român</string>
     <string name="locale_language_ru" translatable="false">Русский</string>
+    <string name="locale_language_sr" translatable="false">Српски</string>
     <string name="locale_language_tr" translatable="false">Türkçe</string>
     <string name="locale_language_uk" translatable="false">Українська</string>
 </resources>
