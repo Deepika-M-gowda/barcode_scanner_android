@@ -1,0 +1,26 @@
+Scanner di Codici a Barre è un'app gratuita e open-source che ti permette di leggere e generare codici a barre. Può raccogliere informazioni su prodotti alimentari, cosmetici, libri e musica (CD, vinili…).
+
+L'app gestisce diversi formati di codici a barre:
+• Codici a barre bidimensionali: QR Code, Data Matrix, PDF 417, AZTEC
+• Codici a barre monodimensionali: EAN 13, EAN 8, UPC A, UPC E, Code 128, Code 93, Code 39, Codabar, ITF
+
+Raccogli informazioni su un prodotto durante la scansione:
+• Prodotti alimentari con Open Food Facts
+• Cosmetici con Open Beauty Facts
+• Prodotti alimentari per animali con Open Pet Food Facts
+• Libri con Open Library
+• Musica (CD, vinili…) con MusicBrainz
+
+Caratteristiche dell'app:
+• Punta semplicemente la fotocamera del tuo smartphone su un codice a barre e ricevi istantaneamente informazioni. Puoi anche scansionare codici a barre tramite una foto nel tuo smartphone.
+• Con una semplice scansione, leggi biglietti da visita, aggiungi nuovi contatti, aggiungi nuovi eventi alla tua agenda, apri URL o persino connettiti al Wi-Fi.
+• Scansiona i codici a barre dei prodotti alimentari per ricevere informazioni sulla loro composizione grazie ai database Open Food Facts e Open Beauty Facts.
+• Cerca informazioni sul prodotto scansionato con una rapida ricerca su diversi siti web come Amazon o Fnac.
+• Tieni traccia di tutti i tuoi codici a barre scansionati con lo strumento di cronologia.
+• Genera i tuoi codici a barre.
+• Personalizza l'interfaccia con diversi colori, con un tema chiaro o scuro. L'interfaccia è costruita con Material 3 e compatibile con Material You, permettendoti di regolare i colori in base al tuo sfondo per dispositivi con Android 12 o versioni successive.
+• I testi sono interamente tradotti in inglese, arabo, spagnolo, francese, portoghese, russo, tedesco, turco, italiano, ucraino, polacco, olandese, rumeno e cinese (semplificato e tradizionale).
+
+Questa app rispetta la tua privacy. Non contiene tracker e non raccoglie alcun dato.
+
+Il codice sorgente è disponibile qui: [https://gitlab.com/Atharok/BarcodeScanner](https://gitlab.com/Atharok/BarcodeScanner)

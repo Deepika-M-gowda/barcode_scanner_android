@@ -1,0 +1,1 @@
+Un'app open-source che ti permette di leggere e generare codici a barre.

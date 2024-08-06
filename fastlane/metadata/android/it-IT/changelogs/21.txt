@@ -1,0 +1,9 @@
+1.9.0
+
+- Nuova icona + icona animata nella Splash Screen.
+- Aggiunte animazioni di transizione tra le viste nella generazione del codice a barre.
+- Aggiunta animazione delle icone nella BottomNavigationView.
+- Migliorato il codice e gli stili. Sostituiti i componenti Spinner con MaterialAutoCompleteTextView.
+- Rimozione dei font Roboto. Ora l'applicazione utilizza il font di sistema.
+- Aggiunte funzionalità di sistema.
+- Aggiornata la traduzione russa (Grazie a s s).

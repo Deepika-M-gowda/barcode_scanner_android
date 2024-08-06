@@ -1,0 +1,5 @@
+1.7.0
+
+- Aggiunta traduzione in tedesco (Grazie a konwin).
+- Piccole modifiche nella traduzione russa (Grazie a s s).
+- Alcuni miglioramenti grafici.

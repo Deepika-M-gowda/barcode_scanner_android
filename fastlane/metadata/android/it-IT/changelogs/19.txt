@@ -1,0 +1,5 @@
+1.8.0
+
+- Implementazione dell'API CameraX.
+- Migliorate le visualizzazioni in modalità landscape.
+- Alcuni miglioramenti nella traduzione russa (Grazie a s s).
