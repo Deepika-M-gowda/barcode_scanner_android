@@ -26,15 +26,15 @@
     <string name="title_history">Verlauf</string>
     <string name="title_generate">Erzeugen</string>
     <string name="title_settings">Einstellungen</string>
-    <string name="title_qr_code_creator">Erzeuge einen QR Code</string>
+    <string name="title_qr_code_creator">Erzeuge einen QR-Code</string>
     <string name="title_bar_code_creator">Erzeuge einen Barcode</string>
     <string name="information_label">Informationen</string>
     <string name="barcode_label">Barcode</string>
     <string name="download_from_api_label">Lade von APIs</string>
     <string name="menu_more">Mehr</string>
     <!-- Barcode Type -->
-    <string name="barcode_qr_code_label">QR Code</string>
-    <string name="barcode_data_matrix_label">Data Matrix</string>
+    <string name="barcode_qr_code_label">QR-Code</string>
+    <string name="barcode_data_matrix_label">Data-Matrix</string>
     <string name="barcode_pdf_417_label">PDF 417</string>
     <string name="barcode_aztec_label">AZTEC</string>
     <string name="barcode_ean_13_label">EAN 13</string>
@@ -68,7 +68,7 @@
     <string name="bar_code_type_book">Buch</string>
     <string name="bar_code_type_unknown_book_title">Buchtitel unbekannt</string>
     <string name="bar_code_type_industrial">Industrieller Code</string>
-    <string name="bar_code_type_unknown_matrix">Matrix Code</string>
+    <string name="bar_code_type_unknown_matrix">Matrix-Code</string>
     <string name="bar_code_type_name_unknown">Unbekannt</string>
     <!-- Error Correction Level -->
     <string name="qr_code_error_correction_level_label">Fehlerkorrekturlevel</string>
@@ -100,7 +100,7 @@
     <!-- BarcodeAnalysisActivity -->
     <string name="barcode_information_search_label">Suche…</string>
     <string name="scan_error_label">Fehler beim Scannen!</string>
-    <string name="scan_error_short_information_label">Beim suchen der Informationen ist ein Fehler aufgetreten!</string>
+    <string name="scan_error_short_information_label">Beim Nachschlagen der Informationen ist ein Fehler aufgetreten!</string>
     <string name="barcode_scanned_label">%1$s gescannt!</string>
     <string name="barcode_found_on_label">Gefunden auf %1$s!</string>
     <string name="barcode_not_found_on_api_label">Keine Informationen auf %1$s gefunden.</string>
@@ -115,7 +115,7 @@
     <string name="no_product_found_label">Es wurde kein Produkt gefunden!</string>
     <!-- Barcode Searching Error -->
     <string name="warning_label">Warnung</string>
-    <string name="scan_error_information_label">Während der Suche nach Informationen über die externe API ist ein Fehler aufgetreten… Bitte die Internetverbindung und die Berechtigungen der App prüfen! Wenn das Problem weiterhin besteht könnte ein Serverproblem vorliegen.</string>
+    <string name="scan_error_information_label">Während der Suche nach Informationen über die externe API ist ein Fehler aufgetreten… Bitte die Internetverbindung und die Berechtigungen der App prüfen! Wenn das Problem weiterhin besteht, liegt es wohl am Server.</string>
     <string name="scan_error_internet_information_label">Keine Informationen zum Produkt abgerufen, Sie haben vermutlich keine Internetverbindung!</string>
     <string name="scan_error_message_label">Fehler: </string>
     <!-- Food Beauty and Pet Food Product -->
@@ -125,7 +125,7 @@
     <!-- Overview -->
     <string name="quality_label">Produktqualität</string>
     <string name="nutriscore_entitled_label">Nutri-Score</string>
-    <string name="nutriscore_description">Der Nutri-Score ist eine Lebensmittel-Kennzeichnung welche aufzeigt wie ausgewogen ein Produkt auf einer Skala von A bis E zusammengesetzt ist. Zu den <b>positiven Aspekten</b> gehören der Gehalt an Früchten, Gemüse, Hülsenfrüchten, Nüssen, gewissen Ölen, Nahrungsfasern und Eiweiss. Umgekehrt tendiert der Score umso stärker in den <b>roten Bereich</b>, je mehr Zucker, Salz, gesättigte Fettsäuren und Energie ein Lebensmittel enthält.</string>
+    <string name="nutriscore_description">Der Nutri-Score ist eine Lebensmittel-Kennzeichnung, welche aufzeigt, wie ausgewogen ein Produkt auf einer Skala von A bis E zusammengesetzt ist. Zu den <b>positiven Aspekten</b> gehören der Gehalt an Früchten, Gemüse, Hülsenfrüchten, Nüssen, gewissen Ölen, Nahrungsfasern und Eiweiss. Umgekehrt tendiert der Score umso stärker in den <b>roten Bereich</b>, je mehr Zucker, Salz, gesättigte Fettsäuren und Energie ein Lebensmittel enthält.</string>
     <string name="nutriscore_description_a">Sehr günstige Nährstoffzusammensetzung</string>
     <string name="nutriscore_description_b">Günstige Nährstoffzusammensetzung</string>
     <string name="nutriscore_description_c">Durchschnittliche Nährstoffzusammensetzung</string>
@@ -188,11 +188,11 @@
     <string name="is_vegan_label">Vegan</string>
     <string name="no_vegan_label">Nicht vegan</string>
     <string name="maybe_vegan_label">Eventuell vegan</string>
-    <string name="vegan_status_unknown_label">Vegan Status unbekannt</string>
+    <string name="vegan_status_unknown_label">Unbekannt, ob vegan</string>
     <string name="is_vegetarian_label">Vegetarisch</string>
     <string name="no_vegetarian_label">Nicht vegetarisch</string>
     <string name="maybe_vegetarian_label">Eventuell vegetarisch</string>
-    <string name="vegetarian_status_unknown_label">Vegetarisch Status unbekannt</string>
+    <string name="vegetarian_status_unknown_label">Unbekannt, ob vegetarisch</string>
     <!-- Nutrition -->
     <string name="nutrition_facts_no_information_found_label">Keine Nährwerteigenschaften für dieses Produkt gefunden…</string>
     <string name="nutrition_facts_entitled_label">Nährwerteigenschaften</string>
@@ -224,7 +224,7 @@
     <string name="book_product_pages_number_label">Anzahl der Seiten</string>
     <string name="book_product_contributions_label">Mitwirkungen</string>
     <string name="book_product_publish_date_label">Veröffentlichungsdatum</string>
-    <string name="book_product_original_title_label">Originaler Titel</string>
+    <string name="book_product_original_title_label">Originaltitel</string>
     <string name="book_product_pages_number">%1$s Seiten</string>
     <!-- Music -->
     <string name="music_product_tracks_label">Tracks</string>
@@ -260,14 +260,14 @@
     <string name="matrix_wifi_is_hidden_label">Versteckt</string>
     <string name="matrix_wifi_anonymous_identity_label">Anonyme Identität</string>
     <string name="matrix_wifi_identity_label">Identität</string>
-    <string name="matrix_wifi_eap_method_label">Eap Methode</string>
-    <string name="matrix_wifi_phase_2_method_label">Phase 2 Methode</string>
+    <string name="matrix_wifi_eap_method_label">Eap-Methode</string>
+    <string name="matrix_wifi_phase_2_method_label">Phase-2-Methode</string>
     <!-- Matrix Barcode URL Analysis -->
     <string name="matrix_uri_url_label">URL</string>
     <string name="matrix_uri_malicious_label">URL könnte bösartige Inhalte enthalten…</string>
     <!-- Matrix Barcode URI UPI Analysis -->
     <string name="matrix_uri_upi_entitled_label">URI-Analyse</string>
-    <string name="matrix_uri_upi_id_label">UPI ID</string>
+    <string name="matrix_uri_upi_id_label">UPI-ID</string>
     <string name="matrix_uri_upi_payee_name_label">Name des Zahlungsempfängers</string>
     <string name="matrix_uri_upi_amount_label">Betrag</string>
     <string name="matrix_uri_upi_currency_label">Currency</string>
@@ -282,17 +282,17 @@
     <string name="matrix_localisation_location_disabled_label">Die Standort-Funktion scheint auf deinem Gerät nicht aktiviert zu sein.</string>
     <!-- Barcode Description -->
     <string name="barcode_industrial_description_label">Dieser Barcodetyp wird häufig in der Industrie eingesetzt.</string>
-    <string name="barcode_code_39_description_label">Code 39 ist ein Barcode welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Außerdem wird er in militärischen Umgebungen und in der Automobilindustrie genutzt.</string>
-    <string name="barcode_code_93_description_label">Code 93 ist ein Barcode welcher in militärischen Umgebungen und in der Automobilindustrie genutzt wird, so wie von der "Postes Canada" um spezielle Lieferinformationen zu hinterlegen.</string>
-    <string name="barcode_code_128_description_label">Code 128 ist ein Barcode welcher häufig in der Industrie eingesetzt wird. Er wird im Transportwesen und zur Produktidentifizierung in Supply Chains verwendet, aber auch in der Automobilindustrie und zur Produktmarkierung in Apotheken. Code 128 ist weit verbreitet und findet auch in vielen weiteren Bereichen Anwendung.</string>
-    <string name="barcode_itf_description_label">Code ITF (Interleaved 2 of 5) ist ein Barcode welcher hauptsächlich für den Warenversand Verwendung findet.</string>
-    <string name="barcode_codabar_description_label">Codabar ist ein Barcode welcher entwickelt wurde um von Nadeldruckern gedruckt werden zu können. Findet heute seltener Anwendung, wird aber noch von vielen Bibliotheken genutzt.</string>
-    <string name="barcode_upc_a_description_label">UPC-A (Universal Product Code) ist ein Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er besteht aus 12 Zahlen.</string>
-    <string name="barcode_upc_e_description_label">UPC-E (Universal Product Code) ist ein gekürzter Barcode welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen UPC-A Barcode sind. Er besteht aus 8 Zahlen.</string>
-    <string name="barcode_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
-    <string name="barcode_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch Weltweit, Anwendung findet. Er wird genutzt wenn Verpackungen zu klein für einen EAN-13 Barcode sind. Er besteht aus 8 Zahlen.</string>
+    <string name="barcode_code_39_description_label">Code 39 ist ein Barcode, welcher für die Markierung von Textilien und für Medikamente in Apotheken eingesetzt wird. Außerdem wird er vom Militär und in der Automobilindustrie genutzt.</string>
+    <string name="barcode_code_93_description_label">Code 93 ist ein Barcode, welcher vom Militär und in der Automobilindustrie genutzt wird sowie von der Postes Canada, um spezielle Lieferinformationen zu hinterlegen.</string>
+    <string name="barcode_code_128_description_label">Code 128 ist ein Barcode, welcher häufig in der Industrie eingesetzt wird. Er wird im Transportwesen und zur Produktidentifizierung in Lieferketten verwendet, aber auch in der Automobilindustrie und zur Produktmarkierung in Apotheken. Code 128 ist weit verbreitet und findet auch in vielen weiteren Bereichen Anwendung.</string>
+    <string name="barcode_itf_description_label">Code ITF (Interleaved 2 of 5) ist ein Barcode, welcher hauptsächlich beim Warenversand Verwendung findet.</string>
+    <string name="barcode_codabar_description_label">Codabar ist ein Barcode, welcher entwickelt wurde, um von Nadeldruckern gedruckt werden zu können. Findet heute seltener Anwendung, wird aber noch von vielen Bibliotheken genutzt.</string>
+    <string name="barcode_upc_a_description_label">UPC-A (Universal Product Code) ist ein Barcode, welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er besteht aus 12 Zahlen.</string>
+    <string name="barcode_upc_e_description_label">UPC-E (Universal Product Code) ist ein gekürzter Barcode, welcher hauptsächlich in den USA und Kanada auf Verkaufsprodukten Anwendung findet. Er wird genutzt, wenn Verpackungen zu klein für einen UPC-A-Barcode sind. Er besteht aus 8 Zahlen.</string>
+    <string name="barcode_ean_13_description_label">EAN-13 (European Article Numbering 13) ist ein Barcode, welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch weltweit, Anwendung findet. Er besteht aus 13 Zahlen.</string>
+    <string name="barcode_ean_8_description_label">EAN-8 (European Article Numbering 8) ist ein gekürzter Barcode, welcher bei der Kennzeichnung von Verkaufsprodukten in Europa, aber auch weltweit, Anwendung findet. Er wird genutzt, wenn Verpackungen zu klein für einen EAN-13-Barcode sind. Er besteht aus 8 Zahlen.</string>
     <!-- Snackbar Feddbacks -->
-    <string name="snack_bar_message_permission_refused">Du musst die Berechtigungen zulassen um diese Funktion nutzen zu können.</string>
+    <string name="snack_bar_message_permission_refused">Du musst die Berechtigungen gewähren, um diese Funktion nutzen zu können.</string>
     <string name="snack_bar_message_save_bitmap_ok">Bild wurde gespeichert</string>
     <string name="snack_bar_message_save_bitmap_error">Bild wurde nicht gespeichert… \nZu wenig Speicherplatz?</string>
     <string name="snack_bar_message_share_bitmap_error">Ein Fehler ist während der "Teilen" Konfiguration aufgetreten.</string>
@@ -314,34 +314,34 @@
     <string name="action_add_to_calendar">Zum Kalender hinzufügen</string>
     <string name="action_add_to_contacts">Add to contacts</string>
     <string name="action_show_location">Zeige den Standort</string>
-    <string name="action_open_link">Open link</string>
+    <string name="action_open_link">Link öffnen</string>
     <!-- Wi-Fi Connection -->
-    <string name="action_wifi_connection_title_label">WLAN Verbindung</string>
-    <string name="action_wifi_connection_from_app">Verbinde zum WLAN</string>
-    <string name="action_wifi_connection_from_wifi_settings">Kopiere Passwort und gehe zu den WLAN Einstellungen</string>
+    <string name="action_wifi_connection_title_label">WLAN-Verbindung</string>
+    <string name="action_wifi_connection_from_app">Verbinde mit WLAN</string>
+    <string name="action_wifi_connection_from_wifi_settings">Kopiere Passwort und gehe zu den WLAN-Einstellungen</string>
     <string name="action_wifi_connection_error_wifi_not_activated">Sie müssen WLAN auf Ihrem Gerät aktivieren!</string>
     <string name="action_wifi_password_copy_label">Passwort kopiert!</string>
-    <string name="action_wifi_success_added_label">WLAN Verbindung hinzugefügt!</string>
-    <string name="action_wifi_failure_added_label">Fehler beim Hinzufügen der WLAN Verbindung</string>
-    <string name="action_wifi_already_added_label">WLAN Verbindung bereits vorhanden</string>
-    <string name="action_wifi_add_network_refused">Hinzufügen der WLAN Verbidung abgelehnt.</string>
-    <string name="action_wifi_add_network_successful">WLAN Verbidung hinzugefügt.</string>
-    <string name="action_wifi_add_network_failed">Fehler beim hinzufügen der WLAN Verbindung.</string>
-    <string name="action_wifi_add_network_already_exists">WLAN Verbindung bereits vorhanden.</string>
-    <string name="action_wifi_add_network_unknown_error">Unbekannter Fehler beim Hinzufügen der WLAN Verbindung.</string>
+    <string name="action_wifi_success_added_label">WLAN-Verbindung hinzugefügt!</string>
+    <string name="action_wifi_failure_added_label">Fehler beim Hinzufügen der WLAN-Verbindung</string>
+    <string name="action_wifi_already_added_label">WLAN-Verbindung bereits vorhanden</string>
+    <string name="action_wifi_add_network_refused">Hinzufügen der WLAN-Verbidung abgelehnt.</string>
+    <string name="action_wifi_add_network_successful">WLAN-Verbidung hinzugefügt.</string>
+    <string name="action_wifi_add_network_failed">Fehler beim Hinzufügen der WLAN-Verbindung.</string>
+    <string name="action_wifi_add_network_already_exists">WLAN-Verbindung bereits vorhanden.</string>
+    <string name="action_wifi_add_network_unknown_error">Unbekannter Fehler beim Hinzufügen der WLAN-Verbindung.</string>
     <!-- QR Code Generator -->
     <!-- Barcode Generator Errors -->
     <string name="error_barcode_none_character_message">Sie müssen einen korrekten Wert im Eingabefeld eingeben.</string>
     <string name="error_barcode_not_a_number_message">Barcodes dürfen nur aus Zahlen bestehen.</string>
     <string name="error_barcode_wrong_length_message">Barcode muss aus %1$s Zahlen bestehen.</string>
     <string name="error_barcode_wrong_key_message">%1$ste Zahl (Prüfziffer) sollte %2$s sein.</string>
-    <string name="error_barcode_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesen Barcode Typ nicht unterstützt.</string>
+    <string name="error_barcode_encoding_iso_8859_1_error_message">Sonderzeichen werden von diesem Barcode-Typ nicht unterstützt.</string>
     <string name="error_barcode_encoding_us_ascii_error_message">Sonderzeichen werden für diesen Barcode-Typ nicht unterstützt.</string>
     <string name="error_barcode_93_regex_error_message">Der "Code 93" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 8 Sonderzeichen « -, ., Leerzeichen, *, $, /, +, % » codieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
-    <string name="error_barcode_39_regex_error_message">Der "Code 39" Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9), so wie die 7 Sonderzeichen « -, ., Leerzeichen, $, /, +, % ». Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
-    <string name="error_barcode_codabar_regex_error_message">Der "Codabar" Barcode kann Zahlen (0 bis 9), so wie die 6 Sonderzeichen « -, $, :, /, ., + » codieren. Außerdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden um den Anfang und das Ende zu definieren.</string>
-    <string name="error_barcode_itf_error_message">Der "ITF" Barcode muss aus einer gerade Anzahl an Zeichen bestehen.</string>
-    <string name="error_barcode_upc_e_not_start_with_0_error_message">Der "UPC-E" Barcode muss mit einer 0 beginnen.</string>
+    <string name="error_barcode_39_regex_error_message">Der Code-39-Barcode kann 26 Großbuchstaben, Zahlen (0 bis 9) sowie die 7 Sonderzeichen „ -, ., Leerzeichen, $, /, +, % “ kodieren. Kleinbuchstaben und andere Sonderzeichen werden von diesem Barcode nicht unterstützt.</string>
+    <string name="error_barcode_codabar_regex_error_message">Der Codabar-Barcode kann Zahlen (0 bis 9) sowie die 6 Sonderzeichen „ -, $, :, /, ., + “ codieren. Außerdem dürfen die Buchstaben A, B, C or D an erster und letzter Stelle im Barcode verwendet werden, um den Anfang und das Ende zu definieren.</string>
+    <string name="error_barcode_itf_error_message">Der ITF-Barcode muss aus einer geraden Anzahl an Zeichen bestehen.</string>
+    <string name="error_barcode_upc_e_not_start_with_0_error_message">Der UPC-E-Barcode muss mit einer 0 beginnen.</string>
     <string name="error_barcode_qr_url_format_message">Eine Webadresse muss mit "http://" oder "https://" beginnen</string>
     <string name="error_barcode_qr_phone_number_missing_message">Sie müssen eine Telefonnummer eingeben</string>
     <string name="error_barcode_qr_email_missing_message">Sie müssen mindestens ein Eingabefeld ausfüllen</string>
@@ -386,7 +386,7 @@
     <string name="spinner_type_work">Arbeit</string>
     <string name="spinner_type_other">Andere</string>
     <!-- EPC Creator -->
-    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Service Tag</string>
+    <string name="qr_code_text_input_edit_text_hint_epc_service_tag">Service-Tag</string>
     <string name="qr_code_text_input_edit_text_hint_epc_version">Version</string>
     <string name="qr_code_text_input_edit_text_hint_epc_character_set">Zeichencodierung</string>
     <string name="qr_code_text_input_edit_text_hint_epc_identification">Identifikation</string>
@@ -458,11 +458,11 @@
     <string name="search_engine_open_library_url">https://openlibrary.org/</string>
     <string name="search_engine_music_brainz_url">https://musicbrainz.org/</string>
     <!-- API Sources Description -->
-    <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open Food Facts Datenbank.</string>
-    <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open Pet Food Facts Datenbank.</string>
-    <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open Beauty Facts Datenbank.</string>
+    <string name="open_food_facts_source_description_label">Informationen über Produkte aus der freien Open-Food-Facts-Datenbank.</string>
+    <string name="open_pet_food_facts_source_description_label">Informationen über Produkte aus der freien Open-Pet-Food-Facts-Datenbank.</string>
+    <string name="open_beauty_facts_source_description_label">Informationen über Produkte aus der freien Open-Beauty-Facts-Datenbank.</string>
     <string name="music_brainz_source_description_label">Informationen zu musikalischen Produkten stammen von der freien Datenbank namens MusicBrainz.</string>
-    <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open Library Datenbank.</string>
+    <string name="open_library_source_description_label">Informationen über Bücher aus der freien Open-Library-Datenbank.</string>
     <!-- Preferences -->
     <!-- Appearance Settings -->
     <string name="preferences_appearance_title">Erscheinungsbild</string>
@@ -472,7 +472,7 @@
     <string name="preferences_switch_dark_theme_label">Dunkel</string>
     <string name="preferences_switch_black_theme_label">Black</string>
     <string name="preferences_color">Hauptfarbe</string>
-    <string name="preferences_color_material_you">System („Material You”: Android-Designsprache)</string>
+    <string name="preferences_color_material_you">System („Material You“: Android-Designsprache)</string>
     <string name="preferences_color_blue">Blau</string>
     <string name="preferences_color_orange">Orange</string>
     <string name="preferences_color_green">Grün</string>
@@ -483,13 +483,13 @@
     <string name="preferences_languages_change">Ändere die Sprache</string>
     <!-- Remote API -->
     <string name="preferences_remote_api_title">Produkte und Schnittstelle (API)</string>
-    <string name="preferences_switch_scan_search_on_api_label">Remote API automatisch abfragen</string>
-    <string name="preferences_remote_api_to_use_label">Default API</string>
+    <string name="preferences_switch_scan_search_on_api_label">Remote-API automatisch abfragen</string>
+    <string name="preferences_remote_api_to_use_label">Standard-PI</string>
     <string name="preferences_remote_api_choose_label">Wähle eine Schnittstelle (API)</string>
-    <string name="preferences_remote_api_food_label">Open Food Facts (freiverfügbare Fakten zu Nahrungsmitteln)</string>
+    <string name="preferences_remote_api_food_label">Open Food Facts (frei verfügbare Fakten zu Nahrungsmitteln)</string>
     <string name="preferences_remote_api_cosmetic_label">Open Beauty Facts (Kosmetikprodukte)</string>
-    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (freiverfügbare Fakten zu Tiernahrungsmitteln)</string>
-    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinylsscheiben, …)</string>
+    <string name="preferences_remote_api_pet_food_label">Open Pet Food Facts (frei verfügbare Fakten zu Tierfutter)</string>
+    <string name="preferences_remote_api_musicbrainz_label">MusicBrainz (CDs, Vinylscheiben, …)</string>
     <string name="preferences_remote_api_book_label">Open Library (Bücher)</string>
     <!-- About Remote API -->
     <string name="preferences_information_about_remote_api_title">Informationen über Schnittstellen (APIs)</string>
@@ -498,26 +498,26 @@
     <string name="preferences_information_about_remote_api_what_is_an_api_description">Eine Schnittstelle (auch API genannt) ist eine Softwarebibliothek, die für den Zugriff auf einen Dienst verwendet wird. Im Fall dieser App wird eine API für den Zugriff auf einen Webdienst verwendet. Dieser Webdienst ruft Informationen aus einer Datenbank ab.
 \nOpen Food Facts, zum Beispiel, ist eine Datenbank für Lebensmittelprodukte und bietet eine API für den Zugriff auf deren Datenbank. Ich verwende diese API, um Informationen über Lebensmittelprodukte anzuzeigen.</string>
     <string name="preferences_information_about_remote_api_barcode_types_concerned_title">Betroffene Barcodetypen</string>
-    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Die Schnittstellen-Suche ist nur aktiviert für EAN 13, EAN 8, UPC A und UPC E Barcodes.</string>
+    <string name="preferences_information_about_remote_api_barcode_types_concerned_description">Die Schnittstellen-Suche ist nur aktiviert für EAN-13-, EAN-8-, UPC-A- und UPC-E-Barcodes.</string>
     <string name="preferences_information_about_remote_api_product_types_supported_title">Aktuell unterstützte Produkkategorien</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_food">• Nahrungsmittel (mit Open Food Facts Schnitttelle)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Kosmetikprodukte (mit Open Beauty Facts Schnittstelle)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Tiernahrungsmittel (mit Open Pet Food Facts Schnittstelle)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinyls, … (mit MusicBrainz Schnittstelle)</string>
-    <string name="preferences_information_about_remote_api_product_types_supported_book">• Bücher (mit Open Library Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_food">• Nahrungsmittel (mit Open-Food-Facts-Schnitttelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_beauty">• Kosmetikprodukte (mit Open-Beauty-Facts-Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_pet_food">• Tierfutter (mit Open-Pet-Food-Facts-Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_music">• CDs, Vinylschallplatten … (mit MusicBrainz-Schnittstelle)</string>
+    <string name="preferences_information_about_remote_api_product_types_supported_book">• Bücher (mit Open-Library-Schnittstelle)</string>
     <string name="preferences_information_about_remote_api_some_additional_information_title">Einige zusätzliche Informationen</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_1">• Einige Produkte sind eventuell nicht enthalten in bestimmen Datenbanken.</string>
     <string name="preferences_information_about_remote_api_some_additional_information_description_2">• Möglicherweise existieren Fehler bei den Informationen der bereitgestellten Schnittstellen.</string>
-    <string name="preferences_information_about_remote_api_how_it_works">Wie es funktioniert</string>
+    <string name="preferences_information_about_remote_api_how_it_works">So funktioniert es</string>
     <string name="preferences_information_about_remote_api_automatic_search_title">Automatische Suche</string>
-    <string name="preferences_information_about_remote_api_automatic_search_description">Wenn die Option \\\"%1$s\\\" aktiviert ist, wird beim Scannen eines Produktbarcodes automatisch eine Suche in der in den Einstellungen ausgewählten Schnittstelle (auch API genannt) durchgeführt. Wenn in der API keine Informationen gefunden werden, können Sie nach dem Scannen jederzeit eine manuelle Suche in einer anderen API durchführen.</string>
+    <string name="preferences_information_about_remote_api_automatic_search_description">Wenn die Option „%1$s“ aktiviert ist, wird beim Scannen eines Produktbarcodes automatisch eine Suche in der in den Einstellungen ausgewählten Schnittstelle (auch API genannt) durchgeführt. Wenn in der API keine Informationen gefunden werden, können Sie nach dem Scannen jederzeit eine manuelle Suche in einer anderen API durchführen.</string>
     <string name="preferences_information_about_remote_api_manual_search_title">Manuelle Suche</string>
-    <string name="preferences_information_about_remote_api_manual_search_description">Wenn die Option \\\"%1$s\\\" deaktiviert ist, werden beim Scannen eines Produktbarcodes keine Informationen von den Remote-Servern (remote, engl. = ferngesteuert) abgerufen. Sie können jedoch jederzeit manuell nach Informationen über das gescannte Produkt suchen. Klicken Sie dazu nach dem Scannen des Produkts auf das Symbol in der Menüleiste. Sie können dann eine Schnittstelle (API) für die Suche auswählen.</string>
+    <string name="preferences_information_about_remote_api_manual_search_description">Wenn die Option „%1$s“ deaktiviert ist, werden beim Scannen eines Produktbarcodes keine Informationen von den Remote-Servern (remote, engl. = entfernt) abgerufen. Sie können jedoch jederzeit manuell nach Informationen über das gescannte Produkt suchen. Klicken Sie dazu nach dem Scannen des Produkts auf das Symbol in der Menüleiste. Sie können dann eine Schnittstelle (API) für die Suche auswählen.</string>
     <string name="preferences_information_about_remote_api_about_books_title">Bücher</string>
     <string name="preferences_information_about_remote_api_about_books_description">Wenn es sich bei dem zu scannenden Produkt um ein Buch handelt, musst Du die Schnittstelle (API), über die Du nach Informationen suchst, nicht angeben. Der Barcode eines Buches ist identifizierbar, da er immer mit den Ziffern „978” beginnt. Die Suche wird automatisch in Open Library durchgeführt.</string>
     <!-- Scan Settings -->
     <string name="preferences_scan_title">Scan</string>
-    <string name="preferences_switch_scan_use_camera_x_api_label">Verwende die CameraX Schnittstelle (API)</string>
+    <string name="preferences_switch_scan_use_camera_x_api_label">Verwende die CameraX-Schnittstelle (API)</string>
     <string name="preferences_switch_scan_vibrate_label">Vibriere bei erfolgreichem Scan</string>
     <string name="preferences_switch_scan_bip_label">Ton ausgeben bei erfolgeichem Scan</string>
     <string name="preferences_switch_scan_screen_rotation_label">Automatische Drehung während des Scans deaktivieren</string>
@@ -538,25 +538,25 @@
     <string name="preferences_source_code_label">Quellcode</string>
     <!-- About Permissions -->
     <string name="permission_camera_label">Kamera</string>
-    <string name="permission_camera_description_label">Benötigt um den Barcode zu scannen.</string>
+    <string name="permission_camera_description_label">Benötigt, um den Barcode zu scannen.</string>
     <string name="permission_internet_label">Internet</string>
-    <string name="permission_internet_description_label">Benötigt um die Remote APIs abzufragen.</string>
+    <string name="permission_internet_description_label">Benötigt, um die Remote-APIs abzufragen.</string>
     <string name="permission_contact_label">Kontakte</string>
-    <string name="permission_contact_description_label">Benötigt um Kontake zu importieren oder Kontakt QR Codes zu generieren.</string>
+    <string name="permission_contact_description_label">Benötigt, um Kontake zu importieren oder Kontakt-QR-Codes zu generieren.</string>
     <string name="permission_location_label">Standort</string>
-    <string name="permission_location_description_label">Notwendig um einen QR-Code zum Standort des Gerätes zu generieren.</string>
+    <string name="permission_location_description_label">Notwendig, um einen QR-Code zum Standort des Gerätes zu generieren.</string>
     <string name="permission_wifi_label">WLAN</string>
-    <string name="permission_wifi_description_label">Benötigt um zu einem WLAN zu verbinden dessen QR Code gescannt wurde.</string>
+    <string name="permission_wifi_description_label">Benötigt, um sich mit einem WLAN zu verbinden, dessen QR-Code gescannt wurde.</string>
     <string name="permission_vibrate_label">Vibrieren</string>
-    <string name="permission_vibrate_description_label">Benötigt um beim scannen zu vibrieren.</string>
+    <string name="permission_vibrate_description_label">Benötigt um beim Scannen zu vibrieren.</string>
     <string name="permission_query_all_packages_label">Abfrage aller Daten-Pakete</string>
-    <string name="permission_query_all_packages_description_label">Nützlich um einen QR-Code einer installierten App zu generieren.</string>
+    <string name="permission_query_all_packages_description_label">Nützlich, um einen QR-Code einer installierten App zu generieren.</string>
     <!-- About BDD -->
     <string name="bdd_open_food_facts_description_label">Open Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Lebensmittelprodukten aus der ganzen Welt. Sie listet alle auf dem Produktlabel gekennzeichneten Informationen wie z.B. Zutaten, Allergene und Nährwerte.</string>
     <string name="bdd_open_pet_food_facts_description_label">Open Pet Food Facts ist eine freie, Online-Crowdsourcing-Datenbank von Tierfutterprodukten.</string>
     <string name="bdd_open_beauty_facts_description_label">Open Beauty Facts ist eine freie, Online-Crowdsourcing-Datenbank von Kosmetikprodukten.</string>
     <string name="bdd_music_brainz_description_label">MusicBrainz ist eine freie Musikbibliothek, die Musikmetadaten sammelt und diese öffentlich zur Verfügung stellt.</string>
-    <string name="bdd_open_library_description_label">Open Library ist eine freie, Online-Crowdsourcing-Datenbank welche zum Ziel hat alle veröffentlichten Bücher weltweit aufzulisten, egal in welcher Sprache.</string>
+    <string name="bdd_open_library_description_label">Open Library ist eine freie, Online-Crowdsourcing-Datenbank, welche zum Ziel hat, alle veröffentlichten Bücher weltweit aufzulisten, egal in welcher Sprache.</string>
     <!-- About Library Third -->
     <string name="dependency_by">abhängig von %1$s</string>
     <!-- Countries -->
@@ -691,7 +691,7 @@
     <string name="export_json_label">Als JSON exportieren</string>
     <string name="corners_radius">Eckradius</string>
     <string name="barcode_color">Barcode-Farbe</string>
-    <string name="color_shades_issue">Einige Farbnuabcen werden möglicherweise nicht erkannt.</string>
+    <string name="color_shades_issue">Einige Farbnuancen werden möglicherweise nicht erkannt.</string>
     <string name="keep_proportions">Seitenverhältnis bewahren</string>
     <string name="dimensions_label">Abmessungen</string>
     <string name="background_color">Hintergrundfarbe</string>
@@ -706,7 +706,7 @@
     <string name="custom_search_urls_modify_url">URL ändern</string>
     <string name="custom_url_added">Benutzerdefinierte URL hinzugefügt!</string>
     <string name="custom_url_updated">Benutzerdefinierte URL aktualisiert!</string>
-    <string name="custom_search_urls_add_info">Verwende den Begriff \"%1$s\" in der URL. Dieser Begriff wird bei der Suche durch den Inhalt des Barcodes ersetzt.</string>
+    <string name="custom_search_urls_add_info">Verwende den Begriff „%1$s“ in der URL. Dieser Begriff wird bei der Suche durch den Inhalt des Barcodes ersetzt.</string>
     <string name="examples">Beispiele:</string>
     <string name="error_empty_fields">Eingabefelder dürfen nicht leer sein.</string>
     <string name="preferences_additional_options">Zusätzliche Optionen</string>
@@ -715,14 +715,14 @@
     <string name="create_qr_from_clipboard">Erzeugen eines QR-Codes aus der Zwischenablage</string>
     <string name="shortcuts_info">Ordne die Kürzel in der Reihenfolge an, die du bevorzugst.</string>
     <string name="custom_urls">Benutzerdefinierte URLs</string>
-    <string name="custom_search_urls_list">URLs Liste</string>
+    <string name="custom_search_urls_list">URL-Liste</string>
     <string name="custom_search_urls_list_is_empty_message">Kein Eintrag…\nDu hast noch keine benutzerdefinierte URL erstellt.</string>
     <string name="shortcuts">Kürzel</string>
     <string name="barcode_search_error_no_compatible_application_found">Keine kompatible Anwendung gefunden</string>
     <string name="clipboard_empty">Die Zwischenablage ist leer.</string>
     <string name="popup_message_confirmation_deleted_all_custom_urls">Willst du alle benutzerdefinierten URLs löschen?</string>
     <string name="custom_url_deleted">Benutzerdefinierte URL gelöscht!</string>
-    <string name="custom_search_urls_error_url">Der Begriff \"%1$s\" muss in der URL enthalten sein.</string>
+    <string name="custom_search_urls_error_url">Der Begriff „%1$s“ muss in der URL enthalten sein.</string>
     <string name="action_share_vcf_file">Teilen als VCF</string>
     <string name="preferences_display_barcode_image_results_view">Anzeige des Barcode-Bildes in der Ergebnisansicht</string>
     <string name="app_name">Barcode-Scanner</string>
