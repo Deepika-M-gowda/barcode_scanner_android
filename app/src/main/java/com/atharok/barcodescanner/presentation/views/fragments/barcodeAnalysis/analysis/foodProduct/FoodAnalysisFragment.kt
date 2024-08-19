@@ -30,11 +30,11 @@ import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.common.utils.BARCODE_ANALYSIS_KEY
 import com.atharok.barcodescanner.databinding.FragmentFoodAnalysisBinding
 import com.atharok.barcodescanner.domain.entity.analysis.FoodBarcodeAnalysis
+import com.atharok.barcodescanner.presentation.views.adapters.FragmentPagerAdapter
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.ApiAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.ingredients.FoodAnalysisRootIngredientsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.nutritionFacts.FoodAnalysisRootNutritionFactsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.analysis.foodProduct.overview.FoodAnalysisRootOverviewFragment
-import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.android.ext.android.get
 

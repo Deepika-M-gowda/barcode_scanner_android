@@ -52,11 +52,11 @@ class ProductActionsFragment: AbstractActionsFragment() {
             val ebayUrl = getString(R.string.search_engine_ebay_url, contents)
             val fnacUrl = getString(R.string.search_engine_fnac_url, contents)
 
-            val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                Pair(getString(R.string.action_web_search_label), openContentsWithSearchEngine(contents)),
-                Pair(getString(R.string.action_product_search_label, getString(R.string.amazon_label)), openUrl(amazonUrl)),
-                Pair(getString(R.string.action_product_search_label, getString(R.string.ebay_label)), openUrl(ebayUrl)),
-                Pair(getString(R.string.action_product_search_label, getString(R.string.fnac_label)), openUrl(fnacUrl)),
+            val items = arrayOf<Triple<String, Int, ActionItem.OnActionItemListener>>(
+                Triple(getString(R.string.action_web_search_label), R.drawable.baseline_web_24, openContentsWithSearchEngine(contents)),
+                Triple(getString(R.string.action_product_search_label, getString(R.string.amazon_label)), R.drawable.baseline_store_24, openUrl(amazonUrl)),
+                Triple(getString(R.string.action_product_search_label, getString(R.string.ebay_label)), R.drawable.baseline_store_24, openUrl(ebayUrl)),
+                Triple(getString(R.string.action_product_search_label, getString(R.string.fnac_label)), R.drawable.baseline_store_24, openUrl(fnacUrl)),
             )
 
             createAlertDialog(requireContext(), getString(R.string.search_label), items).show()

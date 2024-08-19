@@ -50,9 +50,9 @@ class PetFoodActionsFragment: AbstractActionsFragment() {
         override fun onItemClick(view: View?) {
             val openPetFoodFactsUrl = getString(R.string.search_engine_open_pet_food_facts_product_url, contents)
 
-            val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                Pair(getString(R.string.action_web_search_label), openContentsWithSearchEngine(contents)),
-                Pair(getString(R.string.action_product_search_label, getString(R.string.open_pet_food_facts_label)), openUrl(openPetFoodFactsUrl))
+            val items = arrayOf<Triple<String, Int, ActionItem.OnActionItemListener>>(
+                Triple(getString(R.string.action_web_search_label), R.drawable.baseline_web_24, openContentsWithSearchEngine(contents)),
+                Triple(getString(R.string.action_product_search_label, getString(R.string.open_pet_food_facts_label)), R.drawable.baseline_pets_24, openUrl(openPetFoodFactsUrl))
             )
 
             createAlertDialog(requireContext(), getString(R.string.search_label), items).show()

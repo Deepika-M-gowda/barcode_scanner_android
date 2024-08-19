@@ -39,6 +39,7 @@ import com.atharok.barcodescanner.presentation.intent.createShareTextIntent
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseBarcodeViewModel
 import com.atharok.barcodescanner.presentation.viewmodel.DatabaseCustomUrlViewModel
 import com.atharok.barcodescanner.presentation.views.activities.BarcodeAnalysisActivity
+import com.atharok.barcodescanner.presentation.views.adapters.DialogListAdapter
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.BarcodeAnalysisFragment
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionButtonAdapter
 import com.atharok.barcodescanner.presentation.views.recyclerView.actionButton.ActionItem
@@ -300,6 +301,27 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
                 dialogInterface.cancel()
             }
             setItems(itemsLabel, onClickListener)
+        }.create()
+        return alertDialog!!
+    }
+
+    protected fun createAlertDialog(context: Context, title: String, items: Array<Triple<String, Int, ActionItem.OnActionItemListener>>): AlertDialog {
+        val onClickListener = DialogInterface.OnClickListener { _, i ->
+            items[i].third.onItemClick(null)
+        }
+
+        val dialogListAdapter = DialogListAdapter(
+            context = context,
+            texts = items.map { it.first }.toTypedArray(),
+            icons = items.map { it.second }.toTypedArray()
+        )
+
+        alertDialog = MaterialAlertDialogBuilder(context).apply {
+            setTitle(title)
+            setNegativeButton(R.string.close_dialog_label) { dialogInterface, _ ->
+                dialogInterface.cancel()
+            }
+            setAdapter(dialogListAdapter, onClickListener)
         }.create()
         return alertDialog!!
     }

@@ -40,8 +40,8 @@ import com.atharok.barcodescanner.common.utils.BARCODE_IMAGE_GENERATOR_PROPERTIE
 import com.atharok.barcodescanner.databinding.FragmentBarcodeImageEditorBinding
 import com.atharok.barcodescanner.domain.entity.barcode.QrCodeErrorCorrectionLevel
 import com.atharok.barcodescanner.domain.library.BarcodeImageGeneratorProperties
+import com.atharok.barcodescanner.presentation.views.adapters.FragmentPagerAdapter
 import com.atharok.barcodescanner.presentation.views.fragments.BaseFragment
-import com.atharok.barcodescanner.presentation.views.viewPagerAdapters.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.zxing.BarcodeFormat
 

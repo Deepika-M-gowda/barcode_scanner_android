@@ -51,9 +51,9 @@ class BeautyActionsFragment: AbstractActionsFragment() {
             override fun onItemClick(view: View?) {
                 val openBeautyFactsUrl = getString(R.string.search_engine_open_beauty_facts_product_url, contents)
 
-                val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                    Pair(getString(R.string.action_web_search_label), openContentsWithSearchEngine(contents)),
-                    Pair(getString(R.string.action_product_search_label, getString(R.string.open_beauty_facts_label)), openUrl(openBeautyFactsUrl))
+                val items = arrayOf<Triple<String, Int, ActionItem.OnActionItemListener>>(
+                    Triple(getString(R.string.action_web_search_label), R.drawable.baseline_web_24, openContentsWithSearchEngine(contents)),
+                    Triple(getString(R.string.action_product_search_label, getString(R.string.open_beauty_facts_label)), R.drawable.baseline_face_24, openUrl(openBeautyFactsUrl))
                 )
 
                 createAlertDialog(requireContext(), getString(R.string.search_label), items).show()

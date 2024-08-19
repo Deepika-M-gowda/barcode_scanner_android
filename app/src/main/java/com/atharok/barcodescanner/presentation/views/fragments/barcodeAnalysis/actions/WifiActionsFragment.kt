@@ -59,9 +59,9 @@ class WifiActionsFragment: AbstractParsedResultActionsFragment() {
 
     private fun showWifiAlertDialog(parsedResult: WifiParsedResult): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
         override fun onItemClick(view: View?) {
-            val items = arrayOf<Pair<String, ActionItem.OnActionItemListener>>(
-                Pair(getString(R.string.action_wifi_connection_from_app), connectToWifiFromApp(parsedResult)),
-                Pair(getString(R.string.action_wifi_connection_from_wifi_settings), connectToWifiFromWifiSettings(parsedResult))
+            val items = arrayOf<Triple<String, Int, ActionItem.OnActionItemListener>>(
+                Triple(getString(R.string.action_wifi_connection_from_app), R.drawable.baseline_wifi_24, connectToWifiFromApp(parsedResult)),
+                Triple(getString(R.string.action_wifi_connection_from_wifi_settings), R.drawable.baseline_settings_24, connectToWifiFromWifiSettings(parsedResult))
             )
 
             createAlertDialog(requireContext(), getString(R.string.qr_code_type_name_wifi), items).show()

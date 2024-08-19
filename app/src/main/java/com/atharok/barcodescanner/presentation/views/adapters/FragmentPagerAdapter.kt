@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.atharok.barcodescanner.presentation.views.viewPagerAdapters
+package com.atharok.barcodescanner.presentation.views.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
