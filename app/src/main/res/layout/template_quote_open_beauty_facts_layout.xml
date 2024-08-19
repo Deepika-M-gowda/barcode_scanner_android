@@ -12,8 +12,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/out_quote_open_beauty_facts_layout_card_view"
-            android:layout_width="194dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
             android:layout_centerHorizontal="true"
             android:backgroundTint="@android:color/white"
             app:cardUseCompatPadding="false"
@@ -21,11 +21,11 @@
 
             <ImageView
                 android:id="@+id/out_quote_open_beauty_facts_layout_image_view"
-                android:layout_width="178dp"
-                android:layout_height="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
                 android:backgroundTint="@android:color/white"
-                android:src="@drawable/open_beauty_facts_logo_en_356x300"
+                android:src="@drawable/open_beauty_facts_logo"
                 android:contentDescription="@string/image_view_description_logo" />
 
         </androidx.cardview.widget.CardView>
