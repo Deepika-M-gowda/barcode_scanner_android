@@ -25,6 +25,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.atharok.barcodescanner.databinding.RecyclerViewItemMusicAlbumTrackBinding
 import com.atharok.barcodescanner.domain.entity.product.musicProduct.AlbumTrack
+import java.util.Locale
 
 class MusicAlbumTracksHolder(private val viewBinding: RecyclerViewItemMusicAlbumTrackBinding)
     : RecyclerView.ViewHolder(viewBinding.root) {
@@ -44,6 +45,6 @@ class MusicAlbumTracksHolder(private val viewBinding: RecyclerViewItemMusicAlbum
     private fun convertMillisecondsToMinutesSeconds(time: Long): String {
         val minutes = time / 60000
         val seconds = (time % 60000) / 1000
-        return String.format("%d:%02d", minutes, seconds)
+        return String.format(Locale.getDefault(), "%d:%02d", minutes, seconds)
     }
 }
