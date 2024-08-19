@@ -2,5 +2,5 @@
 - Arama motoru olarak Brave Search eklendi.
 - Eco-Score simgesini değiştirin.
 - "Tarayıcıyla aç" eyleminin simgesi değiştirildi.
--  Aydınlık tema iyileştirmesi.
+- Aydınlık tema iyileştirmesi.
 - Kod iyileştirmeleri.
