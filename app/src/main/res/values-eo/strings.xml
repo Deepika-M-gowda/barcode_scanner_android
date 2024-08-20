@@ -221,7 +221,7 @@
     <string name="matrix_agenda_description_event_label">Priskribo</string>
     <string name="preferences_switch_black_theme_label">Nigra</string>
     <string name="off_energy_kcal_label">Energio (kcal)</string>
-    <string name="off_fat_label">Graso</string>
+    <string name="off_fat_label">Lipidoj</string>
     <string name="book_product_more_label">Pli</string>
     <string name="matrix_contact_name_label">Nomo</string>
     <string name="matrix_contact_organisation_label">Organizaĵo</string>
@@ -288,4 +288,54 @@
     <string name="spinner_wifi_encryption_wpa">WPA/WPA2</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">Tajpu telefonnumeron…</string>
     <string name="qr_code_text_generator_hint_url_input_edit_text">Tajpu retadreson…</string>
+    <string name="app_name">Strikodoskanilo</string>
+    <string name="image_view_description_product_front">Bildo de varo</string>
+    <string name="qr_code_error_correction_level_label">Nivelo de erarkorektado</string>
+    <string name="snack_bar_message_file_import_success">Dosiero enportiĝis!</string>
+    <string name="snack_bar_message_file_export_success">Dosiero elportiĝis!</string>
+    <string name="barcode_information_search_label">Serĉante…</string>
+    <string name="about_barcode_content_label">Strikodo: %1$s</string>
+    <string name="scan_error_message_label">Erarmesaĝo:</string>
+    <string name="categories_label">Kategorioj</string>
+    <string name="off_carbohydrates_label">Glucidoj</string>
+    <string name="off_starch_label">Amelo</string>
+    <string name="off_quantity_low_label">Malgranda kvanto</string>
+    <string name="off_quantity_high_label">Granda kvanto</string>
+    <string name="copy_label">Kopii</string>
+    <string name="search_label">Serĉi</string>
+    <string name="actions_label">Agoj</string>
+    <string name="action_show_location">Montri lokon</string>
+    <string name="action_wifi_password_copy_label">Pasvorto kopiiĝis!</string>
+    <string name="action_send_mail_label">Sendi retpoŝtan mesaĝon</string>
+    <string name="colors_label">Koloroj</string>
+    <string name="barcode_color">Strikoda koloro</string>
+    <string name="base_api_open_food_facts_url">https://world.openfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_pet_food_facts_url">https://world.openpetfoodfacts.org/api/v0/product/</string>
+    <string name="base_api_open_beauty_facts_url">https://world.openbeautyfacts.org/api/v0/product/</string>
+    <string name="base_api_musicbrainz_url">https://musicbrainz.org/ws/2/</string>
+    <string name="base_api_cover_art_archive_url">https://coverartarchive.org/</string>
+    <string name="preferences_default">Implicitoj</string>
+    <string name="preferences_information_about_remote_api_title">Informoj pri API-oj</string>
+    <string name="preferences_information_about_remote_api_foreword">Antaŭparolo</string>
+    <string name="preferences_information_about_remote_api_what_is_an_api_title">Kio estas API?</string>
+    <string name="scan_error_label">Eraro dum skanado!</string>
+    <string name="ingredients_label">Ingrediencoj</string>
+    <string name="matrix_uri_url_label">Retadreso</string>
+    <string name="off_quantity_none_label">Nekonata kvanto</string>
+    <string name="menu_item_history_delete">Forviŝi historion</string>
+    <string name="popup_message_confirmation_delete_history">Ĉu forviŝi ĉiom da historio?</string>
+    <string name="matrix_wifi_encryption_label">Ĉifrado</string>
+    <string name="base_api_open_library_url">https://openlibrary.org</string>
+    <string name="search_engine_google_url">https://www.google.com/search?q=%1$s</string>
+    <string name="matrix_wifi_password_label">Pasvorto</string>
+    <string name="matrix_wifi_is_hidden_label">Kaŝita</string>
+    <string name="matrix_wifi_identity_label">Identeco</string>
+    <string name="search_engine_bing_url">https://www.bing.com/search?q=%1$s</string>
+    <string name="search_engine_ecosia_url">https://www.ecosia.org/search?q=%1$s</string>
+    <string name="search_engine_startpage_url">https://www.startpage.com/do/metasearch.pl?query=%1$s</string>
+    <string name="search_engine_brave_search_url">https://search.brave.com/search?q=%1$s</string>
+    <string name="search_engine_amazon_url">https://www.amazon.com/s?k=%1$s</string>
+    <string name="search_engine_lilo_url">https://search.lilo.org/?q=%1$s</string>
+    <string name="search_engine_qwant_url">https://www.qwant.com/?q=%1$s</string>
+    <string name="search_engine_ebay_url">https://www.ebay.com/sch/i.html?_nkw=%1$s</string>
 </resources>
