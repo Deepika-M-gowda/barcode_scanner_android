@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.1"
+agp = "8.5.2"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.24" # The KSP version is aligned with the Kotlin version: https://github.com/google/ksp/releases
 coreKtx = "1.13.1"
