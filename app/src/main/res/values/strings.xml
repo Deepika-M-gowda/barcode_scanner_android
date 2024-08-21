@@ -873,6 +873,7 @@
     <string name="locale_language_en" translatable="false">English</string>
     <string name="locale_language_de" translatable="false">Deutsch</string>
     <string name="locale_language_es" translatable="false">Español</string>
+    <string name="locale_language_eo" translatable="false">Esperanto</string>
     <string name="locale_language_fr" translatable="false">Français</string>
     <string name="locale_language_in" translatable="false">Indonesia</string>
     <string name="locale_language_it" translatable="false">Italiano</string>
