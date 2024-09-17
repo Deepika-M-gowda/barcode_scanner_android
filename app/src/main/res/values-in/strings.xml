@@ -196,7 +196,7 @@
     <string name="off_risk_none_label">Risiko yang tidak diketahui</string>
     <string name="stabilizer_description_label">Bahan penstabil, pengental dan pembentuk gel, seperti agar-agar atau pektin (yang digunakan dalam selai misalnya) memberikan tekstur yang lebih kencang pada makanan. Meskipun bukan pengemulsi sejati, bahan ini membantu menstabilkan emulsi.</string>
     <string name="additive_no_information_found_label">Tidak ada informasi yang ditemukan tentang aditif ini!</string>
-    <string name="ingredient_veggie_entitled_label">Bahan-bahan dalam hal istilah vegetarian dan vegan</string>
+    <string name="ingredient_veggie_entitled_label">Bahan-bahan sesuai dengan status vegetarian dan vegan.</string>
     <string name="palm_oil_free_label">Bebas minyak sawit</string>
     <string name="contain_palm_oil_label">Mengandung minyak kelapa sawit</string>
     <string name="may_contain_palm_oil_label">Mungkin mengandung minyak kelapa sawit</string>
@@ -231,7 +231,7 @@
     <string name="copy_label">Salin</string>
     <string name="barcode_ean_8_description_label">Kode EAN-8 (Penomoran Artikel Eropa 8) adalah kode batang ringkas dari kode EAN-13 yang digunakan untuk mengidentifikasi produk yang dijual di toko-toko dan toko-toko di Eropa dan hampir di semua tempat di dunia. Kode ini digunakan pada kemasan yang terlalu kecil untuk menerima kode EAN-13.</string>
     <string name="matrix_localisation_query_label">Pertanyaan</string>
-    <string name="app_name">Barcode Scanner</string>
+    <string name="app_name">Pemindai Barcode</string>
     <string name="is_vegetarian_label">Vegetarian</string>
     <string name="no_vegetarian_label">Non-vegetarian</string>
     <string name="search_label">Cari</string>
@@ -283,4 +283,11 @@
     <string name="matrix_localisation_search_current_position_label">Mencari posisi saat ini…</string>
     <string name="barcode_code_128_description_label">Kode 128 adalah kode batang yang sering digunakan dalam industri. Kode ini digunakan dalam industri transportasi dan untuk identifikasi produk dalam rantai pasokan. Kode ini juga dapat digunakan di sektor otomotif atau untuk penandaan produk di apotek. Kode 128 digunakan secara luas dan juga dapat digunakan di banyak akhiran lainnya.</string>
     <string name="barcode_codabar_description_label">Kode Codabar adalah kode batang yang dirancang untuk dibaca oleh printer dot matrix. Saat ini, Codabar tidak banyak digunakan untuk kepentingan jenis barcode lain, tetapi masih digunakan oleh beberapa organisasi seperti perpustakaan.</string>
+    <string name="off_quantity_high_label">Jumlah tinggi</string>
+    <string name="book_product_more_label">Lebih banyak</string>
+    <string name="book_product_pages_number_label">Nomor Halaman</string>
+    <string name="off_quantity_moderate_label">Jumlah sedang</string>
+    <string name="off_quantity_none_label">Jumlah yang tidak diketahui</string>
+    <string name="book_product_contributions_label">Kontribusi</string>
+    <string name="book_product_summary_label">Ringkasan</string>
 </resources>
