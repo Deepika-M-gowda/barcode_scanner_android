@@ -226,5 +226,4 @@
     <string name="matrix_uri_upi_description_label">Описание</string>
     <string name="matrix_localisation_longitude_label">Географска дължина</string>
     <string name="matrix_localisation_latitude_label">Географска ширина</string>
-    <string name="barcode_qr_code_label"></string>
 </resources>
