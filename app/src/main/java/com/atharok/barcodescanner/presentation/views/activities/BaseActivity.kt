@@ -25,11 +25,18 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.atharok.barcodescanner.R
 import com.atharok.barcodescanner.domain.library.SettingsManager
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 import kotlin.reflect.KClass
@@ -44,22 +51,47 @@ abstract class BaseActivity: AppCompatActivity() {
         val theme = settingsManager.getTheme()
         this.setTheme(theme)
         super.onCreate(savedInstanceState)
+
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()
+                    or WindowInsetsCompat.Type.displayCutout())
+
+            val appBarLayout: AppBarLayout? = findViewById(R.id.app_bar_layout)
+            appBarLayout?.updatePadding(
+                top = insets.top
+            )
+
+            val bottomNavigationView: BottomNavigationView? = findViewById(R.id.activity_main_menu_bottom_navigation)
+            bottomNavigationView?.updatePadding(
+                bottom = insets.bottom
+            )
+
+            v.updatePadding(
+                left = insets.left,
+                top = if(appBarLayout == null) insets.top else v.paddingTop,
+                right = insets.right,
+                bottom = if(bottomNavigationView == null) insets.bottom else v.paddingBottom
+            )
+
+            WindowInsetsCompat.CONSUMED
+        }
     }
 
-    protected fun replaceFragment(containerViewId: Int, fragment: Fragment){
+    protected fun replaceFragment(containerViewId: Int, fragment: Fragment) {
         supportFragmentManager.commit {
             replace(containerViewId, fragment)
         }
     }
 
-    protected fun replaceFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null){
+    protected fun replaceFragment(containerViewId: Int, fragmentClass: KClass<out Fragment>, args: Bundle? = null, tag: String? = null) {
         supportFragmentManager
             .beginTransaction()
             .replace(containerViewId, fragmentClass.java, args, tag)
             .commit()
     }
 
-    protected fun removeFragment(fragment: Fragment){
+    protected fun removeFragment(fragment: Fragment) {
         supportFragmentManager.commit {
             remove(fragment)
         }

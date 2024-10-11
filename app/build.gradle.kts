@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.atharok.barcodescanner"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.atharok.barcodescanner"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 43
         versionName = "1.24.1"
 

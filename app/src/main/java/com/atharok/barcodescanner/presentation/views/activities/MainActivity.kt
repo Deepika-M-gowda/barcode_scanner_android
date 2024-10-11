@@ -98,9 +98,10 @@ class MainActivity: BaseActivity() {
      * Permet de coloriser la bar de navigation (en bas) de la même couleur que la BottomNavigationView.
      */
     private fun configureNavigationBarColor(bottomNavigationView: BottomNavigationView) {
-        if (Build.VERSION.SDK_INT >= 27 || settingsManager.useDarkTheme()) {
+        if (Build.VERSION.SDK_INT < 35 && (Build.VERSION.SDK_INT >= 27 || settingsManager.useDarkTheme())) {
             val bottomNavigationViewBackground = bottomNavigationView.background
             if (bottomNavigationViewBackground is MaterialShapeDrawable) {
+                @Suppress("DEPRECATION")
                 this.window.navigationBarColor = bottomNavigationViewBackground.resolvedTintColor
             }
         }
