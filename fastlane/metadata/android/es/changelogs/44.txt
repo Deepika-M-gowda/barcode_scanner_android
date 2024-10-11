@@ -1,0 +1,11 @@
+1.24.2
+
+Lista de cambios completa aquí: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Añadida la traducción completa al persa (gracias a Alireza Rashidi).
+- Añadida la traducción parcial al coreano (gracias a skyblue7070).
+- Añadida la traducción parcial al noruego nynorsk (gracias a niedzwiedz63).
+- Actualizadas las traducciones (Weblate).
+- Actualizado el SDK a la versión 35 (compatibilidad con Android 15).
+- Ajustes de código.
+- Dependencias actualizadas.
