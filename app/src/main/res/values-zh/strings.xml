@@ -727,4 +727,8 @@
     <string name="create_qr_from_clipboard">从剪贴板生成 QR 码</string>
     <string name="matrix_contact_job_title_label">职位名称</string>
     <string name="app_name">条码扫描器</string>
+    <string name="preferences_switch_history_save_duplicates_label">保存重复项</string>
+    <string name="preferences_switch_history_save_duplicates_summary_on">重复项将添加到历史记录中</string>
+    <string name="preferences_switch_history_save_duplicates_summary_off">重复项不会添加到历史记录中</string>
+    <string name="snack_bar_message_items_deleted">从历史记录中删除的项目。</string>
 </resources>

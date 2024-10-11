@@ -141,7 +141,7 @@
     <string name="allergens_label">Allergeni</string>
     <string name="traces_label">Tracce</string>
     <string name="additives_label">Additivi</string>
-    <string name="veggie_label">Vegetariano</string>
+    <string name="veggie_label">Vegetali</string>
     <string name="off_additive_info_label">Info</string>
     <string name="off_risk_low_label">Sicuro</string>
     <string name="off_risk_moderate_label">Dubbioso</string>
