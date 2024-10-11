@@ -874,12 +874,15 @@
     <string name="locale_language_de" translatable="false">Deutsch</string>
     <string name="locale_language_es" translatable="false">Español</string>
     <string name="locale_language_eo" translatable="false">Esperanto</string>
+    <string name="locale_language_fa" translatable="false">فارسی</string>
     <string name="locale_language_fr" translatable="false">Français</string>
     <string name="locale_language_in" translatable="false">Indonesia</string>
     <string name="locale_language_it" translatable="false">Italiano</string>
     <string name="locale_language_ja" translatable="false">日本語</string>
+    <string name="locale_language_ko" translatable="false">한국어</string>
     <string name="locale_language_nb_NO" translatable="false">Norsk</string>
     <string name="locale_language_nl" translatable="false">Nederlands</string>
+    <string name="locale_language_nn" translatable="false">Nynorsk</string>
     <string name="locale_language_pl" translatable="false">Polski</string>
     <string name="locale_language_pt" translatable="false">Português</string>
     <string name="locale_language_pt_BR" translatable="false">Português (Brasil)</string>
