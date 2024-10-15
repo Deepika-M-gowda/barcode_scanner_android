@@ -77,7 +77,7 @@
     <string name="action_add_to_contacts">افزودن به مخاطبین</string>
     <string name="action_wifi_add_network_unknown_error">نادرستیی ناشناخته در میان افزودن شبکه Wi-Fi.</string>
     <string name="error_barcode_none_character_message">شما باید یک مقدار صحیح در جانوشت ورودی وارد کنید.</string>
-    <string name="error_barcode_qr_email_missing_message">شما باید حداقل یکی از جانوشتهای ورودی را پر کنید.</string>
+    <string name="error_barcode_qr_email_missing_message">شما باید حداقل یکی از جانوشت‌های ورودی را پر کنید.</string>
     <string name="clipboard_empty">حافظه موقت خالی است.</string>
     <string name="qr_code_text_generator_hint_phone_input_edit_text">شماره تلفن را وارد کنید…</string>
     <string name="qr_code_text_radio_button_label_mrs">زن</string>
@@ -524,7 +524,7 @@
     <string name="action_wifi_add_network_already_exists">شما قبلاً این شبکه Wi-Fi را اضافه کرده‌اید.</string>
     <string name="error_barcode_not_a_number_message">بارکد باید فقط از ارقام تشکیل شده باشد.</string>
     <string name="error_barcode_wrong_length_message">بارکد باید شامل %1$s رقم باشد.</string>
-    <string name="error_barcode_wrong_key_message">%1$sth رقم (رقم بررسی) باید %2$s باشد.</string>
+    <string name="error_barcode_wrong_key_message">%1$sth رقم (رقم را بررسی کنید) باید %2$s باشد.</string>
     <string name="error_barcode_encoding_iso_8859_1_error_message">نویسه‌های خاص برای این نوع بارکد پشتیبانی نمی‌شوند.</string>
     <string name="error_barcode_encoding_us_ascii_error_message">نویسه‌های خاص برای این نوع بارکد پشتیبانی نمی‌شوند.</string>
     <string name="error_barcode_93_regex_error_message">نوع بارکد کد 93 می‌تواند 26 حرف بزرگ، 10 رقم (0 تا 9) و همچنین 8 نویسه‌ خاص « -, ., space, *, $, /, +, % » را رمزگذاری کند. حروف کوچک و سایر نویسه‌های خاص نمی‌توانند بدست این نوع بارکد رمزگذاری شوند.</string>
