@@ -12,8 +12,8 @@ android {
         applicationId = "com.atharok.barcodescanner"
         minSdk = 21
         targetSdk = 35
-        versionCode = 43
-        versionName = "1.24.1"
+        versionCode = 44
+        versionName = "1.24.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
