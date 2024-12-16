@@ -39,6 +39,7 @@ class EmailActionsFragment: AbstractParsedResultActionsFragment() {
         addActionItem(configureShareTextActionItem(barcode))
         addActionItem(configureCopyTextActionItem(barcode))
         addActionItem(configureModifyBarcodeActionItem(barcode))
+        addActionItem(configureAssignANameToBarcodeActionItem(barcode))
     }
 
     private fun configureSendEmailActionItem(parsedResult: EmailAddressParsedResult): ActionItem {

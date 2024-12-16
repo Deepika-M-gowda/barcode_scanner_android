@@ -266,20 +266,21 @@ class BarcodeAnalysisActivity: BaseActivity() {
     // ---- Database Update ----
 
     private fun updateTypeIntoDatabase(barcodeAnalysis: BarcodeAnalysis) {
-        val productName: String? = when (barcodeAnalysis) {
-            is FoodBarcodeAnalysis -> barcodeAnalysis.name
-            is BookBarcodeAnalysis -> barcodeAnalysis.title
-            is MusicBarcodeAnalysis -> barcodeAnalysis.album?.let { album ->
+        val barcode = barcodeAnalysis.barcode
+        val newBarcodeType = barcodeAnalysis.source.barcodeType
+
+        val productName: String? = when {
+            barcode.name != "" -> barcode.name
+            barcodeAnalysis is FoodBarcodeAnalysis -> barcodeAnalysis.name
+            barcodeAnalysis is BookBarcodeAnalysis -> barcodeAnalysis.title
+            barcodeAnalysis is MusicBarcodeAnalysis -> barcodeAnalysis.album?.let { album ->
                 barcodeAnalysis.artists?.convertToString()?.let { artist ->
                     "$album - $artist"
                 } ?: album
             }
-
             else -> null
         }
 
-        val barcode = barcodeAnalysis.barcode
-        val newBarcodeType = barcodeAnalysis.source.barcodeType
         if (!productName.isNullOrBlank()) {
             if (barcode.name != productName || barcode.getBarcodeType() != newBarcodeType)
                 databaseBarcodeViewModel.updateTypeAndName(
@@ -305,7 +306,6 @@ class BarcodeAnalysisActivity: BaseActivity() {
 
         barcode.contents = newContents
         barcode.type = get<BarcodeType> { parametersOf(barcode) }.name
-        barcode.name = ""
         barcode.updateCountry()
 
         databaseBarcodeViewModel.update(
@@ -326,5 +326,19 @@ class BarcodeAnalysisActivity: BaseActivity() {
             }
             else -> configureDefaultBarcodeAnalysisView(DefaultBarcodeAnalysis(barcode))
         }
+    }
+
+    fun updateBarcodeName(barcode: Barcode, barcodeName: String) {
+        if(barcode.name == barcodeName)
+            return
+
+        barcode.name = barcodeName
+
+        databaseBarcodeViewModel.update(
+            date = barcode.scanDate,
+            contents = barcode.contents,
+            barcodeType = barcode.getBarcodeType(),
+            name = barcode.name
+        )
     }
 }

@@ -328,6 +328,8 @@
     <string name="action_show_location">Montrer l\'emplacement</string>
     <string name="action_open_link">Ouvrir le lien</string>
     <string name="action_modify_barcode">Modifier le code-barres</string>
+    <string name="action_assign_a_name">Assigner un nom</string>
+    <string name="apply">Appliquer</string>
     <!-- Wi-Fi Connection -->
     <string name="action_wifi_connection_title_label">Connexion Wi-Fi</string>
     <string name="action_wifi_connection_from_app">Se connecter au Wi-Fi</string>

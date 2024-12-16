@@ -28,5 +28,6 @@ class DefaultActionsFragment: AbstractActionsFragment() {
         addActionItem(configureShareTextActionItem(barcode))
         addActionItem(configureCopyTextActionItem(barcode))
         addActionItem(configureModifyBarcodeActionItem(barcode))
+        addActionItem(configureAssignANameToBarcodeActionItem(barcode))
     }
 }

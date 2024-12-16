@@ -105,7 +105,6 @@ class BarcodeContentsModifierModalBottomSheetFragment : BottomSheetDialogFragmen
         } ?: run { dismiss() }
     }
 
-
     private fun configureTextInputEditTextCode(length: Int, inputType: Int) {
         binding.fragmentBarcodeContentsModifierModalBottomSheetInputEditText.apply {
             this.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(length))

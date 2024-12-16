@@ -123,6 +123,7 @@ import com.atharok.barcodescanner.presentation.viewmodel.ProductViewModel
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AbstractActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.AgendaActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BarcodeContentsModifierModalBottomSheetFragment
+import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BarcodeNameModalBottomSheetFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BeautyActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.BookActionsFragment
 import com.atharok.barcodescanner.presentation.views.fragments.barcodeAnalysis.actions.ContactActionsFragment
@@ -601,5 +602,9 @@ val fragmentsModule = module {
 
     factory { (barcode: Barcode) ->
         BarcodeContentsModifierModalBottomSheetFragment.newInstance(barcode)
+    }
+
+    factory { (barcode: Barcode) ->
+        BarcodeNameModalBottomSheetFragment.newInstance(barcode)
     }
 }

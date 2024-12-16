@@ -183,6 +183,15 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
         )
     }
 
+    // Modify barcode
+    protected fun configureAssignANameToBarcodeActionItem(barcode: Barcode): ActionItem {
+        return ActionItem(
+            textRes = R.string.action_assign_a_name,
+            imageRes = R.drawable.baseline_text_fields_24,
+            listener = assignANameToBarcode(barcode)
+        )
+    }
+
     // Delete from history
     private fun configureDeleteBarcodeFromHistoryActionItem(barcode: Barcode): ActionItem {
         return ActionItem(
@@ -252,6 +261,14 @@ abstract class AbstractActionsFragment : BarcodeAnalysisFragment<BarcodeAnalysis
             val bottomSheetFragment:
                     BarcodeContentsModifierModalBottomSheetFragment = get { parametersOf(barcode) }
             bottomSheetFragment.show(requireActivity().supportFragmentManager, "BarcodeContentsModifierModalBottomSheetFragment")
+        }
+    }
+
+    private fun assignANameToBarcode(barcode: Barcode): ActionItem.OnActionItemListener = object : ActionItem.OnActionItemListener {
+        override fun onItemClick(view: View?) {
+            val bottomSheetFragment:
+                    BarcodeNameModalBottomSheetFragment = get { parametersOf(barcode) }
+            bottomSheetFragment.show(requireActivity().supportFragmentManager, "BarcodeNameModalBottomSheetFragment")
         }
     }
 
