@@ -72,6 +72,10 @@ import java.util.Date
 
 class BarcodeDetailsActivity : BaseActivity() {
 
+    companion object {
+        private const val INTENT_ACTION_ENCODE = "com.google.zxing.client.android.ENCODE"
+    }
+
     private val imageManagerViewModel: ImageManagerViewModel by viewModel()
 
     private val viewBinding: ActivityBarcodeDetailsBinding by lazy { ActivityBarcodeDetailsBinding.inflate(layoutInflater) }
@@ -203,13 +207,25 @@ class BarcodeDetailsActivity : BaseActivity() {
                 else -> intent.getStringExtra(Intent.EXTRA_TEXT)
             }
             "${BuildConfig.APPLICATION_ID}.CREATE_FROM_CLIPBOARD" -> getClipboardContent()
+            INTENT_ACTION_ENCODE -> { intent.getStringExtra("ENCODE_DATA") }
             else -> intent.getStringExtra(BARCODE_CONTENTS_KEY)
         }
     }
 
     private fun getBarcodeFormat(): BarcodeFormat {
-        val barcodeFormatString: String = intent.getStringExtra(BARCODE_FORMAT_KEY) ?: BarcodeFormat.QR_CODE.name
-        return BarcodeFormat.valueOf(barcodeFormatString)
+        val barcodeFormatString: String =
+            intent.getStringExtra(BARCODE_FORMAT_KEY) ?:
+            intent.getStringExtra("ENCODE_FORMAT") ?:
+            BarcodeFormat.QR_CODE.name
+        return try {
+            BarcodeFormat.valueOf(barcodeFormatString)
+        } catch (e: IllegalArgumentException) {
+            showDialog(
+                titleRes = R.string.error,
+                message = getString(R.string.scan_error_exception_label, e.toString())
+            )
+            BarcodeFormat.QR_CODE
+        }
     }
 
     private fun getQrCodeErrorCorrectionLevel(barcodeFormat: BarcodeFormat): QrCodeErrorCorrectionLevel {

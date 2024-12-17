@@ -115,6 +115,11 @@
 
                 <data android:mimeType="text/calendar" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.ENCODE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".presentation.views.activities.BarcodeFormCreatorActivity"
