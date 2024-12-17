@@ -666,4 +666,6 @@
     <string name="preferences_switch_history_save_duplicates_summary_off">Дублікати не будуть потрапляти в історію</string>
     <string name="preferences_switch_history_save_duplicates_label">Зберігати дублікати</string>
     <string name="preferences_switch_history_save_duplicates_summary_on">Дублікати будуть потрапляти в історію</string>
+    <string name="action_assign_a_name">Присвоїти назву</string>
+    <string name="apply">Застосувати</string>
 </resources>
