@@ -289,7 +289,7 @@
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Вы должны подтвердить разрешение на использование этой возможности.</string>
     <string name="snack_bar_message_save_bitmap_ok">Изображение сохранено</string>
-    <string name="snack_bar_message_save_bitmap_error">Изображение не было сохранено…\nНедостаточно памяти?</string>
+    <string name="snack_bar_message_save_bitmap_error">Изображение не было сохранено… \nНедостаточно памяти?</string>
     <string name="snack_bar_message_share_bitmap_error">Произошла ошибка при настройке общего ресурса.</string>
     <!-- Actions -->
     <string name="actions_label">Действия</string>
@@ -725,4 +725,6 @@
     <string name="action_share_vcf_file">Поделиться в формате VCF</string>
     <string name="snack_bar_message_items_deleted">Элементы удалены из истории.</string>
     <string name="matrix_contact_job_title_label">Должность</string>
+    <string name="apply">Применить</string>
+    <string name="action_assign_a_name">Присвоить название</string>
 </resources>
