@@ -1,0 +1,10 @@
+1.25.0
+
+Cambios completos: https://gitlab.com/Atharok/BarcodeScanner/-/releases
+
+- Agregada traducción al tamil (gracias a தமிழ்நேரம்).
+- Agregada traducción al lituano (gracias a Rokas Bo).
+- Traducciones actualizadas (Weblate).
+- Agregado soporte para "com.google.zxing.client.android.ENCODE" para codificar y generar códigos de barras desde aplicaciones de terceros.
+- Agregada una función que permite asignar un nombre a un código de barras.
+- Dependencias actualizadas.

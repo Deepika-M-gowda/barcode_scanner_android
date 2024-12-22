@@ -727,4 +727,6 @@
     <string name="preferences_switch_history_save_duplicates_label">Guardar duplicados</string>
     <string name="preferences_switch_history_save_duplicates_summary_on">Los duplicados se agregarán al historial</string>
     <string name="preferences_switch_history_save_duplicates_summary_off">Los duplicados no se agregarán al historial</string>
+    <string name="apply">Aplicar</string>
+    <string name="action_assign_a_name">Asignar un nombre</string>
 </resources>

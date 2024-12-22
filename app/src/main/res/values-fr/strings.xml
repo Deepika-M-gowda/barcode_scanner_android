@@ -303,7 +303,7 @@
     <!-- Snackbar Feddbacks -->
     <string name="snack_bar_message_permission_refused">Vous devez accepter la permission pour utiliser cette fonctionnalité.</string>
     <string name="snack_bar_message_save_bitmap_ok">L\'image a été enregistrée</string>
-    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante \?</string>
+    <string name="snack_bar_message_save_bitmap_error">L\'image n\'a pas été enregistrée…\nMémoire insuffisante ?</string>
     <string name="snack_bar_message_share_bitmap_error">Une erreur est survenue lors de la configuration du partage.</string>
     <!-- Actions -->
     <string name="actions_label">Actions</string>

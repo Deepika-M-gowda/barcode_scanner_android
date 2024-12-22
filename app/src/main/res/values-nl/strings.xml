@@ -190,8 +190,7 @@
     <string name="action_add_to_calendar">Aan agenda toevoegen</string>
     <string name="snack_bar_message_permission_refused">Geef toestemming om deze functionaliteit te gebruiken.</string>
     <string name="snack_bar_message_save_bitmap_ok">Afbeelding is opgeslagen</string>
-    <string name="snack_bar_message_save_bitmap_error">Afbeelding is niet opgeslagen…
-\nOnvoldoende geheugen?</string>
+    <string name="snack_bar_message_save_bitmap_error">Afbeelding is niet opgeslagen… \nOnvoldoende werkgeheugen?</string>
     <string name="snack_bar_message_share_bitmap_error">Er is een fout opgetreden bij de configuratie voor het delen.</string>
     <string name="actions_label">Acties</string>
     <string name="intent_chooser_share_title">Delen met…</string>
@@ -666,4 +665,6 @@
     <string name="preferences_switch_history_save_duplicates_label">Dubbele items opslaan</string>
     <string name="preferences_switch_history_save_duplicates_summary_off">Dubbele items worden niet toegevoegd aan de geschiedenis</string>
     <string name="preferences_switch_history_save_duplicates_summary_on">Dubbele items worden toegevoegd aan de geschiedenis</string>
+    <string name="apply">Toepassen</string>
+    <string name="action_assign_a_name">Naam toewijzen</string>
 </resources>
